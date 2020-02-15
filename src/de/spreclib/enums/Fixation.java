@@ -32,12 +32,6 @@ public enum Fixation implements ISprecPart, ICodePart {
 
   @Override
   public ISprecPart getSprecPart() {
-    for (Fixation part : Fixation.values()) {
-      if (this.codePart.equals(part.codePart)) {
-    	  return part;
-      }
-    }
-
     return null;
   }
 }

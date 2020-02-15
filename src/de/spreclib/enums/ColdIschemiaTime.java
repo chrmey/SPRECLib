@@ -14,14 +14,17 @@ public enum ColdIschemiaTime implements ISprecPart, ICodePart {
   NOT_APPLICABLE("N"),
   OTHER("Z");
 
-  ColdIschemiaTime(String string) {
-    // TODO Auto-generated constructor stub
+  private String codePart;
+  private String sprecType;
+
+  ColdIschemiaTime(String code) {
+    this.codePart = code;
+    this.sprecType = "Cold Ischemia Time";
   }
 
   @Override
   public String getCodePart() {
-    // TODO Auto-generated method stub
-    return null;
+    return this.codePart;
   }
 
   @Override

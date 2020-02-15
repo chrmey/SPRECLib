@@ -32,13 +32,15 @@ public enum PrimaryContainer implements ISprecPart, ICodePart {
   UNKNOWN("XXX"),
   OTHER("ZZZ");
 
-  PrimaryContainer(String string) {
-    // TODO Auto-generated constructor stubF
+  private String codePart;
+
+  PrimaryContainer(String code) {
+    this.codePart = code;
   }
 
   @Override
   public String getCodePart() { // TODO Auto-generated method stub
-    return null;
+    return this.codePart;
   }
 
   @Override

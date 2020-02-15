@@ -39,13 +39,15 @@ public enum FluidSampleType implements ISprecPart, ICodePart {
   URINE_TIMED("URT"),
   OTHER("ZZZ");
 
-  FluidSampleType(String string) {
-    // TODO Auto-generated constructor stub
+  private String codePart;
+
+  FluidSampleType(String code) {
+    this.codePart = code;
   }
 
   @Override
   public String getCodePart() { // TODO Auto-generated method stub
-    return null;
+    return this.codePart;
   }
 
   @Override

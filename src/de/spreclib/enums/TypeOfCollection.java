@@ -23,14 +23,15 @@ public enum TypeOfCollection implements ISprecPart, ICodePart {
   SWAB("SWB"),
   OTHER("ZZZ");
 
-  TypeOfCollection(String string) {
-    // TODO Auto-generated constructor stub
+  private String codePart;
+
+  TypeOfCollection(String code) {
+    this.codePart = code;
   }
 
   @Override
   public String getCodePart() {
-    // TODO Auto-generated method stub
-    return null;
+    return this.codePart;
   }
 
   @Override

@@ -15,13 +15,15 @@ public enum FixationTime implements ISprecPart, ICodePart {
   UNKNOWN("X"),
   OTHER("Z");
 
-  FixationTime(String string) {
-    // TODO Auto-generated constructor stub
+  private String codePart;
+
+  FixationTime(String code) {
+    this.codePart = code;
   }
 
   @Override
-  public String getCodePart() { // TODO Auto-generated method stub
-    return null;
+  public String getCodePart() {
+    return this.codePart;
   }
 
   @Override

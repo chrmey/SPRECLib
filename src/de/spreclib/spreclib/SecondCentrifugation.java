@@ -1,9 +1,8 @@
 package de.spreclib.spreclib;
 
-import de.spreclib.interfaces.ICodePart;
 import de.spreclib.interfaces.ISprecPart;
 
-public class SecondCentrifugation implements ICodePart, ISprecPart {
+public class SecondCentrifugation extends Centrifugation {
 
   public SecondCentrifugation() {}
 

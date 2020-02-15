@@ -1,8 +1,7 @@
-package de.spreclib.enums;
+package de.spreclib.spreclib;
 
 import de.spreclib.interfaces.ISolidSampleSprec;
 import de.spreclib.interfaces.ISprecPart;
-import de.spreclib.spreclib.Sprec;
 
 public class SolidSampleSprec extends Sprec implements ISolidSampleSprec {
 
