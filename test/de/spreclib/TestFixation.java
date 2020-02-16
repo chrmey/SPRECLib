@@ -3,8 +3,8 @@ package de.spreclib;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import de.spreclib.enums.Fixation;
-import de.spreclib.interfaces.ISprecPart;
+import de.spreclib.java.enums.Fixation;
+import de.spreclib.java.interfaces.ISprecPart;
 
 class TestFixation {
 
@@ -24,5 +24,13 @@ class TestFixation {
      assertEquals(Fixation.ALCOHOL_BASED.getCodePart(), part);
    }
   */
+  
+  @Test
+  void shouldReturnCorrectSprecPart() {
+    String part = Fixation.ALCOHOL_BASED.getCodePartFromSprecPart();
+    System.out.println(part);
+    assertEquals(Fixation.ALCOHOL_BASED.getCodePart(), part);
+  }
+  
 
 }
