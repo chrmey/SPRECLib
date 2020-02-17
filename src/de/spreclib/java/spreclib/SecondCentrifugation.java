@@ -7,18 +7,8 @@ public class SecondCentrifugation extends Centrifugation {
 
   public SecondCentrifugation() {}
 
-  public String getCodePart() {
-    // TODO implement here
-    return null;
-  }
-
   public ISprecPart getSprecPart() {
     // TODO implement here
-    return null;
-  }
-
-  @Override
-  public String getCodeFromSprecPart() { // TODO Auto-generated method stub
     return null;
   }
 

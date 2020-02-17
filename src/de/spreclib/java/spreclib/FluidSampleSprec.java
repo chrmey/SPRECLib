@@ -1,5 +1,6 @@
 package de.spreclib.java.spreclib;
 
+import de.spreclib.java.enums.SprecPartType;
 import de.spreclib.java.interfaces.IFluidSampleSprec;
 import de.spreclib.java.interfaces.ISprecPart;
 
@@ -16,37 +17,37 @@ public class FluidSampleSprec extends Sprec implements IFluidSampleSprec {
   }
 
   public ISprecPart getFluidSampleType() {
-    // TODO implement here
-    return null;
+    return this.sprecParts.get(SprecPartType.FLUID_SAMPLE_TYPE);
   }
 
   public ISprecPart getPrimaryContainer() {
-    // TODO implement here
-    return null;
+    return this.sprecParts.get(SprecPartType.PRIMARY_CONTAINER);
   }
 
   public ISprecPart getPreCentrifugation() {
-    // TODO implement here
-    return null;
+    return this.sprecParts.get(SprecPartType.PRE_CENTRIFUGATION);
   }
 
   public ISprecPart getFirstCentrifugation() {
-    // TODO implement here
-    return null;
+    return this.sprecParts.get(SprecPartType.FIRST_CENTRIFUGATION);
   }
 
   public ISprecPart getSecondCentrifugation() {
-    // TODO implement here
-    return null;
+    return this.sprecParts.get(SprecPartType.SECOND_CENTRIFUGATION);
   }
 
   public ISprecPart getPostCentrifugation() {
-    // TODO implement here
-    return null;
+    return this.sprecParts.get(SprecPartType.POST_CENTRIFUGATION);
   }
 
   @Override
-  public ISprecPart getLongTermStorage() { // TODO Auto-generated method stub
+  public ISprecPart getLongTermStorage() {
+    return this.sprecParts.get(SprecPartType.LONG_TERM_STORAGE);
+  }
+
+  @Override
+  public String getSprecCode() {
+    // TODO Auto-generated method stub
     return null;
   }
 }

@@ -2,13 +2,15 @@ package de.spreclib.java.spreclib;
 
 import java.util.Map;
 
-import de.spreclib.java.interfaces.ICodePart;
+import de.spreclib.java.enums.SprecPartType;
 import de.spreclib.java.interfaces.ISprec;
 import de.spreclib.java.interfaces.ISprecPart;
 
 public abstract class Sprec implements ISprec {
 
-  private Map<ISprecPart, ICodePart> sprecCodeParts;
+  protected Map<SprecPartType, ISprecPart> sprecParts;
 
-  public Sprec() {}
+  public Sprec() {
+	  this.sprecParts = null;
+  }
 }

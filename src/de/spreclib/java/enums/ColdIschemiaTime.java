@@ -32,12 +32,12 @@ public enum ColdIschemiaTime implements ISprecPart, ICodePart {
   }
 
   @Override
-  public String getCodeFromSprecPart() { 
+  public String getCodeFromSprecPart() {
     return this.codePart;
   }
 
   @Override
-  public SprecPartType getSprecPartType() { 
+  public SprecPartType getSprecPartType() {
     return SprecPartType.COLD_ISCHEMIA_TIME;
   }
 }

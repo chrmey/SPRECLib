@@ -24,13 +24,11 @@ class TestFixation {
      assertEquals(Fixation.ALCOHOL_BASED.getCodePart(), part);
    }
   */
-  
+
   @Test
   void shouldReturnCorrectSprecPart() {
     String part = Fixation.ALCOHOL_BASED.getCodePartFromSprecPart();
     System.out.println(part);
     assertEquals(Fixation.ALCOHOL_BASED.getCodePart(), part);
   }
-  
-
 }

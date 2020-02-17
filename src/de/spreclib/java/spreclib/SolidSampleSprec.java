@@ -1,13 +1,12 @@
 package de.spreclib.java.spreclib;
 
+import de.spreclib.java.enums.SprecPartType;
 import de.spreclib.java.interfaces.ISolidSampleSprec;
 import de.spreclib.java.interfaces.ISprecPart;
 
 public class SolidSampleSprec extends Sprec implements ISolidSampleSprec {
 
-  public SolidSampleSprec() {
-	  
-  }
+  public SolidSampleSprec() {}
 
   public boolean isFluidSample() {
     return false;
@@ -18,38 +17,37 @@ public class SolidSampleSprec extends Sprec implements ISolidSampleSprec {
   }
 
   public ISprecPart getSolidSampleType() {
-    // TODO implement here
-    return null;
+    return this.sprecParts.get(SprecPartType.SOLID_SAMPLE_TYPE);
   }
 
   public ISprecPart getTypeOfCollection() {
-    // TODO implement here
-    return null;
+    return this.sprecParts.get(SprecPartType.TYPE_OF_COLLECTION);
   }
 
   public ISprecPart getWarmIschemiaTime() {
-    // TODO implement here
-    return null;
+    return this.sprecParts.get(SprecPartType.WARM_ISCHEMIA_TIME);
   }
 
   public ISprecPart getColdIschemiaTime() {
-    // TODO implement here
-    return null;
+    return this.sprecParts.get(SprecPartType.COLD_ISCHEMIA_TIME);
   }
 
   public ISprecPart getFixation() {
-    // TODO implement here
-    return null;
+    return this.sprecParts.get(SprecPartType.FIXATION);
   }
 
   public ISprecPart getFixationTime() {
-    // TODO implement here
-    return null;
+    return this.sprecParts.get(SprecPartType.FIXATION_TIME);
   }
 
   @Override
   public ISprecPart getLongTermStorage() {
-    // TODO implement here
+    return this.sprecParts.get(SprecPartType.LONG_TERM_STORAGE);
+  }
+
+  @Override
+  public String getSprecCode() {
+    // TODO Auto-generated method stub
     return null;
   }
 }
