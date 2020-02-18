@@ -1,4 +1,4 @@
-package de.spreclib.java.enums;
+package de.spreclib.java.enums.postcentrifugation;
 
 public enum PostCentrifugationDelay {
   LESS_ONE_HOUR(0, 1),
@@ -9,5 +9,6 @@ public enum PostCentrifugationDelay {
 
   PostCentrifugationDelay(int lowerBound, int upperBound) {
     // TODO Auto-generated constructor stub
+	// TODO Bounds überarbeiten
   }
 }

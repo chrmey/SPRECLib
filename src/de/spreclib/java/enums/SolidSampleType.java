@@ -2,33 +2,29 @@ package de.spreclib.java.enums;
 
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.interfaces.ISprecPart;
+import de.spreclib.java.spreclib.CodePart;
 
-public enum SolidSampleType implements ISprecPart, ICodePart {
-  FRESH_CELLS_FROM_NON_BLOOD_SPECIMEN("CEN"),
-  CELLS_FROM_NON_BLOOD_SPECIMEN("CLN"),
-  CELLS_FROM_FINE_NEEDLE_ASPIRATE("FNA"),
-  HAIR("HAR"),
-  CELLS_FROM_LASER_CAPTURE_MICRODISSECTED_TISSUE("LCM"),
-  PLACENTA("PLC"),
-  SOLID_TISSUE("TIS"),
-  DISRUPTED_TISSUES_NON_VIABLE("TCM"),
-  OTHER("ZZZ");
+public enum SolidSampleType implements ISprecPart {
+  FRESH_CELLS_FROM_NON_BLOOD_SPECIMEN(new CodePart("CEN")),
+  CELLS_FROM_NON_BLOOD_SPECIMEN(new CodePart("CLN")),
+  CELLS_FROM_FINE_NEEDLE_ASPIRATE(new CodePart("FNA")),
+  HAIR(new CodePart("HAR")),
+  CELLS_FROM_LASER_CAPTURE_MICRODISSECTED_TISSUE(new CodePart("LCM")),
+  PLACENTA(new CodePart("PLC")),
+  SOLID_TISSUE(new CodePart("TIS")),
+  DISRUPTED_TISSUES_NON_VIABLE(new CodePart("TCM")),
+  OTHER(new CodePart("ZZZ")),
+  ;
 
-  private String codePart;
+  private ICodePart codePart;
 
-  SolidSampleType(String code) {
+  SolidSampleType(ICodePart code) {
     this.codePart = code;
   }
 
   @Override
-  public ICodePart getCodePart() {
-    return this;
-  }
-
-  @Override
   public ISprecPart getSprecPart() {
-    // TODO Auto-generated method stub
-    return null;
+    return this;
   }
 
   @Override

@@ -9,5 +9,6 @@ public enum CentrifugationSpeed {
 
   CentrifugationSpeed(int lowerBound, int upperBound) {
     // TODO Auto-generated constructor stub
+	// TODO Bound überarbeiten
   }
 }

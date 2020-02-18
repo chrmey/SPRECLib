@@ -4,7 +4,7 @@ import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.interfaces.ISprecPart;
 import de.spreclib.java.spreclib.CodePart;
 
-public enum ColdIschemiaTime implements ISprecPart, ICodePart {
+public enum ColdIschemiaTime implements ISprecPart {
   LESS_THAN_TWO_MINUTES(new CodePart("A")),
   TWO_TO_TEN_MINUTES(new CodePart("B")),
   TEN_TO_TWENTY_MINUTES(new CodePart("C")),
@@ -13,23 +13,18 @@ public enum ColdIschemiaTime implements ISprecPart, ICodePart {
   MORE_THAN_SIXTY_MINUTES(new CodePart("F")),
   UNKNOWN(new CodePart("X")),
   NOT_APPLICABLE(new CodePart("N")),
-  OTHER(new CodePart("Z"));
+  OTHER(new CodePart("Z")),
+  ;
 
-  private CodePart codePart;
+  private ICodePart codePart;
 
-  ColdIschemiaTime(CodePart code) {
-    this.codePart = code;;
-  }
-
-  @Override
-  public ICodePart getCodePart() {
-    return this;
+  ColdIschemiaTime(ICodePart code) {
+    this.codePart = code;
   }
 
   @Override
   public ISprecPart getSprecPart() {
-    // TODO Auto-generated method stub
-    return null;
+    return this;
   }
 
   @Override

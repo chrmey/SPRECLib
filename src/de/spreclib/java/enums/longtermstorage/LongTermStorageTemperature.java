@@ -1,4 +1,4 @@
-package de.spreclib.java.enums;
+package de.spreclib.java.enums.longtermstorage;
 
 public enum LongTermStorageTemperature {
   MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES(-85, -60),
@@ -15,5 +15,6 @@ public enum LongTermStorageTemperature {
 
   LongTermStorageTemperature(int lowerBound, int upperBound) {
     // TODO Auto-generated constructor stub
+	// TODO Bounds überarbeiten
   }
 }

@@ -2,39 +2,34 @@ package de.spreclib.java.enums;
 
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.interfaces.ISprecPart;
+import de.spreclib.java.spreclib.CodePart;
 
-public enum Fixation implements ISprecPart, ICodePart {
-  NON_ALDEHYDE_WITH_ACETIC_ACID("ACA"),
-  ALDEHYDE_BASED("ALD"),
-  ALLPROTECT_TISSUE_REAGENT("ALL"),
-  ALCOHOL_BASED("ETH"),
-  NON_BUFFERED_FORMALIN("FOR"),
-  HEAT_STABILIZATION("HST"),
-  SNAP_FREEZING("SNP"),
-  NON_ALDEHYDE_BASE_WITHOUT_ACETIC_ACID("NAA"),
-  NEUTRAL_BUFFERED_FORMALIN("NBF"),
-  OPTIMUM_CUTTING_TEMPERATURE_MEDIUM("OCT"),
-  PAXGENE_TISSUE("PXT"),
-  RNA_LATER("RNL"),
-  UNKNOWN("XXX"),
-  OTHER("ZZZ");
+public enum Fixation implements ISprecPart {
+  NON_ALDEHYDE_WITH_ACETIC_ACID(new CodePart("ACA")),
+  ALDEHYDE_BASED(new CodePart("ALD")),
+  ALLPROTECT_TISSUE_REAGENT(new CodePart("ALL")),
+  ALCOHOL_BASED(new CodePart("ETH")),
+  NON_BUFFERED_FORMALIN(new CodePart("FOR")),
+  HEAT_STABILIZATION(new CodePart("HST")),
+  SNAP_FREEZING(new CodePart("SNP")),
+  NON_ALDEHYDE_BASE_WITHOUT_ACETIC_ACID(new CodePart("NAA")),
+  NEUTRAL_BUFFERED_FORMALIN(new CodePart("NBF")),
+  OPTIMUM_CUTTING_TEMPERATURE_MEDIUM(new CodePart("OCT")),
+  PAXGENE_TISSUE(new CodePart("PXT")),
+  RNA_LATER(new CodePart("RNL")),
+  UNKNOWN(new CodePart("XXX")),
+  OTHER(new CodePart("ZZZ")),
+  ;
 
-  private String codePart;
+  private ICodePart codePart;
 
-  private Fixation(String code) {
+  private Fixation(ICodePart code) {
     this.codePart = code;
   }
 
   @Override
-  public ICodePart getCodePart() {
-    return this;
-  }
-
-  @Override
   public ISprecPart getSprecPart() {
-    // TODO könnte vielleicht eher this.name() zurückgeben
-    //	Methodensignatur auf String ändern
-    return null;
+    return this;
   }
 
   @Override

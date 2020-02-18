@@ -1,4 +1,4 @@
-package de.spreclib.java.enums;
+package de.spreclib.java.enums.postcentrifugation;
 
 public enum PostCentrifugationTemperature {
   ROOM_TEMPERATURE(18, 28),
@@ -6,5 +6,6 @@ public enum PostCentrifugationTemperature {
 
   PostCentrifugationTemperature(int lowerBound, int upperBound) {
     // TODO Auto-generated constructor stub
+	// TODO Bounds überarbeiten
   }
 }

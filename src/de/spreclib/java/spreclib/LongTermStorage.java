@@ -1,35 +1,31 @@
 package de.spreclib.java.spreclib;
 
-import de.spreclib.java.enums.LongTermStorageContainer;
-import de.spreclib.java.enums.LongTermStorageTemperature;
 import de.spreclib.java.enums.SprecPartType;
+import de.spreclib.java.enums.longtermstorage.LongTermStorageContainer;
+import de.spreclib.java.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.interfaces.ISprecPart;
 
-public class LongTermStorage implements ICodePart, ISprecPart {
+public class LongTermStorage implements ISprecPart {
 
   private LongTermStorageContainer longTermStorageContainer;
   private LongTermStorageTemperature longTermStorageTemperature;
 
+  private ICodePart codePart;
+
   public LongTermStorage() {}
 
-  public ICodePart getCodePart() {
-    // TODO implement here
-    return null;
-  }
-
   public ISprecPart getSprecPart() {
-    // TODO implement here
-    return null;
+    return this;
   }
 
   @Override
-  public ICodePart getCodeFromSprecPart() { // TODO Auto-generated method stub
-    return null;
+  public ICodePart getCodeFromSprecPart() {
+    return this.codePart;
   }
 
   @Override
-  public SprecPartType getSprecPartType() { // TODO Auto-generated method stub
-    return null;
+  public SprecPartType getSprecPartType() {
+    return SprecPartType.LONG_TERM_STORAGE;
   }
 }

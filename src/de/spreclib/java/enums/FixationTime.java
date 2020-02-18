@@ -2,34 +2,30 @@ package de.spreclib.java.enums;
 
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.interfaces.ISprecPart;
+import de.spreclib.java.spreclib.CodePart;
 
-public enum FixationTime implements ISprecPart, ICodePart {
-  LESS_THAN_15_MINUTES("A"),
-  FIFTEEN_MINUTES_TO_ONE_HOUR("B"),
-  ONE_TO_FOUR_HOURS("C"),
-  FOUR_TO_EIGHT_HOURS("D"),
-  EIGHT_TO_TWENTYFOUR_HOURS("E"),
-  TWENTYFOUR_TO_FOURTYEIGHT_HOURS("F"),
-  FOURTYEIGHT_TO_SEVENTYTWO_HOURS("G"),
-  NOT_APPLICABLE("N"),
-  UNKNOWN("X"),
-  OTHER("Z");
+public enum FixationTime implements ISprecPart {
+  LESS_THAN_15_MINUTES(new CodePart("A")),
+  FIFTEEN_MINUTES_TO_ONE_HOUR(new CodePart("B")),
+  ONE_TO_FOUR_HOURS(new CodePart("C")),
+  FOUR_TO_EIGHT_HOURS(new CodePart("D")),
+  EIGHT_TO_TWENTYFOUR_HOURS(new CodePart("E")),
+  TWENTYFOUR_TO_FOURTYEIGHT_HOURS(new CodePart("F")),
+  FOURTYEIGHT_TO_SEVENTYTWO_HOURS(new CodePart("G")),
+  NOT_APPLICABLE(new CodePart("N")),
+  UNKNOWN(new CodePart("X")),
+  OTHER(new CodePart("Z")),
+  ;
 
-  private String codePart;
+  private ICodePart codePart;
 
-  FixationTime(String code) {
+  FixationTime(ICodePart code) {
     this.codePart = code;
   }
 
   @Override
-  public ICodePart getCodePart() {
-    return this;
-  }
-
-  @Override
   public ISprecPart getSprecPart() {
-    // TODO Auto-generated method stub
-    return null;
+    return this;
   }
 
   @Override

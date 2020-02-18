@@ -4,8 +4,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import de.spreclib.java.enums.PreCentrifugationDelay;
-import de.spreclib.java.enums.PreCentrifugationTemperature;
+import de.spreclib.java.enums.precentrifugation.PreCentrifugationDelay;
+import de.spreclib.java.enums.precentrifugation.PreCentrifugationTemperature;
 
 class TestPreCentrifugation {
 

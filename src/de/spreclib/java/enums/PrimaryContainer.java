@@ -2,51 +2,47 @@ package de.spreclib.java.enums;
 
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.interfaces.ISprecPart;
+import de.spreclib.java.spreclib.CodePart;
 
-public enum PrimaryContainer implements ISprecPart, ICodePart {
-  ACID_CITRATE_DEXTROSE("ACD"),
-  ADDITIVES("ADD"),
-  SERUM_TUBE_WITHOUT_CLOT_ACTIVATOR("CAT"),
-  CITRATE_PHOSPHATE_DEXTROSE("CPD"),
-  CELL_PREPARATION_TUBE("CPT"),
-  EDTA_AND_GEL("EDG"),
-  LITHIUM_HEPARIN("HEP"),
-  HIRUDIN("HIR"),
-  LITHIUM_HEPARIN_AND_GEL("LHG"),
-  ORAGENE_COLLECTION_CONTAINER("ORG"),
-  PAXGENE_BLOOD_RNA_PLUS("PAX"),
-  POTASSIUM_EDTA("PED"),
-  POLYETHYLENE_TUBE_STERILE("PET"),
-  S8820_PROTEASE_INHIBITOR_TABLETS("PI1"),
-  PROTEASE_INHIBITORS("PIX"),
-  POLYPROPYLENE_TUBE_STRERILE("PPS"),
-  PAXGENE_BLOOD_DNA("PXD"),
-  PAXGENE_BONE_MARROW_RNA("PXR"),
-  SODIUM_CITRATE("SCI"),
-  SODIUM_EDTA("SED"),
-  SODIUM_HEPARIN("SHP"),
-  SODIUM_FLUORIDE_OR_POSTASSIUM_OXALATE("SPO"),
-  SERUM_SEPERATOR_TUBE_WITH_CLOT_ACTIVATOR("SST"),
-  TEMPUS_TUBE("TEM"),
-  TRACE_ELEMENTS_TUBE("TRC"),
-  UNKNOWN("XXX"),
-  OTHER("ZZZ");
+public enum PrimaryContainer implements ISprecPart {
+  ACID_CITRATE_DEXTROSE(new CodePart("ACD")),
+  ADDITIVES(new CodePart("ADD")),
+  SERUM_TUBE_WITHOUT_CLOT_ACTIVATOR(new CodePart("CAT")),
+  CITRATE_PHOSPHATE_DEXTROSE(new CodePart("CPD")),
+  CELL_PREPARATION_TUBE(new CodePart("CPT")),
+  EDTA_AND_GEL(new CodePart("EDG")),
+  LITHIUM_HEPARIN(new CodePart("HEP")),
+  HIRUDIN(new CodePart("HIR")),
+  LITHIUM_HEPARIN_AND_GEL(new CodePart("LHG")),
+  ORAGENE_COLLECTION_CONTAINER(new CodePart("ORG")),
+  PAXGENE_BLOOD_RNA_PLUS(new CodePart("PAX")),
+  POTASSIUM_EDTA(new CodePart("PED")),
+  POLYETHYLENE_TUBE_STERILE(new CodePart("PET")),
+  S8820_PROTEASE_INHIBITOR_TABLETS(new CodePart("PI1")),
+  PROTEASE_INHIBITORS(new CodePart("PIX")),
+  POLYPROPYLENE_TUBE_STRERILE(new CodePart("PPS")),
+  PAXGENE_BLOOD_DNA(new CodePart("PXD")),
+  PAXGENE_BONE_MARROW_RNA(new CodePart("PXR")),
+  SODIUM_CITRATE(new CodePart("SCI")),
+  SODIUM_EDTA(new CodePart("SED")),
+  SODIUM_HEPARIN(new CodePart("SHP")),
+  SODIUM_FLUORIDE_OR_POSTASSIUM_OXALATE(new CodePart("SPO")),
+  SERUM_SEPERATOR_TUBE_WITH_CLOT_ACTIVATOR(new CodePart("SST")),
+  TEMPUS_TUBE(new CodePart("TEM")),
+  TRACE_ELEMENTS_TUBE(new CodePart("TRC")),
+  UNKNOWN(new CodePart("XXX")),
+  OTHER(new CodePart("ZZZ")),
+  ;
 
-  private String codePart;
+  private ICodePart codePart;
 
-  PrimaryContainer(String code) {
+  PrimaryContainer(ICodePart code) {
     this.codePart = code;
   }
 
   @Override
-  public ICodePart getCodePart() {
-    return this;
-  }
-
-  @Override
   public ISprecPart getSprecPart() {
-    // TODO Auto-generated method stub
-    return null;
+    return this;
   }
 
   @Override

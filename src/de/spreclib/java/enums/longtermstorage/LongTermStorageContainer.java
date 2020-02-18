@@ -1,4 +1,4 @@
-package de.spreclib.java.enums;
+package de.spreclib.java.enums.longtermstorage;
 
 public enum LongTermStorageContainer {
   PP_TUBE_ZEROFIVE_TO_TWO_ML,

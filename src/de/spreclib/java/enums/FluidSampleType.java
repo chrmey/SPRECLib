@@ -2,58 +2,53 @@ package de.spreclib.java.enums;
 
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.interfaces.ISprecPart;
+import de.spreclib.java.spreclib.CodePart;
 
-public enum FluidSampleType implements ISprecPart, ICodePart {
-  ASCITIES_FLUID("ASC"),
-  AMNIOTIC_FLUID("AMN"),
-  BRONCHOALVEOLAR_LAVAGE("BAL"),
-  BLOOD_WHOLE("BLD"),
-  BONE_MARROW_ASPIRATE("BMA"),
-  BREAST_MILK("BMK"),
-  BUCCAL_CELLS("BUC"),
-  UNFICOLLED_BUFFY_COAT_VIABLE("BUF"),
-  UNFICOLLED_BUFFY_COAT_NON_VIABLE("BFF"),
-  FICOLL_MONONUCLEAR_CELLS_VIABLE("CEL"),
-  FRESH_CELLS_FROM_NON_BLOOD_SPECIMEN_TYPE("CEN"),
-  CELLS_FROM_NON_BLOOD_SPECIMEN_TYPE_VIABLE("CLN"),
-  CORD_BLOOD("CRD"),
-  CEREBROSPINAL_FLUID("CSF"),
-  DRIED_WHOLE_BLOOD("DWB"),
-  NASAL_WASHING("NAS"),
-  FICOLL_MONONUCLEAR_CELLS_NON_VIABLE("PEL"),
-  CELLS_FROM_NON_BLOOD_SPECIMEN_TYPE_NON_VIABLE("PEN"),
-  PLEURAL_FLUID("PFL"),
-  PLASMA_SINGLE_SPUN("PL1"),
-  PLASMA_DOUBLE_SPUN("PL2"),
-  RED_BLOOD_CELLS("RBC"),
-  SALIVA("SAL"),
-  SEMEN("SEM"),
-  SERUM("SER"),
-  SPUTUM("SPT"),
-  STOOL("STL"),
-  SYNOVIAL_FLUID("SYN"),
-  TEARS("TER"),
-  TWENTYFOUR_HOUR_URINE("U24"),
-  URINE_RANDOM("URN"),
-  URINE_FIRST_MORNING("URM"),
-  URINE_TIMED("URT"),
-  OTHER("ZZZ");
+public enum FluidSampleType implements ISprecPart {
+  ASCITIES_FLUID(new CodePart("ASC")),
+  AMNIOTIC_FLUID(new CodePart("AMN")),
+  BRONCHOALVEOLAR_LAVAGE(new CodePart("BAL")),
+  BLOOD_WHOLE(new CodePart("BLD")),
+  BONE_MARROW_ASPIRATE(new CodePart("BMA")),
+  BREAST_MILK(new CodePart("BMK")),
+  BUCCAL_CELLS(new CodePart("BUC")),
+  UNFICOLLED_BUFFY_COAT_VIABLE(new CodePart("BUF")),
+  UNFICOLLED_BUFFY_COAT_NON_VIABLE(new CodePart("BFF")),
+  FICOLL_MONONUCLEAR_CELLS_VIABLE(new CodePart("CEL")),
+  FRESH_CELLS_FROM_NON_BLOOD_SPECIMEN_TYPE(new CodePart("CEN")),
+  CELLS_FROM_NON_BLOOD_SPECIMEN_TYPE_VIABLE(new CodePart("CLN")),
+  CORD_BLOOD(new CodePart("CRD")),
+  CEREBROSPINAL_FLUID(new CodePart("CSF")),
+  DRIED_WHOLE_BLOOD(new CodePart("DWB")),
+  NASAL_WASHING(new CodePart("NAS")),
+  FICOLL_MONONUCLEAR_CELLS_NON_VIABLE(new CodePart("PEL")),
+  CELLS_FROM_NON_BLOOD_SPECIMEN_TYPE_NON_VIABLE(new CodePart("PEN")),
+  PLEURAL_FLUID(new CodePart("PFL")),
+  PLASMA_SINGLE_SPUN(new CodePart("PL1")),
+  PLASMA_DOUBLE_SPUN(new CodePart("PL2")),
+  RED_BLOOD_CELLS(new CodePart("RBC")),
+  SALIVA(new CodePart("SAL")),
+  SEMEN(new CodePart("SEM")),
+  SERUM(new CodePart("SER")),
+  SPUTUM(new CodePart("SPT")),
+  STOOL(new CodePart("STL")),
+  SYNOVIAL_FLUID(new CodePart("SYN")),
+  TEARS(new CodePart("TER")),
+  TWENTYFOUR_HOUR_URINE(new CodePart("U24")),
+  URINE_RANDOM(new CodePart("URN")),
+  URINE_FIRST_MORNING(new CodePart("URM")),
+  URINE_TIMED(new CodePart("URT")),
+  OTHER(new CodePart("ZZZ"));
 
-  private String codePart;
+  private ICodePart codePart;
 
-  FluidSampleType(String code) {
+  FluidSampleType(CodePart code) {
     this.codePart = code;
   }
 
   @Override
-  public ICodePart getCodePart() {
-    return this;
-  }
-
-  @Override
   public ISprecPart getSprecPart() {
-    // TODO Auto-generated method stub
-    return null;
+    return this;
   }
 
   @Override
