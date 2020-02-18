@@ -13,7 +13,7 @@ public class PostCentrifugation implements ICodePart, ISprecPart {
 
   public PostCentrifugation() {}
 
-  public String getCodePart() {
+  public ICodePart getCodePart() {
     // TODO implement here
     return null;
   }
@@ -24,7 +24,7 @@ public class PostCentrifugation implements ICodePart, ISprecPart {
   }
 
   @Override
-  public String getCodeFromSprecPart() { // TODO Auto-generated method stub
+  public ICodePart getCodeFromSprecPart() { // TODO Auto-generated method stub
     return null;
   }
 

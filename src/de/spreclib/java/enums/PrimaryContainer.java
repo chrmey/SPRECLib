@@ -39,8 +39,8 @@ public enum PrimaryContainer implements ISprecPart, ICodePart {
   }
 
   @Override
-  public String getCodePart() {
-    return this.codePart;
+  public ICodePart getCodePart() {
+    return this;
   }
 
   @Override
@@ -50,7 +50,7 @@ public enum PrimaryContainer implements ISprecPart, ICodePart {
   }
 
   @Override
-  public String getCodeFromSprecPart() {
+  public ICodePart getCodeFromSprecPart() {
     return this.codePart;
   }
 

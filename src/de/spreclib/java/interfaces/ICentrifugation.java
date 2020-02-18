@@ -1,14 +1,20 @@
 package de.spreclib.java.interfaces;
 
-import de.spreclib.java.enums.CentrifugationBraking;
-import de.spreclib.java.enums.CentrifugationTemperature;
-import de.spreclib.java.spreclib.CentrifugationType;
+import de.spreclib.java.enums.centrifugation.CentrifugationBraking;
+import de.spreclib.java.enums.centrifugation.CentrifugationDuration;
+import de.spreclib.java.enums.centrifugation.CentrifugationSpeed;
+import de.spreclib.java.enums.centrifugation.CentrifugationTemperature;
+import de.spreclib.java.enums.centrifugation.CentrifugationType;
 
 public interface ICentrifugation {
-	
-	CentrifugationType getCentrifugationType();
-	CentrifugationTemperature getCentrifugationTemperature();
-	CentrifugationTime getCentrifugationTime();
-	CentrifugationBraking getCentrifugationBraking();
-	
+
+  CentrifugationType getCentrifugationType();
+
+  CentrifugationSpeed getCentrifugationSpeed();
+
+  CentrifugationTemperature getCentrifugationTemperature();
+
+  CentrifugationDuration getCentrifugationDuration();
+
+  CentrifugationBraking getCentrifugationBraking();
 }

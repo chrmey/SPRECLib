@@ -1,4 +1,4 @@
-package de.spreclib.java.enums;
+package de.spreclib.java.enums.centrifugation;
 
 public enum CentrifugationSpeed {
   LESS_THREETHOUSAND_G(0, 3000),

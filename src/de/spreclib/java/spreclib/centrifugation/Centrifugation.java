@@ -1,33 +1,76 @@
-package de.spreclib.java.spreclib;
+package de.spreclib.java.spreclib.centrifugation;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import de.spreclib.java.enums.CentrifugationBraking;
-import de.spreclib.java.enums.CentrifugationDuration;
-import de.spreclib.java.enums.CentrifugationSpeed;
-import de.spreclib.java.enums.CentrifugationTemperature;
+import de.spreclib.java.enums.centrifugation.CentrifugationBraking;
+import de.spreclib.java.enums.centrifugation.CentrifugationDuration;
+import de.spreclib.java.enums.centrifugation.CentrifugationSpeed;
+import de.spreclib.java.enums.centrifugation.CentrifugationTemperature;
+import de.spreclib.java.enums.centrifugation.CentrifugationType;
+import de.spreclib.java.interfaces.ICentrifugation;
 import de.spreclib.java.interfaces.ICodePart;
-import de.spreclib.java.interfaces.ISprecPart;
+import de.spreclib.java.spreclib.CodePart;
 
-public abstract class Centrifugation implements ISprecPart, ICodePart {
+public class Centrifugation implements ICentrifugation {
 
-  protected CentrifugationDuration centrifugationDuration;
-  protected CentrifugationSpeed centrifugationSpeed;
-  protected CentrifugationTemperature centrifugationTemperature;
-  protected CentrifugationBraking centrifugationBraking;
+  protected static final List<ICentrifugation> centrifugations;
 
-  protected Map<String, List> centrifugationRuleMap;
+  private CentrifugationType centrifugationType;
+  private CentrifugationDuration centrifugationDuration;
+  private CentrifugationSpeed centrifugationSpeed;
+  private CentrifugationTemperature centrifugationTemperature;
+  private CentrifugationBraking centrifugationBraking;
+  private ICodePart codePart;
 
-  protected String codePart;
-
-  public Centrifugation() {}
-
-  public String getCodePart() {
-    return this.codePart;
+  static {
+    centrifugations = new ArrayList<>();
+    centrifugations.add(new NoCentrifugation(new CodePart("N")));
+    centrifugations.add(new UnknownCentrifugation(new CodePart("X")));
+    centrifugations.add(new OtherCentrifugation(new CodePart("Z")));
+  }
+  
+  protected Centrifugation(ICodePart codePart) {
+	  this.codePart = codePart;
   }
 
-  public String getCodeFromSprecPart() {
-    return this.codePart;
+  public Centrifugation(CentrifugationType centrifugationType, 
+		  CentrifugationDuration centrifugationDuration,
+		  CentrifugationSpeed centrifugationSpeed, 
+		  CentrifugationTemperature centrifugationTemperature,
+		  CentrifugationBraking centrifugationBraking,
+		  ICodePart codePart) {
+	  this.centrifugationType = centrifugationType;
+	  this.centrifugationDuration = centrifugationDuration;
+	  this.centrifugationSpeed = centrifugationSpeed;
+	  this.centrifugationTemperature = centrifugationTemperature;
+	  this.centrifugationBraking = centrifugationBraking;
+	  this.codePart = codePart;
+	  
+  }
+
+  @Override
+  public CentrifugationType getCentrifugationType() {
+    return this.centrifugationType;
+  }
+
+  @Override
+  public CentrifugationSpeed getCentrifugationSpeed() {
+    return this.centrifugationSpeed;
+  }
+
+  @Override
+  public CentrifugationTemperature getCentrifugationTemperature() {
+    return this.centrifugationTemperature;
+  }
+
+  @Override
+  public CentrifugationDuration getCentrifugationDuration() {
+    return this.centrifugationDuration;
+  }
+
+  @Override
+  public CentrifugationBraking getCentrifugationBraking() {
+    return this.centrifugationBraking;
   }
 }

@@ -1,10 +1,16 @@
-package de.spreclib.java.spreclib;
+package de.spreclib.java.spreclib.centrifugation;
 
-public class OtherCentrifugation extends MyCentrifugation {
+import de.spreclib.java.enums.centrifugation.CentrifugationType;
+import de.spreclib.java.interfaces.ICodePart;
 
+public class OtherCentrifugation extends Centrifugation {
 
-	@Override
-	public CentrifugationType getCentrifugationType() {
-		return CentrifugationType.OTHER;
-	}
+  public OtherCentrifugation(ICodePart codePart) {
+    super(codePart);
+  }
+
+  @Override
+  public CentrifugationType getCentrifugationType() {
+    return CentrifugationType.OTHER;
+  }
 }

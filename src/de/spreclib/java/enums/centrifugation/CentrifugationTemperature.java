@@ -1,4 +1,4 @@
-package de.spreclib.java.enums;
+package de.spreclib.java.enums.centrifugation;
 
 public enum CentrifugationTemperature {
   ROOM_TEMPERATURE(18, 28),

@@ -1,4 +1,4 @@
-package de.spreclib.java.spreclib;
+package de.spreclib.java.enums.centrifugation;
 
 public enum CentrifugationType {
 	

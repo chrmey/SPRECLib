@@ -1,4 +1,4 @@
-package de.spreclib.java.spreclib;
+package de.spreclib.java.spreclib.centrifugation;
 
 import de.spreclib.java.enums.SprecPartType;
 import de.spreclib.java.interfaces.ISprecPart;

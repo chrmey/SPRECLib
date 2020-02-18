@@ -26,10 +26,10 @@ public enum Fixation implements ISprecPart, ICodePart {
   }
 
   @Override
-  public String getCodePart() {
-    return codePart;
+  public ICodePart getCodePart() {
+    return this;
   }
-  
+
   @Override
   public ISprecPart getSprecPart() {
     // TODO könnte vielleicht eher this.name() zurückgeben
@@ -38,17 +38,12 @@ public enum Fixation implements ISprecPart, ICodePart {
   }
 
   @Override
-  public String getCodeFromSprecPart() {
+  public ICodePart getCodeFromSprecPart() {
     return this.codePart;
   }
 
   @Override
   public SprecPartType getSprecPartType() {
     return SprecPartType.FIXATION;
-  }
-  
-  @Override 
-  public String toString() {
-	  return codePart;
   }
 }

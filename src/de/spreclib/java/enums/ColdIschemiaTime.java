@@ -2,27 +2,28 @@ package de.spreclib.java.enums;
 
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.interfaces.ISprecPart;
+import de.spreclib.java.spreclib.CodePart;
 
 public enum ColdIschemiaTime implements ISprecPart, ICodePart {
-  LESS_THAN_TWO_MINUTES("A"),
-  TWO_TO_TEN_MINUTES("B"),
-  TEN_TO_TWENTY_MINUTES("C"),
-  TWENTY_TO_THIRTY_MINUTES("D"),
-  THIRTY_TO_SIXTY_MINUTES("E"),
-  MORE_THAN_SIXTY_MINUTES("F"),
-  UNKNOWN("X"),
-  NOT_APPLICABLE("N"),
-  OTHER("Z");
+  LESS_THAN_TWO_MINUTES(new CodePart("A")),
+  TWO_TO_TEN_MINUTES(new CodePart("B")),
+  TEN_TO_TWENTY_MINUTES(new CodePart("C")),
+  TWENTY_TO_THIRTY_MINUTES(new CodePart("D")),
+  THIRTY_TO_SIXTY_MINUTES(new CodePart("E")),
+  MORE_THAN_SIXTY_MINUTES(new CodePart("F")),
+  UNKNOWN(new CodePart("X")),
+  NOT_APPLICABLE(new CodePart("N")),
+  OTHER(new CodePart("Z"));
 
-  private String codePart;
+  private CodePart codePart;
 
-  ColdIschemiaTime(String code) {
-    this.codePart = code;
+  ColdIschemiaTime(CodePart code) {
+    this.codePart = code;;
   }
 
   @Override
-  public String getCodePart() {
-    return this.codePart;
+  public ICodePart getCodePart() {
+    return this;
   }
 
   @Override
@@ -32,7 +33,7 @@ public enum ColdIschemiaTime implements ISprecPart, ICodePart {
   }
 
   @Override
-  public String getCodeFromSprecPart() {
+  public ICodePart getCodeFromSprecPart() {
     return this.codePart;
   }
 

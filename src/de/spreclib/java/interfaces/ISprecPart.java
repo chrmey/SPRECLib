@@ -6,7 +6,7 @@ public interface ISprecPart {
 
   public ISprecPart getSprecPart();
 
-  public String getCodeFromSprecPart();
+  public ICodePart getCodeFromSprecPart();
 
   public SprecPartType getSprecPartType();
 }

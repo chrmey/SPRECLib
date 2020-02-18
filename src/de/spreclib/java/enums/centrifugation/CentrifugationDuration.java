@@ -1,4 +1,4 @@
-package de.spreclib.java.enums;
+package de.spreclib.java.enums.centrifugation;
 
 public enum CentrifugationDuration {
   TEN_TO_FIFTEEN_MINUTES(10, 15),
