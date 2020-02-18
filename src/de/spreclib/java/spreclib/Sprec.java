@@ -12,6 +12,6 @@ public abstract class Sprec implements ISprec {
   protected Map<SprecPartType, ISprecPart> sprecParts;
 
   public Sprec() {
-	  this.sprecParts = new HashMap<>();
+    this.sprecParts = new HashMap<>();
   }
 }

@@ -6,7 +6,6 @@ public enum PreCentrifugationTemperature {
   THIRTYFIVE_TO_THIRTYEIGHT_DEGREES(35, 38);
 
   PreCentrifugationTemperature(int lowerBound, int upperBound) {
-	// TODO Bounds überarbeiten
+    // TODO Bounds überarbeiten
   }
-
 }

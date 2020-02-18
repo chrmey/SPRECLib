@@ -10,13 +10,13 @@ public class SolidSampleSprecTest {
 
   @Test
   public void test1() {
-	  ISprecPart solidSampleType = new SolidSampleSprec().getSolidSampleType();
-	  assertNotNull(solidSampleType);
+    ISprecPart solidSampleType = new SolidSampleSprec().getSolidSampleType();
+    assertNotNull(solidSampleType);
   }
 
   @Test
   public void test2() {
-	  Sprec sprec = new SolidSampleSprec();
-	  assertNotNull(sprec.sprecParts);
+    Sprec sprec = new SolidSampleSprec();
+    assertNotNull(sprec.sprecParts);
   }
 }

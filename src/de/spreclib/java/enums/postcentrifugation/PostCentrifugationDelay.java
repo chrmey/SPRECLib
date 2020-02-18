@@ -9,6 +9,6 @@ public enum PostCentrifugationDelay {
 
   PostCentrifugationDelay(int lowerBound, int upperBound) {
     // TODO Auto-generated constructor stub
-	// TODO Bounds überarbeiten
+    // TODO Bounds überarbeiten
   }
 }

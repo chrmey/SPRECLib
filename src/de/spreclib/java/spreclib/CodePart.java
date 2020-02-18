@@ -9,7 +9,8 @@ public class CodePart implements ICodePart {
   public CodePart(String codePart) {
     this.code = codePart;
   }
-@Override
+
+  @Override
   public ICodePart getCodePart() {
     return this;
   }

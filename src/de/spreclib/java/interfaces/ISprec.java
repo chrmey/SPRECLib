@@ -7,7 +7,6 @@ public interface ISprec {
   boolean isSolidSample();
 
   ISprecPart getLongTermStorage();
-  
+
   String getSprecCode();
-  
 }
