@@ -8,7 +8,6 @@ import de.spreclib.java.enums.centrifugation.CentrifugationTemperature;
 import de.spreclib.java.enums.centrifugation.CentrifugationType;
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.interfaces.ISprecPart;
-import de.spreclib.java.spreclib.CodePart;
 
 public class SecondCentrifugation extends Centrifugation implements ISprecPart {
 
