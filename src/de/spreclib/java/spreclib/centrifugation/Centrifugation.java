@@ -1,7 +1,7 @@
 package de.spreclib.java.spreclib.centrifugation;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import de.spreclib.java.enums.centrifugation.CentrifugationBraking;
 import de.spreclib.java.enums.centrifugation.CentrifugationDuration;
@@ -14,7 +14,7 @@ import de.spreclib.java.spreclib.CodePart;
 
 public class Centrifugation implements ICentrifugation {
 
-  protected static final List<ICentrifugation> centrifugations;
+  protected static final Set<ICentrifugation> centrifugations;
 
   private CentrifugationType centrifugationType;
   private CentrifugationDuration centrifugationDuration;
@@ -24,7 +24,7 @@ public class Centrifugation implements ICentrifugation {
   protected ICodePart codePart;
 
   static {
-    centrifugations = new ArrayList<>();
+    centrifugations = new HashSet<>();
     centrifugations.add(new NoCentrifugation(new CodePart("N")));
     centrifugations.add(new UnknownCentrifugation(new CodePart("X")));
     centrifugations.add(new OtherCentrifugation(new CodePart("Z")));

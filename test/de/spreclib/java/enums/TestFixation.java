@@ -1,4 +1,4 @@
-package de.spreclib;
+package de.spreclib.java.enums;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
