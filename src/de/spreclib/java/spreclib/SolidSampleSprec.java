@@ -1,10 +1,23 @@
 package de.spreclib.java.spreclib;
 
+import de.spreclib.java.enums.ColdIschemiaTime;
+import de.spreclib.java.enums.Fixation;
+import de.spreclib.java.enums.FixationTime;
+import de.spreclib.java.enums.SolidSampleType;
 import de.spreclib.java.enums.SprecPartType;
+import de.spreclib.java.enums.TypeOfCollection;
+import de.spreclib.java.enums.WarmIschemiaTime;
 import de.spreclib.java.interfaces.ISolidSampleSprec;
 import de.spreclib.java.interfaces.ISprecPart;
 
 public class SolidSampleSprec extends Sprec implements ISolidSampleSprec {
+
+  private SolidSampleType solidSampleType;
+  private TypeOfCollection typeOfCollection;
+  private WarmIschemiaTime warmIschemiaTime;
+  private ColdIschemiaTime coldIschemiaTime;
+  private Fixation fixation;
+  private FixationTime fixationTime;
 
   public SolidSampleSprec() {}
 
@@ -43,11 +56,5 @@ public class SolidSampleSprec extends Sprec implements ISolidSampleSprec {
   @Override
   public ISprecPart getLongTermStorage() {
     return this.sprecParts.get(SprecPartType.LONG_TERM_STORAGE);
-  }
-
-  @Override
-  public String getSprecCode() {
-    // TODO Auto-generated method stub
-    return null;
   }
 }
