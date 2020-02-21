@@ -1,5 +1,7 @@
 package de.spreclib.java.interfaces;
 
+import de.spreclib.java.spreclib.Sprec;
+
 public interface ISprec {
 
   boolean isFluidSample();
@@ -8,5 +10,7 @@ public interface ISprec {
 
   ISprecPart getLongTermStorage();
 
-  String getSprecCode();
+  String toString();
+  
+  Sprec getSprec();
 }
