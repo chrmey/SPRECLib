@@ -10,7 +10,7 @@ public interface ISprec {
 
   ISprecPart getLongTermStorage();
 
-  String toString();
+  String getStringRepresentation();
   
   Sprec getSprec();
 }

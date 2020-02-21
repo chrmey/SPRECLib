@@ -25,7 +25,7 @@ public abstract class Sprec implements ISprec {
   }
   
   @Override
-  public String toString() {
+  public String getStringRepresentation() {
     StringBuilder stringBuilder = new StringBuilder();
     for (SprecPartType key : this.sprecParts.keySet()) {
       if (sprecParts.get(key) == null) {
