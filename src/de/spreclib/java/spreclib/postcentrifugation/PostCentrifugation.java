@@ -7,6 +7,7 @@ import de.spreclib.java.interfaces.ISprecPart;
 
 public abstract class PostCentrifugation implements ISprecPart {
 
+  private final SprecPartType sprecPartType = SprecPartType.POST_CENTRIFUGATION;
   private PostCentrifugationType postCentrifugationType;
   private ICodePart codePart;
 
@@ -28,7 +29,7 @@ public abstract class PostCentrifugation implements ISprecPart {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return SprecPartType.POST_CENTRIFUGATION;
+    return this.sprecPartType;
   }
 
   public PostCentrifugationType getPostCentrifugationType() {
