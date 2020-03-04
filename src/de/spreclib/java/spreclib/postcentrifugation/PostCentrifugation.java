@@ -11,8 +11,7 @@ public abstract class PostCentrifugation implements ISprecPart {
   private PostCentrifugationType postCentrifugationType;
   private ICodePart codePart;
 
-  public PostCentrifugation(
-      PostCentrifugationType postCentrifugationType, ICodePart codePart) {
+  public PostCentrifugation(PostCentrifugationType postCentrifugationType, ICodePart codePart) {
     this.postCentrifugationType = postCentrifugationType;
     this.codePart = codePart;
   }

@@ -23,7 +23,7 @@ public abstract class Centrifugation implements ISprecPart {
   }
 
   @Override
-  public ISprecPart getSprecPart() { 
+  public ISprecPart getSprecPart() {
     return this;
   }
 

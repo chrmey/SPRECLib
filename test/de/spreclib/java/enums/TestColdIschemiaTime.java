@@ -10,10 +10,10 @@ public class TestColdIschemiaTime {
 
   @Test
   public void test() {
-	  ColdIschemiaTime lessThanTwoMinutes = ColdIschemiaTime.LESS_THAN_TWO_MINUTES;
-	  
-	  assertTrue(lessThanTwoMinutes instanceof ISprecPart);
-	  
-	  assertEquals(SprecPartType.COLD_ISCHEMIA_TIME, lessThanTwoMinutes.getSprecPartType());
+    ColdIschemiaTime lessThanTwoMinutes = ColdIschemiaTime.LESS_THAN_TWO_MINUTES;
+
+    assertTrue(lessThanTwoMinutes instanceof ISprecPart);
+
+    assertEquals(SprecPartType.COLD_ISCHEMIA_TIME, lessThanTwoMinutes.getSprecPartType());
   }
 }

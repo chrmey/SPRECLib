@@ -24,7 +24,6 @@ public class NormalPostCentrifugation extends PostCentrifugation {
     return this.postCentrifugationDelay;
   }
 
- 
   public PostCentrifugationTemperature getPostCentrifugationTemperature() {
     return this.postCentrifugationTemperature;
   }
