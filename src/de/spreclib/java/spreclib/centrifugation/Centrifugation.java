@@ -22,12 +22,6 @@ public abstract class Centrifugation implements ISprecPart {
     return this.centrifugationType;
   }
 
-  @Override
-  public ISprecPart getSprecPart() {
-    return this;
-  }
-
-  @Override
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;
   }
