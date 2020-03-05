@@ -5,11 +5,10 @@ import de.spreclib.java.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.java.enums.longtermstorage.LongTermStorageType;
 
 public interface ILongTermStorage {
-	
-	LongTermStorageType getLongTermStorageType();
-	
-	LongTermStorageContainer getLongTermStorageContainer();
-	
-	LongTermStorageTemperature getLongTermStorageTemperature();
-	
+
+  LongTermStorageType getLongTermStorageType();
+
+  LongTermStorageContainer getLongTermStorageContainer();
+
+  LongTermStorageTemperature getLongTermStorageTemperature();
 }

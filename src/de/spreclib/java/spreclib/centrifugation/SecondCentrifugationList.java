@@ -17,9 +17,15 @@ public class SecondCentrifugationList {
 
   static {
     centrifugations = new HashSet<>();
-    centrifugations.add(new SpecialCentrifugation(CentrifugationType.NO, new CodePart("N"), SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(new SpecialCentrifugation(CentrifugationType.UNKNOWN, new CodePart("X"), SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(new SpecialCentrifugation(CentrifugationType.OTHER, new CodePart("Z"), SprecPartType.SECOND_CENTRIFUGATION));
+    centrifugations.add(
+        new SpecialCentrifugation(
+            CentrifugationType.NO, new CodePart("N"), SprecPartType.SECOND_CENTRIFUGATION));
+    centrifugations.add(
+        new SpecialCentrifugation(
+            CentrifugationType.UNKNOWN, new CodePart("X"), SprecPartType.SECOND_CENTRIFUGATION));
+    centrifugations.add(
+        new SpecialCentrifugation(
+            CentrifugationType.OTHER, new CodePart("Z"), SprecPartType.SECOND_CENTRIFUGATION));
     centrifugations.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,

@@ -11,10 +11,6 @@ public class CodePart implements ICodePart {
   }
 
   @Override
-  public ICodePart getCodePart() {
-    return this;
-  }
-
   public String getStringRepresentation() {
     return this.code;
   }

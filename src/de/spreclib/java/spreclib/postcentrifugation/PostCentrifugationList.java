@@ -15,8 +15,7 @@ public final class PostCentrifugationList {
   static {
     postCentrifugations = new HashSet<>();
     postCentrifugations.add(
-        new SpecialPostCentrifugation(
-            PostCentrifugationType.NOT_APPLICABLE, new CodePart("N")));
+        new SpecialPostCentrifugation(PostCentrifugationType.NOT_APPLICABLE, new CodePart("N")));
     postCentrifugations.add(
         new SpecialPostCentrifugation(PostCentrifugationType.UNKNOWN, new CodePart("X")));
     postCentrifugations.add(

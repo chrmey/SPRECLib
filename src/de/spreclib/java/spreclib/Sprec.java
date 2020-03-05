@@ -14,4 +14,9 @@ public abstract class Sprec implements ISprec {
   public Sprec() {
     this.sprecParts = new HashMap<>();
   }
+
+  @Override
+  public ISprecPart getLongTermStorage() {
+    return this.sprecParts.get(SprecPartType.LONG_TERM_STORAGE);
+  }
 }

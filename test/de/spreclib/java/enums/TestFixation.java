@@ -1,34 +1,25 @@
 package de.spreclib.java.enums;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
-import de.spreclib.java.enums.Fixation;
+import org.junit.Test;
+
+import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.interfaces.ISprecPart;
 
-class TestFixation {
+public class TestFixation {
 
   @Test
-  void shouldReturnCorrectCodePart() {
-    Fixation fixation = Fixation.ALCOHOL_BASED;
-    String part = fixation.getCodePart();
-    System.out.println(part);
-    assertEquals("ETH", part);
+  public void testGetCodeFromSprecPart() {
+    ICodePart codePart = Fixation.ALCOHOL_BASED.getCodeFromSprecPart();
+    assertNotNull(codePart);
+    assertEquals("ETH", codePart.getStringRepresentation());
   }
 
-  /*
-   @Test
-   void shouldReturnCorrectSprecPart() {
-     String part = Fixation.getSprecPart();
-     System.out.println(part);
-     assertEquals(Fixation.ALCOHOL_BASED.getCodePart(), part);
-   }
-  */
-
   @Test
-  void shouldReturnCorrectSprecPart() {
-    String part = Fixation.ALCOHOL_BASED.getCodePartFromSprecPart();
-    System.out.println(part);
-    assertEquals(Fixation.ALCOHOL_BASED.getCodePart(), part);
+  public void testGetSprecPartType() {
+    ISprecPart fixation = Fixation.ALCOHOL_BASED;
+    assertEquals(SprecPartType.FIXATION, fixation.getSprecPartType());
   }
 }

@@ -41,11 +41,6 @@ public enum PrimaryContainer implements ISprecPart {
   }
 
   @Override
-  public ISprecPart getSprecPart() {
-    return this;
-  }
-
-  @Override
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;
   }

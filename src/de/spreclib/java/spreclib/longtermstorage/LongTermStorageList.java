@@ -14,7 +14,8 @@ public class LongTermStorageList {
 
   static {
     longTermStorages = new HashSet<>();
-    longTermStorages.add(new SpecialLongTermStorage(LongTermStorageType.UNKNOWN, new CodePart("X")));
+    longTermStorages.add(
+        new SpecialLongTermStorage(LongTermStorageType.UNKNOWN, new CodePart("X")));
     longTermStorages.add(new SpecialLongTermStorage(LongTermStorageType.OTHER, new CodePart("Z")));
     longTermStorages.add(
         new NormalLongTermStorage(
