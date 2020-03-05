@@ -55,7 +55,7 @@ public class TestSolidSampleSprec {
 
   @Test
   public void testGetFixationTime() {
-    ISprecPart fixationTime = new SolidSampleSprec().getFixation();
+    ISprecPart fixationTime = new SolidSampleSprec().getFixationTime();
     assertNull(fixationTime);
   }
 
