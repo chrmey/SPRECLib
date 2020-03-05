@@ -11,9 +11,9 @@ import de.spreclib.java.enums.centrifugation.CentrifugationTemperature;
 import de.spreclib.java.enums.centrifugation.CentrifugationType;
 import de.spreclib.java.spreclib.CodePart;
 
-public class FirstCentrifugationList {
+public abstract class FirstCentrifugationList {
 
-  protected static final Set<Centrifugation> centrifugations;
+  public static final Set<Centrifugation> centrifugations;
 
   static {
     centrifugations = new HashSet<>();
