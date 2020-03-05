@@ -22,11 +22,6 @@ public enum ColdIschemiaTime implements ISprecPart {
     this.codePart = code;
   }
 
-
-  public ISprecPart getSprecPart() {
-    return this;
-  }
-
   @Override
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;
