@@ -9,7 +9,7 @@ import de.spreclib.java.spreclib.centrifugation.FirstCentrifugationList;
 public class TestFirstCentrifugationList {
 
   @Test
-  public void testFirstCentrifugationList() {
+  public void testFirstCentrifugationListSize() {
     int actualSize = FirstCentrifugationList.centrifugations.size();
     int expectedSize = 14;
     assertEquals(expectedSize, actualSize);
