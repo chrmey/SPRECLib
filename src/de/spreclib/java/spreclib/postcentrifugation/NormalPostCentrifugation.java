@@ -27,4 +27,30 @@ public class NormalPostCentrifugation extends PostCentrifugation {
   public PostCentrifugationTemperature getPostCentrifugationTemperature() {
     return this.postCentrifugationTemperature;
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = super.hashCode();
+    result =
+        prime * result
+            + ((postCentrifugationDelay == null) ? 0 : postCentrifugationDelay.hashCode());
+    result =
+        prime * result
+            + ((postCentrifugationTemperature == null)
+                ? 0
+                : postCentrifugationTemperature.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (!super.equals(obj)) return false;
+    if (getClass() != obj.getClass()) return false;
+    NormalPostCentrifugation other = (NormalPostCentrifugation) obj;
+    if (postCentrifugationDelay != other.postCentrifugationDelay) return false;
+    if (postCentrifugationTemperature != other.postCentrifugationTemperature) return false;
+    return true;
+  }
 }
