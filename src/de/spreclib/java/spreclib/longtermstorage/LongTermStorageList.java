@@ -8,9 +8,9 @@ import de.spreclib.java.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.java.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.java.spreclib.CodePart;
 
-public class LongTermStorageList {
+public abstract class LongTermStorageList {
 
-  private static final Set<LongTermStorage> longTermStorages;
+  public static final Set<LongTermStorage> longTermStorages;
 
   static {
     longTermStorages = new HashSet<>();
