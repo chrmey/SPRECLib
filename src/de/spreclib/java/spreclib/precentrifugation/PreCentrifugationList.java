@@ -8,9 +8,9 @@ import de.spreclib.java.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.java.spreclib.CodePart;
 
-public class PreCentrifugationList {
+public abstract class PreCentrifugationList {
 
-  private static final Set<PreCentrifugation> preCentrifugations;
+  public static final Set<PreCentrifugation> preCentrifugations;
 
   static {
     preCentrifugations = new HashSet<>();
