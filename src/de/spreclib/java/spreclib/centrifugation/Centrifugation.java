@@ -31,4 +31,28 @@ public abstract class Centrifugation implements ISprecPart {
   public SprecPartType getSprecPartType() {
     return this.sprecPartType;
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((centrifugationType == null) ? 0 : centrifugationType.hashCode());
+    result = prime * result + ((codePart == null) ? 0 : codePart.hashCode());
+    result = prime * result + ((sprecPartType == null) ? 0 : sprecPartType.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null) return false;
+    if (getClass() != obj.getClass()) return false;
+    Centrifugation other = (Centrifugation) obj;
+    if (centrifugationType != other.centrifugationType) return false;
+    if (codePart == null) {
+      if (other.codePart != null) return false;
+    } else if (!codePart.equals(other.codePart)) return false;
+    if (sprecPartType != other.sprecPartType) return false;
+    return true;
+  }
 }
