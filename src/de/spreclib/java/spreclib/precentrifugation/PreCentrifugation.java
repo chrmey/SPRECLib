@@ -29,4 +29,29 @@ public abstract class PreCentrifugation implements ISprecPart {
   public PreCentrifugationType getPreCentrifugationType() {
     return preCentrifugationType;
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((SPRECPARTTYPE == null) ? 0 : SPRECPARTTYPE.hashCode());
+    result = prime * result + ((codePart == null) ? 0 : codePart.hashCode());
+    result =
+        prime * result + ((preCentrifugationType == null) ? 0 : preCentrifugationType.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null) return false;
+    if (getClass() != obj.getClass()) return false;
+    PreCentrifugation other = (PreCentrifugation) obj;
+    if (SPRECPARTTYPE != other.SPRECPARTTYPE) return false;
+    if (codePart == null) {
+      if (other.codePart != null) return false;
+    } else if (!codePart.equals(other.codePart)) return false;
+    if (preCentrifugationType != other.preCentrifugationType) return false;
+    return true;
+  }
 }

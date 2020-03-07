@@ -27,4 +27,28 @@ public class NormalLongTermStorage extends LongTermStorage {
   public LongTermStorageTemperature getLongTermStorageTemperature() {
     return this.longTermStorageTemperature;
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = super.hashCode();
+    result =
+        prime * result
+            + ((longTermStorageContainer == null) ? 0 : longTermStorageContainer.hashCode());
+    result =
+        prime * result
+            + ((longTermStorageTemperature == null) ? 0 : longTermStorageTemperature.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (!super.equals(obj)) return false;
+    if (getClass() != obj.getClass()) return false;
+    NormalLongTermStorage other = (NormalLongTermStorage) obj;
+    if (longTermStorageContainer != other.longTermStorageContainer) return false;
+    if (longTermStorageTemperature != other.longTermStorageTemperature) return false;
+    return true;
+  }
 }

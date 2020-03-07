@@ -27,4 +27,29 @@ public class NormalPreCentrifugation extends PreCentrifugation {
   public PreCentrifugationTemperature getPreCentrifugationTemperature() {
     return this.preCentrifugationTemperature;
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = super.hashCode();
+    result =
+        prime * result + ((preCentrifugationDelay == null) ? 0 : preCentrifugationDelay.hashCode());
+    result =
+        prime * result
+            + ((preCentrifugationTemperature == null)
+                ? 0
+                : preCentrifugationTemperature.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (!super.equals(obj)) return false;
+    if (getClass() != obj.getClass()) return false;
+    NormalPreCentrifugation other = (NormalPreCentrifugation) obj;
+    if (preCentrifugationDelay != other.preCentrifugationDelay) return false;
+    if (preCentrifugationTemperature != other.preCentrifugationTemperature) return false;
+    return true;
+  }
 }
