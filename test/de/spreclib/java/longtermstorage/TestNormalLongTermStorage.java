@@ -40,6 +40,7 @@ public class TestNormalLongTermStorage {
     ICodePart actual = normalLongTermStorage.getCodeFromSprecPart();
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    assertEquals(expected, actual);
   }
 
   @Test

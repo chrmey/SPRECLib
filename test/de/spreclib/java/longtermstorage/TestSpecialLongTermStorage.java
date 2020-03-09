@@ -34,6 +34,7 @@ public class TestSpecialLongTermStorage {
     ICodePart actual = specialLongTermStorage.getCodeFromSprecPart();
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    assertEquals(expected, actual);
   }
 
   @Test

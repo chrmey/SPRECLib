@@ -40,6 +40,7 @@ public class TestNormalPostCentrifugation {
     ICodePart actual = normalPostCentrifugation.getCodeFromSprecPart();
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    assertEquals(expected, actual);
   }
 
   @Test

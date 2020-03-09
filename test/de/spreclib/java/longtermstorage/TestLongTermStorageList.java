@@ -1,11 +1,11 @@
 package de.spreclib.java.longtermstorage;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -190,8 +190,36 @@ public class TestLongTermStorageList {
 
   @Test
   public void testLongTermStorageListContents() {
-    Object[] actual = LongTermStorageList.longTermStorages.toArray();
-    Object[] expected = testList.toArray();
-    Assert.assertArrayEquals(expected, actual);
+    for (LongTermStorage longTermStorage : testList) {
+      assertTrue(LongTermStorageList.longTermStorages.contains(longTermStorage));
+    }
+  }
+
+  @Test
+  public void testLongTermStorageListContentTypes() {
+    int expectedNormalLongTermStorages = 0;
+    int expectedSpecialLongTermStorages = 0;
+    int actualNormalLongTermStorages = 0;
+    int actualSpecialLongTermStorages = 0;
+
+    for (LongTermStorage longTermStorage : testList) {
+      if (longTermStorage instanceof SpecialLongTermStorage) {
+        expectedSpecialLongTermStorages++;
+      }
+      if (longTermStorage instanceof NormalLongTermStorage) {
+        expectedNormalLongTermStorages++;
+      }
+    }
+
+    for (LongTermStorage longTermStorage : LongTermStorageList.longTermStorages) {
+      if (longTermStorage instanceof SpecialLongTermStorage) {
+        actualSpecialLongTermStorages++;
+      }
+      if (longTermStorage instanceof NormalLongTermStorage) {
+        actualNormalLongTermStorages++;
+      }
+    }
+    assertEquals(expectedNormalLongTermStorages, actualNormalLongTermStorages);
+    assertEquals(expectedSpecialLongTermStorages, actualSpecialLongTermStorages);
   }
 }

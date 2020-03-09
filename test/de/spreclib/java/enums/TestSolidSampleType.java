@@ -13,10 +13,11 @@ public class TestSolidSampleType {
 
   @Test
   public void testGetCodeFromSprecPart() {
-    ICodePart codePart = SolidSampleType.FRESH_CELLS_FROM_NON_BLOOD_SPECIMEN.getCodeFromSprecPart();
+    ICodePart actual = SolidSampleType.FRESH_CELLS_FROM_NON_BLOOD_SPECIMEN.getCodeFromSprecPart();
     ICodePart expected = new CodePart("CEN");
-    assertNotNull(codePart);
-    assertEquals(expected.getStringRepresentation(), codePart.getStringRepresentation());
+    assertNotNull(actual);
+    assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    assertEquals(expected, actual);
   }
 
   @Test

@@ -35,6 +35,7 @@ public class TestSpecialCentrifugation {
     ICodePart actual = centrifugation.getCodeFromSprecPart();
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    assertEquals(expected, actual);
   }
 
   @Test

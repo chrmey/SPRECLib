@@ -13,10 +13,11 @@ public class TestWarmIschemiaTime {
 
   @Test
   public void testGetCodeFromSprecPart() {
-    ICodePart codePart = WarmIschemiaTime.LESS_TWO_MINUTES.getCodeFromSprecPart();
+    ICodePart actual = WarmIschemiaTime.LESS_TWO_MINUTES.getCodeFromSprecPart();
     ICodePart expected = new CodePart("A");
-    assertNotNull(codePart);
-    assertEquals(expected.getStringRepresentation(), codePart.getStringRepresentation());
+    assertNotNull(actual);
+    assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    assertEquals(expected, actual);
   }
 
   @Test

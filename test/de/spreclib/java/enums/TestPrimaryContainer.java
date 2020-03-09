@@ -13,10 +13,11 @@ public class TestPrimaryContainer {
 
   @Test
   public void testGetCodeFromSprecPart() {
-    ICodePart codePart = PrimaryContainer.ACID_CITRATE_DEXTROSE.getCodeFromSprecPart();
+    ICodePart actual = PrimaryContainer.ACID_CITRATE_DEXTROSE.getCodeFromSprecPart();
     ICodePart expected = new CodePart("ACD");
-    assertNotNull(codePart);
-    assertEquals(expected.getStringRepresentation(), codePart.getStringRepresentation());
+    assertNotNull(actual);
+    assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    assertEquals(expected, actual);
   }
 
   @Test

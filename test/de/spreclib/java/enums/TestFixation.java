@@ -13,10 +13,11 @@ public class TestFixation {
 
   @Test
   public void testGetCodeFromSprecPart() {
-    ICodePart codePart = Fixation.ALCOHOL_BASED.getCodeFromSprecPart();
+    ICodePart actual = Fixation.ALCOHOL_BASED.getCodeFromSprecPart();
     ICodePart expected = new CodePart("ETH");
-    assertNotNull(codePart);
-    assertEquals(expected.getStringRepresentation(), codePart.getStringRepresentation());
+    assertNotNull(actual);
+    assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    assertEquals(expected, actual);
   }
 
   @Test

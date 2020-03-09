@@ -13,10 +13,11 @@ public class TestFluidSampleType {
 
   @Test
   public void testGetCodeFromSprecPart() {
-    ICodePart codePart = FluidSampleType.ASCITIES_FLUID.getCodeFromSprecPart();
+    ICodePart actual = FluidSampleType.ASCITIES_FLUID.getCodeFromSprecPart();
     ICodePart expected = new CodePart("ASC");
-    assertNotNull(codePart);
-    assertEquals(expected.getStringRepresentation(), codePart.getStringRepresentation());
+    assertNotNull(actual);
+    assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    assertEquals(expected, actual);
   }
 
   @Test

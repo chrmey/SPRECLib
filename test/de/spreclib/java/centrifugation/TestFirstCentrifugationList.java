@@ -1,11 +1,11 @@
 package de.spreclib.java.centrifugation;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -147,8 +147,36 @@ public class TestFirstCentrifugationList {
 
   @Test
   public void testFirstCentrifugationListContents() {
-    Object[] actual = FirstCentrifugationList.centrifugations.toArray();
-    Object[] expected = testList.toArray();
-    Assert.assertArrayEquals(expected, actual);
+    for (Centrifugation centrifugation : testList) {
+      assertTrue(FirstCentrifugationList.centrifugations.contains(centrifugation));
+    }
+  }
+
+  @Test
+  public void testFirstCentrifugationListContentTypes() {
+    int expectedNormalCentrifugations = 0;
+    int expectedSpecialCentrifugations = 0;
+    int actualNormalCentrifugations = 0;
+    int actualSpecialCentrifugations = 0;
+
+    for (Centrifugation centrifugation : testList) {
+      if (centrifugation instanceof SpecialCentrifugation) {
+        expectedSpecialCentrifugations++;
+      }
+      if (centrifugation instanceof NormalCentrifugation) {
+        expectedNormalCentrifugations++;
+      }
+    }
+
+    for (Centrifugation centrifugation : FirstCentrifugationList.centrifugations) {
+      if (centrifugation instanceof SpecialCentrifugation) {
+        actualSpecialCentrifugations++;
+      }
+      if (centrifugation instanceof NormalCentrifugation) {
+        actualNormalCentrifugations++;
+      }
+    }
+    assertEquals(expectedNormalCentrifugations, actualNormalCentrifugations);
+    assertEquals(expectedSpecialCentrifugations, actualSpecialCentrifugations);
   }
 }
