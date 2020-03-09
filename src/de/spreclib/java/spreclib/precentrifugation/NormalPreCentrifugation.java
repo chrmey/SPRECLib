@@ -5,10 +5,10 @@ import de.spreclib.java.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.java.interfaces.ICodePart;
 
-public class NormalPreCentrifugation extends PreCentrifugation {
+public final class NormalPreCentrifugation extends PreCentrifugation {
 
-  private PreCentrifugationDelay preCentrifugationDelay;
-  private PreCentrifugationTemperature preCentrifugationTemperature;
+  private final PreCentrifugationDelay PRECENTRIFUGATIONDELAY;
+  private final PreCentrifugationTemperature PRECENTRIFUGATIONTEMPERATURE;
 
   public NormalPreCentrifugation(
       PreCentrifugationType preCentrifugationType,
@@ -16,16 +16,16 @@ public class NormalPreCentrifugation extends PreCentrifugation {
       PreCentrifugationTemperature preCentrifugationTemperature,
       ICodePart codePart) {
     super(preCentrifugationType, codePart);
-    this.preCentrifugationDelay = preCentrifugationDelay;
-    this.preCentrifugationTemperature = preCentrifugationTemperature;
+    this.PRECENTRIFUGATIONDELAY = preCentrifugationDelay;
+    this.PRECENTRIFUGATIONTEMPERATURE = preCentrifugationTemperature;
   }
 
   public PreCentrifugationDelay getPreCentrifugationDelay() {
-    return this.preCentrifugationDelay;
+    return this.PRECENTRIFUGATIONDELAY;
   }
 
   public PreCentrifugationTemperature getPreCentrifugationTemperature() {
-    return this.preCentrifugationTemperature;
+    return this.PRECENTRIFUGATIONTEMPERATURE;
   }
 
   @Override
@@ -33,12 +33,12 @@ public class NormalPreCentrifugation extends PreCentrifugation {
     final int prime = 31;
     int result = super.hashCode();
     result =
-        prime * result + ((preCentrifugationDelay == null) ? 0 : preCentrifugationDelay.hashCode());
+        prime * result + ((PRECENTRIFUGATIONDELAY == null) ? 0 : PRECENTRIFUGATIONDELAY.hashCode());
     result =
         prime * result
-            + ((preCentrifugationTemperature == null)
+            + ((PRECENTRIFUGATIONTEMPERATURE == null)
                 ? 0
-                : preCentrifugationTemperature.hashCode());
+                : PRECENTRIFUGATIONTEMPERATURE.hashCode());
     return result;
   }
 
@@ -48,8 +48,8 @@ public class NormalPreCentrifugation extends PreCentrifugation {
     if (!super.equals(obj)) return false;
     if (getClass() != obj.getClass()) return false;
     NormalPreCentrifugation other = (NormalPreCentrifugation) obj;
-    if (preCentrifugationDelay != other.preCentrifugationDelay) return false;
-    if (preCentrifugationTemperature != other.preCentrifugationTemperature) return false;
+    if (PRECENTRIFUGATIONDELAY != other.PRECENTRIFUGATIONDELAY) return false;
+    if (PRECENTRIFUGATIONTEMPERATURE != other.PRECENTRIFUGATIONTEMPERATURE) return false;
     return true;
   }
 }

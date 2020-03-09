@@ -13,6 +13,7 @@ import de.spreclib.java.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.spreclib.CodePart;
 import de.spreclib.java.spreclib.precentrifugation.NormalPreCentrifugation;
+import nl.jqno.equalsverifier.EqualsVerifier;
 
 public class TestNormalPreCentrifugation {
 
@@ -62,5 +63,10 @@ public class TestNormalPreCentrifugation {
     PreCentrifugationTemperature expected = PreCentrifugationTemperature.ROOM_TEMPERATURE;
     PreCentrifugationTemperature actual = normalPreCentrifugation.getPreCentrifugationTemperature();
     assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testEquals() {
+    EqualsVerifier.forClass(NormalPreCentrifugation.class).withRedefinedSuperclass().verify();
   }
 }
