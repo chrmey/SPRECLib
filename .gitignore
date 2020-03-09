@@ -30,7 +30,7 @@ hs_err_pid*
 *.launch
 .metadata
 
-bin/
+/bin/
 tmp/
 *.tmp
 *.bak
@@ -45,3 +45,4 @@ local.properties
 #IntelliJ
 *.idea
 /lib/
+/target/
