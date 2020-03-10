@@ -54,8 +54,12 @@ public final class NormalPreCentrifugation extends PreCentrifugation {
       return false;
     }
     NormalPreCentrifugation other = (NormalPreCentrifugation) obj;
-    if (PRECENTRIFUGATIONDELAY != other.PRECENTRIFUGATIONDELAY) return false;
-    if (PRECENTRIFUGATIONTEMPERATURE != other.PRECENTRIFUGATIONTEMPERATURE) return false;
+    if (PRECENTRIFUGATIONDELAY != other.PRECENTRIFUGATIONDELAY) {
+      return false;
+    }
+    if (PRECENTRIFUGATIONTEMPERATURE != other.PRECENTRIFUGATIONTEMPERATURE) {
+      return false;
+    }
     return true;
   }
 }

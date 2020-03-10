@@ -53,11 +53,19 @@ public abstract class PreCentrifugation implements ISprecPart {
       return false;
     }
     PreCentrifugation other = (PreCentrifugation) obj;
-    if (SPRECPARTTYPE != other.SPRECPARTTYPE) return false;
+    if (SPRECPARTTYPE != other.SPRECPARTTYPE) {
+      return false;
+    }
     if (CODEPART == null) {
-      if (other.CODEPART != null) return false;
-    } else if (!CODEPART.equals(other.CODEPART)) return false;
-    if (PRECENTRIFUGATIONTYPE != other.PRECENTRIFUGATIONTYPE) return false;
+      if (other.CODEPART != null) {
+        return false;
+      }
+    } else if (!CODEPART.equals(other.CODEPART)) {
+      return false;
+    }
+    if (PRECENTRIFUGATIONTYPE != other.PRECENTRIFUGATIONTYPE) {
+      return false;
+    }
     return true;
   }
 }
