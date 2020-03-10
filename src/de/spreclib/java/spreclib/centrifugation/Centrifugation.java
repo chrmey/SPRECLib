@@ -11,6 +11,13 @@ public abstract class Centrifugation implements ISprecPart {
   private CentrifugationType centrifugationType;
   protected ICodePart codePart;
 
+  /**
+   * Centrifugation Constructor.
+   * 
+   * @param centrifugationType enum CentrifugationType
+   * @param codePart CodePart Object
+   * @param sprecPartType enum SprecPartType
+   */
   public Centrifugation(
       CentrifugationType centrifugationType, ICodePart codePart, SprecPartType sprecPartType) {
     this.centrifugationType = centrifugationType;
@@ -44,15 +51,29 @@ public abstract class Centrifugation implements ISprecPart {
 
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (obj == null) return false;
-    if (getClass() != obj.getClass()) return false;
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
     Centrifugation other = (Centrifugation) obj;
-    if (centrifugationType != other.centrifugationType) return false;
+    if (centrifugationType != other.centrifugationType) {
+      return false;
+    }
     if (codePart == null) {
-      if (other.codePart != null) return false;
-    } else if (!codePart.equals(other.codePart)) return false;
-    if (sprecPartType != other.sprecPartType) return false;
+      if (other.codePart != null) {
+        return false;
+      }
+    } else if (!codePart.equals(other.codePart)) {
+      return false;
+    }
+    if (sprecPartType != other.sprecPartType) {
+      return false;
+    }
     return true;
   }
 }

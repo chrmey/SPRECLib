@@ -43,12 +43,22 @@ public class NormalLongTermStorage extends LongTermStorage {
 
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (!super.equals(obj)) return false;
-    if (getClass() != obj.getClass()) return false;
+    if (this == obj) {
+      return true;
+    }
+    if (!super.equals(obj)) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
     NormalLongTermStorage other = (NormalLongTermStorage) obj;
-    if (longTermStorageContainer != other.longTermStorageContainer) return false;
-    if (longTermStorageTemperature != other.longTermStorageTemperature) return false;
+    if (longTermStorageContainer != other.longTermStorageContainer) {
+      return false;
+    }
+    if (longTermStorageTemperature != other.longTermStorageTemperature) {
+      return false;
+    }
     return true;
   }
 }

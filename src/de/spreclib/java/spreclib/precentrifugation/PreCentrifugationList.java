@@ -1,12 +1,12 @@
 package de.spreclib.java.spreclib.precentrifugation;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.java.spreclib.CodePart;
+import java.util.HashSet;
+import java.util.Set;
+
 
 public abstract class PreCentrifugationList {
 

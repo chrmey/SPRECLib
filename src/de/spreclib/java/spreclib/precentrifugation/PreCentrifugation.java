@@ -43,15 +43,29 @@ public abstract class PreCentrifugation implements ISprecPart {
 
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (obj == null) return false;
-    if (getClass() != obj.getClass()) return false;
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
     PreCentrifugation other = (PreCentrifugation) obj;
-    if (SPRECPARTTYPE != other.SPRECPARTTYPE) return false;
+    if (SPRECPARTTYPE != other.SPRECPARTTYPE) {
+      return false;
+    }
     if (codePart == null) {
-      if (other.codePart != null) return false;
-    } else if (!codePart.equals(other.codePart)) return false;
-    if (preCentrifugationType != other.preCentrifugationType) return false;
+      if (other.codePart != null) {
+        return false;
+      }
+    } else if (!codePart.equals(other.codePart)) {
+      return false;
+    }
+    if (preCentrifugationType != other.preCentrifugationType) {
+      return false;
+    }
     return true;
   }
 }

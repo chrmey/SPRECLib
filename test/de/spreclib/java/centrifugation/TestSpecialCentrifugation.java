@@ -3,14 +3,14 @@ package de.spreclib.java.centrifugation;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import de.spreclib.java.enums.SprecPartType;
 import de.spreclib.java.enums.centrifugation.CentrifugationType;
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.spreclib.CodePart;
 import de.spreclib.java.spreclib.centrifugation.SpecialCentrifugation;
+import org.junit.Before;
+import org.junit.Test;
+
 
 public class TestSpecialCentrifugation {
 

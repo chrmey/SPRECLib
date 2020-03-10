@@ -3,9 +3,6 @@ package de.spreclib.java.postcentrifugation;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import de.spreclib.java.enums.SprecPartType;
 import de.spreclib.java.enums.postcentrifugation.PostCentrifugationDelay;
 import de.spreclib.java.enums.postcentrifugation.PostCentrifugationTemperature;
@@ -13,6 +10,9 @@ import de.spreclib.java.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.spreclib.CodePart;
 import de.spreclib.java.spreclib.postcentrifugation.NormalPostCentrifugation;
+import org.junit.Before;
+import org.junit.Test;
+
 
 public class TestNormalPostCentrifugation {
 

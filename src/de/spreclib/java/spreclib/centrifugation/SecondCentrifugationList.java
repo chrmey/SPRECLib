@@ -1,8 +1,5 @@
 package de.spreclib.java.spreclib.centrifugation;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import de.spreclib.java.enums.SprecPartType;
 import de.spreclib.java.enums.centrifugation.CentrifugationBraking;
 import de.spreclib.java.enums.centrifugation.CentrifugationDuration;
@@ -10,6 +7,9 @@ import de.spreclib.java.enums.centrifugation.CentrifugationSpeed;
 import de.spreclib.java.enums.centrifugation.CentrifugationTemperature;
 import de.spreclib.java.enums.centrifugation.CentrifugationType;
 import de.spreclib.java.spreclib.CodePart;
+import java.util.HashSet;
+import java.util.Set;
+
 
 public abstract class SecondCentrifugationList {
 

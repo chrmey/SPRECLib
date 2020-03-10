@@ -11,10 +11,10 @@ public enum LongTermStorageTemperature {
   TWO_TO_TEN_DEGRESS(2, 10),
   ;
 
-  LongTermStorageTemperature() {}
+  LongTermStorageTemperature() {
+  }
 
   LongTermStorageTemperature(int lowerBound, int upperBound) {
-    // TODO Auto-generated constructor stub
     // TODO Bounds überarbeiten
   }
 }

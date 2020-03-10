@@ -63,14 +63,28 @@ public class NormalCentrifugation extends Centrifugation {
 
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (!super.equals(obj)) return false;
-    if (getClass() != obj.getClass()) return false;
+    if (this == obj) {
+      return true;
+    }
+    if (!super.equals(obj)) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
     NormalCentrifugation other = (NormalCentrifugation) obj;
-    if (centrifugationBraking != other.centrifugationBraking) return false;
-    if (centrifugationDuration != other.centrifugationDuration) return false;
-    if (centrifugationSpeed != other.centrifugationSpeed) return false;
-    if (centrifugationTemperature != other.centrifugationTemperature) return false;
+    if (centrifugationBraking != other.centrifugationBraking) {
+      return false;
+    }
+    if (centrifugationDuration != other.centrifugationDuration) {
+      return false;
+    }
+    if (centrifugationSpeed != other.centrifugationSpeed) {
+      return false;
+    }
+    if (centrifugationTemperature != other.centrifugationTemperature) {
+      return false;
+    }
     return true;
   }
 }
