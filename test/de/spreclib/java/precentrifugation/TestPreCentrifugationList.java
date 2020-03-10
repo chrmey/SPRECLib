@@ -3,12 +3,6 @@ package de.spreclib.java.precentrifugation;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationType;
@@ -17,6 +11,11 @@ import de.spreclib.java.spreclib.precentrifugation.NormalPreCentrifugation;
 import de.spreclib.java.spreclib.precentrifugation.PreCentrifugation;
 import de.spreclib.java.spreclib.precentrifugation.PreCentrifugationList;
 import de.spreclib.java.spreclib.precentrifugation.SpecialPreCentrifugation;
+import java.util.HashSet;
+import java.util.Set;
+import org.junit.Before;
+import org.junit.Test;
+
 
 public class TestPreCentrifugationList {
 

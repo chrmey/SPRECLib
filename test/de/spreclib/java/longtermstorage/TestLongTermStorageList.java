@@ -3,12 +3,6 @@ package de.spreclib.java.longtermstorage;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import de.spreclib.java.enums.longtermstorage.LongTermStorageContainer;
 import de.spreclib.java.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.java.enums.longtermstorage.LongTermStorageType;
@@ -17,6 +11,11 @@ import de.spreclib.java.spreclib.longtermstorage.LongTermStorage;
 import de.spreclib.java.spreclib.longtermstorage.LongTermStorageList;
 import de.spreclib.java.spreclib.longtermstorage.NormalLongTermStorage;
 import de.spreclib.java.spreclib.longtermstorage.SpecialLongTermStorage;
+import java.util.HashSet;
+import java.util.Set;
+import org.junit.Before;
+import org.junit.Test;
+
 
 public class TestLongTermStorageList {
 

@@ -44,9 +44,15 @@ public final class NormalPreCentrifugation extends PreCentrifugation {
 
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (!super.equals(obj)) return false;
-    if (getClass() != obj.getClass()) return false;
+    if (this == obj) {
+      return true;
+    }
+    if (!super.equals(obj)) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
     NormalPreCentrifugation other = (NormalPreCentrifugation) obj;
     if (PRECENTRIFUGATIONDELAY != other.PRECENTRIFUGATIONDELAY) return false;
     if (PRECENTRIFUGATIONTEMPERATURE != other.PRECENTRIFUGATIONTEMPERATURE) return false;

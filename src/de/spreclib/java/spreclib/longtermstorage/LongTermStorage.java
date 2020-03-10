@@ -42,15 +42,29 @@ public abstract class LongTermStorage implements ISprecPart {
 
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (obj == null) return false;
-    if (getClass() != obj.getClass()) return false;
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
     LongTermStorage other = (LongTermStorage) obj;
     if (codePart == null) {
-      if (other.codePart != null) return false;
-    } else if (!codePart.equals(other.codePart)) return false;
-    if (longTermStorageType != other.longTermStorageType) return false;
-    if (sprecPartType != other.sprecPartType) return false;
+      if (other.codePart != null) {
+        return false;
+      }
+    } else if (!codePart.equals(other.codePart)) {
+      return false;
+    }
+    if (longTermStorageType != other.longTermStorageType) {
+      return false;
+    }
+    if (sprecPartType != other.sprecPartType) {
+      return false;
+    }
     return true;
   }
 }

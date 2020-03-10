@@ -3,12 +3,6 @@ package de.spreclib.java.centrifugation;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import de.spreclib.java.enums.SprecPartType;
 import de.spreclib.java.enums.centrifugation.CentrifugationBraking;
 import de.spreclib.java.enums.centrifugation.CentrifugationDuration;
@@ -20,6 +14,11 @@ import de.spreclib.java.spreclib.centrifugation.Centrifugation;
 import de.spreclib.java.spreclib.centrifugation.NormalCentrifugation;
 import de.spreclib.java.spreclib.centrifugation.SecondCentrifugationList;
 import de.spreclib.java.spreclib.centrifugation.SpecialCentrifugation;
+import java.util.HashSet;
+import java.util.Set;
+import org.junit.Before;
+import org.junit.Test;
+
 
 public class TestSecondCentrifugationList {
 
