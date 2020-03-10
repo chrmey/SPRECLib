@@ -11,22 +11,22 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-public abstract class SecondCentrifugationList {
+public final class SecondCentrifugationList {
 
-  public static final Set<Centrifugation> centrifugations;
+  public static final Set<Centrifugation> CENTRIFUGATIONS;
 
   static {
-    centrifugations = new HashSet<>();
-    centrifugations.add(
+    CENTRIFUGATIONS = new HashSet<>();
+    CENTRIFUGATIONS.add(
         new SpecialCentrifugation(
             CentrifugationType.NO, new CodePart("N"), SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(
+    CENTRIFUGATIONS.add(
         new SpecialCentrifugation(
             CentrifugationType.UNKNOWN, new CodePart("X"), SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(
+    CENTRIFUGATIONS.add(
         new SpecialCentrifugation(
             CentrifugationType.OTHER, new CodePart("Z"), SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(
+    CENTRIFUGATIONS.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
@@ -35,7 +35,7 @@ public abstract class SecondCentrifugationList {
             CentrifugationBraking.NO_BRAKING,
             new CodePart("A"),
             SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(
+    CENTRIFUGATIONS.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
@@ -44,7 +44,7 @@ public abstract class SecondCentrifugationList {
             CentrifugationBraking.NO_BRAKING,
             new CodePart("B"),
             SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(
+    CENTRIFUGATIONS.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
@@ -53,7 +53,7 @@ public abstract class SecondCentrifugationList {
             CentrifugationBraking.NO_BRAKING,
             new CodePart("C"),
             SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(
+    CENTRIFUGATIONS.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
@@ -62,7 +62,7 @@ public abstract class SecondCentrifugationList {
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("D"),
             SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(
+    CENTRIFUGATIONS.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
@@ -71,7 +71,7 @@ public abstract class SecondCentrifugationList {
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("E"),
             SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(
+    CENTRIFUGATIONS.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
@@ -80,7 +80,7 @@ public abstract class SecondCentrifugationList {
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("F"),
             SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(
+    CENTRIFUGATIONS.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
@@ -89,7 +89,7 @@ public abstract class SecondCentrifugationList {
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("G"),
             SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(
+    CENTRIFUGATIONS.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
@@ -98,7 +98,7 @@ public abstract class SecondCentrifugationList {
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("F"),
             SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(
+    CENTRIFUGATIONS.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
@@ -107,7 +107,7 @@ public abstract class SecondCentrifugationList {
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("I"),
             SprecPartType.SECOND_CENTRIFUGATION));
-    centrifugations.add(
+    CENTRIFUGATIONS.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,

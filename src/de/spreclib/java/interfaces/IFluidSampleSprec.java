@@ -2,15 +2,15 @@ package de.spreclib.java.interfaces;
 
 public interface IFluidSampleSprec {
 
-  public ISprecPart getFluidSampleType();
+  ISprecPart getFluidSampleType();
 
-  public ISprecPart getPrimaryContainer();
+  ISprecPart getPrimaryContainer();
 
-  public ISprecPart getPreCentrifugation();
+  ISprecPart getPreCentrifugation();
 
-  public ISprecPart getFirstCentrifugation();
+  ISprecPart getFirstCentrifugation();
 
-  public ISprecPart getSecondCentrifugation();
+  ISprecPart getSecondCentrifugation();
 
-  public ISprecPart getPostCentrifugation();
+  ISprecPart getPostCentrifugation();
 }

@@ -182,7 +182,7 @@ public class TestLongTermStorageList {
 
   @Test
   public void testLongTermStorageListSize() {
-    int actualSize = LongTermStorageList.longTermStorages.size();
+    int actualSize = LongTermStorageList.LONG_TERM_STORAGES.size();
     int expectedSize = testList.size();
     assertEquals(expectedSize, actualSize);
   }
@@ -190,7 +190,7 @@ public class TestLongTermStorageList {
   @Test
   public void testLongTermStorageListContents() {
     for (LongTermStorage longTermStorage : testList) {
-      assertTrue(LongTermStorageList.longTermStorages.contains(longTermStorage));
+      assertTrue(LongTermStorageList.LONG_TERM_STORAGES.contains(longTermStorage));
     }
   }
 
@@ -210,7 +210,7 @@ public class TestLongTermStorageList {
       }
     }
 
-    for (LongTermStorage longTermStorage : LongTermStorageList.longTermStorages) {
+    for (LongTermStorage longTermStorage : LongTermStorageList.LONG_TERM_STORAGES) {
       if (longTermStorage instanceof SpecialLongTermStorage) {
         actualSpecialLongTermStorages++;
       }

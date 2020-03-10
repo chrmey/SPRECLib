@@ -4,7 +4,7 @@ import de.spreclib.java.interfaces.ICodePart;
 
 public class CodePart implements ICodePart {
 
-  private String code;
+  private final String code;
 
   public CodePart(String codePart) {
     this.code = codePart;
