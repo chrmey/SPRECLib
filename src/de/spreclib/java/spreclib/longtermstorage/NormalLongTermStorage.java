@@ -10,6 +10,15 @@ public class NormalLongTermStorage extends LongTermStorage {
   private LongTermStorageContainer longTermStorageContainer;
   private LongTermStorageTemperature longTermStorageTemperature;
 
+
+  /**
+   * Constructor for LongTermStorage.
+   * 
+   * @param longTermStorageType enum LongTermStorageType
+   * @param longTermStorageContainer enum LongTermStorageContainer
+   * @param longTermStorageTemperature enum LongTermStorageTemperature
+   * @param codePart Object CodePart
+   */
   public NormalLongTermStorage(
       LongTermStorageType longTermStorageType,
       LongTermStorageContainer longTermStorageContainer,

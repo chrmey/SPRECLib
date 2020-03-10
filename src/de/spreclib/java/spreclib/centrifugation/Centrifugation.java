@@ -8,8 +8,8 @@ import de.spreclib.java.interfaces.ISprecPart;
 public abstract class Centrifugation implements ISprecPart {
 
   private final SprecPartType sprecPartType;
-  private CentrifugationType centrifugationType;
-  protected ICodePart codePart;
+  private final CentrifugationType centrifugationType;
+  private final ICodePart codePart;
 
   /**
    * Centrifugation Constructor.

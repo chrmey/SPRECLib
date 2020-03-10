@@ -10,6 +10,23 @@ import de.spreclib.java.interfaces.ICodePart;
 
 public class NormalCentrifugation extends Centrifugation {
 
+  private final CentrifugationDuration centrifugationDuration;
+  private final CentrifugationSpeed centrifugationSpeed;
+  private final CentrifugationTemperature centrifugationTemperature;
+  private final CentrifugationBraking centrifugationBraking;
+
+  /**
+   * Constructor for NormalCentrifugation.
+   * 
+   * @param centrifugationType enum CentrifugationType
+   * @param centrifugationDuration enum CentrifugationDuration
+   * @param centrifugationSpeed enum CentrifugationSpeed
+   * @param centrifugationTemperature enum CentrifugationTemperature
+   * @param centrifugationBraking enum CentrifugationBraking
+   * @param codePart object CodePart
+   * @param sprecPartType enum SprecPartType -> needed for differention between first and second
+   *        centrifugation
+   */
   public NormalCentrifugation(
       CentrifugationType centrifugationType,
       CentrifugationDuration centrifugationDuration,
@@ -24,11 +41,6 @@ public class NormalCentrifugation extends Centrifugation {
     this.centrifugationTemperature = centrifugationTemperature;
     this.centrifugationBraking = centrifugationBraking;
   }
-
-  private CentrifugationDuration centrifugationDuration;
-  private CentrifugationSpeed centrifugationSpeed;
-  private CentrifugationTemperature centrifugationTemperature;
-  private CentrifugationBraking centrifugationBraking;
 
   public CentrifugationSpeed getCentrifugationSpeed() {
     return this.centrifugationSpeed;

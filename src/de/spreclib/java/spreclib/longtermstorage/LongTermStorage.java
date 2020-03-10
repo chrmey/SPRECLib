@@ -7,7 +7,7 @@ import de.spreclib.java.interfaces.ISprecPart;
 
 public abstract class LongTermStorage implements ISprecPart {
 
-  private final SprecPartType sprecPartType = SprecPartType.LONG_TERM_STORAGE;
+  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.LONG_TERM_STORAGE;
   private LongTermStorageType longTermStorageType;
   private ICodePart codePart;
 
@@ -23,7 +23,7 @@ public abstract class LongTermStorage implements ISprecPart {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return this.sprecPartType;
+    return LongTermStorage.SPREC_PART_TYPE;
   }
 
   public LongTermStorageType getLongTermStorageType() {
@@ -36,7 +36,7 @@ public abstract class LongTermStorage implements ISprecPart {
     int result = 1;
     result = prime * result + ((codePart == null) ? 0 : codePart.hashCode());
     result = prime * result + ((longTermStorageType == null) ? 0 : longTermStorageType.hashCode());
-    result = prime * result + ((sprecPartType == null) ? 0 : sprecPartType.hashCode());
+    result = prime * result + ((SPREC_PART_TYPE == null) ? 0 : SPREC_PART_TYPE.hashCode());
     return result;
   }
 
@@ -60,9 +60,6 @@ public abstract class LongTermStorage implements ISprecPart {
       return false;
     }
     if (longTermStorageType != other.longTermStorageType) {
-      return false;
-    }
-    if (sprecPartType != other.sprecPartType) {
       return false;
     }
     return true;

@@ -1,12 +1,12 @@
 package de.spreclib.java.spreclib.postcentrifugation;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import de.spreclib.java.enums.postcentrifugation.PostCentrifugationDelay;
 import de.spreclib.java.enums.postcentrifugation.PostCentrifugationTemperature;
 import de.spreclib.java.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.java.spreclib.CodePart;
+import java.util.HashSet;
+import java.util.Set;
+
 
 public abstract class PostCentrifugationList {
 
