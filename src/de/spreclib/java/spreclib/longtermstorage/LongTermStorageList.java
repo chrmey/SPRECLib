@@ -8,162 +8,163 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-public abstract class LongTermStorageList {
+public final class LongTermStorageList {
 
-  public static final Set<LongTermStorage> longTermStorages;
+  public static final Set<LongTermStorage> LONG_TERM_STORAGES;
 
   static {
-    longTermStorages = new HashSet<>();
-    longTermStorages.add(
+    LONG_TERM_STORAGES = new HashSet<>();
+    LONG_TERM_STORAGES.add(
         new SpecialLongTermStorage(LongTermStorageType.UNKNOWN, new CodePart("X")));
-    longTermStorages.add(new SpecialLongTermStorage(LongTermStorageType.OTHER, new CodePart("Z")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES
+        .add(new SpecialLongTermStorage(LongTermStorageType.OTHER, new CodePart("Z")));
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("A")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML,
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
             new CodePart("B")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML,
             LongTermStorageTemperature.LESS_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
             new CodePart("V")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.CRYOTUBE_ONE_TO_TWO_ML,
             LongTermStorageTemperature.LIQUID_NITROGEN,
             new CodePart("C")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.CRYOTUBE_ONE_TO_TWO_ML,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("D")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.CRYOTUBE_ONE_TO_TWO_ML,
             LongTermStorageTemperature.PROGRAMMBLE_FREEZING_TO_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
             new CodePart("E")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PLASTIC_CRYOSTRAW,
             LongTermStorageTemperature.LIQUID_NITROGEN,
             new CodePart("F")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.STRAW,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("G")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.STRAW,
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
             new CodePart("H")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.STRAW,
             LongTermStorageTemperature.PROGRAMMBLE_FREEZING_TO_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
             new CodePart("G")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_GREATER_FIVE_ML,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("J")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_GREATER_FIVE_ML,
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
             new CodePart("K")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.MICROPLATE,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("L")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.MICROPLATE,
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
             new CodePart("M")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.CRYOTUBE_ONE_TO_TWO_ML,
             LongTermStorageTemperature
                 .LIQUID_NITROGEN_AFTER_MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("N")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.STRAW,
             LongTermStorageTemperature
                 .LIQUID_NITROGEN_AFTER_MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("O")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PARAFFIN_BLOCK,
             LongTermStorageTemperature.ROOM_TEMPERATURE,
             new CodePart("P")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PARAFFIN_BLOCK,
             LongTermStorageTemperature.TWO_TO_TEN_DEGRESS,
             new CodePart("P")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.BAG,
             LongTermStorageTemperature.LIQUID_NITROGEN,
             new CodePart("Q")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.DRY_TECHNOLOGY_MEDIUM,
             LongTermStorageTemperature.ROOM_TEMPERATURE,
             new CodePart("R")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_FOURTY_TO_FIFEHUNDRED_MICROL,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("S")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_FOURTY_TO_FIFEHUNDRED_MICROL,
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
             new CodePart("T")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_FOURTY_TO_FIFEHUNDRED_MICROL,
             LongTermStorageTemperature.LESS_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
             new CodePart("W")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.ORIGINAL_PRIMARY_CONTAINER,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("Y")));
-    longTermStorages.add(
+    LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.ORIGINAL_PRIMARY_CONTAINER,

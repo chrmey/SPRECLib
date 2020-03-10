@@ -130,7 +130,7 @@ public class TestSecondCentrifugationList {
 
   @Test
   public void testSecondCentrifugationListSize() {
-    int actualSize = SecondCentrifugationList.centrifugations.size();
+    int actualSize = SecondCentrifugationList.CENTRIFUGATIONS.size();
     int expectedSize = testList.size();
     assertEquals(expectedSize, actualSize);
   }
@@ -138,7 +138,7 @@ public class TestSecondCentrifugationList {
   @Test
   public void testSecondCentrifugationListContents() {
     for (Centrifugation centrifugation : testList) {
-      assertTrue(SecondCentrifugationList.centrifugations.contains(centrifugation));
+      assertTrue(SecondCentrifugationList.CENTRIFUGATIONS.contains(centrifugation));
     }
   }
 
@@ -158,7 +158,7 @@ public class TestSecondCentrifugationList {
       }
     }
 
-    for (Centrifugation centrifugation : SecondCentrifugationList.centrifugations) {
+    for (Centrifugation centrifugation : SecondCentrifugationList.CENTRIFUGATIONS) {
       if (centrifugation instanceof SpecialCentrifugation) {
         actualSpecialCentrifugations++;
       }

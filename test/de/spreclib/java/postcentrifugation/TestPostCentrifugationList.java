@@ -92,7 +92,7 @@ public class TestPostCentrifugationList {
 
   @Test
   public void testPostCentrifugationListSize() {
-    int actualSize = PostCentrifugationList.postCentrifugations.size();
+    int actualSize = PostCentrifugationList.POST_CENTRIFUGATIONS.size();
     int expectedSize = testList.size();
     assertEquals(expectedSize, actualSize);
   }
@@ -100,7 +100,7 @@ public class TestPostCentrifugationList {
   @Test
   public void testPostCentrifugationListContents() {
     for (PostCentrifugation postCentrifugation : testList) {
-      assertTrue(PostCentrifugationList.postCentrifugations.contains(postCentrifugation));
+      assertTrue(PostCentrifugationList.POST_CENTRIFUGATIONS.contains(postCentrifugation));
     }
   }
 
@@ -120,7 +120,7 @@ public class TestPostCentrifugationList {
       }
     }
 
-    for (PostCentrifugation postCentrifugation : PostCentrifugationList.postCentrifugations) {
+    for (PostCentrifugation postCentrifugation : PostCentrifugationList.POST_CENTRIFUGATIONS) {
       if (postCentrifugation instanceof SpecialPostCentrifugation) {
         actualSpecialPostCentrifugations++;
       }
