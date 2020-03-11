@@ -12,7 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class TestSpecialLongTermStorage {
+public class SpecialLongTermStorageTest {
 
   SpecialLongTermStorage specialLongTermStorage;
 

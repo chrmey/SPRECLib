@@ -15,7 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class TestNormalPreCentrifugation {
+public class NormalPreCentrifugationTest {
 
   NormalPreCentrifugation normalPreCentrifugation;
 

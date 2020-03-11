@@ -9,12 +9,12 @@ import de.spreclib.java.spreclib.CodePart;
 import org.junit.Test;
 
 
-public class TestSolidSampleType {
+public class WarmIschemiaTimeTest {
 
   @Test
   public void testGetCodeFromSprecPart() {
-    ICodePart actual = SolidSampleType.FRESH_CELLS_FROM_NON_BLOOD_SPECIMEN.getCodeFromSprecPart();
-    ICodePart expected = new CodePart("CEN");
+    ICodePart actual = WarmIschemiaTime.LESS_TWO_MINUTES.getCodeFromSprecPart();
+    ICodePart expected = new CodePart("A");
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
     assertEquals(expected, actual);
@@ -22,7 +22,7 @@ public class TestSolidSampleType {
 
   @Test
   public void testGetSprecPartType() {
-    ISprecPart sprecPartType = SolidSampleType.FRESH_CELLS_FROM_NON_BLOOD_SPECIMEN;
-    assertEquals(SprecPartType.SOLID_SAMPLE_TYPE, sprecPartType.getSprecPartType());
+    ISprecPart sprecPartType = WarmIschemiaTime.LESS_TWO_MINUTES;
+    assertEquals(SprecPartType.WARM_ISCHEMIA_TIME, sprecPartType.getSprecPartType());
   }
 }

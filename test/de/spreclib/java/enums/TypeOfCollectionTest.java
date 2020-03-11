@@ -9,12 +9,12 @@ import de.spreclib.java.spreclib.CodePart;
 import org.junit.Test;
 
 
-public class TestPrimaryContainer {
+public class TypeOfCollectionTest {
 
   @Test
   public void testGetCodeFromSprecPart() {
-    ICodePart actual = PrimaryContainer.ACID_CITRATE_DEXTROSE.getCodeFromSprecPart();
-    ICodePart expected = new CodePart("ACD");
+    ICodePart actual = TypeOfCollection.AUTOPSY_LESS_THAN_6_HOURS_POSTMORTEM.getCodeFromSprecPart();
+    ICodePart expected = new CodePart("A06");
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
     assertEquals(expected, actual);
@@ -22,7 +22,7 @@ public class TestPrimaryContainer {
 
   @Test
   public void testGetSprecPartType() {
-    ISprecPart sprecPartType = PrimaryContainer.ACID_CITRATE_DEXTROSE;
-    assertEquals(SprecPartType.PRIMARY_CONTAINER, sprecPartType.getSprecPartType());
+    ISprecPart sprecPartType = TypeOfCollection.AUTOPSY_LESS_THAN_6_HOURS_POSTMORTEM;
+    assertEquals(SprecPartType.TYPE_OF_COLLECTION, sprecPartType.getSprecPartType());
   }
 }

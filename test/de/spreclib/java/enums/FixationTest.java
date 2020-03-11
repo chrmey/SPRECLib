@@ -9,7 +9,7 @@ import de.spreclib.java.spreclib.CodePart;
 import org.junit.Test;
 
 
-public class TestFixation {
+public class FixationTest {
 
   @Test
   public void testGetCodeFromSprecPart() {

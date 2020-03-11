@@ -9,7 +9,7 @@ import de.spreclib.java.spreclib.CodePart;
 import org.junit.Test;
 
 
-public class TestColdIschemiaTime {
+public class ColdIschemiaTimeTest {
 
   @Test
   public void testGetCodeFromSprecPart() {

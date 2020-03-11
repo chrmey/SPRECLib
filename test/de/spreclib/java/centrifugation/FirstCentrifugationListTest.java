@@ -11,8 +11,8 @@ import de.spreclib.java.enums.centrifugation.CentrifugationTemperature;
 import de.spreclib.java.enums.centrifugation.CentrifugationType;
 import de.spreclib.java.spreclib.CodePart;
 import de.spreclib.java.spreclib.centrifugation.Centrifugation;
+import de.spreclib.java.spreclib.centrifugation.FirstCentrifugationList;
 import de.spreclib.java.spreclib.centrifugation.NormalCentrifugation;
-import de.spreclib.java.spreclib.centrifugation.SecondCentrifugationList;
 import de.spreclib.java.spreclib.centrifugation.SpecialCentrifugation;
 import java.util.HashSet;
 import java.util.Set;
@@ -20,7 +20,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class TestSecondCentrifugationList {
+public class FirstCentrifugationListTest {
 
   Set<Centrifugation> testList;
 
@@ -29,13 +29,13 @@ public class TestSecondCentrifugationList {
     testList = new HashSet<>();
     testList.add(
         new SpecialCentrifugation(
-            CentrifugationType.NO, new CodePart("N"), SprecPartType.SECOND_CENTRIFUGATION));
+            CentrifugationType.NO, new CodePart("N"), SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new SpecialCentrifugation(
-            CentrifugationType.UNKNOWN, new CodePart("X"), SprecPartType.SECOND_CENTRIFUGATION));
+            CentrifugationType.UNKNOWN, new CodePart("X"), SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new SpecialCentrifugation(
-            CentrifugationType.OTHER, new CodePart("Z"), SprecPartType.SECOND_CENTRIFUGATION));
+            CentrifugationType.OTHER, new CodePart("Z"), SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
@@ -44,7 +44,7 @@ public class TestSecondCentrifugationList {
             CentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("A"),
-            SprecPartType.SECOND_CENTRIFUGATION));
+            SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
@@ -53,7 +53,7 @@ public class TestSecondCentrifugationList {
             CentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("B"),
-            SprecPartType.SECOND_CENTRIFUGATION));
+            SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
@@ -62,7 +62,7 @@ public class TestSecondCentrifugationList {
             CentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("C"),
-            SprecPartType.SECOND_CENTRIFUGATION));
+            SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
@@ -71,7 +71,7 @@ public class TestSecondCentrifugationList {
             CentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("D"),
-            SprecPartType.SECOND_CENTRIFUGATION));
+            SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
@@ -80,7 +80,7 @@ public class TestSecondCentrifugationList {
             CentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("E"),
-            SprecPartType.SECOND_CENTRIFUGATION));
+            SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
@@ -89,7 +89,7 @@ public class TestSecondCentrifugationList {
             CentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("F"),
-            SprecPartType.SECOND_CENTRIFUGATION));
+            SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
@@ -98,7 +98,7 @@ public class TestSecondCentrifugationList {
             CentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("G"),
-            SprecPartType.SECOND_CENTRIFUGATION));
+            SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
@@ -107,7 +107,7 @@ public class TestSecondCentrifugationList {
             CentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("F"),
-            SprecPartType.SECOND_CENTRIFUGATION));
+            SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
@@ -116,7 +116,7 @@ public class TestSecondCentrifugationList {
             CentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("I"),
-            SprecPartType.SECOND_CENTRIFUGATION));
+            SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
             CentrifugationType.DEFAULT,
@@ -125,25 +125,34 @@ public class TestSecondCentrifugationList {
             CentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("J"),
-            SprecPartType.SECOND_CENTRIFUGATION));
+            SprecPartType.FIRST_CENTRIFUGATION));
+    testList.add(
+        new NormalCentrifugation(
+            CentrifugationType.DEFAULT,
+            CentrifugationDuration.THIRY_MINUTES,
+            CentrifugationSpeed.LESS_THOUSAND_G,
+            CentrifugationTemperature.ROOM_TEMPERATURE,
+            CentrifugationBraking.NO_BRAKING,
+            new CodePart("M"),
+            SprecPartType.FIRST_CENTRIFUGATION));
   }
 
   @Test
-  public void testSecondCentrifugationListSize() {
-    int actualSize = SecondCentrifugationList.CENTRIFUGATIONS.size();
+  public void testFirstCentrifugationListSize() {
+    int actualSize = FirstCentrifugationList.CENTRIFUGATIONS.size();
     int expectedSize = testList.size();
     assertEquals(expectedSize, actualSize);
   }
 
   @Test
-  public void testSecondCentrifugationListContents() {
+  public void testFirstCentrifugationListContents() {
     for (Centrifugation centrifugation : testList) {
-      assertTrue(SecondCentrifugationList.CENTRIFUGATIONS.contains(centrifugation));
+      assertTrue(FirstCentrifugationList.CENTRIFUGATIONS.contains(centrifugation));
     }
   }
 
   @Test
-  public void testSecondCentrifugationListContentTypes() {
+  public void testFirstCentrifugationListContentTypes() {
     int expectedNormalCentrifugations = 0;
     int expectedSpecialCentrifugations = 0;
     int actualNormalCentrifugations = 0;
@@ -158,7 +167,7 @@ public class TestSecondCentrifugationList {
       }
     }
 
-    for (Centrifugation centrifugation : SecondCentrifugationList.CENTRIFUGATIONS) {
+    for (Centrifugation centrifugation : FirstCentrifugationList.CENTRIFUGATIONS) {
       if (centrifugation instanceof SpecialCentrifugation) {
         actualSpecialCentrifugations++;
       }

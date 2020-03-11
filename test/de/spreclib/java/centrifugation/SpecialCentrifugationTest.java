@@ -12,7 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class TestSpecialCentrifugation {
+public class SpecialCentrifugationTest {
 
   SpecialCentrifugation centrifugation;
 

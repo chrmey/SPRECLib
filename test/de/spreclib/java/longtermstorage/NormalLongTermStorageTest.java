@@ -14,7 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class TestNormalLongTermStorage {
+public class NormalLongTermStorageTest {
 
   NormalLongTermStorage normalLongTermStorage;
 

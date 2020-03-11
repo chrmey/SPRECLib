@@ -9,7 +9,7 @@ import de.spreclib.java.interfaces.ISprecPart;
 import org.junit.Test;
 
 
-public class TestFluidSampleSprec {
+public class FluidSampleSprecTest {
 
   @Test
   public void testIsFluidSample() {

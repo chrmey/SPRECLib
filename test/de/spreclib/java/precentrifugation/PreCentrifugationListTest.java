@@ -17,7 +17,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class TestPreCentrifugationList {
+public class PreCentrifugationListTest {
 
   Set<PreCentrifugation> testList;
 

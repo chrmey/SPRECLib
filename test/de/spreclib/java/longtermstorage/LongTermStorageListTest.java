@@ -17,7 +17,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class TestLongTermStorageList {
+public class LongTermStorageListTest {
 
   Set<LongTermStorage> testList;
 
