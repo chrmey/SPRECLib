@@ -8,8 +8,8 @@ import de.spreclib.java.interfaces.ISprecPart;
 public abstract class LongTermStorage implements ISprecPart {
 
   private static final SprecPartType SPREC_PART_TYPE = SprecPartType.LONG_TERM_STORAGE;
-  private LongTermStorageType longTermStorageType;
-  private ICodePart codePart;
+  private final LongTermStorageType longTermStorageType;
+  private final ICodePart codePart;
 
   public LongTermStorage(LongTermStorageType longTermStorageType, ICodePart codePart) {
     this.longTermStorageType = longTermStorageType;
