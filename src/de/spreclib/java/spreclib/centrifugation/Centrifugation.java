@@ -12,8 +12,8 @@ public abstract class Centrifugation implements ISprecPart {
   private final ICodePart codePart;
 
   /**
-   * Centrifugation Constructor.
-   * 
+   * * Centrifugation Constructor.
+   *
    * @param centrifugationType enum CentrifugationType
    * @param codePart CodePart Object
    * @param sprecPartType enum SprecPartType

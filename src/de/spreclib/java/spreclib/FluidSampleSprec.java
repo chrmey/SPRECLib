@@ -4,7 +4,7 @@ import de.spreclib.java.enums.SprecPartType;
 import de.spreclib.java.interfaces.IFluidSampleSprec;
 import de.spreclib.java.interfaces.ISprecPart;
 
-public class FluidSampleSprec extends Sprec implements IFluidSampleSprec {
+public final class FluidSampleSprec extends Sprec implements IFluidSampleSprec {
 
   public FluidSampleSprec() {
     super();

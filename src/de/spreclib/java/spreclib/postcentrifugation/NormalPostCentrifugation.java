@@ -5,14 +5,14 @@ import de.spreclib.java.enums.postcentrifugation.PostCentrifugationTemperature;
 import de.spreclib.java.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.java.interfaces.ICodePart;
 
-public class NormalPostCentrifugation extends PostCentrifugation {
+public final class NormalPostCentrifugation extends PostCentrifugation {
 
   private PostCentrifugationDelay postCentrifugationDelay;
   private PostCentrifugationTemperature postCentrifugationTemperature;
 
   /**
    * Constructor for NormalPostCentrifugation.
-   * 
+   *
    * @param postCentrifugationType enum PostCentrifugationType
    * @param postCentrifugationDelay enum PostCentrifugationDelay
    * @param postCentrifugationTemperature enum PostCentrifugationTemperature

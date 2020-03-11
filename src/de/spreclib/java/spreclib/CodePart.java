@@ -2,7 +2,7 @@ package de.spreclib.java.spreclib;
 
 import de.spreclib.java.interfaces.ICodePart;
 
-public class CodePart implements ICodePart {
+public final class CodePart implements ICodePart {
 
   private final String code;
 

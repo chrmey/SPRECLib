@@ -5,15 +5,14 @@ import de.spreclib.java.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.java.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.java.interfaces.ICodePart;
 
-public class NormalLongTermStorage extends LongTermStorage {
+public final class NormalLongTermStorage extends LongTermStorage {
 
   private LongTermStorageContainer longTermStorageContainer;
   private LongTermStorageTemperature longTermStorageTemperature;
 
-
   /**
    * Constructor for LongTermStorage.
-   * 
+   *
    * @param longTermStorageType enum LongTermStorageType
    * @param longTermStorageContainer enum LongTermStorageContainer
    * @param longTermStorageTemperature enum LongTermStorageTemperature

@@ -4,7 +4,7 @@ import de.spreclib.java.enums.SprecPartType;
 import de.spreclib.java.interfaces.ISolidSampleSprec;
 import de.spreclib.java.interfaces.ISprecPart;
 
-public class SolidSampleSprec extends Sprec implements ISolidSampleSprec {
+public final class SolidSampleSprec extends Sprec implements ISolidSampleSprec {
 
   public SolidSampleSprec() {
     super();

@@ -8,7 +8,7 @@ import de.spreclib.java.enums.centrifugation.CentrifugationTemperature;
 import de.spreclib.java.enums.centrifugation.CentrifugationType;
 import de.spreclib.java.interfaces.ICodePart;
 
-public class NormalCentrifugation extends Centrifugation {
+public final class NormalCentrifugation extends Centrifugation {
 
   private final CentrifugationDuration centrifugationDuration;
   private final CentrifugationSpeed centrifugationSpeed;
@@ -17,7 +17,7 @@ public class NormalCentrifugation extends Centrifugation {
 
   /**
    * Constructor for NormalCentrifugation.
-   * 
+   *
    * @param centrifugationType enum CentrifugationType
    * @param centrifugationDuration enum CentrifugationDuration
    * @param centrifugationSpeed enum CentrifugationSpeed
@@ -25,7 +25,7 @@ public class NormalCentrifugation extends Centrifugation {
    * @param centrifugationBraking enum CentrifugationBraking
    * @param codePart object CodePart
    * @param sprecPartType enum SprecPartType -> needed for differention between first and second
-   *        centrifugation
+   *     centrifugation
    */
   public NormalCentrifugation(
       CentrifugationType centrifugationType,
