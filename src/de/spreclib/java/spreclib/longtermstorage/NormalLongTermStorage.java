@@ -7,8 +7,8 @@ import de.spreclib.java.interfaces.ICodePart;
 
 public final class NormalLongTermStorage extends LongTermStorage {
 
-  private LongTermStorageContainer longTermStorageContainer;
-  private LongTermStorageTemperature longTermStorageTemperature;
+  private final LongTermStorageContainer longTermStorageContainer;
+  private final LongTermStorageTemperature longTermStorageTemperature;
 
   /**
    * Constructor for LongTermStorage.

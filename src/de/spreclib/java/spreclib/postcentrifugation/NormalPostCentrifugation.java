@@ -7,8 +7,8 @@ import de.spreclib.java.interfaces.ICodePart;
 
 public final class NormalPostCentrifugation extends PostCentrifugation {
 
-  private PostCentrifugationDelay postCentrifugationDelay;
-  private PostCentrifugationTemperature postCentrifugationTemperature;
+  private final PostCentrifugationDelay postCentrifugationDelay;
+  private final PostCentrifugationTemperature postCentrifugationTemperature;
 
   /**
    * Constructor for NormalPostCentrifugation.

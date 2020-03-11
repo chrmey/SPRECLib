@@ -8,8 +8,8 @@ import de.spreclib.java.interfaces.ISprecPart;
 public abstract class PostCentrifugation implements ISprecPart {
 
   private static final SprecPartType SPREC_PART_TYPE = SprecPartType.POST_CENTRIFUGATION;
-  private PostCentrifugationType postCentrifugationType;
-  private ICodePart codePart;
+  private final PostCentrifugationType postCentrifugationType;
+  private final ICodePart codePart;
 
   public PostCentrifugation(PostCentrifugationType postCentrifugationType, ICodePart codePart) {
     this.postCentrifugationType = postCentrifugationType;
