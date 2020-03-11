@@ -37,8 +37,7 @@ public abstract class PreCentrifugation implements ISprecPart {
     result = prime * result + ((SPREC_PART_TYPE == null) ? 0 : SPREC_PART_TYPE.hashCode());
     result = prime * result + ((codePart == null) ? 0 : codePart.hashCode());
     result =
-        prime * result
-            + ((preCentrifugationType == null) ? 0 : preCentrifugationType.hashCode());
+        prime * result + ((preCentrifugationType == null) ? 0 : preCentrifugationType.hashCode());
     return result;
   }
 

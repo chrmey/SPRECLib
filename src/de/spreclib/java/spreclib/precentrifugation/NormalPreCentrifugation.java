@@ -12,7 +12,7 @@ public final class NormalPreCentrifugation extends PreCentrifugation {
 
   /**
    * Constructor for NormalPreCentrifugation.
-   * 
+   *
    * @param preCentrifugationType enum PreCentrifugationType
    * @param preCentrifugationDelay enum PreCentrifugationDelay
    * @param preCentrifugationTemperature enum PreCentrifugationTemperature

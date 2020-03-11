@@ -7,7 +7,6 @@ import de.spreclib.java.spreclib.CodePart;
 import java.util.HashSet;
 import java.util.Set;
 
-
 public final class LongTermStorageList {
 
   public static final Set<LongTermStorage> LONG_TERM_STORAGES;
@@ -16,8 +15,8 @@ public final class LongTermStorageList {
     LONG_TERM_STORAGES = new HashSet<>();
     LONG_TERM_STORAGES.add(
         new SpecialLongTermStorage(LongTermStorageType.UNKNOWN, new CodePart("X")));
-    LONG_TERM_STORAGES
-        .add(new SpecialLongTermStorage(LongTermStorageType.OTHER, new CodePart("Z")));
+    LONG_TERM_STORAGES.add(
+        new SpecialLongTermStorage(LongTermStorageType.OTHER, new CodePart("Z")));
     LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,

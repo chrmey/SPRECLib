@@ -10,7 +10,6 @@ import de.spreclib.java.spreclib.CodePart;
 import java.util.HashSet;
 import java.util.Set;
 
-
 public final class SecondCentrifugationList {
 
   public static final Set<Centrifugation> CENTRIFUGATIONS;

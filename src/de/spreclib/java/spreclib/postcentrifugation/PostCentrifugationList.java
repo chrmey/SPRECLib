@@ -7,7 +7,6 @@ import de.spreclib.java.spreclib.CodePart;
 import java.util.HashSet;
 import java.util.Set;
 
-
 public final class PostCentrifugationList {
 
   public static final Set<PostCentrifugation> POST_CENTRIFUGATIONS;
