@@ -8,9 +8,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SPRECLib</name>
 	<description>A Library that implements the Sample PREanalytical Code Version 2 from ISBER.</description>
-	<properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	 <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<testSourceDirectory>test</testSourceDirectory>
@@ -21,6 +21,7 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 		</plugins>

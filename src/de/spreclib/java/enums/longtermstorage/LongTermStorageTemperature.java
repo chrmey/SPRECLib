@@ -16,6 +16,6 @@ public enum LongTermStorageTemperature {
   }
 
   LongTermStorageTemperature(int lowerBound, int upperBound) {
-    // TODO Bounds überarbeiten
+    // TODO Bounds Ã¼berarbeiten
   }
 }

@@ -10,6 +10,6 @@ public enum PreCentrifugationDelay {
   GREATER_EIGHTYFOUR_HOURS(48, 99999);
 
   PreCentrifugationDelay(int lowerBound, int upperBound) {
-    // TODO Bounds überarbeiten
+    // TODO Bounds Ã¼berarbeiten
   }
 }
