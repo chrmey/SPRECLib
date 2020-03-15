@@ -1,4 +1,4 @@
-package de.spreclib.java.postcentrifugation;
+package de.spreclib.model.postcentrifugation;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

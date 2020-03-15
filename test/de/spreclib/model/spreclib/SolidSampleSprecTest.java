@@ -1,4 +1,4 @@
-package de.spreclib.java.spreclib;
+package de.spreclib.model.spreclib;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;

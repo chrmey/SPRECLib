@@ -1,4 +1,4 @@
-package de.spreclib.java.enums;
+package de.spreclib.model.enums;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

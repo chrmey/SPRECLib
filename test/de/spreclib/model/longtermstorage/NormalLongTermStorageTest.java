@@ -1,4 +1,4 @@
-package de.spreclib.java.longtermstorage;
+package de.spreclib.model.longtermstorage;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
