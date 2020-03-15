@@ -5,11 +5,19 @@ import de.spreclib.java.enums.postcentrifugation.PostCentrifugationTemperature;
 import de.spreclib.java.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.java.interfaces.ICodePart;
 
-public class NormalPostCentrifugation extends PostCentrifugation {
+public final class NormalPostCentrifugation extends PostCentrifugation {
 
-  private PostCentrifugationDelay postCentrifugationDelay;
-  private PostCentrifugationTemperature postCentrifugationTemperature;
+  private final PostCentrifugationDelay postCentrifugationDelay;
+  private final PostCentrifugationTemperature postCentrifugationTemperature;
 
+  /**
+   * Constructor for NormalPostCentrifugation.
+   *
+   * @param postCentrifugationType enum PostCentrifugationType
+   * @param postCentrifugationDelay enum PostCentrifugationDelay
+   * @param postCentrifugationTemperature enum PostCentrifugationTemperature
+   * @param codePart object CodePart
+   */
   public NormalPostCentrifugation(
       PostCentrifugationType postCentrifugationType,
       PostCentrifugationDelay postCentrifugationDelay,
@@ -45,12 +53,22 @@ public class NormalPostCentrifugation extends PostCentrifugation {
 
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (!super.equals(obj)) return false;
-    if (getClass() != obj.getClass()) return false;
+    if (this == obj) {
+      return true;
+    }
+    if (!super.equals(obj)) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
     NormalPostCentrifugation other = (NormalPostCentrifugation) obj;
-    if (postCentrifugationDelay != other.postCentrifugationDelay) return false;
-    if (postCentrifugationTemperature != other.postCentrifugationTemperature) return false;
+    if (postCentrifugationDelay != other.postCentrifugationDelay) {
+      return false;
+    }
+    if (postCentrifugationTemperature != other.postCentrifugationTemperature) {
+      return false;
+    }
     return true;
   }
 }

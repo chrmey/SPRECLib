@@ -23,7 +23,7 @@ public enum Fixation implements ISprecPart {
 
   private ICodePart codePart;
 
-  private Fixation(ICodePart code) {
+  Fixation(ICodePart code) {
     this.codePart = code;
   }
 

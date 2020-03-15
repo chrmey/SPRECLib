@@ -6,6 +6,6 @@ public enum PostCentrifugationTemperature {
 
   PostCentrifugationTemperature(int lowerBound, int upperBound) {
     // TODO Auto-generated constructor stub
-    // TODO Bounds überarbeiten
+    // TODO Bounds Ã¼berarbeiten
   }
 }

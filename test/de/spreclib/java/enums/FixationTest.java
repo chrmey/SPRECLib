@@ -3,20 +3,21 @@ package de.spreclib.java.enums;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Test;
-
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.interfaces.ISprecPart;
 import de.spreclib.java.spreclib.CodePart;
+import org.junit.Test;
 
-public class TestFixation {
+
+public class FixationTest {
 
   @Test
   public void testGetCodeFromSprecPart() {
-    ICodePart codePart = Fixation.ALCOHOL_BASED.getCodeFromSprecPart();
+    ICodePart actual = Fixation.ALCOHOL_BASED.getCodeFromSprecPart();
     ICodePart expected = new CodePart("ETH");
-    assertNotNull(codePart);
-    assertEquals(expected.getStringRepresentation(), codePart.getStringRepresentation());
+    assertNotNull(actual);
+    assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    assertEquals(expected, actual);
   }
 
   @Test

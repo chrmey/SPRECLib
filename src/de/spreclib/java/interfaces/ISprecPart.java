@@ -4,7 +4,7 @@ import de.spreclib.java.enums.SprecPartType;
 
 public interface ISprecPart {
 
-  public ICodePart getCodeFromSprecPart();
+  ICodePart getCodeFromSprecPart();
 
-  public SprecPartType getSprecPartType();
+  SprecPartType getSprecPartType();
 }

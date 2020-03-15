@@ -3,9 +3,6 @@ package de.spreclib.java.longtermstorage;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import de.spreclib.java.enums.SprecPartType;
 import de.spreclib.java.enums.longtermstorage.LongTermStorageContainer;
 import de.spreclib.java.enums.longtermstorage.LongTermStorageTemperature;
@@ -13,8 +10,11 @@ import de.spreclib.java.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.spreclib.CodePart;
 import de.spreclib.java.spreclib.longtermstorage.NormalLongTermStorage;
+import org.junit.Before;
+import org.junit.Test;
 
-public class TestNormalLongTermStorage {
+
+public class NormalLongTermStorageTest {
 
   NormalLongTermStorage normalLongTermStorage;
 
@@ -40,6 +40,7 @@ public class TestNormalLongTermStorage {
     ICodePart actual = normalLongTermStorage.getCodeFromSprecPart();
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    assertEquals(expected, actual);
   }
 
   @Test

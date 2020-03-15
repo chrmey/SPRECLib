@@ -1,108 +1,107 @@
 package de.spreclib.java.spreclib.precentrifugation;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.java.spreclib.CodePart;
+import java.util.HashSet;
+import java.util.Set;
 
-public abstract class PreCentrifugationList {
+public final class PreCentrifugationList {
 
-  public static final Set<PreCentrifugation> preCentrifugations;
+  public static final Set<PreCentrifugation> PRE_CENTRIFUGATIONS;
 
   static {
-    preCentrifugations = new HashSet<>();
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS = new HashSet<>();
+    PRE_CENTRIFUGATIONS.add(
         new SpecialPreCentrifugation(PreCentrifugationType.UNKNOWN, new CodePart("X")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new SpecialPreCentrifugation(PreCentrifugationType.OTHER, new CodePart("Z")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.LESS_TWO_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("A")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.LESS_TWO_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("B")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.TWO_TO_FOUR_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("C")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.TWO_TO_FOUR_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("D")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.FOUR_TO_EIGHT_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("E")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.FOUR_TO_EIGHT_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("F")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.EIGHT_TO_TWELVE_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("G")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.EIGHT_TO_TWELVE_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("H")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.TWELVE_TO_TWENTYFOUR_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("I")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.TWELVE_TO_TWENTYFOUR_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("J")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.TWENTYFOUR_TO_EIGHTYFOUR_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("K")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.TWENTYFOUR_TO_EIGHTYFOUR_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("L")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.GREATER_EIGHTYFOUR_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("M")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.GREATER_EIGHTYFOUR_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("N")));
-    preCentrifugations.add(
+    PRE_CENTRIFUGATIONS.add(
         new NormalPreCentrifugation(
             PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.LESS_TWO_HOURS,

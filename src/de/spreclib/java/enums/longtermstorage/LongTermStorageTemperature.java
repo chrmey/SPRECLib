@@ -11,10 +11,11 @@ public enum LongTermStorageTemperature {
   TWO_TO_TEN_DEGRESS(2, 10),
   ;
 
-  LongTermStorageTemperature() {}
+  LongTermStorageTemperature() {
+    // Constructor for LIQUID_NITROGEN which has no Temperature in SPRECv2
+  }
 
   LongTermStorageTemperature(int lowerBound, int upperBound) {
-    // TODO Auto-generated constructor stub
-    // TODO Bounds überarbeiten
+    // TODO Bounds Ã¼berarbeiten
   }
 }

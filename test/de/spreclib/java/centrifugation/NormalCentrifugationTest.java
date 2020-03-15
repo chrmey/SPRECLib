@@ -3,9 +3,6 @@ package de.spreclib.java.centrifugation;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import de.spreclib.java.enums.SprecPartType;
 import de.spreclib.java.enums.centrifugation.CentrifugationBraking;
 import de.spreclib.java.enums.centrifugation.CentrifugationDuration;
@@ -15,8 +12,11 @@ import de.spreclib.java.enums.centrifugation.CentrifugationType;
 import de.spreclib.java.interfaces.ICodePart;
 import de.spreclib.java.spreclib.CodePart;
 import de.spreclib.java.spreclib.centrifugation.NormalCentrifugation;
+import org.junit.Before;
+import org.junit.Test;
 
-public class TestNormalCentrifugation {
+
+public class NormalCentrifugationTest {
 
   NormalCentrifugation centrifugation;
 
@@ -45,6 +45,7 @@ public class TestNormalCentrifugation {
     ICodePart actual = centrifugation.getCodeFromSprecPart();
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    assertEquals(expected, actual);
   }
 
   @Test

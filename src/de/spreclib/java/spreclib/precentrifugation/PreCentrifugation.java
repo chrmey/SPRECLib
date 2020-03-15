@@ -7,9 +7,9 @@ import de.spreclib.java.interfaces.ISprecPart;
 
 public abstract class PreCentrifugation implements ISprecPart {
 
-  private final SprecPartType SPRECPARTTYPE = SprecPartType.PRE_CENTRIFUGATION;
-  private PreCentrifugationType preCentrifugationType;
-  private ICodePart codePart;
+  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.PRE_CENTRIFUGATION;
+  private final PreCentrifugationType preCentrifugationType;
+  private final ICodePart codePart;
 
   public PreCentrifugation(PreCentrifugationType preCentrifugationType, ICodePart codePart) {
     this.preCentrifugationType = preCentrifugationType;
@@ -23,7 +23,7 @@ public abstract class PreCentrifugation implements ISprecPart {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return this.SPRECPARTTYPE;
+    return PreCentrifugation.SPREC_PART_TYPE;
   }
 
   public PreCentrifugationType getPreCentrifugationType() {
@@ -34,7 +34,7 @@ public abstract class PreCentrifugation implements ISprecPart {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((SPRECPARTTYPE == null) ? 0 : SPRECPARTTYPE.hashCode());
+    result = prime * result + ((SPREC_PART_TYPE == null) ? 0 : SPREC_PART_TYPE.hashCode());
     result = prime * result + ((codePart == null) ? 0 : codePart.hashCode());
     result =
         prime * result + ((preCentrifugationType == null) ? 0 : preCentrifugationType.hashCode());
@@ -43,15 +43,26 @@ public abstract class PreCentrifugation implements ISprecPart {
 
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (obj == null) return false;
-    if (getClass() != obj.getClass()) return false;
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
     PreCentrifugation other = (PreCentrifugation) obj;
-    if (SPRECPARTTYPE != other.SPRECPARTTYPE) return false;
     if (codePart == null) {
-      if (other.codePart != null) return false;
-    } else if (!codePart.equals(other.codePart)) return false;
-    if (preCentrifugationType != other.preCentrifugationType) return false;
+      if (other.codePart != null) {
+        return false;
+      }
+    } else if (!codePart.equals(other.codePart)) {
+      return false;
+    }
+    if (preCentrifugationType != other.preCentrifugationType) {
+      return false;
+    }
     return true;
   }
 }

@@ -2,15 +2,15 @@ package de.spreclib.java.interfaces;
 
 public interface ISolidSampleSprec {
 
-  public ISprecPart getSolidSampleType();
+  ISprecPart getSolidSampleType();
 
-  public ISprecPart getTypeOfCollection();
+  ISprecPart getTypeOfCollection();
 
-  public ISprecPart getWarmIschemiaTime();
+  ISprecPart getWarmIschemiaTime();
 
-  public ISprecPart getColdIschemiaTime();
+  ISprecPart getColdIschemiaTime();
 
-  public ISprecPart getFixation();
+  ISprecPart getFixation();
 
-  public ISprecPart getFixationTime();
+  ISprecPart getFixationTime();
 }

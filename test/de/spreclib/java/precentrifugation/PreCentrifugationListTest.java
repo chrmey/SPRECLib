@@ -1,13 +1,7 @@
 package de.spreclib.java.precentrifugation;
 
 import static org.junit.Assert.assertEquals;
-
-import java.util.HashSet;
-import java.util.Set;
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationTemperature;
@@ -17,8 +11,13 @@ import de.spreclib.java.spreclib.precentrifugation.NormalPreCentrifugation;
 import de.spreclib.java.spreclib.precentrifugation.PreCentrifugation;
 import de.spreclib.java.spreclib.precentrifugation.PreCentrifugationList;
 import de.spreclib.java.spreclib.precentrifugation.SpecialPreCentrifugation;
+import java.util.HashSet;
+import java.util.Set;
+import org.junit.Before;
+import org.junit.Test;
 
-public class TestPreCentrifugationList {
+
+public class PreCentrifugationListTest {
 
   Set<PreCentrifugation> testList;
 
@@ -121,15 +120,43 @@ public class TestPreCentrifugationList {
 
   @Test
   public void testPreCentrifugationListSize() {
-    int actualSize = PreCentrifugationList.preCentrifugations.size();
+    int actualSize = PreCentrifugationList.PRE_CENTRIFUGATIONS.size();
     int expectedSize = testList.size();
     assertEquals(expectedSize, actualSize);
   }
 
   @Test
   public void testPreCentrifugationListContent() {
-    Object[] actual = PreCentrifugationList.preCentrifugations.toArray();
-    Object[] expected = testList.toArray();
-    Assert.assertArrayEquals(expected, actual);
+    for (PreCentrifugation preCentrifugation : testList) {
+      assertTrue(PreCentrifugationList.PRE_CENTRIFUGATIONS.contains(preCentrifugation));
+    }
+  }
+
+  @Test
+  public void testPreCentrifugationListContentTypes() {
+    int expectedNormalPreCentrifugations = 0;
+    int expectedSpecialPreCentrifugations = 0;
+    int actualNormalPreCentrifugations = 0;
+    int actualSpecialPreCentrifugations = 0;
+
+    for (PreCentrifugation preCentrifugation : testList) {
+      if (preCentrifugation instanceof SpecialPreCentrifugation) {
+        expectedSpecialPreCentrifugations++;
+      }
+      if (preCentrifugation instanceof NormalPreCentrifugation) {
+        expectedNormalPreCentrifugations++;
+      }
+    }
+
+    for (PreCentrifugation preCentrifugation : PreCentrifugationList.PRE_CENTRIFUGATIONS) {
+      if (preCentrifugation instanceof SpecialPreCentrifugation) {
+        actualSpecialPreCentrifugations++;
+      }
+      if (preCentrifugation instanceof NormalPreCentrifugation) {
+        actualNormalPreCentrifugations++;
+      }
+    }
+    assertEquals(expectedNormalPreCentrifugations, actualNormalPreCentrifugations);
+    assertEquals(expectedSpecialPreCentrifugations, actualSpecialPreCentrifugations);
   }
 }

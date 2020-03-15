@@ -7,9 +7,9 @@ import de.spreclib.java.interfaces.ISprecPart;
 
 public abstract class LongTermStorage implements ISprecPart {
 
-  private final SprecPartType sprecPartType = SprecPartType.LONG_TERM_STORAGE;
-  private LongTermStorageType longTermStorageType;
-  private ICodePart codePart;
+  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.LONG_TERM_STORAGE;
+  private final LongTermStorageType longTermStorageType;
+  private final ICodePart codePart;
 
   public LongTermStorage(LongTermStorageType longTermStorageType, ICodePart codePart) {
     this.longTermStorageType = longTermStorageType;
@@ -23,7 +23,7 @@ public abstract class LongTermStorage implements ISprecPart {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return this.sprecPartType;
+    return LongTermStorage.SPREC_PART_TYPE;
   }
 
   public LongTermStorageType getLongTermStorageType() {
@@ -36,21 +36,32 @@ public abstract class LongTermStorage implements ISprecPart {
     int result = 1;
     result = prime * result + ((codePart == null) ? 0 : codePart.hashCode());
     result = prime * result + ((longTermStorageType == null) ? 0 : longTermStorageType.hashCode());
-    result = prime * result + ((sprecPartType == null) ? 0 : sprecPartType.hashCode());
+    result = prime * result + ((SPREC_PART_TYPE == null) ? 0 : SPREC_PART_TYPE.hashCode());
     return result;
   }
 
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (obj == null) return false;
-    if (getClass() != obj.getClass()) return false;
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
     LongTermStorage other = (LongTermStorage) obj;
     if (codePart == null) {
-      if (other.codePart != null) return false;
-    } else if (!codePart.equals(other.codePart)) return false;
-    if (longTermStorageType != other.longTermStorageType) return false;
-    if (sprecPartType != other.sprecPartType) return false;
+      if (other.codePart != null) {
+        return false;
+      }
+    } else if (!codePart.equals(other.codePart)) {
+      return false;
+    }
+    if (longTermStorageType != other.longTermStorageType) {
+      return false;
+    }
     return true;
   }
 }

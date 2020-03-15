@@ -1,13 +1,7 @@
 package de.spreclib.java.longtermstorage;
 
 import static org.junit.Assert.assertEquals;
-
-import java.util.HashSet;
-import java.util.Set;
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 import de.spreclib.java.enums.longtermstorage.LongTermStorageContainer;
 import de.spreclib.java.enums.longtermstorage.LongTermStorageTemperature;
@@ -17,8 +11,13 @@ import de.spreclib.java.spreclib.longtermstorage.LongTermStorage;
 import de.spreclib.java.spreclib.longtermstorage.LongTermStorageList;
 import de.spreclib.java.spreclib.longtermstorage.NormalLongTermStorage;
 import de.spreclib.java.spreclib.longtermstorage.SpecialLongTermStorage;
+import java.util.HashSet;
+import java.util.Set;
+import org.junit.Before;
+import org.junit.Test;
 
-public class TestLongTermStorageList {
+
+public class LongTermStorageListTest {
 
   Set<LongTermStorage> testList;
 
@@ -183,15 +182,43 @@ public class TestLongTermStorageList {
 
   @Test
   public void testLongTermStorageListSize() {
-    int actualSize = LongTermStorageList.longTermStorages.size();
+    int actualSize = LongTermStorageList.LONG_TERM_STORAGES.size();
     int expectedSize = testList.size();
     assertEquals(expectedSize, actualSize);
   }
 
   @Test
   public void testLongTermStorageListContents() {
-    Object[] actual = LongTermStorageList.longTermStorages.toArray();
-    Object[] expected = testList.toArray();
-    Assert.assertArrayEquals(expected, actual);
+    for (LongTermStorage longTermStorage : testList) {
+      assertTrue(LongTermStorageList.LONG_TERM_STORAGES.contains(longTermStorage));
+    }
+  }
+
+  @Test
+  public void testLongTermStorageListContentTypes() {
+    int expectedNormalLongTermStorages = 0;
+    int expectedSpecialLongTermStorages = 0;
+    int actualNormalLongTermStorages = 0;
+    int actualSpecialLongTermStorages = 0;
+
+    for (LongTermStorage longTermStorage : testList) {
+      if (longTermStorage instanceof SpecialLongTermStorage) {
+        expectedSpecialLongTermStorages++;
+      }
+      if (longTermStorage instanceof NormalLongTermStorage) {
+        expectedNormalLongTermStorages++;
+      }
+    }
+
+    for (LongTermStorage longTermStorage : LongTermStorageList.LONG_TERM_STORAGES) {
+      if (longTermStorage instanceof SpecialLongTermStorage) {
+        actualSpecialLongTermStorages++;
+      }
+      if (longTermStorage instanceof NormalLongTermStorage) {
+        actualNormalLongTermStorages++;
+      }
+    }
+    assertEquals(expectedNormalLongTermStorages, actualNormalLongTermStorages);
+    assertEquals(expectedSpecialLongTermStorages, actualSpecialLongTermStorages);
   }
 }

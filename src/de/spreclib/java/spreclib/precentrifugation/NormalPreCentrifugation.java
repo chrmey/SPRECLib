@@ -5,11 +5,19 @@ import de.spreclib.java.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.java.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.java.interfaces.ICodePart;
 
-public class NormalPreCentrifugation extends PreCentrifugation {
+public final class NormalPreCentrifugation extends PreCentrifugation {
 
-  private PreCentrifugationDelay preCentrifugationDelay;
-  private PreCentrifugationTemperature preCentrifugationTemperature;
+  private final PreCentrifugationDelay preCentrifugationDelay;
+  private final PreCentrifugationTemperature preCentrifugationTemperature;
 
+  /**
+   * Constructor for NormalPreCentrifugation.
+   *
+   * @param preCentrifugationType enum PreCentrifugationType
+   * @param preCentrifugationDelay enum PreCentrifugationDelay
+   * @param preCentrifugationTemperature enum PreCentrifugationTemperature
+   * @param codePart Object CodePart
+   */
   public NormalPreCentrifugation(
       PreCentrifugationType preCentrifugationType,
       PreCentrifugationDelay preCentrifugationDelay,
@@ -44,12 +52,22 @@ public class NormalPreCentrifugation extends PreCentrifugation {
 
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (!super.equals(obj)) return false;
-    if (getClass() != obj.getClass()) return false;
+    if (this == obj) {
+      return true;
+    }
+    if (!super.equals(obj)) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
     NormalPreCentrifugation other = (NormalPreCentrifugation) obj;
-    if (preCentrifugationDelay != other.preCentrifugationDelay) return false;
-    if (preCentrifugationTemperature != other.preCentrifugationTemperature) return false;
+    if (preCentrifugationDelay != other.preCentrifugationDelay) {
+      return false;
+    }
+    if (preCentrifugationTemperature != other.preCentrifugationTemperature) {
+      return false;
+    }
     return true;
   }
 }

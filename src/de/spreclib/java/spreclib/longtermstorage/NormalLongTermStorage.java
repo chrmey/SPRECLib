@@ -5,11 +5,19 @@ import de.spreclib.java.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.java.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.java.interfaces.ICodePart;
 
-public class NormalLongTermStorage extends LongTermStorage {
+public final class NormalLongTermStorage extends LongTermStorage {
 
-  private LongTermStorageContainer longTermStorageContainer;
-  private LongTermStorageTemperature longTermStorageTemperature;
+  private final LongTermStorageContainer longTermStorageContainer;
+  private final LongTermStorageTemperature longTermStorageTemperature;
 
+  /**
+   * Constructor for LongTermStorage.
+   *
+   * @param longTermStorageType enum LongTermStorageType
+   * @param longTermStorageContainer enum LongTermStorageContainer
+   * @param longTermStorageTemperature enum LongTermStorageTemperature
+   * @param codePart Object CodePart
+   */
   public NormalLongTermStorage(
       LongTermStorageType longTermStorageType,
       LongTermStorageContainer longTermStorageContainer,
@@ -43,12 +51,22 @@ public class NormalLongTermStorage extends LongTermStorage {
 
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (!super.equals(obj)) return false;
-    if (getClass() != obj.getClass()) return false;
+    if (this == obj) {
+      return true;
+    }
+    if (!super.equals(obj)) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
     NormalLongTermStorage other = (NormalLongTermStorage) obj;
-    if (longTermStorageContainer != other.longTermStorageContainer) return false;
-    if (longTermStorageTemperature != other.longTermStorageTemperature) return false;
+    if (longTermStorageContainer != other.longTermStorageContainer) {
+      return false;
+    }
+    if (longTermStorageTemperature != other.longTermStorageTemperature) {
+      return false;
+    }
     return true;
   }
 }
