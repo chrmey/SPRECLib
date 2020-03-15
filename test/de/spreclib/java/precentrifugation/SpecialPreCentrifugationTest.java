@@ -2,12 +2,11 @@ package de.spreclib.java.precentrifugation;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
-import de.spreclib.java.enums.SprecPartType;
-import de.spreclib.java.enums.precentrifugation.PreCentrifugationType;
-import de.spreclib.java.interfaces.ICodePart;
-import de.spreclib.java.spreclib.CodePart;
-import de.spreclib.java.spreclib.precentrifugation.SpecialPreCentrifugation;
+import de.spreclib.model.enums.SprecPartType;
+import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
+import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.spreclib.precentrifugation.SpecialPreCentrifugation;
 import org.junit.Before;
 import org.junit.Test;
 

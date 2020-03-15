@@ -2,15 +2,14 @@ package de.spreclib.java.longtermstorage;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-import de.spreclib.java.enums.longtermstorage.LongTermStorageContainer;
-import de.spreclib.java.enums.longtermstorage.LongTermStorageTemperature;
-import de.spreclib.java.enums.longtermstorage.LongTermStorageType;
-import de.spreclib.java.spreclib.CodePart;
-import de.spreclib.java.spreclib.longtermstorage.LongTermStorage;
-import de.spreclib.java.spreclib.longtermstorage.LongTermStorageList;
-import de.spreclib.java.spreclib.longtermstorage.NormalLongTermStorage;
-import de.spreclib.java.spreclib.longtermstorage.SpecialLongTermStorage;
+import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
+import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
+import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
+import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
+import de.spreclib.model.spreclib.longtermstorage.LongTermStorageList;
+import de.spreclib.model.spreclib.longtermstorage.NormalLongTermStorage;
+import de.spreclib.model.spreclib.longtermstorage.SpecialLongTermStorage;
 import java.util.HashSet;
 import java.util.Set;
 import org.junit.Before;

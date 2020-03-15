@@ -5,9 +5,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import de.spreclib.java.interfaces.ISprecPart;
+import de.spreclib.model.interfaces.ISprecPart;
+import de.spreclib.model.spreclib.SolidSampleSprec;
+import de.spreclib.model.spreclib.Sprec;
 import org.junit.Test;
-
 
 public class SolidSampleSprecTest {
 

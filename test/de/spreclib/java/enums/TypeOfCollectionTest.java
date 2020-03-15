@@ -2,10 +2,11 @@ package de.spreclib.java.enums;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
-import de.spreclib.java.interfaces.ICodePart;
-import de.spreclib.java.interfaces.ISprecPart;
-import de.spreclib.java.spreclib.CodePart;
+import de.spreclib.model.enums.SprecPartType;
+import de.spreclib.model.enums.TypeOfCollection;
+import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.interfaces.ISprecPart;
+import de.spreclib.model.spreclib.CodePart;
 import org.junit.Test;
 
 

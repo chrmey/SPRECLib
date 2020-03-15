@@ -2,15 +2,14 @@ package de.spreclib.java.postcentrifugation;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-import de.spreclib.java.enums.postcentrifugation.PostCentrifugationDelay;
-import de.spreclib.java.enums.postcentrifugation.PostCentrifugationTemperature;
-import de.spreclib.java.enums.postcentrifugation.PostCentrifugationType;
-import de.spreclib.java.spreclib.CodePart;
-import de.spreclib.java.spreclib.postcentrifugation.NormalPostCentrifugation;
-import de.spreclib.java.spreclib.postcentrifugation.PostCentrifugation;
-import de.spreclib.java.spreclib.postcentrifugation.PostCentrifugationList;
-import de.spreclib.java.spreclib.postcentrifugation.SpecialPostCentrifugation;
+import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
+import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
+import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
+import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.spreclib.postcentrifugation.NormalPostCentrifugation;
+import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugation;
+import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugationList;
+import de.spreclib.model.spreclib.postcentrifugation.SpecialPostCentrifugation;
 import java.util.HashSet;
 import java.util.Set;
 import org.junit.Before;
