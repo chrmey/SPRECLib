@@ -7,7 +7,7 @@ public enum PostCentrifugationDelay {
   EIGHT_TO_TWENTYFOUR_HOURS(8, 24),
   GREATER_TWENTYFOUR_HOURS(24, 99999);
 
-  PostCentrifugationDelay(long lowerBound, long upperBound) {
+  PostCentrifugationDelay(int lowerBound, int upperBound) {
     // TODO Auto-generated constructor stub
     // TODO Bounds überarbeiten
   }
