@@ -5,7 +5,7 @@ public enum PreCentrifugationTemperature {
   TWO_TO_TEN_DEGREES(2, 10),
   THIRTYFIVE_TO_THIRTYEIGHT_DEGREES(35, 38);
 
-  PreCentrifugationTemperature(long lowerBound, long upperBound) {
+  PreCentrifugationTemperature(float lowerBound, float upperBound) {
     // TODO Bounds überarbeiten
   }
 }
