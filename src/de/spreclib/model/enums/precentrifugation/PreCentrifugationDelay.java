@@ -1,15 +1,13 @@
 package de.spreclib.model.enums.precentrifugation;
 
 public enum PreCentrifugationDelay {
-  LESS_TWO_HOURS(0, 2),
-  TWO_TO_FOUR_HOURS(2, 4),
-  FOUR_TO_EIGHT_HOURS(4, 8),
-  EIGHT_TO_TWELVE_HOURS(8, 12),
-  TWELVE_TO_TWENTYFOUR_HOURS(12, 24),
-  TWENTYFOUR_TO_EIGHTYFOUR_HOURS(24, 48),
-  GREATER_EIGHTYFOUR_HOURS(48, 99999);
+  LESS_TWO_HOURS(0, 120),
+  TWO_TO_FOUR_HOURS(120, 240),
+  FOUR_TO_EIGHT_HOURS(240, 480),
+  EIGHT_TO_TWELVE_HOURS(480, 720),
+  TWELVE_TO_TWENTYFOUR_HOURS(720, 1440),
+  TWENTYFOUR_TO_EIGHTYFOUR_HOURS(1440, 2880),
+  GREATER_EIGHTYFOUR_HOURS(2880, 999999999);
 
-  PreCentrifugationDelay(int lowerBound, int upperBound) {
-    // TODO Bounds überarbeiten
-  }
+  PreCentrifugationDelay(int lowerBound, int upperBound) {}
 }
