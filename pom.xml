@@ -8,9 +8,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SPRECLib</name>
 	<description>A Library that implements the Sample PREanalytical Code Version 2 from ISBER.</description>
-	 <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<testSourceDirectory>test</testSourceDirectory>
@@ -43,6 +43,11 @@
 			<groupId>checkstyle</groupId>
 			<artifactId>checkstyle</artifactId>
 			<version>5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.googlejavaformat</groupId>
+			<artifactId>google-java-format</artifactId>
+			<version>1.7</version>
 		</dependency>
 	</dependencies>
 </project>
