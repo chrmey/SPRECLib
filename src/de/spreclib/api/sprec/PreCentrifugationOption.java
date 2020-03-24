@@ -1,18 +1,25 @@
-package de.spreclib.api.lists.precentrifugation;
+package de.spreclib.api.sprec;
 
 import de.spreclib.api.lists.interfaces.IListOption;
+import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
 
 public final class PreCentrifugationOption implements IListOption {
 
   private PreCentrifugation preCentrifugation;
 
-  protected PreCentrifugationOption(PreCentrifugation preCentrifugation) {
+  public PreCentrifugationOption(PreCentrifugation preCentrifugation) {
     this.preCentrifugation = preCentrifugation;
   }
 
   @Override
   public String getStringRepresentation() {
-    return preCentrifugation.toString();
+    // TODO Implement
+    return null;
+  }
+
+
+  protected ICodePart getCodePartFromOption() {
+    return this.preCentrifugation.getCodeFromSprecPart();
   }
 }

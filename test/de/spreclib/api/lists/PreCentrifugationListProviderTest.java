@@ -1,9 +1,10 @@
-package de.spreclib.api.lists.precentrifugation;
+package de.spreclib.api.lists;
 
 import java.util.ArrayList;
 import org.junit.Test;
+
+import de.spreclib.api.lists.PreCentrifugationListProvider;
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.precentrifugation.PreCentrifugationListProvider;
 
 public class PreCentrifugationListProviderTest {
 

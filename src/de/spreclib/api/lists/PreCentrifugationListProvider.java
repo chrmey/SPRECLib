@@ -1,8 +1,9 @@
-package de.spreclib.api.lists.precentrifugation;
+package de.spreclib.api.lists;
 
 import java.util.ArrayList;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.interfaces.IListProvider;
+import de.spreclib.api.sprec.PreCentrifugationOption;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugationList;
 
