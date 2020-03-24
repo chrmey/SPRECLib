@@ -1,9 +1,11 @@
-package de.spreclib.api.lists.fluidsampletype;
+package de.spreclib.api.lists;
 
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import org.junit.Test;
+
+import de.spreclib.api.lists.FluidSampleTypeListProvider;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.interfaces.IListProvider;
 

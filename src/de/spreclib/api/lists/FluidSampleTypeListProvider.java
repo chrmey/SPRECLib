@@ -1,10 +1,10 @@
-package de.spreclib.api.lists.fluidsampletype;
-
-import java.util.ArrayList;
+package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.interfaces.IListProvider;
+import de.spreclib.api.sprec.FluidSampleTypeOption;
 import de.spreclib.model.enums.FluidSampleType;
+import java.util.ArrayList;
 
 public final class FluidSampleTypeListProvider implements IListProvider {
 
