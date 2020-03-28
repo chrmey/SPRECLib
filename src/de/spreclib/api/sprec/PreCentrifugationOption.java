@@ -17,9 +17,4 @@ public final class PreCentrifugationOption implements IListOption {
     // TODO Implement
     return null;
   }
-
-
-  protected ICodePart getCodePartFromOption() {
-    return this.preCentrifugation.getCodeFromSprecPart();
-  }
 }

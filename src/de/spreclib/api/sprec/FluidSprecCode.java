@@ -70,8 +70,7 @@ public class FluidSprecCode implements ISprecCode {
   }
 
   @Override
-  public ISprecCode getStringRepresentation() {
-    // TODO Implement
+  public String getStringRepresentation() {
     return null;
   }
 }

@@ -15,8 +15,7 @@ public class FluidSampleTypeListProviderTest {
   public void test() {
     IListProvider fluidSampleTypeListProvider = new FluidSampleTypeListProvider();
     ArrayList<IListOption> list = fluidSampleTypeListProvider.getList();
-    for (IListOption option : list) {
-      System.out.println(option.getStringRepresentation());
-    }
+
+    assertFalse(list.isEmpty());
   }
 }

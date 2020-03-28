@@ -18,7 +18,4 @@ public class PrimaryContainerOption implements IListOption {
     return null;
   }
 
-  protected ICodePart getCodePartFromOption() {
-    return this.primaryContainer.getCodeFromSprecPart();
-  }
 }

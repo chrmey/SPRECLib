@@ -1,10 +1,10 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertFalse;
+
+import de.spreclib.api.lists.interfaces.IListOption;
 import java.util.ArrayList;
 import org.junit.Test;
-
-import de.spreclib.api.lists.PreCentrifugationListProvider;
-import de.spreclib.api.lists.interfaces.IListOption;
 
 public class PreCentrifugationListProviderTest {
 
@@ -14,8 +14,6 @@ public class PreCentrifugationListProviderTest {
     ArrayList<IListOption> list = new ArrayList<IListOption>();
     list = listProvider.getList();
 
-    for (IListOption entry : list) {
-      System.out.println(entry.getStringRepresentation());
-    }
+    assertFalse(list.isEmpty());
   }
 }
