@@ -25,6 +25,7 @@ public enum TypeOfCollection implements ISprecPart {
   OTHER(new CodePart("ZZZ")),
   ;
 
+  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.TYPE_OF_COLLECTION;
   private ICodePart codePart;
 
   TypeOfCollection(ICodePart code) {
@@ -38,6 +39,6 @@ public enum TypeOfCollection implements ISprecPart {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return SprecPartType.TYPE_OF_COLLECTION;
+    return TypeOfCollection.SPREC_PART_TYPE;
   }
 }

@@ -27,7 +27,6 @@ public final class SecondCentrifugationList {
             CentrifugationType.OTHER, new CodePart("Z"), SprecPartType.SECOND_CENTRIFUGATION));
     CENTRIFUGATIONS.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             CentrifugationSpeed.LESS_THREETHOUSAND_G,
             CentrifugationTemperature.ROOM_TEMPERATURE,
@@ -36,7 +35,6 @@ public final class SecondCentrifugationList {
             SprecPartType.SECOND_CENTRIFUGATION));
     CENTRIFUGATIONS.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             CentrifugationSpeed.LESS_THREETHOUSAND_G,
             CentrifugationTemperature.ROOM_TEMPERATURE,
@@ -45,7 +43,6 @@ public final class SecondCentrifugationList {
             SprecPartType.SECOND_CENTRIFUGATION));
     CENTRIFUGATIONS.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             CentrifugationSpeed.LESS_THREETHOUSAND_G,
             CentrifugationTemperature.TWO_TO_TEN_DEGREES,
@@ -54,7 +51,6 @@ public final class SecondCentrifugationList {
             SprecPartType.SECOND_CENTRIFUGATION));
     CENTRIFUGATIONS.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             CentrifugationSpeed.LESS_THREETHOUSAND_G,
             CentrifugationTemperature.TWO_TO_TEN_DEGREES,
@@ -63,7 +59,6 @@ public final class SecondCentrifugationList {
             SprecPartType.SECOND_CENTRIFUGATION));
     CENTRIFUGATIONS.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             CentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
             CentrifugationTemperature.ROOM_TEMPERATURE,
@@ -72,7 +67,6 @@ public final class SecondCentrifugationList {
             SprecPartType.SECOND_CENTRIFUGATION));
     CENTRIFUGATIONS.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             CentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
             CentrifugationTemperature.TWO_TO_TEN_DEGREES,
@@ -81,7 +75,6 @@ public final class SecondCentrifugationList {
             SprecPartType.SECOND_CENTRIFUGATION));
     CENTRIFUGATIONS.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             CentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
             CentrifugationTemperature.ROOM_TEMPERATURE,
@@ -90,7 +83,6 @@ public final class SecondCentrifugationList {
             SprecPartType.SECOND_CENTRIFUGATION));
     CENTRIFUGATIONS.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             CentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
             CentrifugationTemperature.TWO_TO_TEN_DEGREES,
@@ -99,7 +91,6 @@ public final class SecondCentrifugationList {
             SprecPartType.SECOND_CENTRIFUGATION));
     CENTRIFUGATIONS.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             CentrifugationSpeed.GREATER_TENTHOUSAND_G,
             CentrifugationTemperature.ROOM_TEMPERATURE,
@@ -108,7 +99,6 @@ public final class SecondCentrifugationList {
             SprecPartType.SECOND_CENTRIFUGATION));
     CENTRIFUGATIONS.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             CentrifugationSpeed.GREATER_TENTHOUSAND_G,
             CentrifugationTemperature.TWO_TO_TEN_DEGREES,

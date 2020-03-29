@@ -23,7 +23,6 @@ public class NormalCentrifugationTest {
   public void setUp() {
     centrifugation =
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
             CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             CentrifugationSpeed.LESS_THREETHOUSAND_G,
             CentrifugationTemperature.ROOM_TEMPERATURE,

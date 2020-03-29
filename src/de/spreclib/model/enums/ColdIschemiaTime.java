@@ -16,6 +16,7 @@ public enum ColdIschemiaTime implements ISprecPart {
   OTHER(new CodePart("Z")),
   ;
 
+  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.COLD_ISCHEMIA_TIME;
   private final ICodePart codePart;
 
   ColdIschemiaTime(ICodePart code) {
@@ -33,6 +34,6 @@ public enum ColdIschemiaTime implements ISprecPart {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return SprecPartType.COLD_ISCHEMIA_TIME;
+    return ColdIschemiaTime.SPREC_PART_TYPE;
   }
 }

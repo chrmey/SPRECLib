@@ -40,7 +40,8 @@ public enum FluidSampleType implements ISprecPart {
   URINE_TIMED(new CodePart("URT")),
   OTHER(new CodePart("ZZZ"));
 
-  private ICodePart codePart;
+  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.FLUID_SAMPLE_TYPE;
+  private final ICodePart codePart;
 
   FluidSampleType(CodePart code) {
     this.codePart = code;
@@ -53,6 +54,10 @@ public enum FluidSampleType implements ISprecPart {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return SprecPartType.FLUID_SAMPLE_TYPE;
+    return FluidSampleType.SPREC_PART_TYPE;
+  }
+
+  public String getLocaleName() {
+    return ISprecPart.names.getString(this.name());
   }
 }

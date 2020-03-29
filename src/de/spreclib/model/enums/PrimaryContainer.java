@@ -34,7 +34,9 @@ public enum PrimaryContainer implements ISprecPart {
   OTHER(new CodePart("ZZZ")),
   ;
 
+  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.PRIMARY_CONTAINER;
   private ICodePart codePart;
+ 
 
   PrimaryContainer(ICodePart code) {
     this.codePart = code;
@@ -47,6 +49,11 @@ public enum PrimaryContainer implements ISprecPart {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return SprecPartType.PRIMARY_CONTAINER;
+    return PrimaryContainer.SPREC_PART_TYPE;
+  }
+
+  // Lokalierung entweder hier direkt oder auf Ebene der API in der ListOption
+  public String getLocaleName() {
+    return ISprecPart.names.getString(this.name());
   }
 }

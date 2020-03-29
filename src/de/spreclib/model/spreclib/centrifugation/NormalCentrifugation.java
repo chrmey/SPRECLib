@@ -10,6 +10,7 @@ import de.spreclib.model.interfaces.ICodePart;
 
 public final class NormalCentrifugation extends Centrifugation {
 
+  private static final CentrifugationType CENTRIFUGATION_TYPE = CentrifugationType.DEFAULT;
   private final CentrifugationDuration centrifugationDuration;
   private final CentrifugationSpeed centrifugationSpeed;
   private final CentrifugationTemperature centrifugationTemperature;
@@ -18,7 +19,6 @@ public final class NormalCentrifugation extends Centrifugation {
   /**
    * Constructor for NormalCentrifugation.
    *
-   * @param centrifugationType enum CentrifugationType
    * @param centrifugationDuration enum CentrifugationDuration
    * @param centrifugationSpeed enum CentrifugationSpeed
    * @param centrifugationTemperature enum CentrifugationTemperature
@@ -28,14 +28,13 @@ public final class NormalCentrifugation extends Centrifugation {
    *     centrifugation
    */
   public NormalCentrifugation(
-      CentrifugationType centrifugationType,
       CentrifugationDuration centrifugationDuration,
       CentrifugationSpeed centrifugationSpeed,
       CentrifugationTemperature centrifugationTemperature,
       CentrifugationBraking centrifugationBraking,
       ICodePart codePart,
       SprecPartType sprecPartType) {
-    super(centrifugationType, codePart, sprecPartType);
+    super(CENTRIFUGATION_TYPE, codePart, sprecPartType);
     this.centrifugationDuration = centrifugationDuration;
     this.centrifugationSpeed = centrifugationSpeed;
     this.centrifugationTemperature = centrifugationTemperature;
