@@ -23,7 +23,6 @@ public class NormalPreCentrifugationTest {
   public void setUp() {
     normalPreCentrifugation =
         new NormalPreCentrifugation(
-            PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.LESS_TWO_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("A"));

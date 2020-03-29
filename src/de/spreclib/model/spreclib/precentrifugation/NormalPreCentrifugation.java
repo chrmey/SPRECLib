@@ -7,23 +7,22 @@ import de.spreclib.model.interfaces.ICodePart;
 
 public final class NormalPreCentrifugation extends PreCentrifugation {
 
+  private static final PreCentrifugationType PRE_CENTRIFUGATION_TYPE =
+      PreCentrifugationType.DEFAULT;
   private final PreCentrifugationDelay preCentrifugationDelay;
   private final PreCentrifugationTemperature preCentrifugationTemperature;
 
   /**
    * Constructor for NormalPreCentrifugation.
-   *
-   * @param preCentrifugationType enum PreCentrifugationType
-   * @param preCentrifugationDelay enum PreCentrifugationDelay
-   * @param preCentrifugationTemperature enum PreCentrifugationTemperature
-   * @param codePart Object CodePart
+ * @param preCentrifugationDelay enum PreCentrifugationDelay
+ * @param preCentrifugationTemperature enum PreCentrifugationTemperature
+ * @param codePart Object CodePart
    */
   public NormalPreCentrifugation(
-      PreCentrifugationType preCentrifugationType,
       PreCentrifugationDelay preCentrifugationDelay,
       PreCentrifugationTemperature preCentrifugationTemperature,
       ICodePart codePart) {
-    super(preCentrifugationType, codePart);
+    super(PRE_CENTRIFUGATION_TYPE, codePart);
     this.preCentrifugationDelay = preCentrifugationDelay;
     this.preCentrifugationTemperature = preCentrifugationTemperature;
   }
