@@ -3,9 +3,10 @@ package de.spreclib.model.spreclib.longtermstorage;
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
 
-public abstract class LongTermStorage implements ISprecPart {
+public abstract class LongTermStorage implements ISprecPart, IListObject {
 
   private static final SprecPartType SPREC_PART_TYPE = SprecPartType.LONG_TERM_STORAGE;
   private final LongTermStorageType longTermStorageType;

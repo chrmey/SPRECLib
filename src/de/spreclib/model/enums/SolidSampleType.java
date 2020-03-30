@@ -1,10 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.spreclib.CodePart;
 
-public enum SolidSampleType implements ISprecPart {
+public enum SolidSampleType implements ISprecPart, IListObject {
   FRESH_CELLS_FROM_NON_BLOOD_SPECIMEN(new CodePart("CEN")),
   CELLS_FROM_NON_BLOOD_SPECIMEN_VIABLE(new CodePart("CLN")),
   CELLS_FROM_FINE_NEEDLE_ASPIRATE(new CodePart("FNA")),

@@ -1,6 +1,8 @@
 package de.spreclib.model.enums.centrifugation;
 
-public enum CentrifugationDuration {
+import de.spreclib.model.interfaces.IListObject;
+
+public enum CentrifugationDuration implements IListObject {
   TEN_TO_FIFTEEN_MINUTES(10, 15),
   THIRY_MINUTES(30, 30);
 

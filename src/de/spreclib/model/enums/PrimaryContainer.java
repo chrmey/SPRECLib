@@ -1,10 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.spreclib.CodePart;
 
-public enum PrimaryContainer implements ISprecPart {
+public enum PrimaryContainer implements ISprecPart, IListObject {
   ACID_CITRATE_DEXTROSE(new CodePart("ACD")),
   ADDITIVES(new CodePart("ADD")),
   SERUM_TUBE_WITHOUT_CLOT_ACTIVATOR(new CodePart("CAT")),
@@ -50,10 +51,5 @@ public enum PrimaryContainer implements ISprecPart {
   @Override
   public SprecPartType getSprecPartType() {
     return PrimaryContainer.SPREC_PART_TYPE;
-  }
-
-  // Lokalierung entweder hier direkt oder auf Ebene der API in der ListOption
-  public String getLocaleName() {
-    return ISprecPart.names.getString(this.name());
   }
 }

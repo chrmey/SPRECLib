@@ -3,9 +3,10 @@ package de.spreclib.model.spreclib.postcentrifugation;
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
 
-public abstract class PostCentrifugation implements ISprecPart {
+public abstract class PostCentrifugation implements ISprecPart, IListObject {
 
   private static final SprecPartType SPREC_PART_TYPE = SprecPartType.POST_CENTRIFUGATION;
   private final PostCentrifugationType postCentrifugationType;

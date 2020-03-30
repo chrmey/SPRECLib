@@ -1,10 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.spreclib.CodePart;
 
-public enum FluidSampleType implements ISprecPart {
+public enum FluidSampleType implements ISprecPart, IListObject {
   ASCITIES_FLUID(new CodePart("ASC")),
   AMNIOTIC_FLUID(new CodePart("AMN")),
   BRONCHOALVEOLAR_LAVAGE(new CodePart("BAL")),
@@ -55,9 +56,5 @@ public enum FluidSampleType implements ISprecPart {
   @Override
   public SprecPartType getSprecPartType() {
     return FluidSampleType.SPREC_PART_TYPE;
-  }
-
-  public String getLocaleName() {
-    return ISprecPart.names.getString(this.name());
   }
 }

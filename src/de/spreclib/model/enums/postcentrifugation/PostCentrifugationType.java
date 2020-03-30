@@ -1,6 +1,8 @@
 package de.spreclib.model.enums.postcentrifugation;
 
-public enum PostCentrifugationType {
+import de.spreclib.model.interfaces.IListObject;
+
+public enum PostCentrifugationType implements IListObject {
   DEFAULT,
   OTHER,
   UNKNOWN,

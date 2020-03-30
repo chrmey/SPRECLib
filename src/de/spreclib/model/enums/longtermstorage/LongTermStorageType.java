@@ -1,6 +1,8 @@
 package de.spreclib.model.enums.longtermstorage;
 
-public enum LongTermStorageType {
+import de.spreclib.model.interfaces.IListObject;
+
+public enum LongTermStorageType implements IListObject {
   DEFAULT,
   UNKNOWN,
   OTHER,

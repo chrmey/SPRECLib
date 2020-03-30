@@ -3,9 +3,10 @@ package de.spreclib.model.spreclib.centrifugation;
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
 
-public abstract class Centrifugation implements ISprecPart {
+public abstract class Centrifugation implements ISprecPart, IListObject {
 
   private final SprecPartType sprecPartType;
   private final CentrifugationType centrifugationType;
@@ -28,6 +29,10 @@ public abstract class Centrifugation implements ISprecPart {
   public CentrifugationType getCentrifugationType() {
     return this.centrifugationType;
   }
+
+  public abstract boolean isNormalCentrifugation();
+
+  public abstract boolean isSpecialCentrifugation();
 
   @Override
   public ICodePart getCodeFromSprecPart() {

@@ -1,6 +1,8 @@
 package de.spreclib.model.enums.centrifugation;
 
-public enum CentrifugationType {
+import de.spreclib.model.interfaces.IListObject;
+
+public enum CentrifugationType implements IListObject {
   DEFAULT,
   NO,
   OTHER,

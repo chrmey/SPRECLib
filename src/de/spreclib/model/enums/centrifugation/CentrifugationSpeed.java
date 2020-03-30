@@ -1,6 +1,8 @@
 package de.spreclib.model.enums.centrifugation;
 
-public enum CentrifugationSpeed {
+import de.spreclib.model.interfaces.IListObject;
+
+public enum CentrifugationSpeed implements IListObject {
   LESS_THREETHOUSAND_G(0, 3000),
   THREETHOUSAND_TO_SIXTHOUSAND_G(3000, 6000),
   SIXTHOUSAND_TO_TENTHOUSAND_G(6000, 10000),

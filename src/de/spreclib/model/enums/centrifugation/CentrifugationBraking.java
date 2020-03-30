@@ -1,6 +1,8 @@
 package de.spreclib.model.enums.centrifugation;
 
-public enum CentrifugationBraking {
+import de.spreclib.model.interfaces.IListObject;
+
+public enum CentrifugationBraking implements IListObject {
   NO_BRAKING,
   WITH_BRAKING;
 }
