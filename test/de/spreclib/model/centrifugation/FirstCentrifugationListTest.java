@@ -9,7 +9,7 @@ import de.spreclib.model.enums.centrifugation.CentrifugationDuration;
 import de.spreclib.model.enums.centrifugation.CentrifugationSpeed;
 import de.spreclib.model.enums.centrifugation.CentrifugationTemperature;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
-import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.sprec.CodePart;
 import de.spreclib.model.spreclib.centrifugation.Centrifugation;
 import de.spreclib.model.spreclib.centrifugation.FirstCentrifugationList;
 import de.spreclib.model.spreclib.centrifugation.NormalCentrifugation;

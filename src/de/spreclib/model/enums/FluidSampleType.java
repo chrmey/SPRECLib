@@ -3,7 +3,7 @@ package de.spreclib.model.enums;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
-import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.sprec.CodePart;
 
 public enum FluidSampleType implements ISprecPart, IListObject {
   ASCITIES_FLUID(new CodePart("ASC")),

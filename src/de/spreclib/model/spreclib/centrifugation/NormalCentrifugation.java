@@ -41,22 +41,17 @@ public final class NormalCentrifugation extends Centrifugation {
     this.centrifugationBraking = centrifugationBraking;
   }
 
-  public CentrifugationSpeed getCentrifugationSpeed() {
-    return this.centrifugationSpeed;
+  @Override
+  public boolean isNormalCentrifugation() {
+    return true;
   }
 
-  public CentrifugationTemperature getCentrifugationTemperature() {
-    return this.centrifugationTemperature;
+  @Override
+  public boolean isSpecialCentrifugation() {
+    return false;
   }
 
-  public CentrifugationDuration getCentrifugationDuration() {
-    return this.centrifugationDuration;
-  }
-
-  public CentrifugationBraking getCentrifugationBraking() {
-    return this.centrifugationBraking;
-  }
-
+  
   @Override
   public int hashCode() {
     final int prime = 31;

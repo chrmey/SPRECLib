@@ -3,7 +3,7 @@ package de.spreclib.model.spreclib.precentrifugation;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
-import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.sprec.CodePart;
 import java.util.HashSet;
 import java.util.Set;
 

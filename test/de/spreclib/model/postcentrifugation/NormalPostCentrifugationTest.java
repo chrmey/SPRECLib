@@ -7,7 +7,7 @@ import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.sprec.CodePart;
 import de.spreclib.model.spreclib.postcentrifugation.NormalPostCentrifugation;
 import org.junit.Before;
 import org.junit.Test;

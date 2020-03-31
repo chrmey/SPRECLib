@@ -3,7 +3,7 @@ package de.spreclib.model.enums;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
-import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.sprec.CodePart;
 
 public enum ColdIschemiaTime implements ISprecPart, IListObject {
   LESS_THAN_TWO_MINUTES(0, 2, new CodePart("A")),
@@ -37,4 +37,5 @@ public enum ColdIschemiaTime implements ISprecPart, IListObject {
   public SprecPartType getSprecPartType() {
     return ColdIschemiaTime.SPREC_PART_TYPE;
   }
+
 }

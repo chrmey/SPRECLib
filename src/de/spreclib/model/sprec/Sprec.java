@@ -1,4 +1,4 @@
-package de.spreclib.model.spreclib;
+package de.spreclib.model.sprec;
 
 public abstract class Sprec {
 

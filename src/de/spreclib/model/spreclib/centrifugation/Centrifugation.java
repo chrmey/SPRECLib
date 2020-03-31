@@ -26,13 +26,13 @@ public abstract class Centrifugation implements ISprecPart, IListObject {
     this.sprecPartType = sprecPartType;
   }
 
-  public CentrifugationType getCentrifugationType() {
-    return this.centrifugationType;
-  }
-
   public abstract boolean isNormalCentrifugation();
 
   public abstract boolean isSpecialCentrifugation();
+
+  public CentrifugationType getCentrifugationType() {
+    return this.centrifugationType;
+  }
 
   @Override
   public ICodePart getCodeFromSprecPart() {
@@ -43,6 +43,7 @@ public abstract class Centrifugation implements ISprecPart, IListObject {
   public SprecPartType getSprecPartType() {
     return this.sprecPartType;
   }
+  
 
   @Override
   public int hashCode() {

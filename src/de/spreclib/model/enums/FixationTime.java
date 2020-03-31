@@ -3,7 +3,7 @@ package de.spreclib.model.enums;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
-import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.sprec.CodePart;
 
 public enum FixationTime implements ISprecPart, IListObject {
   LESS_THAN_15_MINUTES(0, 15, new CodePart("A")),

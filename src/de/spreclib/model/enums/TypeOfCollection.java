@@ -3,7 +3,7 @@ package de.spreclib.model.enums;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
-import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.sprec.CodePart;
 
 public enum TypeOfCollection implements ISprecPart, IListObject {
   AUTOPSY_LESS_THAN_6_HOURS_POSTMORTEM(new CodePart("A06")),

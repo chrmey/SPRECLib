@@ -6,7 +6,7 @@ import de.spreclib.model.enums.PrimaryContainer;
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.ISprecPart;
-import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.sprec.CodePart;
 import org.junit.Test;
 
 

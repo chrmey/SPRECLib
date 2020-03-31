@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
-import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.sprec.CodePart;
 import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
 import de.spreclib.model.spreclib.longtermstorage.LongTermStorageList;
 import de.spreclib.model.spreclib.longtermstorage.NormalLongTermStorage;

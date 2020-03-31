@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
-import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.sprec.CodePart;
 import de.spreclib.model.spreclib.precentrifugation.NormalPreCentrifugation;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugationList;

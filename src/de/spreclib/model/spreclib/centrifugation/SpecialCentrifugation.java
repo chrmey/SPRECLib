@@ -10,4 +10,14 @@ public final class SpecialCentrifugation extends Centrifugation {
       CentrifugationType centrifugationType, ICodePart codePart, SprecPartType sprecPartType) {
     super(centrifugationType, codePart, sprecPartType);
   }
+
+  @Override
+  public boolean isNormalCentrifugation() {
+    return false;
+  }
+
+  @Override
+  public boolean isSpecialCentrifugation() {
+    return true;
+  }
 }
