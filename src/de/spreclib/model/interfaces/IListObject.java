@@ -1,3 +1,6 @@
 package de.spreclib.model.interfaces;
 
-public interface IListObject {}
+public interface IListObject {
+
+  // String getStringRepresentation();
+}
