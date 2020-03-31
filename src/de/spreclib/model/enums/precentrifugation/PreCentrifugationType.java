@@ -1,8 +1,6 @@
 package de.spreclib.model.enums.precentrifugation;
 
-import de.spreclib.model.interfaces.IListObject;
-
-public enum PreCentrifugationType implements IListObject {
+public enum PreCentrifugationType {
   DEFAULT,
   UNKNOWN,
   OTHER,
