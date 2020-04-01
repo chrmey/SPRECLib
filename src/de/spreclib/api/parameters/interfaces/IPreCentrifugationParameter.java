@@ -1,3 +1,3 @@
-package de.spreclib.api.sprec.interfaces;
+package de.spreclib.api.parameters.interfaces;
 
 public interface IPreCentrifugationParameter {}
