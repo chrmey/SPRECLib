@@ -1,21 +1,10 @@
 package de.spreclib.api.sprec;
 
-import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.spreclib.centrifugation.Centrifugation;
 
-public final class SecondCentrifugationOption implements IListOption {
+public final class SecondCentrifugationOption extends AbstractListOption {
 
-  private Centrifugation centrifugation;
-
-  public SecondCentrifugationOption(Centrifugation centrifugation) {
-    this.centrifugation = centrifugation;
+  public SecondCentrifugationOption(Centrifugation secondCentrifugation) {
+    super(secondCentrifugation);
   }
-
-  @Override
-  public String getStringRepresentation() {
-    // TODO Implement
-    return null;
-  }
-
 }

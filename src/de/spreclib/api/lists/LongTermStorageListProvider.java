@@ -1,31 +1,24 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
 import de.spreclib.api.sprec.LongTermStorageOption;
 import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
 import de.spreclib.model.spreclib.longtermstorage.LongTermStorageList;
 import java.util.ArrayList;
 
-public final class LongTermStorageListProvider implements IListProvider {
-
-  private ArrayList<IListOption> longTermStorageList = new ArrayList<>();
+public final class LongTermStorageListProvider extends AbstractListProvider {
 
   public LongTermStorageListProvider() {
-    this.longTermStorageList = generateList();
+    super();
   }
 
-  private ArrayList<IListOption> generateList() {
-    ArrayList<IListOption> list = new ArrayList<IListOption>();
+  @Override
+  protected ArrayList<IListOption> generateList() {
+    ArrayList<IListOption> list = new ArrayList<>();
     for (LongTermStorage entry : LongTermStorageList.LONG_TERM_STORAGES) {
       IListOption option = new LongTermStorageOption(entry);
       list.add(option);
     }
     return list;
-  }
-
-  @Override
-  public ArrayList<IListOption> getList() {
-    return longTermStorageList;
   }
 }

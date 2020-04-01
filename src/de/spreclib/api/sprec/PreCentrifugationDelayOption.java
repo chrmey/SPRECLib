@@ -2,7 +2,9 @@ package de.spreclib.api.sprec;
 
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 
-public class PreCentrifugationDelayOption {
+public final class PreCentrifugationDelayOption extends AbstractListOption {
 
-  private PreCentrifugationDelay preCentrifugationDelay;
+  public PreCentrifugationDelayOption(PreCentrifugationDelay preCentrifugationDelay) {
+    super(preCentrifugationDelay);
+  }
 }

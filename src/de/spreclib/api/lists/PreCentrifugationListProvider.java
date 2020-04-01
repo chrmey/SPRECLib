@@ -1,31 +1,24 @@
 package de.spreclib.api.lists;
 
-import java.util.ArrayList;
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
 import de.spreclib.api.sprec.PreCentrifugationOption;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugationList;
+import java.util.ArrayList;
 
-public final class PreCentrifugationListProvider implements IListProvider {
-
-  private ArrayList<IListOption> preCentrifugationList = new ArrayList<>();
+public final class PreCentrifugationListProvider extends AbstractListProvider {
 
   public PreCentrifugationListProvider() {
-    this.preCentrifugationList = generateList();
+    super();
   }
 
-  private ArrayList<IListOption> generateList() {
-    ArrayList<IListOption> list = new ArrayList<IListOption>();
+  @Override
+  protected ArrayList<IListOption> generateList() {
+    ArrayList<IListOption> list = new ArrayList<>();
     for (PreCentrifugation entry : PreCentrifugationList.PRE_CENTRIFUGATIONS) {
       IListOption option = new PreCentrifugationOption(entry);
       list.add(option);
     }
     return list;
-  }
-
-  @Override
-  public ArrayList<IListOption> getList() {
-    return preCentrifugationList;
   }
 }

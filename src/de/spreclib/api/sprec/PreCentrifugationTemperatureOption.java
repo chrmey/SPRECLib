@@ -1,9 +1,11 @@
 package de.spreclib.api.sprec;
 
-import de.spreclib.api.sprec.interfaces.IPreCentrifugationParameter;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 
-public class PreCentrifugationTemperatureOption {
+public final class PreCentrifugationTemperatureOption extends AbstractListOption {
 
-  private PreCentrifugationTemperature preCentrifugationTemperature;
+  public PreCentrifugationTemperatureOption(
+      PreCentrifugationTemperature preCentrifugationTemperature) {
+    super(preCentrifugationTemperature);
+  }
 }
