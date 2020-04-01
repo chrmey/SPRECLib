@@ -7,9 +7,9 @@ import static org.junit.Assert.assertTrue;
 
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
-import de.spreclib.model.enums.centrifugation.CentrifugationDuration;
-import de.spreclib.model.enums.centrifugation.CentrifugationSpeed;
-import de.spreclib.model.enums.centrifugation.CentrifugationTemperature;
+import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
+import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
+import de.spreclib.model.enums.centrifugation.FirstCentrifugationTemperature;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.sprec.CodePart;
@@ -25,9 +25,9 @@ public class NormalCentrifugationTest {
   public void setUp() {
     centrifugation =
         new NormalCentrifugation(
-            CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-            CentrifugationSpeed.LESS_THREETHOUSAND_G,
-            CentrifugationTemperature.ROOM_TEMPERATURE,
+            FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
+            FirstCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("A"),
             SprecPartType.FIRST_CENTRIFUGATION);

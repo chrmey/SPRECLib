@@ -2,18 +2,15 @@ package de.spreclib.model.spreclib.centrifugation;
 
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
-import de.spreclib.model.enums.centrifugation.CentrifugationDuration;
-import de.spreclib.model.enums.centrifugation.CentrifugationSpeed;
-import de.spreclib.model.enums.centrifugation.CentrifugationTemperature;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 
 public final class NormalCentrifugation extends Centrifugation {
 
   private static final CentrifugationType CENTRIFUGATION_TYPE = CentrifugationType.DEFAULT;
-  private final CentrifugationDuration centrifugationDuration;
-  private final CentrifugationSpeed centrifugationSpeed;
-  private final CentrifugationTemperature centrifugationTemperature;
+  private final ICentrifugationDuration centrifugationDuration;
+  private final ICentrifugationSpeed centrifugationSpeed;
+  private final ICentrifugationTemperature centrifugationTemperature;
   private final CentrifugationBraking centrifugationBraking;
 
   /**
@@ -28,9 +25,9 @@ public final class NormalCentrifugation extends Centrifugation {
    *     centrifugation
    */
   public NormalCentrifugation(
-      CentrifugationDuration centrifugationDuration,
-      CentrifugationSpeed centrifugationSpeed,
-      CentrifugationTemperature centrifugationTemperature,
+      ICentrifugationDuration centrifugationDuration,
+      ICentrifugationSpeed centrifugationSpeed,
+      ICentrifugationTemperature centrifugationTemperature,
       CentrifugationBraking centrifugationBraking,
       ICodePart codePart,
       SprecPartType sprecPartType) {
