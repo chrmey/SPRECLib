@@ -4,8 +4,20 @@ import de.spreclib.model.enums.centrifugation.SecondCentrifugationTemperature;
 
 public final class SecondCentrifugationTemperatureOption extends AbstractListOption {
 
+  private final SecondCentrifugationTemperature secondCentrifugationTemperature;
+
   public SecondCentrifugationTemperatureOption(
       SecondCentrifugationTemperature secondCentrifugationTemperature) {
-    super(secondCentrifugationTemperature);
+    this.secondCentrifugationTemperature = secondCentrifugationTemperature;
+  }
+
+  @Override
+  public String getStringRepresentation() {
+    return NAMES_DEFAULT.getString(this.secondCentrifugationTemperature.name());
+  }
+
+  @Override
+  public SecondCentrifugationTemperature getContainedObject() {
+    return this.secondCentrifugationTemperature;
   }
 }
