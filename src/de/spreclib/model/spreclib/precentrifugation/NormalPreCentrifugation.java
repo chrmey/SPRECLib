@@ -27,6 +27,16 @@ public final class NormalPreCentrifugation extends PreCentrifugation {
     this.preCentrifugationTemperature = preCentrifugationTemperature;
   }
 
+  @Override
+  public boolean isNormalPreCentrifugation() {
+    return true;
+  }
+
+  @Override
+  public boolean isSpecialPreCentrifugation() {
+    return false;
+  }
+
   public PreCentrifugationDelay getPreCentrifugationDelay() {
     return this.preCentrifugationDelay;
   }
