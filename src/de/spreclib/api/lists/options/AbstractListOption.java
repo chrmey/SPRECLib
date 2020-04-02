@@ -1,17 +1,11 @@
 package de.spreclib.api.lists.options;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.model.interfaces.IListObject;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public abstract class AbstractListOption implements IListOption {
 
-  protected final IListObject listObject;
- 
-  public AbstractListOption(IListObject listObject) {
-    this.listObject = listObject;
-  }
-
-  public IListObject getContainedObject() {
-    return this.listObject;
-  }
+  private static final Locale localeEn = new Locale("en");
+  protected static final ResourceBundle NAMES_DEFAULT = ResourceBundle.getBundle("names", localeEn);
 }
