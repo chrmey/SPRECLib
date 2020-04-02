@@ -20,7 +20,14 @@ public class SecondCentrifugationBrakingListProviderTest {
   }
 
   @Test
-  public void test() {
+  public void testListNotEmpty() {
     assertFalse(list.isEmpty());
+  }
+
+  @Test
+  public void testOptionStringRepresentation() {
+    for (IListOption option : list) {
+      assertNotNull(option.getStringRepresentation());
+    }
   }
 }
