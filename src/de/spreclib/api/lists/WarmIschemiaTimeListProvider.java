@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.sprec.WarmIschemiaTimeOption;
+import de.spreclib.api.lists.options.WarmIschemiaTimeOption;
 import de.spreclib.model.enums.WarmIschemiaTime;
 import java.util.ArrayList;
 

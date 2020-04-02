@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.sprec.LongTermStorageTemperatureOption;
+import de.spreclib.api.lists.options.LongTermStorageTemperatureOption;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
 import java.util.ArrayList;
 

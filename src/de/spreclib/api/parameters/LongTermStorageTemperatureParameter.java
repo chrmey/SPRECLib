@@ -1,7 +1,7 @@
 package de.spreclib.api.parameters;
 
+import de.spreclib.api.lists.options.LongTermStorageTemperatureOption;
 import de.spreclib.api.parameters.interfaces.ILongTermStorageParameter;
-import de.spreclib.api.sprec.LongTermStorageTemperatureOption;
 
 public class LongTermStorageTemperatureParameter implements ILongTermStorageParameter {
 

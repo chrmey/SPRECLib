@@ -2,7 +2,7 @@ package de.spreclib.api.lists;
 
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.sprec.TypeOfCollectionOption;
+import de.spreclib.api.lists.options.TypeOfCollectionOption;
 import de.spreclib.model.enums.TypeOfCollection;
 import java.util.ArrayList;
 

@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.sprec.PostCentrifugationDelayOption;
+import de.spreclib.api.lists.options.PostCentrifugationDelayOption;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import java.util.ArrayList;
 

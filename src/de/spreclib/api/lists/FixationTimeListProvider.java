@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.sprec.FixationTimeOption;
+import de.spreclib.api.lists.options.FixationTimeOption;
 import de.spreclib.model.enums.FixationTime;
 import java.util.ArrayList;
 

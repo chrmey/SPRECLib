@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.sprec.FirstCentrifugationSpeedOption;
+import de.spreclib.api.lists.options.FirstCentrifugationSpeedOption;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
 import java.util.ArrayList;
 

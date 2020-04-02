@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.sprec.LongTermStorageOption;
+import de.spreclib.api.lists.options.LongTermStorageOption;
 import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
 import de.spreclib.model.spreclib.longtermstorage.LongTermStorageList;
 import java.util.ArrayList;

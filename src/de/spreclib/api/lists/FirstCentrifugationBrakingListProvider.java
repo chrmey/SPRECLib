@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.sprec.FirstCentrifugationBrakingOption;
+import de.spreclib.api.lists.options.FirstCentrifugationBrakingOption;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import java.util.ArrayList;
 

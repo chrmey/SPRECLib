@@ -1,7 +1,7 @@
 package de.spreclib.api.parameters;
 
+import de.spreclib.api.lists.options.PreCentrifugationDelayOption;
 import de.spreclib.api.parameters.interfaces.IPreCentrifugationParameter;
-import de.spreclib.api.sprec.PreCentrifugationDelayOption;
 import java.sql.Timestamp;
 
 public class PreCentrifugationDelayParameter implements IPreCentrifugationParameter {

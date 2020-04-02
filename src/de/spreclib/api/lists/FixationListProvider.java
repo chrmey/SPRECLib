@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.sprec.FixationOption;
+import de.spreclib.api.lists.options.FixationOption;
 import de.spreclib.model.enums.Fixation;
 import java.util.ArrayList;
 

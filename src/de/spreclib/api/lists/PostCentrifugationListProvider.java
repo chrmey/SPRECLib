@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.sprec.PostCentrifugationOption;
+import de.spreclib.api.lists.options.PostCentrifugationOption;
 import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugationList;
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.sprec.ColdIschemiaTimeOption;
+import de.spreclib.api.lists.options.ColdIschemiaTimeOption;
 import de.spreclib.model.enums.ColdIschemiaTime;
 import java.util.ArrayList;
 

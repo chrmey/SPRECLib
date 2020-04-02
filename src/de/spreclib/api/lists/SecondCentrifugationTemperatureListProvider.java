@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.sprec.SecondCentrifugationTemperatureOption;
+import de.spreclib.api.lists.options.SecondCentrifugationTemperatureOption;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationTemperature;
 import java.util.ArrayList;
 

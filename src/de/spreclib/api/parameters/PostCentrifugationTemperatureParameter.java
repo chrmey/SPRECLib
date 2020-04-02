@@ -1,7 +1,7 @@
 package de.spreclib.api.parameters;
 
+import de.spreclib.api.lists.options.PostCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.interfaces.IPreCentrifugationParameter;
-import de.spreclib.api.sprec.PostCentrifugationTemperatureOption;
 
 public class PostCentrifugationTemperatureParameter implements IPreCentrifugationParameter {
 
