@@ -133,7 +133,7 @@ public class LongTermStorageListTest {
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PARAFFIN_BLOCK,
-            LongTermStorageTemperature.TWO_TO_TEN_DEGRESS,
+            LongTermStorageTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("P")));
     testList.add(
         new NormalLongTermStorage(
