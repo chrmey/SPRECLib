@@ -5,7 +5,6 @@ import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationTemperature;
-import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.spreclib.centrifugation.Centrifugation;
 import de.spreclib.model.spreclib.centrifugation.NormalCentrifugation;
 
@@ -50,7 +49,7 @@ public final class FirstCentrifugationOption extends AbstractListOption {
   }
 
   @Override
-  public IListObject getContainedObject() {
-    return null;
+  public Centrifugation getContainedObject() {
+    return this.firstCentrifugation;
   }
 }

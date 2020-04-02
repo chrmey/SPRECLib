@@ -1,7 +1,6 @@
 package de.spreclib.api.lists.options;
 
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
-import de.spreclib.model.interfaces.IListObject;
 
 public final class FirstCentrifugationSpeedOption extends AbstractListOption {
 
@@ -17,7 +16,7 @@ public final class FirstCentrifugationSpeedOption extends AbstractListOption {
   }
 
   @Override
-  public IListObject getContainedObject() {
+  public FirstCentrifugationSpeed getContainedObject() {
     return this.firstCentrifugationSpeed;
   }
 }
