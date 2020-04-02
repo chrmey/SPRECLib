@@ -48,7 +48,22 @@ public final class NormalCentrifugation extends Centrifugation {
     return false;
   }
 
-  
+  public ICentrifugationDuration getCentrifugationDuration() {
+    return centrifugationDuration;
+  }
+
+  public ICentrifugationSpeed getCentrifugationSpeed() {
+    return centrifugationSpeed;
+  }
+
+  public ICentrifugationTemperature getCentrifugationTemperature() {
+    return centrifugationTemperature;
+  }
+
+  public CentrifugationBraking getCentrifugationBraking() {
+    return centrifugationBraking;
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;
