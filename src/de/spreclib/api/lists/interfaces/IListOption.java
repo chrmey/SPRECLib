@@ -4,5 +4,7 @@ import de.spreclib.model.interfaces.IListObject;
 
 public interface IListOption {
 
+  public String getStringRepresentation();
+
   public IListObject getContainedObject();
 }
