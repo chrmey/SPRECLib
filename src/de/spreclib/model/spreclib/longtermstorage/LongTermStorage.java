@@ -17,6 +17,10 @@ public abstract class LongTermStorage implements ISprecPart, IListObject {
     this.codePart = codePart;
   }
 
+  public abstract boolean isNormalLongTermStorage();
+
+  public abstract boolean isSpecialLongTermStorage();
+
   @Override
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;

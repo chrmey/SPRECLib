@@ -8,4 +8,14 @@ public final class SpecialLongTermStorage extends LongTermStorage {
   public SpecialLongTermStorage(LongTermStorageType longTermStorageType, ICodePart codePart) {
     super(longTermStorageType, codePart);
   }
+
+  @Override
+  public boolean isNormalLongTermStorage() {
+    return false;
+  }
+
+  @Override
+  public boolean isSpecialLongTermStorage() {
+    return true;
+  }
 }

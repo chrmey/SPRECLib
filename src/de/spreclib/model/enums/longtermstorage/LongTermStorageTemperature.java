@@ -10,7 +10,7 @@ public enum LongTermStorageTemperature implements IListObject {
   MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES(-35, -18),
   LIQUID_NITROGEN_AFTER_MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
   ROOM_TEMPERATURE(18, 28),
-  TWO_TO_TEN_DEGRESS(2, 10),
+  TWO_TO_TEN_DEGREES(2, 10),
   ;
 
   LongTermStorageTemperature() {

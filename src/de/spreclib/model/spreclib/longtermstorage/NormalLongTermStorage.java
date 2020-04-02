@@ -28,6 +28,16 @@ public final class NormalLongTermStorage extends LongTermStorage {
     this.longTermStorageTemperature = longTermStorageTemperature;
   }
 
+  @Override
+  public boolean isNormalLongTermStorage() {
+    return true;
+  }
+
+  @Override
+  public boolean isSpecialLongTermStorage() {
+    return false;
+  }
+
   public LongTermStorageContainer getLongTermStorageContainer() {
     return this.longTermStorageContainer;
   }
