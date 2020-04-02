@@ -9,4 +9,14 @@ public final class SpecialPostCentrifugation extends PostCentrifugation {
       PostCentrifugationType postCentrifugationType, ICodePart codePart) {
     super(postCentrifugationType, codePart);
   }
+
+  @Override
+  public boolean isNormalPostCentrifugation() {
+    return false;
+  }
+
+  @Override
+  public boolean isSpecialPostCentrifugation() {
+    return true;
+  }
 }

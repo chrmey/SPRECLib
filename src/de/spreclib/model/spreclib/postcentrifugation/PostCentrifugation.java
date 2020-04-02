@@ -17,6 +17,10 @@ public abstract class PostCentrifugation implements ISprecPart, IListObject {
     this.codePart = codePart;
   }
 
+  public abstract boolean isNormalPostCentrifugation();
+
+  public abstract boolean isSpecialPostCentrifugation();
+
   @Override
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;

@@ -28,6 +28,16 @@ public final class NormalPostCentrifugation extends PostCentrifugation {
     this.postCentrifugationTemperature = postCentrifugationTemperature;
   }
 
+  @Override
+  public boolean isNormalPostCentrifugation() {
+    return true;
+  }
+
+  @Override
+  public boolean isSpecialPostCentrifugation() {
+    return false;
+  }
+
   public PostCentrifugationDelay getPostCentrifugationDelay() {
     return this.postCentrifugationDelay;
   }
