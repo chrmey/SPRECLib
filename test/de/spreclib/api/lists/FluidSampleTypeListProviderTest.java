@@ -1,8 +1,7 @@
 package de.spreclib.api.lists;
 
-import static org.junit.Assert.*;
-
-import de.spreclib.api.lists.FluidSampleTypeListProvider;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.interfaces.IListProvider;
 import java.util.ArrayList;
