@@ -10,8 +10,5 @@ public class FluidSampleSprecTest {
   public void setUp() {
 
     fluidSampleSprec = new FluidSampleSprec();
-    
-    
-    
   }
 }
