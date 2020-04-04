@@ -7,10 +7,10 @@ import static org.junit.Assert.assertTrue;
 
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
+import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationTemperature;
-import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.sprec.CodePart;
 import de.spreclib.model.spreclib.centrifugation.NormalCentrifugation;

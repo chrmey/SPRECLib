@@ -2,12 +2,13 @@ package de.spreclib.model.centrifugation;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
+import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationDuration;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationSpeed;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationTemperature;
-import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.sprec.CodePart;
 import de.spreclib.model.spreclib.centrifugation.Centrifugation;
 import de.spreclib.model.spreclib.centrifugation.NormalCentrifugation;

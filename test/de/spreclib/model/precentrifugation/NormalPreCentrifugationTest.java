@@ -10,9 +10,9 @@ import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.sprec.CodePart;
 import de.spreclib.model.spreclib.precentrifugation.NormalPreCentrifugation;
-import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Before;
 import org.junit.Test;
+import nl.jqno.equalsverifier.EqualsVerifier;
 
 
 public class NormalPreCentrifugationTest {
