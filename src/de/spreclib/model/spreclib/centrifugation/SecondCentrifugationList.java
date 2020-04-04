@@ -106,4 +106,31 @@ public final class SecondCentrifugationList {
             new CodePart("J"),
             SprecPartType.SECOND_CENTRIFUGATION));
   }
+
+  public static Centrifugation getUnknownSecondCentrifugation() {
+    for (Centrifugation centrifugation : CENTRIFUGATIONS) {
+      if (centrifugation.getCentrifugationType() == CentrifugationType.UNKNOWN) {
+        return centrifugation;
+      }
+    }
+    return null;
+  }
+
+  public static Centrifugation getOtherSecondCentrifugation() {
+    for (Centrifugation centrifugation : CENTRIFUGATIONS) {
+      if (centrifugation.getCentrifugationType() == CentrifugationType.OTHER) {
+        return centrifugation;
+      }
+    }
+    return null;
+  }
+
+  public static Centrifugation getNoSecondCentrifugation() {
+    for (Centrifugation centrifugation : CENTRIFUGATIONS) {
+      if (centrifugation.getCentrifugationType() == CentrifugationType.NO) {
+        return centrifugation;
+      }
+    }
+    return null;
+  }
 }

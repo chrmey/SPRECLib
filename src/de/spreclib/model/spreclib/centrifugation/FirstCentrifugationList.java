@@ -114,4 +114,31 @@ public final class FirstCentrifugationList {
             new CodePart("M"),
             SprecPartType.FIRST_CENTRIFUGATION));
   }
+
+  public static Centrifugation getUnknownFirstCentrifugation() {
+    for (Centrifugation centrifugation : CENTRIFUGATIONS) {
+      if (centrifugation.getCentrifugationType() == CentrifugationType.UNKNOWN) {
+        return centrifugation;
+      }
+    }
+    return null;
+  }
+
+  public static Centrifugation getOtherFirstCentrifugation() {
+    for (Centrifugation centrifugation : CENTRIFUGATIONS) {
+      if (centrifugation.getCentrifugationType() == CentrifugationType.OTHER) {
+        return centrifugation;
+      }
+    }
+    return null;
+  }
+
+  public static Centrifugation getNoFirstCentrifugation() {
+    for (Centrifugation centrifugation : CENTRIFUGATIONS) {
+      if (centrifugation.getCentrifugationType() == CentrifugationType.NO) {
+        return centrifugation;
+      }
+    }
+    return null;
+  }
 }

@@ -170,4 +170,22 @@ public final class LongTermStorageList {
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
             new CodePart("Y")));
   }
+
+  public static LongTermStorage getUnknownLongTermStorage() {
+    for (LongTermStorage longTermStorage : LONG_TERM_STORAGES) {
+      if (longTermStorage.getLongTermStorageType() == LongTermStorageType.UNKNOWN) {
+        return longTermStorage;
+      }
+    }
+    return null;
+  }
+
+  public static LongTermStorage getOtherLongTermStorage() {
+    for (LongTermStorage longTermStorage : LONG_TERM_STORAGES) {
+      if (longTermStorage.getLongTermStorageType() == LongTermStorageType.OTHER) {
+        return longTermStorage;
+      }
+    }
+    return null;
+  }
 }

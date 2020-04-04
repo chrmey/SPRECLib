@@ -80,4 +80,31 @@ public final class PostCentrifugationList {
             PostCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("J")));
   }
+
+  public static PostCentrifugation getNoApplicablePostCentrifugation() {
+    for (PostCentrifugation postCentrifugation : POST_CENTRIFUGATIONS) {
+      if (postCentrifugation.getPostCentrifugationType() == PostCentrifugationType.NOT_APPLICABLE) {
+        return postCentrifugation;
+      }
+    }
+    return null;
+  }
+
+  public static PostCentrifugation getUnknownPostCentrifugation() {
+    for (PostCentrifugation postCentrifugation : POST_CENTRIFUGATIONS) {
+      if (postCentrifugation.getPostCentrifugationType() == PostCentrifugationType.UNKNOWN) {
+        return postCentrifugation;
+      }
+    }
+    return null;
+  }
+
+  public static PostCentrifugation getOtherPostCentrifugation() {
+    for (PostCentrifugation postCentrifugation : POST_CENTRIFUGATIONS) {
+      if (postCentrifugation.getPostCentrifugationType() == PostCentrifugationType.OTHER) {
+        return postCentrifugation;
+      }
+    }
+    return null;
+  }
 }

@@ -93,4 +93,22 @@ public final class PreCentrifugationList {
             PreCentrifugationTemperature.THIRTYFIVE_TO_THIRTYEIGHT_DEGREES,
             new CodePart("O")));
   }
+
+  public static PreCentrifugation getUnknownPreCentrifugation() {
+    for (PreCentrifugation preCentrifugation : PRE_CENTRIFUGATIONS) {
+      if (preCentrifugation.getPreCentrifugationType() == PreCentrifugationType.UNKNOWN) {
+        return preCentrifugation;
+      }
+    }
+    return null;
+  }
+
+  public static PreCentrifugation getOtherPreCentrifugation() {
+    for (PreCentrifugation preCentrifugation : PRE_CENTRIFUGATIONS) {
+      if (preCentrifugation.getPreCentrifugationType() == PreCentrifugationType.OTHER) {
+        return preCentrifugation;
+      }
+    }
+    return null;
+  }
 }
