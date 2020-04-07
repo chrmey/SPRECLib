@@ -5,7 +5,7 @@ import de.spreclib.model.enums.FluidSampleType;
 import de.spreclib.model.enums.PrimaryContainer;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
-import de.spreclib.model.exceptions.ParameterRelationException;
+import de.spreclib.model.exceptions.InvalidParameterRelationException;
 import de.spreclib.model.spreclib.centrifugation.Centrifugation;
 import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
 import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugation;
@@ -48,7 +48,7 @@ public final class FluidSample extends Sample {
       if (this.firstCentrifugation.getCentrifugationType() == CentrifugationType.NO
           && this.secondCentrifugation.getCentrifugationType() != CentrifugationType.NO) {
 
-        throw new ParameterRelationException(
+        throw new InvalidParameterRelationException(
             "Cannot set SecondCentrifugation to other than NO when there is no FirstCentrifugation");
       }
     }
@@ -60,7 +60,7 @@ public final class FluidSample extends Sample {
       if (this.postCentrifugation.getPostCentrifugationType()
           != PostCentrifugationType.NOT_APPLICABLE) {
 
-        throw new ParameterRelationException(
+        throw new InvalidParameterRelationException(
             "Cannot set PostCentrifugationType to other than NOT_APPLICABLE when there is no Centrifugation");
       }
     }
