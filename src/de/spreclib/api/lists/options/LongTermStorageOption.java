@@ -41,6 +41,6 @@ public final class LongTermStorageOption extends AbstractListOption {
 
   @Override
   public LongTermStorage getContainedObject() {
-    return null;
+    return this.longTermStorage;
   }
 }
