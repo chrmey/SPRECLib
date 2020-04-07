@@ -37,9 +37,8 @@ public enum PrimaryContainer implements ISprecPart, IListObject {
 
   private static final SprecPartType SPREC_PART_TYPE = SprecPartType.PRIMARY_CONTAINER;
   private ICodePart codePart;
- 
 
-  PrimaryContainer(ICodePart code) {
+  private PrimaryContainer(ICodePart code) {
     this.codePart = code;
   }
 

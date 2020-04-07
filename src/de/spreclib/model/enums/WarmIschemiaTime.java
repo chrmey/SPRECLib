@@ -20,11 +20,11 @@ public enum WarmIschemiaTime implements ISprecPart, IListObject {
   private static final SprecPartType SPREC_PART_TYPE = SprecPartType.WARM_ISCHEMIA_TIME;
   private ICodePart codePart;
 
-  WarmIschemiaTime(ICodePart code) {
+  private WarmIschemiaTime(ICodePart code) {
     this.codePart = code;
   }
 
-  WarmIschemiaTime(Integer lowerBound, Integer upperBound, ICodePart code) {
+  private WarmIschemiaTime(Integer lowerBound, Integer upperBound, ICodePart code) {
     this.codePart = code;
   }
 

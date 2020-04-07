@@ -21,7 +21,7 @@ public enum SolidSampleType implements ISprecPart, IListObject {
   private static final SprecPartType SPREC_PART_TYPE = SprecPartType.SOLID_SAMPLE_TYPE;
   private ICodePart codePart;
 
-  SolidSampleType(ICodePart code) {
+  private SolidSampleType(ICodePart code) {
     this.codePart = code;
   }
 

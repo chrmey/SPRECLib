@@ -44,7 +44,7 @@ public enum FluidSampleType implements ISprecPart, IListObject {
   private static final SprecPartType SPREC_PART_TYPE = SprecPartType.FLUID_SAMPLE_TYPE;
   private final ICodePart codePart;
 
-  FluidSampleType(CodePart code) {
+  private FluidSampleType(CodePart code) {
     this.codePart = code;
   }
 

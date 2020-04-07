@@ -7,8 +7,11 @@ public enum FirstCentrifugationDuration implements ICentrifugationDuration, ILis
   TEN_TO_FIFTEEN_MINUTES(10, 15),
   THIRY_MINUTES(30, 30);
 
-  FirstCentrifugationDuration(int lowerBound, int upperBound) {
-    // TODO Auto-generated constructor stub
-    // TODO Bounds überarbeiten
+  private final int lowerBound;
+  private final int upperBound;
+
+  private FirstCentrifugationDuration(int lowerBound, int upperBound) {
+    this.lowerBound = lowerBound;
+    this.upperBound = upperBound;
   }
 }

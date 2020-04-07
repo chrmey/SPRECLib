@@ -29,7 +29,7 @@ public enum TypeOfCollection implements ISprecPart, IListObject {
   private static final SprecPartType SPREC_PART_TYPE = SprecPartType.TYPE_OF_COLLECTION;
   private ICodePart codePart;
 
-  TypeOfCollection(ICodePart code) {
+  private TypeOfCollection(ICodePart code) {
     this.codePart = code;
   }
 

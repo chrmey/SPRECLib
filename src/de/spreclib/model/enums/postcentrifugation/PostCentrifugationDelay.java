@@ -9,8 +9,11 @@ public enum PostCentrifugationDelay implements IListObject {
   EIGHT_TO_TWENTYFOUR_HOURS(480, 1140),
   GREATER_TWENTYFOUR_HOURS(1140, null);
 
+  private final Integer lowerBound;
+  private final Integer upperBound;
+
   PostCentrifugationDelay(Integer lowerBound, Integer upperBound) {
-    // TODO Auto-generated constructor stub
-    // TODO Bounds überarbeiten
+    this.lowerBound = lowerBound;
+    this.upperBound = upperBound;
   }
 }

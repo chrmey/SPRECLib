@@ -10,8 +10,11 @@ public enum FirstCentrifugationSpeed implements ICentrifugationSpeed, IListObjec
   GREATER_TENTHOUSAND_G(10000, 99999),
   LESS_THOUSAND_G(0, 1000);
 
-  FirstCentrifugationSpeed(int lowerBound, int upperBound) {
-    // TODO Auto-generated constructor stub
-    // TODO Bound überarbeiten
+  private final int lowerBound;
+  private final int upperBound;
+
+  private FirstCentrifugationSpeed(int lowerBound, int upperBound) {
+    this.lowerBound = lowerBound;
+    this.upperBound = upperBound;
   }
 }

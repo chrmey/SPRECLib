@@ -20,11 +20,11 @@ public enum FixationTime implements ISprecPart, IListObject {
 
   private ICodePart codePart;
 
-  FixationTime(ICodePart code) {
+  private FixationTime(ICodePart code) {
     this.codePart = code;
   }
 
-  FixationTime(int lowerBound, int upperBound, ICodePart code) {
+  private FixationTime(int lowerBound, int upperBound, ICodePart code) {
     this.codePart = code;
   }
 

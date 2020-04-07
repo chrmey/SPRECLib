@@ -5,7 +5,7 @@ import de.spreclib.model.interfaces.IListObject;
 public enum LongTermStorageTemperature implements IListObject {
   MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES(-85, -60),
   LIQUID_NITROGEN,
-  LESS_MINUS_HUNDREDTHIRTYFIVE_DEGREES(-999, -135),
+  LESS_MINUS_HUNDREDTHIRTYFIVE_DEGREES(-273, -135),
   PROGRAMMBLE_FREEZING_TO_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
   MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES(-35, -18),
   LIQUID_NITROGEN_AFTER_MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
@@ -13,11 +13,17 @@ public enum LongTermStorageTemperature implements IListObject {
   TWO_TO_TEN_DEGREES(2, 10),
   ;
 
-  LongTermStorageTemperature() {
+  private final Float lowerBound;
+  private final Float upperBound;
+
+  private LongTermStorageTemperature() {
     // Constructor for LIQUID_NITROGEN which has no Temperature in SPRECv2
+    this.lowerBound = null;
+    this.upperBound = null;
   }
 
   LongTermStorageTemperature(float lowerBound, float upperBound) {
-    // TODO Bounds überarbeiten
+    this.lowerBound = lowerBound;
+    this.upperBound = upperBound;
   }
 }
