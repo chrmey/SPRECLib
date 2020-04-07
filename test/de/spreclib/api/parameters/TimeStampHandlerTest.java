@@ -1,7 +1,7 @@
 package de.spreclib.api.parameters;
 
 import static org.junit.Assert.assertEquals;
-import de.spreclib.api.exceptions.TimestampException;
+import de.spreclib.api.exceptions.InvalidTimestampException;
 import org.junit.Test;
 
 public class TimeStampHandlerTest {
@@ -19,7 +19,7 @@ public class TimeStampHandlerTest {
     assertEquals(15, delayMinutes);
   }
 
-  @Test(expected = TimestampException.class)
+  @Test(expected = InvalidTimestampException.class)
   public void testWithNoValidTimestamps() {
 
     long timestamp1 = 1577837700;
@@ -28,7 +28,7 @@ public class TimeStampHandlerTest {
     new TimeStampHandler(timestamp1, timestamp2);
   }
 
-  @Test(expected = TimestampException.class)
+  @Test(expected = InvalidTimestampException.class)
   public void testWithTimestamp1AfterTimestamp2ValidTimestamps() {
 
     long timestamp1 = 1577837800;
@@ -37,7 +37,7 @@ public class TimeStampHandlerTest {
     new TimeStampHandler(timestamp1, timestamp2);
   }
 
-  @Test(expected = TimestampException.class)
+  @Test(expected = InvalidTimestampException.class)
   public void testWithNegativeTimestamp1Timestamps() {
 
     long timestamp1 = -1577837800;
@@ -46,7 +46,7 @@ public class TimeStampHandlerTest {
     new TimeStampHandler(timestamp1, timestamp2);
   }
 
-  @Test(expected = TimestampException.class)
+  @Test(expected = InvalidTimestampException.class)
   public void testWithNegativeTimestamp2Timestamps() {
 
     long timestamp1 = 1577837800;
@@ -55,7 +55,7 @@ public class TimeStampHandlerTest {
     new TimeStampHandler(timestamp1, timestamp2);
   }
 
-  @Test(expected = TimestampException.class)
+  @Test(expected = InvalidTimestampException.class)
   public void testWithNegativeTimestampsTimestamps() {
 
     long timestamp1 = -1577837600;
