@@ -8,7 +8,6 @@ import de.spreclib.api.lists.options.PreCentrifugationOption;
 import de.spreclib.api.lists.options.PrimaryContainerOption;
 import de.spreclib.api.lists.options.SecondCentrifugationOption;
 import de.spreclib.api.parameters.PreCentrifugationParameter;
-import de.spreclib.api.sprec.interfaces.ISampleSprec;
 import de.spreclib.model.enums.FluidSampleType;
 import de.spreclib.model.enums.PrimaryContainer;
 import de.spreclib.model.sprec.FluidSample;
@@ -22,7 +21,7 @@ import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugationList;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugationList;
 
-public final class FluidSampleBuilder implements ISampleSprec {
+public final class FluidSampleBuilder {
 
   public FluidSampleType fluidSampleType;
   public PrimaryContainer primaryContainer;
