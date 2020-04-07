@@ -9,7 +9,11 @@ import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
 import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
 
+
 public final class FluidSprecCode implements ISprecCode {
+
+  // SprecCode kann nur über den Builder erzeugt werden, da private Constructor.
+  // Wird nach Validierung von FluidSample erzeugt
 
   private final ICodePart fluidSampleTypeCode;
   private final ICodePart primaryContainerCode;
@@ -29,32 +33,32 @@ public final class FluidSprecCode implements ISprecCode {
     this.longTermStorageCode = builder.longTermStorageCode;
   }
 
-  public String getFluidSampleTypeCode() {
-    return this.fluidSampleTypeCode.getStringRepresentation();
+  public ICodePart getFluidSampleTypeCode() {
+    return this.fluidSampleTypeCode;
   }
 
-  public String getPrimaryContainerCode() {
-    return this.primaryContainerCode.getStringRepresentation();
+  public ICodePart getPrimaryContainerCode() {
+    return this.primaryContainerCode;
   }
 
-  public String getPreCentrifugationCode() {
-    return this.preCentrifugationCode.getStringRepresentation();
+  public ICodePart getPreCentrifugationCode() {
+    return this.preCentrifugationCode;
   }
 
-  public String getFirstCentrifugationCode() {
-    return this.firstCentrifugationCode.getStringRepresentation();
+  public ICodePart getFirstCentrifugationCode() {
+    return this.firstCentrifugationCode;
   }
 
-  public String getSecondCentrifugationCode() {
-    return this.secondCentrifugationCode.getStringRepresentation();
+  public ICodePart getSecondCentrifugationCode() {
+    return this.secondCentrifugationCode;
   }
 
-  public String getPostCentrifugationCode() {
-    return this.postCentrifugationCode.getStringRepresentation();
+  public ICodePart getPostCentrifugationCode() {
+    return this.postCentrifugationCode;
   }
 
-  public String getLongTermStorageCode() {
-    return this.longTermStorageCode.getStringRepresentation();
+  public ICodePart getLongTermStorageCode() {
+    return this.longTermStorageCode;
   }
 
   @Override
@@ -71,7 +75,7 @@ public final class FluidSprecCode implements ISprecCode {
     return code.toString();
   }
 
-  protected static final class FluidSprecCodeBuilder {
+  public static final class FluidSprecCodeBuilder {
 
     private ICodePart fluidSampleTypeCode = null;
     private ICodePart primaryContainerCode = null;
