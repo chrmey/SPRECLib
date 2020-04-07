@@ -115,6 +115,38 @@ public class PreCentrifugationListTest {
       assertTrue(PreCentrifugationList.PRE_CENTRIFUGATIONS.contains(preCentrifugation));
     }
   }
+  
+  
+  @Test
+  public void testGetUnknownPreCentrifugation() {
+      PreCentrifugation unknownPreCentrifugation = PreCentrifugationList.getUnknownPreCentrifugation();
+      
+      PreCentrifugationType expected = PreCentrifugationType.UNKNOWN;
+
+    assertEquals(expected, unknownPreCentrifugation.getPreCentrifugationType());
+  }
+
+  @Test
+  public void testGetOtherPreCentrifugation() {
+    PreCentrifugation otherPreCentrifugation = PreCentrifugationList.getOtherPreCentrifugation();
+
+    PreCentrifugationType expected = PreCentrifugationType.OTHER;
+
+    assertEquals(expected, otherPreCentrifugation.getPreCentrifugationType());
+  }
+
+  @Test
+  public void getPreCentrifugationTemperatureFromParameters() {
+
+    PreCentrifugationTemperature temperature =
+        PreCentrifugationTemperature.THIRTYFIVE_TO_THIRTYEIGHT_DEGREES;
+    PreCentrifugationDelay delay = PreCentrifugationDelay.LESS_TWO_HOURS;
+
+    PreCentrifugation preCentrifugation =
+        PreCentrifugationList.getPreCentrifugationFromParameters(temperature, delay);
+
+    assertEquals(new CodePart("O"), preCentrifugation.getCodeFromSprecPart());
+  }
 
   @Test
   public void testPreCentrifugationListContentTypes() {

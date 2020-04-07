@@ -1,6 +1,7 @@
 package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.interfaces.IListProvider;
 import java.util.ArrayList;
@@ -23,4 +24,10 @@ public class LongTermStorageListProviderTest {
     assertFalse(list.isEmpty());
   }
 
+  @Test
+  public void testOptionStringRepresentation() {
+    for (IListOption option : list) {
+      assertNotNull(option.getStringRepresentation());
+    }
+  }
 }
