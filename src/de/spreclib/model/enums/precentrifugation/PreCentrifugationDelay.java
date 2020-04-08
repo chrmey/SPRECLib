@@ -1,6 +1,6 @@
 package de.spreclib.model.enums.precentrifugation;
 
-import de.spreclib.model.exceptions.InvalidValueException;
+import de.spreclib.model.exceptions.InvalidTimeValueException;
 import de.spreclib.model.interfaces.IListObject;
 
 public enum PreCentrifugationDelay implements IListObject {
@@ -12,27 +12,28 @@ public enum PreCentrifugationDelay implements IListObject {
   TWENTYFOUR_TO_EIGHTYFOUR_HOURS(1440, 2880),
   GREATER_EIGHTYFOUR_HOURS(2880, null);
 
-  private final Integer lowerBound;
-  private final Integer upperBound;
+  private final Integer lowerBoundMinutes;
+  private final Integer upperBoundMinutes;
 
-  private PreCentrifugationDelay(Integer lowerBound, Integer upperBound) {
-    this.lowerBound = lowerBound;
-    this.upperBound = upperBound;
+  private PreCentrifugationDelay(Integer lowerBoundMinutes, Integer upperBoundMinutes) {
+    this.lowerBoundMinutes = lowerBoundMinutes;
+    this.upperBoundMinutes = upperBoundMinutes;
   }
 
   public static PreCentrifugationDelay valueOf(int delayMinutes) {
 
     for (PreCentrifugationDelay delayEnum : PreCentrifugationDelay.values()) {
-      if (delayMinutes >= delayEnum.lowerBound) {
-        if (delayEnum.upperBound == null || delayMinutes < delayEnum.upperBound) {
+      if (delayMinutes >= delayEnum.lowerBoundMinutes) {
+        if (delayEnum.upperBoundMinutes == null || delayMinutes < delayEnum.upperBoundMinutes) {
           return delayEnum;
         }
       }
     }
 
-    throw new InvalidValueException(
+    throw new InvalidTimeValueException(
+        delayMinutes,
         "Delay value "
             + delayMinutes
-            + "minutes is no valid value for parameter PreCentrifugationDelay");
+            + "minutes is no valid value for parameter PreCentrifugationDelay.");
   }
 }
