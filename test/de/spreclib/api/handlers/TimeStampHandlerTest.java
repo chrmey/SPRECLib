@@ -1,7 +1,8 @@
-package de.spreclib.api.parameters;
+package de.spreclib.api.handlers;
 
 import static org.junit.Assert.assertEquals;
 import de.spreclib.api.exceptions.InvalidTimestampException;
+import de.spreclib.api.handlers.TimeStampHandler;
 import org.junit.Test;
 
 public class TimeStampHandlerTest {

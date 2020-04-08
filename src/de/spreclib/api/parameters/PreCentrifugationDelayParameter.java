@@ -1,5 +1,6 @@
 package de.spreclib.api.parameters;
 
+import de.spreclib.api.handlers.TimeStampHandler;
 import de.spreclib.api.lists.options.PreCentrifugationDelayOption;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 
