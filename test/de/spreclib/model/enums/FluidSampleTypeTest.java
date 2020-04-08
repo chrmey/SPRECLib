@@ -8,7 +8,6 @@ import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 import org.junit.Test;
 
-
 public class FluidSampleTypeTest {
 
   @Test
