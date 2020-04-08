@@ -1,7 +1,7 @@
 package de.spreclib.model.enums.precentrifugation;
 
 import static org.junit.Assert.*;
-import de.spreclib.model.exceptions.InvalidValueException;
+import de.spreclib.model.exceptions.InvalidTemperatureValueException;
 import org.junit.Test;
 
 public class PreCentrifugationTemperatureTest {
@@ -33,7 +33,7 @@ public class PreCentrifugationTemperatureTest {
     assertEquals(PreCentrifugationTemperature.ROOM_TEMPERATURE, preCentrifugationTemperature);
   }
 
-  @Test(expected = InvalidValueException.class)
+  @Test(expected = InvalidTemperatureValueException.class)
   public void testGetPreCentrifugationTemperatureWithNoValidTemperature() {
 
     PreCentrifugationTemperature.valueOf(11f);
