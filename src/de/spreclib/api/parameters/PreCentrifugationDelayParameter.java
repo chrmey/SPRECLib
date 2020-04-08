@@ -18,7 +18,7 @@ public class PreCentrifugationDelayParameter {
       PreCentrifugationDelayOption preCentrifugationDelayOption) {
 
     if (preCentrifugationDelayOption == null) {
-      throw new IllegalArgumentException("PreCentrifugationDelayOption cannot be null");
+      throw new IllegalArgumentException("PreCentrifugationDelayOption cannot be null.");
     }
 
     this.delayOption = preCentrifugationDelayOption;
@@ -26,11 +26,11 @@ public class PreCentrifugationDelayParameter {
 
   public PreCentrifugationDelay getPreCentrifugationDelay() {
 
-    if (delayOption != null) {
+    if (this.delayOption != null) {
 
-      return delayOption.getContainedObject();
+      return this.delayOption.getContainedObject();
     } else {
-      PreCentrifugationDelay delay = PreCentrifugationDelay.valueOf(delayMinutes);
+      PreCentrifugationDelay delay = PreCentrifugationDelay.valueOf(this.delayMinutes);
 
       return delay;
     }

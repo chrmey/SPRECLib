@@ -17,7 +17,7 @@ public class PreCentrifugationTemperatureParameter {
       PreCentrifugationTemperatureOption temperatureOption) {
       
     if (temperatureOption == null) {
-      throw new IllegalArgumentException("TemperatureOption cannot be null");
+      throw new IllegalArgumentException("TemperatureOption cannot be null.");
     }
     
     this.temperatureOption = temperatureOption;
@@ -26,11 +26,11 @@ public class PreCentrifugationTemperatureParameter {
   public PreCentrifugationTemperature getPreCentrifugationTemperature() {
 
     if (temperatureOption != null) {
-	
-      return temperatureOption.getContainedObject();
+
+      return this.temperatureOption.getContainedObject();
     } else {
       PreCentrifugationTemperature temperature =
-          PreCentrifugationTemperature.valueOf(temperatureCelsius);
+          PreCentrifugationTemperature.valueOf(this.temperatureCelsius);
 
       return temperature;
     }

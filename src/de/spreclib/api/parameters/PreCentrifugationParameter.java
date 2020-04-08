@@ -15,11 +15,11 @@ public class PreCentrifugationParameter {
       PreCentrifugationDelayParameter preCentrifugationDelayParameter) {
 
     if (preCentrifugationTemperatureParameter == null) {
-      throw new IllegalArgumentException("PreCentrifugationTemperatureParameter cannot be null");
+      throw new IllegalArgumentException("PreCentrifugationTemperatureParameter cannot be null.");
     }
 
     if (preCentrifugationDelayParameter == null) {
-      throw new IllegalArgumentException("PreCentrifugationDelayParameter cannot be null");
+      throw new IllegalArgumentException("PreCentrifugationDelayParameter cannot be null.");
     }
 
     this.preCentrifugationTemperatureParameter = preCentrifugationTemperatureParameter;
