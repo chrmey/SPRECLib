@@ -1,67 +1,58 @@
 package de.spreclib.api.handlers;
 
 import static org.junit.Assert.assertEquals;
-import de.spreclib.api.exceptions.InvalidTimestampException;
-import de.spreclib.api.handlers.TimeStampHandler;
+import de.spreclib.api.exceptions.InvalidTimestampRelationException;
+import de.spreclib.api.exceptions.NegativeTimestampException;
 import org.junit.Test;
 
-public class TimeStampHandlerTest {
+public class TimespanCalculatorTest {
 
   @Test
   public void testWithValidTimestamps() {
 
-    long timestamp1 = 1577836800;
-    long timestamp2 = 1577837700;
+    long startTime = 1577836800000L;
+    long fifteenMinutesLater = 1577837700000L;
 
-    TimeStampHandler timestampHandler = new TimeStampHandler(timestamp1, timestamp2);
+    TimespanCalculator timestampCalculator = new TimespanCalculator(startTime, fifteenMinutesLater);
 
-    int delayMinutes = timestampHandler.getDelayMinutes();
+    int delayMinutes = timestampCalculator.getDelayMinutes();
 
     assertEquals(15, delayMinutes);
   }
 
-  @Test(expected = InvalidTimestampException.class)
+  @Test(expected = InvalidTimestampRelationException.class)
   public void testWithNoValidTimestamps() {
 
-    long timestamp1 = 1577837700;
-    long timestamp2 = 1577837700;
+    long timestamp1 = 1577837700000L;
+    long timestampEqualTimestamp1 = 1577837700000L;
 
-    new TimeStampHandler(timestamp1, timestamp2);
+    new TimespanCalculator(timestamp1, timestampEqualTimestamp1);
   }
 
-  @Test(expected = InvalidTimestampException.class)
+  @Test(expected = InvalidTimestampRelationException.class)
   public void testWithTimestamp1AfterTimestamp2ValidTimestamps() {
 
-    long timestamp1 = 1577837800;
-    long timestamp2 = 1577837700;
+    long timestamp1 = 1577837800000L;
+    long beforeTimestamp1 = 1577837700000L;
 
-    new TimeStampHandler(timestamp1, timestamp2);
+    new TimespanCalculator(timestamp1, beforeTimestamp1);
   }
 
-  @Test(expected = InvalidTimestampException.class)
+  @Test(expected = NegativeTimestampException.class)
   public void testWithNegativeTimestamp1Timestamps() {
 
-    long timestamp1 = -1577837800;
-    long timestamp2 = 1577837700;
+    long negativeTimestamp = -1577837800000L;
+    long timestamp2 = 1577837700000L;
 
-    new TimeStampHandler(timestamp1, timestamp2);
+    new TimespanCalculator(negativeTimestamp, timestamp2);
   }
 
-  @Test(expected = InvalidTimestampException.class)
+  @Test(expected = NegativeTimestampException.class)
   public void testWithNegativeTimestamp2Timestamps() {
 
-    long timestamp1 = 1577837800;
-    long timestamp2 = -1577837700;
+    long timestamp1 = 1577837800000L;
+    long negativeTimestamp = -1577837700000L;
 
-    new TimeStampHandler(timestamp1, timestamp2);
-  }
-
-  @Test(expected = InvalidTimestampException.class)
-  public void testWithNegativeTimestampsTimestamps() {
-
-    long timestamp1 = -1577837600;
-    long timestamp2 = -1577837700;
-
-    new TimeStampHandler(timestamp1, timestamp2);
+    new TimespanCalculator(timestamp1, negativeTimestamp);
   }
 }
