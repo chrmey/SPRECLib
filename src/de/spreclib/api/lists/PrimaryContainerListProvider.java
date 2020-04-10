@@ -1,23 +1,22 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.PrimaryContainerOption;
 import de.spreclib.model.enums.PrimaryContainer;
 import java.util.ArrayList;
 
-public final class PrimaryContainerListProvider extends AbstractListProvider {
+public final class PrimaryContainerListProvider {
 
-  public PrimaryContainerListProvider() {
-    super();
+  private static final ArrayList<PrimaryContainerOption> PRIMARY_CONTAINER_OPTIONS;
+
+  static {
+    PRIMARY_CONTAINER_OPTIONS = new ArrayList<>();
+    for (PrimaryContainer primaryContainer : PrimaryContainer.values()) {
+      PrimaryContainerOption primaryContainerOption = new PrimaryContainerOption(primaryContainer);
+      PRIMARY_CONTAINER_OPTIONS.add(primaryContainerOption);
+    }
   }
 
-  @Override
-  protected ArrayList<IListOption> generateList() {
-    ArrayList<IListOption> list = new ArrayList<>();
-    for (PrimaryContainer entry : PrimaryContainer.values()) {
-      IListOption option = new PrimaryContainerOption(entry);
-      list.add(option);
-    }
-    return list;
+  public static ArrayList<PrimaryContainerOption> getList() {
+    return PRIMARY_CONTAINER_OPTIONS;
   }
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public abstract class AbstractListProvider implements IListProvider {
 
-  private ArrayList<IListOption> optionList = new ArrayList<>();
+  protected ArrayList<IListOption> optionList = new ArrayList<>();
 
   public AbstractListProvider() {
     this.optionList = generateList();

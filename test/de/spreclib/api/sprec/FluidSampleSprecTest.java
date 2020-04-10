@@ -1,6 +1,5 @@
 package de.spreclib.api.sprec;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
@@ -20,9 +19,6 @@ import de.spreclib.api.lists.options.PostCentrifugationOption;
 import de.spreclib.api.lists.options.PreCentrifugationOption;
 import de.spreclib.api.lists.options.PrimaryContainerOption;
 import de.spreclib.api.lists.options.SecondCentrifugationOption;
-import de.spreclib.api.parameters.PreCentrifugationDelayParameter;
-import de.spreclib.api.parameters.PreCentrifugationParameter;
-import de.spreclib.api.parameters.PreCentrifugationTemperatureParameter;
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
@@ -37,7 +33,6 @@ import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.model.exceptions.InvalidParameterRelationException;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.sprec.CodePart;
-import de.spreclib.model.sprec.FluidSample;
 import de.spreclib.model.sprec.FluidSprecCode;
 import de.spreclib.model.spreclib.centrifugation.NormalCentrifugation;
 import de.spreclib.model.spreclib.postcentrifugation.NormalPostCentrifugation;
@@ -47,9 +42,9 @@ import org.junit.Test;
 
 public class FluidSampleSprecTest {
 
-  private ArrayList<IListOption> fluidSampleTypeList;
-  private ArrayList<IListOption> primaryContainerList;
-  private ArrayList<IListOption> preCentrifugationList;
+  private ArrayList<FluidSampleTypeOption> fluidSampleTypeList;
+  private ArrayList<PrimaryContainerOption> primaryContainerList;
+  private ArrayList<PreCentrifugationOption> preCentrifugationList;
   private ArrayList<IListOption> firstCentrifugationList;
   private ArrayList<IListOption> secondCentrifugationList;
   private ArrayList<IListOption> postCentrifugationList;
@@ -66,25 +61,22 @@ public class FluidSampleSprecTest {
   @Before
   public void setUp() {
 
-    IListProvider fluidSampleTypeProvider = new FluidSampleTypeListProvider();
-    IListProvider primaryContainerListProvider = new PrimaryContainerListProvider();
-    IListProvider preCentrifugationListProvider = new PreCentrifugationListProvider();
     IListProvider firstCentrifugationListProvider = new FirstCentrifugationListProvider();
     IListProvider secondCentrifugationListProvider = new SecondCentrifugationListProvider();
     IListProvider postCentrifugationListProvider = new PostCentrifugationListProvider();
     IListProvider longTermStorageListProvider = new LongTermStorageListProvider();
 
-    this.fluidSampleTypeList = fluidSampleTypeProvider.getList();
-    this.primaryContainerList = primaryContainerListProvider.getList();
-    this.preCentrifugationList = preCentrifugationListProvider.getList();
+    this.fluidSampleTypeList = FluidSampleTypeListProvider.getList();
+    this.primaryContainerList = PrimaryContainerListProvider.getList();
+    this.preCentrifugationList = PreCentrifugationListProvider.getList();
     this.firstCentrifugationList = firstCentrifugationListProvider.getList();
     this.secondCentrifugationList = secondCentrifugationListProvider.getList();
     this.postCentrifugationList = postCentrifugationListProvider.getList();
     this.longTermStorageList = longTermStorageListProvider.getList();
 
-    this.fluidSampleTypeOption = (FluidSampleTypeOption) fluidSampleTypeList.get(0);
-    this.primaryContainerOption = (PrimaryContainerOption) primaryContainerList.get(0);
-    this.preCentrifugationOption = (PreCentrifugationOption) preCentrifugationList.get(0);
+    this.fluidSampleTypeOption = fluidSampleTypeList.get(0);
+    this.primaryContainerOption = primaryContainerList.get(0);
+    this.preCentrifugationOption = preCentrifugationList.get(0);
     this.firstCentrifugationOption = (FirstCentrifugationOption) firstCentrifugationList.get(0);
     this.secondCentrifugationOption = (SecondCentrifugationOption) secondCentrifugationList.get(0);
     this.postCentrifugationOption = (PostCentrifugationOption) postCentrifugationList.get(0);
@@ -93,103 +85,48 @@ public class FluidSampleSprecTest {
 
   @Test
   public void testWithFluidSampleTypeOption() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample =
-        fluidSampleBuilder.withFluidSampleType(this.fluidSampleTypeOption).build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder
+            .withFluidSampleType(this.fluidSampleTypeOption)
+            .getFluidSampleSprecCode();
 
     ICodePart fluidSampleTypeCode = fluidSampleCode.getFluidSampleTypeCode();
 
     assertFalse(fluidSampleTypeCode.getStringRepresentation().isEmpty());
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testWithFluidSampleTypeOptionIsNull() {
-
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    fluidSampleBuilder.withFluidSampleType(null).build();
-  }
-
   @Test
   public void testWithPrimaryContainer() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample =
-        fluidSampleBuilder.withPrimaryContainer(this.primaryContainerOption).build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder
+            .withPrimaryContainer(this.primaryContainerOption)
+            .getFluidSampleSprecCode();
 
     ICodePart primaryContainerCode = fluidSampleCode.getPrimaryContainerCode();
 
     assertFalse(primaryContainerCode.getStringRepresentation().isEmpty());
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testWithPrimaryContainerOptionIsNull() {
-
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    fluidSampleBuilder.withPrimaryContainer(null).build();
-  }
-
   @Test
   public void testWithPreCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample =
-        fluidSampleBuilder.withPreCentrifugation(this.preCentrifugationOption).build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder
+            .withPreCentrifugation(this.preCentrifugationOption)
+            .getFluidSampleSprecCode();
 
     ICodePart preCentrifugationCode = fluidSampleCode.getPreCentrifugationCode();
 
     assertFalse(preCentrifugationCode.getStringRepresentation().isEmpty());
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testWithPreCentrifugationOptionIsNull() {
-
-    PreCentrifugationOption preCentrifugationOption = null;
-
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    fluidSampleBuilder.withPreCentrifugation(preCentrifugationOption).build();
-  }
-
-  @Test
-  public void testWithPreCentrifugationParameter() {
-
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-
-    PreCentrifugationTemperatureParameter temperature =
-        new PreCentrifugationTemperatureParameter(2);
-    PreCentrifugationDelayParameter delay =
-        new PreCentrifugationDelayParameter(1577836800, 1577837700);
-
-    FluidSample fluidSample =
-        fluidSampleBuilder
-            .withPreCentrifugation(new PreCentrifugationParameter(temperature, delay))
-            .build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
-
-    ICodePart preCentrifugationCode = fluidSampleCode.getPreCentrifugationCode();
-
-    assertEquals("B", preCentrifugationCode.getStringRepresentation());
-  }
-
-  @Test(expected = IllegalArgumentException.class)
-  public void testWithPreCentrifugationParameterIsNull() {
-
-    PreCentrifugationParameter preCentrifugationParameter = null;
-
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    fluidSampleBuilder.withPreCentrifugation(preCentrifugationParameter).build();
-  }
-
   @Test
   public void testWithOtherPreCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withOtherPreCentrifugation().build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder.withOtherPreCentrifugation().getFluidSampleSprecCode();
 
     ICodePart preCentrifugationCode = fluidSampleCode.getPreCentrifugationCode();
 
@@ -198,10 +135,9 @@ public class FluidSampleSprecTest {
 
   @Test
   public void testWithUnknownPreCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withUnknownPreCentrifugation().build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder.withUnknownPreCentrifugation().getFluidSampleSprecCode();
 
     ICodePart preCentrifugationCode = fluidSampleCode.getPreCentrifugationCode();
 
@@ -210,32 +146,22 @@ public class FluidSampleSprecTest {
 
   @Test
   public void testWithFirstCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample =
-        fluidSampleBuilder.withFirstCentrifugation(this.firstCentrifugationOption).build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder
+            .withFirstCentrifugation(this.firstCentrifugationOption)
+            .getFluidSampleSprecCode();
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
     assertFalse(firstCentrifugationCode.getStringRepresentation().isEmpty());
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testWithFirstCentrifugationOptionIsNull() {
-
-    FirstCentrifugationOption firstCentrifugationOption = null;
-
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    fluidSampleBuilder.withFirstCentrifugation(firstCentrifugationOption).build();
-  }
-
   @Test
   public void testWithUnknownFirstCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withUnknownFirstCentrifugation().build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder.withUnknownFirstCentrifugation().getFluidSampleSprecCode();
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
@@ -244,10 +170,9 @@ public class FluidSampleSprecTest {
 
   @Test
   public void testWithOtherFirstCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withOtherFirstCentrifugation().build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder.withOtherFirstCentrifugation().getFluidSampleSprecCode();
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
@@ -256,10 +181,9 @@ public class FluidSampleSprecTest {
 
   @Test
   public void testWithNoFirstCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withNoFirstCentrifugation().build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder.withNoFirstCentrifugation().getFluidSampleSprecCode();
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
@@ -268,32 +192,32 @@ public class FluidSampleSprecTest {
 
   @Test
   public void testWithSecondCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample =
-        fluidSampleBuilder.withSecondCentrifugation(this.secondCentrifugationOption).build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder
+            .withSecondCentrifugation(this.secondCentrifugationOption)
+            .getFluidSampleSprecCode();
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
     assertFalse(secondCentrifugationCode.getStringRepresentation().isEmpty());
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testWithSecondCentrifugationOptionIsNull() {
+  @Test(expected = InvalidParameterRelationException.class)
+  public void testWithSecondCentrifugationWithNoFirstCentrifugation() {
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
 
-    SecondCentrifugationOption secondCentrifugationOption = null;
-
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    fluidSampleBuilder.withSecondCentrifugation(secondCentrifugationOption).build();
+    fluidSampleBuilder
+        .withNoFirstCentrifugation()
+        .withSecondCentrifugation(this.secondCentrifugationOption)
+        .getFluidSampleSprecCode();
   }
 
   @Test
   public void testWithUnknownSecondCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withUnknownSecondCentrifugation().build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder.withUnknownSecondCentrifugation().getFluidSampleSprecCode();
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
@@ -302,9 +226,9 @@ public class FluidSampleSprecTest {
 
   @Test
   public void testWithOtherSecondCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withOtherSecondCentrifugation().build();
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder.withOtherSecondCentrifugation().getFluidSampleSprecCode();
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
@@ -313,9 +237,9 @@ public class FluidSampleSprecTest {
 
   @Test
   public void testWithNoSecondCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withNoSecondCentrifugation().build();
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder.withNoSecondCentrifugation().getFluidSampleSprecCode();
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
@@ -324,33 +248,24 @@ public class FluidSampleSprecTest {
 
   @Test
   public void testWithPostCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample =
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
         fluidSampleBuilder
             .withOtherFirstCentrifugation()
             .withOtherSecondCentrifugation()
             .withPostCentrifugation(this.postCentrifugationOption)
-            .build();
+            .getFluidSampleSprecCode();
 
-    ICodePart postCentrifugationCode = fluidSample.getSprecCode().getPostCentrifugationCode();
+    ICodePart postCentrifugationCode = fluidSampleCode.getPostCentrifugationCode();
 
     assertFalse(postCentrifugationCode.getStringRepresentation().isEmpty());
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testWithPostCentrifugationOptionIsNull() {
-
-    PostCentrifugationOption postCentrifugationOption = null;
-
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    fluidSampleBuilder.withPostCentrifugation(postCentrifugationOption).build();
-  }
-
   @Test(expected = InvalidParameterRelationException.class)
   public void testWithPostCentrifugationWithNoFirstOrSecondCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
 
-    PostCentrifugationOption option =
+    PostCentrifugationOption postCentrifugationOption =
         new PostCentrifugationOption(
             new NormalPostCentrifugation(
                 PostCentrifugationType.DEFAULT,
@@ -358,14 +273,18 @@ public class FluidSampleSprecTest {
                 PostCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                 new CodePart("A")));
 
-    fluidSampleBuilder.withPostCentrifugation(option).build();
+    fluidSampleBuilder
+        .withNoFirstCentrifugation()
+        .withNoSecondCentrifugation()
+        .withPostCentrifugation(postCentrifugationOption)
+        .getFluidSampleSprecCode();
   }
 
   @Test
   public void testWithNoApplicablePostCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withNoApplicablePostCentrifugation().build();
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder.withNoApplicablePostCentrifugation().getFluidSampleSprecCode();
 
     ICodePart postCentrifugationCode = fluidSampleCode.getPostCentrifugationCode();
 
@@ -374,46 +293,44 @@ public class FluidSampleSprecTest {
 
   @Test(expected = InvalidParameterRelationException.class)
   public void testWithUnknownPostCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withUnknownPostCentrifugation().build();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
 
-    fluidSample.getSprecCode();
+    fluidSampleBuilder
+        .withNoFirstCentrifugation()
+        .withNoSecondCentrifugation()
+        .withUnknownPostCentrifugation()
+        .getFluidSampleSprecCode();
   }
 
   @Test(expected = InvalidParameterRelationException.class)
   public void testWithOtherPostCentrifugation() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withOtherPostCentrifugation().build();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
 
-    fluidSample.getSprecCode();
+    fluidSampleBuilder
+        .withNoFirstCentrifugation()
+        .withNoSecondCentrifugation()
+        .withOtherPostCentrifugation()
+        .getFluidSampleSprecCode();
   }
 
   @Test
   public void testWithLongTermStorage() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample =
-        fluidSampleBuilder.withLongTermStorage(this.longTermStorageOption).build();
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder
+            .withLongTermStorage(this.longTermStorageOption)
+            .getFluidSampleSprecCode();
 
     ICodePart longTermStorageCode = fluidSampleCode.getLongTermStorageCode();
 
     assertFalse(longTermStorageCode.getStringRepresentation().isEmpty());
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testWithLongTermStorageOptionIsNull() {
-
-    LongTermStorageOption longTermStorageOption = null;
-
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    fluidSampleBuilder.withLongTermStorage(longTermStorageOption).build();
-  }
-
   @Test
   public void testWithUnknownLongTermStorage() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withUnknownLongTermStorage().build();
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder.withUnknownLongTermStorage().getFluidSampleSprecCode();
 
     ICodePart longTermStorageCode = fluidSampleCode.getLongTermStorageCode();
 
@@ -422,9 +339,9 @@ public class FluidSampleSprecTest {
 
   @Test
   public void testWithOtherLongTermStorage() {
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
-    FluidSample fluidSample = fluidSampleBuilder.withOtherLongTermStorage().build();
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder.withOtherLongTermStorage().getFluidSampleSprecCode();
 
     ICodePart longTermStorageCode = fluidSampleCode.getLongTermStorageCode();
 
@@ -454,9 +371,9 @@ public class FluidSampleSprecTest {
                 new CodePart("A"),
                 SprecPartType.SECOND_CENTRIFUGATION));
 
-    FluidSampleBuilder fluidSampleBuilder = new FluidSampleBuilder();
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
 
-    FluidSample fluidSample =
+    FluidSprecCode fluidSampleCode =
         fluidSampleBuilder
             .withFluidSampleType(this.fluidSampleTypeOption)
             .withPrimaryContainer(this.primaryContainerOption)
@@ -465,12 +382,31 @@ public class FluidSampleSprecTest {
             .withSecondCentrifugation(secondCentrifugationOption)
             .withPostCentrifugation(this.postCentrifugationOption)
             .withLongTermStorage(this.longTermStorageOption)
-            .build();
-
-    FluidSprecCode fluidSampleCode = fluidSample.getSprecCode();
+            .getFluidSampleSprecCode();
 
     String code = fluidSampleCode.getCodeString();
 
     assertNotNull(code);
+  }
+
+  @Test
+  public void withNullOptions() {
+
+    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
+
+    FluidSprecCode fluidSampleCode =
+        fluidSampleBuilder
+            .withFluidSampleType(null)
+            .withPrimaryContainer(null)
+            .withPreCentrifugation(null)
+            .withFirstCentrifugation(null)
+            .withSecondCentrifugation(null)
+            .withPostCentrifugation(null)
+            .withLongTermStorage(null)
+            .getFluidSampleSprecCode();
+
+    String codeString = fluidSampleCode.getCodeString();
+
+    assertNotNull(codeString);
   }
 }

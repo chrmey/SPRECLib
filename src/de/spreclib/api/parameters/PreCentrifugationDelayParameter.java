@@ -6,13 +6,13 @@ import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 
 public class PreCentrifugationDelayParameter {
 
-  private int delayMinutes;
-  private PreCentrifugationDelayOption delayOption;
+  private PreCentrifugationDelay preCentrifugationDelay;
 
   public PreCentrifugationDelayParameter(long collectionTime, long firstCentrifugationStartTime) {
 
-    this.delayMinutes =
+    int delayMinutes =
         new TimeStampHandler(collectionTime, firstCentrifugationStartTime).getDelayMinutes();
+    this.preCentrifugationDelay = PreCentrifugationDelay.valueOf(delayMinutes);
   }
 
   public PreCentrifugationDelayParameter(
@@ -22,19 +22,10 @@ public class PreCentrifugationDelayParameter {
       throw new IllegalArgumentException("PreCentrifugationDelayOption cannot be null.");
     }
 
-    this.delayOption = preCentrifugationDelayOption;
+    this.preCentrifugationDelay = preCentrifugationDelayOption.getContainedObject();
   }
 
   public PreCentrifugationDelay getPreCentrifugationDelay() {
-
-    if (this.delayOption != null) {
-
-      return this.delayOption.getContainedObject();
-    } else {
-      PreCentrifugationDelay delay = PreCentrifugationDelay.valueOf(this.delayMinutes);
-
-      return delay;
-    }
+    return this.preCentrifugationDelay;
   }
- 
 }

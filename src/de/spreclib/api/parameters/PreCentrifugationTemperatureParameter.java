@@ -5,34 +5,24 @@ import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 
 public class PreCentrifugationTemperatureParameter {
 
-  private float temperatureCelsius;
-  private PreCentrifugationTemperatureOption temperatureOption;
+  private PreCentrifugationTemperature preCentrifugationTemperature;
 
   public PreCentrifugationTemperatureParameter(float temperature) {
-    this.temperatureCelsius = temperature;
-  }
 
+    this.preCentrifugationTemperature = PreCentrifugationTemperature.valueOf(temperature);
+  }
 
   public PreCentrifugationTemperatureParameter(
       PreCentrifugationTemperatureOption temperatureOption) {
-      
+
     if (temperatureOption == null) {
       throw new IllegalArgumentException("TemperatureOption cannot be null.");
     }
-    
-    this.temperatureOption = temperatureOption;
+
+    this.preCentrifugationTemperature = temperatureOption.getContainedObject();
   }
 
   public PreCentrifugationTemperature getPreCentrifugationTemperature() {
-
-    if (temperatureOption != null) {
-
-      return this.temperatureOption.getContainedObject();
-    } else {
-      PreCentrifugationTemperature temperature =
-          PreCentrifugationTemperature.valueOf(this.temperatureCelsius);
-
-      return temperature;
-    }
+    return this.preCentrifugationTemperature;
   }
 }
