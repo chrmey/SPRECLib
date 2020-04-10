@@ -1,23 +1,22 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.FluidSampleTypeOption;
 import de.spreclib.model.enums.FluidSampleType;
 import java.util.ArrayList;
 
-public final class FluidSampleTypeListProvider extends AbstractListProvider {
+public final class FluidSampleTypeListProvider {
 
-  public FluidSampleTypeListProvider() {
-    super();
+  private static final ArrayList<FluidSampleTypeOption> FLUID_SAMPLE_TYPE_OPTIONS;
+
+  static {
+    FLUID_SAMPLE_TYPE_OPTIONS = new ArrayList<>();
+    for (FluidSampleType fluidSampleType : FluidSampleType.values()) {
+      FluidSampleTypeOption fluidSampleTypeOption = new FluidSampleTypeOption(fluidSampleType);
+      FLUID_SAMPLE_TYPE_OPTIONS.add(fluidSampleTypeOption);
+    }
   }
 
-  @Override
-  protected ArrayList<IListOption> generateList() {
-    ArrayList<IListOption> list = new ArrayList<>();
-    for (FluidSampleType entry : FluidSampleType.values()) {
-      IListOption option = new FluidSampleTypeOption(entry);
-      list.add(option);
-    }
-    return list;
+  public static ArrayList<FluidSampleTypeOption> getList() {
+    return FLUID_SAMPLE_TYPE_OPTIONS;
   }
 }
