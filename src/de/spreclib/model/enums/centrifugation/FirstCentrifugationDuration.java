@@ -7,11 +7,19 @@ public enum FirstCentrifugationDuration implements ICentrifugationDuration, ILis
   TEN_TO_FIFTEEN_MINUTES(10, 15),
   THIRY_MINUTES(30, 30);
 
-  private final int lowerBound;
-  private final int upperBound;
+  private final int lowerBoundMinutes;
+  private final int upperBoundMinutes;
 
-  private FirstCentrifugationDuration(int lowerBound, int upperBound) {
-    this.lowerBound = lowerBound;
-    this.upperBound = upperBound;
+  private FirstCentrifugationDuration(int lowerBoundMinutes, int upperBoundMinutes) {
+    this.lowerBoundMinutes = lowerBoundMinutes;
+    this.upperBoundMinutes = upperBoundMinutes;
+  }
+
+  public boolean hasValueFor(int durationMinutes) {
+    if (durationMinutes >= this.lowerBoundMinutes && durationMinutes <= this.upperBoundMinutes) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

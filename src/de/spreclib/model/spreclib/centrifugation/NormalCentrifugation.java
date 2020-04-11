@@ -64,6 +64,22 @@ public final class NormalCentrifugation extends Centrifugation {
     return centrifugationBraking;
   }
 
+  public boolean contains(
+      ICentrifugationTemperature centrifugationTemperature,
+      ICentrifugationDuration centrifugationDuration,
+      ICentrifugationSpeed centrifugationSpeed,
+      CentrifugationBraking centrifugationBraking) {
+
+    if (this.centrifugationTemperature == centrifugationTemperature
+        && this.centrifugationDuration == centrifugationDuration
+        && this.centrifugationSpeed == centrifugationSpeed
+        && this.centrifugationBraking == centrifugationBraking) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;

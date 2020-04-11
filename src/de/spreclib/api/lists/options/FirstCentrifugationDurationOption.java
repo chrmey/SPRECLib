@@ -20,4 +20,12 @@ public final class FirstCentrifugationDurationOption extends AbstractListOption 
   public FirstCentrifugationDuration getContainedObject() {
     return this.firstCentrifugationDuration;
   }
+
+  public boolean hasDuration(int durationMinutes) {
+    if (this.firstCentrifugationDuration.hasValueFor(durationMinutes)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

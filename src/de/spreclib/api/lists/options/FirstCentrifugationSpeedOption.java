@@ -19,4 +19,12 @@ public final class FirstCentrifugationSpeedOption extends AbstractListOption {
   public FirstCentrifugationSpeed getContainedObject() {
     return this.firstCentrifugationSpeed;
   }
+
+  public boolean hasSpeed(int speed) {
+    if (this.firstCentrifugationSpeed.hasValueFor(speed)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

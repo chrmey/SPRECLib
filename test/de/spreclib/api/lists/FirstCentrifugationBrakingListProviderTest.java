@@ -3,20 +3,18 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
+import de.spreclib.api.lists.options.FirstCentrifugationBrakingOption;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
 public class FirstCentrifugationBrakingListProviderTest {
 
-  private IListProvider firstCentrifugationBrakingListProvider;
-  private ArrayList<IListOption> list;
+  private ArrayList<FirstCentrifugationBrakingOption> list;
 
   @Before
   public void setUp() {
-    firstCentrifugationBrakingListProvider = new FirstCentrifugationBrakingListProvider();
-    list = firstCentrifugationBrakingListProvider.getList();
+    list = FirstCentrifugationBrakingListProvider.getList();
   }
 
   @Test
@@ -29,5 +27,14 @@ public class FirstCentrifugationBrakingListProviderTest {
     for (IListOption option : list) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testWithValidValue() {
+
+    FirstCentrifugationBrakingOption brakingOption =
+        FirstCentrifugationBrakingListProvider.valueOf(true);
+
+    assertNotNull(brakingOption);
   }
 }

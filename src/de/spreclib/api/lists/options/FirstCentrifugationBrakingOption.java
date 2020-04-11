@@ -19,4 +19,12 @@ public final class FirstCentrifugationBrakingOption extends AbstractListOption {
   public CentrifugationBraking getContainedObject() {
     return this.firstCentrifugationBraking;
   }
+
+  public boolean hasBraking(boolean braking) {
+    if (this.firstCentrifugationBraking.hasValueFor(braking)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

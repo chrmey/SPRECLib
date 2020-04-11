@@ -7,14 +7,22 @@ public enum FirstCentrifugationSpeed implements ICentrifugationSpeed, IListObjec
   LESS_THREETHOUSAND_G(0, 3000),
   THREETHOUSAND_TO_SIXTHOUSAND_G(3000, 6000),
   SIXTHOUSAND_TO_TENTHOUSAND_G(6000, 10000),
-  GREATER_TENTHOUSAND_G(10000, 99999),
+  GREATER_TENTHOUSAND_G(10000, null),
   LESS_THOUSAND_G(0, 1000);
 
-  private final int lowerBound;
-  private final int upperBound;
+  private final Integer lowerBoundG;
+  private final Integer upperBoundG;
 
-  private FirstCentrifugationSpeed(int lowerBound, int upperBound) {
-    this.lowerBound = lowerBound;
-    this.upperBound = upperBound;
+  private FirstCentrifugationSpeed(Integer lowerBoundG, Integer upperBoundG) {
+    this.lowerBoundG = lowerBoundG;
+    this.upperBoundG = upperBoundG;
+  }
+
+  public boolean hasValueFor(int speed) {
+    if (speed >= this.lowerBoundG && speed < this.upperBoundG) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

@@ -52,4 +52,51 @@ public final class FirstCentrifugationOption extends AbstractListOption {
   public Centrifugation getContainedObject() {
     return this.firstCentrifugation;
   }
+
+  public boolean hasFirstCentrifugation(
+      FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption,
+      FirstCentrifugationDurationOption firstCentrifugationDurationOption,
+      FirstCentrifugationSpeedOption firstCentrifugationSpeedOption,
+      FirstCentrifugationBrakingOption firstCentrifugationBrakingOption) {
+
+    if (firstCentrifugationTemperatureOption == null) {
+      return false;
+    }
+
+    if (firstCentrifugationDurationOption == null) {
+      return false;
+    }
+
+    if (firstCentrifugationSpeedOption == null) {
+      return false;
+    }
+
+    if (firstCentrifugationBrakingOption == null) {
+      return false;
+    }
+
+    if (this.firstCentrifugation.isNormalCentrifugation()) {
+
+      FirstCentrifugationTemperature firstCentrifugationTemperature =
+          firstCentrifugationTemperatureOption.getContainedObject();
+      FirstCentrifugationDuration firstCentrifugationDuration =
+          firstCentrifugationDurationOption.getContainedObject();
+      FirstCentrifugationSpeed firstCentrifugationSpeed =
+          firstCentrifugationSpeedOption.getContainedObject();
+      CentrifugationBraking firstCentrifugationBraking =
+          firstCentrifugationBrakingOption.getContainedObject();
+
+      NormalCentrifugation normalFirstCentrifugation =
+          (NormalCentrifugation) this.firstCentrifugation;
+
+      if (normalFirstCentrifugation.contains(
+          firstCentrifugationTemperature,
+          firstCentrifugationDuration,
+          firstCentrifugationSpeed,
+          firstCentrifugationBraking)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
