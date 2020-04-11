@@ -1,6 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.options.FirstCentrifugationDurationOption;
+import de.spreclib.api.parameters.TimespanCalculator;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
 import java.util.ArrayList;
 
@@ -21,6 +22,16 @@ public final class FirstCentrifugationDurationListProvider {
 
   public static ArrayList<FirstCentrifugationDurationOption> getList() {
     return FIRST_CENTRIFUGATION_DURATION_OPTIONS;
+  }
+
+  public static FirstCentrifugationDurationOption valueOf(
+      long firstCentrifugationStartTimeMilis, long firstCentrifugationEndTimeMillis) {
+
+    int durationMinutes =
+        new TimespanCalculator(firstCentrifugationStartTimeMilis, firstCentrifugationEndTimeMillis)
+            .getTimespanMinutes();
+
+    return valueOf(durationMinutes);
   }
 
   public static FirstCentrifugationDurationOption valueOf(int durationMinutes) {

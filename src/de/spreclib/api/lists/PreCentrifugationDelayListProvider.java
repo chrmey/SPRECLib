@@ -27,7 +27,7 @@ public final class PreCentrifugationDelayListProvider {
 
     int delayMinutes =
         new TimespanCalculator(collectionTimeMillis, firstCentrifugationStartTimeMillis)
-            .getDelayMinutes();
+            .getTimespanMinutes();
 
     return valueOf(delayMinutes);
   }
