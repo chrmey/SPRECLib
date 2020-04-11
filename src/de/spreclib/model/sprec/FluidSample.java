@@ -17,7 +17,7 @@ import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugationList;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugationList;
 
-public final class FluidSample extends Sample {
+public final class FluidSample {
 
   private final FluidSampleType fluidSampleType;
   private final PrimaryContainer primaryContainer;
