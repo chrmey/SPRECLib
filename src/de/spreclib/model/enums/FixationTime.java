@@ -13,18 +13,14 @@ public enum FixationTime implements ISprecPart, IListObject {
   EIGHT_TO_TWENTYFOUR_HOURS(480, 1440, new CodePart("E")),
   TWENTYFOUR_TO_FOURTYEIGHT_HOURS(1440, 2880, new CodePart("F")),
   FOURTYEIGHT_TO_SEVENTYTWO_HOURS(2880, 4320, new CodePart("G")),
-  NOT_APPLICABLE(new CodePart("N")),
-  UNKNOWN(new CodePart("X")),
-  OTHER(new CodePart("Z")),
+  NOT_APPLICABLE(null, null, new CodePart("N")),
+  UNKNOWN(null, null, new CodePart("X")),
+  OTHER(null, null, new CodePart("Z")),
   ;
 
   private ICodePart codePart;
 
-  private FixationTime(ICodePart code) {
-    this.codePart = code;
-  }
-
-  private FixationTime(int lowerBound, int upperBound, ICodePart code) {
+  private FixationTime(Integer lowerBound, Integer upperBound, ICodePart code) {
     this.codePart = code;
   }
 
