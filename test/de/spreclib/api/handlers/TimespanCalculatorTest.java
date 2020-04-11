@@ -16,7 +16,7 @@ public class TimespanCalculatorTest {
 
     TimespanCalculator timestampCalculator = new TimespanCalculator(startTime, fifteenMinutesLater);
 
-    int delayMinutes = timestampCalculator.getDelayMinutes();
+    int delayMinutes = timestampCalculator.getTimespanMinutes();
 
     assertEquals(15, delayMinutes);
   }
