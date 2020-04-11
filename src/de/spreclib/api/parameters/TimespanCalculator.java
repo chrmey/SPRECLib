@@ -1,4 +1,4 @@
-package de.spreclib.api.handlers;
+package de.spreclib.api.parameters;
 
 import de.spreclib.api.exceptions.InvalidTimestampRelationException;
 import de.spreclib.api.exceptions.NegativeTimestampException;

@@ -3,6 +3,7 @@ package de.spreclib.api.handlers;
 import static org.junit.Assert.assertEquals;
 import de.spreclib.api.exceptions.InvalidTimestampRelationException;
 import de.spreclib.api.exceptions.NegativeTimestampException;
+import de.spreclib.api.parameters.TimespanCalculator;
 import org.junit.Test;
 
 public class TimespanCalculatorTest {
