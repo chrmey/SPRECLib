@@ -365,7 +365,7 @@ public class FluidSampleSprecTest {
 
     String code = fluidSampleCode.getCodeString();
 
-    assertNotNull(code);
+    assertFalse(code.isEmpty());
   }
 
   @Test
@@ -386,6 +386,6 @@ public class FluidSampleSprecTest {
 
     String codeString = fluidSampleCode.getCodeString();
 
-    assertNotNull(codeString);
+    assertFalse(codeString.isEmpty());
   }
 }
