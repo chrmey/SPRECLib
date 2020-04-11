@@ -1,7 +1,6 @@
 package de.spreclib.api.sprec;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.lists.FirstCentrifugationListProvider;
 import de.spreclib.api.lists.FluidSampleTypeListProvider;
