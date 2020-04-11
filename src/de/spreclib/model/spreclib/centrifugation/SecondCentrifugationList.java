@@ -38,7 +38,7 @@ public final class SecondCentrifugationList {
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
             SecondCentrifugationTemperature.ROOM_TEMPERATURE,
-            CentrifugationBraking.NO_BRAKING,
+            CentrifugationBraking.WITH_BRAKING,
             new CodePart("B"),
             SprecPartType.SECOND_CENTRIFUGATION));
     CENTRIFUGATIONS.add(
