@@ -45,4 +45,33 @@ public final class PostCentrifugationOption extends AbstractListOption {
   public PostCentrifugation getContainedObject() {
     return this.postCentrifugation;
   }
+
+  public boolean hasPostCentrifugation(
+      PostCentrifugationTemperatureOption postCentrifugationTemperatureOption,
+      PostCentrifugationDelayOption postCentrifugationDelayOption) {
+
+    if (postCentrifugationTemperatureOption == null) {
+      return false;
+    }
+    if (postCentrifugationDelayOption == null) {
+      return false;
+    }
+
+    if (this.postCentrifugation.isNormalPostCentrifugation()) {
+
+      PostCentrifugationTemperature postCentrifugationTemperature =
+          postCentrifugationTemperatureOption.getContainedObject();
+      PostCentrifugationDelay postCentrifugationDelay =
+          postCentrifugationDelayOption.getContainedObject();
+
+      NormalPostCentrifugation normalPostCentrifugation =
+          (NormalPostCentrifugation) this.postCentrifugation;
+
+      if (normalPostCentrifugation.contains(
+          postCentrifugationTemperature, postCentrifugationDelay)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

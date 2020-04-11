@@ -1,25 +1,52 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.interfaces.IListOption;
+import de.spreclib.api.exceptions.InvalidParameterCombinationException;
+import de.spreclib.api.lists.options.PostCentrifugationDelayOption;
 import de.spreclib.api.lists.options.PostCentrifugationOption;
+import de.spreclib.api.lists.options.PostCentrifugationTemperatureOption;
 import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugationList;
 import java.util.ArrayList;
 
-public final class PostCentrifugationListProvider extends AbstractListProvider {
+public final class PostCentrifugationListProvider {
 
-  public PostCentrifugationListProvider() {
-    super();
-  }
+  private static final ArrayList<PostCentrifugationOption> POST_CENTRIFUGATION_OPTIONS;
 
-  @Override
-  protected ArrayList<IListOption> generateList() {
-    ArrayList<IListOption> list = new ArrayList<>();
-    for (PostCentrifugation entry : PostCentrifugationList.POST_CENTRIFUGATIONS) {
-      IListOption option = new PostCentrifugationOption(entry);
-      list.add(option);
+  static {
+    POST_CENTRIFUGATION_OPTIONS = new ArrayList<>();
+    for (PostCentrifugation postCentrifugation : PostCentrifugationList.POST_CENTRIFUGATIONS) {
+      PostCentrifugationOption postCentrifugationOption =
+          new PostCentrifugationOption(postCentrifugation);
+      POST_CENTRIFUGATION_OPTIONS.add(postCentrifugationOption);
     }
-    return list;
   }
 
+  public static ArrayList<PostCentrifugationOption> getList() {
+    return POST_CENTRIFUGATION_OPTIONS;
+    }
+
+  public static PostCentrifugationOption valueOf(
+      PostCentrifugationTemperatureOption postCentrifugationTemperatureOption,
+      PostCentrifugationDelayOption postCentrifugationDelayOption) {
+
+    if (postCentrifugationTemperatureOption == null) {
+      throw new IllegalArgumentException("PostCentrifugationTemperatureOption cannot not be null.");
+    }
+
+    if (postCentrifugationDelayOption == null) {
+      throw new IllegalArgumentException("PostCentrifugationDelayOption cannot not be null.");
+    }
+
+    for (PostCentrifugationOption postCentrifugationOption : POST_CENTRIFUGATION_OPTIONS) {
+
+      if (postCentrifugationOption.hasPostCentrifugation(
+          postCentrifugationTemperatureOption, postCentrifugationDelayOption)) {
+
+        return postCentrifugationOption;
+      }
+    }
+
+    throw new InvalidParameterCombinationException(
+        "Parameter combination for PostCentrifugation is no valid combination.");
+  }
 }

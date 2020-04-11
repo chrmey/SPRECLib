@@ -46,6 +46,17 @@ public final class NormalPostCentrifugation extends PostCentrifugation {
     return this.postCentrifugationTemperature;
   }
 
+  public boolean contains(
+      PostCentrifugationTemperature postCentrifugationTemperature,
+      PostCentrifugationDelay postCentrifugationDelay) {
+
+    if (this.postCentrifugationTemperature == postCentrifugationTemperature
+        && this.postCentrifugationDelay == postCentrifugationDelay) {
+      return true;
+    }
+    return false;
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;

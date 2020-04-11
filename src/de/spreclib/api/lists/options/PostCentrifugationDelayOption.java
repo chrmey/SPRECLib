@@ -19,4 +19,12 @@ public final class PostCentrifugationDelayOption extends AbstractListOption {
   public PostCentrifugationDelay getContainedObject() {
     return this.postCentrifugationDelay;
   }
+
+  public boolean hasDelay(int delayMinutes) {
+    if (this.postCentrifugationDelay.hasValueFor(delayMinutes)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
