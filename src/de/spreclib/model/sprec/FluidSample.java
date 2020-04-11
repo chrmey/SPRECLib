@@ -5,11 +5,17 @@ import de.spreclib.model.enums.FluidSampleType;
 import de.spreclib.model.enums.PrimaryContainer;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
-import de.spreclib.model.exceptions.InvalidParameterRelationException;
+import de.spreclib.model.exceptions.InvalidPartRelationException;
+import de.spreclib.model.exceptions.InvalidPartValueException;
 import de.spreclib.model.spreclib.centrifugation.Centrifugation;
+import de.spreclib.model.spreclib.centrifugation.FirstCentrifugationList;
+import de.spreclib.model.spreclib.centrifugation.SecondCentrifugationList;
 import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
+import de.spreclib.model.spreclib.longtermstorage.LongTermStorageList;
 import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugation;
+import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugationList;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
+import de.spreclib.model.spreclib.precentrifugation.PreCentrifugationList;
 
 public final class FluidSample extends Sample {
 
@@ -30,7 +36,51 @@ public final class FluidSample extends Sample {
     this.postCentrifugation = fluidSampleBuilder.postCentrifugation;
     this.longTermStorage = fluidSampleBuilder.longTermStorage;
 
+    this.validateParts();
     this.validateParameterRelations();
+  }
+
+  private void validateParts() {
+
+    if (this.fluidSampleType != null && !FluidSampleType.contains(this.fluidSampleType)) {
+      throw new InvalidPartValueException(
+          this.fluidSampleType, "Value for FluidSampleType is not in SPREC standard.");
+    }
+
+    if (this.primaryContainer != null && !PrimaryContainer.contains(this.primaryContainer)) {
+      throw new InvalidPartValueException(
+          this.primaryContainer, "Value for PrimaryContainer is not in SPREC standard.");
+    }
+
+    if (this.preCentrifugation != null
+        && !PreCentrifugationList.PRE_CENTRIFUGATIONS.contains(this.preCentrifugation)) {
+      throw new InvalidPartValueException(
+          this.preCentrifugation, "Value for PreCentrifugation is not in SPREC standard.");
+    }
+
+    if (this.firstCentrifugation != null
+        && !FirstCentrifugationList.CENTRIFUGATIONS.contains(this.firstCentrifugation)) {
+      throw new InvalidPartValueException(
+          this.firstCentrifugation, "Value for FirstCentrifugation is not in SPREC standard.");
+    }
+
+    if (this.secondCentrifugation != null
+        && !SecondCentrifugationList.CENTRIFUGATIONS.contains(this.secondCentrifugation)) {
+      throw new InvalidPartValueException(
+          this.secondCentrifugation, "Value for SecondCentrifugation is not in SPREC standard.");
+    }
+
+    if (this.postCentrifugation != null
+        && !PostCentrifugationList.POST_CENTRIFUGATIONS.contains(this.postCentrifugation)) {
+      throw new InvalidPartValueException(
+          this.postCentrifugation, "Value for PostCentrifugation is not in SPREC standard.");
+    }
+
+    if (this.longTermStorage != null
+        && !LongTermStorageList.LONG_TERM_STORAGES.contains(this.longTermStorage)) {
+      throw new InvalidPartValueException(
+          this.longTermStorage, "Value for LongTermStorage is not in SPREC standard.");
+    }
   }
 
   private void validateParameterRelations() {
@@ -40,7 +90,7 @@ public final class FluidSample extends Sample {
       if (this.firstCentrifugation.getCentrifugationType() == CentrifugationType.NO
           && this.secondCentrifugation.getCentrifugationType() != CentrifugationType.NO) {
 
-        throw new InvalidParameterRelationException(
+        throw new InvalidPartRelationException(
             "Cannot set SecondCentrifugation to other than NO when there is no FirstCentrifugation");
       }
 
@@ -51,7 +101,7 @@ public final class FluidSample extends Sample {
         if (this.postCentrifugation.getPostCentrifugationType()
             != PostCentrifugationType.NOT_APPLICABLE) {
 
-          throw new InvalidParameterRelationException(
+          throw new InvalidPartRelationException(
               "Cannot set PostCentrifugationType to other than NOT_APPLICABLE when there is no Centrifugation");
         }
       }

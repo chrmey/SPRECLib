@@ -51,4 +51,18 @@ public enum PrimaryContainer implements ISprecPart, IListObject {
   public SprecPartType getSprecPartType() {
     return PrimaryContainer.SPREC_PART_TYPE;
   }
+
+  public static boolean contains(PrimaryContainer primaryContainer) {
+
+    if (primaryContainer == null) {
+      return false;
+    }
+
+    for (PrimaryContainer listEntry : PrimaryContainer.values()) {
+      if (primaryContainer.equals(listEntry)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

@@ -57,4 +57,18 @@ public enum FluidSampleType implements ISprecPart, IListObject {
   public SprecPartType getSprecPartType() {
     return FluidSampleType.SPREC_PART_TYPE;
   }
+
+  public static boolean contains(FluidSampleType fluidSampleType) {
+
+    if (fluidSampleType == null) {
+      return false;
+    }
+
+    for (FluidSampleType listEntry : FluidSampleType.values()) {
+      if (fluidSampleType.equals(listEntry)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
