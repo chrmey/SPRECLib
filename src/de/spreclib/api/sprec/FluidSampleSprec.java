@@ -32,29 +32,23 @@ public final class FluidSampleSprec {
   private LongTermStorage longTermStorage;
 
   public FluidSampleSprec withFluidSampleType(FluidSampleTypeOption fluidSampleTypeOption) {
-
     if (fluidSampleTypeOption != null) {
       this.fluidSampleType = fluidSampleTypeOption.getContainedObject();
     }
-
     return this;
   }
 
   public FluidSampleSprec withPrimaryContainer(PrimaryContainerOption primaryContainerOption) {
-
     if (primaryContainerOption != null) {
       this.primaryContainer = primaryContainerOption.getContainedObject();
     }
-
     return this;
   }
-
   public FluidSampleSprec withPreCentrifugation(PreCentrifugationOption preCentrifugationOption) {
 
     if (preCentrifugationOption != null) {
       this.preCentrifugation = preCentrifugationOption.getContainedObject();
     }
-
     return this;
   }
 
@@ -62,19 +56,17 @@ public final class FluidSampleSprec {
     this.preCentrifugation = PreCentrifugationList.getOtherPreCentrifugation();
     return this;
   }
-
+  
   public FluidSampleSprec withUnknownPreCentrifugation() {
     this.preCentrifugation = PreCentrifugationList.getUnknownPreCentrifugation();
     return this;
   }
-
+  
   public FluidSampleSprec withFirstCentrifugation(
       FirstCentrifugationOption firstCentrifugationOption) {
-
     if (firstCentrifugationOption != null) {
       this.firstCentrifugation = firstCentrifugationOption.getContainedObject();
     }
-
     return this;
   }
 
@@ -95,11 +87,9 @@ public final class FluidSampleSprec {
 
   public FluidSampleSprec withSecondCentrifugation(
       SecondCentrifugationOption secondCentrifugationOption) {
-
     if (secondCentrifugationOption != null) {
       this.secondCentrifugation = secondCentrifugationOption.getContainedObject();
     }
-
     return this;
   }
 
@@ -120,11 +110,9 @@ public final class FluidSampleSprec {
 
   public FluidSampleSprec withPostCentrifugation(
       PostCentrifugationOption postCentrifugationOption) {
-
     if (postCentrifugationOption != null) {
       this.postCentrifugation = postCentrifugationOption.getContainedObject();
     }
-
     return this;
   }
 
@@ -144,11 +132,9 @@ public final class FluidSampleSprec {
   }
 
   public FluidSampleSprec withLongTermStorage(LongTermStorageOption longTermStorageOption) {
-
     if (longTermStorageOption != null) {
       this.longTermStorage = longTermStorageOption.getContainedObject();
     }
-
     return this;
   }
 
