@@ -10,8 +10,6 @@ import de.spreclib.api.lists.PostCentrifugationListProvider;
 import de.spreclib.api.lists.PreCentrifugationListProvider;
 import de.spreclib.api.lists.PrimaryContainerListProvider;
 import de.spreclib.api.lists.SecondCentrifugationListProvider;
-import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
 import de.spreclib.api.lists.options.FirstCentrifugationOption;
 import de.spreclib.api.lists.options.FluidSampleTypeOption;
 import de.spreclib.api.lists.options.LongTermStorageOption;
@@ -45,10 +43,10 @@ public class FluidSampleSprecTest {
   private ArrayList<FluidSampleTypeOption> fluidSampleTypeList;
   private ArrayList<PrimaryContainerOption> primaryContainerList;
   private ArrayList<PreCentrifugationOption> preCentrifugationList;
-  private ArrayList<IListOption> firstCentrifugationList;
-  private ArrayList<IListOption> secondCentrifugationList;
-  private ArrayList<IListOption> postCentrifugationList;
-  private ArrayList<IListOption> longTermStorageList;
+  private ArrayList<FirstCentrifugationOption> firstCentrifugationList;
+  private ArrayList<SecondCentrifugationOption> secondCentrifugationList;
+  private ArrayList<PostCentrifugationOption> postCentrifugationList;
+  private ArrayList<LongTermStorageOption> longTermStorageList;
 
   private FluidSampleTypeOption fluidSampleTypeOption;
   private PrimaryContainerOption primaryContainerOption;
@@ -61,26 +59,21 @@ public class FluidSampleSprecTest {
   @Before
   public void setUp() {
 
-    IListProvider firstCentrifugationListProvider = new FirstCentrifugationListProvider();
-    IListProvider secondCentrifugationListProvider = new SecondCentrifugationListProvider();
-    IListProvider postCentrifugationListProvider = new PostCentrifugationListProvider();
-    IListProvider longTermStorageListProvider = new LongTermStorageListProvider();
-
     this.fluidSampleTypeList = FluidSampleTypeListProvider.getList();
     this.primaryContainerList = PrimaryContainerListProvider.getList();
     this.preCentrifugationList = PreCentrifugationListProvider.getList();
-    this.firstCentrifugationList = firstCentrifugationListProvider.getList();
-    this.secondCentrifugationList = secondCentrifugationListProvider.getList();
-    this.postCentrifugationList = postCentrifugationListProvider.getList();
-    this.longTermStorageList = longTermStorageListProvider.getList();
+    this.firstCentrifugationList = FirstCentrifugationListProvider.getList();
+    this.secondCentrifugationList = SecondCentrifugationListProvider.getList();
+    this.postCentrifugationList = PostCentrifugationListProvider.getList();
+    this.longTermStorageList = LongTermStorageListProvider.getList();
 
     this.fluidSampleTypeOption = fluidSampleTypeList.get(0);
     this.primaryContainerOption = primaryContainerList.get(0);
     this.preCentrifugationOption = preCentrifugationList.get(0);
-    this.firstCentrifugationOption = (FirstCentrifugationOption) firstCentrifugationList.get(0);
-    this.secondCentrifugationOption = (SecondCentrifugationOption) secondCentrifugationList.get(0);
-    this.postCentrifugationOption = (PostCentrifugationOption) postCentrifugationList.get(0);
-    this.longTermStorageOption = (LongTermStorageOption) longTermStorageList.get(0);
+    this.firstCentrifugationOption = firstCentrifugationList.get(0);
+    this.secondCentrifugationOption = secondCentrifugationList.get(0);
+    this.postCentrifugationOption = postCentrifugationList.get(0);
+    this.longTermStorageOption = longTermStorageList.get(0);
   }
 
   @Test
@@ -201,16 +194,6 @@ public class FluidSampleSprecTest {
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
     assertFalse(secondCentrifugationCode.getStringRepresentation().isEmpty());
-  }
-
-  @Test(expected = InvalidParameterRelationException.class)
-  public void testWithSecondCentrifugationWithNoFirstCentrifugation() {
-    FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
-
-    fluidSampleBuilder
-        .withNoFirstCentrifugation()
-        .withSecondCentrifugation(this.secondCentrifugationOption)
-        .getFluidSampleSprecCode();
   }
 
   @Test
