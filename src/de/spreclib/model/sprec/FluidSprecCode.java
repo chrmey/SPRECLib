@@ -9,7 +9,6 @@ import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
 import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
 
-
 public final class FluidSprecCode implements ISprecCode {
 
   private final ICodePart fluidSampleTypeCode;
@@ -95,13 +94,13 @@ public final class FluidSprecCode implements ISprecCode {
 
   public static final class FluidSprecCodeBuilder {
 
-    private ICodePart fluidSampleTypeCode = null;
-    private ICodePart primaryContainerCode = null;
-    private ICodePart preCentrifugationCode = null;
-    private ICodePart firstCentrifugationCode = null;
-    private ICodePart secondCentrifugationCode = null;
-    private ICodePart postCentrifugationCode = null;
-    private ICodePart longTermStorageCode = null;
+    private ICodePart fluidSampleTypeCode;
+    private ICodePart primaryContainerCode;
+    private ICodePart preCentrifugationCode;
+    private ICodePart firstCentrifugationCode;
+    private ICodePart secondCentrifugationCode;
+    private ICodePart postCentrifugationCode;
+    private ICodePart longTermStorageCode;
 
     public FluidSprecCodeBuilder withFluidSampleType(FluidSampleType fluidSampleType) {
       if (fluidSampleType != null) {
