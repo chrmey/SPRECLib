@@ -6,7 +6,7 @@ import de.spreclib.api.exceptions.NegativeTimestampException;
 /** @author Christopher Meyer */
 public final class TimespanCalculator {
 
-  private int delayMinutes;
+  private int timespanMinutes;
 
   /**
    * Takes two timestamps (milliseconds since 01.01.1970) and calculates the timespan between them
@@ -30,7 +30,8 @@ public final class TimespanCalculator {
           firstTimestampMilliSeconds, secondTimestampMilliSeconds, "Timestamp1 must be before Timestamp2");
     }
 
-    this.delayMinutes = calculateTimespanMinutes(firstTimestampMilliSeconds, secondTimestampMilliSeconds);
+    this.timespanMinutes =
+        calculateTimespanMinutes(firstTimestampMilliSeconds, secondTimestampMilliSeconds);
   }
 
   private int calculateTimespanMinutes(long firstTimestamp, long secondTimestamp) {
@@ -42,7 +43,7 @@ public final class TimespanCalculator {
     return timespanMinutes;
   }
 
-  public int getDelayMinutes() {
-    return this.delayMinutes;
+  public int getTimespanMinutes() {
+    return this.timespanMinutes;
   }
 }
