@@ -1,23 +1,22 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.FixationTimeOption;
 import de.spreclib.model.enums.FixationTime;
 import java.util.ArrayList;
 
-public final class FixationTimeListProvider extends AbstractListProvider {
+public final class FixationTimeListProvider {
 
-  public FixationTimeListProvider() {
-    super();
+  private static final ArrayList<FixationTimeOption> FIXATION_TIME_OPTIONS;
+
+  static {
+    FIXATION_TIME_OPTIONS = new ArrayList<>();
+    for (FixationTime fixationTime : FixationTime.values()) {
+      FixationTimeOption fixationOption = new FixationTimeOption(fixationTime);
+      FIXATION_TIME_OPTIONS.add(fixationOption);
+    }
   }
 
-  @Override
-  protected ArrayList<IListOption> generateList() {
-    ArrayList<IListOption> list = new ArrayList<>();
-    for (FixationTime entry : FixationTime.values()) {
-      IListOption option = new FixationTimeOption(entry);
-      list.add(option);
-    }
-    return list;
+  public static ArrayList<FixationTimeOption> getList() {
+    return FIXATION_TIME_OPTIONS;
   }
 }

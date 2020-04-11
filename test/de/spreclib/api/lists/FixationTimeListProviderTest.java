@@ -2,21 +2,20 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
+import de.spreclib.api.lists.options.FixationTimeOption;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
 public class FixationTimeListProviderTest {
 
-  private IListProvider fixationTimeListProvider;
-  private ArrayList<IListOption> list;
+  private ArrayList<FixationTimeOption> list;
 
   @Before
   public void setUp() {
-    fixationTimeListProvider = new FixationTimeListProvider();
-    list = fixationTimeListProvider.getList();
+    list = FixationTimeListProvider.getList();
   }
 
   @Test

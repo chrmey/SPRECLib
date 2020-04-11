@@ -2,21 +2,20 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
+import de.spreclib.api.lists.options.TypeOfCollectionOption;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
 public class TypeOfCollectionListProviderTest {
 
-  private IListProvider typeOfCollectionListProvider;
-  private ArrayList<IListOption> list;
+  private ArrayList<TypeOfCollectionOption> list;
 
   @Before
   public void setUp() {
-    typeOfCollectionListProvider = new TypeOfCollectionListProvider();
-    list = typeOfCollectionListProvider.getList();
+    list = TypeOfCollectionListProvider.getList();
   }
 
   @Test

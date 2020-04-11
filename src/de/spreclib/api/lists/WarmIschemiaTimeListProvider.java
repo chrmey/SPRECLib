@@ -1,23 +1,22 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.WarmIschemiaTimeOption;
 import de.spreclib.model.enums.WarmIschemiaTime;
 import java.util.ArrayList;
 
-public final class WarmIschemiaTimeListProvider extends AbstractListProvider {
+public final class WarmIschemiaTimeListProvider {
 
-  public WarmIschemiaTimeListProvider() {
-    super();
+  private static final ArrayList<WarmIschemiaTimeOption> WARM_ISCHEMIA_TIME_OPTIONS;
+
+  static {
+    WARM_ISCHEMIA_TIME_OPTIONS = new ArrayList<>();
+    for (WarmIschemiaTime warmIschemiaTime : WarmIschemiaTime.values()) {
+      WarmIschemiaTimeOption warmIschemiaTimeOption = new WarmIschemiaTimeOption(warmIschemiaTime);
+      WARM_ISCHEMIA_TIME_OPTIONS.add(warmIschemiaTimeOption);
+    }
   }
 
-  @Override
-  protected ArrayList<IListOption> generateList() {
-    ArrayList<IListOption> list = new ArrayList<>();
-    for (WarmIschemiaTime entry : WarmIschemiaTime.values()) {
-      IListOption option = new WarmIschemiaTimeOption(entry);
-      list.add(option);
-    }
-    return list;
+  public static ArrayList<WarmIschemiaTimeOption> getList() {
+    return WARM_ISCHEMIA_TIME_OPTIONS;
   }
 }

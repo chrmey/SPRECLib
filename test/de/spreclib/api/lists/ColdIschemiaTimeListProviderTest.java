@@ -2,21 +2,20 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
+import de.spreclib.api.lists.options.ColdIschemiaTimeOption;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
 public class ColdIschemiaTimeListProviderTest {
 
-  private IListProvider coldIschemiaTimeListProvider;
-  private ArrayList<IListOption> list;
+  private ArrayList<ColdIschemiaTimeOption> list;
 
   @Before
   public void setUp() {
-    coldIschemiaTimeListProvider = new ColdIschemiaTimeListProvider();
-    list = coldIschemiaTimeListProvider.getList();
+    list = ColdIschemiaTimeListProvider.getList();
   }
 
   @Test

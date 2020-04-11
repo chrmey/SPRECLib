@@ -2,21 +2,20 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
+import de.spreclib.api.lists.options.SolidSampleTypeOption;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
 public class SolidSampleTypeListProviderTest {
 
-  private IListProvider solidSampleTypeListProvider;
-  private ArrayList<IListOption> list;
+  private ArrayList<SolidSampleTypeOption> list;
 
   @Before
   public void setUp() {
-    solidSampleTypeListProvider = new SolidSampleTypeListProvider();
-    list = solidSampleTypeListProvider.getList();
+    list = SolidSampleTypeListProvider.getList();
   }
 
   @Test

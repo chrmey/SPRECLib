@@ -3,20 +3,18 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
+import de.spreclib.api.lists.options.FixationOption;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
 public class FixationListProviderTest {
 
-  private IListProvider fixationListProvider;
-  private ArrayList<IListOption> list;
+  private ArrayList<FixationOption> list;
 
   @Before
   public void setUp() {
-    fixationListProvider = new FixationListProvider();
-    list = fixationListProvider.getList();
+    list = FixationListProvider.getList();
   }
 
   @Test
