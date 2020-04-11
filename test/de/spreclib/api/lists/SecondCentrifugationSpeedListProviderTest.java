@@ -2,21 +2,20 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
+import de.spreclib.api.lists.options.SecondCentrifugationSpeedOption;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
 public class SecondCentrifugationSpeedListProviderTest {
 
-  private IListProvider secondCentrifugationSpeedListProvider;
-  private ArrayList<IListOption> list;
+  private ArrayList<SecondCentrifugationSpeedOption> list;
 
   @Before
   public void setUp() {
-    secondCentrifugationSpeedListProvider = new SecondCentrifugationSpeedListProvider();
-    list = secondCentrifugationSpeedListProvider.getList();
+    list = SecondCentrifugationSpeedListProvider.getList();
   }
 
   @Test
@@ -29,5 +28,22 @@ public class SecondCentrifugationSpeedListProviderTest {
     for (IListOption option : list) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testValueOfWithValidValue() {
+
+    SecondCentrifugationSpeedOption speedOption =
+        SecondCentrifugationSpeedListProvider.valueOf(3000);
+
+    assertNotNull(speedOption);
+  }
+
+  @Test
+  public void testValueOfWithInvalidValue() {
+
+    SecondCentrifugationSpeedOption speedOption = SecondCentrifugationSpeedListProvider.valueOf(-1);
+
+    assertNull(speedOption);
   }
 }

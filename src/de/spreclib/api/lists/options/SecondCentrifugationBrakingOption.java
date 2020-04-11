@@ -4,19 +4,27 @@ import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 
 public final class SecondCentrifugationBrakingOption extends AbstractListOption {
 
-  private final CentrifugationBraking centrifugationBraking;
+  private final CentrifugationBraking secondCentrifugationBraking;
 
   public SecondCentrifugationBrakingOption(CentrifugationBraking secondCentrifugationBraking) {
-    this.centrifugationBraking = secondCentrifugationBraking;
+    this.secondCentrifugationBraking = secondCentrifugationBraking;
   }
 
   @Override
   public String getStringRepresentation() {
-    return NAMES_DEFAULT.getString(this.centrifugationBraking.name());
+    return NAMES_DEFAULT.getString(this.secondCentrifugationBraking.name());
   }
 
   @Override
   public CentrifugationBraking getContainedObject() {
-    return this.centrifugationBraking;
+    return this.secondCentrifugationBraking;
+  }
+
+  public boolean hasBraking(boolean braking) {
+    if (this.secondCentrifugationBraking.hasValueFor(braking)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

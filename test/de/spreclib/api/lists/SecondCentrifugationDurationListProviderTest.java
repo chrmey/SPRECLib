@@ -2,21 +2,21 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
+import de.spreclib.api.lists.options.SecondCentrifugationDurationOption;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
 public class SecondCentrifugationDurationListProviderTest {
 
-  private IListProvider secondCentrifugationDurationListProvider;
-  private ArrayList<IListOption> list;
+  private ArrayList<SecondCentrifugationDurationOption> list;
 
   @Before
   public void setUp() {
-    secondCentrifugationDurationListProvider = new SecondCentrifugationDurationListProvider();
-    list = secondCentrifugationDurationListProvider.getList();
+    list = SecondCentrifugationDurationListProvider.getList();
   }
 
   @Test
@@ -29,5 +29,23 @@ public class SecondCentrifugationDurationListProviderTest {
     for (IListOption option : list) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testValueOfWithValidValue() {
+
+    SecondCentrifugationDurationOption secondCentrifugationDurationOption =
+        SecondCentrifugationDurationListProvider.valueOf(15);
+
+    assertNotNull(secondCentrifugationDurationOption);
+  }
+
+  @Test
+  public void testValueOfWithInvalidValue() {
+
+    SecondCentrifugationDurationOption secondCentrifugationDurationOption =
+        SecondCentrifugationDurationListProvider.valueOf(100);
+
+    assertNull(secondCentrifugationDurationOption);
   }
 }

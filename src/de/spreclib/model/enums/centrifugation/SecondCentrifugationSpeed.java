@@ -10,11 +10,19 @@ public enum SecondCentrifugationSpeed implements ICentrifugationSpeed, IListObje
   GREATER_TENTHOUSAND_G(10000, 99999),
   ;
 
-  private final int lowerBound;
-  private final int upperBound;
+  private final int lowerBoundG;
+  private final int upperBoundG;
 
   SecondCentrifugationSpeed(int lowerBound, int upperBound) {
-    this.lowerBound = lowerBound;
-    this.upperBound = upperBound;
+    this.lowerBoundG = lowerBound;
+    this.upperBoundG = upperBound;
+  }
+
+  public boolean hasValueFor(int speed) {
+    if (speed >= this.lowerBoundG && speed < this.upperBoundG) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

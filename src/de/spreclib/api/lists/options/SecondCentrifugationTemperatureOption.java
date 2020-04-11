@@ -20,4 +20,12 @@ public final class SecondCentrifugationTemperatureOption extends AbstractListOpt
   public SecondCentrifugationTemperature getContainedObject() {
     return this.secondCentrifugationTemperature;
   }
+
+  public boolean hasTemperature(float temperatureCelsius) {
+    if (this.secondCentrifugationTemperature.hasValueFor(temperatureCelsius)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
