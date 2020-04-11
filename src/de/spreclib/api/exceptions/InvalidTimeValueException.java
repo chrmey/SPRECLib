@@ -1,4 +1,4 @@
-package de.spreclib.model.exceptions;
+package de.spreclib.api.exceptions;
 
 public class InvalidTimeValueException extends RuntimeException {
 
