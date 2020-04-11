@@ -149,7 +149,7 @@ public final class FluidSampleSprec {
   }
 
   public FluidSprecCode getFluidSampleSprecCode() {
-    return new FluidSample.FluidSampleBuild(this).build().getSprecCode();
+    return new FluidSample.FluidSampleBuilder(this).build().getSprecCode();
   }
 
   public FluidSampleType getFluidSampleType() {

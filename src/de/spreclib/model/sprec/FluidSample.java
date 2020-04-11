@@ -27,7 +27,7 @@ public final class FluidSample extends Sample {
   private final PostCentrifugation postCentrifugation;
   private final LongTermStorage longTermStorage;
 
-  private FluidSample(FluidSampleBuild fluidSampleBuilder) {
+  private FluidSample(FluidSampleBuilder fluidSampleBuilder) {
     this.fluidSampleType = fluidSampleBuilder.fluidSampleType;
     this.primaryContainer = fluidSampleBuilder.primaryContainer;
     this.preCentrifugation = fluidSampleBuilder.preCentrifugation;
@@ -121,7 +121,7 @@ public final class FluidSample extends Sample {
         .build();
   }
 
-  public static final class FluidSampleBuild {
+  public static final class FluidSampleBuilder {
 
     private final FluidSampleType fluidSampleType;
     private final PrimaryContainer primaryContainer;
@@ -131,7 +131,7 @@ public final class FluidSample extends Sample {
     private final PostCentrifugation postCentrifugation;
     private final LongTermStorage longTermStorage;
 
-    public FluidSampleBuild(FluidSampleSprec fluidSampleBuilder) {
+    public FluidSampleBuilder(FluidSampleSprec fluidSampleBuilder) {
 
       if (fluidSampleBuilder == null) {
         throw new IllegalArgumentException("FluidSampleBuilder cannot be null");
