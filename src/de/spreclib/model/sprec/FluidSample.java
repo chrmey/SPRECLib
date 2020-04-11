@@ -131,19 +131,19 @@ public final class FluidSample {
     private final PostCentrifugation postCentrifugation;
     private final LongTermStorage longTermStorage;
 
-    public FluidSampleBuilder(FluidSampleSprec fluidSampleBuilder) {
+    public FluidSampleBuilder(FluidSampleSprec fluidSampleSprec) {
 
-      if (fluidSampleBuilder == null) {
-        throw new IllegalArgumentException("FluidSampleBuilder cannot be null");
+      if (fluidSampleSprec == null) {
+        throw new IllegalArgumentException("FluidSampleSprec cannot be null");
       }
 
-      this.fluidSampleType = fluidSampleBuilder.getFluidSampleType();
-      this.primaryContainer = fluidSampleBuilder.getPrimaryContainer();
-      this.preCentrifugation = fluidSampleBuilder.getPreCentrifugation();
-      this.firstCentrifugation = fluidSampleBuilder.getFirstCentrifugation();
-      this.secondCentrifugation = fluidSampleBuilder.getSecondCentrifugation();
-      this.postCentrifugation = fluidSampleBuilder.getPostCentrifugation();
-      this.longTermStorage = fluidSampleBuilder.getLongTermStorage();
+      this.fluidSampleType = fluidSampleSprec.getFluidSampleType();
+      this.primaryContainer = fluidSampleSprec.getPrimaryContainer();
+      this.preCentrifugation = fluidSampleSprec.getPreCentrifugation();
+      this.firstCentrifugation = fluidSampleSprec.getFirstCentrifugation();
+      this.secondCentrifugation = fluidSampleSprec.getSecondCentrifugation();
+      this.postCentrifugation = fluidSampleSprec.getPostCentrifugation();
+      this.longTermStorage = fluidSampleSprec.getLongTermStorage();
     }
 
     public FluidSample build() {
