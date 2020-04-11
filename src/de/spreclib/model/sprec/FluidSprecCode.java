@@ -12,9 +12,6 @@ import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
 
 public final class FluidSprecCode implements ISprecCode {
 
-  // SprecCode kann nur über den Builder erzeugt werden, da private Constructor.
-  // Wird nach Validierung von FluidSample erzeugt
-
   private final ICodePart fluidSampleTypeCode;
   private final ICodePart primaryContainerCode;
   private final ICodePart preCentrifugationCode;
@@ -64,13 +61,34 @@ public final class FluidSprecCode implements ISprecCode {
   @Override
   public String getCodeString() {
     StringBuilder code = new StringBuilder();
-    code.append(this.fluidSampleTypeCode.getStringRepresentation())
-        .append(this.primaryContainerCode.getStringRepresentation())
-        .append(this.preCentrifugationCode.getStringRepresentation())
-        .append(this.firstCentrifugationCode.getStringRepresentation())
-        .append(this.secondCentrifugationCode.getStringRepresentation())
-        .append(this.postCentrifugationCode.getStringRepresentation())
-        .append(this.longTermStorageCode.getStringRepresentation());
+    code.append(
+            this.fluidSampleTypeCode != null
+                ? this.fluidSampleTypeCode.getStringRepresentation()
+                : "???")
+        .append(
+            this.primaryContainerCode != null
+                ? this.primaryContainerCode.getStringRepresentation()
+                : "???")
+        .append(
+            this.preCentrifugationCode != null
+                ? this.preCentrifugationCode.getStringRepresentation()
+                : "?")
+        .append(
+            this.firstCentrifugationCode != null
+                ? this.firstCentrifugationCode.getStringRepresentation()
+                : "?")
+        .append(
+            this.secondCentrifugationCode != null
+                ? this.secondCentrifugationCode.getStringRepresentation()
+                : "?")
+        .append(
+            this.postCentrifugationCode != null
+                ? this.postCentrifugationCode.getStringRepresentation()
+                : "?")
+        .append(
+            this.longTermStorageCode != null
+                ? this.longTermStorageCode.getStringRepresentation()
+                : "?");
 
     return code.toString();
   }
