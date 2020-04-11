@@ -43,4 +43,31 @@ public final class LongTermStorageOption extends AbstractListOption {
   public LongTermStorage getContainedObject() {
     return this.longTermStorage;
   }
+
+  public boolean hasLongTermStorage(
+      LongTermStorageTemperatureOption longTermStorageTemperatureOption,
+      LongTermStorageContainerOption longTermStorageContainerOption) {
+
+    if (longTermStorageTemperatureOption == null) {
+      return false;
+    }
+    if (longTermStorageContainerOption == null) {
+      return false;
+    }
+
+    if (this.longTermStorage.isNormalLongTermStorage()) {
+
+      LongTermStorageTemperature longTermStorageTemperature =
+          longTermStorageTemperatureOption.getContainedObject();
+      LongTermStorageContainer longTermStorageContainer =
+          longTermStorageContainerOption.getContainedObject();
+
+      NormalLongTermStorage normalLongTermStorage = (NormalLongTermStorage) this.longTermStorage;
+
+      if (normalLongTermStorage.contains(longTermStorageTemperature, longTermStorageContainer)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

@@ -13,17 +13,33 @@ public enum LongTermStorageTemperature implements IListObject {
   TWO_TO_TEN_DEGREES(2, 10),
   ;
 
-  private final Float lowerBound;
-  private final Float upperBound;
+  private final Float lowerBoundCelsius;
+  private final Float upperBoundCelsius;
 
   private LongTermStorageTemperature() {
     // Constructor for LIQUID_NITROGEN which has no Temperature in SPRECv2
-    this.lowerBound = null;
-    this.upperBound = null;
+    this.lowerBoundCelsius = null;
+    this.upperBoundCelsius = null;
   }
 
   LongTermStorageTemperature(float lowerBound, float upperBound) {
-    this.lowerBound = lowerBound;
-    this.upperBound = upperBound;
+    this.lowerBoundCelsius = lowerBound;
+    this.upperBoundCelsius = upperBound;
+  }
+
+  // TODO handle valuesFor LN
+
+  public boolean hasValueFor(float temperatureCelsius) {
+
+    if (this.lowerBoundCelsius == null || this.upperBoundCelsius == null) {
+      return false;
+    }
+
+    if (temperatureCelsius >= this.lowerBoundCelsius
+        && temperatureCelsius < this.upperBoundCelsius + 1) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

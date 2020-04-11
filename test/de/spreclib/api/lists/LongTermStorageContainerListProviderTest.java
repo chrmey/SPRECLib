@@ -2,21 +2,20 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
+import de.spreclib.api.lists.options.LongTermStorageContainerOption;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
 public class LongTermStorageContainerListProviderTest {
 
-  private IListProvider longTermStorageContainerListProvider;
-  private ArrayList<IListOption> list;
+  private ArrayList<LongTermStorageContainerOption> list;
 
   @Before
   public void setUp() {
-    longTermStorageContainerListProvider = new LongTermStorageContainerListProvider();
-    list = longTermStorageContainerListProvider.getList();
+    list = LongTermStorageContainerListProvider.getList();
   }
 
   @Test

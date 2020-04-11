@@ -46,6 +46,17 @@ public final class NormalLongTermStorage extends LongTermStorage {
     return this.longTermStorageTemperature;
   }
 
+  public boolean contains(
+      LongTermStorageTemperature longTermStorageTemperature,
+      LongTermStorageContainer longTermStorageContainer) {
+    if (this.longTermStorageTemperature == longTermStorageTemperature
+        && this.longTermStorageContainer == longTermStorageContainer) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;
