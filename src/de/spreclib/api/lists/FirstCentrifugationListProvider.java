@@ -1,11 +1,11 @@
 package de.spreclib.api.lists;
 
+import de.spreclib.api.exceptions.InvalidParameterCombinationException;
 import de.spreclib.api.lists.options.FirstCentrifugationBrakingOption;
 import de.spreclib.api.lists.options.FirstCentrifugationDurationOption;
 import de.spreclib.api.lists.options.FirstCentrifugationOption;
 import de.spreclib.api.lists.options.FirstCentrifugationSpeedOption;
 import de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption;
-import de.spreclib.model.exceptions.InvalidParameterCombinationException;
 import de.spreclib.model.spreclib.centrifugation.Centrifugation;
 import de.spreclib.model.spreclib.centrifugation.FirstCentrifugationList;
 import java.util.ArrayList;

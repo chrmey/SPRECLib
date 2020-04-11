@@ -2,6 +2,7 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import de.spreclib.api.exceptions.InvalidParameterCombinationException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.FirstCentrifugationBrakingOption;
 import de.spreclib.api.lists.options.FirstCentrifugationDurationOption;
@@ -9,7 +10,6 @@ import de.spreclib.api.lists.options.FirstCentrifugationOption;
 import de.spreclib.api.lists.options.FirstCentrifugationSpeedOption;
 import de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
-import de.spreclib.model.exceptions.InvalidParameterCombinationException;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
