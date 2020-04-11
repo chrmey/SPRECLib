@@ -20,14 +20,14 @@ public final class FluidSprecCode implements ISprecCode {
   private final ICodePart postCentrifugationCode;
   private final ICodePart longTermStorageCode;
 
-  private FluidSprecCode(FluidSprecCodeBuilder builder) {
-    this.fluidSampleTypeCode = builder.fluidSampleTypeCode;
-    this.primaryContainerCode = builder.primaryContainerCode;
-    this.preCentrifugationCode = builder.preCentrifugationCode;
-    this.firstCentrifugationCode = builder.firstCentrifugationCode;
-    this.secondCentrifugationCode = builder.secondCentrifugationCode;
-    this.postCentrifugationCode = builder.postCentrifugationCode;
-    this.longTermStorageCode = builder.longTermStorageCode;
+  private FluidSprecCode(FluidSprecCodeBuilder fluidSprecCodeBuilder) {
+    this.fluidSampleTypeCode = fluidSprecCodeBuilder.fluidSampleTypeCode;
+    this.primaryContainerCode = fluidSprecCodeBuilder.primaryContainerCode;
+    this.preCentrifugationCode = fluidSprecCodeBuilder.preCentrifugationCode;
+    this.firstCentrifugationCode = fluidSprecCodeBuilder.firstCentrifugationCode;
+    this.secondCentrifugationCode = fluidSprecCodeBuilder.secondCentrifugationCode;
+    this.postCentrifugationCode = fluidSprecCodeBuilder.postCentrifugationCode;
+    this.longTermStorageCode = fluidSprecCodeBuilder.longTermStorageCode;
   }
 
   public ICodePart getFluidSampleTypeCode() {
