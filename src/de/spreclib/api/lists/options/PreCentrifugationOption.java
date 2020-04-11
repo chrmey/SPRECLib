@@ -44,4 +44,32 @@ public final class PreCentrifugationOption extends AbstractListOption {
   public PreCentrifugation getContainedObject() {
     return this.preCentrifugation;
   }
+
+  public boolean hasPreCentrifugation(
+      PreCentrifugationTemperatureOption preCentrifugationTemperatureOption,
+      PreCentrifugationDelayOption preCentrifugationDelayOption) {
+
+    if (preCentrifugationTemperatureOption == null) {
+      return false;
+    }
+    if (preCentrifugationDelayOption == null) {
+      return false;
+    }
+    
+    if (this.preCentrifugation.isNormalPreCentrifugation()) {
+
+      PreCentrifugationTemperature preCentrifugationTemperature =
+          preCentrifugationTemperatureOption.getContainedObject();
+      PreCentrifugationDelay preCentrifugationDelay =
+          preCentrifugationDelayOption.getContainedObject();
+
+      NormalPreCentrifugation normalPreCentrifugation =
+          (NormalPreCentrifugation) this.preCentrifugation;
+
+      if (normalPreCentrifugation.contains(preCentrifugationTemperature, preCentrifugationDelay)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

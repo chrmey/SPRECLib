@@ -14,9 +14,10 @@ public final class NormalPreCentrifugation extends PreCentrifugation {
 
   /**
    * Constructor for NormalPreCentrifugation.
- * @param preCentrifugationDelay enum PreCentrifugationDelay
- * @param preCentrifugationTemperature enum PreCentrifugationTemperature
- * @param codePart Object CodePart
+   *
+   * @param preCentrifugationDelay enum PreCentrifugationDelay
+   * @param preCentrifugationTemperature enum PreCentrifugationTemperature
+   * @param codePart Object CodePart
    */
   public NormalPreCentrifugation(
       PreCentrifugationDelay preCentrifugationDelay,
@@ -43,6 +44,17 @@ public final class NormalPreCentrifugation extends PreCentrifugation {
 
   public PreCentrifugationTemperature getPreCentrifugationTemperature() {
     return this.preCentrifugationTemperature;
+  }
+
+  public boolean contains(
+      PreCentrifugationTemperature preCentrifugationTemperature,
+      PreCentrifugationDelay preCentrifugationDelay) {
+
+    if (this.preCentrifugationTemperature == preCentrifugationTemperature
+        && this.preCentrifugationDelay == preCentrifugationDelay) {
+      return true;
+    }
+    return false;
   }
 
   @Override

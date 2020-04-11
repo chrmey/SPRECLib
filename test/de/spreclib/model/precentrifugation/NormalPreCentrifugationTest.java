@@ -51,20 +51,6 @@ public class NormalPreCentrifugationTest {
   }
 
   @Test
-  public void testGetPreCentrifugationDelay() {
-    PreCentrifugationDelay expected = PreCentrifugationDelay.LESS_TWO_HOURS;
-    PreCentrifugationDelay actual = normalPreCentrifugation.getPreCentrifugationDelay();
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testGetPreCentrifugationTemperature() {
-    PreCentrifugationTemperature expected = PreCentrifugationTemperature.ROOM_TEMPERATURE;
-    PreCentrifugationTemperature actual = normalPreCentrifugation.getPreCentrifugationTemperature();
-    assertEquals(expected, actual);
-  }
-
-  @Test
   public void testEquals() {
     EqualsVerifier.forClass(NormalPreCentrifugation.class).withRedefinedSuperclass().verify();
   }

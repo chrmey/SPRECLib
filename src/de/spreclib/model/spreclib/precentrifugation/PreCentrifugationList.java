@@ -3,7 +3,6 @@ package de.spreclib.model.spreclib.precentrifugation;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
-import de.spreclib.model.exceptions.InvalidParameterCombinationException;
 import de.spreclib.model.sprec.CodePart;
 import java.util.Arrays;
 import java.util.Collections;
@@ -81,27 +80,6 @@ public final class PreCentrifugationList {
                         PreCentrifugationDelay.LESS_TWO_HOURS,
                         PreCentrifugationTemperature.THIRTYFIVE_TO_THIRTYEIGHT_DEGREES,
                         new CodePart("O")))));
-  }
-
-  public static PreCentrifugation getPreCentrifugationFromParameters(
-      PreCentrifugationTemperature temperature, PreCentrifugationDelay delay) {
-
-    for (PreCentrifugation preCentrifugation : PRE_CENTRIFUGATIONS) {
-
-      if (preCentrifugation.isNormalPreCentrifugation()) {
-
-        NormalPreCentrifugation normalPreCentrifugation =
-            (NormalPreCentrifugation) preCentrifugation;
-
-        if (temperature == normalPreCentrifugation.getPreCentrifugationTemperature()
-            && delay == normalPreCentrifugation.getPreCentrifugationDelay()) {
-          return preCentrifugation;
-        }
-      }
-    }
-
-    throw new InvalidParameterCombinationException(
-        "No PreCentrifugation found for Parameters " + temperature.name() + ", " + delay.name());
   }
 
   public static PreCentrifugation getUnknownPreCentrifugation() {

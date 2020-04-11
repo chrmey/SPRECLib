@@ -2,21 +2,21 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.interfaces.IListProvider;
+import de.spreclib.api.lists.options.PreCentrifugationDelayOption;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
 public class PreCentrifugationDelayListProviderTest {
 
-  private IListProvider preCentrifugationDelayListProvider;
-  private ArrayList<IListOption> list;
+  private ArrayList<PreCentrifugationDelayOption> list;
 
   @Before
   public void setUp() {
-    preCentrifugationDelayListProvider = new PreCentrifugationDelayListProvider();
-    list = preCentrifugationDelayListProvider.getList();
+    list = PreCentrifugationDelayListProvider.getList();
   }
 
   @Test
@@ -29,5 +29,21 @@ public class PreCentrifugationDelayListProviderTest {
     for (IListOption option : list) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testValueOfWithValidValue() {
+
+    PreCentrifugationDelayOption delayOption = PreCentrifugationDelayListProvider.valueOf(15);
+
+    assertNotNull(delayOption);
+  }
+
+  @Test
+  public void testValueOfWithInvalidValue() {
+
+    PreCentrifugationDelayOption delayOption = PreCentrifugationDelayListProvider.valueOf(-1);
+
+    assertNull(delayOption);
   }
 }

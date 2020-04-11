@@ -1,6 +1,5 @@
 package de.spreclib.model.enums.precentrifugation;
 
-import de.spreclib.model.exceptions.InvalidTemperatureValueException;
 import de.spreclib.model.interfaces.IListObject;
 
 public enum PreCentrifugationTemperature implements IListObject {
@@ -16,19 +15,14 @@ public enum PreCentrifugationTemperature implements IListObject {
     this.upperBoundCelsius = upperBoundCelsius;
   }
 
-  public static PreCentrifugationTemperature valueOf(float temperatureCelsius) {
+  // Namig ungünstig
+  public boolean hasValueFor(float temperatureCelsius) {
 
-    for (PreCentrifugationTemperature temperatureEnum : PreCentrifugationTemperature.values()) {
-      if (temperatureCelsius >= temperatureEnum.lowerBoundCelsius
-          && temperatureCelsius < temperatureEnum.upperBoundCelsius + 1) {
-        return temperatureEnum;
-      }
+    if (temperatureCelsius >= this.lowerBoundCelsius
+        && temperatureCelsius < this.upperBoundCelsius + 1) {
+      return true;
+    } else {
+      return false;
     }
-
-    throw new InvalidTemperatureValueException(
-        temperatureCelsius,
-        "Temperature value "
-            + temperatureCelsius
-            + " is no valid value for parameter PreCentrifugationTemperature.");
   }
 }

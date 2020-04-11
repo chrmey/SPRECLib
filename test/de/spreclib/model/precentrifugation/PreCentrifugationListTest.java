@@ -136,19 +136,6 @@ public class PreCentrifugationListTest {
   }
 
   @Test
-  public void getPreCentrifugationTemperatureFromParameters() {
-
-    PreCentrifugationTemperature temperature =
-        PreCentrifugationTemperature.THIRTYFIVE_TO_THIRTYEIGHT_DEGREES;
-    PreCentrifugationDelay delay = PreCentrifugationDelay.LESS_TWO_HOURS;
-
-    PreCentrifugation preCentrifugation =
-        PreCentrifugationList.getPreCentrifugationFromParameters(temperature, delay);
-
-    assertEquals(new CodePart("O"), preCentrifugation.getCodeFromSprecPart());
-  }
-
-  @Test
   public void testPreCentrifugationListContentTypes() {
     int expectedNormalPreCentrifugations = 0;
     int expectedSpecialPreCentrifugations = 0;

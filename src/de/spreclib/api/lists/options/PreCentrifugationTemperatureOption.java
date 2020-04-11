@@ -20,4 +20,12 @@ public final class PreCentrifugationTemperatureOption extends AbstractListOption
   public PreCentrifugationTemperature getContainedObject() {
     return this.preCentrifugationTemperature;
   }
+
+  public boolean hasTemperature(float temperatureCelsius) {
+    if (this.preCentrifugationTemperature.hasValueFor(temperatureCelsius)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

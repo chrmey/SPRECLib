@@ -19,4 +19,12 @@ public final class PreCentrifugationDelayOption extends AbstractListOption {
   public PreCentrifugationDelay getContainedObject() {
     return this.preCentrifugationDelay;
   }
+
+  public boolean hasDelay(int delayMinutes) {
+    if (this.preCentrifugationDelay.hasValueFor(delayMinutes)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
