@@ -28,7 +28,7 @@ import de.spreclib.model.enums.centrifugation.SecondCentrifugationTemperature;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
-import de.spreclib.model.exceptions.InvalidParameterRelationException;
+import de.spreclib.model.exceptions.InvalidPartRelationException;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.sprec.CodePart;
 import de.spreclib.model.sprec.FluidSprecCode;
@@ -244,7 +244,7 @@ public class FluidSampleSprecTest {
     assertFalse(postCentrifugationCode.getStringRepresentation().isEmpty());
   }
 
-  @Test(expected = InvalidParameterRelationException.class)
+  @Test(expected = InvalidPartRelationException.class)
   public void testWithPostCentrifugationWithNoFirstOrSecondCentrifugation() {
     FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
 
@@ -274,7 +274,7 @@ public class FluidSampleSprecTest {
     assertFalse(postCentrifugationCode.getStringRepresentation().isEmpty());
   }
 
-  @Test(expected = InvalidParameterRelationException.class)
+  @Test(expected = InvalidPartRelationException.class)
   public void testWithUnknownPostCentrifugation() {
     FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
 
@@ -285,7 +285,7 @@ public class FluidSampleSprecTest {
         .getFluidSampleSprecCode();
   }
 
-  @Test(expected = InvalidParameterRelationException.class)
+  @Test(expected = InvalidPartRelationException.class)
   public void testWithOtherPostCentrifugation() {
     FluidSampleSprec fluidSampleBuilder = new FluidSampleSprec();
 
