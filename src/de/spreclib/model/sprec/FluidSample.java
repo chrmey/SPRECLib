@@ -35,6 +35,77 @@ public final class FluidSample {
     this.secondCentrifugation = fluidSampleBuilder.secondCentrifugation;
     this.postCentrifugation = fluidSampleBuilder.postCentrifugation;
     this.longTermStorage = fluidSampleBuilder.longTermStorage;
+
+    this.validateParts();
+    this.validateParameterRelations();
+  }
+
+  private void validateParts() {
+
+    if (this.fluidSampleType != null && !FluidSampleType.contains(this.fluidSampleType)) {
+      throw new InvalidPartValueException(
+          this.fluidSampleType, "Value for FluidSampleType is not in SPREC standard.");
+    }
+
+    if (this.primaryContainer != null && !PrimaryContainer.contains(this.primaryContainer)) {
+      throw new InvalidPartValueException(
+          this.primaryContainer, "Value for PrimaryContainer is not in SPREC standard.");
+    }
+
+    if (this.preCentrifugation != null
+        && !PreCentrifugationList.PRE_CENTRIFUGATIONS.contains(this.preCentrifugation)) {
+      throw new InvalidPartValueException(
+          this.preCentrifugation, "Value for PreCentrifugation is not in SPREC standard.");
+    }
+
+    if (this.firstCentrifugation != null
+        && !FirstCentrifugationList.CENTRIFUGATIONS.contains(this.firstCentrifugation)) {
+      throw new InvalidPartValueException(
+          this.firstCentrifugation, "Value for FirstCentrifugation is not in SPREC standard.");
+    }
+
+    if (this.secondCentrifugation != null
+        && !SecondCentrifugationList.CENTRIFUGATIONS.contains(this.secondCentrifugation)) {
+      throw new InvalidPartValueException(
+          this.secondCentrifugation, "Value for SecondCentrifugation is not in SPREC standard.");
+    }
+
+    if (this.postCentrifugation != null
+        && !PostCentrifugationList.POST_CENTRIFUGATIONS.contains(this.postCentrifugation)) {
+      throw new InvalidPartValueException(
+          this.postCentrifugation, "Value for PostCentrifugation is not in SPREC standard.");
+    }
+
+    if (this.longTermStorage != null
+        && !LongTermStorageList.LONG_TERM_STORAGES.contains(this.longTermStorage)) {
+      throw new InvalidPartValueException(
+          this.longTermStorage, "Value for LongTermStorage is not in SPREC standard.");
+    }
+  }
+
+  private void validateParameterRelations() {
+
+    if (this.firstCentrifugation != null && this.secondCentrifugation != null) {
+
+      if (this.firstCentrifugation.getCentrifugationType() == CentrifugationType.NO
+          && this.secondCentrifugation.getCentrifugationType() != CentrifugationType.NO) {
+
+        throw new InvalidPartRelationException(
+            "Cannot set SecondCentrifugation to other than NO when there is no FirstCentrifugation");
+      }
+
+      if (this.firstCentrifugation.getCentrifugationType() == CentrifugationType.NO
+          && this.secondCentrifugation.getCentrifugationType() == CentrifugationType.NO
+          && this.postCentrifugation != null) {
+
+        if (this.postCentrifugation.getPostCentrifugationType()
+            != PostCentrifugationType.NOT_APPLICABLE) {
+
+          throw new InvalidPartRelationException(
+              "Cannot set PostCentrifugationType to other than NOT_APPLICABLE when there is no Centrifugation");
+        }
+      }
+    }
   }
 
   public FluidSprecCode getSprecCode() {
@@ -73,77 +144,6 @@ public final class FluidSample {
       this.secondCentrifugation = fluidSampleBuilder.getSecondCentrifugation();
       this.postCentrifugation = fluidSampleBuilder.getPostCentrifugation();
       this.longTermStorage = fluidSampleBuilder.getLongTermStorage();
-
-      this.validateParts();
-      this.validateParameterRelations();
-    }
-
-    private void validateParts() {
-
-      if (this.fluidSampleType != null && !FluidSampleType.contains(this.fluidSampleType)) {
-        throw new InvalidPartValueException(
-            this.fluidSampleType, "Value for FluidSampleType is not in SPREC standard.");
-      }
-
-      if (this.primaryContainer != null && !PrimaryContainer.contains(this.primaryContainer)) {
-        throw new InvalidPartValueException(
-            this.primaryContainer, "Value for PrimaryContainer is not in SPREC standard.");
-      }
-
-      if (this.preCentrifugation != null
-          && !PreCentrifugationList.PRE_CENTRIFUGATIONS.contains(this.preCentrifugation)) {
-        throw new InvalidPartValueException(
-            this.preCentrifugation, "Value for PreCentrifugation is not in SPREC standard.");
-      }
-
-      if (this.firstCentrifugation != null
-          && !FirstCentrifugationList.CENTRIFUGATIONS.contains(this.firstCentrifugation)) {
-        throw new InvalidPartValueException(
-            this.firstCentrifugation, "Value for FirstCentrifugation is not in SPREC standard.");
-      }
-
-      if (this.secondCentrifugation != null
-          && !SecondCentrifugationList.CENTRIFUGATIONS.contains(this.secondCentrifugation)) {
-        throw new InvalidPartValueException(
-            this.secondCentrifugation, "Value for SecondCentrifugation is not in SPREC standard.");
-      }
-
-      if (this.postCentrifugation != null
-          && !PostCentrifugationList.POST_CENTRIFUGATIONS.contains(this.postCentrifugation)) {
-        throw new InvalidPartValueException(
-            this.postCentrifugation, "Value for PostCentrifugation is not in SPREC standard.");
-      }
-
-      if (this.longTermStorage != null
-          && !LongTermStorageList.LONG_TERM_STORAGES.contains(this.longTermStorage)) {
-        throw new InvalidPartValueException(
-            this.longTermStorage, "Value for LongTermStorage is not in SPREC standard.");
-      }
-    }
-
-    private void validateParameterRelations() {
-
-      if (this.firstCentrifugation != null && this.secondCentrifugation != null) {
-
-        if (this.firstCentrifugation.getCentrifugationType() == CentrifugationType.NO
-            && this.secondCentrifugation.getCentrifugationType() != CentrifugationType.NO) {
-
-          throw new InvalidPartRelationException(
-              "Cannot set SecondCentrifugation to other than NO when there is no FirstCentrifugation");
-        }
-
-        if (this.firstCentrifugation.getCentrifugationType() == CentrifugationType.NO
-            && this.secondCentrifugation.getCentrifugationType() == CentrifugationType.NO
-            && this.postCentrifugation != null) {
-
-          if (this.postCentrifugation.getPostCentrifugationType()
-              != PostCentrifugationType.NOT_APPLICABLE) {
-
-            throw new InvalidPartRelationException(
-                "Cannot set PostCentrifugationType to other than NOT_APPLICABLE when there is no Centrifugation");
-          }
-        }
-      }
     }
 
     public FluidSample build() {
