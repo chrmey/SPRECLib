@@ -12,20 +12,20 @@ public enum WarmIschemiaTime implements ISprecPart, IListObject {
   TWENTY_TO_THIRTY_MINUTES(20, 30, new CodePart("D")),
   THIRTY_TO_SIXTY_MINUTES(30, 60, new CodePart("E")),
   GREATER_SIXTY_MINUTES(60, null, new CodePart("F")),
-  UNKNOWN(new CodePart("X")),
-  NOT_APPLICABLE(new CodePart("N")),
-  OTHER(new CodePart("Z")),
+  UNKNOWN(null, null, new CodePart("X")),
+  NOT_APPLICABLE(null, null, new CodePart("N")),
+  OTHER(null, null, new CodePart("Z")),
   ;
 
   private static final SprecPartType SPREC_PART_TYPE = SprecPartType.WARM_ISCHEMIA_TIME;
-  private ICodePart codePart;
+  private final Integer lowerBoundMinutes;
+  private final Integer upperBoundMinutes;
+  private final ICodePart codePart;
 
-  private WarmIschemiaTime(ICodePart code) {
+  private WarmIschemiaTime(Integer lowerBoundMinutes, Integer upperBoundMinutes, ICodePart code) {
     this.codePart = code;
-  }
-
-  private WarmIschemiaTime(Integer lowerBound, Integer upperBound, ICodePart code) {
-    this.codePart = code;
+    this.lowerBoundMinutes = lowerBoundMinutes;
+    this.upperBoundMinutes = upperBoundMinutes;
   }
 
   @Override
@@ -36,5 +36,19 @@ public enum WarmIschemiaTime implements ISprecPart, IListObject {
   @Override
   public SprecPartType getSprecPartType() {
     return WarmIschemiaTime.SPREC_PART_TYPE;
+  }
+
+  public boolean hasValueFor(int durationMinutes) {
+
+    if (this.lowerBoundMinutes == null && this.upperBoundMinutes == null) {
+      return false;
+    }
+
+    if (durationMinutes >= this.lowerBoundMinutes
+        && (this.upperBoundMinutes == null || durationMinutes < this.upperBoundMinutes)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

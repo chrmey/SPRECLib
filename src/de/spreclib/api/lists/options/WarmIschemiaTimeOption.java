@@ -19,4 +19,12 @@ public final class WarmIschemiaTimeOption extends AbstractListOption {
   public WarmIschemiaTime getContainedObject() {
     return this.warmIschemiaTime;
   }
+
+  public boolean hasDuration(int durationMinutes) {
+    if (this.warmIschemiaTime.hasValueFor(durationMinutes)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

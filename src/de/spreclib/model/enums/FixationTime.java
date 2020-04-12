@@ -18,9 +18,14 @@ public enum FixationTime implements ISprecPart, IListObject {
   OTHER(null, null, new CodePart("Z")),
   ;
 
+  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.FIXATION_TIME;
   private ICodePart codePart;
+  private final Integer lowerBoundMinutes;
+  private final Integer upperBoundMinutes;
 
-  private FixationTime(Integer lowerBound, Integer upperBound, ICodePart code) {
+  private FixationTime(Integer lowerBoundMinutes, Integer upperBoundMinutes, ICodePart code) {
+    this.lowerBoundMinutes = lowerBoundMinutes;
+    this.upperBoundMinutes = upperBoundMinutes;
     this.codePart = code;
   }
 
@@ -31,6 +36,19 @@ public enum FixationTime implements ISprecPart, IListObject {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return SprecPartType.FIXATION_TIME;
+    return FixationTime.SPREC_PART_TYPE;
+  }
+
+  public boolean hasValueFor(int durationMinutes) {
+
+    if (this.lowerBoundMinutes == null && this.upperBoundMinutes == null) {
+      return false;
+    }
+
+    if (durationMinutes >= this.lowerBoundMinutes && durationMinutes < this.upperBoundMinutes) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

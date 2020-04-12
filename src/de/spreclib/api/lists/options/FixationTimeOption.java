@@ -19,4 +19,12 @@ public final class FixationTimeOption extends AbstractListOption {
   public FixationTime getContainedObject() {
     return this.fixationTime;
   }
+
+  public boolean hasDuration(int durationMinutes) {
+    if (this.fixationTime.hasValueFor(durationMinutes)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
