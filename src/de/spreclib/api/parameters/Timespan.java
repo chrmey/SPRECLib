@@ -3,10 +3,15 @@ package de.spreclib.api.parameters;
 import de.spreclib.api.exceptions.InvalidTimestampRelationException;
 import de.spreclib.api.exceptions.NegativeTimestampException;
 
-/** @author Christopher Meyer */
+/**
+ * Takes two timestamps milliseconds epoch time and calculates the timespan between them in minutes.
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ */
 public final class Timespan {
 
-  private int timespanMinutes;
+  private final int timespanMinutes;
 
   /**
    * Takes two timestamps (milliseconds since 01.01.1970) and calculates the timespan between them
