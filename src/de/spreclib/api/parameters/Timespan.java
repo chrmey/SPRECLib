@@ -4,7 +4,7 @@ import de.spreclib.api.exceptions.InvalidTimestampRelationException;
 import de.spreclib.api.exceptions.NegativeTimestampException;
 
 /** @author Christopher Meyer */
-public final class TimespanCalculator {
+public final class Timespan {
 
   private int timespanMinutes;
 
@@ -15,7 +15,7 @@ public final class TimespanCalculator {
    * @param firstTimestampMilliSeconds milliseconds EPOCH time
    * @param secondTimestampMilliSeconds milliseconds EPOCH time
    */
-  public TimespanCalculator(long firstTimestampMilliSeconds, long secondTimestampMilliSeconds) {
+  public Timespan(long firstTimestampMilliSeconds, long secondTimestampMilliSeconds) {
 
     if (firstTimestampMilliSeconds < 0) {
       throw new NegativeTimestampException(firstTimestampMilliSeconds, "Timestamp cannot be negative");

@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.options.SecondCentrifugationDurationOption;
-import de.spreclib.api.parameters.TimespanCalculator;
+import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationDuration;
 import java.util.ArrayList;
 
@@ -28,7 +28,7 @@ public final class SecondCentrifugationDurationListProvider {
       long secondCentrifugationStartTimeMillis, long secondCentrifugationEndTimeMillis) {
 
     int durationMinutes =
-        new TimespanCalculator(
+        new Timespan(
                 secondCentrifugationStartTimeMillis, secondCentrifugationEndTimeMillis)
             .getTimespanMinutes();
 

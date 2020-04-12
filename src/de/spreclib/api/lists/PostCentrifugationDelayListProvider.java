@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.options.PostCentrifugationDelayOption;
-import de.spreclib.api.parameters.TimespanCalculator;
+import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import java.util.ArrayList;
 
@@ -26,7 +26,7 @@ public final class PostCentrifugationDelayListProvider {
       long lastCentrifugationStartTimeMillis, long longTermStorageStartTimeMillis) {
 
     int delayMinutes =
-        new TimespanCalculator(lastCentrifugationStartTimeMillis, longTermStorageStartTimeMillis)
+        new Timespan(lastCentrifugationStartTimeMillis, longTermStorageStartTimeMillis)
             .getTimespanMinutes();
 
     return valueOf(delayMinutes);
