@@ -48,4 +48,16 @@ public class FirstCentrifugationDurationListProviderTest {
 
     assertNull(firstCentrifugationDurationOption);
   }
+
+  @Test
+  public void testValueOfWithTimestamps() {
+
+    long startTime = 1577836800000L;
+    long fifteenMinutesLater = 1577837700000L;
+
+    FirstCentrifugationDurationOption firstCentrifugationDurationOption =
+        FirstCentrifugationDurationListProvider.valueOf(startTime, fifteenMinutesLater);
+
+    assertNotNull(firstCentrifugationDurationOption);
+  }
 }

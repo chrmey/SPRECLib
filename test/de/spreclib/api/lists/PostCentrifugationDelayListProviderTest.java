@@ -46,4 +46,16 @@ public class PostCentrifugationDelayListProviderTest {
 
     assertNull(delayOption);
   }
+
+  @Test
+  public void testValueOfWithTimestamps() {
+
+    long startTime = 1577836800000L;
+    long fifteenMinutesLater = 1577837700000L;
+
+    PostCentrifugationDelayOption postCentrifugationDurationOption =
+        PostCentrifugationDelayListProvider.valueOf(startTime, fifteenMinutesLater);
+
+    assertNotNull(postCentrifugationDurationOption);
+  }
 }
