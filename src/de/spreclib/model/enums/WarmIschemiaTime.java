@@ -51,4 +51,18 @@ public enum WarmIschemiaTime implements ISprecPart, IListObject {
       return false;
     }
   }
+
+  public static boolean contains(WarmIschemiaTime warmIschemiaTime) {
+
+    if (warmIschemiaTime == null) {
+      return false;
+    }
+
+    for (WarmIschemiaTime listEntry : WarmIschemiaTime.values()) {
+      if (warmIschemiaTime.equals(listEntry)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

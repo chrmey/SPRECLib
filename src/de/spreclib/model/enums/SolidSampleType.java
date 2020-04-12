@@ -34,4 +34,18 @@ public enum SolidSampleType implements ISprecPart, IListObject {
   public SprecPartType getSprecPartType() {
     return SolidSampleType.SPREC_PART_TYPE;
   }
+
+  public static boolean contains(SolidSampleType solidSampleType) {
+
+    if (solidSampleType == null) {
+      return false;
+    }
+
+    for (SolidSampleType listEntry : SolidSampleType.values()) {
+      if (solidSampleType.equals(listEntry)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

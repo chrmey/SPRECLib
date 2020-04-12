@@ -42,4 +42,18 @@ public enum TypeOfCollection implements ISprecPart, IListObject {
   public SprecPartType getSprecPartType() {
     return TypeOfCollection.SPREC_PART_TYPE;
   }
+
+  public static boolean contains(TypeOfCollection typeOfCollection) {
+
+    if (typeOfCollection == null) {
+      return false;
+    }
+
+    for (TypeOfCollection listEntry : TypeOfCollection.values()) {
+      if (typeOfCollection.equals(listEntry)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

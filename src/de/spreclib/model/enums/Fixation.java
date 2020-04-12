@@ -22,6 +22,7 @@ public enum Fixation implements ISprecPart, IListObject {
   OTHER(new CodePart("ZZZ")),
   ;
 
+  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.FIXATION;
   private ICodePart codePart;
 
   private Fixation(ICodePart code) {
@@ -35,6 +36,20 @@ public enum Fixation implements ISprecPart, IListObject {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return SprecPartType.FIXATION;
+    return Fixation.SPREC_PART_TYPE;
+  }
+
+  public static boolean contains(Fixation fixation) {
+
+    if (fixation == null) {
+      return false;
+    }
+
+    for (Fixation listEntry : Fixation.values()) {
+      if (fixation.equals(listEntry)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

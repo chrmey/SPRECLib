@@ -51,4 +51,18 @@ public enum FixationTime implements ISprecPart, IListObject {
       return false;
     }
   }
+
+  public static boolean contains(FixationTime fixationTime) {
+
+    if (fixationTime == null) {
+      return false;
+    }
+
+    for (FixationTime listEntry : FixationTime.values()) {
+      if (fixationTime.equals(listEntry)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
