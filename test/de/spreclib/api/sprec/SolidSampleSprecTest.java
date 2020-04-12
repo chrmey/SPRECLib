@@ -65,7 +65,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withSolidSampleType(this.solidSampleTypeOption).getSolidSampleSprecCode();
+        solidSampleSprec.withSolidSampleType(this.solidSampleTypeOption).getSprecCode();
 
     ICodePart solidSampleTypeCode = solidSprecCode.getSolidSampleTypeCode();
 
@@ -77,7 +77,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withTypeOfCollection(this.typeOfColletionOption).getSolidSampleSprecCode();
+        solidSampleSprec.withTypeOfCollection(this.typeOfColletionOption).getSprecCode();
 
     ICodePart typeOfCollectionCode = solidSprecCode.getTypeOfCollectionCode();
 
@@ -91,7 +91,7 @@ public class SolidSampleSprecTest {
     SolidSprecCode solidSprecCode =
         solidSampleSprec
             .withWarmIschemiaTime(this.warmIschemiaTimeOption)
-            .getSolidSampleSprecCode();
+            .getSprecCode();
 
     ICodePart warmIschemiaTimeCode = solidSprecCode.getWarmIschemiaTimeCode();
 
@@ -104,7 +104,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withUnknownWarmIschemiaTime().getSolidSampleSprecCode();
+        solidSampleSprec.withUnknownWarmIschemiaTime().getSprecCode();
 
     ICodePart warmIschemiaTimeCode = solidSprecCode.getWarmIschemiaTimeCode();
 
@@ -117,7 +117,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withOtherWarmIschemiaTime().getSolidSampleSprecCode();
+        solidSampleSprec.withOtherWarmIschemiaTime().getSprecCode();
 
     ICodePart warmIschemiaTimeCode = solidSprecCode.getWarmIschemiaTimeCode();
 
@@ -130,7 +130,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withNoApplicableWarmIschemiaTime().getSolidSampleSprecCode();
+        solidSampleSprec.withNoApplicableWarmIschemiaTime().getSprecCode();
 
     ICodePart warmIschemiaTimeCode = solidSprecCode.getWarmIschemiaTimeCode();
 
@@ -144,7 +144,7 @@ public class SolidSampleSprecTest {
     SolidSprecCode solidSprecCode =
         solidSampleSprec
             .withColdIschemiaTime(this.coldIschemiaTimeOption)
-            .getSolidSampleSprecCode();
+            .getSprecCode();
 
     ICodePart coldIschemiaTimeCode = solidSprecCode.getColdIschemiaTimeCode();
 
@@ -157,7 +157,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withUnknownColdIschemiaTime().getSolidSampleSprecCode();
+        solidSampleSprec.withUnknownColdIschemiaTime().getSprecCode();
 
     ICodePart coldIschemiaTimeCode = solidSprecCode.getColdIschemiaTimeCode();
 
@@ -170,7 +170,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withOtherColdIschemiaTime().getSolidSampleSprecCode();
+        solidSampleSprec.withOtherColdIschemiaTime().getSprecCode();
 
     ICodePart coldIschemiaTimeCode = solidSprecCode.getColdIschemiaTimeCode();
 
@@ -183,7 +183,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withNoApplicableColdIschemiaTime().getSolidSampleSprecCode();
+        solidSampleSprec.withNoApplicableColdIschemiaTime().getSprecCode();
 
     ICodePart coldIschemiaTimeCode = solidSprecCode.getColdIschemiaTimeCode();
 
@@ -195,7 +195,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withFixation(this.fixationOption).getSolidSampleSprecCode();
+        solidSampleSprec.withFixation(this.fixationOption).getSprecCode();
 
     ICodePart fixationCode = solidSprecCode.getFixationCode();
 
@@ -207,7 +207,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withFixationTime(this.fixationTimeOption).getSolidSampleSprecCode();
+        solidSampleSprec.withFixationTime(this.fixationTimeOption).getSprecCode();
 
     ICodePart fixationTimeCode = solidSprecCode.getFixationTimeCode();
 
@@ -220,7 +220,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withUnknownFixationTime().getSolidSampleSprecCode();
+        solidSampleSprec.withUnknownFixationTime().getSprecCode();
 
     ICodePart fixationTimeCode = solidSprecCode.getFixationTimeCode();
 
@@ -233,7 +233,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withOtherFixationTime().getSolidSampleSprecCode();
+        solidSampleSprec.withOtherFixationTime().getSprecCode();
 
     ICodePart fixationTimeCode = solidSprecCode.getFixationTimeCode();
 
@@ -246,7 +246,7 @@ public class SolidSampleSprecTest {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
     SolidSprecCode solidSprecCode =
-        solidSampleSprec.withNoApplicableFixationTime().getSolidSampleSprecCode();
+        solidSampleSprec.withNoApplicableFixationTime().getSprecCode();
 
     ICodePart fixationTimeCode = solidSprecCode.getFixationTimeCode();
 
@@ -257,7 +257,7 @@ public class SolidSampleSprecTest {
   public void testWithLongTerm() {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
     SolidSprecCode solidSampleCode =
-        solidSampleSprec.withLongTermStorage(this.longTermStorageOption).getSolidSampleSprecCode();
+        solidSampleSprec.withLongTermStorage(this.longTermStorageOption).getSprecCode();
 
     ICodePart longTermStorageCode = solidSampleCode.getLongTermStorageCode();
 
@@ -268,7 +268,7 @@ public class SolidSampleSprecTest {
   public void testWithUnknownLongTermStorage() {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
     SolidSprecCode solidSampleCode =
-        solidSampleSprec.withUnknownLongTermStorage().getSolidSampleSprecCode();
+        solidSampleSprec.withUnknownLongTermStorage().getSprecCode();
 
     ICodePart longTermStorageCode = solidSampleCode.getLongTermStorageCode();
 
@@ -279,7 +279,7 @@ public class SolidSampleSprecTest {
   public void testWithOtherLongTermStorage() {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
     SolidSprecCode solidSampleCode =
-        solidSampleSprec.withOtherLongTermStorage().getSolidSampleSprecCode();
+        solidSampleSprec.withOtherLongTermStorage().getSprecCode();
 
     ICodePart longTermStorageCode = solidSampleCode.getLongTermStorageCode();
 
@@ -300,7 +300,7 @@ public class SolidSampleSprecTest {
             .withFixation(this.fixationOption)
             .withFixationTime(this.fixationTimeOption)
             .withLongTermStorage(this.longTermStorageOption)
-            .getSolidSampleSprecCode();
+            .getSprecCode();
 
     String codeString = solidSampleCode.getCodeString();
 
@@ -321,7 +321,7 @@ public class SolidSampleSprecTest {
             .withFixation(null)
             .withFixationTime(null)
             .withLongTermStorage(null)
-            .getSolidSampleSprecCode();
+            .getSprecCode();
 
     String codeString = solidSampleCode.getCodeString();
 

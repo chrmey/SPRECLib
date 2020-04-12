@@ -79,7 +79,7 @@ public class FluidSampleSprecTest {
   public void testWithFluidSampleTypeOption() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withFluidSampleType(this.fluidSampleTypeOption).getFluidSampleSprecCode();
+        fluidSampleSprec.withFluidSampleType(this.fluidSampleTypeOption).getSprecCode();
 
     ICodePart fluidSampleTypeCode = fluidSampleCode.getFluidSampleTypeCode();
 
@@ -92,7 +92,7 @@ public class FluidSampleSprecTest {
     FluidSprecCode fluidSampleCode =
         fluidSampleSprec
             .withPrimaryContainer(this.primaryContainerOption)
-            .getFluidSampleSprecCode();
+            .getSprecCode();
 
     ICodePart primaryContainerCode = fluidSampleCode.getPrimaryContainerCode();
 
@@ -105,7 +105,7 @@ public class FluidSampleSprecTest {
     FluidSprecCode fluidSampleCode =
         fluidSampleSprec
             .withPreCentrifugation(this.preCentrifugationOption)
-            .getFluidSampleSprecCode();
+            .getSprecCode();
 
     ICodePart preCentrifugationCode = fluidSampleCode.getPreCentrifugationCode();
 
@@ -116,7 +116,7 @@ public class FluidSampleSprecTest {
   public void testWithOtherPreCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withOtherPreCentrifugation().getFluidSampleSprecCode();
+        fluidSampleSprec.withOtherPreCentrifugation().getSprecCode();
 
     ICodePart preCentrifugationCode = fluidSampleCode.getPreCentrifugationCode();
 
@@ -127,7 +127,7 @@ public class FluidSampleSprecTest {
   public void testWithUnknownPreCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withUnknownPreCentrifugation().getFluidSampleSprecCode();
+        fluidSampleSprec.withUnknownPreCentrifugation().getSprecCode();
 
     ICodePart preCentrifugationCode = fluidSampleCode.getPreCentrifugationCode();
 
@@ -140,7 +140,7 @@ public class FluidSampleSprecTest {
     FluidSprecCode fluidSampleCode =
         fluidSampleSprec
             .withFirstCentrifugation(this.firstCentrifugationOption)
-            .getFluidSampleSprecCode();
+            .getSprecCode();
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
@@ -151,7 +151,7 @@ public class FluidSampleSprecTest {
   public void testWithUnknownFirstCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withUnknownFirstCentrifugation().getFluidSampleSprecCode();
+        fluidSampleSprec.withUnknownFirstCentrifugation().getSprecCode();
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
@@ -162,7 +162,7 @@ public class FluidSampleSprecTest {
   public void testWithOtherFirstCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withOtherFirstCentrifugation().getFluidSampleSprecCode();
+        fluidSampleSprec.withOtherFirstCentrifugation().getSprecCode();
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
@@ -173,7 +173,7 @@ public class FluidSampleSprecTest {
   public void testWithNoFirstCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withNoFirstCentrifugation().getFluidSampleSprecCode();
+        fluidSampleSprec.withNoFirstCentrifugation().getSprecCode();
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
@@ -186,7 +186,7 @@ public class FluidSampleSprecTest {
     FluidSprecCode fluidSampleCode =
         fluidSampleSprec
             .withSecondCentrifugation(this.secondCentrifugationOption)
-            .getFluidSampleSprecCode();
+            .getSprecCode();
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
@@ -197,7 +197,7 @@ public class FluidSampleSprecTest {
   public void testWithUnknownSecondCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withUnknownSecondCentrifugation().getFluidSampleSprecCode();
+        fluidSampleSprec.withUnknownSecondCentrifugation().getSprecCode();
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
@@ -208,7 +208,7 @@ public class FluidSampleSprecTest {
   public void testWithOtherSecondCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withOtherSecondCentrifugation().getFluidSampleSprecCode();
+        fluidSampleSprec.withOtherSecondCentrifugation().getSprecCode();
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
@@ -219,7 +219,7 @@ public class FluidSampleSprecTest {
   public void testWithNoSecondCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withNoSecondCentrifugation().getFluidSampleSprecCode();
+        fluidSampleSprec.withNoSecondCentrifugation().getSprecCode();
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
@@ -234,7 +234,7 @@ public class FluidSampleSprecTest {
             .withOtherFirstCentrifugation()
             .withOtherSecondCentrifugation()
             .withPostCentrifugation(this.postCentrifugationOption)
-            .getFluidSampleSprecCode();
+            .getSprecCode();
 
     ICodePart postCentrifugationCode = fluidSampleCode.getPostCentrifugationCode();
 
@@ -257,14 +257,14 @@ public class FluidSampleSprecTest {
         .withNoFirstCentrifugation()
         .withNoSecondCentrifugation()
         .withPostCentrifugation(postCentrifugationOption)
-        .getFluidSampleSprecCode();
+        .getSprecCode();
   }
 
   @Test
   public void testWithNoApplicablePostCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withNoApplicablePostCentrifugation().getFluidSampleSprecCode();
+        fluidSampleSprec.withNoApplicablePostCentrifugation().getSprecCode();
 
     ICodePart postCentrifugationCode = fluidSampleCode.getPostCentrifugationCode();
 
@@ -279,7 +279,7 @@ public class FluidSampleSprecTest {
         .withNoFirstCentrifugation()
         .withNoSecondCentrifugation()
         .withUnknownPostCentrifugation()
-        .getFluidSampleSprecCode();
+        .getSprecCode();
   }
 
   @Test(expected = InvalidPartRelationException.class)
@@ -290,14 +290,14 @@ public class FluidSampleSprecTest {
         .withNoFirstCentrifugation()
         .withNoSecondCentrifugation()
         .withOtherPostCentrifugation()
-        .getFluidSampleSprecCode();
+        .getSprecCode();
   }
 
   @Test
   public void testWithLongTermStorage() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withLongTermStorage(this.longTermStorageOption).getFluidSampleSprecCode();
+        fluidSampleSprec.withLongTermStorage(this.longTermStorageOption).getSprecCode();
 
     ICodePart longTermStorageCode = fluidSampleCode.getLongTermStorageCode();
 
@@ -308,7 +308,7 @@ public class FluidSampleSprecTest {
   public void testWithUnknownLongTermStorage() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withUnknownLongTermStorage().getFluidSampleSprecCode();
+        fluidSampleSprec.withUnknownLongTermStorage().getSprecCode();
 
     ICodePart longTermStorageCode = fluidSampleCode.getLongTermStorageCode();
 
@@ -319,7 +319,7 @@ public class FluidSampleSprecTest {
   public void testWithOtherLongTermStorage() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
     FluidSprecCode fluidSampleCode =
-        fluidSampleSprec.withOtherLongTermStorage().getFluidSampleSprecCode();
+        fluidSampleSprec.withOtherLongTermStorage().getSprecCode();
 
     ICodePart longTermStorageCode = fluidSampleCode.getLongTermStorageCode();
 
@@ -360,7 +360,7 @@ public class FluidSampleSprecTest {
             .withSecondCentrifugation(secondCentrifugationOption)
             .withPostCentrifugation(this.postCentrifugationOption)
             .withLongTermStorage(this.longTermStorageOption)
-            .getFluidSampleSprecCode();
+            .getSprecCode();
 
     String code = fluidSampleCode.getCodeString();
 
@@ -381,7 +381,7 @@ public class FluidSampleSprecTest {
             .withSecondCentrifugation(null)
             .withPostCentrifugation(null)
             .withLongTermStorage(null)
-            .getFluidSampleSprecCode();
+            .getSprecCode();
 
     String codeString = fluidSampleCode.getCodeString();
 
