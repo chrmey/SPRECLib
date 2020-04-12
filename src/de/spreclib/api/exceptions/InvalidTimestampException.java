@@ -2,7 +2,11 @@ package de.spreclib.api.exceptions;
 
 public class InvalidTimestampException extends RuntimeException {
 
-  /** */
+  /**
+   * Exception that is thrown when a timestamp is no valid timestamp.
+   *
+   * @author Christopher Meyer
+   */
   private static final long serialVersionUID = 5833405742873386268L;
 
   private final long timestamp;

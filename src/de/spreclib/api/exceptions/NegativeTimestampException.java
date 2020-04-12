@@ -2,7 +2,11 @@ package de.spreclib.api.exceptions;
 
 public class NegativeTimestampException extends RuntimeException {
 
-  /** */
+  /**
+   * Exception that is thrown when a timestamp is a negative numeric.
+   *
+   * @author Christopher Meyer
+   */
   private static final long serialVersionUID = 1L;
 
   private final long timestamp;
@@ -16,5 +20,3 @@ public class NegativeTimestampException extends RuntimeException {
     return this.timestamp;
   }
 }
-
-

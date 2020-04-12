@@ -2,7 +2,11 @@ package de.spreclib.api.exceptions;
 
 public class InvalidTimestampRelationException extends RuntimeException {
 
-  /** */
+  /**
+   * Exception that is thrown when the second timestamp is before the first timestamp.
+   *
+   * @author Christopher Meyer
+   */
   private static final long serialVersionUID = -8405943154637458365L;
 
   private final long timestamp1;
