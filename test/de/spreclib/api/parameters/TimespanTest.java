@@ -1,4 +1,4 @@
-package de.spreclib.api.handlers;
+package de.spreclib.api.parameters;
 
 import static org.junit.Assert.assertEquals;
 import de.spreclib.api.exceptions.InvalidTimestampRelationException;
