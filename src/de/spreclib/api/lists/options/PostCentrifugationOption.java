@@ -6,6 +6,14 @@ import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.model.spreclib.postcentrifugation.NormalPostCentrifugation;
 import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugation;
 
+/**
+ * PostCentrifugationOption
+ *
+ * <p>To obtain the name of the ListOption e.g. for usage in GUIs use getStringRepresentation()
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ */
 public final class PostCentrifugationOption extends AbstractListOption {
 
   private final PostCentrifugation postCentrifugation;

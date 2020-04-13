@@ -6,6 +6,14 @@ import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.spreclib.precentrifugation.NormalPreCentrifugation;
 import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
 
+/**
+ * PreCentrifugationOption
+ *
+ * <p>To obtain the name of the ListOption e.g. for usage in GUIs use getStringRepresentation()
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ */
 public final class PreCentrifugationOption extends AbstractListOption {
 
   private final PreCentrifugation preCentrifugation;
