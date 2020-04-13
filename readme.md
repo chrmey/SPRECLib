@@ -60,7 +60,7 @@ FluidSprecCode fluidSprecCode = fluidSampleSprec
 ```
 You can pass null values as Option, this will lead to the code for that part to be replaced by "?" if you print the full code for that sample.
 
-This will return a FluidSprecCode object. To get the full SPREC Code use:
+Calling ```.getSprecCode()``` will return a FluidSprecCode / SolidSprecCode object. To get the full SPREC Code use:
 ```
 String sprecCode = fluidSprecCode.getStringRepresentation();
 ```
@@ -71,6 +71,7 @@ ICodePart fluidSampleTypeCode = sprecCode.getFluidSampleTypeCode();
 String fluidSampleTypeCodeString = fluidSampleTypeCode.getStringRepresentation();
 ```
 
+```Passing values to SPRECLib```
 
 ## CodeStyle
 Uses Google Java Styleguide
