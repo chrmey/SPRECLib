@@ -30,7 +30,8 @@ import de.spreclib.model.spreclib.longtermstorage.LongTermStorageList;
  * <p>Example:
  *
  * <pre>{@code
- * SolidSampleTypeOption solidSampleTypeOption = SolidSampleTypeListProvider.get(0);
+ * ArrayList<SolidSampleTypeOption> solidSampleTypeOptions = SolidSampleTypeListProvider.getList();
+ * SolidSampleTypeOption solidSampleTypeOption = solidSampleTypeOptions.get(0);
  *
  * SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
  *

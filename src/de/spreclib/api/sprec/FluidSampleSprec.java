@@ -33,7 +33,8 @@ import de.spreclib.model.spreclib.precentrifugation.PreCentrifugationList;
  * <p>Example:
  *
  * <pre>{@code
- * FluidSampleTypeOption fluidSampleTypeOption = FluidSampleTypeListProvider.get(0);
+ * ArrayList<FluidSampleTypeOption> fluidSampleTypeOptions = FluidSampleTypeListProvider.getList();
+ * FluidSampleTypeOption fluidSampleTypeOption = fluidSampleTypeOptions.get(0);
  *
  * FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
  *
