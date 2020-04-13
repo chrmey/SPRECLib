@@ -19,6 +19,8 @@ public final class Timespan {
    *
    * @param firstTimestampMilliSeconds milliseconds EPOCH time
    * @param secondTimestampMilliSeconds milliseconds EPOCH time
+   * @throws NegativeTimestampException if one timestamp is a negative numeric
+   * @throws InvalidTimestampRelationExceptio if the second timestamp is before the first timestamp
    */
   public Timespan(long firstTimestampMilliSeconds, long secondTimestampMilliSeconds) {
 

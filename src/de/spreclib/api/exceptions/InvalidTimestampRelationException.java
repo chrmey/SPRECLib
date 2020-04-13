@@ -12,6 +12,13 @@ public class InvalidTimestampRelationException extends RuntimeException {
   private final long timestamp1;
   private final long timestamp2;
 
+  /**
+   * Takes two timestamps and an error message.
+   *
+   * @param timestamp1 first timestamp
+   * @param timestamp2 second timestamp
+   * @param message Error message
+   */
   public InvalidTimestampRelationException(long timestamp1, long timestamp2, String message) {
     super(message);
     this.timestamp1 = timestamp1;
