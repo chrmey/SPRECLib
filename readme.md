@@ -34,12 +34,12 @@ To get a list of FluidSampleTypeOptions:
 ArrayList<FluidSampleTypeOption> fluidSampleTypeOptions = FluidSampleTypeListProvider.getList();
 ```
 
-To get the english name of a ListOption, e.g. to use it in a GUI, call .getStringRepresentation(); on the ListOption
+To get the english name of a ListOption, e.g. to use it in a GUI, call ```.getStringRepresentation();`` on the ```ListOption```
 
 ```
 String nameInEnglish = fluidSampleTypeOption.getStringRepresentation();
 
-``
+```
 
 
 ### And coding style tests
