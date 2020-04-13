@@ -10,6 +10,15 @@ import de.spreclib.model.spreclib.centrifugation.Centrifugation;
 import de.spreclib.model.spreclib.centrifugation.FirstCentrifugationList;
 import java.util.ArrayList;
 
+/**
+ * ListProvider for FirstCentrifugationOptions.
+ *
+ * <p>Use the valueOf() method to receive a ListOption if a ListOption for the value can be found.
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ * @see de.spreclib.api.lists.options.FirstCentrifugationOption
+ */
 public final class FirstCentrifugationListProvider {
 
   private static final ArrayList<FirstCentrifugationOption> FIRST_CENTRIFUGATION_OPTIONS;
@@ -27,6 +36,18 @@ public final class FirstCentrifugationListProvider {
     return FIRST_CENTRIFUGATION_OPTIONS;
   }
 
+  /**
+   * Takes all parameters for FirstCentrifugation and returns an option if a FirstCentrifugation
+   * with that combination is found. Returns null otherwise.
+   *
+   * @param firstCentrifugationTemperatureOption FirstCentrifugationTemperatureOption
+   * @param firstCentrifugationDurationOption FirstCentrifugationDurationOption
+   * @param firstCentrifugationSpeedOption FirstCentrifugationSpeedOption
+   * @param firstCentrifugationBrakingOption FirstCentrifugationBrakingOption
+   * @return FirstCentrifugationOption
+   * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
+   * @throws IllegalArgumentException if parameter is null
+   */
   public static FirstCentrifugationOption valueOf(
       FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption,
       FirstCentrifugationDurationOption firstCentrifugationDurationOption,
@@ -34,19 +55,19 @@ public final class FirstCentrifugationListProvider {
       FirstCentrifugationBrakingOption firstCentrifugationBrakingOption) {
 
     if (firstCentrifugationTemperatureOption == null) {
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("FirstCentrifugationTemperatureOption cannot be null");
     }
 
     if (firstCentrifugationDurationOption == null) {
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("FirstCentrifugationDurationOption cannot be null");
     }
 
     if (firstCentrifugationSpeedOption == null) {
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("FirstCentrifugationSpeedOption cannot be null");
     }
 
     if (firstCentrifugationBrakingOption == null) {
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("FirstCentrifugationBrakingOption cannot be null");
     }
 
     for (FirstCentrifugationOption firstCentrifugationOption : FIRST_CENTRIFUGATION_OPTIONS) {

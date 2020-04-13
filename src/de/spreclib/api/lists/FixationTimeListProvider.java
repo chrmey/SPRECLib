@@ -5,6 +5,15 @@ import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.FixationTime;
 import java.util.ArrayList;
 
+/**
+ * ListProvider for FixationTimeOptions.
+ *
+ * <p>Use the valueOf() method to receive a ListOption if a ListOption for the value can be found.
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ * @see de.spreclib.api.lists.options.FixationOption
+ */
 public final class FixationTimeListProvider {
 
   private static final ArrayList<FixationTimeOption> FIXATION_TIME_OPTIONS;
@@ -21,6 +30,15 @@ public final class FixationTimeListProvider {
     return FIXATION_TIME_OPTIONS;
   }
 
+  /**
+   * Takes two timestamps milliseconds EPOCH time and returns a FixationTimeOption if a
+   * FixationTimeOption with that timespan is found. Returns null otherwise.
+   *
+   * @param startOfFixationTimeMillis timestamp milliseconds EPOCH time
+   * @param endOfFixationTimeMillis timestamp milliseconds EPOCH time
+   * @return FixationTimeOption
+   * @see #valueOf(int)
+   */
   public static FixationTimeOption valueOf(
       long startOfFixationTimeMillis, long endOfFixationTimeMillis) {
 
@@ -30,6 +48,13 @@ public final class FixationTimeListProvider {
     return valueOf(durationMinutes);
   }
 
+  /**
+   * Takes a duration in minutes and returns a FixationTimeOption if a FixationTimeOption with that
+   * duration is found. Returns null otherwise
+   *
+   * @param durationMinutes durationMinutes
+   * @return FixationTimeOption
+   */
   public static FixationTimeOption valueOf(int durationMinutes) {
 
     for (FixationTimeOption fixationTimeOption : FIXATION_TIME_OPTIONS) {

@@ -5,6 +5,15 @@ import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationTemperature;
 import java.util.ArrayList;
 
+/**
+ * ListProvider for SecondCentrifugationTemperatureOptions.
+ *
+ * <p>Use the valueOf() method to receive a ListOption if a ListOption for the value can be found.
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ * @see de.spreclib.api.lists.options.SecondCentrifugationTemperatureOption
+ */
 public final class SecondCentrifugationTemperatureListProvider {
 
   private static final ArrayList<SecondCentrifugationTemperatureOption>
@@ -24,6 +33,13 @@ public final class SecondCentrifugationTemperatureListProvider {
     return SECOND_CENTRIFGUATION_TEMPERATURE_OPTIONS;
   }
 
+  /**
+   * Takes a temperature object and returns a SecondCentrifugationTemperatureOption if a
+   * SecondCentrifugationTemperatureOption for the Celsius value in the temperature object is found.
+   *
+   * @param temperature Temperature object
+   * @return SecondCentrifugationTemperatureOption
+   */
   public static SecondCentrifugationTemperatureOption valueOf(Temperature temperature) {
 
     if (temperature == null) {

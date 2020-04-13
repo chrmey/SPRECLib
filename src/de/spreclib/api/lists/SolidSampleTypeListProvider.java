@@ -4,6 +4,13 @@ import de.spreclib.api.lists.options.SolidSampleTypeOption;
 import de.spreclib.model.enums.SolidSampleType;
 import java.util.ArrayList;
 
+/**
+ * ListProvider for SolidSampleTypeOptions.
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ * @see de.spreclib.api.lists.options.SolidSampleTypeOption
+ */
 public final class SolidSampleTypeListProvider {
 
   private static final ArrayList<SolidSampleTypeOption> SOLID_SAMPLE_TYPE_OPTIONS;

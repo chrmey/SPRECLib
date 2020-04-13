@@ -4,6 +4,13 @@ import de.spreclib.api.lists.options.TypeOfCollectionOption;
 import de.spreclib.model.enums.TypeOfCollection;
 import java.util.ArrayList;
 
+/**
+ * ListProvider for TypeOfCollectionOptions.
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ * @see de.spreclib.api.lists.options.TypeOfCollectionOption
+ */
 public final class TypeOfCollectionListProvider {
 
   private static final ArrayList<TypeOfCollectionOption> TYPE_OF_COLLECTION_OPTIONS;

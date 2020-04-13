@@ -5,6 +5,13 @@ import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
 import java.util.ArrayList;
 
+/**
+ * ListProvider for LongTermStorageTemperatures.
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ * @see de.spreclib.api.lists.options.LongTermStorageTemperatureOption
+ */
 public final class LongTermStorageTemperatureListProvider {
 
   private static final ArrayList<LongTermStorageTemperatureOption>
@@ -24,6 +31,13 @@ public final class LongTermStorageTemperatureListProvider {
     return LONG_TERM_STORAGE_TEMPERATURE_OPTIONS;
   }
 
+  /**
+   * Takes a temperature object and returns a LongTermStorageTemperatureOption if a
+   * LongTermStorageTemperatureOption for the Celsius value in the temperature object is found.
+   *
+   * @param temperature Temperature object
+   * @return LongTermStorageTemperatureOption
+   */
   public static LongTermStorageTemperatureOption valueOf(Temperature temperature) {
 
     if (temperature == null) {

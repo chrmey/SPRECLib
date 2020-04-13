@@ -8,6 +8,15 @@ import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugationList;
 import java.util.ArrayList;
 
+/**
+ * ListProvider for PostCentrifugationOptions.
+ *
+ * <p>Use the valueOf() method to receive a ListOption if a ListOption for the value can be found.
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ * @see de.spreclib.api.lists.options.PostCentrifugationOption
+ */
 public final class PostCentrifugationListProvider {
 
   private static final ArrayList<PostCentrifugationOption> POST_CENTRIFUGATION_OPTIONS;
@@ -23,8 +32,18 @@ public final class PostCentrifugationListProvider {
 
   public static ArrayList<PostCentrifugationOption> getList() {
     return POST_CENTRIFUGATION_OPTIONS;
-    }
+  }
 
+  /**
+   * Takes all parameters for PostCentrifugation and returns an option if a PostCentrifugation with
+   * that combination is found. Returns null otherwise.
+   *
+   * @param postCentrifugationTemperatureOption PostCentrifugationTemperatureOption
+   * @param postCentrifugationDelayOption PostCentrifugationDelayOption
+   * @return PostCentrifugationOption
+   * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
+   * @throws IllegalArgumentException if parameter is null
+   */
   public static PostCentrifugationOption valueOf(
       PostCentrifugationTemperatureOption postCentrifugationTemperatureOption,
       PostCentrifugationDelayOption postCentrifugationDelayOption) {

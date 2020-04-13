@@ -4,6 +4,13 @@ import de.spreclib.api.lists.options.PrimaryContainerOption;
 import de.spreclib.model.enums.PrimaryContainer;
 import java.util.ArrayList;
 
+/**
+ * ListProvider for PrimaryContainerOptions.
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ * @see de.spreclib.api.lists.options.PrimaryContainerOption
+ */
 public final class PrimaryContainerListProvider {
 
   private static final ArrayList<PrimaryContainerOption> PRIMARY_CONTAINER_OPTIONS;

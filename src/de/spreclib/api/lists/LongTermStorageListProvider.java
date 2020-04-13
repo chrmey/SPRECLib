@@ -8,6 +8,13 @@ import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
 import de.spreclib.model.spreclib.longtermstorage.LongTermStorageList;
 import java.util.ArrayList;
 
+/**
+ * ListProvider for LongTermStorageOptions.
+ *
+ * <p>Use the valueOf() method to receive a ListOption if a ListOption for the value can be found.
+ *
+ * @author Christopher Meyer
+ */
 public final class LongTermStorageListProvider {
 
   private static final ArrayList<LongTermStorageOption> LONG_TERM_STORAGE_OPTIONS;
@@ -24,6 +31,16 @@ public final class LongTermStorageListProvider {
     return LONG_TERM_STORAGE_OPTIONS;
   }
 
+  /**
+   * Takes all parameters for LongTermStorage and returns an option if a LongTermStorage with that
+   * combination is found. Returns null otherwise.
+   *
+   * @param longTermStorageTemperatureOption LongTermStorageTemperatureOption
+   * @param longTermStorageContainerOption LongTermStorageContainerOption
+   * @return LongTermStorageOption
+   * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
+   * @throws IllegalArgumentException if parameter is null
+   */
   public static LongTermStorageOption valueOf(
       LongTermStorageTemperatureOption longTermStorageTemperatureOption,
       LongTermStorageContainerOption longTermStorageContainerOption) {

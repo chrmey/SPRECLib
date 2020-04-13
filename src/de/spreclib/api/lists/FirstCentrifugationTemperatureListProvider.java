@@ -7,6 +7,15 @@ import java.util.ArrayList;
 
 public final class FirstCentrifugationTemperatureListProvider {
 
+  /**
+   * ListProvider for FirstCentrifugationTemperatureOptions.
+   *
+   * <p>Use the valueOf() method to receive a ListOption if a ListOption for the value can be found.
+   *
+   * @author Christopher Meyer
+   * @version 1.0
+   * @see de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption
+   */
   private static final ArrayList<FirstCentrifugationTemperatureOption>
       FIRST_CENTRIFGUATION_TEMPERATURE_OPTIONS;
 
@@ -24,6 +33,13 @@ public final class FirstCentrifugationTemperatureListProvider {
     return FIRST_CENTRIFGUATION_TEMPERATURE_OPTIONS;
   }
 
+  /**
+   * Takes a temperature object and returns a FirstCentrifugationTemperatureOption if a
+   * FirstCentrifugationTemperatureOption for the Celsius value in the temperature object is found.
+   *
+   * @param temperature Temperature object
+   * @return FirstCentrifugationTemperatureOption
+   */
   public static FirstCentrifugationTemperatureOption valueOf(Temperature temperature) {
 
     if (temperature == null) {

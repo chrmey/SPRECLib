@@ -5,6 +5,15 @@ import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import java.util.ArrayList;
 
+/**
+ * ListProvider for PreCentrifugationTemperatureOptions.
+ *
+ * <p>Use the valueOf() method to receive a ListOption if a ListOption for the value can be found.
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ * @see de.spreclib.api.lists.options.PreCentrifugationTemperatureOption
+ */
 public final class PreCentrifugationTemperatureListProvider {
 
   private static final ArrayList<PreCentrifugationTemperatureOption>
@@ -22,6 +31,13 @@ public final class PreCentrifugationTemperatureListProvider {
     return PRE_CENTRIFUGATION_TEMPERATURE_OPTIONS;
   }
 
+  /**
+   * Takes a temperature object and returns a PreCentrifugationTemperatureOption if a
+   * PreCentrifugationTemperatureOption for the Celsius value in the temperature object is found.
+   *
+   * @param temperature Temperature object
+   * @return PreCentrifugationTemperatureOption
+   */
   public static PreCentrifugationTemperatureOption valueOf(Temperature temperature) {
 
     if (temperature == null) {
