@@ -12,7 +12,6 @@ import de.spreclib.model.sprec.CodePart;
 import de.spreclib.model.spreclib.precentrifugation.NormalPreCentrifugation;
 import org.junit.Before;
 import org.junit.Test;
-import nl.jqno.equalsverifier.EqualsVerifier;
 
 
 public class NormalPreCentrifugationTest {
@@ -48,10 +47,5 @@ public class NormalPreCentrifugationTest {
     SprecPartType expected = SprecPartType.PRE_CENTRIFUGATION;
     SprecPartType actual = normalPreCentrifugation.getSprecPartType();
     assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testEquals() {
-    EqualsVerifier.forClass(NormalPreCentrifugation.class).withRedefinedSuperclass().verify();
   }
 }
