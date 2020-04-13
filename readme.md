@@ -34,20 +34,47 @@ To get a list of FluidSampleTypeOptions:
 ArrayList<FluidSampleTypeOption> fluidSampleTypeOptions = FluidSampleTypeListProvider.getList();
 ```
 
-To get the english name of a ListOption, e.g. to use it in a GUI, call ```.getStringRepresentation();``` on the ```stOption```
+To get the english name of a ListOption, e.g. to use it in a GUI, call ```.getStringRepresentation();``` on the ```ListOption```
 
 ```
 String nameInEnglish = fluidSampleTypeOption.getStringRepresentation();
 ```
 
+### Getting the SPREC Code of a Sample
 
-### And coding style tests
+After you obtained the ListOptios for the sample, use either ```FluidSampleSprec``` or ```SolidSampleSprec``` to get the SPREC Code. These classes provide a FluentInterface to build the Samples.
 
-Explain what these tests test and why
+Example for FluidSample:
 
 ```
-Give an example
+FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
+FluidSprecCode fluidSprecCode = fluidSampleSprec
+   .withFluidSampleType(FluidSampleTypeOption)
+   .withPrimaryContainer(PrimaryContainerOption)
+   .withPreCentrifugation(PreCentrifugationOption)
+   .withFirstCentrifugation(FirstCentrifugationOption)
+   .withSecondCentrifugation(FirstSecondOption)
+   .withPreCentrifugation(PostCentrifugationOption)
+   .withLongTermStorage(LongTermStorageOption)
+   .getSprecCode();
 ```
+You can pass null values as Option, this will lead to the code for that part to be replaced by "?" if you print the full code for that sample.
+
+This will return a FluidSprecCode object. To get the full SPREC Code use:
+```
+String sprecCode = fluidSprecCode.getStringRepresentation();
+```
+
+To only get the code for one parameter:
+```
+ICodePart fluidSampleTypeCode = sprecCode.getFluidSampleTypeCode();
+String fluidSampleTypeCodeString = fluidSampleTypeCode.getStringRepresentation();
+```
+
+
+## CodeStyle
+Uses Google Java Styleguide
+
 
 ## Built With
 
