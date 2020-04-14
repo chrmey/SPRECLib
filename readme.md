@@ -1,9 +1,9 @@
-# SPRECLIB
+# SPRECLib
 
 A Java library for the SamplePREAnalyticalCode from the [ISBER](https://www.isber.org/page/SPREC?&hhsearchterms=%22sprec%22)
 
 
-## Getting Started
+## Getting SPRECLib
 
 Download the latest release jar and include it to your build. 
 
