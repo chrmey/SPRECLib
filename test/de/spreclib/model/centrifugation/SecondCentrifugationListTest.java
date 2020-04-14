@@ -2,17 +2,17 @@ package de.spreclib.model.centrifugation;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import de.spreclib.model.centrifugation.Centrifugation;
+import de.spreclib.model.centrifugation.NormalCentrifugation;
+import de.spreclib.model.centrifugation.SecondCentrifugationList;
+import de.spreclib.model.centrifugation.SpecialCentrifugation;
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
-import de.spreclib.model.enums.centrifugation.CentrifugationDuration;
-import de.spreclib.model.enums.centrifugation.CentrifugationSpeed;
-import de.spreclib.model.enums.centrifugation.CentrifugationTemperature;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
-import de.spreclib.model.spreclib.CodePart;
-import de.spreclib.model.spreclib.centrifugation.Centrifugation;
-import de.spreclib.model.spreclib.centrifugation.NormalCentrifugation;
-import de.spreclib.model.spreclib.centrifugation.SecondCentrifugationList;
-import de.spreclib.model.spreclib.centrifugation.SpecialCentrifugation;
+import de.spreclib.model.enums.centrifugation.SecondCentrifugationDuration;
+import de.spreclib.model.enums.centrifugation.SecondCentrifugationSpeed;
+import de.spreclib.model.enums.centrifugation.SecondCentrifugationTemperature;
+import de.spreclib.model.sprec.CodePart;
 import java.util.HashSet;
 import java.util.Set;
 import org.junit.Before;
@@ -37,91 +37,81 @@ public class SecondCentrifugationListTest {
             CentrifugationType.OTHER, new CodePart("Z"), SprecPartType.SECOND_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
-            CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-            CentrifugationSpeed.LESS_THREETHOUSAND_G,
-            CentrifugationTemperature.ROOM_TEMPERATURE,
+            SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
+            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("A"),
             SprecPartType.SECOND_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
-            CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-            CentrifugationSpeed.LESS_THREETHOUSAND_G,
-            CentrifugationTemperature.ROOM_TEMPERATURE,
-            CentrifugationBraking.NO_BRAKING,
+            SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
+            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
+            CentrifugationBraking.WITH_BRAKING,
             new CodePart("B"),
             SprecPartType.SECOND_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
-            CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-            CentrifugationSpeed.LESS_THREETHOUSAND_G,
-            CentrifugationTemperature.TWO_TO_TEN_DEGREES,
+            SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
+            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("C"),
             SprecPartType.SECOND_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
-            CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-            CentrifugationSpeed.LESS_THREETHOUSAND_G,
-            CentrifugationTemperature.TWO_TO_TEN_DEGREES,
+            SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
+            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("D"),
             SprecPartType.SECOND_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
-            CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-            CentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
-            CentrifugationTemperature.ROOM_TEMPERATURE,
+            SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            SecondCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
+            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("E"),
             SprecPartType.SECOND_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
-            CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-            CentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
-            CentrifugationTemperature.TWO_TO_TEN_DEGREES,
+            SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            SecondCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
+            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("F"),
             SprecPartType.SECOND_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
-            CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-            CentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
-            CentrifugationTemperature.ROOM_TEMPERATURE,
+            SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            SecondCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
+            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("G"),
             SprecPartType.SECOND_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
-            CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-            CentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
-            CentrifugationTemperature.TWO_TO_TEN_DEGREES,
+            SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            SecondCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
+            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("F"),
             SprecPartType.SECOND_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
-            CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-            CentrifugationSpeed.GREATER_TENTHOUSAND_G,
-            CentrifugationTemperature.ROOM_TEMPERATURE,
+            SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            SecondCentrifugationSpeed.GREATER_TENTHOUSAND_G,
+            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("I"),
             SprecPartType.SECOND_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
-            CentrifugationType.DEFAULT,
-            CentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-            CentrifugationSpeed.GREATER_TENTHOUSAND_G,
-            CentrifugationTemperature.TWO_TO_TEN_DEGREES,
+            SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            SecondCentrifugationSpeed.GREATER_TENTHOUSAND_G,
+            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("J"),
             SprecPartType.SECOND_CENTRIFUGATION));

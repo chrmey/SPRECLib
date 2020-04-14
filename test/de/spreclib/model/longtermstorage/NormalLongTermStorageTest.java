@@ -7,8 +7,8 @@ import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.spreclib.CodePart;
-import de.spreclib.model.spreclib.longtermstorage.NormalLongTermStorage;
+import de.spreclib.model.longtermstorage.NormalLongTermStorage;
+import de.spreclib.model.sprec.CodePart;
 import org.junit.Before;
 import org.junit.Test;
 

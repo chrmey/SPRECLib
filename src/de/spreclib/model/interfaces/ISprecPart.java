@@ -7,4 +7,5 @@ public interface ISprecPart {
   ICodePart getCodeFromSprecPart();
 
   SprecPartType getSprecPartType();
+  
 }

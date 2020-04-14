@@ -1,10 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
-import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.sprec.CodePart;
 
-public enum FluidSampleType implements ISprecPart {
+public enum FluidSampleType implements ISprecPart, IListObject {
   ASCITIES_FLUID(new CodePart("ASC")),
   AMNIOTIC_FLUID(new CodePart("AMN")),
   BRONCHOALVEOLAR_LAVAGE(new CodePart("BAL")),
@@ -40,9 +41,10 @@ public enum FluidSampleType implements ISprecPart {
   URINE_TIMED(new CodePart("URT")),
   OTHER(new CodePart("ZZZ"));
 
-  private ICodePart codePart;
+  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.FLUID_SAMPLE_TYPE;
+  private final ICodePart codePart;
 
-  FluidSampleType(CodePart code) {
+  private FluidSampleType(CodePart code) {
     this.codePart = code;
   }
 
@@ -53,6 +55,20 @@ public enum FluidSampleType implements ISprecPart {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return SprecPartType.FLUID_SAMPLE_TYPE;
+    return FluidSampleType.SPREC_PART_TYPE;
+  }
+
+  public static boolean contains(FluidSampleType fluidSampleType) {
+
+    if (fluidSampleType == null) {
+      return false;
+    }
+
+    for (FluidSampleType listEntry : FluidSampleType.values()) {
+      if (fluidSampleType.equals(listEntry)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

@@ -1,10 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
-import de.spreclib.model.spreclib.CodePart;
+import de.spreclib.model.sprec.CodePart;
 
-public enum TypeOfCollection implements ISprecPart {
+public enum TypeOfCollection implements ISprecPart, IListObject {
   AUTOPSY_LESS_THAN_6_HOURS_POSTMORTEM(new CodePart("A06")),
   AUTOPSY_6_TO_12_HOURS_POSTMORTEM(new CodePart("A12")),
   AUTOPSY_12_TO_24_HOURS_POSTMORTEM(new CodePart("A24")),
@@ -25,9 +26,10 @@ public enum TypeOfCollection implements ISprecPart {
   OTHER(new CodePart("ZZZ")),
   ;
 
+  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.TYPE_OF_COLLECTION;
   private ICodePart codePart;
 
-  TypeOfCollection(ICodePart code) {
+  private TypeOfCollection(ICodePart code) {
     this.codePart = code;
   }
 
@@ -38,6 +40,20 @@ public enum TypeOfCollection implements ISprecPart {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return SprecPartType.TYPE_OF_COLLECTION;
+    return TypeOfCollection.SPREC_PART_TYPE;
+  }
+
+  public static boolean contains(TypeOfCollection typeOfCollection) {
+
+    if (typeOfCollection == null) {
+      return false;
+    }
+
+    for (TypeOfCollection listEntry : TypeOfCollection.values()) {
+      if (typeOfCollection.equals(listEntry)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

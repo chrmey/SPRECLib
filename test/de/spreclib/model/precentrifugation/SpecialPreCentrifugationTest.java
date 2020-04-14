@@ -5,8 +5,8 @@ import static org.junit.Assert.assertNotNull;
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.spreclib.CodePart;
-import de.spreclib.model.spreclib.precentrifugation.SpecialPreCentrifugation;
+import de.spreclib.model.precentrifugation.SpecialPreCentrifugation;
+import de.spreclib.model.sprec.CodePart;
 import org.junit.Before;
 import org.junit.Test;
 

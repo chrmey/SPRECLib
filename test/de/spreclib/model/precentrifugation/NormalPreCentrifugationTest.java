@@ -8,9 +8,8 @@ import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.spreclib.CodePart;
-import de.spreclib.model.spreclib.precentrifugation.NormalPreCentrifugation;
-import nl.jqno.equalsverifier.EqualsVerifier;
+import de.spreclib.model.precentrifugation.NormalPreCentrifugation;
+import de.spreclib.model.sprec.CodePart;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,7 +22,6 @@ public class NormalPreCentrifugationTest {
   public void setUp() {
     normalPreCentrifugation =
         new NormalPreCentrifugation(
-            PreCentrifugationType.DEFAULT,
             PreCentrifugationDelay.LESS_TWO_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("A"));
@@ -49,24 +47,5 @@ public class NormalPreCentrifugationTest {
     SprecPartType expected = SprecPartType.PRE_CENTRIFUGATION;
     SprecPartType actual = normalPreCentrifugation.getSprecPartType();
     assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testGetPreCentrifugationDelay() {
-    PreCentrifugationDelay expected = PreCentrifugationDelay.LESS_TWO_HOURS;
-    PreCentrifugationDelay actual = normalPreCentrifugation.getPreCentrifugationDelay();
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testGetPreCentrifugationTemperature() {
-    PreCentrifugationTemperature expected = PreCentrifugationTemperature.ROOM_TEMPERATURE;
-    PreCentrifugationTemperature actual = normalPreCentrifugation.getPreCentrifugationTemperature();
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testEquals() {
-    EqualsVerifier.forClass(NormalPreCentrifugation.class).withRedefinedSuperclass().verify();
   }
 }
