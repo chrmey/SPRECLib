@@ -22,16 +22,17 @@ Java8
 
 ### Getting SPREC Values as Lists
 
-To obtain lists of the SPREC values for each Parameter you can call the static ListProviders. There is a ListProvider for every Part of SPREC and also for each part of a part if the part is made up of multiple values. The contents of the ListProviders are called ListOptions, with a prefix depending on the ListProvider that they come from.
+To obtain lists of the SPREC values for each Parameter you need to instantiate the ListProvider for that Parameter. There is a ListProvider for every Part of SPREC and also for each part of a part if the part is made up of multiple values. The contents of the ListProviders are called ListOptions, with a prefix depending on the ListProvider that they come from.
 
 ```
-FluidSampleTypeProvider provides an ArrayList of FluidSampleTypeOptions
+FluidSampleTypeProvider provides a List of FluidSampleTypeOptions ...
 ```
 
 To get a list of FluidSampleTypeOptions:
 
 ```
-ArrayList<FluidSampleTypeOption> fluidSampleTypeOptions = FluidSampleTypeListProvider.getList();
+FluidSampleTypeListProvider fluidSampleTypeListProvider = new FluidSampleTypeListProvider();
+ArrayList<FluidSampleTypeOption> fluidSampleTypeOptions = fluidSampleTypeListProvider.getList();
 ```
 
 To get the english name of a ListOption, e.g. to use it in a GUI, call ```.getStringRepresentation();``` on the ```ListOption```
