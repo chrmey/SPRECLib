@@ -5,13 +5,9 @@ A Java library for the SamplePREAnalyticalCode from the [ISBER](https://www.isbe
 
 ## Getting Started
 
-Use maven to include the library into your project.
+Download the latest release jar and include it to your build. 
 
-```
-Maven dependency
-```
-
-Alternatively just download the .jar and add it to your build. 
+(Using Maven Central is planned)
 
 ### Prerequisites
 
