@@ -19,7 +19,6 @@ public final class WarmIschemiaTimeListProvider {
 
   private final List<WarmIschemiaTimeOption> warmIschemiaTimeOptions;
 
-  // comment to test the CI
   public WarmIschemiaTimeListProvider() {
     this.warmIschemiaTimeOptions = generateList();
   }
