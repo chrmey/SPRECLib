@@ -3,8 +3,8 @@ package de.spreclib.api.lists.options;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
-import de.spreclib.model.spreclib.longtermstorage.NormalLongTermStorage;
+import de.spreclib.model.longtermstorage.LongTermStorage;
+import de.spreclib.model.longtermstorage.NormalLongTermStorage;
 
 /**
  * LongTermStorageOption

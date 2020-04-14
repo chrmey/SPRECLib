@@ -7,13 +7,13 @@ import static org.junit.Assert.assertNull;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class FirstCentrifugationTemperatureListProviderTest {
 
-  private ArrayList<FirstCentrifugationTemperatureOption> firstCentrifugationTemperatureList;
+  private List<FirstCentrifugationTemperatureOption> firstCentrifugationTemperatureList;
 
   @Before
   public void setUp() {
@@ -35,7 +35,9 @@ public class FirstCentrifugationTemperatureListProviderTest {
   @Test
   public void testValueOfWithValidValue() {
 
-    Temperature temperature = new Temperature(20f);
+    Temperature temperature = new Temperature(1.9999999999999999f);
+
+    // 19.9999999999999999
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
         FirstCentrifugationTemperatureListProvider.valueOf(temperature);

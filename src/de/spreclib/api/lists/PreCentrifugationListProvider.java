@@ -4,8 +4,8 @@ import de.spreclib.api.exceptions.InvalidParameterCombinationException;
 import de.spreclib.api.lists.options.PreCentrifugationDelayOption;
 import de.spreclib.api.lists.options.PreCentrifugationOption;
 import de.spreclib.api.lists.options.PreCentrifugationTemperatureOption;
-import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
-import de.spreclib.model.spreclib.precentrifugation.PreCentrifugationList;
+import de.spreclib.model.precentrifugation.PreCentrifugation;
+import de.spreclib.model.precentrifugation.PreCentrifugationList;
 import java.util.ArrayList;
 
 /**

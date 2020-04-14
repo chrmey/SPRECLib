@@ -1,7 +1,7 @@
 package de.spreclib.model.enums.centrifugation;
 
+import de.spreclib.model.centrifugation.ICentrifugationSpeed;
 import de.spreclib.model.interfaces.IListObject;
-import de.spreclib.model.spreclib.centrifugation.ICentrifugationSpeed;
 
 public enum FirstCentrifugationSpeed implements ICentrifugationSpeed, IListObject {
   LESS_THREETHOUSAND_G(0, 3000),

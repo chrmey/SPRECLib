@@ -3,8 +3,8 @@ package de.spreclib.api.lists.options;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
-import de.spreclib.model.spreclib.precentrifugation.NormalPreCentrifugation;
-import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
+import de.spreclib.model.precentrifugation.NormalPreCentrifugation;
+import de.spreclib.model.precentrifugation.PreCentrifugation;
 
 /**
  * PreCentrifugationOption

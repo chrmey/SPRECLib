@@ -13,10 +13,10 @@ import de.spreclib.model.enums.FixationTime;
 import de.spreclib.model.enums.SolidSampleType;
 import de.spreclib.model.enums.TypeOfCollection;
 import de.spreclib.model.enums.WarmIschemiaTime;
+import de.spreclib.model.longtermstorage.LongTermStorage;
+import de.spreclib.model.longtermstorage.LongTermStorageList;
 import de.spreclib.model.sprec.SolidSample;
 import de.spreclib.model.sprec.SolidSprecCode;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorageList;
 
 /**
  * FluentInterface to get the SPREC Code of a solid Sample. The ListOptions for the different parts

@@ -1,4 +1,4 @@
-package de.spreclib.model.spreclib.precentrifugation;
+package de.spreclib.model.precentrifugation;
 
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
@@ -19,7 +19,7 @@ public final class NormalPreCentrifugation extends PreCentrifugation {
    * @param preCentrifugationTemperature enum PreCentrifugationTemperature
    * @param codePart Object CodePart
    */
-  public NormalPreCentrifugation(
+  NormalPreCentrifugation(
       PreCentrifugationDelay preCentrifugationDelay,
       PreCentrifugationTemperature preCentrifugationTemperature,
       ICodePart codePart) {

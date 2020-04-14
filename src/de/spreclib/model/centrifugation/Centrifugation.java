@@ -1,4 +1,4 @@
-package de.spreclib.model.spreclib.centrifugation;
+package de.spreclib.model.centrifugation;
 
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
@@ -19,7 +19,7 @@ public abstract class Centrifugation implements ISprecPart, IListObject {
    * @param codePart CodePart Object
    * @param sprecPartType enum SprecPartType
    */
-  public Centrifugation(
+  Centrifugation(
       CentrifugationType centrifugationType, ICodePart codePart, SprecPartType sprecPartType) {
     this.centrifugationType = centrifugationType;
     this.codePart = codePart;

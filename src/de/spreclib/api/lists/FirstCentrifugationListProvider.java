@@ -6,8 +6,8 @@ import de.spreclib.api.lists.options.FirstCentrifugationDurationOption;
 import de.spreclib.api.lists.options.FirstCentrifugationOption;
 import de.spreclib.api.lists.options.FirstCentrifugationSpeedOption;
 import de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption;
-import de.spreclib.model.spreclib.centrifugation.Centrifugation;
-import de.spreclib.model.spreclib.centrifugation.FirstCentrifugationList;
+import de.spreclib.model.centrifugation.Centrifugation;
+import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import java.util.ArrayList;
 
 /**

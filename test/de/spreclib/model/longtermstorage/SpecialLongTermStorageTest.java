@@ -5,8 +5,8 @@ import static org.junit.Assert.assertNotNull;
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.longtermstorage.SpecialLongTermStorage;
 import de.spreclib.model.sprec.CodePart;
-import de.spreclib.model.spreclib.longtermstorage.SpecialLongTermStorage;
 import org.junit.Before;
 import org.junit.Test;
 

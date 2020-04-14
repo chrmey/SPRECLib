@@ -1,4 +1,4 @@
-package de.spreclib.model.spreclib.longtermstorage;
+package de.spreclib.model.longtermstorage;
 
 import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;

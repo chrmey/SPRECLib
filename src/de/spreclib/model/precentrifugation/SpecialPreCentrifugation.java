@@ -1,11 +1,11 @@
-package de.spreclib.model.spreclib.precentrifugation;
+package de.spreclib.model.precentrifugation;
 
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 
 public final class SpecialPreCentrifugation extends PreCentrifugation {
 
-  public SpecialPreCentrifugation(PreCentrifugationType preCentrifugationType, ICodePart codePart) {
+  SpecialPreCentrifugation(PreCentrifugationType preCentrifugationType, ICodePart codePart) {
     super(preCentrifugationType, codePart);
   }
 

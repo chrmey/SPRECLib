@@ -1,12 +1,12 @@
 package de.spreclib.api.lists.options;
 
+import de.spreclib.model.centrifugation.Centrifugation;
+import de.spreclib.model.centrifugation.NormalCentrifugation;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationDuration;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationSpeed;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationTemperature;
-import de.spreclib.model.spreclib.centrifugation.Centrifugation;
-import de.spreclib.model.spreclib.centrifugation.NormalCentrifugation;
 
 /**
  * SecondCentrifugationOption

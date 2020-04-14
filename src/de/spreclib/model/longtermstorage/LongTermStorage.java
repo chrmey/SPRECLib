@@ -1,25 +1,25 @@
-package de.spreclib.model.spreclib.postcentrifugation;
+package de.spreclib.model.longtermstorage;
 
 import de.spreclib.model.enums.SprecPartType;
-import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
+import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListObject;
 import de.spreclib.model.interfaces.ISprecPart;
 
-public abstract class PostCentrifugation implements ISprecPart, IListObject {
+public abstract class LongTermStorage implements ISprecPart, IListObject {
 
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.POST_CENTRIFUGATION;
-  private final PostCentrifugationType postCentrifugationType;
+  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.LONG_TERM_STORAGE;
+  private final LongTermStorageType longTermStorageType;
   private final ICodePart codePart;
 
-  public PostCentrifugation(PostCentrifugationType postCentrifugationType, ICodePart codePart) {
-    this.postCentrifugationType = postCentrifugationType;
+  LongTermStorage(LongTermStorageType longTermStorageType, ICodePart codePart) {
+    this.longTermStorageType = longTermStorageType;
     this.codePart = codePart;
   }
 
-  public abstract boolean isNormalPostCentrifugation();
+  public abstract boolean isNormalLongTermStorage();
 
-  public abstract boolean isSpecialPostCentrifugation();
+  public abstract boolean isSpecialLongTermStorage();
 
   @Override
   public ICodePart getCodeFromSprecPart() {
@@ -28,11 +28,11 @@ public abstract class PostCentrifugation implements ISprecPart, IListObject {
 
   @Override
   public SprecPartType getSprecPartType() {
-    return PostCentrifugation.SPREC_PART_TYPE;
+    return LongTermStorage.SPREC_PART_TYPE;
   }
 
-  public PostCentrifugationType getPostCentrifugationType() {
-    return this.postCentrifugationType;
+  public LongTermStorageType getLongTermStorageType() {
+    return this.longTermStorageType;
   }
 
   @Override
@@ -40,8 +40,7 @@ public abstract class PostCentrifugation implements ISprecPart, IListObject {
     final int prime = 31;
     int result = 1;
     result = prime * result + ((codePart == null) ? 0 : codePart.hashCode());
-    result =
-        prime * result + ((postCentrifugationType == null) ? 0 : postCentrifugationType.hashCode());
+    result = prime * result + ((longTermStorageType == null) ? 0 : longTermStorageType.hashCode());
     result = prime * result + ((SPREC_PART_TYPE == null) ? 0 : SPREC_PART_TYPE.hashCode());
     return result;
   }
@@ -57,7 +56,7 @@ public abstract class PostCentrifugation implements ISprecPart, IListObject {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    PostCentrifugation other = (PostCentrifugation) obj;
+    LongTermStorage other = (LongTermStorage) obj;
     if (codePart == null) {
       if (other.codePart != null) {
         return false;
@@ -65,7 +64,7 @@ public abstract class PostCentrifugation implements ISprecPart, IListObject {
     } else if (!codePart.equals(other.codePart)) {
       return false;
     }
-    if (postCentrifugationType != other.postCentrifugationType) {
+    if (longTermStorageType != other.longTermStorageType) {
       return false;
     }
     return true;

@@ -1,4 +1,4 @@
-package de.spreclib.model.spreclib.precentrifugation;
+package de.spreclib.model.precentrifugation;
 
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
@@ -12,7 +12,7 @@ public abstract class PreCentrifugation implements ISprecPart, IListObject {
   private final PreCentrifugationType preCentrifugationType;
   private final ICodePart codePart;
 
-  public PreCentrifugation(PreCentrifugationType preCentrifugationType, ICodePart codePart) {
+  PreCentrifugation(PreCentrifugationType preCentrifugationType, ICodePart codePart) {
     this.preCentrifugationType = preCentrifugationType;
     this.codePart = codePart;
   }

@@ -1,4 +1,4 @@
-package de.spreclib.model.spreclib.centrifugation;
+package de.spreclib.model.centrifugation;
 
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
@@ -24,7 +24,7 @@ public final class NormalCentrifugation extends Centrifugation {
    * @param sprecPartType enum SprecPartType -> needed for differention between first and second
    *     centrifugation
    */
-  public NormalCentrifugation(
+  NormalCentrifugation(
       ICentrifugationDuration centrifugationDuration,
       ICentrifugationSpeed centrifugationSpeed,
       ICentrifugationTemperature centrifugationTemperature,

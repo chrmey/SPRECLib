@@ -1,4 +1,4 @@
-package de.spreclib.model.spreclib.postcentrifugation;
+package de.spreclib.model.postcentrifugation;
 
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;

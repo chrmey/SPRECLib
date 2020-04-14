@@ -7,19 +7,19 @@ import de.spreclib.api.lists.options.PostCentrifugationOption;
 import de.spreclib.api.lists.options.PreCentrifugationOption;
 import de.spreclib.api.lists.options.PrimaryContainerOption;
 import de.spreclib.api.lists.options.SecondCentrifugationOption;
+import de.spreclib.model.centrifugation.Centrifugation;
+import de.spreclib.model.centrifugation.FirstCentrifugationList;
+import de.spreclib.model.centrifugation.SecondCentrifugationList;
 import de.spreclib.model.enums.FluidSampleType;
 import de.spreclib.model.enums.PrimaryContainer;
+import de.spreclib.model.longtermstorage.LongTermStorage;
+import de.spreclib.model.longtermstorage.LongTermStorageList;
+import de.spreclib.model.postcentrifugation.PostCentrifugation;
+import de.spreclib.model.postcentrifugation.PostCentrifugationList;
+import de.spreclib.model.precentrifugation.PreCentrifugation;
+import de.spreclib.model.precentrifugation.PreCentrifugationList;
 import de.spreclib.model.sprec.FluidSample;
 import de.spreclib.model.sprec.FluidSprecCode;
-import de.spreclib.model.spreclib.centrifugation.Centrifugation;
-import de.spreclib.model.spreclib.centrifugation.FirstCentrifugationList;
-import de.spreclib.model.spreclib.centrifugation.SecondCentrifugationList;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorageList;
-import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugation;
-import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugationList;
-import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
-import de.spreclib.model.spreclib.precentrifugation.PreCentrifugationList;
 
 /**
  * FluentInterface to get the SPREC Code of a fluid Sample. The ListOptions for the different parts

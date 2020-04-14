@@ -1,4 +1,4 @@
-package de.spreclib.model.spreclib.centrifugation;
+package de.spreclib.model.centrifugation;
 
 import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;

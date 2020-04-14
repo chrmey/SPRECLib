@@ -8,8 +8,8 @@ import de.spreclib.model.enums.SolidSampleType;
 import de.spreclib.model.enums.TypeOfCollection;
 import de.spreclib.model.enums.WarmIschemiaTime;
 import de.spreclib.model.exceptions.InvalidPartValueException;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorageList;
+import de.spreclib.model.longtermstorage.LongTermStorage;
+import de.spreclib.model.longtermstorage.LongTermStorageList;
 
 public class SolidSample {
 

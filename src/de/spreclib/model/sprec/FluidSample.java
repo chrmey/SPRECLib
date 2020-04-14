@@ -1,21 +1,21 @@
 package de.spreclib.model.sprec;
 
 import de.spreclib.api.sprec.FluidSampleSprec;
+import de.spreclib.model.centrifugation.Centrifugation;
+import de.spreclib.model.centrifugation.FirstCentrifugationList;
+import de.spreclib.model.centrifugation.SecondCentrifugationList;
 import de.spreclib.model.enums.FluidSampleType;
 import de.spreclib.model.enums.PrimaryContainer;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.model.exceptions.InvalidPartRelationException;
 import de.spreclib.model.exceptions.InvalidPartValueException;
-import de.spreclib.model.spreclib.centrifugation.Centrifugation;
-import de.spreclib.model.spreclib.centrifugation.FirstCentrifugationList;
-import de.spreclib.model.spreclib.centrifugation.SecondCentrifugationList;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorageList;
-import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugation;
-import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugationList;
-import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
-import de.spreclib.model.spreclib.precentrifugation.PreCentrifugationList;
+import de.spreclib.model.longtermstorage.LongTermStorage;
+import de.spreclib.model.longtermstorage.LongTermStorageList;
+import de.spreclib.model.postcentrifugation.PostCentrifugation;
+import de.spreclib.model.postcentrifugation.PostCentrifugationList;
+import de.spreclib.model.precentrifugation.PreCentrifugation;
+import de.spreclib.model.precentrifugation.PreCentrifugationList;
 
 public final class FluidSample {
 

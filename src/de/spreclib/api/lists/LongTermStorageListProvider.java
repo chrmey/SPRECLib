@@ -4,8 +4,8 @@ import de.spreclib.api.exceptions.InvalidParameterCombinationException;
 import de.spreclib.api.lists.options.LongTermStorageContainerOption;
 import de.spreclib.api.lists.options.LongTermStorageOption;
 import de.spreclib.api.lists.options.LongTermStorageTemperatureOption;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorageList;
+import de.spreclib.model.longtermstorage.LongTermStorage;
+import de.spreclib.model.longtermstorage.LongTermStorageList;
 import java.util.ArrayList;
 
 /**

@@ -8,7 +8,7 @@ import de.spreclib.model.enums.SolidSampleType;
 import de.spreclib.model.enums.TypeOfCollection;
 import de.spreclib.model.enums.WarmIschemiaTime;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
+import de.spreclib.model.longtermstorage.LongTermStorage;
 
 public final class SolidSprecCode implements ISprecCode {
 

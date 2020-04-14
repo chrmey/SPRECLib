@@ -8,8 +8,8 @@ import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.precentrifugation.NormalPreCentrifugation;
 import de.spreclib.model.sprec.CodePart;
-import de.spreclib.model.spreclib.precentrifugation.NormalPreCentrifugation;
 import org.junit.Before;
 import org.junit.Test;
 

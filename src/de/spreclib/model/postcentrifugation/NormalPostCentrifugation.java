@@ -1,4 +1,4 @@
-package de.spreclib.model.spreclib.postcentrifugation;
+package de.spreclib.model.postcentrifugation;
 
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
@@ -18,7 +18,7 @@ public final class NormalPostCentrifugation extends PostCentrifugation {
    * @param postCentrifugationTemperature enum PostCentrifugationTemperature
    * @param codePart object CodePart
    */
-  public NormalPostCentrifugation(
+  NormalPostCentrifugation(
       PostCentrifugationType postCentrifugationType,
       PostCentrifugationDelay postCentrifugationDelay,
       PostCentrifugationTemperature postCentrifugationTemperature,

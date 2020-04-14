@@ -1,13 +1,13 @@
 package de.spreclib.model.sprec;
 
 import de.spreclib.api.sprec.interfaces.ISprecCode;
+import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.enums.FluidSampleType;
 import de.spreclib.model.enums.PrimaryContainer;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.spreclib.centrifugation.Centrifugation;
-import de.spreclib.model.spreclib.longtermstorage.LongTermStorage;
-import de.spreclib.model.spreclib.postcentrifugation.PostCentrifugation;
-import de.spreclib.model.spreclib.precentrifugation.PreCentrifugation;
+import de.spreclib.model.longtermstorage.LongTermStorage;
+import de.spreclib.model.postcentrifugation.PostCentrifugation;
+import de.spreclib.model.precentrifugation.PreCentrifugation;
 
 public final class FluidSprecCode implements ISprecCode {
 

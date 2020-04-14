@@ -16,23 +16,9 @@ import de.spreclib.api.lists.options.PostCentrifugationOption;
 import de.spreclib.api.lists.options.PreCentrifugationOption;
 import de.spreclib.api.lists.options.PrimaryContainerOption;
 import de.spreclib.api.lists.options.SecondCentrifugationOption;
-import de.spreclib.model.enums.SprecPartType;
-import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
-import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
-import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
-import de.spreclib.model.enums.centrifugation.FirstCentrifugationTemperature;
-import de.spreclib.model.enums.centrifugation.SecondCentrifugationDuration;
-import de.spreclib.model.enums.centrifugation.SecondCentrifugationSpeed;
-import de.spreclib.model.enums.centrifugation.SecondCentrifugationTemperature;
-import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
-import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
-import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.model.exceptions.InvalidPartRelationException;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.sprec.CodePart;
 import de.spreclib.model.sprec.FluidSprecCode;
-import de.spreclib.model.spreclib.centrifugation.NormalCentrifugation;
-import de.spreclib.model.spreclib.postcentrifugation.NormalPostCentrifugation;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
@@ -245,18 +231,10 @@ public class FluidSampleSprecTest {
   public void testWithPostCentrifugationWithNoFirstOrSecondCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
 
-    PostCentrifugationOption postCentrifugationOption =
-        new PostCentrifugationOption(
-            new NormalPostCentrifugation(
-                PostCentrifugationType.DEFAULT,
-                PostCentrifugationDelay.LESS_ONE_HOUR,
-                PostCentrifugationTemperature.TWO_TO_TEN_DEGREES,
-                new CodePart("A")));
-
     fluidSampleSprec
         .withNoFirstCentrifugation()
         .withNoSecondCentrifugation()
-        .withPostCentrifugation(postCentrifugationOption)
+        .withPostCentrifugation(this.postCentrifugationOption)
         .getSprecCode();
   }
 
@@ -329,26 +307,6 @@ public class FluidSampleSprecTest {
   @Test
   public void testWithAllOptions() {
 
-    FirstCentrifugationOption firstCentrifugationOption =
-        new FirstCentrifugationOption(
-            new NormalCentrifugation(
-                FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-                FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
-                FirstCentrifugationTemperature.ROOM_TEMPERATURE,
-                CentrifugationBraking.NO_BRAKING,
-                new CodePart("A"),
-                SprecPartType.FIRST_CENTRIFUGATION));
-
-    SecondCentrifugationOption secondCentrifugationOption =
-        new SecondCentrifugationOption(
-            new NormalCentrifugation(
-                SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-                SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
-                SecondCentrifugationTemperature.ROOM_TEMPERATURE,
-                CentrifugationBraking.NO_BRAKING,
-                new CodePart("A"),
-                SprecPartType.SECOND_CENTRIFUGATION));
-
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
 
     FluidSprecCode fluidSampleCode =
@@ -356,8 +314,8 @@ public class FluidSampleSprecTest {
             .withFluidSampleType(this.fluidSampleTypeOption)
             .withPrimaryContainer(this.primaryContainerOption)
             .withPreCentrifugation(this.preCentrifugationOption)
-            .withFirstCentrifugation(firstCentrifugationOption)
-            .withSecondCentrifugation(secondCentrifugationOption)
+            .withOtherFirstCentrifugation()
+            .withOtherSecondCentrifugation()
             .withPostCentrifugation(this.postCentrifugationOption)
             .withLongTermStorage(this.longTermStorageOption)
             .getSprecCode();

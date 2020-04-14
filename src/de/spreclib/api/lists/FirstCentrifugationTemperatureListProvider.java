@@ -4,6 +4,7 @@ import de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationTemperature;
 import java.util.ArrayList;
+import java.util.List;
 
 public final class FirstCentrifugationTemperatureListProvider {
 
@@ -16,7 +17,7 @@ public final class FirstCentrifugationTemperatureListProvider {
    * @version 1.0
    * @see de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption
    */
-  private static final ArrayList<FirstCentrifugationTemperatureOption>
+  private static final List<FirstCentrifugationTemperatureOption>
       FIRST_CENTRIFGUATION_TEMPERATURE_OPTIONS;
 
   static {
@@ -29,7 +30,7 @@ public final class FirstCentrifugationTemperatureListProvider {
     }
   }
 
-  public static ArrayList<FirstCentrifugationTemperatureOption> getList() {
+  public static List<FirstCentrifugationTemperatureOption> getList() {
     return FIRST_CENTRIFGUATION_TEMPERATURE_OPTIONS;
   }
 
