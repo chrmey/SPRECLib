@@ -3,29 +3,32 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.SecondCentrifugationSpeedOption;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class SecondCentrifugationSpeedListProviderTest {
 
-  private ArrayList<SecondCentrifugationSpeedOption> list;
+  private SecondCentrifugationSpeedListProvider secondCentrifugationSpeedListProvider;
+  private List<SecondCentrifugationSpeedOption> secondCentrifugationSpeedList;
 
   @Before
   public void setUp() {
-    list = SecondCentrifugationSpeedListProvider.getList();
+    this.secondCentrifugationSpeedListProvider = new SecondCentrifugationSpeedListProvider();
+    this.secondCentrifugationSpeedList = secondCentrifugationSpeedListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(this.secondCentrifugationSpeedList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : this.secondCentrifugationSpeedList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -34,7 +37,7 @@ public class SecondCentrifugationSpeedListProviderTest {
   public void testValueOfWithValidValue() {
 
     SecondCentrifugationSpeedOption speedOption =
-        SecondCentrifugationSpeedListProvider.valueOf(3000);
+        this.secondCentrifugationSpeedListProvider.valueOf(3000);
 
     assertNotNull(speedOption);
   }
@@ -42,7 +45,8 @@ public class SecondCentrifugationSpeedListProviderTest {
   @Test
   public void testValueOfWithInvalidValue() {
 
-    SecondCentrifugationSpeedOption speedOption = SecondCentrifugationSpeedListProvider.valueOf(-1);
+    SecondCentrifugationSpeedOption speedOption =
+        this.secondCentrifugationSpeedListProvider.valueOf(-1);
 
     assertNull(speedOption);
   }

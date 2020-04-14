@@ -4,6 +4,7 @@ import de.spreclib.api.lists.options.PostCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for PostCentrifugationTemperatureOptions.
@@ -16,21 +17,26 @@ import java.util.ArrayList;
  */
 public final class PostCentrifugationTemperatureListProvider {
 
-  private static final ArrayList<PostCentrifugationTemperatureOption>
-      POST_CENTRIFUGATION_TEMPERATURE_OPTIONS;
+  private final List<PostCentrifugationTemperatureOption> postCentrifugationTemperatureOptions;
 
-  static {
-    POST_CENTRIFUGATION_TEMPERATURE_OPTIONS = new ArrayList<>();
+  public PostCentrifugationTemperatureListProvider() {
+    this.postCentrifugationTemperatureOptions = generateList();
+  }
+
+  private List<PostCentrifugationTemperatureOption> generateList() {
+    List<PostCentrifugationTemperatureOption> postCentrifugationTemperatureOptions =
+        new ArrayList<>();
     for (PostCentrifugationTemperature postCentrifugationTemperature :
         PostCentrifugationTemperature.values()) {
       PostCentrifugationTemperatureOption postCentrifugationTemperatureOption =
           new PostCentrifugationTemperatureOption(postCentrifugationTemperature);
-      POST_CENTRIFUGATION_TEMPERATURE_OPTIONS.add(postCentrifugationTemperatureOption);
+      postCentrifugationTemperatureOptions.add(postCentrifugationTemperatureOption);
     }
+    return postCentrifugationTemperatureOptions;
   }
 
-  public static ArrayList<PostCentrifugationTemperatureOption> getList() {
-    return POST_CENTRIFUGATION_TEMPERATURE_OPTIONS;
+  public List<PostCentrifugationTemperatureOption> getList() {
+    return this.postCentrifugationTemperatureOptions;
   }
 
   /**
@@ -40,7 +46,7 @@ public final class PostCentrifugationTemperatureListProvider {
    * @param temperature Temperature object
    * @return PostCentrifugationTemperatureOption
    */
-  public static PostCentrifugationTemperatureOption valueOf(Temperature temperature) {
+  public PostCentrifugationTemperatureOption valueOf(Temperature temperature) {
 
     if (temperature == null) {
       return null;
@@ -49,7 +55,7 @@ public final class PostCentrifugationTemperatureListProvider {
     float temperatureCelsius = temperature.getTemperatureCelsius();
 
     for (PostCentrifugationTemperatureOption postCentrifugationTemperatureOption :
-        POST_CENTRIFUGATION_TEMPERATURE_OPTIONS) {
+        this.postCentrifugationTemperatureOptions) {
       if (postCentrifugationTemperatureOption.hasTemperature(temperatureCelsius)) {
         return postCentrifugationTemperatureOption;
       }

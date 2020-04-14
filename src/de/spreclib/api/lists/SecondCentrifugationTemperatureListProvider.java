@@ -4,6 +4,7 @@ import de.spreclib.api.lists.options.SecondCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationTemperature;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for SecondCentrifugationTemperatureOptions.
@@ -16,21 +17,26 @@ import java.util.ArrayList;
  */
 public final class SecondCentrifugationTemperatureListProvider {
 
-  private static final ArrayList<SecondCentrifugationTemperatureOption>
-      SECOND_CENTRIFGUATION_TEMPERATURE_OPTIONS;
+  private final List<SecondCentrifugationTemperatureOption> secondCentrifugationTemperatureOptions;
 
-  static {
-    SECOND_CENTRIFGUATION_TEMPERATURE_OPTIONS = new ArrayList<>();
+  public SecondCentrifugationTemperatureListProvider() {
+    this.secondCentrifugationTemperatureOptions = generateList();
+  }
+
+  private List<SecondCentrifugationTemperatureOption> generateList() {
+    List<SecondCentrifugationTemperatureOption> secondCentrifugationTemperatureOptions =
+        new ArrayList<>();
     for (SecondCentrifugationTemperature secondCentrifugationTemperature :
         SecondCentrifugationTemperature.values()) {
       SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption =
           new SecondCentrifugationTemperatureOption(secondCentrifugationTemperature);
-      SECOND_CENTRIFGUATION_TEMPERATURE_OPTIONS.add(secondCentrifugationTemperatureOption);
+      secondCentrifugationTemperatureOptions.add(secondCentrifugationTemperatureOption);
     }
+    return secondCentrifugationTemperatureOptions;
   }
 
-  public static ArrayList<SecondCentrifugationTemperatureOption> getList() {
-    return SECOND_CENTRIFGUATION_TEMPERATURE_OPTIONS;
+  public List<SecondCentrifugationTemperatureOption> getList() {
+    return this.secondCentrifugationTemperatureOptions;
   }
 
   /**
@@ -40,7 +46,7 @@ public final class SecondCentrifugationTemperatureListProvider {
    * @param temperature Temperature object
    * @return SecondCentrifugationTemperatureOption
    */
-  public static SecondCentrifugationTemperatureOption valueOf(Temperature temperature) {
+  public SecondCentrifugationTemperatureOption valueOf(Temperature temperature) {
 
     if (temperature == null) {
       return null;
@@ -48,7 +54,7 @@ public final class SecondCentrifugationTemperatureListProvider {
 
     float temperatureCelsius = temperature.getTemperatureCelsius();
     for (SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption :
-        SECOND_CENTRIFGUATION_TEMPERATURE_OPTIONS) {
+        this.secondCentrifugationTemperatureOptions) {
 
       if (secondCentrifugationTemperatureOption.hasTemperature(temperatureCelsius)) {
         return secondCentrifugationTemperatureOption;

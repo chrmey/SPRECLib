@@ -6,27 +6,29 @@ import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.FirstCentrifugationDurationOption;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class FirstCentrifugationDurationListProviderTest {
 
-  private ArrayList<FirstCentrifugationDurationOption> list;
+  private FirstCentrifugationDurationListProvider firstCentrifugationDurationListProvider;
+  private List<FirstCentrifugationDurationOption> firstCentrifugationDurationList;
 
   @Before
   public void setUp() {
-    list = FirstCentrifugationDurationListProvider.getList();
+    firstCentrifugationDurationListProvider = new FirstCentrifugationDurationListProvider();
+    firstCentrifugationDurationList = firstCentrifugationDurationListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(firstCentrifugationDurationList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : firstCentrifugationDurationList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -34,8 +36,7 @@ public class FirstCentrifugationDurationListProviderTest {
   @Test
   public void testValueOfWithValidValue() {
 
-    FirstCentrifugationDurationOption firstCentrifugationDurationOption =
-        FirstCentrifugationDurationListProvider.valueOf(15);
+    FirstCentrifugationDurationOption firstCentrifugationDurationOption = firstCentrifugationDurationListProvider.valueOf(15);
 
     assertNotNull(firstCentrifugationDurationOption);
   }
@@ -43,8 +44,7 @@ public class FirstCentrifugationDurationListProviderTest {
   @Test
   public void testValueOfWithInvalidValue() {
 
-    FirstCentrifugationDurationOption firstCentrifugationDurationOption =
-        FirstCentrifugationDurationListProvider.valueOf(100);
+    FirstCentrifugationDurationOption firstCentrifugationDurationOption = firstCentrifugationDurationListProvider.valueOf(100);
 
     assertNull(firstCentrifugationDurationOption);
   }
@@ -56,7 +56,7 @@ public class FirstCentrifugationDurationListProviderTest {
     long fifteenMinutesLater = 1577837700000L;
 
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
-        FirstCentrifugationDurationListProvider.valueOf(startTime, fifteenMinutesLater);
+        firstCentrifugationDurationListProvider.valueOf(startTime, fifteenMinutesLater);
 
     assertNotNull(firstCentrifugationDurationOption);
   }

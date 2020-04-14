@@ -7,6 +7,7 @@ import de.spreclib.api.lists.options.PostCentrifugationTemperatureOption;
 import de.spreclib.model.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.postcentrifugation.PostCentrifugationList;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for PostCentrifugationOptions.
@@ -19,19 +20,24 @@ import java.util.ArrayList;
  */
 public final class PostCentrifugationListProvider {
 
-  private static final ArrayList<PostCentrifugationOption> POST_CENTRIFUGATION_OPTIONS;
+  private final List<PostCentrifugationOption> postCentrifugationOptions;
 
-  static {
-    POST_CENTRIFUGATION_OPTIONS = new ArrayList<>();
+  public PostCentrifugationListProvider() {
+    this.postCentrifugationOptions = generateList();
+  }
+
+  private List<PostCentrifugationOption> generateList() {
+    List<PostCentrifugationOption> postCentrifugationOptions = new ArrayList<>();
     for (PostCentrifugation postCentrifugation : PostCentrifugationList.POST_CENTRIFUGATIONS) {
       PostCentrifugationOption postCentrifugationOption =
           new PostCentrifugationOption(postCentrifugation);
-      POST_CENTRIFUGATION_OPTIONS.add(postCentrifugationOption);
+      postCentrifugationOptions.add(postCentrifugationOption);
     }
+    return postCentrifugationOptions;
   }
 
-  public static ArrayList<PostCentrifugationOption> getList() {
-    return POST_CENTRIFUGATION_OPTIONS;
+  public List<PostCentrifugationOption> getList() {
+    return this.postCentrifugationOptions;
   }
 
   /**
@@ -44,7 +50,7 @@ public final class PostCentrifugationListProvider {
    * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
-  public static PostCentrifugationOption valueOf(
+  public PostCentrifugationOption valueOf(
       PostCentrifugationTemperatureOption postCentrifugationTemperatureOption,
       PostCentrifugationDelayOption postCentrifugationDelayOption) {
 
@@ -56,7 +62,7 @@ public final class PostCentrifugationListProvider {
       throw new IllegalArgumentException("PostCentrifugationDelayOption cannot not be null.");
     }
 
-    for (PostCentrifugationOption postCentrifugationOption : POST_CENTRIFUGATION_OPTIONS) {
+    for (PostCentrifugationOption postCentrifugationOption : this.postCentrifugationOptions) {
 
       if (postCentrifugationOption.hasPostCentrifugation(
           postCentrifugationTemperatureOption, postCentrifugationDelayOption)) {

@@ -3,30 +3,33 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.LongTermStorageTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class LongTermStorageTemperatureListProviderTest {
 
-  private ArrayList<LongTermStorageTemperatureOption> list;
+  private LongTermStorageTemperatureListProvider longTermStorageTemperatureListProvider;
+  private List<LongTermStorageTemperatureOption> longTermStorageTemperatureList;
 
   @Before
   public void setUp() {
-    list = LongTermStorageTemperatureListProvider.getList();
+    this.longTermStorageTemperatureListProvider = new LongTermStorageTemperatureListProvider();
+    this.longTermStorageTemperatureList = longTermStorageTemperatureListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(longTermStorageTemperatureList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : longTermStorageTemperatureList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -35,7 +38,7 @@ public class LongTermStorageTemperatureListProviderTest {
   public void testValueOfWithValidValues() {
 
     LongTermStorageTemperatureOption temperatureOption =
-        LongTermStorageTemperatureListProvider.valueOf(new Temperature(-60f));
+        this.longTermStorageTemperatureListProvider.valueOf(new Temperature(-60f));
 
     assertNotNull(temperatureOption);
   }
@@ -44,7 +47,7 @@ public class LongTermStorageTemperatureListProviderTest {
   public void testValueOfWithInvalidValue() {
 
     LongTermStorageTemperatureOption temperatureOption =
-        LongTermStorageTemperatureListProvider.valueOf(new Temperature(-100f));
+        this.longTermStorageTemperatureListProvider.valueOf(new Temperature(-100f));
 
     assertNull(temperatureOption);
   }
@@ -53,7 +56,7 @@ public class LongTermStorageTemperatureListProviderTest {
   public void testValueOfWithNullValue() {
 
     LongTermStorageTemperatureOption temperatureOption =
-        LongTermStorageTemperatureListProvider.valueOf(null);
+        this.longTermStorageTemperatureListProvider.valueOf(null);
 
     assertNull(temperatureOption);
   }

@@ -4,6 +4,7 @@ import de.spreclib.api.lists.options.PreCentrifugationDelayOption;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for PreCentrifugationDelayOptions.
@@ -16,19 +17,24 @@ import java.util.ArrayList;
  */
 public final class PreCentrifugationDelayListProvider {
 
-  private static final ArrayList<PreCentrifugationDelayOption> PRE_CENTRIFUGATION_DELAY_OPTIONS;
+  private final List<PreCentrifugationDelayOption> preCentrifugationDelayOptions;
 
-  static {
-    PRE_CENTRIFUGATION_DELAY_OPTIONS = new ArrayList<>();
+  public PreCentrifugationDelayListProvider() {
+    this.preCentrifugationDelayOptions = generateList();
+  }
+
+  public List<PreCentrifugationDelayOption> generateList() {
+    List<PreCentrifugationDelayOption> preCentrifugationDelayOptions = new ArrayList<>();
     for (PreCentrifugationDelay preCentrifugationDelay : PreCentrifugationDelay.values()) {
       PreCentrifugationDelayOption preCentrifugationDelayOption =
           new PreCentrifugationDelayOption(preCentrifugationDelay);
-      PRE_CENTRIFUGATION_DELAY_OPTIONS.add(preCentrifugationDelayOption);
+      preCentrifugationDelayOptions.add(preCentrifugationDelayOption);
     }
+    return preCentrifugationDelayOptions;
   }
 
-  public static ArrayList<PreCentrifugationDelayOption> getList() {
-    return PRE_CENTRIFUGATION_DELAY_OPTIONS;
+  public List<PreCentrifugationDelayOption> getList() {
+    return this.preCentrifugationDelayOptions;
   }
 
   /**
@@ -40,14 +46,13 @@ public final class PreCentrifugationDelayListProvider {
    * @return PreCentrifugationDelayOption
    * @see #valueOf(int)
    */
-  public static PreCentrifugationDelayOption valueOf(
+  public PreCentrifugationDelayOption valueOf(
       long collectionTimeMillis, long firstCentrifugationStartTimeMillis) {
 
     int delayMinutes =
-        new Timespan(collectionTimeMillis, firstCentrifugationStartTimeMillis)
-            .getTimespanMinutes();
+        new Timespan(collectionTimeMillis, firstCentrifugationStartTimeMillis).getTimespanMinutes();
 
-    return valueOf(delayMinutes);
+    return this.valueOf(delayMinutes);
   }
 
   /**
@@ -57,10 +62,10 @@ public final class PreCentrifugationDelayListProvider {
    * @param delayMinutes delay in Minutes
    * @return PreCentrifugationDelayOption
    */
-  public static PreCentrifugationDelayOption valueOf(int delayMinutes) {
+  public PreCentrifugationDelayOption valueOf(int delayMinutes) {
 
     for (PreCentrifugationDelayOption preCentrifugationDelayOption :
-        PRE_CENTRIFUGATION_DELAY_OPTIONS) {
+        this.preCentrifugationDelayOptions) {
 
       if (preCentrifugationDelayOption.hasDelay(delayMinutes)) {
         return preCentrifugationDelayOption;

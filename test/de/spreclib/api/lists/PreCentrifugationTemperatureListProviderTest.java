@@ -7,27 +7,29 @@ import static org.junit.Assert.assertNull;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.PreCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class PreCentrifugationTemperatureListProviderTest {
 
-  private ArrayList<PreCentrifugationTemperatureOption> list;
+  private PreCentrifugationTemperatureListProvider preCentrifugationTemperatureListProvider;
+  private List<PreCentrifugationTemperatureOption> preCentrifugationTemperatureList;
 
   @Before
   public void setUp() {
-    list = PreCentrifugationTemperatureListProvider.getList();
+    this.preCentrifugationTemperatureListProvider = new PreCentrifugationTemperatureListProvider();
+    this.preCentrifugationTemperatureList = preCentrifugationTemperatureListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(this.preCentrifugationTemperatureList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : this.preCentrifugationTemperatureList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -36,7 +38,7 @@ public class PreCentrifugationTemperatureListProviderTest {
   public void testValueOfWithValidValues() {
 
     PreCentrifugationTemperatureOption temperatureOption =
-        PreCentrifugationTemperatureListProvider.valueOf(new Temperature(10f));
+        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(10f));
 
     assertNotNull(temperatureOption);
   }
@@ -45,7 +47,7 @@ public class PreCentrifugationTemperatureListProviderTest {
   public void testValueOfWithInvalidValue() {
 
     PreCentrifugationTemperatureOption temperatureOption =
-        PreCentrifugationTemperatureListProvider.valueOf(new Temperature(100f));
+        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(100f));
 
     assertNull(temperatureOption);
   }
@@ -54,7 +56,7 @@ public class PreCentrifugationTemperatureListProviderTest {
   public void testValueOfWithNullValue() {
 
     PreCentrifugationTemperatureOption temperatureOption =
-        PreCentrifugationTemperatureListProvider.valueOf(null);
+        this.preCentrifugationTemperatureListProvider.valueOf(null);
 
     assertNull(temperatureOption);
   }

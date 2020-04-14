@@ -6,27 +6,29 @@ import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.PreCentrifugationDelayOption;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class PreCentrifugationDelayListProviderTest {
 
-  private ArrayList<PreCentrifugationDelayOption> list;
+  private PreCentrifugationDelayListProvider preCentrifugationDelayListProvider;
+  private List<PreCentrifugationDelayOption> preCentrifugationDelayList;
 
   @Before
   public void setUp() {
-    list = PreCentrifugationDelayListProvider.getList();
+    this.preCentrifugationDelayListProvider = new PreCentrifugationDelayListProvider();
+    this.preCentrifugationDelayList = preCentrifugationDelayListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(preCentrifugationDelayList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : preCentrifugationDelayList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -34,7 +36,7 @@ public class PreCentrifugationDelayListProviderTest {
   @Test
   public void testValueOfWithValidValue() {
 
-    PreCentrifugationDelayOption delayOption = PreCentrifugationDelayListProvider.valueOf(15);
+    PreCentrifugationDelayOption delayOption = this.preCentrifugationDelayListProvider.valueOf(15);
 
     assertNotNull(delayOption);
   }
@@ -42,7 +44,7 @@ public class PreCentrifugationDelayListProviderTest {
   @Test
   public void testValueOfWithInvalidValue() {
 
-    PreCentrifugationDelayOption delayOption = PreCentrifugationDelayListProvider.valueOf(-1);
+    PreCentrifugationDelayOption delayOption = this.preCentrifugationDelayListProvider.valueOf(-1);
 
     assertNull(delayOption);
   }
@@ -54,7 +56,7 @@ public class PreCentrifugationDelayListProviderTest {
     long fifteenMinutesLater = 1577837700000L;
 
     PreCentrifugationDelayOption preCentrifugationDurationOption =
-        PreCentrifugationDelayListProvider.valueOf(startTime, fifteenMinutesLater);
+        this.preCentrifugationDelayListProvider.valueOf(startTime, fifteenMinutesLater);
 
     assertNotNull(preCentrifugationDurationOption);
   }

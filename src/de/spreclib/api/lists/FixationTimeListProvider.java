@@ -4,6 +4,7 @@ import de.spreclib.api.lists.options.FixationTimeOption;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.FixationTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for FixationTimeOptions.
@@ -16,18 +17,23 @@ import java.util.ArrayList;
  */
 public final class FixationTimeListProvider {
 
-  private static final ArrayList<FixationTimeOption> FIXATION_TIME_OPTIONS;
+  private final List<FixationTimeOption> fixationTimeOptions;
 
-  static {
-    FIXATION_TIME_OPTIONS = new ArrayList<>();
-    for (FixationTime fixationTime : FixationTime.values()) {
-      FixationTimeOption fixationOption = new FixationTimeOption(fixationTime);
-      FIXATION_TIME_OPTIONS.add(fixationOption);
-    }
+  public FixationTimeListProvider() {
+    this.fixationTimeOptions = generateList();
   }
 
-  public static ArrayList<FixationTimeOption> getList() {
-    return FIXATION_TIME_OPTIONS;
+  private List<FixationTimeOption> generateList() {
+    List<FixationTimeOption> fixationTimeOptions = new ArrayList<>();
+    for (FixationTime fixationTime : FixationTime.values()) {
+      FixationTimeOption fixationOption = new FixationTimeOption(fixationTime);
+      fixationTimeOptions.add(fixationOption);
+    }
+    return fixationTimeOptions;
+  }
+
+  public List<FixationTimeOption> getList() {
+    return this.fixationTimeOptions;
   }
 
   /**
@@ -39,13 +45,12 @@ public final class FixationTimeListProvider {
    * @return FixationTimeOption
    * @see #valueOf(int)
    */
-  public static FixationTimeOption valueOf(
-      long startOfFixationTimeMillis, long endOfFixationTimeMillis) {
+  public FixationTimeOption valueOf(long startOfFixationTimeMillis, long endOfFixationTimeMillis) {
 
     int durationMinutes =
         new Timespan(startOfFixationTimeMillis, endOfFixationTimeMillis).getTimespanMinutes();
 
-    return valueOf(durationMinutes);
+    return this.valueOf(durationMinutes);
   }
 
   /**
@@ -55,9 +60,9 @@ public final class FixationTimeListProvider {
    * @param durationMinutes durationMinutes
    * @return FixationTimeOption
    */
-  public static FixationTimeOption valueOf(int durationMinutes) {
+  public FixationTimeOption valueOf(int durationMinutes) {
 
-    for (FixationTimeOption fixationTimeOption : FIXATION_TIME_OPTIONS) {
+    for (FixationTimeOption fixationTimeOption : fixationTimeOptions) {
 
       if (fixationTimeOption.hasDuration(durationMinutes)) {
         return fixationTimeOption;

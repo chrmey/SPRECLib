@@ -4,6 +4,7 @@ import de.spreclib.api.lists.options.LongTermStorageTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for LongTermStorageTemperatures.
@@ -14,21 +15,25 @@ import java.util.ArrayList;
  */
 public final class LongTermStorageTemperatureListProvider {
 
-  private static final ArrayList<LongTermStorageTemperatureOption>
-      LONG_TERM_STORAGE_TEMPERATURE_OPTIONS;
+  private final List<LongTermStorageTemperatureOption> longTermSTorageTemperatureOptions;
 
-  static {
-    LONG_TERM_STORAGE_TEMPERATURE_OPTIONS = new ArrayList<>();
+  public LongTermStorageTemperatureListProvider() {
+    this.longTermSTorageTemperatureOptions = generateList();
+  }
+
+  private List<LongTermStorageTemperatureOption> generateList() {
+    List<LongTermStorageTemperatureOption> longTermSTorageTemperatureOptions = new ArrayList<>();
     for (LongTermStorageTemperature longTermStorageTemperature :
         LongTermStorageTemperature.values()) {
       LongTermStorageTemperatureOption longTermStorageTemperatureOption =
           new LongTermStorageTemperatureOption(longTermStorageTemperature);
-      LONG_TERM_STORAGE_TEMPERATURE_OPTIONS.add(longTermStorageTemperatureOption);
+      longTermSTorageTemperatureOptions.add(longTermStorageTemperatureOption);
     }
+    return longTermSTorageTemperatureOptions;
   }
 
-  public static ArrayList<LongTermStorageTemperatureOption> getList() {
-    return LONG_TERM_STORAGE_TEMPERATURE_OPTIONS;
+  public List<LongTermStorageTemperatureOption> getList() {
+    return this.longTermSTorageTemperatureOptions;
   }
 
   /**
@@ -38,7 +43,7 @@ public final class LongTermStorageTemperatureListProvider {
    * @param temperature Temperature object
    * @return LongTermStorageTemperatureOption
    */
-  public static LongTermStorageTemperatureOption valueOf(Temperature temperature) {
+  public LongTermStorageTemperatureOption valueOf(Temperature temperature) {
 
     if (temperature == null) {
       return null;
@@ -47,7 +52,7 @@ public final class LongTermStorageTemperatureListProvider {
     float temperatureCelsius = temperature.getTemperatureCelsius();
 
     for (LongTermStorageTemperatureOption longTermStorageTemperatureOption :
-        LONG_TERM_STORAGE_TEMPERATURE_OPTIONS) {
+        this.longTermSTorageTemperatureOptions) {
       if (longTermStorageTemperatureOption.hasTemperature(temperatureCelsius)) {
         return longTermStorageTemperatureOption;
       }

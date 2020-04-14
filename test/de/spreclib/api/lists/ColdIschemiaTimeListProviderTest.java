@@ -6,27 +6,29 @@ import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.ColdIschemiaTimeOption;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class ColdIschemiaTimeListProviderTest {
 
-  private ArrayList<ColdIschemiaTimeOption> list;
+  private ColdIschemiaTimeListProvider coldIschemiaTimeListProvider;
+  private List<ColdIschemiaTimeOption> coldIschemiaTimeList;
 
   @Before
   public void setUp() {
-    list = ColdIschemiaTimeListProvider.getList();
+    this.coldIschemiaTimeListProvider = new ColdIschemiaTimeListProvider();
+    coldIschemiaTimeList = coldIschemiaTimeListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(coldIschemiaTimeList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : coldIschemiaTimeList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -34,7 +36,7 @@ public class ColdIschemiaTimeListProviderTest {
   @Test
   public void testValueOfWithValidValue() {
 
-    ColdIschemiaTimeOption coldIschemiaTimeOption = ColdIschemiaTimeListProvider.valueOf(15);
+    ColdIschemiaTimeOption coldIschemiaTimeOption = this.coldIschemiaTimeListProvider.valueOf(15);
 
     assertNotNull(coldIschemiaTimeOption);
   }
@@ -42,7 +44,7 @@ public class ColdIschemiaTimeListProviderTest {
   @Test
   public void testValueOfWithinalidValue() {
 
-    ColdIschemiaTimeOption coldIschemiaTimeOption = ColdIschemiaTimeListProvider.valueOf(-15);
+    ColdIschemiaTimeOption coldIschemiaTimeOption = this.coldIschemiaTimeListProvider.valueOf(-15);
 
     assertNull(coldIschemiaTimeOption);
   }
@@ -54,7 +56,7 @@ public class ColdIschemiaTimeListProviderTest {
     long fifteenMinutesLater = 1577837700000L;
 
     ColdIschemiaTimeOption coldIschemiaTimeOption =
-        ColdIschemiaTimeListProvider.valueOf(startTime, fifteenMinutesLater);
+        this.coldIschemiaTimeListProvider.valueOf(startTime, fifteenMinutesLater);
 
     assertNotNull(coldIschemiaTimeOption);
   }

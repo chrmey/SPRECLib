@@ -1,7 +1,6 @@
 package de.spreclib.api.sprec;
 
 import static org.junit.Assert.assertFalse;
-
 import de.spreclib.api.lists.FirstCentrifugationListProvider;
 import de.spreclib.api.lists.FluidSampleTypeListProvider;
 import de.spreclib.api.lists.LongTermStorageListProvider;
@@ -19,19 +18,19 @@ import de.spreclib.api.lists.options.SecondCentrifugationOption;
 import de.spreclib.model.exceptions.InvalidPartRelationException;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.sprec.FluidSprecCode;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class FluidSampleSprecTest {
 
-  private ArrayList<FluidSampleTypeOption> fluidSampleTypeList;
-  private ArrayList<PrimaryContainerOption> primaryContainerList;
-  private ArrayList<PreCentrifugationOption> preCentrifugationList;
-  private ArrayList<FirstCentrifugationOption> firstCentrifugationList;
-  private ArrayList<SecondCentrifugationOption> secondCentrifugationList;
-  private ArrayList<PostCentrifugationOption> postCentrifugationList;
-  private ArrayList<LongTermStorageOption> longTermStorageList;
+  private List<FluidSampleTypeOption> fluidSampleTypeList;
+  private List<PrimaryContainerOption> primaryContainerList;
+  private List<PreCentrifugationOption> preCentrifugationList;
+  private List<FirstCentrifugationOption> firstCentrifugationList;
+  private List<SecondCentrifugationOption> secondCentrifugationList;
+  private List<PostCentrifugationOption> postCentrifugationList;
+  private List<LongTermStorageOption> longTermStorageList;
 
   private FluidSampleTypeOption fluidSampleTypeOption;
   private PrimaryContainerOption primaryContainerOption;
@@ -44,13 +43,13 @@ public class FluidSampleSprecTest {
   @Before
   public void setUp() {
 
-    this.fluidSampleTypeList = FluidSampleTypeListProvider.getList();
-    this.primaryContainerList = PrimaryContainerListProvider.getList();
-    this.preCentrifugationList = PreCentrifugationListProvider.getList();
-    this.firstCentrifugationList = FirstCentrifugationListProvider.getList();
-    this.secondCentrifugationList = SecondCentrifugationListProvider.getList();
-    this.postCentrifugationList = PostCentrifugationListProvider.getList();
-    this.longTermStorageList = LongTermStorageListProvider.getList();
+    this.fluidSampleTypeList = new FluidSampleTypeListProvider().getList();
+    this.primaryContainerList = new PrimaryContainerListProvider().getList();
+    this.preCentrifugationList = new PreCentrifugationListProvider().getList();
+    this.firstCentrifugationList = new FirstCentrifugationListProvider().getList();
+    this.secondCentrifugationList = new SecondCentrifugationListProvider().getList();
+    this.postCentrifugationList = new PostCentrifugationListProvider().getList();
+    this.longTermStorageList = new LongTermStorageListProvider().getList();
 
     this.fluidSampleTypeOption = this.fluidSampleTypeList.get(0);
     this.primaryContainerOption = this.primaryContainerList.get(0);

@@ -2,6 +2,7 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
 import de.spreclib.api.exceptions.InvalidParameterCombinationException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.LongTermStorageContainerOption;
@@ -9,27 +10,29 @@ import de.spreclib.api.lists.options.LongTermStorageOption;
 import de.spreclib.api.lists.options.LongTermStorageTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class LongTermStorageListProviderTest {
 
-  private ArrayList<LongTermStorageOption> list;
+  private LongTermStorageListProvider longTermStorageListProvider;
+  private List<LongTermStorageOption> longTermStorageList;
 
   @Before
   public void setUp() {
-    list = LongTermStorageListProvider.getList();
+    this.longTermStorageListProvider = new LongTermStorageListProvider();
+    this.longTermStorageList = longTermStorageListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(longTermStorageList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : longTermStorageList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -38,13 +41,13 @@ public class LongTermStorageListProviderTest {
   public void testValueOfWithValidValues() {
 
     LongTermStorageTemperatureOption temperatureOption =
-        LongTermStorageTemperatureListProvider.valueOf(new Temperature(-70f));
+        new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-70f));
 
     LongTermStorageContainerOption containerOption =
         new LongTermStorageContainerOption(LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML);
 
     LongTermStorageOption longTermStorageOption =
-        LongTermStorageListProvider.valueOf(temperatureOption, containerOption);
+        this.longTermStorageListProvider.valueOf(temperatureOption, containerOption);
 
     assertNotNull(longTermStorageOption);
   }
@@ -55,27 +58,27 @@ public class LongTermStorageListProviderTest {
     LongTermStorageContainerOption containerOption =
         new LongTermStorageContainerOption(LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML);
 
-    LongTermStorageListProvider.valueOf(null, containerOption);
+    this.longTermStorageListProvider.valueOf(null, containerOption);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testWithContainerOptionIsNull() {
 
     LongTermStorageTemperatureOption temperatureOption =
-        LongTermStorageTemperatureListProvider.valueOf(new Temperature(-70f));
+        new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-70f));
 
-    LongTermStorageListProvider.valueOf(temperatureOption, null);
+    this.longTermStorageListProvider.valueOf(temperatureOption, null);
   }
 
   @Test(expected = InvalidParameterCombinationException.class)
   public void testValueOfWithInvalidParameterCombination() {
 
     LongTermStorageTemperatureOption temperatureOption =
-        LongTermStorageTemperatureListProvider.valueOf(new Temperature(10f));
+        new LongTermStorageTemperatureListProvider().valueOf(new Temperature(10f));
 
     LongTermStorageContainerOption containerOption =
         new LongTermStorageContainerOption(LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML);
 
-    LongTermStorageListProvider.valueOf(temperatureOption, containerOption);
+    this.longTermStorageListProvider.valueOf(temperatureOption, containerOption);
   }
 }

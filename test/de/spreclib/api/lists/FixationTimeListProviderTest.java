@@ -6,27 +6,29 @@ import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.FixationTimeOption;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class FixationTimeListProviderTest {
 
-  private ArrayList<FixationTimeOption> list;
+  private FixationTimeListProvider fixationTimeListProvider;
+  private List<FixationTimeOption> fixationTimeList;
 
   @Before
   public void setUp() {
-    list = FixationTimeListProvider.getList();
+    this.fixationTimeListProvider = new FixationTimeListProvider();
+    this.fixationTimeList = fixationTimeListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(fixationTimeList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : fixationTimeList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -34,7 +36,7 @@ public class FixationTimeListProviderTest {
   @Test
   public void testValueOfWithValidValue() {
 
-    FixationTimeOption fixationTimeOption = FixationTimeListProvider.valueOf(15);
+    FixationTimeOption fixationTimeOption = this.fixationTimeListProvider.valueOf(15);
 
     assertNotNull(fixationTimeOption);
   }
@@ -42,7 +44,7 @@ public class FixationTimeListProviderTest {
   @Test
   public void testValueOfWithinalidValue() {
 
-    FixationTimeOption fixationTimeOption = FixationTimeListProvider.valueOf(-15);
+    FixationTimeOption fixationTimeOption = this.fixationTimeListProvider.valueOf(-15);
 
     assertNull(fixationTimeOption);
   }
@@ -54,7 +56,7 @@ public class FixationTimeListProviderTest {
     long fifteenMinutesLater = 1577837700000L;
 
     FixationTimeOption fixationTimeOption =
-        FixationTimeListProvider.valueOf(startTime, fifteenMinutesLater);
+        this.fixationTimeListProvider.valueOf(startTime, fifteenMinutesLater);
 
     assertNotNull(fixationTimeOption);
   }

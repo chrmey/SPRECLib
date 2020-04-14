@@ -7,6 +7,7 @@ import de.spreclib.api.lists.options.LongTermStorageTemperatureOption;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.longtermstorage.LongTermStorageList;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for LongTermStorageOptions.
@@ -17,18 +18,23 @@ import java.util.ArrayList;
  */
 public final class LongTermStorageListProvider {
 
-  private static final ArrayList<LongTermStorageOption> LONG_TERM_STORAGE_OPTIONS;
+  private final List<LongTermStorageOption> longTermStorageOptions;
 
-  static {
-    LONG_TERM_STORAGE_OPTIONS = new ArrayList<>();
-    for (LongTermStorage longTermStorage : LongTermStorageList.LONG_TERM_STORAGES) {
-      LongTermStorageOption longTermStorageOption = new LongTermStorageOption(longTermStorage);
-      LONG_TERM_STORAGE_OPTIONS.add(longTermStorageOption);
-    }
+  public LongTermStorageListProvider() {
+    this.longTermStorageOptions = generateList();
   }
 
-  public static ArrayList<LongTermStorageOption> getList() {
-    return LONG_TERM_STORAGE_OPTIONS;
+  private List<LongTermStorageOption> generateList() {
+    List<LongTermStorageOption> longTermStorageOptions = new ArrayList<>();
+    for (LongTermStorage longTermStorage : LongTermStorageList.LONG_TERM_STORAGES) {
+      LongTermStorageOption longTermStorageOption = new LongTermStorageOption(longTermStorage);
+      longTermStorageOptions.add(longTermStorageOption);
+    }
+    return longTermStorageOptions;
+  }
+
+  public List<LongTermStorageOption> getList() {
+    return this.longTermStorageOptions;
   }
 
   /**
@@ -41,7 +47,7 @@ public final class LongTermStorageListProvider {
    * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
-  public static LongTermStorageOption valueOf(
+  public LongTermStorageOption valueOf(
       LongTermStorageTemperatureOption longTermStorageTemperatureOption,
       LongTermStorageContainerOption longTermStorageContainerOption) {
 
@@ -53,7 +59,7 @@ public final class LongTermStorageListProvider {
       throw new IllegalArgumentException("LongTermStorageContainerOption cannot not be null.");
     }
 
-    for (LongTermStorageOption longTermStorageOption : LONG_TERM_STORAGE_OPTIONS) {
+    for (LongTermStorageOption longTermStorageOption : this.longTermStorageOptions) {
 
       if (longTermStorageOption.hasLongTermStorage(
           longTermStorageTemperatureOption, longTermStorageContainerOption)) {

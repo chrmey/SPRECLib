@@ -3,6 +3,7 @@ package de.spreclib.api.lists;
 import de.spreclib.api.lists.options.LongTermStorageContainerOption;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for LongTermStorageContainerOptions.
@@ -13,19 +14,23 @@ import java.util.ArrayList;
  */
 public final class LongTermStorageContainerListProvider {
 
-  private static final ArrayList<LongTermStorageContainerOption>
-      LONG_TERM_STORAGE_CONTAINER_OPTIONS;
+  private final List<LongTermStorageContainerOption> longTermStorageContainerOptions;
 
-  static {
-    LONG_TERM_STORAGE_CONTAINER_OPTIONS = new ArrayList<>();
+  public LongTermStorageContainerListProvider() {
+    this.longTermStorageContainerOptions = generateList();
+  }
+
+  private List<LongTermStorageContainerOption> generateList() {
+    List<LongTermStorageContainerOption> longTermStorageContainerOptions = new ArrayList<>();
     for (LongTermStorageContainer longTermStorageContainer : LongTermStorageContainer.values()) {
       LongTermStorageContainerOption longTermStorageContainerOption =
           new LongTermStorageContainerOption(longTermStorageContainer);
-      LONG_TERM_STORAGE_CONTAINER_OPTIONS.add(longTermStorageContainerOption);
+      longTermStorageContainerOptions.add(longTermStorageContainerOption);
     }
+    return longTermStorageContainerOptions;
   }
 
-  public static ArrayList<LongTermStorageContainerOption> getList() {
-    return LONG_TERM_STORAGE_CONTAINER_OPTIONS;
+  public List<LongTermStorageContainerOption> getList() {
+    return this.longTermStorageContainerOptions;
   }
 }

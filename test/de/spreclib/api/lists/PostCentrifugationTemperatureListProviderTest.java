@@ -7,27 +7,30 @@ import static org.junit.Assert.assertNull;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.PostCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class PostCentrifugationTemperatureListProviderTest {
 
-  private ArrayList<PostCentrifugationTemperatureOption> list;
+  private PostCentrifugationTemperatureListProvider postCentrifugationTemperatureListProvider;
+  private List<PostCentrifugationTemperatureOption> postCentrifugationTemperatureList;
 
   @Before
   public void setUp() {
-    list = PostCentrifugationTemperatureListProvider.getList();
+    this.postCentrifugationTemperatureListProvider =
+        new PostCentrifugationTemperatureListProvider();
+    this.postCentrifugationTemperatureList = postCentrifugationTemperatureListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(postCentrifugationTemperatureList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : postCentrifugationTemperatureList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -36,7 +39,7 @@ public class PostCentrifugationTemperatureListProviderTest {
   public void testValueOfWithValidValues() {
 
     PostCentrifugationTemperatureOption temperatureOption =
-        PostCentrifugationTemperatureListProvider.valueOf(new Temperature(10f));
+        this.postCentrifugationTemperatureListProvider.valueOf(new Temperature(10f));
 
     assertNotNull(temperatureOption);
   }
@@ -45,7 +48,7 @@ public class PostCentrifugationTemperatureListProviderTest {
   public void testValueOfWithInvalidValue() {
 
     PostCentrifugationTemperatureOption temperatureOption =
-        PostCentrifugationTemperatureListProvider.valueOf(new Temperature(100f));
+        this.postCentrifugationTemperatureListProvider.valueOf(new Temperature(100f));
 
     assertNull(temperatureOption);
   }
@@ -54,7 +57,7 @@ public class PostCentrifugationTemperatureListProviderTest {
   public void testValueOfWithNullValue() {
 
     PostCentrifugationTemperatureOption temperatureOption =
-        PostCentrifugationTemperatureListProvider.valueOf(null);
+        this.postCentrifugationTemperatureListProvider.valueOf(null);
 
     assertNull(temperatureOption);
   }

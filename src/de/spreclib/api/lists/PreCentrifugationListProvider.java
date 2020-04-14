@@ -7,6 +7,7 @@ import de.spreclib.api.lists.options.PreCentrifugationTemperatureOption;
 import de.spreclib.model.precentrifugation.PreCentrifugation;
 import de.spreclib.model.precentrifugation.PreCentrifugationList;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for PreCentrifugationOptions.
@@ -19,19 +20,24 @@ import java.util.ArrayList;
  */
 public final class PreCentrifugationListProvider {
 
-  private static final ArrayList<PreCentrifugationOption> PRE_CENTRIFUGATION_OPTIONS;
+  private final List<PreCentrifugationOption> preCentrifguationOptions;
 
-  static {
-    PRE_CENTRIFUGATION_OPTIONS = new ArrayList<>();
+  public PreCentrifugationListProvider() {
+    this.preCentrifguationOptions = generateList();
+  }
+
+  private List<PreCentrifugationOption> generateList() {
+    List<PreCentrifugationOption> preCentrifguationOptions = new ArrayList<>();
     for (PreCentrifugation preCentrifugation : PreCentrifugationList.PRE_CENTRIFUGATIONS) {
       PreCentrifugationOption preCentrifugationOption =
           new PreCentrifugationOption(preCentrifugation);
-      PRE_CENTRIFUGATION_OPTIONS.add(preCentrifugationOption);
+      preCentrifguationOptions.add(preCentrifugationOption);
     }
+    return preCentrifguationOptions;
   }
 
-  public static ArrayList<PreCentrifugationOption> getList() {
-    return PRE_CENTRIFUGATION_OPTIONS;
+  public List<PreCentrifugationOption> getList() {
+    return this.preCentrifguationOptions;
   }
 
   /**
@@ -44,7 +50,7 @@ public final class PreCentrifugationListProvider {
    * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
-  public static PreCentrifugationOption valueOf(
+  public PreCentrifugationOption valueOf(
       PreCentrifugationTemperatureOption preCentrifugationTemperatureOption,
       PreCentrifugationDelayOption preCentrifugationDelayOption) {
 
@@ -56,7 +62,7 @@ public final class PreCentrifugationListProvider {
       throw new IllegalArgumentException("PreCentrifugationDelayOption cannot not be null.");
     }
 
-    for (PreCentrifugationOption preCentrifugationOption : PRE_CENTRIFUGATION_OPTIONS) {
+    for (PreCentrifugationOption preCentrifugationOption : this.preCentrifguationOptions) {
 
       if (preCentrifugationOption.hasPreCentrifugation(
           preCentrifugationTemperatureOption, preCentrifugationDelayOption)) {

@@ -5,27 +5,29 @@ import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.SolidSampleTypeOption;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class SolidSampleTypeListProviderTest {
 
-  private ArrayList<SolidSampleTypeOption> list;
+  private SolidSampleTypeListProvider solidSampleTypeListProvider;
+  private List<SolidSampleTypeOption> solidSampleTypeList;
 
   @Before
   public void setUp() {
-    list = SolidSampleTypeListProvider.getList();
+    this.solidSampleTypeListProvider = new SolidSampleTypeListProvider();
+    this.solidSampleTypeList = solidSampleTypeListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(this.solidSampleTypeList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : this.solidSampleTypeList) {
       assertNotNull(option.getStringRepresentation());
     }
   }

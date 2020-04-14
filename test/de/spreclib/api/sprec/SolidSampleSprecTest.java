@@ -1,7 +1,6 @@
 package de.spreclib.api.sprec;
 
 import static org.junit.Assert.assertFalse;
-
 import de.spreclib.api.lists.ColdIschemiaTimeListProvider;
 import de.spreclib.api.lists.FixationListProvider;
 import de.spreclib.api.lists.FixationTimeListProvider;
@@ -18,19 +17,19 @@ import de.spreclib.api.lists.options.TypeOfCollectionOption;
 import de.spreclib.api.lists.options.WarmIschemiaTimeOption;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.sprec.SolidSprecCode;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class SolidSampleSprecTest {
 
-  private ArrayList<SolidSampleTypeOption> solidSampleTypeList;
-  private ArrayList<TypeOfCollectionOption> typeOfCollectionList;
-  private ArrayList<WarmIschemiaTimeOption> warmIschemiaTimeOptionList;
-  private ArrayList<ColdIschemiaTimeOption> coldIschmemiaTimeOptionList;
-  private ArrayList<FixationOption> fixationOptionList;
-  private ArrayList<FixationTimeOption> fixationTimeOptionList;
-  private ArrayList<LongTermStorageOption> longTermStorageOptionList;
+  private List<SolidSampleTypeOption> solidSampleTypeList;
+  private List<TypeOfCollectionOption> typeOfCollectionList;
+  private List<WarmIschemiaTimeOption> warmIschemiaTimeOptionList;
+  private List<ColdIschemiaTimeOption> coldIschmemiaTimeOptionList;
+  private List<FixationOption> fixationOptionList;
+  private List<FixationTimeOption> fixationTimeOptionList;
+  private List<LongTermStorageOption> longTermStorageOptionList;
 
   private SolidSampleTypeOption solidSampleTypeOption;
   private TypeOfCollectionOption typeOfColletionOption;
@@ -43,13 +42,13 @@ public class SolidSampleSprecTest {
   @Before
   public void setUp() {
 
-    this.solidSampleTypeList = SolidSampleTypeListProvider.getList();
-    this.typeOfCollectionList = TypeOfCollectionListProvider.getList();
-    this.warmIschemiaTimeOptionList = WarmIschemiaTimeListProvider.getList();
-    this.coldIschmemiaTimeOptionList = ColdIschemiaTimeListProvider.getList();
-    this.fixationOptionList = FixationListProvider.getList();
-    this.fixationTimeOptionList = FixationTimeListProvider.getList();
-    this.longTermStorageOptionList = LongTermStorageListProvider.getList();
+    this.solidSampleTypeList = new SolidSampleTypeListProvider().getList();
+    this.typeOfCollectionList = new TypeOfCollectionListProvider().getList();
+    this.warmIschemiaTimeOptionList = new WarmIschemiaTimeListProvider().getList();
+    this.coldIschmemiaTimeOptionList = new ColdIschemiaTimeListProvider().getList();
+    this.fixationOptionList = new FixationListProvider().getList();
+    this.fixationTimeOptionList = new FixationTimeListProvider().getList();
+    this.longTermStorageOptionList = new LongTermStorageListProvider().getList();
 
     this.solidSampleTypeOption = this.solidSampleTypeList.get(0);
     this.typeOfColletionOption = this.typeOfCollectionList.get(0);

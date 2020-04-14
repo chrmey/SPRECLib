@@ -4,6 +4,7 @@ import de.spreclib.api.lists.options.PreCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for PreCentrifugationTemperatureOptions.
@@ -16,19 +17,26 @@ import java.util.ArrayList;
  */
 public final class PreCentrifugationTemperatureListProvider {
 
-  private static final ArrayList<PreCentrifugationTemperatureOption>
-      PRE_CENTRIFUGATION_TEMPERATURE_OPTIONS;
+  private final List<PreCentrifugationTemperatureOption> preCentrifugationTemperatureOptions;
 
-  static {
-    PRE_CENTRIFUGATION_TEMPERATURE_OPTIONS = new ArrayList<>();
-    for (PreCentrifugationTemperature preCentrifugationTemperature : PreCentrifugationTemperature.values()) {
-      PreCentrifugationTemperatureOption preCentrifugationTemperatureOption = new PreCentrifugationTemperatureOption(preCentrifugationTemperature);
-      PRE_CENTRIFUGATION_TEMPERATURE_OPTIONS.add(preCentrifugationTemperatureOption);
-    }
+  public PreCentrifugationTemperatureListProvider() {
+    this.preCentrifugationTemperatureOptions = generateList();
   }
 
-  public static ArrayList<PreCentrifugationTemperatureOption> getList() {
-    return PRE_CENTRIFUGATION_TEMPERATURE_OPTIONS;
+  private List<PreCentrifugationTemperatureOption> generateList() {
+    List<PreCentrifugationTemperatureOption> preCentrifugationTemperatureOptions =
+        new ArrayList<>();
+    for (PreCentrifugationTemperature preCentrifugationTemperature :
+        PreCentrifugationTemperature.values()) {
+      PreCentrifugationTemperatureOption preCentrifugationTemperatureOption =
+          new PreCentrifugationTemperatureOption(preCentrifugationTemperature);
+      preCentrifugationTemperatureOptions.add(preCentrifugationTemperatureOption);
+    }
+    return preCentrifugationTemperatureOptions;
+  }
+
+  public List<PreCentrifugationTemperatureOption> getList() {
+    return this.preCentrifugationTemperatureOptions;
   }
 
   /**
@@ -38,7 +46,7 @@ public final class PreCentrifugationTemperatureListProvider {
    * @param temperature Temperature object
    * @return PreCentrifugationTemperatureOption
    */
-  public static PreCentrifugationTemperatureOption valueOf(Temperature temperature) {
+  public PreCentrifugationTemperatureOption valueOf(Temperature temperature) {
 
     if (temperature == null) {
       return null;
@@ -47,7 +55,7 @@ public final class PreCentrifugationTemperatureListProvider {
     float temperatureCelsius = temperature.getTemperatureCelsius();
 
     for (PreCentrifugationTemperatureOption preCentrifugationTemperatureOption :
-        PRE_CENTRIFUGATION_TEMPERATURE_OPTIONS) {
+        this.preCentrifugationTemperatureOptions) {
       if (preCentrifugationTemperatureOption.hasTemperature(temperatureCelsius)) {
         return preCentrifugationTemperatureOption;
       }

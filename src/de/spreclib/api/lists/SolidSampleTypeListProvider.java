@@ -3,6 +3,7 @@ package de.spreclib.api.lists;
 import de.spreclib.api.lists.options.SolidSampleTypeOption;
 import de.spreclib.model.enums.SolidSampleType;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for SolidSampleTypeOptions.
@@ -13,17 +14,22 @@ import java.util.ArrayList;
  */
 public final class SolidSampleTypeListProvider {
 
-  private static final ArrayList<SolidSampleTypeOption> SOLID_SAMPLE_TYPE_OPTIONS;
+  private final List<SolidSampleTypeOption> solidSampleTypeOptions;
 
-  static {
-    SOLID_SAMPLE_TYPE_OPTIONS = new ArrayList<>();
-    for (SolidSampleType solidSampleType : SolidSampleType.values()) {
-      SolidSampleTypeOption solidSanpleTypeOption = new SolidSampleTypeOption(solidSampleType);
-      SOLID_SAMPLE_TYPE_OPTIONS.add(solidSanpleTypeOption);
-    }
+  public SolidSampleTypeListProvider() {
+    this.solidSampleTypeOptions = generateList();
   }
 
-  public static ArrayList<SolidSampleTypeOption> getList() {
-    return SOLID_SAMPLE_TYPE_OPTIONS;
+  private List<SolidSampleTypeOption> generateList() {
+    List<SolidSampleTypeOption> solidSampleTypeOptions = new ArrayList<>();
+    for (SolidSampleType solidSampleType : SolidSampleType.values()) {
+      SolidSampleTypeOption solidSanpleTypeOption = new SolidSampleTypeOption(solidSampleType);
+      solidSampleTypeOptions.add(solidSanpleTypeOption);
+    }
+    return solidSampleTypeOptions;
+  }
+
+  public List<SolidSampleTypeOption> getList() {
+    return this.solidSampleTypeOptions;
   }
 }

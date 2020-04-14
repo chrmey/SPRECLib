@@ -4,6 +4,7 @@ import de.spreclib.api.lists.options.WarmIschemiaTimeOption;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.WarmIschemiaTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for WarmIschemiaTimeOptions.
@@ -16,18 +17,23 @@ import java.util.ArrayList;
  */
 public final class WarmIschemiaTimeListProvider {
 
-  private static final ArrayList<WarmIschemiaTimeOption> WARM_ISCHEMIA_TIME_OPTIONS;
+  private final List<WarmIschemiaTimeOption> warmIschemiaTimeOptions;
 
-  static {
-    WARM_ISCHEMIA_TIME_OPTIONS = new ArrayList<>();
-    for (WarmIschemiaTime warmIschemiaTime : WarmIschemiaTime.values()) {
-      WarmIschemiaTimeOption warmIschemiaTimeOption = new WarmIschemiaTimeOption(warmIschemiaTime);
-      WARM_ISCHEMIA_TIME_OPTIONS.add(warmIschemiaTimeOption);
-    }
+  public WarmIschemiaTimeListProvider() {
+    this.warmIschemiaTimeOptions = generateList();
   }
 
-  public static ArrayList<WarmIschemiaTimeOption> getList() {
-    return WARM_ISCHEMIA_TIME_OPTIONS;
+  private List<WarmIschemiaTimeOption> generateList() {
+    List<WarmIschemiaTimeOption> warmIschemiaTimeOptions = new ArrayList<>();
+    for (WarmIschemiaTime warmIschemiaTime : WarmIschemiaTime.values()) {
+      WarmIschemiaTimeOption warmIschemiaTimeOption = new WarmIschemiaTimeOption(warmIschemiaTime);
+      warmIschemiaTimeOptions.add(warmIschemiaTimeOption);
+    }
+    return warmIschemiaTimeOptions;
+  }
+
+  public List<WarmIschemiaTimeOption> getList() {
+    return this.warmIschemiaTimeOptions;
   }
 
   /**
@@ -39,13 +45,12 @@ public final class WarmIschemiaTimeListProvider {
    * @return WarmIschemiaTimeOption
    * @see #valueOf(int)
    */
-  public static WarmIschemiaTimeOption valueOf(
-      long vascularClampTimeMillis, long collectionTimeMillis) {
+  public WarmIschemiaTimeOption valueOf(long vascularClampTimeMillis, long collectionTimeMillis) {
 
     int durationMinutes =
         new Timespan(vascularClampTimeMillis, collectionTimeMillis).getTimespanMinutes();
 
-    return valueOf(durationMinutes);
+    return this.valueOf(durationMinutes);
   }
 
   /**
@@ -55,9 +60,9 @@ public final class WarmIschemiaTimeListProvider {
    * @param durationMinutes duration in Minutes
    * @return WarmIschemiaTimeOption
    */
-  public static WarmIschemiaTimeOption valueOf(int durationMinutes) {
+  public WarmIschemiaTimeOption valueOf(int durationMinutes) {
 
-    for (WarmIschemiaTimeOption warmIschemiaTimeOption : WARM_ISCHEMIA_TIME_OPTIONS) {
+    for (WarmIschemiaTimeOption warmIschemiaTimeOption : this.warmIschemiaTimeOptions) {
 
       if (warmIschemiaTimeOption.hasDuration(durationMinutes)) {
         return warmIschemiaTimeOption;

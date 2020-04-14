@@ -3,6 +3,7 @@ package de.spreclib.api.lists;
 import de.spreclib.api.lists.options.FixationOption;
 import de.spreclib.model.enums.Fixation;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for FixationOptions.
@@ -13,17 +14,22 @@ import java.util.ArrayList;
  */
 public final class FixationListProvider {
 
-  private static final ArrayList<FixationOption> FIXATION_OPTIONS;
+  private final List<FixationOption> fixationOptions;
 
-  static {
-    FIXATION_OPTIONS = new ArrayList<>();
-    for (Fixation fixation : Fixation.values()) {
-      FixationOption fixationOption = new FixationOption(fixation);
-      FIXATION_OPTIONS.add(fixationOption);
-    }
+  public FixationListProvider() {
+    this.fixationOptions = generateList();
   }
 
-  public static ArrayList<FixationOption> getList() {
-    return FIXATION_OPTIONS;
+  private List<FixationOption> generateList() {
+    List<FixationOption> fixationOptions = new ArrayList<>();
+    for (Fixation fixation : Fixation.values()) {
+      FixationOption fixationOption = new FixationOption(fixation);
+      fixationOptions.add(fixationOption);
+    }
+    return fixationOptions;
+  }
+
+  public List<FixationOption> getList() {
+    return this.fixationOptions;
   }
 }

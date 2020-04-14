@@ -10,27 +10,29 @@ import de.spreclib.api.lists.options.SecondCentrifugationOption;
 import de.spreclib.api.lists.options.SecondCentrifugationSpeedOption;
 import de.spreclib.api.lists.options.SecondCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class SecondCentrifugationListProviderTest {
 
-  private ArrayList<SecondCentrifugationOption> list;
+  private SecondCentrifugationListProvider secondCentrifugationListProvider;
+  private List<SecondCentrifugationOption> secondCentrifugationList;
 
   @Before
   public void setUp() {
-    list = SecondCentrifugationListProvider.getList();
+    this.secondCentrifugationListProvider = new SecondCentrifugationListProvider();
+    this.secondCentrifugationList = secondCentrifugationListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(this.secondCentrifugationList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : this.secondCentrifugationList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -41,16 +43,16 @@ public class SecondCentrifugationListProviderTest {
     Temperature temperature = new Temperature(20f);
 
     SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption =
-        SecondCentrifugationTemperatureListProvider.valueOf(temperature);
+        new SecondCentrifugationTemperatureListProvider().valueOf(temperature);
     SecondCentrifugationDurationOption secondCentrifugationDurationOption =
-        SecondCentrifugationDurationListProvider.valueOf(15);
+        new SecondCentrifugationDurationListProvider().valueOf(15);
     SecondCentrifugationSpeedOption secondCentrifugationSpeedOption =
-        SecondCentrifugationSpeedListProvider.valueOf(3000);
+        new SecondCentrifugationSpeedListProvider().valueOf(3000);
     SecondCentrifugationBrakingOption secondCentrifugationBrakingOption =
-        SecondCentrifugationBrakingListProvider.valueOf(true);
+        new SecondCentrifugationBrakingListProvider().valueOf(true);
 
     SecondCentrifugationOption secondCentrifugationOption =
-        SecondCentrifugationListProvider.valueOf(
+        this.secondCentrifugationListProvider.valueOf(
             secondCentrifugationTemperatureOption,
             secondCentrifugationDurationOption,
             secondCentrifugationSpeedOption,
@@ -63,13 +65,13 @@ public class SecondCentrifugationListProviderTest {
   public void testWithTemperatureOptionIsNull() {
 
     SecondCentrifugationDurationOption secondCentrifugationDurationOption =
-        SecondCentrifugationDurationListProvider.valueOf(15);
+        new SecondCentrifugationDurationListProvider().valueOf(15);
     SecondCentrifugationSpeedOption secondCentrifugationSpeedOption =
-        SecondCentrifugationSpeedListProvider.valueOf(3000);
+        new SecondCentrifugationSpeedListProvider().valueOf(3000);
     SecondCentrifugationBrakingOption secondCentrifugationBrakingOption =
-        SecondCentrifugationBrakingListProvider.valueOf(true);
+        new SecondCentrifugationBrakingListProvider().valueOf(true);
 
-    SecondCentrifugationListProvider.valueOf(
+    this.secondCentrifugationListProvider.valueOf(
         null,
         secondCentrifugationDurationOption,
         secondCentrifugationSpeedOption,
@@ -82,13 +84,13 @@ public class SecondCentrifugationListProviderTest {
     Temperature temperature = new Temperature(20f);
 
     SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption =
-        SecondCentrifugationTemperatureListProvider.valueOf(temperature);
+        new SecondCentrifugationTemperatureListProvider().valueOf(temperature);
     SecondCentrifugationSpeedOption secondCentrifugationSpeedOption =
-        SecondCentrifugationSpeedListProvider.valueOf(3000);
+        new SecondCentrifugationSpeedListProvider().valueOf(3000);
     SecondCentrifugationBrakingOption secondCentrifugationBrakingOption =
-        SecondCentrifugationBrakingListProvider.valueOf(true);
+        new SecondCentrifugationBrakingListProvider().valueOf(true);
 
-    SecondCentrifugationListProvider.valueOf(
+    this.secondCentrifugationListProvider.valueOf(
         secondCentrifugationTemperatureOption,
         null,
         secondCentrifugationSpeedOption,
@@ -101,13 +103,13 @@ public class SecondCentrifugationListProviderTest {
     Temperature temperature = new Temperature(20f);
 
     SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption =
-        SecondCentrifugationTemperatureListProvider.valueOf(temperature);
+        new SecondCentrifugationTemperatureListProvider().valueOf(temperature);
     SecondCentrifugationDurationOption secondCentrifugationDurationOption =
-        SecondCentrifugationDurationListProvider.valueOf(15);
+        new SecondCentrifugationDurationListProvider().valueOf(15);
     SecondCentrifugationBrakingOption secondCentrifugationBrakingOption =
-        SecondCentrifugationBrakingListProvider.valueOf(true);
+        new SecondCentrifugationBrakingListProvider().valueOf(true);
 
-    SecondCentrifugationListProvider.valueOf(
+    this.secondCentrifugationListProvider.valueOf(
         secondCentrifugationTemperatureOption,
         secondCentrifugationDurationOption,
         null,
@@ -120,13 +122,13 @@ public class SecondCentrifugationListProviderTest {
     Temperature temperature = new Temperature(20f);
 
     SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption =
-        SecondCentrifugationTemperatureListProvider.valueOf(temperature);
+        new SecondCentrifugationTemperatureListProvider().valueOf(temperature);
     SecondCentrifugationDurationOption secondCentrifugationDurationOption =
-        SecondCentrifugationDurationListProvider.valueOf(15);
+        new SecondCentrifugationDurationListProvider().valueOf(15);
     SecondCentrifugationSpeedOption secondCentrifugationSpeedOption =
-        SecondCentrifugationSpeedListProvider.valueOf(100);
+        new SecondCentrifugationSpeedListProvider().valueOf(100);
 
-    SecondCentrifugationListProvider.valueOf(
+    this.secondCentrifugationListProvider.valueOf(
         secondCentrifugationTemperatureOption,
         secondCentrifugationDurationOption,
         secondCentrifugationSpeedOption,

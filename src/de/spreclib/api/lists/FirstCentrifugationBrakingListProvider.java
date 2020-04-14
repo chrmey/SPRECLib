@@ -3,6 +3,7 @@ package de.spreclib.api.lists;
 import de.spreclib.api.lists.options.FirstCentrifugationBrakingOption;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for FirstCentrifugationBrakingOptions.
@@ -15,20 +16,24 @@ import java.util.ArrayList;
  */
 public final class FirstCentrifugationBrakingListProvider {
 
-  public static final ArrayList<FirstCentrifugationBrakingOption>
-      FIRST_CENTRIFUGATION_BRAKING_OPTIONS;
+  public final List<FirstCentrifugationBrakingOption> firstCentrifugationBrakingOptions;
 
-  static {
-    FIRST_CENTRIFUGATION_BRAKING_OPTIONS = new ArrayList<>();
+  public FirstCentrifugationBrakingListProvider() {
+    this.firstCentrifugationBrakingOptions = generateList();
+  }
+
+  private List<FirstCentrifugationBrakingOption> generateList() {
+    List<FirstCentrifugationBrakingOption> firstCentrifugationBrakingOptions = new ArrayList<>();
     for (CentrifugationBraking centrifugationBraking : CentrifugationBraking.values()) {
       FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =
           new FirstCentrifugationBrakingOption(centrifugationBraking);
-      FIRST_CENTRIFUGATION_BRAKING_OPTIONS.add(firstCentrifugationBrakingOption);
+      firstCentrifugationBrakingOptions.add(firstCentrifugationBrakingOption);
     }
+    return firstCentrifugationBrakingOptions;
   }
 
-  public static ArrayList<FirstCentrifugationBrakingOption> getList() {
-    return FIRST_CENTRIFUGATION_BRAKING_OPTIONS;
+  public List<FirstCentrifugationBrakingOption> getList() {
+    return this.firstCentrifugationBrakingOptions;
   }
 
   /**
@@ -38,10 +43,9 @@ public final class FirstCentrifugationBrakingListProvider {
    * @param braking boolean
    * @return FirstCentrifugationOption
    */
-  public static FirstCentrifugationBrakingOption valueOf(boolean braking) {
-
+  public FirstCentrifugationBrakingOption valueOf(boolean braking) {
     for (FirstCentrifugationBrakingOption firstCentrifugationBrakingOption :
-        FIRST_CENTRIFUGATION_BRAKING_OPTIONS) {
+        this.firstCentrifugationBrakingOptions) {
 
       if (firstCentrifugationBrakingOption.hasBraking(braking)) {
         return firstCentrifugationBrakingOption;

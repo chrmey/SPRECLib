@@ -2,29 +2,32 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.FixationOption;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class FixationListProviderTest {
 
-  private ArrayList<FixationOption> list;
+  private FixationListProvider fixationListProvider;
+  private List<FixationOption> fixationList;
 
   @Before
   public void setUp() {
-    list = FixationListProvider.getList();
+    this.fixationListProvider = new FixationListProvider();
+    this.fixationList = fixationListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(this.fixationList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : this.fixationList) {
       assertNotNull(option.getStringRepresentation());
     }
   }

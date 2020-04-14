@@ -4,6 +4,7 @@ import de.spreclib.api.lists.options.PostCentrifugationDelayOption;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for PostCentrifugationDelayOptions.
@@ -16,19 +17,24 @@ import java.util.ArrayList;
  */
 public final class PostCentrifugationDelayListProvider {
 
-  private static final ArrayList<PostCentrifugationDelayOption> POST_CENTRIFUGATION_DELAY_OPTIONS;
+  private final List<PostCentrifugationDelayOption> postCentrifugationDelayOptions;
 
-  static {
-    POST_CENTRIFUGATION_DELAY_OPTIONS = new ArrayList<>();
+  public PostCentrifugationDelayListProvider() {
+    this.postCentrifugationDelayOptions = generateList();
+  }
+
+  private List<PostCentrifugationDelayOption> generateList() {
+    List<PostCentrifugationDelayOption> postCentrifugationDelayOptions = new ArrayList<>();
     for (PostCentrifugationDelay postCentrifugationDelay : PostCentrifugationDelay.values()) {
       PostCentrifugationDelayOption postCentrifugationDelayOption =
           new PostCentrifugationDelayOption(postCentrifugationDelay);
-      POST_CENTRIFUGATION_DELAY_OPTIONS.add(postCentrifugationDelayOption);
+      postCentrifugationDelayOptions.add(postCentrifugationDelayOption);
     }
+    return postCentrifugationDelayOptions;
   }
 
-  public static ArrayList<PostCentrifugationDelayOption> getList() {
-    return POST_CENTRIFUGATION_DELAY_OPTIONS;
+  public List<PostCentrifugationDelayOption> getList() {
+    return this.postCentrifugationDelayOptions;
   }
 
   /**
@@ -40,14 +46,14 @@ public final class PostCentrifugationDelayListProvider {
    * @return PostCentrifugationDelayOption
    * @see #valueOf(int)
    */
-  public static PostCentrifugationDelayOption valueOf(
+  public PostCentrifugationDelayOption valueOf(
       long lastCentrifugationStartTimeMillis, long longTermStorageStartTimeMillis) {
 
     int delayMinutes =
         new Timespan(lastCentrifugationStartTimeMillis, longTermStorageStartTimeMillis)
             .getTimespanMinutes();
 
-    return valueOf(delayMinutes);
+    return this.valueOf(delayMinutes);
   }
 
   /**
@@ -57,10 +63,10 @@ public final class PostCentrifugationDelayListProvider {
    * @param delayMinutes delay in Minutes
    * @return PostCentrifugationDelayOption
    */
-  public static PostCentrifugationDelayOption valueOf(int delayMinutes) {
+  public PostCentrifugationDelayOption valueOf(int delayMinutes) {
 
     for (PostCentrifugationDelayOption postCentrifugationDelayOption :
-        POST_CENTRIFUGATION_DELAY_OPTIONS) {
+        this.postCentrifugationDelayOptions) {
 
       if (postCentrifugationDelayOption.hasDelay(delayMinutes)) {
         return postCentrifugationDelayOption;

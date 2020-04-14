@@ -3,6 +3,7 @@ package de.spreclib.api.lists;
 import de.spreclib.api.lists.options.FirstCentrifugationSpeedOption;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for FirstCentrifugationSpeedOptions.
@@ -15,19 +16,24 @@ import java.util.ArrayList;
  */
 public final class FirstCentrifugationSpeedListProvider {
 
-  private static final ArrayList<FirstCentrifugationSpeedOption> FIRST_CENTRIFUGATION_SPEED_OPTIONS;
+  private final List<FirstCentrifugationSpeedOption> firstCentrifugationSpeedOptions;
 
-  static {
-    FIRST_CENTRIFUGATION_SPEED_OPTIONS = new ArrayList<>();
+  public FirstCentrifugationSpeedListProvider() {
+    this.firstCentrifugationSpeedOptions = generateList();
+  }
+
+  private List<FirstCentrifugationSpeedOption> generateList() {
+    List<FirstCentrifugationSpeedOption> firstCentrifugationSpeedOptions = new ArrayList<>();
     for (FirstCentrifugationSpeed firstCentrifugationSpeed : FirstCentrifugationSpeed.values()) {
       FirstCentrifugationSpeedOption firstCentrifugationSpeedOption =
           new FirstCentrifugationSpeedOption(firstCentrifugationSpeed);
-      FIRST_CENTRIFUGATION_SPEED_OPTIONS.add(firstCentrifugationSpeedOption);
+      firstCentrifugationSpeedOptions.add(firstCentrifugationSpeedOption);
     }
+    return firstCentrifugationSpeedOptions;
   }
 
-  public static ArrayList<FirstCentrifugationSpeedOption> getList() {
-    return FIRST_CENTRIFUGATION_SPEED_OPTIONS;
+  public List<FirstCentrifugationSpeedOption> getList() {
+    return this.firstCentrifugationSpeedOptions;
   }
 
   /**
@@ -37,9 +43,9 @@ public final class FirstCentrifugationSpeedListProvider {
    * @param speed Centrifugation speed in g
    * @return FirstCentrifugationSpeedOption
    */
-  public static FirstCentrifugationSpeedOption valueOf(int speed) {
+  public FirstCentrifugationSpeedOption valueOf(int speed) {
     for (FirstCentrifugationSpeedOption firstCentrifugationSpeedOption :
-        FIRST_CENTRIFUGATION_SPEED_OPTIONS) {
+        firstCentrifugationSpeedOptions) {
 
       if (firstCentrifugationSpeedOption.hasSpeed(speed)) {
         return firstCentrifugationSpeedOption;

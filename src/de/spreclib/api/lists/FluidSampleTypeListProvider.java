@@ -3,6 +3,7 @@ package de.spreclib.api.lists;
 import de.spreclib.api.lists.options.FluidSampleTypeOption;
 import de.spreclib.model.enums.FluidSampleType;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for FixationOptions.
@@ -13,17 +14,22 @@ import java.util.ArrayList;
  */
 public final class FluidSampleTypeListProvider {
 
-  private static final ArrayList<FluidSampleTypeOption> FLUID_SAMPLE_TYPE_OPTIONS;
+  private final List<FluidSampleTypeOption> fluidSampleTypeOptions;
 
-  static {
-    FLUID_SAMPLE_TYPE_OPTIONS = new ArrayList<>();
+  public FluidSampleTypeListProvider() {
+    this.fluidSampleTypeOptions = generateList();
+  }
+
+  private List<FluidSampleTypeOption> generateList() {
+    List<FluidSampleTypeOption> FLUID_SAMPLE_TYPE_OPTIONS = new ArrayList<>();
     for (FluidSampleType fluidSampleType : FluidSampleType.values()) {
       FluidSampleTypeOption fluidSampleTypeOption = new FluidSampleTypeOption(fluidSampleType);
       FLUID_SAMPLE_TYPE_OPTIONS.add(fluidSampleTypeOption);
     }
+    return FLUID_SAMPLE_TYPE_OPTIONS;
   }
 
-  public static ArrayList<FluidSampleTypeOption> getList() {
-    return FLUID_SAMPLE_TYPE_OPTIONS;
+  public List<FluidSampleTypeOption> getList() {
+    return this.fluidSampleTypeOptions;
   }
 }

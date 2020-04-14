@@ -5,27 +5,29 @@ import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.TypeOfCollectionOption;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class TypeOfCollectionListProviderTest {
 
-  private ArrayList<TypeOfCollectionOption> list;
+  private TypeOfCollectionListProvider typeOfCollectionListProvider;
+  private List<TypeOfCollectionOption> typeOfCollectionList;
 
   @Before
   public void setUp() {
-    list = TypeOfCollectionListProvider.getList();
+    this.typeOfCollectionListProvider = new TypeOfCollectionListProvider();
+    this.typeOfCollectionList = typeOfCollectionListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(this.typeOfCollectionList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : this.typeOfCollectionList) {
       assertNotNull(option.getStringRepresentation());
     }
   }

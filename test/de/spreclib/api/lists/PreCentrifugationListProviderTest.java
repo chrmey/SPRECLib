@@ -2,33 +2,36 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
 import de.spreclib.api.exceptions.InvalidParameterCombinationException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.PreCentrifugationDelayOption;
 import de.spreclib.api.lists.options.PreCentrifugationOption;
 import de.spreclib.api.lists.options.PreCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class PreCentrifugationListProviderTest {
 
-  private ArrayList<PreCentrifugationOption> list;
+  private PreCentrifugationListProvider preCentrifugationListProvider;
+  private List<PreCentrifugationOption> preCentrifugationList;
 
   @Before
   public void setUp() {
-    list = PreCentrifugationListProvider.getList();
+    this.preCentrifugationListProvider = new PreCentrifugationListProvider();
+    this.preCentrifugationList = preCentrifugationListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(this.preCentrifugationList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : this.preCentrifugationList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -37,12 +40,12 @@ public class PreCentrifugationListProviderTest {
   public void testValueOfWithValidValues() {
 
     PreCentrifugationTemperatureOption temperatureOption =
-        PreCentrifugationTemperatureListProvider.valueOf(new Temperature(10f));
+        new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(10f));
 
-    PreCentrifugationDelayOption delayOption = PreCentrifugationDelayListProvider.valueOf(15);
+    PreCentrifugationDelayOption delayOption = new PreCentrifugationDelayListProvider().valueOf(15);
 
     PreCentrifugationOption preCentrifugationOption =
-        PreCentrifugationListProvider.valueOf(temperatureOption, delayOption);
+        this.preCentrifugationListProvider.valueOf(temperatureOption, delayOption);
 
     assertNotNull(preCentrifugationOption);
   }
@@ -50,28 +53,29 @@ public class PreCentrifugationListProviderTest {
   @Test(expected = IllegalArgumentException.class)
   public void testValueOfWithTemperatureOptionisNull() {
 
-    PreCentrifugationDelayOption delayOption = PreCentrifugationDelayListProvider.valueOf(15);
+    PreCentrifugationDelayOption delayOption = new PreCentrifugationDelayListProvider().valueOf(15);
 
-    PreCentrifugationListProvider.valueOf(null, delayOption);
+    this.preCentrifugationListProvider.valueOf(null, delayOption);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testValueOfWithDelayOptionisNull() {
 
     PreCentrifugationTemperatureOption temperatureOption =
-        PreCentrifugationTemperatureListProvider.valueOf(new Temperature(10f));
+        new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(10f));
 
-    PreCentrifugationListProvider.valueOf(temperatureOption, null);
+    this.preCentrifugationListProvider.valueOf(temperatureOption, null);
   }
 
   @Test(expected = InvalidParameterCombinationException.class)
   public void testWithInvalidParameterCombination() {
 
     PreCentrifugationTemperatureOption temperatureOption =
-        PreCentrifugationTemperatureListProvider.valueOf(new Temperature(35f));
+        new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(35f));
 
-    PreCentrifugationDelayOption delayOption = PreCentrifugationDelayListProvider.valueOf(300);
+    PreCentrifugationDelayOption delayOption =
+        new PreCentrifugationDelayListProvider().valueOf(300);
 
-    PreCentrifugationListProvider.valueOf(temperatureOption, delayOption);
+    this.preCentrifugationListProvider.valueOf(temperatureOption, delayOption);
   }
 }

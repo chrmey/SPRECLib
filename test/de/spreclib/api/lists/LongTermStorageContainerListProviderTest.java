@@ -5,27 +5,29 @@ import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.LongTermStorageContainerOption;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class LongTermStorageContainerListProviderTest {
 
-  private ArrayList<LongTermStorageContainerOption> list;
+  private LongTermStorageContainerListProvider longTermStorageContainerListProvider;
+  private List<LongTermStorageContainerOption> longTermStorageContainerList;
 
   @Before
   public void setUp() {
-    list = LongTermStorageContainerListProvider.getList();
+    this.longTermStorageContainerListProvider = new LongTermStorageContainerListProvider();
+    this.longTermStorageContainerList = longTermStorageContainerListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(this.longTermStorageContainerList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : this.longTermStorageContainerList) {
       assertNotNull(option.getStringRepresentation());
     }
   }

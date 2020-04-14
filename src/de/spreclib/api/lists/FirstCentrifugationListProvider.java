@@ -9,6 +9,7 @@ import de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for FirstCentrifugationOptions.
@@ -21,19 +22,24 @@ import java.util.ArrayList;
  */
 public final class FirstCentrifugationListProvider {
 
-  private static final ArrayList<FirstCentrifugationOption> FIRST_CENTRIFUGATION_OPTIONS;
+  private final List<FirstCentrifugationOption> firstCentrifugationOptions;
 
-  static {
-    FIRST_CENTRIFUGATION_OPTIONS = new ArrayList<>();
+  public FirstCentrifugationListProvider() {
+    this.firstCentrifugationOptions = generateList();
+  }
+
+  private List<FirstCentrifugationOption> generateList() {
+    List<FirstCentrifugationOption> firstCentrifugationOptions = new ArrayList<>();
     for (Centrifugation firstCentrifugation : FirstCentrifugationList.CENTRIFUGATIONS) {
       FirstCentrifugationOption firstCentrifugationOption =
           new FirstCentrifugationOption(firstCentrifugation);
-      FIRST_CENTRIFUGATION_OPTIONS.add(firstCentrifugationOption);
+      firstCentrifugationOptions.add(firstCentrifugationOption);
     }
+    return firstCentrifugationOptions;
   }
 
-  public static ArrayList<FirstCentrifugationOption> getList() {
-    return FIRST_CENTRIFUGATION_OPTIONS;
+  public List<FirstCentrifugationOption> getList() {
+    return this.firstCentrifugationOptions;
   }
 
   /**
@@ -48,7 +54,7 @@ public final class FirstCentrifugationListProvider {
    * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
-  public static FirstCentrifugationOption valueOf(
+  public FirstCentrifugationOption valueOf(
       FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption,
       FirstCentrifugationDurationOption firstCentrifugationDurationOption,
       FirstCentrifugationSpeedOption firstCentrifugationSpeedOption,
@@ -70,7 +76,7 @@ public final class FirstCentrifugationListProvider {
       throw new IllegalArgumentException("FirstCentrifugationBrakingOption cannot be null");
     }
 
-    for (FirstCentrifugationOption firstCentrifugationOption : FIRST_CENTRIFUGATION_OPTIONS) {
+    for (FirstCentrifugationOption firstCentrifugationOption : this.firstCentrifugationOptions) {
       if (firstCentrifugationOption.hasFirstCentrifugation(
           firstCentrifugationTemperatureOption,
           firstCentrifugationDurationOption,

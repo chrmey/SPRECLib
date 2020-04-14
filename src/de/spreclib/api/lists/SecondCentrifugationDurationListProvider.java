@@ -4,6 +4,7 @@ import de.spreclib.api.lists.options.SecondCentrifugationDurationOption;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationDuration;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListProvider for SecondCentrifugationDurationOptions.
@@ -16,21 +17,25 @@ import java.util.ArrayList;
  */
 public final class SecondCentrifugationDurationListProvider {
 
-  private static final ArrayList<SecondCentrifugationDurationOption>
-      SECOND_CENTRIFUGATION_DURATION_OPTIONS;
+  private final List<SecondCentrifugationDurationOption> secondCentrifugationOptions;
 
-  static {
-    SECOND_CENTRIFUGATION_DURATION_OPTIONS = new ArrayList<>();
+  public SecondCentrifugationDurationListProvider() {
+    this.secondCentrifugationOptions = generateList();
+  }
+
+  private List<SecondCentrifugationDurationOption> generateList() {
+    List<SecondCentrifugationDurationOption> secondCentrifugationOptions = new ArrayList<>();
     for (SecondCentrifugationDuration secondCentrifugationDuration :
         SecondCentrifugationDuration.values()) {
       SecondCentrifugationDurationOption secondCentrifugationDurationOption =
           new SecondCentrifugationDurationOption(secondCentrifugationDuration);
-      SECOND_CENTRIFUGATION_DURATION_OPTIONS.add(secondCentrifugationDurationOption);
+      secondCentrifugationOptions.add(secondCentrifugationDurationOption);
     }
+    return secondCentrifugationOptions;
   }
 
-  public static ArrayList<SecondCentrifugationDurationOption> getList() {
-    return SECOND_CENTRIFUGATION_DURATION_OPTIONS;
+  public List<SecondCentrifugationDurationOption> getList() {
+    return this.secondCentrifugationOptions;
   }
 
   /**
@@ -42,15 +47,14 @@ public final class SecondCentrifugationDurationListProvider {
    * @return SecondCentrifugationDurationOption
    * @see #valueOf(int)
    */
-  public static SecondCentrifugationDurationOption valueOf(
+  public SecondCentrifugationDurationOption valueOf(
       long secondCentrifugationStartTimeMillis, long secondCentrifugationEndTimeMillis) {
 
     int durationMinutes =
-        new Timespan(
-                secondCentrifugationStartTimeMillis, secondCentrifugationEndTimeMillis)
+        new Timespan(secondCentrifugationStartTimeMillis, secondCentrifugationEndTimeMillis)
             .getTimespanMinutes();
 
-    return valueOf(durationMinutes);
+    return this.valueOf(durationMinutes);
   }
 
   /**
@@ -60,9 +64,9 @@ public final class SecondCentrifugationDurationListProvider {
    * @param durationMinutes duration in Minutes
    * @return SecondCentrifugationDurationOption
    */
-  public static SecondCentrifugationDurationOption valueOf(int durationMinutes) {
+  public SecondCentrifugationDurationOption valueOf(int durationMinutes) {
     for (SecondCentrifugationDurationOption secondCentrifugationDurationOption :
-        SECOND_CENTRIFUGATION_DURATION_OPTIONS) {
+        this.secondCentrifugationOptions) {
 
       if (secondCentrifugationDurationOption.hasDuration(durationMinutes)) {
         return secondCentrifugationDurationOption;

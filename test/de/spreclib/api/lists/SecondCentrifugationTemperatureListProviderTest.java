@@ -7,27 +7,31 @@ import static org.junit.Assert.assertNull;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.SecondCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class SecondCentrifugationTemperatureListProviderTest {
 
-  private ArrayList<SecondCentrifugationTemperatureOption> list;
+  private SecondCentrifugationTemperatureListProvider secondCentrifugationTemperatureListProvider;
+  private List<SecondCentrifugationTemperatureOption> secondCentrifugationTemperatureList;
 
   @Before
   public void setUp() {
-    list = SecondCentrifugationTemperatureListProvider.getList();
+    this.secondCentrifugationTemperatureListProvider =
+        new SecondCentrifugationTemperatureListProvider();
+    this.secondCentrifugationTemperatureList =
+        secondCentrifugationTemperatureListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(this.secondCentrifugationTemperatureList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : this.secondCentrifugationTemperatureList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -38,7 +42,7 @@ public class SecondCentrifugationTemperatureListProviderTest {
     Temperature temperature = new Temperature(20f);
 
     SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption =
-        SecondCentrifugationTemperatureListProvider.valueOf(temperature);
+        this.secondCentrifugationTemperatureListProvider.valueOf(temperature);
 
     assertNotNull(secondCentrifugationTemperatureOption);
   }
@@ -49,7 +53,7 @@ public class SecondCentrifugationTemperatureListProviderTest {
     Temperature temperature = new Temperature(-20f);
 
     SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption =
-        SecondCentrifugationTemperatureListProvider.valueOf(temperature);
+        this.secondCentrifugationTemperatureListProvider.valueOf(temperature);
 
     assertNull(secondCentrifugationTemperatureOption);
   }
@@ -58,7 +62,7 @@ public class SecondCentrifugationTemperatureListProviderTest {
   public void testValueOfWithNullValue() {
 
     SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption =
-        SecondCentrifugationTemperatureListProvider.valueOf(null);
+        this.secondCentrifugationTemperatureListProvider.valueOf(null);
 
     assertNull(secondCentrifugationTemperatureOption);
   }

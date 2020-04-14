@@ -2,6 +2,7 @@ package de.spreclib.api.lists;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
 import de.spreclib.api.exceptions.InvalidParameterCombinationException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.FirstCentrifugationBrakingOption;
@@ -10,27 +11,29 @@ import de.spreclib.api.lists.options.FirstCentrifugationOption;
 import de.spreclib.api.lists.options.FirstCentrifugationSpeedOption;
 import de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class FirstCentrifugationListProviderTest {
 
-  private ArrayList<FirstCentrifugationOption> list;
+  private FirstCentrifugationListProvider firstCentrifugationListProvider;
+  private List<FirstCentrifugationOption> firstCentrifugationList;
 
   @Before
   public void setUp() {
-    list = FirstCentrifugationListProvider.getList();
+    this.firstCentrifugationListProvider = new FirstCentrifugationListProvider();
+    this.firstCentrifugationList = firstCentrifugationListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(list.isEmpty());
+    assertFalse(firstCentrifugationList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : list) {
+    for (IListOption option : firstCentrifugationList) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -41,16 +44,16 @@ public class FirstCentrifugationListProviderTest {
     Temperature temperature = new Temperature(20f);
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
-        FirstCentrifugationTemperatureListProvider.valueOf(temperature);
+        new FirstCentrifugationTemperatureListProvider().valueOf(temperature);
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
-        FirstCentrifugationDurationListProvider.valueOf(15);
+        new FirstCentrifugationDurationListProvider().valueOf(15);
     FirstCentrifugationSpeedOption firstCentrifugationSpeedOption =
-        FirstCentrifugationSpeedListProvider.valueOf(3000);
+        new FirstCentrifugationSpeedListProvider().valueOf(3000);
     FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =
-        FirstCentrifugationBrakingListProvider.valueOf(true);
+        new FirstCentrifugationBrakingListProvider().valueOf(true);
 
     FirstCentrifugationOption firstCentrifugationOption =
-        FirstCentrifugationListProvider.valueOf(
+        this.firstCentrifugationListProvider.valueOf(
             firstCentrifugationTemperatureOption,
             firstCentrifugationDurationOption,
             firstCentrifugationSpeedOption,
@@ -65,16 +68,16 @@ public class FirstCentrifugationListProviderTest {
     Temperature temperature = new Temperature(20f);
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
-        FirstCentrifugationTemperatureListProvider.valueOf(temperature);
+        new FirstCentrifugationTemperatureListProvider().valueOf(temperature);
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
-        FirstCentrifugationDurationListProvider.valueOf(15);
+        new FirstCentrifugationDurationListProvider().valueOf(15);
     // Speed 100g is invalid in this combination
     FirstCentrifugationSpeedOption firstCentrifugationSpeedOption =
-        FirstCentrifugationSpeedListProvider.valueOf(100);
+        new FirstCentrifugationSpeedListProvider().valueOf(100);
     FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =
-        FirstCentrifugationBrakingListProvider.valueOf(true);
+        new FirstCentrifugationBrakingListProvider().valueOf(true);
 
-    FirstCentrifugationListProvider.valueOf(
+    this.firstCentrifugationListProvider.valueOf(
         firstCentrifugationTemperatureOption,
         firstCentrifugationDurationOption,
         firstCentrifugationSpeedOption,
@@ -85,13 +88,13 @@ public class FirstCentrifugationListProviderTest {
   public void testWithTemperatureOptionIsNull() {
 
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
-        FirstCentrifugationDurationListProvider.valueOf(15);
+        new FirstCentrifugationDurationListProvider().valueOf(15);
     FirstCentrifugationSpeedOption firstCentrifugationSpeedOption =
-        FirstCentrifugationSpeedListProvider.valueOf(3000);
+        new FirstCentrifugationSpeedListProvider().valueOf(3000);
     FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =
-        FirstCentrifugationBrakingListProvider.valueOf(true);
+        new FirstCentrifugationBrakingListProvider().valueOf(true);
 
-    FirstCentrifugationListProvider.valueOf(
+    this.firstCentrifugationListProvider.valueOf(
         null,
         firstCentrifugationDurationOption,
         firstCentrifugationSpeedOption,
@@ -104,13 +107,13 @@ public class FirstCentrifugationListProviderTest {
     Temperature temperature = new Temperature(20f);
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
-        FirstCentrifugationTemperatureListProvider.valueOf(temperature);
+        new FirstCentrifugationTemperatureListProvider().valueOf(temperature);
     FirstCentrifugationSpeedOption firstCentrifugationSpeedOption =
-        FirstCentrifugationSpeedListProvider.valueOf(3000);
+        new FirstCentrifugationSpeedListProvider().valueOf(3000);
     FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =
-        FirstCentrifugationBrakingListProvider.valueOf(true);
+        new FirstCentrifugationBrakingListProvider().valueOf(true);
 
-    FirstCentrifugationListProvider.valueOf(
+    this.firstCentrifugationListProvider.valueOf(
         firstCentrifugationTemperatureOption,
         null,
         firstCentrifugationSpeedOption,
@@ -123,13 +126,13 @@ public class FirstCentrifugationListProviderTest {
     Temperature temperature = new Temperature(20f);
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
-        FirstCentrifugationTemperatureListProvider.valueOf(temperature);
+        new FirstCentrifugationTemperatureListProvider().valueOf(temperature);
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
-        FirstCentrifugationDurationListProvider.valueOf(15);
+        new FirstCentrifugationDurationListProvider().valueOf(15);
     FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =
-        FirstCentrifugationBrakingListProvider.valueOf(true);
+        new FirstCentrifugationBrakingListProvider().valueOf(true);
 
-    FirstCentrifugationListProvider.valueOf(
+    this.firstCentrifugationListProvider.valueOf(
         firstCentrifugationTemperatureOption,
         firstCentrifugationDurationOption,
         null,
@@ -142,13 +145,13 @@ public class FirstCentrifugationListProviderTest {
     Temperature temperature = new Temperature(20f);
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
-        FirstCentrifugationTemperatureListProvider.valueOf(temperature);
+        new FirstCentrifugationTemperatureListProvider().valueOf(temperature);
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
-        FirstCentrifugationDurationListProvider.valueOf(15);
+        new FirstCentrifugationDurationListProvider().valueOf(15);
     FirstCentrifugationSpeedOption firstCentrifugationSpeedOption =
-        FirstCentrifugationSpeedListProvider.valueOf(100);
+        new FirstCentrifugationSpeedListProvider().valueOf(100);
 
-    FirstCentrifugationListProvider.valueOf(
+    this.firstCentrifugationListProvider.valueOf(
         firstCentrifugationTemperatureOption,
         firstCentrifugationDurationOption,
         firstCentrifugationSpeedOption,
