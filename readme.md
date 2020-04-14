@@ -1,5 +1,7 @@
 # SPRECLib
 
+![Build Java](https://github.com/Chris2996/SPRECLib/workflows/Build%20Java/badge.svg)
+
 A Java library for the SamplePREAnalyticalCode from the [ISBER](https://www.isber.org/page/SPREC?&hhsearchterms=%22sprec%22)
 
 
