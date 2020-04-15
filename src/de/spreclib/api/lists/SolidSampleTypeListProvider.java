@@ -23,8 +23,8 @@ public final class SolidSampleTypeListProvider {
   private List<SolidSampleTypeOption> generateList() {
     List<SolidSampleTypeOption> solidSampleTypeOptions = new ArrayList<>();
     for (SolidSampleType solidSampleType : SolidSampleType.values()) {
-      SolidSampleTypeOption solidSanpleTypeOption = new SolidSampleTypeOption(solidSampleType);
-      solidSampleTypeOptions.add(solidSanpleTypeOption);
+      SolidSampleTypeOption solidSampleTypeOption = new SolidSampleTypeOption(solidSampleType);
+      solidSampleTypeOptions.add(solidSampleTypeOption);
     }
     return solidSampleTypeOptions;
   }

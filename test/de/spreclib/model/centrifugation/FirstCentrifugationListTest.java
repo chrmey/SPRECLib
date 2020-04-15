@@ -47,7 +47,7 @@ public class FirstCentrifugationListTest {
             FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
             FirstCentrifugationTemperature.ROOM_TEMPERATURE,
-            CentrifugationBraking.NO_BRAKING,
+            CentrifugationBraking.WITH_BRAKING,
             new CodePart("B"),
             SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
@@ -116,7 +116,7 @@ public class FirstCentrifugationListTest {
             SprecPartType.FIRST_CENTRIFUGATION));
     testList.add(
         new NormalCentrifugation(
-            FirstCentrifugationDuration.THIRY_MINUTES,
+            FirstCentrifugationDuration.THIRTY_MINUTES,
             FirstCentrifugationSpeed.LESS_THOUSAND_G,
             FirstCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.NO_BRAKING,

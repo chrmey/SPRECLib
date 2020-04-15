@@ -1,5 +1,6 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -7,6 +8,7 @@ import static org.junit.Assert.assertNull;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
+import de.spreclib.model.enums.centrifugation.FirstCentrifugationTemperature;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -64,5 +66,31 @@ public class FirstCentrifugationTemperatureListProviderTest {
         this.firstCentrifugationTemperatureListProvider.valueOf(null);
 
     assertNull(firstCentrifugationTemperatureOption);
+  }
+
+  @Test
+  public void testValueOfShouldReturnRoomTemperature() {
+
+    Temperature temperature = new Temperature(18);
+
+    FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
+        this.firstCentrifugationTemperatureListProvider.valueOf(temperature);
+
+    assertEquals(
+        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
+        firstCentrifugationTemperatureOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnTwoToTenDegrees() {
+
+    Temperature temperature = new Temperature(10.9999f);
+
+    FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
+        this.firstCentrifugationTemperatureListProvider.valueOf(temperature);
+
+    assertEquals(
+        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
+        firstCentrifugationTemperatureOption.getContainedObject());
   }
 }

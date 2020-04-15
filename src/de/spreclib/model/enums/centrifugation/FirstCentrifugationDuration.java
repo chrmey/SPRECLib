@@ -5,7 +5,7 @@ import de.spreclib.model.interfaces.IListObject;
 
 public enum FirstCentrifugationDuration implements ICentrifugationDuration, IListObject {
   TEN_TO_FIFTEEN_MINUTES(10, 15),
-  THIRY_MINUTES(30, 30);
+  THIRTY_MINUTES(30, 30);
 
   private final int lowerBoundMinutes;
   private final int upperBoundMinutes;

@@ -1,23 +1,25 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.ColdIschemiaTimeOption;
+import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 public class ColdIschemiaTimeListProviderTest {
 
-  private ColdIschemiaTimeListProvider coldIschemiaTimeListProvider;
-  private List<ColdIschemiaTimeOption> coldIschemiaTimeList;
+  private ColdIschemiaTimeListProvider<IListOption> coldIschemiaTimeListProvider;
+  private List<IListOption> coldIschemiaTimeList;
 
   @Before
   public void setUp() {
-    this.coldIschemiaTimeListProvider = new ColdIschemiaTimeListProvider();
+    this.coldIschemiaTimeListProvider = new ColdIschemiaTimeListProvider<IListOption>();
     coldIschemiaTimeList = coldIschemiaTimeListProvider.getList();
   }
 
@@ -36,7 +38,8 @@ public class ColdIschemiaTimeListProviderTest {
   @Test
   public void testValueOfWithValidValue() {
 
-    ColdIschemiaTimeOption coldIschemiaTimeOption = this.coldIschemiaTimeListProvider.valueOf(15);
+    ColdIschemiaTimeOption coldIschemiaTimeOption =
+        (ColdIschemiaTimeOption) this.coldIschemiaTimeListProvider.valueOf(15);
 
     assertNotNull(coldIschemiaTimeOption);
   }
@@ -44,7 +47,8 @@ public class ColdIschemiaTimeListProviderTest {
   @Test
   public void testValueOfWithinalidValue() {
 
-    ColdIschemiaTimeOption coldIschemiaTimeOption = this.coldIschemiaTimeListProvider.valueOf(-15);
+    ColdIschemiaTimeOption coldIschemiaTimeOption =
+        (ColdIschemiaTimeOption) this.coldIschemiaTimeListProvider.valueOf(-15);
 
     assertNull(coldIschemiaTimeOption);
   }
@@ -56,8 +60,29 @@ public class ColdIschemiaTimeListProviderTest {
     long fifteenMinutesLater = 1577837700000L;
 
     ColdIschemiaTimeOption coldIschemiaTimeOption =
-        this.coldIschemiaTimeListProvider.valueOf(startTime, fifteenMinutesLater);
+        (ColdIschemiaTimeOption)
+            this.coldIschemiaTimeListProvider.valueOf(startTime, fifteenMinutesLater);
 
     assertNotNull(coldIschemiaTimeOption);
+  }
+
+  @Test
+  public void testValueOfShouldReturnCodeA() {
+
+    ColdIschemiaTimeOption coldIschemiaTimeOption =
+        (ColdIschemiaTimeOption) this.coldIschemiaTimeListProvider.valueOf(1);
+
+    assertEquals(
+        new CodePart("A"), coldIschemiaTimeOption.getContainedObject().getCodeFromSprecPart());
+  }
+
+  @Test
+  public void testValueOfShouldReturnCodeB() {
+
+    ColdIschemiaTimeOption coldIschemiaTimeOption =
+        (ColdIschemiaTimeOption) this.coldIschemiaTimeListProvider.valueOf(3);
+
+    assertEquals(
+        new CodePart("B"), coldIschemiaTimeOption.getContainedObject().getCodeFromSprecPart());
   }
 }

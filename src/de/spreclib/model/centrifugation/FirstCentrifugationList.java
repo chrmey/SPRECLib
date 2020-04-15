@@ -44,7 +44,7 @@ public final class FirstCentrifugationList {
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
                         FirstCentrifugationTemperature.ROOM_TEMPERATURE,
-                        CentrifugationBraking.NO_BRAKING,
+                        CentrifugationBraking.WITH_BRAKING,
                         new CodePart("B"),
                         SprecPartType.FIRST_CENTRIFUGATION),
                     new NormalCentrifugation(
@@ -104,7 +104,7 @@ public final class FirstCentrifugationList {
                         new CodePart("J"),
                         SprecPartType.FIRST_CENTRIFUGATION),
                     new NormalCentrifugation(
-                        FirstCentrifugationDuration.THIRY_MINUTES,
+                        FirstCentrifugationDuration.THIRTY_MINUTES,
                         FirstCentrifugationSpeed.LESS_THOUSAND_G,
                         FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.NO_BRAKING,

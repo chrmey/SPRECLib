@@ -1,11 +1,13 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.FixationTimeOption;
+import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -59,5 +61,21 @@ public class FixationTimeListProviderTest {
         this.fixationTimeListProvider.valueOf(startTime, fifteenMinutesLater);
 
     assertNotNull(fixationTimeOption);
+  }
+
+  @Test
+  public void testShouldReturnCodeA() {
+
+    FixationTimeOption fixationTimeOption = this.fixationTimeListProvider.valueOf(14);
+
+    assertEquals(new CodePart("A"), fixationTimeOption.getContainedObject().getCodeFromSprecPart());
+  }
+
+  @Test
+  public void testShouldReturnCodeB() {
+
+    FixationTimeOption fixationTimeOption = this.fixationTimeListProvider.valueOf(15);
+
+    assertEquals(new CodePart("B"), fixationTimeOption.getContainedObject().getCodeFromSprecPart());
   }
 }

@@ -1,5 +1,6 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
@@ -10,6 +11,7 @@ import de.spreclib.api.lists.options.LongTermStorageOption;
 import de.spreclib.api.lists.options.LongTermStorageTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
+import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -80,5 +82,37 @@ public class LongTermStorageListProviderTest {
         new LongTermStorageContainerOption(LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML);
 
     this.longTermStorageListProvider.valueOf(temperatureOption, containerOption);
+  }
+
+  @Test
+  public void testValueOfShouldReturnCodeA() {
+
+    LongTermStorageTemperatureOption temperatureOption =
+        new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-60.99999f));
+
+    LongTermStorageContainerOption containerOption =
+        new LongTermStorageContainerOption(LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML);
+
+    LongTermStorageOption longTermStorageOption =
+        this.longTermStorageListProvider.valueOf(temperatureOption, containerOption);
+
+    assertEquals(
+        new CodePart("A"), longTermStorageOption.getContainedObject().getCodeFromSprecPart());
+  }
+
+  @Test
+  public void testValueOfShouldReturnCodeB() {
+
+    LongTermStorageTemperatureOption temperatureOption =
+        new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-35f));
+
+    LongTermStorageContainerOption containerOption =
+        new LongTermStorageContainerOption(LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML);
+
+    LongTermStorageOption longTermStorageOption =
+        this.longTermStorageListProvider.valueOf(temperatureOption, containerOption);
+
+    assertEquals(
+        new CodePart("B"), longTermStorageOption.getContainedObject().getCodeFromSprecPart());
   }
 }
