@@ -81,18 +81,17 @@ Example for a solid Sample:
     .withFixationTime(FixationTimeOption)
     .withLongTermStorage(LongTermStorageOption)
     .getSprecCode();
-
 ```
 
 You can pass null values as Option, this will lead to the code for that part to be replaced by "?" if you print the full code for that sample.
 
-Calling ```.getSprecCode()``` will return a FluidSprecCode / SolidSprecCode object. To get the full SPREC Code use:
+Calling ```.getSprecCode()``` will return a FluidSprecCode / SolidSprecCode object. To get the full SPREC code use:
 ```
 String sprecCode = fluidSprecCode.getStringRepresentation();
 ```
 
-To only get the code for one parameter:
-Warning: This will return null if the Part has not been set!
+To get the code for a specific part:
+Warning: This will return null if the part has not been set!
 
 ```
   FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
