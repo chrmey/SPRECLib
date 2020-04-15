@@ -105,17 +105,7 @@ String fluidSampleTypeCodeString = fluidSampleTypeCode.getStringRepresentation()
 
 ### Passing values to SPRECLib
 
-## CodeStyle
-Uses Google Java Styleguide
 
 ## Authors
 
 * *Christopher Meyer* - [Chris2996](https://github.com/chris2996)
-
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-
-
