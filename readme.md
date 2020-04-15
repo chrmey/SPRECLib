@@ -7,14 +7,11 @@ A Java library for the SamplePREAnalyticalCode Version 2 from the [ISBER](https:
 
 ## Getting SPRECLib
 
+```SPRECLib uses Java8```
+
 Download the latest release jar and include it to your build. 
 
 (Using Maven Central is planned)
-
-### Prerequisites
-
-Java8
-
 
 ## Getting started
 
@@ -22,7 +19,9 @@ Java8
 
 The elements of a SPREC code in SPRECLib are called Parts. FluidSampleType, TypeOfCollection, etc. are parts. Each part has a defined set of values, each one of them with a one or three character code (called CodePart). Seven parts make up the full code of a sample. 
 
-SPRECLib also allows to "build up" a part from it's single values, that means you can use a temperature (degrees celsius) and a time value(minutes or two timestamps in milliseconds) and combine them to a PreCentrifugation. 
+SPRECLib also allows to "build up" a part from it's values, that means you can use a temperature (degrees celsius) and a time value(minutes or two timestamps in milliseconds) and combine them to a PreCentrifugation. 
+
+You see an overview of the structure of SPRECLib in the picture below.
 
 ![](readmeImages/sprecOverview.png)
 
