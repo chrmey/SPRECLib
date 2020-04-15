@@ -104,14 +104,13 @@ public class LongTermStorageListProviderTest {
   public void testValueOfShouldReturnCodeB() {
 
     LongTermStorageTemperatureOption temperatureOption =
-        new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-35f));
+        new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-35.001f));
 
     LongTermStorageContainerOption containerOption =
         new LongTermStorageContainerOption(LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML);
 
     LongTermStorageOption longTermStorageOption =
         this.longTermStorageListProvider.valueOf(temperatureOption, containerOption);
-
     assertEquals(
         new CodePart("B"), longTermStorageOption.getContainedObject().getCodeFromSprecPart());
   }
