@@ -24,7 +24,7 @@ The elements of a SPREC code in SPRECLib are called Parts. FluidSampleType, Type
 
 SPRECLib also allows to "build up" a part from it's single values, that means you can use a temperature (degrees celsius) and a time value(minutes or two timestamps in milliseconds) and combine them to a PreCentrifugation. 
 
-![](readmeImages/sprecOverview.jpg)
+![](readmeImages/sprecOverview.png)
 
 ### Getting SPREC Values as Lists
 
