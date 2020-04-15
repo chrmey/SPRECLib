@@ -13,7 +13,7 @@ public class FixationTimeTest {
 
   @Test
   public void testGetCodeFromSprecPart() {
-    ICodePart actual = FixationTime.LESS_THAN_15_MINUTES.getCodeFromSprecPart();
+    ICodePart actual = FixationTime.LESS_15_MINUTES.getCodeFromSprecPart();
     ICodePart expected = new CodePart("A");
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
@@ -22,7 +22,7 @@ public class FixationTimeTest {
 
   @Test
   public void testGetSprecPartType() {
-    ISprecPart sprecPartType = FixationTime.LESS_THAN_15_MINUTES;
+    ISprecPart sprecPartType = FixationTime.LESS_15_MINUTES;
     assertEquals(SprecPartType.FIXATION_TIME, sprecPartType.getSprecPartType());
   }
 }
