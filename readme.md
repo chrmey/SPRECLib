@@ -20,11 +20,11 @@ Java8
 
 ### Terminology in SPRECLib
 
-
 The elements of a SPREC code in SPRECLib are called Parts. FluidSampleType, TypeOfCollection, etc. are parts. Each part has a defined set of values, each one of them with a one or three character code (called CodePart). Seven parts make up the full code of a sample. 
 
 SPRECLib also allows to "build up" a part from it's single values, that means you can use a temperature (degrees celsius) and a time value(minutes or two timestamps in milliseconds) and combine them to a PreCentrifugation. 
 
+![](readmeImages/sprecOverview.jpg)
 
 ### Getting SPREC Values as Lists
 
@@ -66,9 +66,8 @@ Example for a fluid sample:
     .getSprecCode();
 ```
 
+
 Example for a solid Sample:
-
-
 ```
   SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 
@@ -84,6 +83,7 @@ Example for a solid Sample:
 ```
 
 You can pass null values as Option, this will lead to the code for that part to be replaced by "?" if you print the full code for that sample.
+
 
 Calling ```.getSprecCode()``` will return a FluidSprecCode / SolidSprecCode object. To get the full SPREC code use:
 ```
@@ -104,15 +104,10 @@ ICodePart fluidSampleTypeCode = sprecCode.getFluidSampleTypeCode();
 String fluidSampleTypeCodeString = fluidSampleTypeCode.getStringRepresentation();
 ```
 
-```Passing values to SPRECLib```
+##Passing values to SPRECLib
 
 ## CodeStyle
 Uses Google Java Styleguide
-
-
-## Built With
-
-* [Maven](https://maven.apache.org/) - Dependency Management 
 
 ## Authors
 
