@@ -16,25 +16,20 @@ import java.util.List;
  *
  * @author Christopher Meyer
  */
-public final class LongTermStorageListProvider {
-
-  private final List<LongTermStorageOption> longTermStorageOptions;
+public final class LongTermStorageListProvider extends AbstractListProvider<LongTermStorageOption> {
 
   public LongTermStorageListProvider() {
-    this.longTermStorageOptions = generateList();
+    super();
   }
 
-  private List<LongTermStorageOption> generateList() {
+  @Override
+  protected List<LongTermStorageOption> generateList() {
     List<LongTermStorageOption> longTermStorageOptions = new ArrayList<>();
     for (LongTermStorage longTermStorage : LongTermStorageList.LONG_TERM_STORAGES) {
       LongTermStorageOption longTermStorageOption = new LongTermStorageOption(longTermStorage);
       longTermStorageOptions.add(longTermStorageOption);
     }
     return longTermStorageOptions;
-  }
-
-  public List<LongTermStorageOption> getList() {
-    return this.longTermStorageOptions;
   }
 
   /**
@@ -59,7 +54,7 @@ public final class LongTermStorageListProvider {
       throw new IllegalArgumentException("LongTermStorageContainerOption cannot not be null.");
     }
 
-    for (LongTermStorageOption longTermStorageOption : this.longTermStorageOptions) {
+    for (LongTermStorageOption longTermStorageOption : this.listOptions) {
 
       if (longTermStorageOption.hasLongTermStorage(
           longTermStorageTemperatureOption, longTermStorageContainerOption)) {

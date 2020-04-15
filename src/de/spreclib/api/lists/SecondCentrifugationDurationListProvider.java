@@ -15,15 +15,15 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.lists.options.SecondCentrifugationDurationOption
  */
-public final class SecondCentrifugationDurationListProvider {
-
-  private final List<SecondCentrifugationDurationOption> secondCentrifugationOptions;
+public final class SecondCentrifugationDurationListProvider
+    extends AbstractListProvider<SecondCentrifugationDurationOption> {
 
   public SecondCentrifugationDurationListProvider() {
-    this.secondCentrifugationOptions = generateList();
+    super();
   }
 
-  private List<SecondCentrifugationDurationOption> generateList() {
+  @Override
+  protected List<SecondCentrifugationDurationOption> generateList() {
     List<SecondCentrifugationDurationOption> secondCentrifugationOptions = new ArrayList<>();
     for (SecondCentrifugationDuration secondCentrifugationDuration :
         SecondCentrifugationDuration.values()) {
@@ -32,10 +32,6 @@ public final class SecondCentrifugationDurationListProvider {
       secondCentrifugationOptions.add(secondCentrifugationDurationOption);
     }
     return secondCentrifugationOptions;
-  }
-
-  public List<SecondCentrifugationDurationOption> getList() {
-    return this.secondCentrifugationOptions;
   }
 
   /**
@@ -65,8 +61,7 @@ public final class SecondCentrifugationDurationListProvider {
    * @return SecondCentrifugationDurationOption
    */
   public SecondCentrifugationDurationOption valueOf(int durationMinutes) {
-    for (SecondCentrifugationDurationOption secondCentrifugationDurationOption :
-        this.secondCentrifugationOptions) {
+    for (SecondCentrifugationDurationOption secondCentrifugationDurationOption : this.listOptions) {
 
       if (secondCentrifugationDurationOption.hasDuration(durationMinutes)) {
         return secondCentrifugationDurationOption;

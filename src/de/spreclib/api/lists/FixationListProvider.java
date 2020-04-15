@@ -12,24 +12,19 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.lists.options.FixationOption
  */
-public final class FixationListProvider {
-
-  private final List<FixationOption> fixationOptions;
+public final class FixationListProvider extends AbstractListProvider<FixationOption> {
 
   public FixationListProvider() {
-    this.fixationOptions = generateList();
+    super();
   }
 
-  private List<FixationOption> generateList() {
+  @Override
+  protected List<FixationOption> generateList() {
     List<FixationOption> fixationOptions = new ArrayList<>();
     for (Fixation fixation : Fixation.values()) {
       FixationOption fixationOption = new FixationOption(fixation);
       fixationOptions.add(fixationOption);
     }
     return fixationOptions;
-  }
-
-  public List<FixationOption> getList() {
-    return this.fixationOptions;
   }
 }

@@ -13,15 +13,15 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.lists.options.LongTermStorageTemperatureOption
  */
-public final class LongTermStorageTemperatureListProvider {
-
-  private final List<LongTermStorageTemperatureOption> longTermSTorageTemperatureOptions;
+public final class LongTermStorageTemperatureListProvider
+    extends AbstractListProvider<LongTermStorageTemperatureOption> {
 
   public LongTermStorageTemperatureListProvider() {
-    this.longTermSTorageTemperatureOptions = generateList();
+    super();
   }
 
-  private List<LongTermStorageTemperatureOption> generateList() {
+  @Override
+  protected List<LongTermStorageTemperatureOption> generateList() {
     List<LongTermStorageTemperatureOption> longTermSTorageTemperatureOptions = new ArrayList<>();
     for (LongTermStorageTemperature longTermStorageTemperature :
         LongTermStorageTemperature.values()) {
@@ -30,10 +30,6 @@ public final class LongTermStorageTemperatureListProvider {
       longTermSTorageTemperatureOptions.add(longTermStorageTemperatureOption);
     }
     return longTermSTorageTemperatureOptions;
-  }
-
-  public List<LongTermStorageTemperatureOption> getList() {
-    return this.longTermSTorageTemperatureOptions;
   }
 
   /**
@@ -51,8 +47,7 @@ public final class LongTermStorageTemperatureListProvider {
 
     float temperatureCelsius = temperature.getTemperatureCelsius();
 
-    for (LongTermStorageTemperatureOption longTermStorageTemperatureOption :
-        this.longTermSTorageTemperatureOptions) {
+    for (LongTermStorageTemperatureOption longTermStorageTemperatureOption : this.listOptions) {
       if (longTermStorageTemperatureOption.hasTemperature(temperatureCelsius)) {
         return longTermStorageTemperatureOption;
       }

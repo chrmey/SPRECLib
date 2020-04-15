@@ -14,15 +14,15 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.lists.options.SecondCentrifugationSpeedOption
  */
-public final class SecondCentrifugationSpeedListProvider {
-
-  private final List<SecondCentrifugationSpeedOption> secondCentrifugationSpeedOptions;
+public final class SecondCentrifugationSpeedListProvider
+    extends AbstractListProvider<SecondCentrifugationSpeedOption> {
 
   public SecondCentrifugationSpeedListProvider() {
-    this.secondCentrifugationSpeedOptions = generateList();
+    super();
   }
 
-  private List<SecondCentrifugationSpeedOption> generateList() {
+  @Override
+  protected List<SecondCentrifugationSpeedOption> generateList() {
     List<SecondCentrifugationSpeedOption> secondCentrifugationSpeedOptions = new ArrayList<>();
     for (SecondCentrifugationSpeed secondCentrifugationSpeed : SecondCentrifugationSpeed.values()) {
       SecondCentrifugationSpeedOption secondCentrifugationSpeedOption =
@@ -30,10 +30,6 @@ public final class SecondCentrifugationSpeedListProvider {
       secondCentrifugationSpeedOptions.add(secondCentrifugationSpeedOption);
     }
     return secondCentrifugationSpeedOptions;
-  }
-
-  public List<SecondCentrifugationSpeedOption> getList() {
-    return this.secondCentrifugationSpeedOptions;
   }
 
   /**
@@ -44,8 +40,7 @@ public final class SecondCentrifugationSpeedListProvider {
    * @return SecondCentrifugationSpeedOption
    */
   public SecondCentrifugationSpeedOption valueOf(int speed) {
-    for (SecondCentrifugationSpeedOption secondCentrifugationSpeedOption :
-        this.secondCentrifugationSpeedOptions) {
+    for (SecondCentrifugationSpeedOption secondCentrifugationSpeedOption : this.listOptions) {
 
       if (secondCentrifugationSpeedOption.hasSpeed(speed)) {
         return secondCentrifugationSpeedOption;

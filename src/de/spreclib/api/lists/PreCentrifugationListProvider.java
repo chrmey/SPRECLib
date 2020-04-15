@@ -18,15 +18,15 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.lists.options.PreCentrifugationOption
  */
-public final class PreCentrifugationListProvider {
-
-  private final List<PreCentrifugationOption> preCentrifguationOptions;
+public final class PreCentrifugationListProvider
+    extends AbstractListProvider<PreCentrifugationOption> {
 
   public PreCentrifugationListProvider() {
-    this.preCentrifguationOptions = generateList();
+    super();
   }
 
-  private List<PreCentrifugationOption> generateList() {
+  @Override
+  protected List<PreCentrifugationOption> generateList() {
     List<PreCentrifugationOption> preCentrifguationOptions = new ArrayList<>();
     for (PreCentrifugation preCentrifugation : PreCentrifugationList.PRE_CENTRIFUGATIONS) {
       PreCentrifugationOption preCentrifugationOption =
@@ -34,10 +34,6 @@ public final class PreCentrifugationListProvider {
       preCentrifguationOptions.add(preCentrifugationOption);
     }
     return preCentrifguationOptions;
-  }
-
-  public List<PreCentrifugationOption> getList() {
-    return this.preCentrifguationOptions;
   }
 
   /**
@@ -62,7 +58,7 @@ public final class PreCentrifugationListProvider {
       throw new IllegalArgumentException("PreCentrifugationDelayOption cannot not be null.");
     }
 
-    for (PreCentrifugationOption preCentrifugationOption : this.preCentrifguationOptions) {
+    for (PreCentrifugationOption preCentrifugationOption : this.listOptions) {
 
       if (preCentrifugationOption.hasPreCentrifugation(
           preCentrifugationTemperatureOption, preCentrifugationDelayOption)) {

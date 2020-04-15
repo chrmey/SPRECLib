@@ -12,24 +12,20 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.lists.options.PrimaryContainerOption
  */
-public final class PrimaryContainerListProvider {
-
-  private final List<PrimaryContainerOption> primaryContainerOptions;
+public final class PrimaryContainerListProvider
+    extends AbstractListProvider<PrimaryContainerOption> {
 
   public PrimaryContainerListProvider() {
-    this.primaryContainerOptions = generateList();
+    super();
   }
 
-  private List<PrimaryContainerOption> generateList() {
+  @Override
+  protected List<PrimaryContainerOption> generateList() {
     List<PrimaryContainerOption> primaryContainerOptions = new ArrayList<>();
     for (PrimaryContainer primaryContainer : PrimaryContainer.values()) {
       PrimaryContainerOption primaryContainerOption = new PrimaryContainerOption(primaryContainer);
       primaryContainerOptions.add(primaryContainerOption);
     }
     return primaryContainerOptions;
-  }
-
-  public List<PrimaryContainerOption> getList() {
-    return this.primaryContainerOptions;
   }
 }

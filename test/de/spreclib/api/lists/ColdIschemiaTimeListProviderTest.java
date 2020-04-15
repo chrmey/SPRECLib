@@ -14,12 +14,12 @@ import org.junit.Test;
 
 public class ColdIschemiaTimeListProviderTest {
 
-  private ColdIschemiaTimeListProvider<IListOption> coldIschemiaTimeListProvider;
-  private List<IListOption> coldIschemiaTimeList;
+  private ColdIschemiaTimeListProvider coldIschemiaTimeListProvider;
+  private List<ColdIschemiaTimeOption> coldIschemiaTimeList;
 
   @Before
   public void setUp() {
-    this.coldIschemiaTimeListProvider = new ColdIschemiaTimeListProvider<IListOption>();
+    this.coldIschemiaTimeListProvider = new ColdIschemiaTimeListProvider();
     coldIschemiaTimeList = coldIschemiaTimeListProvider.getList();
   }
 
@@ -39,7 +39,7 @@ public class ColdIschemiaTimeListProviderTest {
   public void testValueOfWithValidValue() {
 
     ColdIschemiaTimeOption coldIschemiaTimeOption =
-        (ColdIschemiaTimeOption) this.coldIschemiaTimeListProvider.valueOf(15);
+        this.coldIschemiaTimeListProvider.valueOf(15);
 
     assertNotNull(coldIschemiaTimeOption);
   }
@@ -48,7 +48,7 @@ public class ColdIschemiaTimeListProviderTest {
   public void testValueOfWithinalidValue() {
 
     ColdIschemiaTimeOption coldIschemiaTimeOption =
-        (ColdIschemiaTimeOption) this.coldIschemiaTimeListProvider.valueOf(-15);
+        this.coldIschemiaTimeListProvider.valueOf(-15);
 
     assertNull(coldIschemiaTimeOption);
   }
@@ -60,8 +60,7 @@ public class ColdIschemiaTimeListProviderTest {
     long fifteenMinutesLater = 1577837700000L;
 
     ColdIschemiaTimeOption coldIschemiaTimeOption =
-        (ColdIschemiaTimeOption)
-            this.coldIschemiaTimeListProvider.valueOf(startTime, fifteenMinutesLater);
+        this.coldIschemiaTimeListProvider.valueOf(startTime, fifteenMinutesLater);
 
     assertNotNull(coldIschemiaTimeOption);
   }
@@ -70,7 +69,7 @@ public class ColdIschemiaTimeListProviderTest {
   public void testValueOfShouldReturnCodeA() {
 
     ColdIschemiaTimeOption coldIschemiaTimeOption =
-        (ColdIschemiaTimeOption) this.coldIschemiaTimeListProvider.valueOf(1);
+        this.coldIschemiaTimeListProvider.valueOf(1);
 
     assertEquals(
         new CodePart("A"), coldIschemiaTimeOption.getContainedObject().getCodeFromSprecPart());
@@ -80,7 +79,7 @@ public class ColdIschemiaTimeListProviderTest {
   public void testValueOfShouldReturnCodeB() {
 
     ColdIschemiaTimeOption coldIschemiaTimeOption =
-        (ColdIschemiaTimeOption) this.coldIschemiaTimeListProvider.valueOf(3);
+        this.coldIschemiaTimeListProvider.valueOf(3);
 
     assertEquals(
         new CodePart("B"), coldIschemiaTimeOption.getContainedObject().getCodeFromSprecPart());

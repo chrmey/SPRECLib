@@ -15,15 +15,15 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.lists.options.PostCentrifugationDelayOption
  */
-public final class PostCentrifugationDelayListProvider {
-
-  private final List<PostCentrifugationDelayOption> postCentrifugationDelayOptions;
+public final class PostCentrifugationDelayListProvider
+    extends AbstractListProvider<PostCentrifugationDelayOption> {
 
   public PostCentrifugationDelayListProvider() {
-    this.postCentrifugationDelayOptions = generateList();
+    super();
   }
 
-  private List<PostCentrifugationDelayOption> generateList() {
+  @Override
+  protected List<PostCentrifugationDelayOption> generateList() {
     List<PostCentrifugationDelayOption> postCentrifugationDelayOptions = new ArrayList<>();
     for (PostCentrifugationDelay postCentrifugationDelay : PostCentrifugationDelay.values()) {
       PostCentrifugationDelayOption postCentrifugationDelayOption =
@@ -31,10 +31,6 @@ public final class PostCentrifugationDelayListProvider {
       postCentrifugationDelayOptions.add(postCentrifugationDelayOption);
     }
     return postCentrifugationDelayOptions;
-  }
-
-  public List<PostCentrifugationDelayOption> getList() {
-    return this.postCentrifugationDelayOptions;
   }
 
   /**
@@ -65,8 +61,7 @@ public final class PostCentrifugationDelayListProvider {
    */
   public PostCentrifugationDelayOption valueOf(int delayMinutes) {
 
-    for (PostCentrifugationDelayOption postCentrifugationDelayOption :
-        this.postCentrifugationDelayOptions) {
+    for (PostCentrifugationDelayOption postCentrifugationDelayOption : this.listOptions) {
 
       if (postCentrifugationDelayOption.hasDelay(delayMinutes)) {
         return postCentrifugationDelayOption;

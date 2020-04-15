@@ -15,15 +15,15 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.lists.options.SecondCentrifugationTemperatureOption
  */
-public final class SecondCentrifugationTemperatureListProvider {
-
-  private final List<SecondCentrifugationTemperatureOption> secondCentrifugationTemperatureOptions;
+public final class SecondCentrifugationTemperatureListProvider
+    extends AbstractListProvider<SecondCentrifugationTemperatureOption> {
 
   public SecondCentrifugationTemperatureListProvider() {
-    this.secondCentrifugationTemperatureOptions = generateList();
+    super();
   }
 
-  private List<SecondCentrifugationTemperatureOption> generateList() {
+  @Override
+  protected List<SecondCentrifugationTemperatureOption> generateList() {
     List<SecondCentrifugationTemperatureOption> secondCentrifugationTemperatureOptions =
         new ArrayList<>();
     for (SecondCentrifugationTemperature secondCentrifugationTemperature :
@@ -33,10 +33,6 @@ public final class SecondCentrifugationTemperatureListProvider {
       secondCentrifugationTemperatureOptions.add(secondCentrifugationTemperatureOption);
     }
     return secondCentrifugationTemperatureOptions;
-  }
-
-  public List<SecondCentrifugationTemperatureOption> getList() {
-    return this.secondCentrifugationTemperatureOptions;
   }
 
   /**
@@ -54,7 +50,7 @@ public final class SecondCentrifugationTemperatureListProvider {
 
     float temperatureCelsius = temperature.getTemperatureCelsius();
     for (SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption :
-        this.secondCentrifugationTemperatureOptions) {
+        this.listOptions) {
 
       if (secondCentrifugationTemperatureOption.hasTemperature(temperatureCelsius)) {
         return secondCentrifugationTemperatureOption;

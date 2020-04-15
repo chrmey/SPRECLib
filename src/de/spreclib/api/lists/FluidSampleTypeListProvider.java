@@ -12,24 +12,19 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.lists.Fixation
  */
-public final class FluidSampleTypeListProvider {
-
-  private final List<FluidSampleTypeOption> fluidSampleTypeOptions;
+public final class FluidSampleTypeListProvider extends AbstractListProvider<FluidSampleTypeOption> {
 
   public FluidSampleTypeListProvider() {
-    this.fluidSampleTypeOptions = generateList();
+    super();
   }
 
-  private List<FluidSampleTypeOption> generateList() {
+  @Override
+  protected List<FluidSampleTypeOption> generateList() {
     List<FluidSampleTypeOption> FLUID_SAMPLE_TYPE_OPTIONS = new ArrayList<>();
     for (FluidSampleType fluidSampleType : FluidSampleType.values()) {
       FluidSampleTypeOption fluidSampleTypeOption = new FluidSampleTypeOption(fluidSampleType);
       FLUID_SAMPLE_TYPE_OPTIONS.add(fluidSampleTypeOption);
     }
     return FLUID_SAMPLE_TYPE_OPTIONS;
-  }
-
-  public List<FluidSampleTypeOption> getList() {
-    return this.fluidSampleTypeOptions;
   }
 }

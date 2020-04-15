@@ -14,15 +14,15 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.lists.options.FirstCentrifugationBrakingOption
  */
-public final class FirstCentrifugationBrakingListProvider {
-
-  public final List<FirstCentrifugationBrakingOption> firstCentrifugationBrakingOptions;
+public final class FirstCentrifugationBrakingListProvider
+    extends AbstractListProvider<FirstCentrifugationBrakingOption> {
 
   public FirstCentrifugationBrakingListProvider() {
-    this.firstCentrifugationBrakingOptions = generateList();
+    super();
   }
 
-  private List<FirstCentrifugationBrakingOption> generateList() {
+  @Override
+  protected List<FirstCentrifugationBrakingOption> generateList() {
     List<FirstCentrifugationBrakingOption> firstCentrifugationBrakingOptions = new ArrayList<>();
     for (CentrifugationBraking centrifugationBraking : CentrifugationBraking.values()) {
       FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =
@@ -30,10 +30,6 @@ public final class FirstCentrifugationBrakingListProvider {
       firstCentrifugationBrakingOptions.add(firstCentrifugationBrakingOption);
     }
     return firstCentrifugationBrakingOptions;
-  }
-
-  public List<FirstCentrifugationBrakingOption> getList() {
-    return this.firstCentrifugationBrakingOptions;
   }
 
   /**
@@ -44,8 +40,7 @@ public final class FirstCentrifugationBrakingListProvider {
    * @return FirstCentrifugationOption
    */
   public FirstCentrifugationBrakingOption valueOf(boolean braking) {
-    for (FirstCentrifugationBrakingOption firstCentrifugationBrakingOption :
-        this.firstCentrifugationBrakingOptions) {
+    for (FirstCentrifugationBrakingOption firstCentrifugationBrakingOption : this.listOptions) {
 
       if (firstCentrifugationBrakingOption.hasBraking(braking)) {
         return firstCentrifugationBrakingOption;

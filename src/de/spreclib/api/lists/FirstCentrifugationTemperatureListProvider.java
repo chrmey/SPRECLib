@@ -6,24 +6,24 @@ import de.spreclib.model.enums.centrifugation.FirstCentrifugationTemperature;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class FirstCentrifugationTemperatureListProvider {
-
-  /**
-   * ListProvider for FirstCentrifugationTemperatureOptions.
-   *
-   * <p>Use the valueOf() method to receive a ListOption if a ListOption for the value can be found.
-   *
-   * @author Christopher Meyer
-   * @version 1.0
-   * @see de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption
-   */
-  private final List<FirstCentrifugationTemperatureOption> firstCentrifugationTemperatureOptions;
+/**
+ * ListProvider for FirstCentrifugationTemperatureOptions.
+ *
+ * <p>Use the valueOf() method to receive a ListOption if a ListOption for the value can be found.
+ *
+ * @author Christopher Meyer
+ * @version 1.0
+ * @see de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption
+ */
+public final class FirstCentrifugationTemperatureListProvider
+    extends AbstractListProvider<FirstCentrifugationTemperatureOption> {
 
   public FirstCentrifugationTemperatureListProvider() {
-    this.firstCentrifugationTemperatureOptions = generatList();
+    super();
   }
 
-  private List<FirstCentrifugationTemperatureOption> generatList() {
+  @Override
+  protected List<FirstCentrifugationTemperatureOption> generateList() {
     List<FirstCentrifugationTemperatureOption> firstCentrifugationTemperatureOptions =
         new ArrayList<>();
     for (FirstCentrifugationTemperature firstCentrifugationTemperature :
@@ -33,10 +33,6 @@ public final class FirstCentrifugationTemperatureListProvider {
       firstCentrifugationTemperatureOptions.add(firstCentrifugationTemperatureOption);
     }
     return firstCentrifugationTemperatureOptions;
-  }
-
-  public List<FirstCentrifugationTemperatureOption> getList() {
-    return this.firstCentrifugationTemperatureOptions;
   }
 
   /**
@@ -53,8 +49,7 @@ public final class FirstCentrifugationTemperatureListProvider {
     }
 
     float temperatureCelsius = temperature.getTemperatureCelsius();
-    for (FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption :
-        firstCentrifugationTemperatureOptions) {
+    for (FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption : listOptions) {
 
       if (firstCentrifugationTemperatureOption.hasTemperature(temperatureCelsius)) {
         return firstCentrifugationTemperatureOption;

@@ -12,24 +12,20 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.lists.options.TypeOfCollectionOption
  */
-public final class TypeOfCollectionListProvider {
-
-  private final List<TypeOfCollectionOption> typeOfCollectionOptions;
+public final class TypeOfCollectionListProvider
+    extends AbstractListProvider<TypeOfCollectionOption> {
 
   public TypeOfCollectionListProvider() {
-    this.typeOfCollectionOptions = generateList();
+    super();
   }
 
-  private List<TypeOfCollectionOption> generateList() {
+  @Override
+  protected List<TypeOfCollectionOption> generateList() {
     List<TypeOfCollectionOption> typeOfCollectionOptions = new ArrayList<>();
     for (TypeOfCollection typeOfCollection : TypeOfCollection.values()) {
       TypeOfCollectionOption typeOfCollectionoption = new TypeOfCollectionOption(typeOfCollection);
       typeOfCollectionOptions.add(typeOfCollectionoption);
     }
     return typeOfCollectionOptions;
-  }
-
-  public List<TypeOfCollectionOption> getList() {
-    return this.typeOfCollectionOptions;
   }
 }

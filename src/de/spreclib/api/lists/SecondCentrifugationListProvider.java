@@ -20,15 +20,15 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.lists.options.SecondCentrifugationOption
  */
-public final class SecondCentrifugationListProvider {
-
-  private final List<SecondCentrifugationOption> secondCentrifugationOptions;
+public final class SecondCentrifugationListProvider
+    extends AbstractListProvider<SecondCentrifugationOption> {
 
   public SecondCentrifugationListProvider() {
-    this.secondCentrifugationOptions = generateList();
+    super();
   }
 
-  private List<SecondCentrifugationOption> generateList() {
+  @Override
+  protected List<SecondCentrifugationOption> generateList() {
     List<SecondCentrifugationOption> secondCentrifugationOptions = new ArrayList<>();
     for (Centrifugation secondCentrifugation : SecondCentrifugationList.CENTRIFUGATIONS) {
       SecondCentrifugationOption secondCentrifugationOption =
@@ -36,10 +36,6 @@ public final class SecondCentrifugationListProvider {
       secondCentrifugationOptions.add(secondCentrifugationOption);
     }
     return secondCentrifugationOptions;
-  }
-
-  public List<SecondCentrifugationOption> getList() {
-    return this.secondCentrifugationOptions;
   }
 
   /**
@@ -76,7 +72,7 @@ public final class SecondCentrifugationListProvider {
       throw new IllegalArgumentException("SecondCentrifugationBrakingOption cannot be null.");
     }
 
-    for (SecondCentrifugationOption secondCentrifugationOption : this.secondCentrifugationOptions) {
+    for (SecondCentrifugationOption secondCentrifugationOption : this.listOptions) {
       if (secondCentrifugationOption.hasSecondCentrifugation(
           secondCentrifugationTemperatureOption,
           secondCentrifugationDurationOption,
