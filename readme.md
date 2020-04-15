@@ -18,12 +18,20 @@ Java8
 
 ## Getting started
 
+### Terminology in SPRECLib
+
+
+The elements of a SPREC code in SPRECLib are called Parts. FluidSampleType, TypeOfCollection, etc. are parts. Each part has a defined set of values, each one of them with a one or three character code (called CodePart). Seven parts make up the full code of a sample. 
+
+SPRECLib also allows to "build up" a part from it's single values, that means you can use a temperature (degrees celsius) and a time value(minutes or two timestamps in milliseconds) and combine them to a PreCentrifugation. 
+
+
 ### Getting SPREC Values as Lists
 
-To obtain lists of the SPREC values for each Parameter you need to instantiate the ListProvider for that Parameter. There is a ListProvider for every Part of SPREC and also for each part of a part if the part is made up of multiple values. The contents of the ListProviders are called ListOptions, with a prefix depending on the ListProvider that they come from.
+To obtain lists of the SPREC values for each Parameter you need to instantiate the ListProvider for that Part. There is a ListProvider for every part of SPREC and also for each part of a part if the part is made up of multiple values. The contents of the ListProviders are called ListOptions, with a prefix depending on the ListProvider that they come from.
 
 ```
-FluidSampleTypeProvider provides a List of FluidSampleTypeOptions ...
+FluidSampleTypeProvider provides a List of FluidSampleTypeOptions, PrimaryContainerListProvider provides a List of PrimaryContainerOptions...
 ```
 
 To get a list of FluidSampleTypeOptions:
@@ -41,22 +49,41 @@ String nameInEnglish = fluidSampleTypeOption.getStringRepresentation();
 
 ### Getting the SPREC Code of a Sample
 
-After you obtained the ListOptios for the sample, use either ```FluidSampleSprec``` or ```SolidSampleSprec``` to get the SPREC Code. These classes provide a FluentInterface to build the Samples.
+After you obtained the ListOptios for the sample, use either ```FluidSampleSprec``` or ```SolidSampleSprec``` to get the SPREC Code. These classes provide a fluent interface to build the samples.
 
-Example for FluidSample:
+Example for a fluid sample:
 
 ```
-FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
-FluidSprecCode fluidSprecCode = fluidSampleSprec
-   .withFluidSampleType(FluidSampleTypeOption)
-   .withPrimaryContainer(PrimaryContainerOption)
-   .withPreCentrifugation(PreCentrifugationOption)
-   .withFirstCentrifugation(FirstCentrifugationOption)
-   .withSecondCentrifugation(FirstSecondOption)
-   .withPreCentrifugation(PostCentrifugationOption)
-   .withLongTermStorage(LongTermStorageOption)
-   .getSprecCode();
+  FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
+  FluidSprecCode fluidSprecCode = fluidSampleSprec
+    .withFluidSampleType(FluidSampleTypeOption)
+    .withPrimaryContainer(PrimaryContainerOption)
+    .withPreCentrifugation(PreCentrifugationOption)
+    .withFirstCentrifugation(FirstCentrifugationOption)
+    .withSecondCentrifugation(FirstSecondOption)
+    .withPreCentrifugation(PostCentrifugationOption)
+    .withLongTermStorage(LongTermStorageOption)
+    .getSprecCode();
 ```
+
+Example for a solid Sample:
+
+
+```
+  SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
+
+  SolidSprecCode solidSprecCode = solidSampleSprec
+    .withSolidSampleType(SolidSampleTypeOption)
+    .withTypeOfCollection(TypeOfColletionOption)
+    .withWarmIschemiaTime(WarmIschemiaTimeOption)
+    .withColdIschemiaTime(ColdIschemiaTimeOption)
+    .withFixation(FixationOption)
+    .withFixationTime(FixationTimeOption)
+    .withLongTermStorage(LongTermStorageOption)
+    .getSprecCode();
+
+```
+
 You can pass null values as Option, this will lead to the code for that part to be replaced by "?" if you print the full code for that sample.
 
 Calling ```.getSprecCode()``` will return a FluidSprecCode / SolidSprecCode object. To get the full SPREC Code use:
@@ -66,7 +93,14 @@ String sprecCode = fluidSprecCode.getStringRepresentation();
 
 To only get the code for one parameter:
 Warning: This will return null if the Part has not been set!
+
 ```
+  FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
+  
+  FluidSprecCode sprecCode = fluidSampleSprec
+    .withFluidSampleType(FluidSampleTypeOption)
+    .getSprecCode();
+
 ICodePart fluidSampleTypeCode = sprecCode.getFluidSampleTypeCode();
 String fluidSampleTypeCodeString = fluidSampleTypeCode.getStringRepresentation();
 ```
