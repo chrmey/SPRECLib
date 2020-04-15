@@ -103,7 +103,7 @@ ICodePart fluidSampleTypeCode = sprecCode.getFluidSampleTypeCode();
 String fluidSampleTypeCodeString = fluidSampleTypeCode.getStringRepresentation();
 ```
 
-##Passing values to SPRECLib
+### Passing values to SPRECLib
 
 ## CodeStyle
 Uses Google Java Styleguide
