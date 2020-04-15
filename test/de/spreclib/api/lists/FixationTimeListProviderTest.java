@@ -7,6 +7,7 @@ import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.FixationTimeOption;
+import de.spreclib.model.enums.FixationTime;
 import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;
@@ -64,11 +65,11 @@ public class FixationTimeListProviderTest {
   }
 
   @Test
-  public void testShouldReturnCodeA() {
+  public void testShouldReturnLess15Minutes() {
 
     FixationTimeOption fixationTimeOption = this.fixationTimeListProvider.valueOf(14);
 
-    assertEquals(new CodePart("A"), fixationTimeOption.getContainedObject().getCodeFromSprecPart());
+    assertEquals(FixationTime.LESS_15_MINUTES, fixationTimeOption.getContainedObject());
   }
 
   @Test

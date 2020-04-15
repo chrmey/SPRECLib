@@ -40,7 +40,7 @@ public class LongTermStorageTemperatureListProviderTest {
   public void testValueOfWithValidValues() {
 
     LongTermStorageTemperatureOption temperatureOption =
-        this.longTermStorageTemperatureListProvider.valueOf(new Temperature(-60f));
+        this.longTermStorageTemperatureListProvider.valueOf(new Temperature(-60.9999f));
 
     assertNotNull(temperatureOption);
   }
@@ -67,7 +67,7 @@ public class LongTermStorageTemperatureListProviderTest {
   public void testValueOfShouldReturnMinus35ToMinus18() {
 
     LongTermStorageTemperatureOption temperatureOption =
-        new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-35f));
+        new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-35.9999f));
 
     assertEquals(
         LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,

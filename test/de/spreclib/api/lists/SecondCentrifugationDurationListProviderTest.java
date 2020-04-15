@@ -1,11 +1,13 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.SecondCentrifugationDurationOption;
+import de.spreclib.model.enums.centrifugation.SecondCentrifugationDuration;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -61,5 +63,16 @@ public class SecondCentrifugationDurationListProviderTest {
         this.secondCentrifugationDurationListProvider.valueOf(startTime, fifteenMinutesLater);
 
     assertNotNull(secondCentrifugationDurationOption);
+  }
+
+  @Test
+  public void testValueOfShouldReturn10To15Minutes() {
+
+    SecondCentrifugationDurationOption secondCentrifugationDurationOption =
+        this.secondCentrifugationDurationListProvider.valueOf(10);
+
+    assertEquals(
+        SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+        secondCentrifugationDurationOption.getContainedObject());
   }
 }

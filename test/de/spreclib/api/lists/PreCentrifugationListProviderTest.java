@@ -1,5 +1,6 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
@@ -9,6 +10,7 @@ import de.spreclib.api.lists.options.PreCentrifugationDelayOption;
 import de.spreclib.api.lists.options.PreCentrifugationOption;
 import de.spreclib.api.lists.options.PreCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
+import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -77,5 +79,36 @@ public class PreCentrifugationListProviderTest {
         new PreCentrifugationDelayListProvider().valueOf(300);
 
     this.preCentrifugationListProvider.valueOf(temperatureOption, delayOption);
+  }
+
+  @Test
+  public void testValueOfShouldReturnCodeA() {
+
+    PreCentrifugationTemperatureOption temperatureOption =
+        new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(18f));
+
+    PreCentrifugationDelayOption delayOption = new PreCentrifugationDelayListProvider().valueOf(59);
+
+    PreCentrifugationOption preCentrifugationOption =
+        this.preCentrifugationListProvider.valueOf(temperatureOption, delayOption);
+
+    assertEquals(
+        new CodePart("A"), preCentrifugationOption.getContainedObject().getCodeFromSprecPart());
+  }
+
+  @Test
+  public void testValueOfShouldReturnCodeN() {
+
+    PreCentrifugationTemperatureOption temperatureOption =
+        new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(10f));
+
+    PreCentrifugationDelayOption delayOption =
+        new PreCentrifugationDelayListProvider().valueOf(2880);
+
+    PreCentrifugationOption preCentrifugationOption =
+        this.preCentrifugationListProvider.valueOf(temperatureOption, delayOption);
+
+    assertEquals(
+        new CodePart("N"), preCentrifugationOption.getContainedObject().getCodeFromSprecPart());
   }
 }

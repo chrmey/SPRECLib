@@ -40,7 +40,7 @@ public class FirstCentrifugationTemperatureListProviderTest {
   @Test
   public void testValueOfWithValidValue() {
 
-    Temperature temperature = new Temperature(20f);
+    Temperature temperature = new Temperature(20.9999f);
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
         this.firstCentrifugationTemperatureListProvider.valueOf(temperature);
@@ -71,7 +71,7 @@ public class FirstCentrifugationTemperatureListProviderTest {
   @Test
   public void testValueOfShouldReturnRoomTemperature() {
 
-    Temperature temperature = new Temperature(18);
+    Temperature temperature = new Temperature(28.9999f);
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
         this.firstCentrifugationTemperatureListProvider.valueOf(temperature);

@@ -165,7 +165,7 @@ public class FirstCentrifugationListProviderTest {
   @Test
   public void testValueOfShouldReturnCodeB() {
 
-    Temperature temperature = new Temperature(20f);
+    Temperature temperature = new Temperature(28.9999f);
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
         new FirstCentrifugationTemperatureListProvider().valueOf(temperature);
@@ -190,7 +190,7 @@ public class FirstCentrifugationListProviderTest {
   @Test
   public void testValueOfShouldReturnCodeM() {
 
-    Temperature temperature = new Temperature(20f);
+    Temperature temperature = new Temperature(28.999f);
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
         new FirstCentrifugationTemperatureListProvider().valueOf(temperature);

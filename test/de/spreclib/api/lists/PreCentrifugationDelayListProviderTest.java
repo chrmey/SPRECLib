@@ -1,11 +1,13 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.PreCentrifugationDelayOption;
+import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -59,5 +61,22 @@ public class PreCentrifugationDelayListProviderTest {
         this.preCentrifugationDelayListProvider.valueOf(startTime, fifteenMinutesLater);
 
     assertNotNull(preCentrifugationDurationOption);
+  }
+
+  @Test
+  public void testValueOfShouldReturnLessTwoHours() {
+
+    PreCentrifugationDelayOption delayOption = this.preCentrifugationDelayListProvider.valueOf(59);
+
+    assertEquals(PreCentrifugationDelay.LESS_TWO_HOURS, delayOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnGreaterEightyfourHours() {
+
+    PreCentrifugationDelayOption delayOption =
+        this.preCentrifugationDelayListProvider.valueOf(2880);
+
+    assertEquals(PreCentrifugationDelay.GREATER_EIGHTYFOUR_HOURS, delayOption.getContainedObject());
   }
 }

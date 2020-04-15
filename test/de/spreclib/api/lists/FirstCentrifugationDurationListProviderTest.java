@@ -66,13 +66,24 @@ public class FirstCentrifugationDurationListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnDurationOption10To15Minutes() {
+  public void testValueOfShouldReturn10To15Minutes() {
 
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
         this.firstCentrifugationDurationListProvider.valueOf(10);
 
     assertEquals(
         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+        firstCentrifugationDurationOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturn30Minutes() {
+
+    FirstCentrifugationDurationOption firstCentrifugationDurationOption =
+        this.firstCentrifugationDurationListProvider.valueOf(30);
+
+    assertEquals(
+        FirstCentrifugationDuration.THIRTY_MINUTES,
         firstCentrifugationDurationOption.getContainedObject());
   }
 }

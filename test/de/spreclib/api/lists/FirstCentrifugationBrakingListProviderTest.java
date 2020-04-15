@@ -18,8 +18,8 @@ public class FirstCentrifugationBrakingListProviderTest {
 
   @Before
   public void setUp() {
-    firstCentrifugationBrakingListProvider = new FirstCentrifugationBrakingListProvider();
-    firstCentrifugationBraking = firstCentrifugationBrakingListProvider.getList();
+    this.firstCentrifugationBrakingListProvider = new FirstCentrifugationBrakingListProvider();
+    this.firstCentrifugationBraking = firstCentrifugationBrakingListProvider.getList();
   }
 
   @Test
@@ -29,7 +29,7 @@ public class FirstCentrifugationBrakingListProviderTest {
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : firstCentrifugationBraking) {
+    for (IListOption option : this.firstCentrifugationBraking) {
       assertNotNull(option.getStringRepresentation());
     }
   }
@@ -37,17 +37,27 @@ public class FirstCentrifugationBrakingListProviderTest {
   @Test
   public void testWithValidValue() {
 
-    FirstCentrifugationBrakingOption brakingOption = firstCentrifugationBrakingListProvider.valueOf(true);
+    FirstCentrifugationBrakingOption brakingOption =
+        this.firstCentrifugationBrakingListProvider.valueOf(true);
 
     assertNotNull(brakingOption);
   }
 
   @Test
-  public void testValueOfShouldReturnBrakingOptionWithBraking() {
+  public void testValueOfShouldReturnWithBraking() {
 
     FirstCentrifugationBrakingOption brakingOption =
-        firstCentrifugationBrakingListProvider.valueOf(true);
+        this.firstCentrifugationBrakingListProvider.valueOf(true);
 
     assertEquals(CentrifugationBraking.WITH_BRAKING, brakingOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnNoBraking() {
+
+    FirstCentrifugationBrakingOption brakingOption =
+        this.firstCentrifugationBrakingListProvider.valueOf(false);
+
+    assertEquals(CentrifugationBraking.NO_BRAKING, brakingOption.getContainedObject());
   }
 }

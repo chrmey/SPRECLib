@@ -7,7 +7,7 @@ import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.lists.options.ColdIschemiaTimeOption;
-import de.spreclib.model.sprec.CodePart;
+import de.spreclib.model.enums.ColdIschemiaTime;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -66,22 +66,29 @@ public class ColdIschemiaTimeListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnCodeA() {
+  public void testValueOfShouldReturnLessOTwoMinutes() {
 
     ColdIschemiaTimeOption coldIschemiaTimeOption =
         this.coldIschemiaTimeListProvider.valueOf(1);
 
-    assertEquals(
-        new CodePart("A"), coldIschemiaTimeOption.getContainedObject().getCodeFromSprecPart());
+    assertEquals(ColdIschemiaTime.LESS_TWO_MINUTES, coldIschemiaTimeOption.getContainedObject());
   }
 
   @Test
-  public void testValueOfShouldReturnCodeB() {
+  public void testValueOfShouldReturnTwoToTenMinutes() {
 
     ColdIschemiaTimeOption coldIschemiaTimeOption =
         this.coldIschemiaTimeListProvider.valueOf(3);
 
+    assertEquals(ColdIschemiaTime.TWO_TO_TEN_MINUTES, coldIschemiaTimeOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnGreaterSixtyMinutes() {
+
+    ColdIschemiaTimeOption coldIschemiaTimeOption = this.coldIschemiaTimeListProvider.valueOf(60);
+
     assertEquals(
-        new CodePart("B"), coldIschemiaTimeOption.getContainedObject().getCodeFromSprecPart());
+        ColdIschemiaTime.GREATER_SIXTY_MINUTES, coldIschemiaTimeOption.getContainedObject());
   }
 }
