@@ -6,7 +6,7 @@ import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 
 public enum TypeOfCollection implements ISprecPart, IListObject {
-  AUTOPSY_LESS_THAN_6_HOURS_POSTMORTEM(new CodePart("A06")),
+  AUTOPSY_LESS_6_HOURS_POSTMORTEM(new CodePart("A06")),
   AUTOPSY_6_TO_12_HOURS_POSTMORTEM(new CodePart("A12")),
   AUTOPSY_12_TO_24_HOURS_POSTMORTEM(new CodePart("A24")),
   AUTOPSY_24_TO_48_HOURS_POSTMORTEM(new CodePart("A48")),
