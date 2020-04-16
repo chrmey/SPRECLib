@@ -1,6 +1,5 @@
 package de.spreclib.model.sprec;
 
-import de.spreclib.api.sprec.interfaces.ISprecCode;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.enums.FluidSampleType;
 import de.spreclib.model.enums.PrimaryContainer;
@@ -9,7 +8,7 @@ import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.precentrifugation.PreCentrifugation;
 
-public final class FluidSprecCode implements ISprecCode {
+public final class FluidSprecCode extends AbstractSprecCode {
 
   private final ICodePart fluidSampleTypeCode;
   private final ICodePart primaryContainerCode;
@@ -20,6 +19,7 @@ public final class FluidSprecCode implements ISprecCode {
   private final ICodePart longTermStorageCode;
 
   private FluidSprecCode(FluidSprecCodeBuilder fluidSprecCodeBuilder) {
+    super();
     this.fluidSampleTypeCode = fluidSprecCodeBuilder.fluidSampleTypeCode;
     this.primaryContainerCode = fluidSprecCodeBuilder.primaryContainerCode;
     this.preCentrifugationCode = fluidSprecCodeBuilder.preCentrifugationCode;
@@ -63,31 +63,31 @@ public final class FluidSprecCode implements ISprecCode {
     code.append(
             this.fluidSampleTypeCode != null
                 ? this.fluidSampleTypeCode.getStringRepresentation()
-                : "???")
+                : this.placeholderThreeCharacters)
         .append(
             this.primaryContainerCode != null
                 ? this.primaryContainerCode.getStringRepresentation()
-                : "???")
+                : this.placeholderThreeCharacters)
         .append(
             this.preCentrifugationCode != null
                 ? this.preCentrifugationCode.getStringRepresentation()
-                : "?")
+                : this.placeholderOneCharacter)
         .append(
             this.firstCentrifugationCode != null
                 ? this.firstCentrifugationCode.getStringRepresentation()
-                : "?")
+                : this.placeholderOneCharacter)
         .append(
             this.secondCentrifugationCode != null
                 ? this.secondCentrifugationCode.getStringRepresentation()
-                : "?")
+                : this.placeholderOneCharacter)
         .append(
             this.postCentrifugationCode != null
                 ? this.postCentrifugationCode.getStringRepresentation()
-                : "?")
+                : this.placeholderOneCharacter)
         .append(
             this.longTermStorageCode != null
                 ? this.longTermStorageCode.getStringRepresentation()
-                : "?");
+                : this.placeholderOneCharacter);
 
     return code.toString();
   }

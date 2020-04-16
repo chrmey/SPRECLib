@@ -1,6 +1,8 @@
 package de.spreclib.api.sprec;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import de.spreclib.api.lists.ColdIschemiaTimeListProvider;
 import de.spreclib.api.lists.ColdIschemiaTimeOption;
 import de.spreclib.api.lists.FixationListProvider;
@@ -324,6 +326,6 @@ public class SolidSampleSprecTest {
 
     String codeString = solidSampleCode.getCodeString();
 
-    assertFalse(codeString.isEmpty());
+    assertTrue(codeString.equals("???????????"));
   }
 }

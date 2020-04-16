@@ -1,6 +1,8 @@
 package de.spreclib.api.sprec;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import de.spreclib.api.lists.FirstCentrifugationListProvider;
 import de.spreclib.api.lists.FirstCentrifugationOption;
 import de.spreclib.api.lists.FluidSampleTypeListProvider;
@@ -331,6 +333,6 @@ public class FluidSampleSprecTest {
 
     String codeString = fluidSampleCode.getCodeString();
 
-    assertFalse(codeString.isEmpty());
+    assertTrue(codeString.equals("???????????"));
   }
 }

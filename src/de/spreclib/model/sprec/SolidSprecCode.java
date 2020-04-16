@@ -1,6 +1,5 @@
 package de.spreclib.model.sprec;
 
-import de.spreclib.api.sprec.interfaces.ISprecCode;
 import de.spreclib.model.enums.ColdIschemiaTime;
 import de.spreclib.model.enums.Fixation;
 import de.spreclib.model.enums.FixationTime;
@@ -10,7 +9,7 @@ import de.spreclib.model.enums.WarmIschemiaTime;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 
-public final class SolidSprecCode implements ISprecCode {
+public final class SolidSprecCode extends AbstractSprecCode {
 
   private final ICodePart solidSampleTypeCode;
   private final ICodePart typeOfCollectionCode;
@@ -21,6 +20,7 @@ public final class SolidSprecCode implements ISprecCode {
   private final ICodePart longTermStorageCode;
 
   private SolidSprecCode(SolidSprecCodeBuilder solidSprecCodeBuilder) {
+    super();
     this.solidSampleTypeCode = solidSprecCodeBuilder.solidSampleTypeCode;
     this.typeOfCollectionCode = solidSprecCodeBuilder.typeOfCollectionCode;
     this.warmIschemiaTimeCode = solidSprecCodeBuilder.warmIschemiaTimeCode;
@@ -64,26 +64,31 @@ public final class SolidSprecCode implements ISprecCode {
     code.append(
             this.solidSampleTypeCode != null
                 ? this.solidSampleTypeCode.getStringRepresentation()
-                : "???")
+                : this.placeholderThreeCharacters)
         .append(
             this.typeOfCollectionCode != null
                 ? this.typeOfCollectionCode.getStringRepresentation()
-                : "???")
+                : this.placeholderThreeCharacters)
         .append(
             this.warmIschemiaTimeCode != null
                 ? this.warmIschemiaTimeCode.getStringRepresentation()
-                : "?")
+                : this.placeholderOneCharacter)
         .append(
             this.coldIschemiaTimeCode != null
                 ? this.coldIschemiaTimeCode.getStringRepresentation()
-                : "?")
-        .append(this.fixationCode != null ? this.fixationCode.getStringRepresentation() : "?")
+                : this.placeholderOneCharacter)
         .append(
-            this.fixationTimeCode != null ? this.fixationTimeCode.getStringRepresentation() : "?")
+            this.fixationCode != null
+                ? this.fixationCode.getStringRepresentation()
+                : this.placeholderOneCharacter)
+        .append(
+            this.fixationTimeCode != null
+                ? this.fixationTimeCode.getStringRepresentation()
+                : this.placeholderOneCharacter)
         .append(
             this.longTermStorageCode != null
                 ? this.longTermStorageCode.getStringRepresentation()
-                : "?");
+                : this.placeholderOneCharacter);
 
     return code.toString();
   }
