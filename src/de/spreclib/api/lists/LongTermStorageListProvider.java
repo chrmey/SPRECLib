@@ -1,6 +1,6 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.exceptions.InvalidParameterCombinationException;
+import de.spreclib.api.exceptions.InvalidValueCombinationException;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.longtermstorage.LongTermStorageList;
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ public final class LongTermStorageListProvider extends AbstractListProvider<Long
    * @param longTermStorageTemperatureOption LongTermStorageTemperatureOption
    * @param longTermStorageContainerOption LongTermStorageContainerOption
    * @return LongTermStorageOption
-   * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
+   * @throws InvalidValueCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
   public LongTermStorageOption valueOf(
@@ -60,7 +60,7 @@ public final class LongTermStorageListProvider extends AbstractListProvider<Long
       }
     }
 
-    throw new InvalidParameterCombinationException(
+    throw new InvalidValueCombinationException(
         "Parameter combination for LongTermStorage is no valid combination.");
   }
 }

@@ -1,6 +1,6 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.exceptions.InvalidParameterCombinationException;
+import de.spreclib.api.exceptions.InvalidValueCombinationException;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.SecondCentrifugationList;
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public final class SecondCentrifugationListProvider
    * @param secondCentrifugationSpeedOption SecondCentrifugationSpeedOption
    * @param secondCentrifugationBrakingOption SecondCentrifugationBrakingOption
    * @return SecondCentrifugationOption
-   * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
+   * @throws InvalidValueCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
   public SecondCentrifugationOption valueOf(
@@ -76,7 +76,7 @@ public final class SecondCentrifugationListProvider
         return secondCentrifugationOption;
       }
     }
-    throw new InvalidParameterCombinationException(
+    throw new InvalidValueCombinationException(
         "Parameter combination for SecondCentrifugation is no valid combination.");
   }
 }

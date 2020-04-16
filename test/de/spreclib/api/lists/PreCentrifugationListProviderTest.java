@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
-import de.spreclib.api.exceptions.InvalidParameterCombinationException;
+import de.spreclib.api.exceptions.InvalidValueCombinationException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.sprec.CodePart;
@@ -66,7 +66,7 @@ public class PreCentrifugationListProviderTest {
     this.preCentrifugationListProvider.valueOf(temperatureOption, null);
   }
 
-  @Test(expected = InvalidParameterCombinationException.class)
+  @Test(expected = InvalidValueCombinationException.class)
   public void testWithInvalidParameterCombination() {
 
     PreCentrifugationTemperatureOption temperatureOption =

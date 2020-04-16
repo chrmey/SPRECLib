@@ -1,6 +1,6 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.exceptions.InvalidParameterCombinationException;
+import de.spreclib.api.exceptions.InvalidValueCombinationException;
 import de.spreclib.model.precentrifugation.PreCentrifugation;
 import de.spreclib.model.precentrifugation.PreCentrifugationList;
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public final class PreCentrifugationListProvider
    * @param preCentrifugationTemperatureOption PreCentrifugationTemperatureOption
    * @param preCentrifugationDelayOption PreCentrifugationDelayOption
    * @return PreCentrifugationOption
-   * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
+   * @throws InvalidValueCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
   public PreCentrifugationOption valueOf(
@@ -64,7 +64,7 @@ public final class PreCentrifugationListProvider
       }
     }
 
-    throw new InvalidParameterCombinationException(
+    throw new InvalidValueCombinationException(
         "Parameter combination for PreCentrifugation is no valid combination.");
   }
 }

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
-import de.spreclib.api.exceptions.InvalidParameterCombinationException;
+import de.spreclib.api.exceptions.InvalidValueCombinationException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.sprec.CodePart;
@@ -59,7 +59,7 @@ public class FirstCentrifugationListProviderTest {
     assertNotNull(firstCentrifugationOption);
   }
 
-  @Test(expected = InvalidParameterCombinationException.class)
+  @Test(expected = InvalidValueCombinationException.class)
   public void testValueOfWithInvalidParameterCombination() {
 
     Temperature temperature = new Temperature(20f);
