@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.ColdIschemiaTime;
 
@@ -14,7 +14,7 @@ public final class ColdIschemiaTimeOption extends AbstractListOption {
 
   private final ColdIschemiaTime coldIschemiaTime;
 
-  public ColdIschemiaTimeOption(ColdIschemiaTime coldIschemiaTime) {
+  ColdIschemiaTimeOption(ColdIschemiaTime coldIschemiaTime) {
     this.coldIschemiaTime = coldIschemiaTime;
   }
 
@@ -29,7 +29,7 @@ public final class ColdIschemiaTimeOption extends AbstractListOption {
     return this.coldIschemiaTime;
   }
 
-  public boolean hasDuration(int durationMinutes) {
+  protected boolean hasDuration(int durationMinutes) {
     if (this.coldIschemiaTime.hasValueFor(durationMinutes)) {
       return true;
     } else {

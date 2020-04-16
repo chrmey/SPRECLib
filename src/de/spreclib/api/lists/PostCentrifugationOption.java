@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
@@ -18,7 +18,7 @@ public final class PostCentrifugationOption extends AbstractListOption {
 
   private final PostCentrifugation postCentrifugation;
 
-  public PostCentrifugationOption(PostCentrifugation postCentrifugation) {
+  PostCentrifugationOption(PostCentrifugation postCentrifugation) {
     this.postCentrifugation = postCentrifugation;
   }
 
@@ -54,7 +54,7 @@ public final class PostCentrifugationOption extends AbstractListOption {
     return this.postCentrifugation;
   }
 
-  public boolean hasPostCentrifugation(
+  protected boolean hasPostCentrifugation(
       PostCentrifugationTemperatureOption postCentrifugationTemperatureOption,
       PostCentrifugationDelayOption postCentrifugationDelayOption) {
 

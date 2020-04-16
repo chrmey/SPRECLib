@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.SolidSampleTypeOption;
 import de.spreclib.model.enums.SolidSampleType;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.SolidSampleTypeOption
+ * @see de.spreclib.api.lists.SolidSampleTypeOption
  */
 public final class SolidSampleTypeListProvider extends AbstractListProvider<SolidSampleTypeOption> {
 

@@ -5,9 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.PostCentrifugationDelayOption;
-import de.spreclib.api.lists.options.PostCentrifugationOption;
-import de.spreclib.api.lists.options.PostCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.sprec.CodePart;
 import java.util.List;

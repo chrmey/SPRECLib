@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 
@@ -14,7 +14,7 @@ public final class FirstCentrifugationBrakingOption extends AbstractListOption {
 
   private final CentrifugationBraking firstCentrifugationBraking;
 
-  public FirstCentrifugationBrakingOption(CentrifugationBraking firstCentrifugationBraking) {
+  FirstCentrifugationBrakingOption(CentrifugationBraking firstCentrifugationBraking) {
     this.firstCentrifugationBraking = firstCentrifugationBraking;
   }
 
@@ -28,7 +28,7 @@ public final class FirstCentrifugationBrakingOption extends AbstractListOption {
     return this.firstCentrifugationBraking;
   }
 
-  public boolean hasBraking(boolean braking) {
+  protected boolean hasBraking(boolean braking) {
     if (this.firstCentrifugationBraking.hasValueFor(braking)) {
       return true;
     } else {

@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.PostCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.PostCentrifugationTemperatureOption
+ * @see de.spreclib.api.lists.PostCentrifugationTemperatureOption
  */
 public final class PostCentrifugationTemperatureListProvider
     extends AbstractListProvider<PostCentrifugationTemperatureOption> {

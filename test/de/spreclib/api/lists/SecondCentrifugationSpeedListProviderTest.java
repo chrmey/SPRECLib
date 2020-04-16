@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.SecondCentrifugationSpeedOption;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationSpeed;
 import java.util.List;
 import org.junit.Before;

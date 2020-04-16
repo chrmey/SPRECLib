@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 
@@ -14,7 +14,7 @@ public final class PostCentrifugationDelayOption extends AbstractListOption {
 
   private final PostCentrifugationDelay postCentrifugationDelay;
 
-  public PostCentrifugationDelayOption(PostCentrifugationDelay postCentrifugationDelay) {
+  PostCentrifugationDelayOption(PostCentrifugationDelay postCentrifugationDelay) {
     this.postCentrifugationDelay = postCentrifugationDelay;
   }
 
@@ -28,7 +28,7 @@ public final class PostCentrifugationDelayOption extends AbstractListOption {
     return this.postCentrifugationDelay;
   }
 
-  public boolean hasDelay(int delayMinutes) {
+  protected boolean hasDelay(int delayMinutes) {
     if (this.postCentrifugationDelay.hasValueFor(delayMinutes)) {
       return true;
     } else {

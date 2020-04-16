@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.TypeOfCollection;
 
@@ -14,7 +14,7 @@ public final class TypeOfCollectionOption extends AbstractListOption {
 
   private final TypeOfCollection typeOfCollection;
 
-  public TypeOfCollectionOption(TypeOfCollection typeOfCollection) {
+  TypeOfCollectionOption(TypeOfCollection typeOfCollection) {
     this.typeOfCollection = typeOfCollection;
   }
 

@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
 
@@ -14,7 +14,7 @@ public final class LongTermStorageTemperatureOption extends AbstractListOption {
 
   private final LongTermStorageTemperature longTermStorageTemperature;
 
-  public LongTermStorageTemperatureOption(LongTermStorageTemperature longTermStorageTemperature) {
+  LongTermStorageTemperatureOption(LongTermStorageTemperature longTermStorageTemperature) {
     this.longTermStorageTemperature = longTermStorageTemperature;
   }
 
@@ -28,7 +28,7 @@ public final class LongTermStorageTemperatureOption extends AbstractListOption {
     return this.longTermStorageTemperature;
   }
 
-  public boolean hasTemperature(float temperatureCelsius) {
+  protected boolean hasTemperature(float temperatureCelsius) {
     if (this.longTermStorageTemperature.hasValueFor(temperatureCelsius)) {
       return true;
     } else {

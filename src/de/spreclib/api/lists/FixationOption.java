@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.Fixation;
 
@@ -14,7 +14,7 @@ public final class FixationOption extends AbstractListOption {
 
   private final Fixation fixation;
 
-  public FixationOption(Fixation fixation) {
+  FixationOption(Fixation fixation) {
     this.fixation = fixation;
   }
 

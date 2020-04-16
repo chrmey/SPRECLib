@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.SecondCentrifugationSpeedOption;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationSpeed;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.SecondCentrifugationSpeedOption
+ * @see de.spreclib.api.lists.SecondCentrifugationSpeedOption
  */
 public final class SecondCentrifugationSpeedListProvider
     extends AbstractListProvider<SecondCentrifugationSpeedOption> {

@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.FluidSampleTypeOption;
 import de.spreclib.model.enums.FluidSampleType;
 import java.util.ArrayList;
 import java.util.List;

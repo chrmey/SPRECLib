@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.FluidSampleType;
 
@@ -14,7 +14,7 @@ public final class FluidSampleTypeOption extends AbstractListOption {
 
   private final FluidSampleType fluidSampleType;
 
-  public FluidSampleTypeOption(FluidSampleType fluidSampleType) {
+  FluidSampleTypeOption(FluidSampleType fluidSampleType) {
     this.fluidSampleType = fluidSampleType;
   }
 

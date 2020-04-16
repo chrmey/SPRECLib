@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
 
@@ -14,7 +14,7 @@ public final class LongTermStorageContainerOption extends AbstractListOption {
 
   private final LongTermStorageContainer longTermStorageContainer;
 
-  public LongTermStorageContainerOption(LongTermStorageContainer longTermStorageContainer) {
+  LongTermStorageContainerOption(LongTermStorageContainer longTermStorageContainer) {
     this.longTermStorageContainer = longTermStorageContainer;
   }
 

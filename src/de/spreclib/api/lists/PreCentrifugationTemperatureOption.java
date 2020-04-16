@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 
@@ -14,8 +14,7 @@ public final class PreCentrifugationTemperatureOption extends AbstractListOption
 
   private final PreCentrifugationTemperature preCentrifugationTemperature;
 
-  public PreCentrifugationTemperatureOption(
-      PreCentrifugationTemperature preCentrifugationTemperature) {
+  PreCentrifugationTemperatureOption(PreCentrifugationTemperature preCentrifugationTemperature) {
     this.preCentrifugationTemperature = preCentrifugationTemperature;
   }
 
@@ -29,7 +28,7 @@ public final class PreCentrifugationTemperatureOption extends AbstractListOption
     return this.preCentrifugationTemperature;
   }
 
-  public boolean hasTemperature(float temperatureCelsius) {
+  protected boolean hasTemperature(float temperatureCelsius) {
     if (this.preCentrifugationTemperature.hasValueFor(temperatureCelsius)) {
       return true;
     } else {

@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.FixationTime;
 
@@ -14,7 +14,7 @@ public final class FixationTimeOption extends AbstractListOption {
 
   private FixationTime fixationTime;
 
-  public FixationTimeOption(FixationTime fixationTime) {
+  FixationTimeOption(FixationTime fixationTime) {
     this.fixationTime = fixationTime;
   }
 
@@ -28,7 +28,7 @@ public final class FixationTimeOption extends AbstractListOption {
     return this.fixationTime;
   }
 
-  public boolean hasDuration(int durationMinutes) {
+  protected boolean hasDuration(int durationMinutes) {
     if (this.fixationTime.hasValueFor(durationMinutes)) {
       return true;
     } else {

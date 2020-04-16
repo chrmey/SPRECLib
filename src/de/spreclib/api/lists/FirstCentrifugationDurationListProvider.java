@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.FirstCentrifugationDurationOption;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.FirstCentrifugationDurationOption
+ * @see de.spreclib.api.lists.FirstCentrifugationDurationOption
  */
 public final class FirstCentrifugationDurationListProvider
     extends AbstractListProvider<FirstCentrifugationDurationOption> {

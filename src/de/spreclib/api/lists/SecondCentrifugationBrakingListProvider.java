@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.SecondCentrifugationBrakingOption;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.SecondCentrifugationBrakingOption
+ * @see de.spreclib.api.lists.SecondCentrifugationBrakingOption
  */
 public final class SecondCentrifugationBrakingListProvider
     extends AbstractListProvider<SecondCentrifugationBrakingOption> {

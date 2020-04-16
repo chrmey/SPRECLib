@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationDuration;
 
@@ -13,7 +13,7 @@ import de.spreclib.model.enums.centrifugation.SecondCentrifugationDuration;
 public final class SecondCentrifugationDurationOption extends AbstractListOption {
   private final SecondCentrifugationDuration secondCentrifugationDuration;
 
-  public SecondCentrifugationDurationOption(
+  SecondCentrifugationDurationOption(
       SecondCentrifugationDuration secondCentrifugationDurationOption) {
     this.secondCentrifugationDuration = secondCentrifugationDurationOption;
   }
@@ -28,7 +28,7 @@ public final class SecondCentrifugationDurationOption extends AbstractListOption
     return this.secondCentrifugationDuration;
   }
 
-  public boolean hasDuration(int durationMinutes) {
+  protected boolean hasDuration(int durationMinutes) {
     if (this.secondCentrifugationDuration.hasValueFor(durationMinutes)) {
       return true;
     } else {

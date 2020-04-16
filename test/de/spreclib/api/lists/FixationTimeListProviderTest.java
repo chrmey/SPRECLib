@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.FixationTimeOption;
 import de.spreclib.model.enums.FixationTime;
 import de.spreclib.model.sprec.CodePart;
 import java.util.List;

@@ -1,9 +1,6 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.exceptions.InvalidParameterCombinationException;
-import de.spreclib.api.lists.options.PostCentrifugationDelayOption;
-import de.spreclib.api.lists.options.PostCentrifugationOption;
-import de.spreclib.api.lists.options.PostCentrifugationTemperatureOption;
 import de.spreclib.model.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.postcentrifugation.PostCentrifugationList;
 import java.util.ArrayList;
@@ -16,7 +13,7 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.PostCentrifugationOption
+ * @see de.spreclib.api.lists.PostCentrifugationOption
  */
 public final class PostCentrifugationListProvider
     extends AbstractListProvider<PostCentrifugationOption> {

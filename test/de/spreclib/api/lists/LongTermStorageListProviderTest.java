@@ -6,9 +6,6 @@ import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.InvalidParameterCombinationException;
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.LongTermStorageContainerOption;
-import de.spreclib.api.lists.options.LongTermStorageOption;
-import de.spreclib.api.lists.options.LongTermStorageTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
 import de.spreclib.model.sprec.CodePart;

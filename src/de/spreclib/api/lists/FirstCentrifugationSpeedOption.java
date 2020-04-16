@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
 
@@ -14,7 +14,7 @@ public final class FirstCentrifugationSpeedOption extends AbstractListOption {
 
   private final FirstCentrifugationSpeed firstCentrifugationSpeed;
 
-  public FirstCentrifugationSpeedOption(FirstCentrifugationSpeed firstCentrifugationSpeed) {
+  FirstCentrifugationSpeedOption(FirstCentrifugationSpeed firstCentrifugationSpeed) {
     this.firstCentrifugationSpeed = firstCentrifugationSpeed;
   }
 
@@ -28,7 +28,7 @@ public final class FirstCentrifugationSpeedOption extends AbstractListOption {
     return this.firstCentrifugationSpeed;
   }
 
-  public boolean hasSpeed(int speed) {
+  protected boolean hasSpeed(int speed) {
     if (this.firstCentrifugationSpeed.hasValueFor(speed)) {
       return true;
     } else {

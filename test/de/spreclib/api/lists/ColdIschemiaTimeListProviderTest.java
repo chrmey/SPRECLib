@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.ColdIschemiaTimeOption;
 import de.spreclib.model.enums.ColdIschemiaTime;
 import java.util.List;
 import org.junit.Before;

@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.LongTermStorageContainerOption;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
 import java.util.ArrayList;
 import java.util.List;

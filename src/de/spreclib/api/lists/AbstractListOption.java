@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.api.lists.interfaces.IListOption;
 import java.util.Locale;

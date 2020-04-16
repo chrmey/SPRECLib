@@ -4,7 +4,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.LongTermStorageContainerOption;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;

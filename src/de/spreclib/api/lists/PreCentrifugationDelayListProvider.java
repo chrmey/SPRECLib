@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.PreCentrifugationDelayOption;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.PreCentrifugationDelayOption
+ * @see de.spreclib.api.lists.PreCentrifugationDelayOption
  */
 public final class PreCentrifugationDelayListProvider
     extends AbstractListProvider<PreCentrifugationDelayOption> {

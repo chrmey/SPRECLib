@@ -1,11 +1,6 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.api.exceptions.InvalidParameterCombinationException;
-import de.spreclib.api.lists.options.SecondCentrifugationBrakingOption;
-import de.spreclib.api.lists.options.SecondCentrifugationDurationOption;
-import de.spreclib.api.lists.options.SecondCentrifugationOption;
-import de.spreclib.api.lists.options.SecondCentrifugationSpeedOption;
-import de.spreclib.api.lists.options.SecondCentrifugationTemperatureOption;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.SecondCentrifugationList;
 import java.util.ArrayList;
@@ -18,7 +13,7 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.SecondCentrifugationOption
+ * @see de.spreclib.api.lists.SecondCentrifugationOption
  */
 public final class SecondCentrifugationListProvider
     extends AbstractListProvider<SecondCentrifugationOption> {

@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.enums.PrimaryContainer;
 
@@ -14,7 +14,7 @@ public final class PrimaryContainerOption extends AbstractListOption {
 
   private final PrimaryContainer primaryContainer;
 
-  public PrimaryContainerOption(PrimaryContainer primaryContainer) {
+  PrimaryContainerOption(PrimaryContainer primaryContainer) {
     this.primaryContainer = primaryContainer;
   }
 

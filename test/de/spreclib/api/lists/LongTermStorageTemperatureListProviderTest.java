@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.LongTermStorageTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
 import java.util.List;

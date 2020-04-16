@@ -1,12 +1,12 @@
 package de.spreclib.api.sprec;
 
-import de.spreclib.api.lists.options.FirstCentrifugationOption;
-import de.spreclib.api.lists.options.FluidSampleTypeOption;
-import de.spreclib.api.lists.options.LongTermStorageOption;
-import de.spreclib.api.lists.options.PostCentrifugationOption;
-import de.spreclib.api.lists.options.PreCentrifugationOption;
-import de.spreclib.api.lists.options.PrimaryContainerOption;
-import de.spreclib.api.lists.options.SecondCentrifugationOption;
+import de.spreclib.api.lists.FirstCentrifugationOption;
+import de.spreclib.api.lists.FluidSampleTypeOption;
+import de.spreclib.api.lists.LongTermStorageOption;
+import de.spreclib.api.lists.PostCentrifugationOption;
+import de.spreclib.api.lists.PreCentrifugationOption;
+import de.spreclib.api.lists.PrimaryContainerOption;
+import de.spreclib.api.lists.SecondCentrifugationOption;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import de.spreclib.model.centrifugation.SecondCentrifugationList;

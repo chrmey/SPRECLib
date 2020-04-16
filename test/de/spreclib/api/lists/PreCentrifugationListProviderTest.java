@@ -6,9 +6,6 @@ import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.InvalidParameterCombinationException;
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.PreCentrifugationDelayOption;
-import de.spreclib.api.lists.options.PreCentrifugationOption;
-import de.spreclib.api.lists.options.PreCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.sprec.CodePart;
 import java.util.List;

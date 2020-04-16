@@ -1,4 +1,4 @@
-package de.spreclib.api.lists.options;
+package de.spreclib.api.lists;
 
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.NormalCentrifugation;
@@ -20,7 +20,7 @@ public final class SecondCentrifugationOption extends AbstractListOption {
 
   private final Centrifugation secondCentrifugation;
 
-  public SecondCentrifugationOption(Centrifugation secondCentrifugation) {
+  SecondCentrifugationOption(Centrifugation secondCentrifugation) {
     this.secondCentrifugation = secondCentrifugation;
   }
 
@@ -61,7 +61,7 @@ public final class SecondCentrifugationOption extends AbstractListOption {
     return this.secondCentrifugation;
   }
 
-  public boolean hasSecondCentrifugation(
+  protected boolean hasSecondCentrifugation(
       SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption,
       SecondCentrifugationDurationOption secondCentrifugationDurationOption,
       SecondCentrifugationSpeedOption secondCentrifugationSpeedOption,
