@@ -226,17 +226,6 @@ public class FluidSampleSprecTest {
     assertFalse(postCentrifugationCode.getStringRepresentation().isEmpty());
   }
 
-  @Test(expected = InvalidPartRelationException.class)
-  public void testWithPostCentrifugationWithNoFirstOrSecondCentrifugation() {
-    FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
-
-    fluidSampleSprec
-        .withNoFirstCentrifugation()
-        .withNoSecondCentrifugation()
-        .withPostCentrifugation(this.postCentrifugationOption)
-        .getSprecCode();
-  }
-
   @Test
   public void testWithNoApplicablePostCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
@@ -249,7 +238,7 @@ public class FluidSampleSprecTest {
   }
 
   @Test(expected = InvalidPartRelationException.class)
-  public void testWithUnknownPostCentrifugation() {
+  public void testWithUnknownPostCentrifugationWithNoFirstOrSecondCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
 
     fluidSampleSprec
@@ -260,7 +249,7 @@ public class FluidSampleSprecTest {
   }
 
   @Test(expected = InvalidPartRelationException.class)
-  public void testWithOtherPostCentrifugation() {
+  public void testWithOtherPostCentrifugationWithNoFirstOrSecondCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
 
     fluidSampleSprec
