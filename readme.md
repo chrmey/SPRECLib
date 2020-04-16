@@ -17,7 +17,7 @@ Download the latest release jar and include it to your build.
 
 ### Terminology in SPRECLib
 
-The elements of a SPREC code in SPRECLib are called Parts. FluidSampleType, TypeOfCollection, etc. are parts. Each part has a defined set of values, each one of them with a one or three character code (called CodePart). Seven parts make up the full code of a sample. 
+The elements of a SPREC code in SPRECLib are called Parts. FluidSampleType, TypeOfCollection, etc. are parts. Each part has a defined set of values, each one of them with a one or three character code called CodePart. Seven parts make up the full code of a sample. 
 
 SPRECLib also allows to "build up" a part from its values, that means you can use a temperature (degrees celsius) and a time value (minutes or two timestamps in milliseconds) and combine them to a PreCentrifugation. 
 
@@ -25,9 +25,9 @@ You see an overview of the structure of SPRECLib in the picture below.
 
 ![](readmeImages/sprecOverview.png)
 
-### Getting SPREC Values as Lists
+### Getting SPREC parts or values as Lists
 
-To obtain lists of the SPREC values for each Parameter you need to instantiate the ListProvider for that Part. There is a ListProvider for every part of SPREC and also for each part of a part if the part is made up of multiple values. The contents of the ListProviders are called ListOptions, with a prefix depending on the ListProvider that they come from.
+To obtain lists of the SPREC values for each part or values you need to instantiate the ListProvider for that part. There is a ListProvider for every part of SPREC and also for each part of a part if the part is made up of multiple values. The contents of the ListProviders are called ListOptions, with a prefix depending on the ListProvider that they come from.
 
 ```
 FluidSampleTypeProvider provides a List of FluidSampleTypeOptions, PrimaryContainerListProvider provides a List of PrimaryContainerOptions...
