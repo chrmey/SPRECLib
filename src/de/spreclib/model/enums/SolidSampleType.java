@@ -18,7 +18,6 @@ public enum SolidSampleType implements ISprecPart, IListObject {
   OTHER(new CodePart("ZZZ")),
   ;
 
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.SOLID_SAMPLE_TYPE;
   private ICodePart codePart;
 
   private SolidSampleType(ICodePart code) {
@@ -28,11 +27,6 @@ public enum SolidSampleType implements ISprecPart, IListObject {
   @Override
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;
-  }
-
-  @Override
-  public SprecPartType getSprecPartType() {
-    return SolidSampleType.SPREC_PART_TYPE;
   }
 
   public static boolean contains(SolidSampleType solidSampleType) {

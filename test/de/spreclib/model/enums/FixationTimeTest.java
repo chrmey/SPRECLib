@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 import org.junit.Test;
 
@@ -18,11 +17,5 @@ public class FixationTimeTest {
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
     assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testGetSprecPartType() {
-    ISprecPart sprecPartType = FixationTime.LESS_FIFTEEN_MINUTES;
-    assertEquals(SprecPartType.FIXATION_TIME, sprecPartType.getSprecPartType());
   }
 }

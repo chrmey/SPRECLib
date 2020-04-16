@@ -2,7 +2,7 @@ package de.spreclib.model.longtermstorage;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import de.spreclib.model.enums.SprecPartType;
+
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.longtermstorage.SpecialLongTermStorage;
@@ -33,13 +33,6 @@ public class SpecialLongTermStorageTest {
     ICodePart actual = specialLongTermStorage.getCodeFromSprecPart();
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testGetSprecPartType() {
-    SprecPartType expected = SprecPartType.LONG_TERM_STORAGE;
-    SprecPartType actual = specialLongTermStorage.getSprecPartType();
     assertEquals(expected, actual);
   }
 }

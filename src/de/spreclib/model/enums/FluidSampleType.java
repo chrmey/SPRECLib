@@ -41,7 +41,6 @@ public enum FluidSampleType implements ISprecPart, IListObject {
   URINE_TIMED(new CodePart("URT")),
   OTHER(new CodePart("ZZZ"));
 
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.FLUID_SAMPLE_TYPE;
   private final ICodePart codePart;
 
   private FluidSampleType(CodePart code) {
@@ -51,11 +50,6 @@ public enum FluidSampleType implements ISprecPart, IListObject {
   @Override
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;
-  }
-
-  @Override
-  public SprecPartType getSprecPartType() {
-    return FluidSampleType.SPREC_PART_TYPE;
   }
 
   public static boolean contains(FluidSampleType fluidSampleType) {

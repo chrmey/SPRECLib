@@ -35,7 +35,6 @@ public enum PrimaryContainer implements ISprecPart, IListObject {
   OTHER(new CodePart("ZZZ")),
   ;
 
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.PRIMARY_CONTAINER;
   private ICodePart codePart;
 
   private PrimaryContainer(ICodePart code) {
@@ -45,11 +44,6 @@ public enum PrimaryContainer implements ISprecPart, IListObject {
   @Override
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;
-  }
-
-  @Override
-  public SprecPartType getSprecPartType() {
-    return PrimaryContainer.SPREC_PART_TYPE;
   }
 
   public static boolean contains(PrimaryContainer primaryContainer) {

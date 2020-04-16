@@ -1,6 +1,5 @@
 package de.spreclib.model.centrifugation;
 
-import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListObject;
@@ -8,7 +7,6 @@ import de.spreclib.model.interfaces.ISprecPart;
 
 public abstract class Centrifugation implements ISprecPart, IListObject {
 
-  private final SprecPartType sprecPartType;
   private final CentrifugationType centrifugationType;
   private final ICodePart codePart;
 
@@ -19,11 +17,9 @@ public abstract class Centrifugation implements ISprecPart, IListObject {
    * @param codePart CodePart Object
    * @param sprecPartType enum SprecPartType
    */
-  Centrifugation(
-      CentrifugationType centrifugationType, ICodePart codePart, SprecPartType sprecPartType) {
+  Centrifugation(CentrifugationType centrifugationType, ICodePart codePart) {
     this.centrifugationType = centrifugationType;
     this.codePart = codePart;
-    this.sprecPartType = sprecPartType;
   }
 
   public abstract boolean isNormalCentrifugation();
@@ -39,10 +35,6 @@ public abstract class Centrifugation implements ISprecPart, IListObject {
     return this.codePart;
   }
 
-  @Override
-  public SprecPartType getSprecPartType() {
-    return this.sprecPartType;
-  }
   
 
   @Override
@@ -51,7 +43,6 @@ public abstract class Centrifugation implements ISprecPart, IListObject {
     int result = 1;
     result = prime * result + ((centrifugationType == null) ? 0 : centrifugationType.hashCode());
     result = prime * result + ((codePart == null) ? 0 : codePart.hashCode());
-    result = prime * result + ((sprecPartType == null) ? 0 : sprecPartType.hashCode());
     return result;
   }
 
@@ -75,9 +66,6 @@ public abstract class Centrifugation implements ISprecPart, IListObject {
         return false;
       }
     } else if (!codePart.equals(other.codePart)) {
-      return false;
-    }
-    if (sprecPartType != other.sprecPartType) {
       return false;
     }
     return true;

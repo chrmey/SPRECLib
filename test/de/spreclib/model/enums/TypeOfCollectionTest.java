@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 import org.junit.Test;
 
@@ -18,11 +17,5 @@ public class TypeOfCollectionTest {
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
     assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testGetSprecPartType() {
-    ISprecPart sprecPartType = TypeOfCollection.AUTOPSY_LESS_6_HOURS_POSTMORTEM;
-    assertEquals(SprecPartType.TYPE_OF_COLLECTION, sprecPartType.getSprecPartType());
   }
 }

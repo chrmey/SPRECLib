@@ -25,8 +25,7 @@ public enum TypeOfCollection implements ISprecPart, IListObject {
   SWAB(new CodePart("SWB")),
   OTHER(new CodePart("ZZZ")),
   ;
-
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.TYPE_OF_COLLECTION;
+	
   private ICodePart codePart;
 
   private TypeOfCollection(ICodePart code) {
@@ -36,11 +35,6 @@ public enum TypeOfCollection implements ISprecPart, IListObject {
   @Override
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;
-  }
-
-  @Override
-  public SprecPartType getSprecPartType() {
-    return TypeOfCollection.SPREC_PART_TYPE;
   }
 
   public static boolean contains(TypeOfCollection typeOfCollection) {

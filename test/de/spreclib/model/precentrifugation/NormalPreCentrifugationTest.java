@@ -3,7 +3,6 @@ package de.spreclib.model.precentrifugation;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
@@ -39,13 +38,6 @@ public class NormalPreCentrifugationTest {
     ICodePart actual = normalPreCentrifugation.getCodeFromSprecPart();
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testGetSprecPartType() {
-    SprecPartType expected = SprecPartType.PRE_CENTRIFUGATION;
-    SprecPartType actual = normalPreCentrifugation.getSprecPartType();
     assertEquals(expected, actual);
   }
 }

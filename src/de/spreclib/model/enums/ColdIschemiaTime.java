@@ -17,7 +17,6 @@ public enum ColdIschemiaTime implements ISprecPart, IListObject {
   OTHER(null, null, new CodePart("Z")),
   ;
 
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.COLD_ISCHEMIA_TIME;
   private final ICodePart codePart;
   private final Integer lowerBoundMinutes;
   private final Integer upperBoundMinutes;
@@ -33,10 +32,6 @@ public enum ColdIschemiaTime implements ISprecPart, IListObject {
     return this.codePart;
   }
 
-  @Override
-  public SprecPartType getSprecPartType() {
-    return ColdIschemiaTime.SPREC_PART_TYPE;
-  }
 
   public boolean hasValueFor(int durationMinutes) {
 

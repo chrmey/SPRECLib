@@ -4,8 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import de.spreclib.model.centrifugation.NormalCentrifugation;
-import de.spreclib.model.enums.SprecPartType;
+
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
@@ -28,8 +27,7 @@ public class NormalCentrifugationTest {
             FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
             FirstCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.NO_BRAKING,
-            new CodePart("A"),
-            SprecPartType.FIRST_CENTRIFUGATION);
+            new CodePart("A"));
   }
 
   @Test
@@ -57,10 +55,4 @@ public class NormalCentrifugationTest {
     assertFalse(centrifugation.isSpecialCentrifugation());
   }
 
-  @Test
-  public void testGetSprecPartType() {
-    SprecPartType expected = SprecPartType.FIRST_CENTRIFUGATION;
-    SprecPartType actual = centrifugation.getSprecPartType();
-    assertEquals(expected, actual);
-  }
 }

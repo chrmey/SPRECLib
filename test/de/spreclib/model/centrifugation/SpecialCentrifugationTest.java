@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+
 import de.spreclib.model.centrifugation.SpecialCentrifugation;
-import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.sprec.CodePart;
@@ -21,7 +21,7 @@ public class SpecialCentrifugationTest {
   public void setUp() {
     centrifugation =
         new SpecialCentrifugation(
-            CentrifugationType.NO, new CodePart("N"), SprecPartType.FIRST_CENTRIFUGATION);
+            CentrifugationType.NO, new CodePart("N"));
   }
 
   @Test
@@ -47,12 +47,5 @@ public class SpecialCentrifugationTest {
   @Test
   public void testIsSpecialCentrifugation() {
     assertTrue(centrifugation.isSpecialCentrifugation());
-  }
-
-  @Test
-  public void testGetSprecPartType() {
-    SprecPartType expected = SprecPartType.FIRST_CENTRIFUGATION;
-    SprecPartType actual = centrifugation.getSprecPartType();
-    assertEquals(expected, actual);
   }
 }

@@ -1,6 +1,5 @@
 package de.spreclib.model.centrifugation;
 
-import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
@@ -29,9 +28,8 @@ public final class NormalCentrifugation extends Centrifugation {
       ICentrifugationSpeed centrifugationSpeed,
       ICentrifugationTemperature centrifugationTemperature,
       CentrifugationBraking centrifugationBraking,
-      ICodePart codePart,
-      SprecPartType sprecPartType) {
-    super(CENTRIFUGATION_TYPE, codePart, sprecPartType);
+      ICodePart codePart) {
+    super(CENTRIFUGATION_TYPE, codePart);
     this.centrifugationDuration = centrifugationDuration;
     this.centrifugationSpeed = centrifugationSpeed;
     this.centrifugationTemperature = centrifugationTemperature;

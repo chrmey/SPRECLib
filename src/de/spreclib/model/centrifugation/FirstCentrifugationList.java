@@ -1,6 +1,5 @@
 package de.spreclib.model.centrifugation;
 
-import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
@@ -23,93 +22,79 @@ public final class FirstCentrifugationList {
                 Arrays.asList(
                     new SpecialCentrifugation(
                         CentrifugationType.NO,
-                        new CodePart("N"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("N")),
                     new SpecialCentrifugation(
                         CentrifugationType.UNKNOWN,
-                        new CodePart("X"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("X")),
                     new SpecialCentrifugation(
                         CentrifugationType.OTHER,
-                        new CodePart("Z"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("Z")),
                     new NormalCentrifugation(
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
                         FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.NO_BRAKING,
-                        new CodePart("A"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("A")),
                     new NormalCentrifugation(
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
                         FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("B"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("B")),
                     new NormalCentrifugation(
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
                         FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         CentrifugationBraking.NO_BRAKING,
-                        new CodePart("C"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("C")),
                     new NormalCentrifugation(
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
                         FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("D"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("D")),
                     new NormalCentrifugation(
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
                         FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("E"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("E")),
                     new NormalCentrifugation(
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
                         FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("F"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("F")),
                     new NormalCentrifugation(
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
                         FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("G"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("G")),
                     new NormalCentrifugation(
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
                         FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("F"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("F")),
                     new NormalCentrifugation(
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.GREATER_TENTHOUSAND_G,
                         FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("I"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("I")),
                     new NormalCentrifugation(
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.GREATER_TENTHOUSAND_G,
                         FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("J"),
-                        SprecPartType.FIRST_CENTRIFUGATION),
+                        new CodePart("J")),
                     new NormalCentrifugation(
                         FirstCentrifugationDuration.THIRTY_MINUTES,
                         FirstCentrifugationSpeed.LESS_THOUSAND_G,
                         FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.NO_BRAKING,
-                        new CodePart("M"),
-                        SprecPartType.FIRST_CENTRIFUGATION))));
+                        new CodePart("M")))));
   }
 
 

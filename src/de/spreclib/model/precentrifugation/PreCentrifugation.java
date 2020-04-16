@@ -1,6 +1,5 @@
 package de.spreclib.model.precentrifugation;
 
-import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListObject;
@@ -8,7 +7,6 @@ import de.spreclib.model.interfaces.ISprecPart;
 
 public abstract class PreCentrifugation implements ISprecPart, IListObject {
 
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.PRE_CENTRIFUGATION;
   private final PreCentrifugationType preCentrifugationType;
   private final ICodePart codePart;
 
@@ -26,11 +24,6 @@ public abstract class PreCentrifugation implements ISprecPart, IListObject {
     return this.codePart;
   }
 
-  @Override
-  public SprecPartType getSprecPartType() {
-    return PreCentrifugation.SPREC_PART_TYPE;
-  }
-
   public PreCentrifugationType getPreCentrifugationType() {
     return preCentrifugationType;
   }
@@ -39,7 +32,6 @@ public abstract class PreCentrifugation implements ISprecPart, IListObject {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((SPREC_PART_TYPE == null) ? 0 : SPREC_PART_TYPE.hashCode());
     result = prime * result + ((codePart == null) ? 0 : codePart.hashCode());
     result =
         prime * result + ((preCentrifugationType == null) ? 0 : preCentrifugationType.hashCode());
