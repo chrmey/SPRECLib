@@ -68,7 +68,7 @@ public class FixationTimeListProviderTest {
 
     FixationTimeOption fixationTimeOption = this.fixationTimeListProvider.valueOf(14);
 
-    assertEquals(FixationTime.LESS_15_MINUTES, fixationTimeOption.getContainedObject());
+    assertEquals(FixationTime.LESS_FIFTEEN_MINUTES, fixationTimeOption.getContainedObject());
   }
 
   @Test

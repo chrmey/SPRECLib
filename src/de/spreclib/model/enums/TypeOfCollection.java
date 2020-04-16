@@ -10,7 +10,7 @@ public enum TypeOfCollection implements ISprecPart, IListObject {
   AUTOPSY_6_TO_12_HOURS_POSTMORTEM(new CodePart("A12")),
   AUTOPSY_12_TO_24_HOURS_POSTMORTEM(new CodePart("A24")),
   AUTOPSY_24_TO_48_HOURS_POSTMORTEM(new CodePart("A48")),
-  AUTOPSY_48_TO_72_HOURS_POSTMORTEM(new CodePart("72")),
+  AUTOPSY_48_TO_72_HOURS_POSTMORTEM(new CodePart("A72")),
   BIOPSY_IN_CULTURE_MEDIA(new CodePart("BCM")),
   BIOPSY(new CodePart("BPS")),
   BIOPSY_IN_NORMAL_SALINE_OR_PHOSPHATE_BUFFERED_SALINE(new CodePart("BSL")),
