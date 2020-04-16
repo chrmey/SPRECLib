@@ -92,7 +92,7 @@ public final class FluidSprecCode extends AbstractSprecCode {
     return code.toString();
   }
 
-  public static final class FluidSprecCodeBuilder {
+  protected static final class FluidSprecCodeBuilder {
 
     private ICodePart fluidSampleTypeCode;
     private ICodePart primaryContainerCode;

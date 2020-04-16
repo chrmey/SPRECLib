@@ -93,7 +93,7 @@ public final class SolidSprecCode extends AbstractSprecCode {
     return code.toString();
   }
 
-  public static final class SolidSprecCodeBuilder {
+  protected static final class SolidSprecCodeBuilder {
 
     private ICodePart solidSampleTypeCode;
     private ICodePart typeOfCollectionCode;
