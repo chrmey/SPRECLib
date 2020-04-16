@@ -89,7 +89,8 @@ Calling ```.getSprecCode()``` will return a FluidSprecCode / SolidSprecCode obje
 String sprecCode = fluidSprecCode.getStringRepresentation();
 ```
 
-To get the code for a specific part:
+To get the code for a specific part:<p>
+
 **Warning: This will return null if the part has not been set!** 
 
 ```
