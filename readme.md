@@ -59,7 +59,7 @@ Example for a fluid sample:
     .withPrimaryContainer(PrimaryContainerOption)
     .withPreCentrifugation(PreCentrifugationOption)
     .withFirstCentrifugation(FirstCentrifugationOption)
-    .withSecondCentrifugation(FirstSecondOption)
+    .withSecondCentrifugation(SecondCentrifugationOption)
     .withPreCentrifugation(PostCentrifugationOption)
     .withLongTermStorage(LongTermStorageOption)
     .getSprecCode();
