@@ -19,7 +19,7 @@ public enum FirstCentrifugationSpeed implements ICentrifugationSpeed, IListObjec
   }
 
   public boolean hasValueFor(int speed) {
-    if (speed >= this.lowerBoundG && speed < this.upperBoundG) {
+    if (speed >= this.lowerBoundG && (this.upperBoundG == null || speed < this.upperBoundG)) {
       return true;
     } else {
       return false;
