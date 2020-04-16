@@ -17,7 +17,7 @@ Download the latest release jar and include it to your build.
 
 ### Terminology in SPRECLib
 
-The elements of a SPREC code in SPRECLib are called parts. FluidSampleType, TypeOfCollection, etc. are parts. Each part has a defined set of values, each one of them with an one or three character code called CodePart. Seven parts with their CodeParts make up the full code of a sample. 
+The elements of a SPREC code in SPRECLib are called parts. For example FluidSampleType, PrimaryContainer and PreCentrifugation are such parts. Each part has a defined set of values, each one of them with an one or three character code called CodePart. Seven parts with their CodeParts make up the full code of a sample. 
 
 SPRECLib also allows to "build up" a part from its values, that means you can use a temperature (degrees celsius) and a time value (minutes or two timestamps in milliseconds) and combine them to a PreCentrifugation. 
 
@@ -46,9 +46,9 @@ To get the english name of a ListOption, e.g. to use it in a GUI, call ```.getSt
 String nameInEnglish = fluidSampleTypeOption.getStringRepresentation();
 ```
 
-### Getting the SPREC Code of a Sample
+### Getting the SPREC code of a sample
 
-After you obtained the ListOptios for the sample, use either ```FluidSampleSprec``` or ```SolidSampleSprec``` to get the SPREC Code. These classes provide a fluent interface to build the samples.
+After you obtained the ListOptions for the sample, use either ```FluidSampleSprec``` or ```SolidSampleSprec``` to get the SPREC code. These classes provide a fluent interface to build the samples.
 
 Example for a fluid sample:
 
@@ -81,7 +81,7 @@ Example for a solid Sample:
     .getSprecCode();
 ```
 
-You can pass null values as Option, this will lead to the code for that part to be replaced by "?" if you print the full code for that sample.
+You can pass null values instead of an option. This will lead to the code for that part to be replaced by "?" in the full code of that sample. 
 
 
 Calling ```.getSprecCode()``` will return a FluidSprecCode / SolidSprecCode object. To get the full SPREC code use:
@@ -89,8 +89,9 @@ Calling ```.getSprecCode()``` will return a FluidSprecCode / SolidSprecCode obje
 String sprecCode = fluidSprecCode.getStringRepresentation();
 ```
 
-To get the code for a specific part:<p>
-
+To get the code for a specific part:
+<p>
+  
 **Warning: This will return null if the part has not been set!** 
 
 ```
