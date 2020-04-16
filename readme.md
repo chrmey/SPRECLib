@@ -17,7 +17,7 @@ Download the latest release jar and include it to your build.
 
 ### Terminology in SPRECLib
 
-The elements of a SPREC code in SPRECLib are called Parts. FluidSampleType, TypeOfCollection, etc. are parts. Each part has a defined set of values, each one of them with a one or three character code called CodePart. Seven parts make up the full code of a sample. 
+The elements of a SPREC code in SPRECLib are called parts. FluidSampleType, TypeOfCollection, etc. are parts. Each part has a defined set of values, each one of them with an one or three character code called CodePart. Seven parts with their CodeParts make up the full code of a sample. 
 
 SPRECLib also allows to "build up" a part from its values, that means you can use a temperature (degrees celsius) and a time value (minutes or two timestamps in milliseconds) and combine them to a PreCentrifugation. 
 
