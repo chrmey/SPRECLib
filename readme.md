@@ -90,7 +90,7 @@ String sprecCode = fluidSprecCode.getStringRepresentation();
 ```
 
 To get the code for a specific part:
-<p> **Warning: This will return null if the part has not been set!**
+<p> __Warning: This will return null if the part has not been set!__
 
 ```
   FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
