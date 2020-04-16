@@ -7,7 +7,7 @@ A Java library for the SamplePREAnalyticalCode Version 2 from the [ISBER](https:
 
 ## Getting SPRECLib
 
-```SPRECLib uses Java8```
+> SPRECLib uses Java8
 
 Download the latest release jar and include it to your build. 
 
@@ -90,7 +90,7 @@ String sprecCode = fluidSprecCode.getStringRepresentation();
 ```
 
 To get the code for a specific part:
-<p>Warning: This will return null if the part has not been set!
+<p>**Warning: This will return null if the part has not been set!**
 
 ```
   FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
