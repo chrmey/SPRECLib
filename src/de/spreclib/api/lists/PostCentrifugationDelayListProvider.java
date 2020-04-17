@@ -36,16 +36,16 @@ public final class PostCentrifugationDelayListProvider
    * Takes two timestamps milliseconds EPOCH time and returns a PostCentrifugationDelayOption if a
    * PostCentrifugationDelayOption with that timespan is found. Returns null otherwise.
    *
-   * @param lastCentrifugationStartTimeMillis timestamp milliseconds EPOCH time
+   * @param lastCentrifugationEndTimeMillis timestamp milliseconds EPOCH time
    * @param longTermStorageStartTimeMillis timestamp milliseconds EPOCH time
    * @return PostCentrifugationDelayOption
    * @see #valueOf(int)
    */
   public PostCentrifugationDelayOption valueOf(
-      long lastCentrifugationStartTimeMillis, long longTermStorageStartTimeMillis) {
+      long lastCentrifugationEndTimeMillis, long longTermStorageStartTimeMillis) {
 
     int delayMinutes =
-        new Timespan(lastCentrifugationStartTimeMillis, longTermStorageStartTimeMillis)
+        new Timespan(lastCentrifugationEndTimeMillis, longTermStorageStartTimeMillis)
             .getTimespanMinutes();
 
     return this.valueOf(delayMinutes);
