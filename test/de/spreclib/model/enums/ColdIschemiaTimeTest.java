@@ -16,7 +16,7 @@ public class ColdIschemiaTimeTest {
   }
 
   @Test
-  public void testHasValueForShouldReturnTrue() {
+  public void testHasValueShouldReturnTrue() {
 
     assertTrue(ColdIschemiaTime.LESS_TWO_MINUTES.hasValue(1));
   }

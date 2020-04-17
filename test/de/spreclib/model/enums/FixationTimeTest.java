@@ -16,7 +16,7 @@ public class FixationTimeTest {
   }
 
   @Test
-  public void testHasValueFor() {
+  public void testHasValue() {
 
     assertTrue(FixationTime.LESS_FIFTEEN_MINUTES.hasValue(14));
   }

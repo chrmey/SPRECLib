@@ -15,6 +15,12 @@ public class WarmIschemiaTimeTest {
   }
 
   @Test
+  public void testHasValueShouldReturnTrue() {
+
+    assertTrue(WarmIschemiaTime.LESS_TWO_MINUTES.hasValue(1));
+  }
+
+  @Test
   public void testContains() {
     for (WarmIschemiaTime warmIschemiaTime : WarmIschemiaTime.values()) {
       assertTrue(WarmIschemiaTime.contains(warmIschemiaTime));

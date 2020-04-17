@@ -194,6 +194,20 @@ public class LongTermStorageListTest {
   }
 
   @Test
+  public void testGetUnknownLongTermStorage() {
+
+    LongTermStorage unknownLongTermStorage = LongTermStorageList.getUnknownLongTermStorage();
+    assertEquals(LongTermStorageType.UNKNOWN, unknownLongTermStorage.getLongTermStorageType());
+  }
+
+  @Test
+  public void testGetOtherLongTermStorage() {
+
+    LongTermStorage otherLongTermStorage = LongTermStorageList.getOtherLongTermStorage();
+    assertEquals(LongTermStorageType.OTHER, otherLongTermStorage.getLongTermStorageType());
+  }
+
+  @Test
   public void testLongTermStorageListContentTypes() {
     int expectedNormalLongTermStorages = 0;
     int expectedSpecialLongTermStorages = 0;

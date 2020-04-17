@@ -124,6 +124,18 @@ public class FirstCentrifugationListTest {
   }
 
   @Test
+  public void testGetUnknownFirstCentrifugation() {
+    Centrifugation unknownCentrifugation = FirstCentrifugationList.getUnknownFirstCentrifugation();
+    assertEquals(CentrifugationType.UNKNOWN, unknownCentrifugation.getCentrifugationType());
+  }
+
+  @Test
+  public void testGetOtherFirstCentrifugation() {
+    Centrifugation otherCentrifugation = FirstCentrifugationList.getOtherFirstCentrifugation();
+    assertEquals(CentrifugationType.OTHER, otherCentrifugation.getCentrifugationType());
+  }
+
+  @Test
   public void testGetNoFirstCentrifugation() {
     Centrifugation noCentrifugation = FirstCentrifugationList.getNoFirstCentrifugation();
     assertEquals(CentrifugationType.NO, noCentrifugation.getCentrifugationType());

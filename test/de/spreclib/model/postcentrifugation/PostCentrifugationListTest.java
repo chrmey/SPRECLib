@@ -2,13 +2,10 @@ package de.spreclib.model.postcentrifugation;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
-import de.spreclib.model.postcentrifugation.NormalPostCentrifugation;
-import de.spreclib.model.postcentrifugation.PostCentrifugation;
-import de.spreclib.model.postcentrifugation.PostCentrifugationList;
-import de.spreclib.model.postcentrifugation.SpecialPostCentrifugation;
 import de.spreclib.model.sprec.CodePart;
 import java.util.HashSet;
 import java.util.Set;
@@ -101,6 +98,32 @@ public class PostCentrifugationListTest {
     for (PostCentrifugation postCentrifugation : testList) {
       assertTrue(PostCentrifugationList.POST_CENTRIFUGATIONS.contains(postCentrifugation));
     }
+  }
+
+  @Test
+  public void testGetUnknownPostCentrifugation() {
+
+    PostCentrifugation unknownPostCentrifugation = PostCentrifugationList.getUnknownPostCentrifugation();
+    assertEquals(PostCentrifugationType.UNKNOWN, unknownPostCentrifugation.getPostCentrifugationType());
+  }
+
+  @Test
+  public void testGetNoApplicablePostCentrifugation() {
+
+    PostCentrifugation unknownPostCentrifugation =
+        PostCentrifugationList.getNoApplicablePostCentrifugation();
+    assertEquals(
+        PostCentrifugationType.NOT_APPLICABLE,
+        unknownPostCentrifugation.getPostCentrifugationType());
+  }
+
+  @Test
+  public void testGetOtherPostCentrifugation() {
+
+    PostCentrifugation unknownPostCentrifugation =
+        PostCentrifugationList.getOtherPostCentrifugation();
+    assertEquals(
+        PostCentrifugationType.OTHER, unknownPostCentrifugation.getPostCentrifugationType());
   }
 
   @Test

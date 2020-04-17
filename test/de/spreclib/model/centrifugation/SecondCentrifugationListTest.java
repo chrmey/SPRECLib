@@ -122,6 +122,25 @@ public class SecondCentrifugationListTest {
   }
 
   @Test
+  public void testGetUnknownSecondCentrifugation() {
+    Centrifugation unknownCentrifugation =
+        SecondCentrifugationList.getUnknownSecondCentrifugation();
+    assertEquals(CentrifugationType.UNKNOWN, unknownCentrifugation.getCentrifugationType());
+  }
+
+  @Test
+  public void testGetOtherSecondCentrifugation() {
+    Centrifugation otherCentrifugation = SecondCentrifugationList.getOtherSecondCentrifugation();
+    assertEquals(CentrifugationType.OTHER, otherCentrifugation.getCentrifugationType());
+  }
+
+  @Test
+  public void testGetNoSecondCentrifugation() {
+    Centrifugation noCentrifugation = SecondCentrifugationList.getNoSecondCentrifugation();
+    assertEquals(CentrifugationType.NO, noCentrifugation.getCentrifugationType());
+  }
+
+  @Test
   public void testSecondCentrifugationListContentTypes() {
     int expectedNormalCentrifugations = 0;
     int expectedSpecialCentrifugations = 0;
