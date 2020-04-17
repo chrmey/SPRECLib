@@ -56,4 +56,17 @@ public class TimespanTest {
 
     new Timespan(timestamp1, negativeTimestamp);
   }
+
+  @Test
+  public void testWithHalfMinute() {
+
+    long startTime = 1577836800000L;
+    long fifteenAndHalfMinutesLater = 1577837730000L;
+
+    Timespan timestampCalculator = new Timespan(startTime, fifteenAndHalfMinutesLater);
+
+    int delayMinutes = timestampCalculator.getTimespanMinutes();
+
+    assertEquals(15, delayMinutes);
+  }
 }
