@@ -1,20 +1,22 @@
 package de.spreclib.api.sprec;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import de.spreclib.api.lists.FirstCentrifugationListProvider;
+import de.spreclib.api.lists.FirstCentrifugationOption;
 import de.spreclib.api.lists.FluidSampleTypeListProvider;
+import de.spreclib.api.lists.FluidSampleTypeOption;
 import de.spreclib.api.lists.LongTermStorageListProvider;
+import de.spreclib.api.lists.LongTermStorageOption;
 import de.spreclib.api.lists.PostCentrifugationListProvider;
+import de.spreclib.api.lists.PostCentrifugationOption;
 import de.spreclib.api.lists.PreCentrifugationListProvider;
+import de.spreclib.api.lists.PreCentrifugationOption;
 import de.spreclib.api.lists.PrimaryContainerListProvider;
+import de.spreclib.api.lists.PrimaryContainerOption;
 import de.spreclib.api.lists.SecondCentrifugationListProvider;
-import de.spreclib.api.lists.options.FirstCentrifugationOption;
-import de.spreclib.api.lists.options.FluidSampleTypeOption;
-import de.spreclib.api.lists.options.LongTermStorageOption;
-import de.spreclib.api.lists.options.PostCentrifugationOption;
-import de.spreclib.api.lists.options.PreCentrifugationOption;
-import de.spreclib.api.lists.options.PrimaryContainerOption;
-import de.spreclib.api.lists.options.SecondCentrifugationOption;
+import de.spreclib.api.lists.SecondCentrifugationOption;
 import de.spreclib.model.exceptions.InvalidPartRelationException;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.sprec.FluidSprecCode;
@@ -226,17 +228,6 @@ public class FluidSampleSprecTest {
     assertFalse(postCentrifugationCode.getStringRepresentation().isEmpty());
   }
 
-  @Test(expected = InvalidPartRelationException.class)
-  public void testWithPostCentrifugationWithNoFirstOrSecondCentrifugation() {
-    FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
-
-    fluidSampleSprec
-        .withNoFirstCentrifugation()
-        .withNoSecondCentrifugation()
-        .withPostCentrifugation(this.postCentrifugationOption)
-        .getSprecCode();
-  }
-
   @Test
   public void testWithNoApplicablePostCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
@@ -249,7 +240,7 @@ public class FluidSampleSprecTest {
   }
 
   @Test(expected = InvalidPartRelationException.class)
-  public void testWithUnknownPostCentrifugation() {
+  public void testWithUnknownPostCentrifugationWithNoFirstOrSecondCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
 
     fluidSampleSprec
@@ -260,7 +251,7 @@ public class FluidSampleSprecTest {
   }
 
   @Test(expected = InvalidPartRelationException.class)
-  public void testWithOtherPostCentrifugation() {
+  public void testWithOtherPostCentrifugationWithNoFirstOrSecondCentrifugation() {
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
 
     fluidSampleSprec
@@ -342,6 +333,6 @@ public class FluidSampleSprecTest {
 
     String codeString = fluidSampleCode.getCodeString();
 
-    assertFalse(codeString.isEmpty());
+    assertTrue(codeString.equals("???????????"));
   }
 }

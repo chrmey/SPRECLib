@@ -37,38 +37,38 @@ public class SolidSample {
 
     if (this.solidSampleType != null && !SolidSampleType.contains(this.solidSampleType)) {
       throw new InvalidPartValueException(
-          this.solidSampleType, "Value for SolidSampleType is not in SPREC standard.");
+          this.solidSampleType, "Selected SolidSampleType cannot be found in SPREC.");
     }
 
     if (this.typeOfCollection != null && !TypeOfCollection.contains(this.typeOfCollection)) {
       throw new InvalidPartValueException(
-          this.typeOfCollection, "Value for TypeOfCollection is not in SPREC standard.");
+          this.typeOfCollection, "Selected TypeOfCollection cannot be found in SPREC.");
     }
 
     if (this.warmIschemiaTime != null && !WarmIschemiaTime.contains(this.warmIschemiaTime)) {
       throw new InvalidPartValueException(
-          this.warmIschemiaTime, "Value for WarmIschemiaTime is not in SPREC standard.");
+          this.warmIschemiaTime, "Selected WarmIschemiaTime cannot be found in SPREC.");
     }
 
     if (this.coldIschemiaTime != null && !ColdIschemiaTime.contains(this.coldIschemiaTime)) {
       throw new InvalidPartValueException(
-          this.coldIschemiaTime, "Value for ColdIschemiaTime is not in SPREC standard.");
+          this.coldIschemiaTime, "Selected ColdIschmemiaTime cannot be found in SPREC.");
     }
 
     if (this.fixation != null && !Fixation.contains(this.fixation)) {
       throw new InvalidPartValueException(
-          this.fixation, "Value for Fixation is not in SPREC standard.");
+          this.fixation, "Selected Fixation cannot be found in SPREC.");
     }
 
     if (this.fixationTime != null && !FixationTime.contains(this.fixationTime)) {
       throw new InvalidPartValueException(
-          this.fixationTime, "Value for FixationTime is not in SPREC standard.");
+          this.fixationTime, "Selected FixationTime cannot be found in SPREC.");
     }
 
     if (this.longTermStorage != null
         && !LongTermStorageList.LONG_TERM_STORAGES.contains(this.longTermStorage)) {
       throw new InvalidPartValueException(
-          this.longTermStorage, "Value for LongTermStorage is not in SPREC standard.");
+          this.longTermStorage, "Selected LongTermStorage cannot be found in SPREC.");
     }
   }
 

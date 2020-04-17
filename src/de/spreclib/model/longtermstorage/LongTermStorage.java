@@ -1,14 +1,12 @@
 package de.spreclib.model.longtermstorage;
 
-import de.spreclib.model.enums.SprecPartType;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 
-public abstract class LongTermStorage implements ISprecPart, IListObject {
+public abstract class LongTermStorage implements ISprecPart, IListProvideable {
 
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.LONG_TERM_STORAGE;
   private final LongTermStorageType longTermStorageType;
   private final ICodePart codePart;
 
@@ -26,11 +24,6 @@ public abstract class LongTermStorage implements ISprecPart, IListObject {
     return this.codePart;
   }
 
-  @Override
-  public SprecPartType getSprecPartType() {
-    return LongTermStorage.SPREC_PART_TYPE;
-  }
-
   public LongTermStorageType getLongTermStorageType() {
     return this.longTermStorageType;
   }
@@ -41,7 +34,6 @@ public abstract class LongTermStorage implements ISprecPart, IListObject {
     int result = 1;
     result = prime * result + ((codePart == null) ? 0 : codePart.hashCode());
     result = prime * result + ((longTermStorageType == null) ? 0 : longTermStorageType.hashCode());
-    result = prime * result + ((SPREC_PART_TYPE == null) ? 0 : SPREC_PART_TYPE.hashCode());
     return result;
   }
 

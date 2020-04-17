@@ -1,8 +1,8 @@
 package de.spreclib.model.enums.precentrifugation;
 
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 
-public enum PreCentrifugationDelay implements IListObject {
+public enum PreCentrifugationDelay implements IListProvideable {
   LESS_TWO_HOURS(0, 120),
   TWO_TO_FOUR_HOURS(120, 240),
   FOUR_TO_EIGHT_HOURS(240, 480),
@@ -20,9 +20,10 @@ public enum PreCentrifugationDelay implements IListObject {
   }
 
   // naming ungünstig
-  public boolean hasValueFor(int delayMinutes) {
+  public boolean hasValue(int delayMinutes) {
 
-    if (delayMinutes >= this.lowerBoundMinutes && delayMinutes <= this.upperBoundMinutes) {
+    if (delayMinutes >= this.lowerBoundMinutes
+        && (this.upperBoundMinutes == null || delayMinutes < this.upperBoundMinutes)) {
       return true;
     } else {
       return false;

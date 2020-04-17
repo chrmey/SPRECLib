@@ -1,16 +1,13 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
-import de.spreclib.api.exceptions.InvalidParameterCombinationException;
+import de.spreclib.api.exceptions.InvalidValueCombinationException;
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.FirstCentrifugationBrakingOption;
-import de.spreclib.api.lists.options.FirstCentrifugationDurationOption;
-import de.spreclib.api.lists.options.FirstCentrifugationOption;
-import de.spreclib.api.lists.options.FirstCentrifugationSpeedOption;
-import de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
+import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -62,7 +59,7 @@ public class FirstCentrifugationListProviderTest {
     assertNotNull(firstCentrifugationOption);
   }
 
-  @Test(expected = InvalidParameterCombinationException.class)
+  @Test(expected = InvalidValueCombinationException.class)
   public void testValueOfWithInvalidParameterCombination() {
 
     Temperature temperature = new Temperature(20f);
@@ -156,5 +153,58 @@ public class FirstCentrifugationListProviderTest {
         firstCentrifugationDurationOption,
         firstCentrifugationSpeedOption,
         null);
+  }
+
+  
+  
+  @Test
+  public void testValueOfShouldReturnCodeB() {
+
+    Temperature temperature = new Temperature(28.9999f);
+
+    FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
+        new FirstCentrifugationTemperatureListProvider().valueOf(temperature);
+    FirstCentrifugationDurationOption firstCentrifugationDurationOption =
+        new FirstCentrifugationDurationListProvider().valueOf(15);
+    FirstCentrifugationSpeedOption firstCentrifugationSpeedOption =
+        new FirstCentrifugationSpeedListProvider().valueOf(2999);
+    FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =
+        new FirstCentrifugationBrakingListProvider().valueOf(true);
+
+    FirstCentrifugationOption firstCentrifugationOption =
+        this.firstCentrifugationListProvider.valueOf(
+            firstCentrifugationTemperatureOption,
+            firstCentrifugationDurationOption,
+            firstCentrifugationSpeedOption,
+            firstCentrifugationBrakingOption);
+
+    assertEquals(
+        new CodePart("B"), firstCentrifugationOption.getContainedObject().getCodeFromSprecPart());
+  }
+
+  @Test
+  public void testValueOfShouldReturnCodeM() {
+
+    Temperature temperature = new Temperature(28.999f);
+
+    FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
+        new FirstCentrifugationTemperatureListProvider().valueOf(temperature);
+    FirstCentrifugationDurationOption firstCentrifugationDurationOption =
+        new FirstCentrifugationDurationListProvider().valueOf(30);
+    FirstCentrifugationSpeedOption firstCentrifugationSpeedOption =
+        new FirstCentrifugationSpeedListProvider().valueOf(999);
+    FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =
+        new FirstCentrifugationBrakingListProvider().valueOf(false);
+
+
+    FirstCentrifugationOption firstCentrifugationOption =
+        this.firstCentrifugationListProvider.valueOf(
+            firstCentrifugationTemperatureOption,
+            firstCentrifugationDurationOption,
+            firstCentrifugationSpeedOption,
+            firstCentrifugationBrakingOption);
+
+    assertEquals(
+        new CodePart("M"), firstCentrifugationOption.getContainedObject().getCodeFromSprecPart());
   }
 }

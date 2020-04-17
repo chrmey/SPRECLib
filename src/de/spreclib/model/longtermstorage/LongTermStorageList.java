@@ -51,7 +51,7 @@ public final class LongTermStorageList {
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.CRYOTUBE_ONE_TO_TWO_ML,
-            LongTermStorageTemperature.PROGRAMMBLE_FREEZING_TO_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
+            LongTermStorageTemperature.PROGRAMMABLE_FREEZING_TO_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
             new CodePart("E")));
     LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(
@@ -75,7 +75,7 @@ public final class LongTermStorageList {
         new NormalLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.STRAW,
-            LongTermStorageTemperature.PROGRAMMBLE_FREEZING_TO_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
+            LongTermStorageTemperature.PROGRAMMABLE_FREEZING_TO_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
             new CodePart("G")));
     LONG_TERM_STORAGES.add(
         new NormalLongTermStorage(

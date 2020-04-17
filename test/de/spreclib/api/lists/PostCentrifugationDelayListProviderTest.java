@@ -1,11 +1,12 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.PostCentrifugationDelayOption;
+import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -61,5 +62,38 @@ public class PostCentrifugationDelayListProviderTest {
         this.postCentrifugationDelayListProvider.valueOf(startTime, fifteenMinutesLater);
 
     assertNotNull(postCentrifugationDurationOption);
+  }
+
+  @Test
+  public void testValueOfShouldReturnOneToTwoHours() {
+
+    PostCentrifugationDelayOption postCentrifugationDelayOption =
+        this.postCentrifugationDelayListProvider.valueOf(119);
+
+    assertEquals(
+        PostCentrifugationDelay.ONE_TO_TWO_HOURS,
+        postCentrifugationDelayOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnTwoToEightHours() {
+
+    PostCentrifugationDelayOption postCentrifugationDelayOption =
+        this.postCentrifugationDelayListProvider.valueOf(120);
+
+    assertEquals(
+        PostCentrifugationDelay.TWO_TO_EIGHT_HOURS,
+        postCentrifugationDelayOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnGreater24Hours() {
+
+    PostCentrifugationDelayOption postCentrifugationDelayOption =
+        this.postCentrifugationDelayListProvider.valueOf(1140);
+
+    assertEquals(
+        PostCentrifugationDelay.GREATER_TWENTYFOUR_HOURS,
+        postCentrifugationDelayOption.getContainedObject());
   }
 }

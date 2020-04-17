@@ -1,9 +1,6 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.exceptions.InvalidParameterCombinationException;
-import de.spreclib.api.lists.options.LongTermStorageContainerOption;
-import de.spreclib.api.lists.options.LongTermStorageOption;
-import de.spreclib.api.lists.options.LongTermStorageTemperatureOption;
+import de.spreclib.api.exceptions.InvalidValueCombinationException;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.longtermstorage.LongTermStorageList;
 import java.util.ArrayList;
@@ -16,25 +13,20 @@ import java.util.List;
  *
  * @author Christopher Meyer
  */
-public final class LongTermStorageListProvider {
-
-  private final List<LongTermStorageOption> longTermStorageOptions;
+public final class LongTermStorageListProvider extends AbstractListProvider<LongTermStorageOption> {
 
   public LongTermStorageListProvider() {
-    this.longTermStorageOptions = generateList();
+    super();
   }
 
-  private List<LongTermStorageOption> generateList() {
+  @Override
+  protected List<LongTermStorageOption> generateList() {
     List<LongTermStorageOption> longTermStorageOptions = new ArrayList<>();
     for (LongTermStorage longTermStorage : LongTermStorageList.LONG_TERM_STORAGES) {
       LongTermStorageOption longTermStorageOption = new LongTermStorageOption(longTermStorage);
       longTermStorageOptions.add(longTermStorageOption);
     }
     return longTermStorageOptions;
-  }
-
-  public List<LongTermStorageOption> getList() {
-    return this.longTermStorageOptions;
   }
 
   /**
@@ -44,7 +36,7 @@ public final class LongTermStorageListProvider {
    * @param longTermStorageTemperatureOption LongTermStorageTemperatureOption
    * @param longTermStorageContainerOption LongTermStorageContainerOption
    * @return LongTermStorageOption
-   * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
+   * @throws InvalidValueCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
   public LongTermStorageOption valueOf(
@@ -59,7 +51,7 @@ public final class LongTermStorageListProvider {
       throw new IllegalArgumentException("LongTermStorageContainerOption cannot not be null.");
     }
 
-    for (LongTermStorageOption longTermStorageOption : this.longTermStorageOptions) {
+    for (LongTermStorageOption longTermStorageOption : this.listOptions) {
 
       if (longTermStorageOption.hasLongTermStorage(
           longTermStorageTemperatureOption, longTermStorageContainerOption)) {
@@ -68,7 +60,7 @@ public final class LongTermStorageListProvider {
       }
     }
 
-    throw new InvalidParameterCombinationException(
+    throw new InvalidValueCombinationException(
         "Parameter combination for LongTermStorage is no valid combination.");
   }
 }

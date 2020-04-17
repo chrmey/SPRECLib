@@ -1,12 +1,12 @@
 package de.spreclib.api.sprec;
 
-import de.spreclib.api.lists.options.ColdIschemiaTimeOption;
-import de.spreclib.api.lists.options.FixationOption;
-import de.spreclib.api.lists.options.FixationTimeOption;
-import de.spreclib.api.lists.options.LongTermStorageOption;
-import de.spreclib.api.lists.options.SolidSampleTypeOption;
-import de.spreclib.api.lists.options.TypeOfCollectionOption;
-import de.spreclib.api.lists.options.WarmIschemiaTimeOption;
+import de.spreclib.api.lists.ColdIschemiaTimeOption;
+import de.spreclib.api.lists.FixationOption;
+import de.spreclib.api.lists.FixationTimeOption;
+import de.spreclib.api.lists.LongTermStorageOption;
+import de.spreclib.api.lists.SolidSampleTypeOption;
+import de.spreclib.api.lists.TypeOfCollectionOption;
+import de.spreclib.api.lists.WarmIschemiaTimeOption;
 import de.spreclib.model.enums.ColdIschemiaTime;
 import de.spreclib.model.enums.Fixation;
 import de.spreclib.model.enums.FixationTime;

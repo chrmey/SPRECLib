@@ -1,13 +1,12 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.PostCentrifugationDelayOption;
-import de.spreclib.api.lists.options.PostCentrifugationOption;
-import de.spreclib.api.lists.options.PostCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
+import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,10 +43,10 @@ public class PostCentrifugationListProviderTest {
     PostCentrifugationDelayOption delayOption =
         new PostCentrifugationDelayListProvider().valueOf(15);
 
-    PostCentrifugationOption preCentrifugationOption =
+    PostCentrifugationOption postCentrifugationOption =
         this.postCentrifugationListProvider.valueOf(temperatureOption, delayOption);
 
-    assertNotNull(preCentrifugationOption);
+    assertNotNull(postCentrifugationOption);
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -66,5 +65,37 @@ public class PostCentrifugationListProviderTest {
         new PostCentrifugationTemperatureListProvider().valueOf(new Temperature(10f));
 
     this.postCentrifugationListProvider.valueOf(temperatureOption, null);
+  }
+
+  @Test
+  public void TestValueOfShouldReturnCodeA() {
+
+    PostCentrifugationTemperatureOption temperatureOption =
+        new PostCentrifugationTemperatureListProvider().valueOf(new Temperature(10f));
+
+    PostCentrifugationDelayOption delayOption =
+        new PostCentrifugationDelayListProvider().valueOf(59);
+
+    PostCentrifugationOption postCentrifugationOption =
+        this.postCentrifugationListProvider.valueOf(temperatureOption, delayOption);
+
+    assertEquals(
+        new CodePart("A"), postCentrifugationOption.getContainedObject().getCodeFromSprecPart());
+  }
+
+  @Test
+  public void TestValueOfShouldReturnCodeJ() {
+
+    PostCentrifugationTemperatureOption temperatureOption =
+        new PostCentrifugationTemperatureListProvider().valueOf(new Temperature(18f));
+
+    PostCentrifugationDelayOption delayOption =
+        new PostCentrifugationDelayListProvider().valueOf(1140);
+
+    PostCentrifugationOption postCentrifugationOption =
+        this.postCentrifugationListProvider.valueOf(temperatureOption, delayOption);
+
+    assertEquals(
+        new CodePart("J"), postCentrifugationOption.getContainedObject().getCodeFromSprecPart());
   }
 }

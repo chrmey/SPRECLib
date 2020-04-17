@@ -1,11 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 
-public enum Fixation implements ISprecPart, IListObject {
+public enum Fixation implements ISprecPart, IListProvideable {
   NON_ALDEHYDE_WITH_ACETIC_ACID(new CodePart("ACA")),
   ALDEHYDE_BASED(new CodePart("ALD")),
   ALLPROTECT_TISSUE_REAGENT(new CodePart("ALL")),
@@ -22,7 +22,6 @@ public enum Fixation implements ISprecPart, IListObject {
   OTHER(new CodePart("ZZZ")),
   ;
 
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.FIXATION;
   private ICodePart codePart;
 
   private Fixation(ICodePart code) {
@@ -32,11 +31,6 @@ public enum Fixation implements ISprecPart, IListObject {
   @Override
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;
-  }
-
-  @Override
-  public SprecPartType getSprecPartType() {
-    return Fixation.SPREC_PART_TYPE;
   }
 
   public static boolean contains(Fixation fixation) {

@@ -1,9 +1,9 @@
 package de.spreclib.model.enums.centrifugation;
 
 import de.spreclib.model.centrifugation.ICentrifugationDuration;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 
-public enum SecondCentrifugationDuration implements ICentrifugationDuration, IListObject {
+public enum SecondCentrifugationDuration implements ICentrifugationDuration, IListProvideable {
   TEN_TO_FIFTEEN_MINUTES(10, 15);
 
   private final int lowerBoundMinutes;
@@ -14,7 +14,7 @@ public enum SecondCentrifugationDuration implements ICentrifugationDuration, ILi
     this.upperBoundMinutes = upperBound;
   }
 
-  public boolean hasValueFor(int durationMinutes) {
+  public boolean hasValue(int durationMinutes) {
     if (durationMinutes >= this.lowerBoundMinutes && durationMinutes <= this.upperBoundMinutes) {
       return true;
     } else {

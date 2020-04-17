@@ -1,11 +1,6 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.exceptions.InvalidParameterCombinationException;
-import de.spreclib.api.lists.options.FirstCentrifugationBrakingOption;
-import de.spreclib.api.lists.options.FirstCentrifugationDurationOption;
-import de.spreclib.api.lists.options.FirstCentrifugationOption;
-import de.spreclib.api.lists.options.FirstCentrifugationSpeedOption;
-import de.spreclib.api.lists.options.FirstCentrifugationTemperatureOption;
+import de.spreclib.api.exceptions.InvalidValueCombinationException;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import java.util.ArrayList;
@@ -18,17 +13,17 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.FirstCentrifugationOption
+ * @see de.spreclib.api.lists.FirstCentrifugationOption
  */
-public final class FirstCentrifugationListProvider {
-
-  private final List<FirstCentrifugationOption> firstCentrifugationOptions;
+public final class FirstCentrifugationListProvider
+    extends AbstractListProvider<FirstCentrifugationOption> {
 
   public FirstCentrifugationListProvider() {
-    this.firstCentrifugationOptions = generateList();
+    super();
   }
 
-  private List<FirstCentrifugationOption> generateList() {
+  @Override
+  protected List<FirstCentrifugationOption> generateList() {
     List<FirstCentrifugationOption> firstCentrifugationOptions = new ArrayList<>();
     for (Centrifugation firstCentrifugation : FirstCentrifugationList.CENTRIFUGATIONS) {
       FirstCentrifugationOption firstCentrifugationOption =
@@ -36,10 +31,6 @@ public final class FirstCentrifugationListProvider {
       firstCentrifugationOptions.add(firstCentrifugationOption);
     }
     return firstCentrifugationOptions;
-  }
-
-  public List<FirstCentrifugationOption> getList() {
-    return this.firstCentrifugationOptions;
   }
 
   /**
@@ -51,7 +42,7 @@ public final class FirstCentrifugationListProvider {
    * @param firstCentrifugationSpeedOption FirstCentrifugationSpeedOption
    * @param firstCentrifugationBrakingOption FirstCentrifugationBrakingOption
    * @return FirstCentrifugationOption
-   * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
+   * @throws InvalidValueCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
   public FirstCentrifugationOption valueOf(
@@ -76,7 +67,7 @@ public final class FirstCentrifugationListProvider {
       throw new IllegalArgumentException("FirstCentrifugationBrakingOption cannot be null");
     }
 
-    for (FirstCentrifugationOption firstCentrifugationOption : this.firstCentrifugationOptions) {
+    for (FirstCentrifugationOption firstCentrifugationOption : this.listOptions) {
       if (firstCentrifugationOption.hasFirstCentrifugation(
           firstCentrifugationTemperatureOption,
           firstCentrifugationDurationOption,
@@ -85,7 +76,7 @@ public final class FirstCentrifugationListProvider {
         return firstCentrifugationOption;
       }
     }
-    throw new InvalidParameterCombinationException(
+    throw new InvalidValueCombinationException(
         "Parameter combination for FirstCentrifugation is no valid combination.");
   }
 }

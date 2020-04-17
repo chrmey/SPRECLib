@@ -1,11 +1,6 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.exceptions.InvalidParameterCombinationException;
-import de.spreclib.api.lists.options.SecondCentrifugationBrakingOption;
-import de.spreclib.api.lists.options.SecondCentrifugationDurationOption;
-import de.spreclib.api.lists.options.SecondCentrifugationOption;
-import de.spreclib.api.lists.options.SecondCentrifugationSpeedOption;
-import de.spreclib.api.lists.options.SecondCentrifugationTemperatureOption;
+import de.spreclib.api.exceptions.InvalidValueCombinationException;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.SecondCentrifugationList;
 import java.util.ArrayList;
@@ -18,17 +13,17 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.SecondCentrifugationOption
+ * @see de.spreclib.api.lists.SecondCentrifugationOption
  */
-public final class SecondCentrifugationListProvider {
-
-  private final List<SecondCentrifugationOption> secondCentrifugationOptions;
+public final class SecondCentrifugationListProvider
+    extends AbstractListProvider<SecondCentrifugationOption> {
 
   public SecondCentrifugationListProvider() {
-    this.secondCentrifugationOptions = generateList();
+    super();
   }
 
-  private List<SecondCentrifugationOption> generateList() {
+  @Override
+  protected List<SecondCentrifugationOption> generateList() {
     List<SecondCentrifugationOption> secondCentrifugationOptions = new ArrayList<>();
     for (Centrifugation secondCentrifugation : SecondCentrifugationList.CENTRIFUGATIONS) {
       SecondCentrifugationOption secondCentrifugationOption =
@@ -36,10 +31,6 @@ public final class SecondCentrifugationListProvider {
       secondCentrifugationOptions.add(secondCentrifugationOption);
     }
     return secondCentrifugationOptions;
-  }
-
-  public List<SecondCentrifugationOption> getList() {
-    return this.secondCentrifugationOptions;
   }
 
   /**
@@ -51,7 +42,7 @@ public final class SecondCentrifugationListProvider {
    * @param secondCentrifugationSpeedOption SecondCentrifugationSpeedOption
    * @param secondCentrifugationBrakingOption SecondCentrifugationBrakingOption
    * @return SecondCentrifugationOption
-   * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
+   * @throws InvalidValueCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
   public SecondCentrifugationOption valueOf(
@@ -76,7 +67,7 @@ public final class SecondCentrifugationListProvider {
       throw new IllegalArgumentException("SecondCentrifugationBrakingOption cannot be null.");
     }
 
-    for (SecondCentrifugationOption secondCentrifugationOption : this.secondCentrifugationOptions) {
+    for (SecondCentrifugationOption secondCentrifugationOption : this.listOptions) {
       if (secondCentrifugationOption.hasSecondCentrifugation(
           secondCentrifugationTemperatureOption,
           secondCentrifugationDurationOption,
@@ -85,7 +76,7 @@ public final class SecondCentrifugationListProvider {
         return secondCentrifugationOption;
       }
     }
-    throw new InvalidParameterCombinationException(
+    throw new InvalidValueCombinationException(
         "Parameter combination for SecondCentrifugation is no valid combination.");
   }
 }

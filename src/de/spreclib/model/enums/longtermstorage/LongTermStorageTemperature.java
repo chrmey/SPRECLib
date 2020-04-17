@@ -1,12 +1,12 @@
 package de.spreclib.model.enums.longtermstorage;
 
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 
-public enum LongTermStorageTemperature implements IListObject {
+public enum LongTermStorageTemperature implements IListProvideable {
   MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES(-85, -60),
   LIQUID_NITROGEN,
   LESS_MINUS_HUNDREDTHIRTYFIVE_DEGREES(-273, -135),
-  PROGRAMMBLE_FREEZING_TO_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
+  PROGRAMMABLE_FREEZING_TO_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
   MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES(-35, -18),
   LIQUID_NITROGEN_AFTER_MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
   ROOM_TEMPERATURE(18, 28),
@@ -27,15 +27,16 @@ public enum LongTermStorageTemperature implements IListObject {
     this.upperBoundCelsius = upperBound;
   }
 
-  // TODO handle valuesFor LN
+  // TODO handle values for LN
 
-  public boolean hasValueFor(float temperatureCelsius) {
+  public boolean hasValue(float temperatureCelsius) {
 
     if (this.lowerBoundCelsius == null || this.upperBoundCelsius == null) {
       return false;
     }
 
-    if (temperatureCelsius >= this.lowerBoundCelsius
+    // lowerBoundCelsius - 1 because of negative values
+    if (temperatureCelsius >= this.lowerBoundCelsius - 1
         && temperatureCelsius < this.upperBoundCelsius + 1) {
       return true;
     } else {

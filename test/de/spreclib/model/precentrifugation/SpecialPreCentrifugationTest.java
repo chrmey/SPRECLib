@@ -2,7 +2,7 @@ package de.spreclib.model.precentrifugation;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import de.spreclib.model.enums.SprecPartType;
+
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.precentrifugation.SpecialPreCentrifugation;
@@ -33,13 +33,6 @@ public class SpecialPreCentrifugationTest {
     ICodePart actual = specialPreCentrifugation.getCodeFromSprecPart();
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testGetSprecPartType() {
-    SprecPartType expected = SprecPartType.PRE_CENTRIFUGATION;
-    SprecPartType actual = specialPreCentrifugation.getSprecPartType();
     assertEquals(expected, actual);
   }
 }

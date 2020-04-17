@@ -1,11 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 
-public enum WarmIschemiaTime implements ISprecPart, IListObject {
+public enum WarmIschemiaTime implements ISprecPart, IListProvideable {
   LESS_TWO_MINUTES(0, 2, new CodePart("A")),
   TWO_TO_TEN_MINUTES(2, 10, new CodePart("B")),
   TEN_TO_TWENTY_MINUTES(10, 20, new CodePart("C")),
@@ -17,7 +17,6 @@ public enum WarmIschemiaTime implements ISprecPart, IListObject {
   OTHER(null, null, new CodePart("Z")),
   ;
 
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.WARM_ISCHEMIA_TIME;
   private final Integer lowerBoundMinutes;
   private final Integer upperBoundMinutes;
   private final ICodePart codePart;
@@ -33,12 +32,8 @@ public enum WarmIschemiaTime implements ISprecPart, IListObject {
     return this.codePart;
   }
 
-  @Override
-  public SprecPartType getSprecPartType() {
-    return WarmIschemiaTime.SPREC_PART_TYPE;
-  }
 
-  public boolean hasValueFor(int durationMinutes) {
+  public boolean hasValue(int durationMinutes) {
 
     if (this.lowerBoundMinutes == null && this.upperBoundMinutes == null) {
       return false;

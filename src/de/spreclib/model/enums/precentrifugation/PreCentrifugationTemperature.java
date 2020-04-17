@@ -1,8 +1,8 @@
 package de.spreclib.model.enums.precentrifugation;
 
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 
-public enum PreCentrifugationTemperature implements IListObject {
+public enum PreCentrifugationTemperature implements IListProvideable {
   ROOM_TEMPERATURE(18, 28),
   TWO_TO_TEN_DEGREES(2, 10),
   THIRTYFIVE_TO_THIRTYEIGHT_DEGREES(35, 38);
@@ -16,7 +16,7 @@ public enum PreCentrifugationTemperature implements IListObject {
   }
 
   // Namig ungünstig
-  public boolean hasValueFor(float temperatureCelsius) {
+  public boolean hasValue(float temperatureCelsius) {
 
     if (temperatureCelsius >= this.lowerBoundCelsius
         && temperatureCelsius < this.upperBoundCelsius + 1) {

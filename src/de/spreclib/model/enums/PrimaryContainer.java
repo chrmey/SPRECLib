@@ -1,11 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 
-public enum PrimaryContainer implements ISprecPart, IListObject {
+public enum PrimaryContainer implements ISprecPart, IListProvideable {
   ACID_CITRATE_DEXTROSE(new CodePart("ACD")),
   ADDITIVES(new CodePart("ADD")),
   SERUM_TUBE_WITHOUT_CLOT_ACTIVATOR(new CodePart("CAT")),
@@ -35,7 +35,6 @@ public enum PrimaryContainer implements ISprecPart, IListObject {
   OTHER(new CodePart("ZZZ")),
   ;
 
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.PRIMARY_CONTAINER;
   private ICodePart codePart;
 
   private PrimaryContainer(ICodePart code) {
@@ -45,11 +44,6 @@ public enum PrimaryContainer implements ISprecPart, IListObject {
   @Override
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;
-  }
-
-  @Override
-  public SprecPartType getSprecPartType() {
-    return PrimaryContainer.SPREC_PART_TYPE;
   }
 
   public static boolean contains(PrimaryContainer primaryContainer) {

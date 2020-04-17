@@ -1,8 +1,8 @@
 package de.spreclib.model.enums.centrifugation;
 
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 
-public enum CentrifugationBraking implements IListObject {
+public enum CentrifugationBraking implements IListProvideable {
   NO_BRAKING(false),
   WITH_BRAKING(true);
 
@@ -22,7 +22,7 @@ public enum CentrifugationBraking implements IListObject {
     return null;
   }
 
-  public boolean hasValueFor(boolean braking) {
+  public boolean hasValue(boolean braking) {
 
     if (this.braking == braking) {
       return true;

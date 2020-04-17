@@ -1,8 +1,8 @@
 package de.spreclib.model.enums.postcentrifugation;
 
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 
-public enum PostCentrifugationTemperature implements IListObject {
+public enum PostCentrifugationTemperature implements IListProvideable {
   ROOM_TEMPERATURE(18, 28),
   TWO_TO_TEN_DEGREES(2, 10);
 
@@ -14,7 +14,7 @@ public enum PostCentrifugationTemperature implements IListObject {
     this.upperBoundCelsius = upperBound;
   }
 
-  public boolean hasValueFor(float temperatureCelsius) {
+  public boolean hasValue(float temperatureCelsius) {
 
     if (temperatureCelsius >= this.lowerBoundCelsius
         && temperatureCelsius < this.upperBoundCelsius + 1) {

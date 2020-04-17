@@ -1,12 +1,13 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.PreCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
+import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,7 +39,7 @@ public class PreCentrifugationTemperatureListProviderTest {
   public void testValueOfWithValidValues() {
 
     PreCentrifugationTemperatureOption temperatureOption =
-        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(10f));
+        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(10.9999f));
 
     assertNotNull(temperatureOption);
   }
@@ -59,5 +60,15 @@ public class PreCentrifugationTemperatureListProviderTest {
         this.preCentrifugationTemperatureListProvider.valueOf(null);
 
     assertNull(temperatureOption);
+  }
+
+  @Test
+  public void testValueOfShouldReturnRoomtemperature() {
+
+    PreCentrifugationTemperatureOption temperatureOption =
+        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(28.9999f));
+
+    assertEquals(
+        PreCentrifugationTemperature.ROOM_TEMPERATURE, temperatureOption.getContainedObject());
   }
 }

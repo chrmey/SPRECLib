@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.FirstCentrifugationSpeedOption;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,17 +11,17 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.FirstCentrifugationSpeedOption
+ * @see de.spreclib.api.lists.FirstCentrifugationSpeedOption
  */
-public final class FirstCentrifugationSpeedListProvider {
-
-  private final List<FirstCentrifugationSpeedOption> firstCentrifugationSpeedOptions;
+public final class FirstCentrifugationSpeedListProvider
+    extends AbstractListProvider<FirstCentrifugationSpeedOption> {
 
   public FirstCentrifugationSpeedListProvider() {
-    this.firstCentrifugationSpeedOptions = generateList();
+    super();
   }
 
-  private List<FirstCentrifugationSpeedOption> generateList() {
+  @Override
+  protected List<FirstCentrifugationSpeedOption> generateList() {
     List<FirstCentrifugationSpeedOption> firstCentrifugationSpeedOptions = new ArrayList<>();
     for (FirstCentrifugationSpeed firstCentrifugationSpeed : FirstCentrifugationSpeed.values()) {
       FirstCentrifugationSpeedOption firstCentrifugationSpeedOption =
@@ -30,10 +29,6 @@ public final class FirstCentrifugationSpeedListProvider {
       firstCentrifugationSpeedOptions.add(firstCentrifugationSpeedOption);
     }
     return firstCentrifugationSpeedOptions;
-  }
-
-  public List<FirstCentrifugationSpeedOption> getList() {
-    return this.firstCentrifugationSpeedOptions;
   }
 
   /**
@@ -44,8 +39,7 @@ public final class FirstCentrifugationSpeedListProvider {
    * @return FirstCentrifugationSpeedOption
    */
   public FirstCentrifugationSpeedOption valueOf(int speed) {
-    for (FirstCentrifugationSpeedOption firstCentrifugationSpeedOption :
-        firstCentrifugationSpeedOptions) {
+    for (FirstCentrifugationSpeedOption firstCentrifugationSpeedOption : listOptions) {
 
       if (firstCentrifugationSpeedOption.hasSpeed(speed)) {
         return firstCentrifugationSpeedOption;

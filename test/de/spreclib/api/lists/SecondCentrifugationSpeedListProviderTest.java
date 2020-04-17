@@ -1,11 +1,12 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.SecondCentrifugationSpeedOption;
+import de.spreclib.model.enums.centrifugation.SecondCentrifugationSpeed;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -49,5 +50,23 @@ public class SecondCentrifugationSpeedListProviderTest {
         this.secondCentrifugationSpeedListProvider.valueOf(-1);
 
     assertNull(speedOption);
+  }
+
+  @Test
+  public void testValueOfShouldReturnLessThreehousandG() {
+
+    SecondCentrifugationSpeedOption speedOption =
+        this.secondCentrifugationSpeedListProvider.valueOf(2999);
+
+    assertEquals(SecondCentrifugationSpeed.LESS_THREETHOUSAND_G, speedOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnGreaterThousandG() {
+
+    SecondCentrifugationSpeedOption speedOption =
+        this.secondCentrifugationSpeedListProvider.valueOf(10000);
+
+    assertEquals(SecondCentrifugationSpeed.GREATER_TENTHOUSAND_G, speedOption.getContainedObject());
   }
 }

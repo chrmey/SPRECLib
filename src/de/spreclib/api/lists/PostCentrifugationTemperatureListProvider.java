@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.PostCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
 import java.util.ArrayList;
@@ -13,17 +12,17 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.PostCentrifugationTemperatureOption
+ * @see de.spreclib.api.lists.PostCentrifugationTemperatureOption
  */
-public final class PostCentrifugationTemperatureListProvider {
-
-  private final List<PostCentrifugationTemperatureOption> postCentrifugationTemperatureOptions;
+public final class PostCentrifugationTemperatureListProvider
+    extends AbstractListProvider<PostCentrifugationTemperatureOption> {
 
   public PostCentrifugationTemperatureListProvider() {
-    this.postCentrifugationTemperatureOptions = generateList();
+    super();
   }
 
-  private List<PostCentrifugationTemperatureOption> generateList() {
+  @Override
+  protected List<PostCentrifugationTemperatureOption> generateList() {
     List<PostCentrifugationTemperatureOption> postCentrifugationTemperatureOptions =
         new ArrayList<>();
     for (PostCentrifugationTemperature postCentrifugationTemperature :
@@ -33,10 +32,6 @@ public final class PostCentrifugationTemperatureListProvider {
       postCentrifugationTemperatureOptions.add(postCentrifugationTemperatureOption);
     }
     return postCentrifugationTemperatureOptions;
-  }
-
-  public List<PostCentrifugationTemperatureOption> getList() {
-    return this.postCentrifugationTemperatureOptions;
   }
 
   /**
@@ -55,7 +50,7 @@ public final class PostCentrifugationTemperatureListProvider {
     float temperatureCelsius = temperature.getTemperatureCelsius();
 
     for (PostCentrifugationTemperatureOption postCentrifugationTemperatureOption :
-        this.postCentrifugationTemperatureOptions) {
+        this.listOptions) {
       if (postCentrifugationTemperatureOption.hasTemperature(temperatureCelsius)) {
         return postCentrifugationTemperatureOption;
       }

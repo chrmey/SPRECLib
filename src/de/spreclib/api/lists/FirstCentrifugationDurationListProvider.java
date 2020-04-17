@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.FirstCentrifugationDurationOption;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
 import java.util.ArrayList;
@@ -13,17 +12,17 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.FirstCentrifugationDurationOption
+ * @see de.spreclib.api.lists.FirstCentrifugationDurationOption
  */
-public final class FirstCentrifugationDurationListProvider {
-
-  private final List<FirstCentrifugationDurationOption> firstCentrifugationDurationOptions;
+public final class FirstCentrifugationDurationListProvider
+    extends AbstractListProvider<FirstCentrifugationDurationOption> {
 
   public FirstCentrifugationDurationListProvider() {
-    this.firstCentrifugationDurationOptions = generateList();
+    super();
   }
 
-  private List<FirstCentrifugationDurationOption> generateList() {
+  @Override
+  protected List<FirstCentrifugationDurationOption> generateList() {
     List<FirstCentrifugationDurationOption> firstCentrifugationDurationOptions = new ArrayList<>();
     for (FirstCentrifugationDuration firstCentrifugationDuration :
         FirstCentrifugationDuration.values()) {
@@ -32,10 +31,6 @@ public final class FirstCentrifugationDurationListProvider {
       firstCentrifugationDurationOptions.add(firstCentrifugationDurationOption);
     }
     return firstCentrifugationDurationOptions;
-  }
-
-  public List<FirstCentrifugationDurationOption> getList() {
-    return this.firstCentrifugationDurationOptions;
   }
 
   /**
@@ -65,8 +60,7 @@ public final class FirstCentrifugationDurationListProvider {
    * @return FirstCentrifugationDurationOption
    */
   public FirstCentrifugationDurationOption valueOf(int durationMinutes) {
-    for (FirstCentrifugationDurationOption firstCentrifugationDurationOption :
-        firstCentrifugationDurationOptions) {
+    for (FirstCentrifugationDurationOption firstCentrifugationDurationOption : listOptions) {
 
       if (firstCentrifugationDurationOption.hasDuration(durationMinutes)) {
         return firstCentrifugationDurationOption;

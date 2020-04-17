@@ -1,11 +1,12 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.ColdIschemiaTimeOption;
+import de.spreclib.model.enums.ColdIschemiaTime;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,7 +37,8 @@ public class ColdIschemiaTimeListProviderTest {
   @Test
   public void testValueOfWithValidValue() {
 
-    ColdIschemiaTimeOption coldIschemiaTimeOption = this.coldIschemiaTimeListProvider.valueOf(15);
+    ColdIschemiaTimeOption coldIschemiaTimeOption =
+        this.coldIschemiaTimeListProvider.valueOf(15);
 
     assertNotNull(coldIschemiaTimeOption);
   }
@@ -44,7 +46,8 @@ public class ColdIschemiaTimeListProviderTest {
   @Test
   public void testValueOfWithinalidValue() {
 
-    ColdIschemiaTimeOption coldIschemiaTimeOption = this.coldIschemiaTimeListProvider.valueOf(-15);
+    ColdIschemiaTimeOption coldIschemiaTimeOption =
+        this.coldIschemiaTimeListProvider.valueOf(-15);
 
     assertNull(coldIschemiaTimeOption);
   }
@@ -59,5 +62,32 @@ public class ColdIschemiaTimeListProviderTest {
         this.coldIschemiaTimeListProvider.valueOf(startTime, fifteenMinutesLater);
 
     assertNotNull(coldIschemiaTimeOption);
+  }
+
+  @Test
+  public void testValueOfShouldReturnLessOTwoMinutes() {
+
+    ColdIschemiaTimeOption coldIschemiaTimeOption =
+        this.coldIschemiaTimeListProvider.valueOf(1);
+
+    assertEquals(ColdIschemiaTime.LESS_TWO_MINUTES, coldIschemiaTimeOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnTwoToTenMinutes() {
+
+    ColdIschemiaTimeOption coldIschemiaTimeOption =
+        this.coldIschemiaTimeListProvider.valueOf(3);
+
+    assertEquals(ColdIschemiaTime.TWO_TO_TEN_MINUTES, coldIschemiaTimeOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnGreaterSixtyMinutes() {
+
+    ColdIschemiaTimeOption coldIschemiaTimeOption = this.coldIschemiaTimeListProvider.valueOf(60);
+
+    assertEquals(
+        ColdIschemiaTime.GREATER_SIXTY_MINUTES, coldIschemiaTimeOption.getContainedObject());
   }
 }

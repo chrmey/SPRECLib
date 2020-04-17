@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.PreCentrifugationDelayOption;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import java.util.ArrayList;
@@ -13,16 +12,16 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.PreCentrifugationDelayOption
+ * @see de.spreclib.api.lists.PreCentrifugationDelayOption
  */
-public final class PreCentrifugationDelayListProvider {
-
-  private final List<PreCentrifugationDelayOption> preCentrifugationDelayOptions;
+public final class PreCentrifugationDelayListProvider
+    extends AbstractListProvider<PreCentrifugationDelayOption> {
 
   public PreCentrifugationDelayListProvider() {
-    this.preCentrifugationDelayOptions = generateList();
+    super();
   }
 
+  @Override
   public List<PreCentrifugationDelayOption> generateList() {
     List<PreCentrifugationDelayOption> preCentrifugationDelayOptions = new ArrayList<>();
     for (PreCentrifugationDelay preCentrifugationDelay : PreCentrifugationDelay.values()) {
@@ -31,10 +30,6 @@ public final class PreCentrifugationDelayListProvider {
       preCentrifugationDelayOptions.add(preCentrifugationDelayOption);
     }
     return preCentrifugationDelayOptions;
-  }
-
-  public List<PreCentrifugationDelayOption> getList() {
-    return this.preCentrifugationDelayOptions;
   }
 
   /**
@@ -64,8 +59,7 @@ public final class PreCentrifugationDelayListProvider {
    */
   public PreCentrifugationDelayOption valueOf(int delayMinutes) {
 
-    for (PreCentrifugationDelayOption preCentrifugationDelayOption :
-        this.preCentrifugationDelayOptions) {
+    for (PreCentrifugationDelayOption preCentrifugationDelayOption : this.listOptions) {
 
       if (preCentrifugationDelayOption.hasDelay(delayMinutes)) {
         return preCentrifugationDelayOption;

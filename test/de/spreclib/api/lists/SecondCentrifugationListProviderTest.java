@@ -1,15 +1,12 @@
 package de.spreclib.api.lists;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.lists.interfaces.IListOption;
-import de.spreclib.api.lists.options.SecondCentrifugationBrakingOption;
-import de.spreclib.api.lists.options.SecondCentrifugationDurationOption;
-import de.spreclib.api.lists.options.SecondCentrifugationOption;
-import de.spreclib.api.lists.options.SecondCentrifugationSpeedOption;
-import de.spreclib.api.lists.options.SecondCentrifugationTemperatureOption;
 import de.spreclib.api.parameters.Temperature;
+import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -133,5 +130,55 @@ public class SecondCentrifugationListProviderTest {
         secondCentrifugationDurationOption,
         secondCentrifugationSpeedOption,
         null);
+  }
+
+  @Test
+  public void testValueOfShouldReturnCodeA() {
+
+    Temperature temperature = new Temperature(28.9999f);
+
+    SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption =
+        new SecondCentrifugationTemperatureListProvider().valueOf(temperature);
+    SecondCentrifugationDurationOption secondCentrifugationDurationOption =
+        new SecondCentrifugationDurationListProvider().valueOf(15);
+    SecondCentrifugationSpeedOption secondCentrifugationSpeedOption =
+        new SecondCentrifugationSpeedListProvider().valueOf(2999);
+    SecondCentrifugationBrakingOption secondCentrifugationBrakingOption =
+        new SecondCentrifugationBrakingListProvider().valueOf(false);
+
+    SecondCentrifugationOption secondCentrifugationOption =
+        this.secondCentrifugationListProvider.valueOf(
+            secondCentrifugationTemperatureOption,
+            secondCentrifugationDurationOption,
+            secondCentrifugationSpeedOption,
+            secondCentrifugationBrakingOption);
+
+    assertEquals(
+        new CodePart("A"), secondCentrifugationOption.getContainedObject().getCodeFromSprecPart());
+  }
+
+  @Test
+  public void testValueOfShouldReturnCodeJ() {
+
+    Temperature temperature = new Temperature(10.9999f);
+
+    SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption =
+        new SecondCentrifugationTemperatureListProvider().valueOf(temperature);
+    SecondCentrifugationDurationOption secondCentrifugationDurationOption =
+        new SecondCentrifugationDurationListProvider().valueOf(15);
+    SecondCentrifugationSpeedOption secondCentrifugationSpeedOption =
+        new SecondCentrifugationSpeedListProvider().valueOf(10000);
+    SecondCentrifugationBrakingOption secondCentrifugationBrakingOption =
+        new SecondCentrifugationBrakingListProvider().valueOf(true);
+
+    SecondCentrifugationOption secondCentrifugationOption =
+        this.secondCentrifugationListProvider.valueOf(
+            secondCentrifugationTemperatureOption,
+            secondCentrifugationDurationOption,
+            secondCentrifugationSpeedOption,
+            secondCentrifugationBrakingOption);
+
+    assertEquals(
+        new CodePart("J"), secondCentrifugationOption.getContainedObject().getCodeFromSprecPart());
   }
 }

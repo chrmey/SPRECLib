@@ -1,9 +1,6 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.exceptions.InvalidParameterCombinationException;
-import de.spreclib.api.lists.options.PostCentrifugationDelayOption;
-import de.spreclib.api.lists.options.PostCentrifugationOption;
-import de.spreclib.api.lists.options.PostCentrifugationTemperatureOption;
+import de.spreclib.api.exceptions.InvalidValueCombinationException;
 import de.spreclib.model.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.postcentrifugation.PostCentrifugationList;
 import java.util.ArrayList;
@@ -16,17 +13,17 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.PostCentrifugationOption
+ * @see de.spreclib.api.lists.PostCentrifugationOption
  */
-public final class PostCentrifugationListProvider {
-
-  private final List<PostCentrifugationOption> postCentrifugationOptions;
+public final class PostCentrifugationListProvider
+    extends AbstractListProvider<PostCentrifugationOption> {
 
   public PostCentrifugationListProvider() {
-    this.postCentrifugationOptions = generateList();
+    super();
   }
 
-  private List<PostCentrifugationOption> generateList() {
+  @Override
+  protected List<PostCentrifugationOption> generateList() {
     List<PostCentrifugationOption> postCentrifugationOptions = new ArrayList<>();
     for (PostCentrifugation postCentrifugation : PostCentrifugationList.POST_CENTRIFUGATIONS) {
       PostCentrifugationOption postCentrifugationOption =
@@ -36,10 +33,6 @@ public final class PostCentrifugationListProvider {
     return postCentrifugationOptions;
   }
 
-  public List<PostCentrifugationOption> getList() {
-    return this.postCentrifugationOptions;
-  }
-
   /**
    * Takes all parameters for PostCentrifugation and returns an option if a PostCentrifugation with
    * that combination is found. Returns null otherwise.
@@ -47,7 +40,7 @@ public final class PostCentrifugationListProvider {
    * @param postCentrifugationTemperatureOption PostCentrifugationTemperatureOption
    * @param postCentrifugationDelayOption PostCentrifugationDelayOption
    * @return PostCentrifugationOption
-   * @throws InvalidParameterCombinationException if parameter cannot be found in ListOptions
+   * @throws InvalidValueCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
   public PostCentrifugationOption valueOf(
@@ -62,7 +55,7 @@ public final class PostCentrifugationListProvider {
       throw new IllegalArgumentException("PostCentrifugationDelayOption cannot not be null.");
     }
 
-    for (PostCentrifugationOption postCentrifugationOption : this.postCentrifugationOptions) {
+    for (PostCentrifugationOption postCentrifugationOption : this.listOptions) {
 
       if (postCentrifugationOption.hasPostCentrifugation(
           postCentrifugationTemperatureOption, postCentrifugationDelayOption)) {
@@ -71,7 +64,7 @@ public final class PostCentrifugationListProvider {
       }
     }
 
-    throw new InvalidParameterCombinationException(
+    throw new InvalidValueCombinationException(
         "Parameter combination for PostCentrifugation is no valid combination.");
   }
 }

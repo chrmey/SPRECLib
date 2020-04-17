@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.WarmIschemiaTimeOption;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.WarmIschemiaTime;
 import java.util.ArrayList;
@@ -13,27 +12,23 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.WarmIschemiaTimeOption
+ * @see de.spreclib.api.lists.WarmIschemiaTimeOption
  */
-public final class WarmIschemiaTimeListProvider {
-
-  private final List<WarmIschemiaTimeOption> warmIschemiaTimeOptions;
+public final class WarmIschemiaTimeListProvider
+    extends AbstractListProvider<WarmIschemiaTimeOption> {
 
   public WarmIschemiaTimeListProvider() {
-    this.warmIschemiaTimeOptions = generateList();
+    super();
   }
 
-  private List<WarmIschemiaTimeOption> generateList() {
+  @Override
+  protected List<WarmIschemiaTimeOption> generateList() {
     List<WarmIschemiaTimeOption> warmIschemiaTimeOptions = new ArrayList<>();
     for (WarmIschemiaTime warmIschemiaTime : WarmIschemiaTime.values()) {
       WarmIschemiaTimeOption warmIschemiaTimeOption = new WarmIschemiaTimeOption(warmIschemiaTime);
       warmIschemiaTimeOptions.add(warmIschemiaTimeOption);
     }
     return warmIschemiaTimeOptions;
-  }
-
-  public List<WarmIschemiaTimeOption> getList() {
-    return this.warmIschemiaTimeOptions;
   }
 
   /**
@@ -62,7 +57,7 @@ public final class WarmIschemiaTimeListProvider {
    */
   public WarmIschemiaTimeOption valueOf(int durationMinutes) {
 
-    for (WarmIschemiaTimeOption warmIschemiaTimeOption : this.warmIschemiaTimeOptions) {
+    for (WarmIschemiaTimeOption warmIschemiaTimeOption : this.listOptions) {
 
       if (warmIschemiaTimeOption.hasDuration(durationMinutes)) {
         return warmIschemiaTimeOption;

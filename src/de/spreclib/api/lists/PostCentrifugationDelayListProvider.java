@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.PostCentrifugationDelayOption;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import java.util.ArrayList;
@@ -13,17 +12,17 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.PostCentrifugationDelayOption
+ * @see de.spreclib.api.lists.PostCentrifugationDelayOption
  */
-public final class PostCentrifugationDelayListProvider {
-
-  private final List<PostCentrifugationDelayOption> postCentrifugationDelayOptions;
+public final class PostCentrifugationDelayListProvider
+    extends AbstractListProvider<PostCentrifugationDelayOption> {
 
   public PostCentrifugationDelayListProvider() {
-    this.postCentrifugationDelayOptions = generateList();
+    super();
   }
 
-  private List<PostCentrifugationDelayOption> generateList() {
+  @Override
+  protected List<PostCentrifugationDelayOption> generateList() {
     List<PostCentrifugationDelayOption> postCentrifugationDelayOptions = new ArrayList<>();
     for (PostCentrifugationDelay postCentrifugationDelay : PostCentrifugationDelay.values()) {
       PostCentrifugationDelayOption postCentrifugationDelayOption =
@@ -33,24 +32,20 @@ public final class PostCentrifugationDelayListProvider {
     return postCentrifugationDelayOptions;
   }
 
-  public List<PostCentrifugationDelayOption> getList() {
-    return this.postCentrifugationDelayOptions;
-  }
-
   /**
    * Takes two timestamps milliseconds EPOCH time and returns a PostCentrifugationDelayOption if a
    * PostCentrifugationDelayOption with that timespan is found. Returns null otherwise.
    *
-   * @param lastCentrifugationStartTimeMillis timestamp milliseconds EPOCH time
+   * @param lastCentrifugationEndTimeMillis timestamp milliseconds EPOCH time
    * @param longTermStorageStartTimeMillis timestamp milliseconds EPOCH time
    * @return PostCentrifugationDelayOption
    * @see #valueOf(int)
    */
   public PostCentrifugationDelayOption valueOf(
-      long lastCentrifugationStartTimeMillis, long longTermStorageStartTimeMillis) {
+      long lastCentrifugationEndTimeMillis, long longTermStorageStartTimeMillis) {
 
     int delayMinutes =
-        new Timespan(lastCentrifugationStartTimeMillis, longTermStorageStartTimeMillis)
+        new Timespan(lastCentrifugationEndTimeMillis, longTermStorageStartTimeMillis)
             .getTimespanMinutes();
 
     return this.valueOf(delayMinutes);
@@ -65,8 +60,7 @@ public final class PostCentrifugationDelayListProvider {
    */
   public PostCentrifugationDelayOption valueOf(int delayMinutes) {
 
-    for (PostCentrifugationDelayOption postCentrifugationDelayOption :
-        this.postCentrifugationDelayOptions) {
+    for (PostCentrifugationDelayOption postCentrifugationDelayOption : this.listOptions) {
 
       if (postCentrifugationDelayOption.hasDelay(delayMinutes)) {
         return postCentrifugationDelayOption;

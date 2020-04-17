@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.FixationTimeOption;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.FixationTime;
 import java.util.ArrayList;
@@ -13,27 +12,22 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.FixationOption
+ * @see de.spreclib.api.lists.FixationOption
  */
-public final class FixationTimeListProvider {
-
-  private final List<FixationTimeOption> fixationTimeOptions;
+public final class FixationTimeListProvider extends AbstractListProvider<FixationTimeOption> {
 
   public FixationTimeListProvider() {
-    this.fixationTimeOptions = generateList();
+    super();
   }
 
-  private List<FixationTimeOption> generateList() {
+  @Override
+  protected List<FixationTimeOption> generateList() {
     List<FixationTimeOption> fixationTimeOptions = new ArrayList<>();
     for (FixationTime fixationTime : FixationTime.values()) {
       FixationTimeOption fixationOption = new FixationTimeOption(fixationTime);
       fixationTimeOptions.add(fixationOption);
     }
     return fixationTimeOptions;
-  }
-
-  public List<FixationTimeOption> getList() {
-    return this.fixationTimeOptions;
   }
 
   /**
@@ -62,7 +56,7 @@ public final class FixationTimeListProvider {
    */
   public FixationTimeOption valueOf(int durationMinutes) {
 
-    for (FixationTimeOption fixationTimeOption : fixationTimeOptions) {
+    for (FixationTimeOption fixationTimeOption : listOptions) {
 
       if (fixationTimeOption.hasDuration(durationMinutes)) {
         return fixationTimeOption;

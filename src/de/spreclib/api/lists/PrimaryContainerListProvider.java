@@ -1,6 +1,5 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.lists.options.PrimaryContainerOption;
 import de.spreclib.model.enums.PrimaryContainer;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,26 +9,22 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.options.PrimaryContainerOption
+ * @see de.spreclib.api.lists.PrimaryContainerOption
  */
-public final class PrimaryContainerListProvider {
-
-  private final List<PrimaryContainerOption> primaryContainerOptions;
+public final class PrimaryContainerListProvider
+    extends AbstractListProvider<PrimaryContainerOption> {
 
   public PrimaryContainerListProvider() {
-    this.primaryContainerOptions = generateList();
+    super();
   }
 
-  private List<PrimaryContainerOption> generateList() {
+  @Override
+  protected List<PrimaryContainerOption> generateList() {
     List<PrimaryContainerOption> primaryContainerOptions = new ArrayList<>();
     for (PrimaryContainer primaryContainer : PrimaryContainer.values()) {
       PrimaryContainerOption primaryContainerOption = new PrimaryContainerOption(primaryContainer);
       primaryContainerOptions.add(primaryContainerOption);
     }
     return primaryContainerOptions;
-  }
-
-  public List<PrimaryContainerOption> getList() {
-    return this.primaryContainerOptions;
   }
 }

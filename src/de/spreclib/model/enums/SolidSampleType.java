@@ -1,11 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 
-public enum SolidSampleType implements ISprecPart, IListObject {
+public enum SolidSampleType implements ISprecPart, IListProvideable {
   FRESH_CELLS_FROM_NON_BLOOD_SPECIMEN(new CodePart("CEN")),
   CELLS_FROM_NON_BLOOD_SPECIMEN_VIABLE(new CodePart("CLN")),
   CELLS_FROM_FINE_NEEDLE_ASPIRATE(new CodePart("FNA")),
@@ -18,7 +18,6 @@ public enum SolidSampleType implements ISprecPart, IListObject {
   OTHER(new CodePart("ZZZ")),
   ;
 
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.SOLID_SAMPLE_TYPE;
   private ICodePart codePart;
 
   private SolidSampleType(ICodePart code) {
@@ -28,11 +27,6 @@ public enum SolidSampleType implements ISprecPart, IListObject {
   @Override
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;
-  }
-
-  @Override
-  public SprecPartType getSprecPartType() {
-    return SolidSampleType.SPREC_PART_TYPE;
   }
 
   public static boolean contains(SolidSampleType solidSampleType) {

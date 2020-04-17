@@ -1,14 +1,14 @@
 package de.spreclib.model.enums.centrifugation;
 
 import de.spreclib.model.centrifugation.ICentrifugationSpeed;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 
-public enum FirstCentrifugationSpeed implements ICentrifugationSpeed, IListObject {
+public enum FirstCentrifugationSpeed implements ICentrifugationSpeed, IListProvideable {
+  LESS_THOUSAND_G(0, 1000),
   LESS_THREETHOUSAND_G(0, 3000),
   THREETHOUSAND_TO_SIXTHOUSAND_G(3000, 6000),
   SIXTHOUSAND_TO_TENTHOUSAND_G(6000, 10000),
-  GREATER_TENTHOUSAND_G(10000, null),
-  LESS_THOUSAND_G(0, 1000);
+  GREATER_TENTHOUSAND_G(10000, null);
 
   private final Integer lowerBoundG;
   private final Integer upperBoundG;
@@ -18,8 +18,8 @@ public enum FirstCentrifugationSpeed implements ICentrifugationSpeed, IListObjec
     this.upperBoundG = upperBoundG;
   }
 
-  public boolean hasValueFor(int speed) {
-    if (speed >= this.lowerBoundG && speed < this.upperBoundG) {
+  public boolean hasValue(int speed) {
+    if (speed >= this.lowerBoundG && (this.upperBoundG == null || speed < this.upperBoundG)) {
       return true;
     } else {
       return false;

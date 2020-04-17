@@ -1,12 +1,12 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 
-public enum FixationTime implements ISprecPart, IListObject {
-  LESS_THAN_15_MINUTES(0, 15, new CodePart("A")),
+public enum FixationTime implements ISprecPart, IListProvideable {
+  LESS_FIFTEEN_MINUTES(0, 15, new CodePart("A")),
   FIFTEEN_MINUTES_TO_ONE_HOUR(15, 60, new CodePart("B")),
   ONE_TO_FOUR_HOURS(60, 240, new CodePart("C")),
   FOUR_TO_EIGHT_HOURS(240, 480, new CodePart("D")),
@@ -18,7 +18,6 @@ public enum FixationTime implements ISprecPart, IListObject {
   OTHER(null, null, new CodePart("Z")),
   ;
 
-  private static final SprecPartType SPREC_PART_TYPE = SprecPartType.FIXATION_TIME;
   private ICodePart codePart;
   private final Integer lowerBoundMinutes;
   private final Integer upperBoundMinutes;
@@ -34,12 +33,8 @@ public enum FixationTime implements ISprecPart, IListObject {
     return this.codePart;
   }
 
-  @Override
-  public SprecPartType getSprecPartType() {
-    return FixationTime.SPREC_PART_TYPE;
-  }
 
-  public boolean hasValueFor(int durationMinutes) {
+  public boolean hasValue(int durationMinutes) {
 
     if (this.lowerBoundMinutes == null && this.upperBoundMinutes == null) {
       return false;
