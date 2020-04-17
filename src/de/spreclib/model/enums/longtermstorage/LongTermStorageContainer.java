@@ -1,8 +1,8 @@
 package de.spreclib.model.enums.longtermstorage;
 
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 
-public enum LongTermStorageContainer implements IListObject {
+public enum LongTermStorageContainer implements IListProvideable {
   PP_TUBE_ZEROFIVE_TO_TWO_ML,
   CRYOTUBE_ONE_TO_TWO_ML,
   PLASTIC_CRYOSTRAW,

@@ -1,6 +1,6 @@
 package de.spreclib.api.lists.interfaces;
 
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 
 /**
  * Interface for ListOption.
@@ -21,5 +21,5 @@ public interface IListOption {
    *
    * @return The contained object
    */
-  public IListObject getContainedObject();
+  public IListProvideable getContainedObject();
 }

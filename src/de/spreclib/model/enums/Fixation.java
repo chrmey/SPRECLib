@@ -1,11 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 
-public enum Fixation implements ISprecPart, IListObject {
+public enum Fixation implements ISprecPart, IListProvideable {
   NON_ALDEHYDE_WITH_ACETIC_ACID(new CodePart("ACA")),
   ALDEHYDE_BASED(new CodePart("ALD")),
   ALLPROTECT_TISSUE_REAGENT(new CodePart("ALL")),

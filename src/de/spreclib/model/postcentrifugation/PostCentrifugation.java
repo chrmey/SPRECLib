@@ -2,10 +2,10 @@ package de.spreclib.model.postcentrifugation;
 
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 
-public abstract class PostCentrifugation implements ISprecPart, IListObject {
+public abstract class PostCentrifugation implements ISprecPart, IListProvideable {
 
   private final PostCentrifugationType postCentrifugationType;
   private final ICodePart codePart;

@@ -1,11 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 
-public enum FluidSampleType implements ISprecPart, IListObject {
+public enum FluidSampleType implements ISprecPart, IListProvideable {
   ASCITIES_FLUID(new CodePart("ASC")),
   AMNIOTIC_FLUID(new CodePart("AMN")),
   BRONCHOALVEOLAR_LAVAGE(new CodePart("BAL")),

@@ -1,8 +1,8 @@
 package de.spreclib.model.enums.postcentrifugation;
 
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 
-public enum PostCentrifugationTemperature implements IListObject {
+public enum PostCentrifugationTemperature implements IListProvideable {
   ROOM_TEMPERATURE(18, 28),
   TWO_TO_TEN_DEGREES(2, 10);
 

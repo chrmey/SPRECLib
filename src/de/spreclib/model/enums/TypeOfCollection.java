@@ -1,11 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 
-public enum TypeOfCollection implements ISprecPart, IListObject {
+public enum TypeOfCollection implements ISprecPart, IListProvideable {
   AUTOPSY_LESS_6_HOURS_POSTMORTEM(new CodePart("A06")),
   AUTOPSY_6_TO_12_HOURS_POSTMORTEM(new CodePart("A12")),
   AUTOPSY_12_TO_24_HOURS_POSTMORTEM(new CodePart("A24")),

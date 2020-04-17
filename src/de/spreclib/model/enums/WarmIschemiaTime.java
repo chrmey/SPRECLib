@@ -1,11 +1,11 @@
 package de.spreclib.model.enums;
 
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 import de.spreclib.model.sprec.CodePart;
 
-public enum WarmIschemiaTime implements ISprecPart, IListObject {
+public enum WarmIschemiaTime implements ISprecPart, IListProvideable {
   LESS_TWO_MINUTES(0, 2, new CodePart("A")),
   TWO_TO_TEN_MINUTES(2, 10, new CodePart("B")),
   TEN_TO_TWENTY_MINUTES(10, 20, new CodePart("C")),

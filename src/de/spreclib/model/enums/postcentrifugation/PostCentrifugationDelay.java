@@ -1,8 +1,8 @@
 package de.spreclib.model.enums.postcentrifugation;
 
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 
-public enum PostCentrifugationDelay implements IListObject {
+public enum PostCentrifugationDelay implements IListProvideable {
   LESS_ONE_HOUR(0, 60),
   ONE_TO_TWO_HOURS(60, 120),
   TWO_TO_EIGHT_HOURS(120, 480),

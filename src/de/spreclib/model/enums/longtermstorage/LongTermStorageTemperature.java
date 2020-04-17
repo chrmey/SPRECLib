@@ -1,8 +1,8 @@
 package de.spreclib.model.enums.longtermstorage;
 
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 
-public enum LongTermStorageTemperature implements IListObject {
+public enum LongTermStorageTemperature implements IListProvideable {
   MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES(-85, -60),
   LIQUID_NITROGEN,
   LESS_MINUS_HUNDREDTHIRTYFIVE_DEGREES(-273, -135),

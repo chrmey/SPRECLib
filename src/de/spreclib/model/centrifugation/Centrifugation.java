@@ -2,10 +2,10 @@ package de.spreclib.model.centrifugation;
 
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 
-public abstract class Centrifugation implements ISprecPart, IListObject {
+public abstract class Centrifugation implements ISprecPart, IListProvideable {
 
   private final CentrifugationType centrifugationType;
   private final ICodePart codePart;

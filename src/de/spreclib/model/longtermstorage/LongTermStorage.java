@@ -2,10 +2,10 @@ package de.spreclib.model.longtermstorage;
 
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.interfaces.IListObject;
+import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 
-public abstract class LongTermStorage implements ISprecPart, IListObject {
+public abstract class LongTermStorage implements ISprecPart, IListProvideable {
 
   private final LongTermStorageType longTermStorageType;
   private final ICodePart codePart;
