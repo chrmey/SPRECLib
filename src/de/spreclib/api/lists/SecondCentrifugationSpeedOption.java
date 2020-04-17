@@ -29,7 +29,7 @@ public final class SecondCentrifugationSpeedOption extends AbstractListOption {
   }
 
   protected boolean hasSpeed(int speed) {
-    if (this.secondCentrifugationSpeed.hasValueFor(speed)) {
+    if (this.secondCentrifugationSpeed.hasValue(speed)) {
       return true;
     } else {
       return false;

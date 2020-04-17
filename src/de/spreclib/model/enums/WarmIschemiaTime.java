@@ -33,7 +33,7 @@ public enum WarmIschemiaTime implements ISprecPart, IListObject {
   }
 
 
-  public boolean hasValueFor(int durationMinutes) {
+  public boolean hasValue(int durationMinutes) {
 
     if (this.lowerBoundMinutes == null && this.upperBoundMinutes == null) {
       return false;

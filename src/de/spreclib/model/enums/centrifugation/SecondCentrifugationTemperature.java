@@ -15,7 +15,7 @@ public enum SecondCentrifugationTemperature implements ICentrifugationTemperatur
     this.upperBoundCelsius = upperBound;
   }
 
-  public boolean hasValueFor(float temperatureCelsius) {
+  public boolean hasValue(float temperatureCelsius) {
 
     if (temperatureCelsius >= this.lowerBoundCelsius
         && temperatureCelsius < this.upperBoundCelsius + 1) {

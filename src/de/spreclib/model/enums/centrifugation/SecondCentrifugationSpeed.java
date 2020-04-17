@@ -17,7 +17,7 @@ public enum SecondCentrifugationSpeed implements ICentrifugationSpeed, IListObje
     this.upperBoundG = upperBound;
   }
 
-  public boolean hasValueFor(int speed) {
+  public boolean hasValue(int speed) {
     if (speed >= this.lowerBoundG && (this.upperBoundG == null || speed < this.upperBoundG)) {
       return true;
     } else {

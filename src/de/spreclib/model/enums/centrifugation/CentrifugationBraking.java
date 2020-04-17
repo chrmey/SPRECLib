@@ -22,7 +22,7 @@ public enum CentrifugationBraking implements IListObject {
     return null;
   }
 
-  public boolean hasValueFor(boolean braking) {
+  public boolean hasValue(boolean braking) {
 
     if (this.braking == braking) {
       return true;

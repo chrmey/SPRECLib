@@ -17,7 +17,7 @@ public enum PostCentrifugationDelay implements IListObject {
     this.upperBoundMinutes = upperBound;
   }
 
-  public boolean hasValueFor(int delayMinutes) {
+  public boolean hasValue(int delayMinutes) {
 
     if (delayMinutes >= this.lowerBoundMinutes
         && (this.upperBoundMinutes == null || delayMinutes < this.upperBoundMinutes)) {

@@ -30,7 +30,7 @@ public final class FirstCentrifugationTemperatureOption extends AbstractListOpti
   }
 
   protected boolean hasTemperature(float temperatureCelsius) {
-    if (this.firstCentrifugationTemperature.hasValueFor(temperatureCelsius)) {
+    if (this.firstCentrifugationTemperature.hasValue(temperatureCelsius)) {
       return true;
     } else {
       return false;

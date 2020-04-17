@@ -29,7 +29,7 @@ public final class SecondCentrifugationDurationOption extends AbstractListOption
   }
 
   protected boolean hasDuration(int durationMinutes) {
-    if (this.secondCentrifugationDuration.hasValueFor(durationMinutes)) {
+    if (this.secondCentrifugationDuration.hasValue(durationMinutes)) {
       return true;
     } else {
       return false;

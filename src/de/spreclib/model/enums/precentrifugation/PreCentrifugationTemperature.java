@@ -16,7 +16,7 @@ public enum PreCentrifugationTemperature implements IListObject {
   }
 
   // Namig ungünstig
-  public boolean hasValueFor(float temperatureCelsius) {
+  public boolean hasValue(float temperatureCelsius) {
 
     if (temperatureCelsius >= this.lowerBoundCelsius
         && temperatureCelsius < this.upperBoundCelsius + 1) {

@@ -20,7 +20,7 @@ public enum PreCentrifugationDelay implements IListObject {
   }
 
   // naming ungünstig
-  public boolean hasValueFor(int delayMinutes) {
+  public boolean hasValue(int delayMinutes) {
 
     if (delayMinutes >= this.lowerBoundMinutes
         && (this.upperBoundMinutes == null || delayMinutes < this.upperBoundMinutes)) {

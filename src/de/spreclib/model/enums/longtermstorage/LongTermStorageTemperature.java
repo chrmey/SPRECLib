@@ -29,7 +29,7 @@ public enum LongTermStorageTemperature implements IListObject {
 
   // TODO handle values for LN
 
-  public boolean hasValueFor(float temperatureCelsius) {
+  public boolean hasValue(float temperatureCelsius) {
 
     if (this.lowerBoundCelsius == null || this.upperBoundCelsius == null) {
       return false;

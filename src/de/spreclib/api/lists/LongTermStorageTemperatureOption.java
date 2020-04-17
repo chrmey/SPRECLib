@@ -29,7 +29,7 @@ public final class LongTermStorageTemperatureOption extends AbstractListOption {
   }
 
   protected boolean hasTemperature(float temperatureCelsius) {
-    if (this.longTermStorageTemperature.hasValueFor(temperatureCelsius)) {
+    if (this.longTermStorageTemperature.hasValue(temperatureCelsius)) {
       return true;
     } else {
       return false;

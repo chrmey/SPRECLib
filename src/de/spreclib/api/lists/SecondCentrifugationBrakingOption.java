@@ -29,7 +29,7 @@ public final class SecondCentrifugationBrakingOption extends AbstractListOption 
   }
 
   protected boolean hasBraking(boolean braking) {
-    if (this.secondCentrifugationBraking.hasValueFor(braking)) {
+    if (this.secondCentrifugationBraking.hasValue(braking)) {
       return true;
     } else {
       return false;

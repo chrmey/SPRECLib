@@ -29,7 +29,7 @@ public final class PreCentrifugationTemperatureOption extends AbstractListOption
   }
 
   protected boolean hasTemperature(float temperatureCelsius) {
-    if (this.preCentrifugationTemperature.hasValueFor(temperatureCelsius)) {
+    if (this.preCentrifugationTemperature.hasValue(temperatureCelsius)) {
       return true;
     } else {
       return false;

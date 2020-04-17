@@ -14,7 +14,7 @@ public enum PostCentrifugationTemperature implements IListObject {
     this.upperBoundCelsius = upperBound;
   }
 
-  public boolean hasValueFor(float temperatureCelsius) {
+  public boolean hasValue(float temperatureCelsius) {
 
     if (temperatureCelsius >= this.lowerBoundCelsius
         && temperatureCelsius < this.upperBoundCelsius + 1) {
