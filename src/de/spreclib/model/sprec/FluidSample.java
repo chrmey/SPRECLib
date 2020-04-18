@@ -10,6 +10,7 @@ import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.model.exceptions.InvalidPartRelationException;
 import de.spreclib.model.exceptions.InvalidPartValueException;
+import de.spreclib.model.interfaces.ISample;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.longtermstorage.LongTermStorageList;
 import de.spreclib.model.postcentrifugation.PostCentrifugation;
@@ -17,7 +18,7 @@ import de.spreclib.model.postcentrifugation.PostCentrifugationList;
 import de.spreclib.model.precentrifugation.PreCentrifugation;
 import de.spreclib.model.precentrifugation.PreCentrifugationList;
 
-public final class FluidSample {
+public final class FluidSample implements ISample {
 
   private final FluidSampleType fluidSampleType;
   private final PrimaryContainer primaryContainer;
@@ -108,7 +109,8 @@ public final class FluidSample {
     }
   }
 
-  public FluidSprecCode getSprecCode() {
+  @Override
+public FluidSprecCode getSprecCode() {
 
     return new FluidSprecCode.FluidSprecCodeBuilder()
         .withFluidSampleType(this.fluidSampleType)

@@ -59,7 +59,7 @@ public final class SolidSprecCode extends AbstractSprecCode {
   }
 
   @Override
-  public String getCodeString() {
+  public String getStringRepresentation() {
     StringBuilder code = new StringBuilder();
     code.append(
             this.solidSampleTypeCode != null

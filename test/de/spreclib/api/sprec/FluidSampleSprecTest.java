@@ -310,7 +310,7 @@ public class FluidSampleSprecTest {
             .withLongTermStorage(this.longTermStorageOption)
             .getSprecCode();
 
-    String code = fluidSampleCode.getCodeString();
+    String code = fluidSampleCode.getStringRepresentation();
 
     assertFalse(code.isEmpty());
   }
@@ -331,7 +331,7 @@ public class FluidSampleSprecTest {
             .withLongTermStorage(null)
             .getSprecCode();
 
-    String codeString = fluidSampleCode.getCodeString();
+    String codeString = fluidSampleCode.getStringRepresentation();
 
     assertTrue(codeString.equals("???????????"));
   }

@@ -8,10 +8,11 @@ import de.spreclib.model.enums.SolidSampleType;
 import de.spreclib.model.enums.TypeOfCollection;
 import de.spreclib.model.enums.WarmIschemiaTime;
 import de.spreclib.model.exceptions.InvalidPartValueException;
+import de.spreclib.model.interfaces.ISample;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.longtermstorage.LongTermStorageList;
 
-public class SolidSample {
+public class SolidSample implements ISample {
 
   private final SolidSampleType solidSampleType;
   private final TypeOfCollection typeOfCollection;
@@ -72,7 +73,8 @@ public class SolidSample {
     }
   }
 
-  public SolidSprecCode getSprecCode() {
+  @Override
+public SolidSprecCode getSprecCode() {
 
     return new SolidSprecCode.SolidSprecCodeBuilder()
         .withSolidSampleType(this.solidSampleType)

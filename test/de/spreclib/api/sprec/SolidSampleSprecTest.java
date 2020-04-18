@@ -303,7 +303,7 @@ public class SolidSampleSprecTest {
             .withLongTermStorage(this.longTermStorageOption)
             .getSprecCode();
 
-    String codeString = solidSampleCode.getCodeString();
+    String codeString = solidSampleCode.getStringRepresentation();
 
     assertFalse(codeString.isEmpty());
   }
@@ -324,7 +324,7 @@ public class SolidSampleSprecTest {
             .withLongTermStorage(null)
             .getSprecCode();
 
-    String codeString = solidSampleCode.getCodeString();
+    String codeString = solidSampleCode.getStringRepresentation();
 
     assertTrue(codeString.equals("???????????"));
   }

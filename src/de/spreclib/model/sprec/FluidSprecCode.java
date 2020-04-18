@@ -58,7 +58,7 @@ public final class FluidSprecCode extends AbstractSprecCode {
   }
 
   @Override
-  public String getCodeString() {
+  public String getStringRepresentation() {
     StringBuilder code = new StringBuilder();
     code.append(
             this.fluidSampleTypeCode != null
