@@ -110,7 +110,7 @@ public final class FluidSample implements ISample {
   }
 
   @Override
-public FluidSprecCode getSprecCode() {
+  public FluidSprecCode getSprecCode() {
 
     return new FluidSprecCode.FluidSprecCodeBuilder()
         .withFluidSampleType(this.fluidSampleType)

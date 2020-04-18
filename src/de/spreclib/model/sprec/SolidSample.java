@@ -74,7 +74,7 @@ public class SolidSample implements ISample {
   }
 
   @Override
-public SolidSprecCode getSprecCode() {
+  public SolidSprecCode getSprecCode() {
 
     return new SolidSprecCode.SolidSprecCodeBuilder()
         .withSolidSampleType(this.solidSampleType)
