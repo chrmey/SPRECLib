@@ -9,7 +9,7 @@ import de.spreclib.api.exceptions.NegativeTimestampException;
  * @author Christopher Meyer
  * @version 1.0
  */
-public final class Timespan {
+public class Timespan {
 
   private final int timespanMinutes;
 
