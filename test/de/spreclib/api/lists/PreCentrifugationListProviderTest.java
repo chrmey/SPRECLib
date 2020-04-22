@@ -44,7 +44,7 @@ public class PreCentrifugationListProviderTest {
     PreCentrifugationDelayOption delayOption = new PreCentrifugationDelayListProvider().valueOf(15);
 
     PreCentrifugationOption preCentrifugationOption =
-        this.preCentrifugationListProvider.valueOf(temperatureOption, delayOption);
+        this.preCentrifugationListProvider.valueOf(delayOption, temperatureOption);
 
     assertNotNull(preCentrifugationOption);
   }
@@ -54,7 +54,7 @@ public class PreCentrifugationListProviderTest {
 
     PreCentrifugationDelayOption delayOption = new PreCentrifugationDelayListProvider().valueOf(15);
 
-    this.preCentrifugationListProvider.valueOf(null, delayOption);
+    this.preCentrifugationListProvider.valueOf(delayOption, null);
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -63,7 +63,7 @@ public class PreCentrifugationListProviderTest {
     PreCentrifugationTemperatureOption temperatureOption =
         new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(10f));
 
-    this.preCentrifugationListProvider.valueOf(temperatureOption, null);
+    this.preCentrifugationListProvider.valueOf(null, temperatureOption);
   }
 
   @Test(expected = InvalidValueCombinationException.class)
@@ -75,7 +75,7 @@ public class PreCentrifugationListProviderTest {
     PreCentrifugationDelayOption delayOption =
         new PreCentrifugationDelayListProvider().valueOf(300);
 
-    this.preCentrifugationListProvider.valueOf(temperatureOption, delayOption);
+    this.preCentrifugationListProvider.valueOf(delayOption, temperatureOption);
   }
 
   @Test
@@ -87,7 +87,7 @@ public class PreCentrifugationListProviderTest {
     PreCentrifugationDelayOption delayOption = new PreCentrifugationDelayListProvider().valueOf(59);
 
     PreCentrifugationOption preCentrifugationOption =
-        this.preCentrifugationListProvider.valueOf(temperatureOption, delayOption);
+        this.preCentrifugationListProvider.valueOf(delayOption, temperatureOption);
 
     assertEquals(
         new CodePart("A"), preCentrifugationOption.getContainedObject().getCodeFromSprecPart());
@@ -103,7 +103,7 @@ public class PreCentrifugationListProviderTest {
         new PreCentrifugationDelayListProvider().valueOf(2880);
 
     PreCentrifugationOption preCentrifugationOption =
-        this.preCentrifugationListProvider.valueOf(temperatureOption, delayOption);
+        this.preCentrifugationListProvider.valueOf(delayOption, temperatureOption);
 
     assertEquals(
         new CodePart("N"), preCentrifugationOption.getContainedObject().getCodeFromSprecPart());

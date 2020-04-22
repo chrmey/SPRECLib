@@ -54,7 +54,7 @@ public final class LongTermStorageListProvider extends AbstractListProvider<Long
     for (LongTermStorageOption longTermStorageOption : this.listOptions) {
 
       if (longTermStorageOption.hasLongTermStorage(
-          longTermStorageTemperatureOption, longTermStorageContainerOption)) {
+          longTermStorageContainerOption, longTermStorageTemperatureOption)) {
 
         return longTermStorageOption;
       }

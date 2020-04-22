@@ -2,7 +2,6 @@ package de.spreclib.model.centrifugation;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
@@ -25,6 +24,7 @@ public class CentrifugationTest {
   @Test
   public void testGetCentrifugationType() {
     CentrifugationType expected = CentrifugationType.NO;
+    
     assertEquals(expected, centrifugation.getCentrifugationType());
   }
 
@@ -32,13 +32,13 @@ public class CentrifugationTest {
   public void testGetCodeFromSprecPart() {
     ICodePart expected = new CodePart("N");
     ICodePart actual = centrifugation.getCodeFromSprecPart();
-    assertNotNull(actual);
-    assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    
     assertEquals(expected, actual);
   }
 
   @Test
-  public void testIsDefaultCentrifugation() {
+  public void testIsParameterizedCentrifugation() {
+	  
     assertFalse(centrifugation.isParameterizedCentrifugation());
   }
 

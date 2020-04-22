@@ -1,7 +1,8 @@
 package de.spreclib.model.precentrifugation;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
@@ -12,14 +13,13 @@ import de.spreclib.model.sprec.CodePart;
 import org.junit.Before;
 import org.junit.Test;
 
+public class ParameterizedPreCentrifugationTest {
 
-public class NormalPreCentrifugationTest {
-
-  ParameterizedPreCentrifugation normalPreCentrifugation;
+  ParameterizedPreCentrifugation parameterizedPreCentrifugation;
 
   @Before
   public void setUp() {
-    normalPreCentrifugation =
+    parameterizedPreCentrifugation =
         new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.LESS_TWO_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
@@ -29,15 +29,31 @@ public class NormalPreCentrifugationTest {
   @Test
   public void testGetPreCentrifugationType() {
     PreCentrifugationType expected = PreCentrifugationType.DEFAULT;
-    assertEquals(expected, normalPreCentrifugation.getPreCentrifugationType());
+
+    assertEquals(expected, parameterizedPreCentrifugation.getPreCentrifugationType());
   }
 
   @Test
   public void testGetCodeFromSprecPart() {
     ICodePart expected = new CodePart("A");
-    ICodePart actual = normalPreCentrifugation.getCodeFromSprecPart();
-    assertNotNull(actual);
-    assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+    ICodePart actual = parameterizedPreCentrifugation.getCodeFromSprecPart();
+
     assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testContainsShouldReturnTrue() {
+
+    assertTrue(
+        parameterizedPreCentrifugation.contains(
+            PreCentrifugationDelay.LESS_TWO_HOURS, PreCentrifugationTemperature.ROOM_TEMPERATURE));
+  }
+
+  @Test
+  public void testContainsShouldReturnFalse() {
+
+    assertFalse(
+        parameterizedPreCentrifugation.contains(
+            PreCentrifugationDelay.LESS_TWO_HOURS, PreCentrifugationTemperature.THIRTYFIVE_TO_THIRTYEIGHT_DEGREES));
   }
 }

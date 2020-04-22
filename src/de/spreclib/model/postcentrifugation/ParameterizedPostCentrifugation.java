@@ -42,8 +42,8 @@ public final class ParameterizedPostCentrifugation extends PostCentrifugation {
   }
 
   public boolean contains(
-      PostCentrifugationTemperature postCentrifugationTemperature,
-      PostCentrifugationDelay postCentrifugationDelay) {
+      PostCentrifugationDelay postCentrifugationDelay,
+      PostCentrifugationTemperature postCentrifugationTemperature) {
 
     if (this.postCentrifugationTemperature == postCentrifugationTemperature
         && this.postCentrifugationDelay == postCentrifugationDelay) {

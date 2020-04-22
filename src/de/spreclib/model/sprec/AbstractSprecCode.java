@@ -1,6 +1,6 @@
 package de.spreclib.model.sprec;
 
-import de.spreclib.api.sprec.interfaces.ISprecCode;
+import de.spreclib.model.sprec.interfaces.ISprecCode;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;

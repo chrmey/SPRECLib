@@ -58,7 +58,7 @@ public final class PostCentrifugationListProvider
     for (PostCentrifugationOption postCentrifugationOption : this.listOptions) {
 
       if (postCentrifugationOption.hasPostCentrifugation(
-          postCentrifugationTemperatureOption, postCentrifugationDelayOption)) {
+          postCentrifugationDelayOption, postCentrifugationTemperatureOption)) {
 
         return postCentrifugationOption;
       }

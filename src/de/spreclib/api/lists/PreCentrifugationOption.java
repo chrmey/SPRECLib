@@ -54,8 +54,8 @@ public final class PreCentrifugationOption extends AbstractListOption {
   }
 
   protected boolean hasPreCentrifugation(
-      PreCentrifugationTemperatureOption preCentrifugationTemperatureOption,
-      PreCentrifugationDelayOption preCentrifugationDelayOption) {
+      PreCentrifugationDelayOption preCentrifugationDelayOption,
+      PreCentrifugationTemperatureOption preCentrifugationTemperatureOption) {
 
     if (preCentrifugationTemperatureOption == null) {
       return false;
@@ -74,7 +74,7 @@ public final class PreCentrifugationOption extends AbstractListOption {
       ParameterizedPreCentrifugation normalPreCentrifugation =
           (ParameterizedPreCentrifugation) this.preCentrifugation;
 
-      if (normalPreCentrifugation.contains(preCentrifugationTemperature, preCentrifugationDelay)) {
+      if (normalPreCentrifugation.contains(preCentrifugationDelay, preCentrifugationTemperature)) {
         return true;
       }
     }

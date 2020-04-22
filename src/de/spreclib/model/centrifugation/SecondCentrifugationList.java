@@ -26,72 +26,72 @@ public final class SecondCentrifugationList {
             CentrifugationType.OTHER, new CodePart("Z")));
     CENTRIFUGATIONS.add(
         new ParameterizedCentrifugation(
+            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
-            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("A")));
     CENTRIFUGATIONS.add(
         new ParameterizedCentrifugation(
+            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
-            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("B")));
     CENTRIFUGATIONS.add(
         new ParameterizedCentrifugation(
+            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
-            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("C")));
     CENTRIFUGATIONS.add(
         new ParameterizedCentrifugation(
+            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
-            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("D")));
     CENTRIFUGATIONS.add(
         new ParameterizedCentrifugation(
+            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
-            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("E")));
     CENTRIFUGATIONS.add(
         new ParameterizedCentrifugation(
+            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
-            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("F")));
     CENTRIFUGATIONS.add(
         new ParameterizedCentrifugation(
+            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
-            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("G")));
     CENTRIFUGATIONS.add(
         new ParameterizedCentrifugation(
+            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
-            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("F")));
     CENTRIFUGATIONS.add(
         new ParameterizedCentrifugation(
+            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.GREATER_TENTHOUSAND_G,
-            SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("I")));
     CENTRIFUGATIONS.add(
         new ParameterizedCentrifugation(
+            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.GREATER_TENTHOUSAND_G,
-            SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("J")));
   }

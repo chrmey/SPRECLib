@@ -1,7 +1,6 @@
 package de.spreclib.model.longtermstorage;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.model.interfaces.ICodePart;
@@ -30,8 +29,7 @@ public class LongTermStorageTest {
   public void testGetCodeFromSprecPart() {
     ICodePart expected = new CodePart("X");
     ICodePart actual = longTermStorage.getCodeFromSprecPart();
-    assertNotNull(actual);
-    assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+
     assertEquals(expected, actual);
   }
   

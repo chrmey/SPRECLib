@@ -1,7 +1,6 @@
 package de.spreclib.model.precentrifugation;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
@@ -23,6 +22,7 @@ public class PreCentrifugationTest {
   @Test
   public void testGetLongTermStorageType() {
     PreCentrifugationType expected = PreCentrifugationType.OTHER;
+    
     assertEquals(expected, preCentrifugation.getPreCentrifugationType());
   }
 
@@ -30,8 +30,7 @@ public class PreCentrifugationTest {
   public void testGetCodeFromSprecPart() {
     ICodePart expected = new CodePart("Z");
     ICodePart actual = preCentrifugation.getCodeFromSprecPart();
-    assertNotNull(actual);
-    assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
+
     assertEquals(expected, actual);
   }
 }

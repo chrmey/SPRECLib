@@ -1,5 +1,6 @@
 package de.spreclib.model.enums;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -11,14 +12,8 @@ public class FixationTimeTest {
   public void testGetCodeFromSprecPart() {
     for (FixationTime fixationTime : FixationTime.values()) {
 
-      assertNotNull(FixationTime.contains(fixationTime));
+      assertNotNull(fixationTime.getCodeFromSprecPart());
     }
-  }
-
-  @Test
-  public void testHasValue() {
-
-    assertTrue(FixationTime.LESS_FIFTEEN_MINUTES.hasValue(14));
   }
 
   @Test
@@ -26,5 +21,41 @@ public class FixationTimeTest {
     for (FixationTime fixationTime : FixationTime.values()) {
       assertTrue(FixationTime.contains(fixationTime));
     }
+  }
+
+  @Test
+  public void testHasValueShouldReturnTrue() {
+
+    assertTrue(FixationTime.FIFTEEN_MINUTES_TO_ONE_HOUR.hasValue(20));
+  }
+
+  @Test
+  public void testHasValueShouldReturnFalseBelow() {
+
+    assertFalse(FixationTime.FIFTEEN_MINUTES_TO_ONE_HOUR.hasValue(5));
+  }
+
+  @Test
+  public void testHasValueShouldReturnFalseBelowAbove() {
+
+    assertFalse(FixationTime.FIFTEEN_MINUTES_TO_ONE_HOUR.hasValue(70));
+  }
+
+  @Test
+  public void testHasValueLowerBound() {
+
+    assertTrue(FixationTime.FIFTEEN_MINUTES_TO_ONE_HOUR.hasValue(15));
+  }
+
+  @Test
+  public void testHasValueUpperBound() {
+
+    assertTrue(FixationTime.FIFTEEN_MINUTES_TO_ONE_HOUR.hasValue(59));
+  }
+
+  @Test
+  public void testHasValueNegativeValue() {
+
+    assertFalse(FixationTime.FIFTEEN_MINUTES_TO_ONE_HOUR.hasValue(-10));
   }
 }

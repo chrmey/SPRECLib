@@ -1,4 +1,4 @@
-package de.spreclib.api.sprec.interfaces;
+package de.spreclib.model.sprec.interfaces;
 
 public interface ISprecCode {
 

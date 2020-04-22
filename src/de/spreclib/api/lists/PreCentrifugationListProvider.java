@@ -36,16 +36,16 @@ public final class PreCentrifugationListProvider
   /**
    * Takes all parameters for PreCentrifugation and returns an option if a PreCentrifugation with
    * that combination is found. Returns null otherwise.
+ * @param preCentrifugationDelayOption PreCentrifugationDelayOption
+ * @param preCentrifugationTemperatureOption PreCentrifugationTemperatureOption
    *
-   * @param preCentrifugationTemperatureOption PreCentrifugationTemperatureOption
-   * @param preCentrifugationDelayOption PreCentrifugationDelayOption
    * @return PreCentrifugationOption
    * @throws InvalidValueCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
   public PreCentrifugationOption valueOf(
-      PreCentrifugationTemperatureOption preCentrifugationTemperatureOption,
-      PreCentrifugationDelayOption preCentrifugationDelayOption) {
+      PreCentrifugationDelayOption preCentrifugationDelayOption,
+      PreCentrifugationTemperatureOption preCentrifugationTemperatureOption) {
 
     if (preCentrifugationTemperatureOption == null) {
       throw new IllegalArgumentException("PreCentrifugationTemperatureOption cannot not be null.");
@@ -58,7 +58,7 @@ public final class PreCentrifugationListProvider
     for (PreCentrifugationOption preCentrifugationOption : this.listOptions) {
 
       if (preCentrifugationOption.hasPreCentrifugation(
-          preCentrifugationTemperatureOption, preCentrifugationDelayOption)) {
+          preCentrifugationDelayOption, preCentrifugationTemperatureOption)) {
 
         return preCentrifugationOption;
       }

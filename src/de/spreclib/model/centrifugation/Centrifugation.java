@@ -15,7 +15,6 @@ public class Centrifugation implements ISprecPart, IListProvideable {
    *
    * @param centrifugationType enum CentrifugationType
    * @param codePart CodePart Object
-   * @param sprecPartType enum SprecPartType
    */
   Centrifugation(CentrifugationType centrifugationType, ICodePart codePart) {
     this.centrifugationType = centrifugationType;

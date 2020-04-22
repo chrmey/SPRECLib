@@ -10,26 +10,25 @@ import de.spreclib.model.interfaces.ICodePart;
 public final class ParameterizedCentrifugation extends Centrifugation {
 
   private static final CentrifugationType CENTRIFUGATION_TYPE = CentrifugationType.DEFAULT;
+  private final ICentrifugationTemperature centrifugationTemperature;
   private final ICentrifugationDuration centrifugationDuration;
   private final ICentrifugationSpeed centrifugationSpeed;
-  private final ICentrifugationTemperature centrifugationTemperature;
   private final CentrifugationBraking centrifugationBraking;
 
   /**
    * Constructor for ParameterizedCentrifugation.
    *
+   * @param centrifugationTemperature enum CentrifugationTemperature
    * @param centrifugationDuration enum CentrifugationDuration
    * @param centrifugationSpeed enum CentrifugationSpeed
-   * @param centrifugationTemperature enum CentrifugationTemperature
    * @param centrifugationBraking enum CentrifugationBraking
    * @param codePart object CodePart
-   * @param sprecPartType enum SprecPartType -> needed for differention between first and second
    *     centrifugation
    */
   ParameterizedCentrifugation(
+      ICentrifugationTemperature centrifugationTemperature,
       ICentrifugationDuration centrifugationDuration,
       ICentrifugationSpeed centrifugationSpeed,
-      ICentrifugationTemperature centrifugationTemperature,
       CentrifugationBraking centrifugationBraking,
       ICodePart codePart) {
     super(CENTRIFUGATION_TYPE, codePart);
@@ -44,16 +43,16 @@ public final class ParameterizedCentrifugation extends Centrifugation {
     return true;
   }
 
+  public ICentrifugationTemperature getCentrifugationTemperature() {
+    return centrifugationTemperature;
+  }
+
   public ICentrifugationDuration getCentrifugationDuration() {
     return centrifugationDuration;
   }
 
   public ICentrifugationSpeed getCentrifugationSpeed() {
     return centrifugationSpeed;
-  }
-
-  public ICentrifugationTemperature getCentrifugationTemperature() {
-    return centrifugationTemperature;
   }
 
   public CentrifugationBraking getCentrifugationBraking() {

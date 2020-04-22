@@ -36,7 +36,7 @@ public enum LongTermStorageTemperature implements IListProvideable {
     }
 
     // lowerBoundCelsius - 1 because of negative values
-    if (temperatureCelsius >= this.lowerBoundCelsius - 1
+    if (temperatureCelsius > this.lowerBoundCelsius - 1
         && temperatureCelsius < this.upperBoundCelsius + 1) {
       return true;
     } else {

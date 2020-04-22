@@ -53,8 +53,8 @@ public final class LongTermStorageOption extends AbstractListOption {
   }
 
   protected boolean hasLongTermStorage(
-      LongTermStorageTemperatureOption longTermStorageTemperatureOption,
-      LongTermStorageContainerOption longTermStorageContainerOption) {
+      LongTermStorageContainerOption longTermStorageContainerOption,
+      LongTermStorageTemperatureOption longTermStorageTemperatureOption) {
 
     if (longTermStorageTemperatureOption == null) {
       return false;
@@ -72,7 +72,7 @@ public final class LongTermStorageOption extends AbstractListOption {
 
       ParameterizedLongTermStorage normalLongTermStorage = (ParameterizedLongTermStorage) this.longTermStorage;
 
-      if (normalLongTermStorage.contains(longTermStorageTemperature, longTermStorageContainer)) {
+      if (normalLongTermStorage.contains(longTermStorageContainer, longTermStorageTemperature)) {
         return true;
       }
     }

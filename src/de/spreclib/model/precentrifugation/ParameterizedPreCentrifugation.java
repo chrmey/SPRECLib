@@ -42,8 +42,8 @@ public final class ParameterizedPreCentrifugation extends PreCentrifugation {
   }
 
   public boolean contains(
-      PreCentrifugationTemperature preCentrifugationTemperature,
-      PreCentrifugationDelay preCentrifugationDelay) {
+      PreCentrifugationDelay preCentrifugationDelay,
+      PreCentrifugationTemperature preCentrifugationTemperature) {
 
     if (this.preCentrifugationTemperature == preCentrifugationTemperature
         && this.preCentrifugationDelay == preCentrifugationDelay) {

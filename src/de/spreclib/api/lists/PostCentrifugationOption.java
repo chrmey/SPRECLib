@@ -55,8 +55,8 @@ public final class PostCentrifugationOption extends AbstractListOption {
   }
 
   protected boolean hasPostCentrifugation(
-      PostCentrifugationTemperatureOption postCentrifugationTemperatureOption,
-      PostCentrifugationDelayOption postCentrifugationDelayOption) {
+      PostCentrifugationDelayOption postCentrifugationDelayOption,
+      PostCentrifugationTemperatureOption postCentrifugationTemperatureOption) {
 
     if (postCentrifugationTemperatureOption == null) {
       return false;
@@ -76,7 +76,7 @@ public final class PostCentrifugationOption extends AbstractListOption {
           (ParameterizedPostCentrifugation) this.postCentrifugation;
 
       if (normalPostCentrifugation.contains(
-          postCentrifugationTemperature, postCentrifugationDelay)) {
+          postCentrifugationDelay, postCentrifugationTemperature)) {
         return true;
       }
     }

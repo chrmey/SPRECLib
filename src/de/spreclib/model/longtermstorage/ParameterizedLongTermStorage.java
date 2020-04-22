@@ -43,8 +43,8 @@ public final class ParameterizedLongTermStorage extends LongTermStorage {
   }
 
   public boolean contains(
-      LongTermStorageTemperature longTermStorageTemperature,
-      LongTermStorageContainer longTermStorageContainer) {
+      LongTermStorageContainer longTermStorageContainer,
+      LongTermStorageTemperature longTermStorageTemperature) {
     if (this.longTermStorageTemperature == longTermStorageTemperature
         && this.longTermStorageContainer == longTermStorageContainer) {
       return true;

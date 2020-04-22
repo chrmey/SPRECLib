@@ -15,7 +15,6 @@ public enum PreCentrifugationTemperature implements IListProvideable {
     this.upperBoundCelsius = upperBoundCelsius;
   }
 
-  // Namig ungünstig
   public boolean hasValue(float temperatureCelsius) {
 
     if (temperatureCelsius >= this.lowerBoundCelsius
