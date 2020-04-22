@@ -21,65 +21,65 @@ public class PostCentrifugationListTest {
   public void setUp() {
     testList = new HashSet<>();
     testList.add(
-        new SpecialPostCentrifugation(PostCentrifugationType.NOT_APPLICABLE, new CodePart("N")));
-    testList.add(new SpecialPostCentrifugation(PostCentrifugationType.UNKNOWN, new CodePart("X")));
-    testList.add(new SpecialPostCentrifugation(PostCentrifugationType.OTHER, new CodePart("Z")));
+        new PostCentrifugation(PostCentrifugationType.NOT_APPLICABLE, new CodePart("N")));
+    testList.add(new PostCentrifugation(PostCentrifugationType.UNKNOWN, new CodePart("X")));
+    testList.add(new PostCentrifugation(PostCentrifugationType.OTHER, new CodePart("Z")));
     testList.add(
-        new NormalPostCentrifugation(
+        new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.LESS_ONE_HOUR,
             PostCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("A")));
     testList.add(
-        new NormalPostCentrifugation(
+        new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.LESS_ONE_HOUR,
             PostCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("B")));
     testList.add(
-        new NormalPostCentrifugation(
+        new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.ONE_TO_TWO_HOURS,
             PostCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("C")));
     testList.add(
-        new NormalPostCentrifugation(
+        new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.ONE_TO_TWO_HOURS,
             PostCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("D")));
     testList.add(
-        new NormalPostCentrifugation(
+        new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.TWO_TO_EIGHT_HOURS,
             PostCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("E")));
     testList.add(
-        new NormalPostCentrifugation(
+        new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.TWO_TO_EIGHT_HOURS,
             PostCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("F")));
     testList.add(
-        new NormalPostCentrifugation(
+        new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.EIGHT_TO_TWENTYFOUR_HOURS,
             PostCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("G")));
     testList.add(
-        new NormalPostCentrifugation(
+        new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.EIGHT_TO_TWENTYFOUR_HOURS,
             PostCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("H")));
     testList.add(
-        new NormalPostCentrifugation(
+        new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.GREATER_TWENTYFOUR_HOURS,
             PostCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("I")));
     testList.add(
-        new NormalPostCentrifugation(
+        new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.GREATER_TWENTYFOUR_HOURS,
             PostCentrifugationTemperature.ROOM_TEMPERATURE,
@@ -134,19 +134,19 @@ public class PostCentrifugationListTest {
     int actualSpecialPostCentrifugations = 0;
 
     for (PostCentrifugation postCentrifugation : testList) {
-      if (postCentrifugation instanceof SpecialPostCentrifugation) {
+      if (postCentrifugation instanceof PostCentrifugation) {
         expectedSpecialPostCentrifugations++;
       }
-      if (postCentrifugation instanceof NormalPostCentrifugation) {
+      if (postCentrifugation instanceof ParameterizedPostCentrifugation) {
         expectedNormalPostCentrifugations++;
       }
     }
 
     for (PostCentrifugation postCentrifugation : PostCentrifugationList.POST_CENTRIFUGATIONS) {
-      if (postCentrifugation instanceof SpecialPostCentrifugation) {
+      if (postCentrifugation instanceof PostCentrifugation) {
         actualSpecialPostCentrifugations++;
       }
-      if (postCentrifugation instanceof NormalPostCentrifugation) {
+      if (postCentrifugation instanceof ParameterizedPostCentrifugation) {
         actualNormalPostCentrifugations++;
       }
     }

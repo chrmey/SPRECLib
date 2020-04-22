@@ -5,7 +5,7 @@ import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 
-public final class NormalPreCentrifugation extends PreCentrifugation {
+public final class ParameterizedPreCentrifugation extends PreCentrifugation {
 
   private static final PreCentrifugationType PRE_CENTRIFUGATION_TYPE =
       PreCentrifugationType.DEFAULT;
@@ -13,13 +13,13 @@ public final class NormalPreCentrifugation extends PreCentrifugation {
   private final PreCentrifugationTemperature preCentrifugationTemperature;
 
   /**
-   * Constructor for NormalPreCentrifugation.
+   * Constructor for DefaultPreCentrifugation.
    *
    * @param preCentrifugationDelay enum PreCentrifugationDelay
    * @param preCentrifugationTemperature enum PreCentrifugationTemperature
    * @param codePart Object CodePart
    */
-  NormalPreCentrifugation(
+  ParameterizedPreCentrifugation(
       PreCentrifugationDelay preCentrifugationDelay,
       PreCentrifugationTemperature preCentrifugationTemperature,
       ICodePart codePart) {
@@ -29,13 +29,8 @@ public final class NormalPreCentrifugation extends PreCentrifugation {
   }
 
   @Override
-  public boolean isNormalPreCentrifugation() {
+  public boolean isParameterizedPreCentrifugation() {
     return true;
-  }
-
-  @Override
-  public boolean isSpecialPreCentrifugation() {
-    return false;
   }
 
   public PreCentrifugationDelay getPreCentrifugationDelay() {
@@ -82,7 +77,7 @@ public final class NormalPreCentrifugation extends PreCentrifugation {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    NormalPreCentrifugation other = (NormalPreCentrifugation) obj;
+    ParameterizedPreCentrifugation other = (ParameterizedPreCentrifugation) obj;
     if (preCentrifugationDelay != other.preCentrifugationDelay) {
       return false;
     }

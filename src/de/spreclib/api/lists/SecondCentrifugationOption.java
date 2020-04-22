@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.model.centrifugation.Centrifugation;
-import de.spreclib.model.centrifugation.NormalCentrifugation;
+import de.spreclib.model.centrifugation.ParameterizedCentrifugation;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationDuration;
@@ -32,9 +32,9 @@ public final class SecondCentrifugationOption extends AbstractListOption {
 
     name.append(NAMES_DEFAULT.getString(centrifugationType.name()));
 
-    if (this.secondCentrifugation.isNormalCentrifugation()) {
+    if (this.secondCentrifugation.isParameterizedCentrifugation()) {
 
-      NormalCentrifugation normalCentrifugation = (NormalCentrifugation) this.secondCentrifugation;
+      ParameterizedCentrifugation normalCentrifugation = (ParameterizedCentrifugation) this.secondCentrifugation;
 
       SecondCentrifugationTemperature centrifugationTemperature =
           (SecondCentrifugationTemperature) normalCentrifugation.getCentrifugationTemperature();
@@ -83,7 +83,7 @@ public final class SecondCentrifugationOption extends AbstractListOption {
       return false;
     }
 
-    if (this.secondCentrifugation.isNormalCentrifugation()) {
+    if (this.secondCentrifugation.isParameterizedCentrifugation()) {
 
       SecondCentrifugationTemperature secondCentrifugationTemperature =
           secondCentrifugationTemperatureOption.getContainedObject();
@@ -94,8 +94,8 @@ public final class SecondCentrifugationOption extends AbstractListOption {
       CentrifugationBraking secondCentrifugationBraking =
           secondCentrifugationBrakingOption.getContainedObject();
 
-      NormalCentrifugation normalSecondCentrifugation =
-          (NormalCentrifugation) this.secondCentrifugation;
+      ParameterizedCentrifugation normalSecondCentrifugation =
+          (ParameterizedCentrifugation) this.secondCentrifugation;
 
       if (normalSecondCentrifugation.contains(
           secondCentrifugationTemperature,

@@ -7,7 +7,7 @@ import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.precentrifugation.NormalPreCentrifugation;
+import de.spreclib.model.precentrifugation.ParameterizedPreCentrifugation;
 import de.spreclib.model.sprec.CodePart;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,12 +15,12 @@ import org.junit.Test;
 
 public class NormalPreCentrifugationTest {
 
-  NormalPreCentrifugation normalPreCentrifugation;
+  ParameterizedPreCentrifugation normalPreCentrifugation;
 
   @Before
   public void setUp() {
     normalPreCentrifugation =
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.LESS_TWO_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("A"));

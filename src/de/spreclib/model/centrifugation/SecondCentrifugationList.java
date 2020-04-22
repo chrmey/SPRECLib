@@ -16,79 +16,79 @@ public final class SecondCentrifugationList {
   static {
     CENTRIFUGATIONS = new HashSet<>();
     CENTRIFUGATIONS.add(
-        new SpecialCentrifugation(
+        new Centrifugation(
             CentrifugationType.NO, new CodePart("N")));
     CENTRIFUGATIONS.add(
-        new SpecialCentrifugation(
+        new Centrifugation(
             CentrifugationType.UNKNOWN, new CodePart("X")));
     CENTRIFUGATIONS.add(
-        new SpecialCentrifugation(
+        new Centrifugation(
             CentrifugationType.OTHER, new CodePart("Z")));
     CENTRIFUGATIONS.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
             SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("A")));
     CENTRIFUGATIONS.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
             SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("B")));
     CENTRIFUGATIONS.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
             SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("C")));
     CENTRIFUGATIONS.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.LESS_THREETHOUSAND_G,
             SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("D")));
     CENTRIFUGATIONS.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
             SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("E")));
     CENTRIFUGATIONS.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
             SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("F")));
     CENTRIFUGATIONS.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
             SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("G")));
     CENTRIFUGATIONS.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
             SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("F")));
     CENTRIFUGATIONS.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.GREATER_TENTHOUSAND_G,
             SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("I")));
     CENTRIFUGATIONS.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             SecondCentrifugationSpeed.GREATER_TENTHOUSAND_G,
             SecondCentrifugationTemperature.TWO_TO_TEN_DEGREES,

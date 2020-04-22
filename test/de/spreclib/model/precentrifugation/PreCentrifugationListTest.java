@@ -2,13 +2,10 @@ package de.spreclib.model.precentrifugation;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
-import de.spreclib.model.precentrifugation.NormalPreCentrifugation;
-import de.spreclib.model.precentrifugation.PreCentrifugation;
-import de.spreclib.model.precentrifugation.PreCentrifugationList;
-import de.spreclib.model.precentrifugation.SpecialPreCentrifugation;
 import de.spreclib.model.sprec.CodePart;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,80 +20,80 @@ public class PreCentrifugationListTest {
   @Before
   public void setUp() {
     testList = new HashSet<>();
-    testList.add(new SpecialPreCentrifugation(PreCentrifugationType.UNKNOWN, new CodePart("X")));
-    testList.add(new SpecialPreCentrifugation(PreCentrifugationType.OTHER, new CodePart("Z")));
+    testList.add(new PreCentrifugation(PreCentrifugationType.UNKNOWN, new CodePart("X")));
+    testList.add(new PreCentrifugation(PreCentrifugationType.OTHER, new CodePart("Z")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.LESS_TWO_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("A")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.LESS_TWO_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("B")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.TWO_TO_FOUR_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("C")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.TWO_TO_FOUR_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("D")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.FOUR_TO_EIGHT_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("E")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.FOUR_TO_EIGHT_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("F")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.EIGHT_TO_TWELVE_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("G")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.EIGHT_TO_TWELVE_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("H")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.TWELVE_TO_TWENTYFOUR_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("I")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.TWELVE_TO_TWENTYFOUR_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("J")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.TWENTYFOUR_TO_EIGHTYFOUR_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("K")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.TWENTYFOUR_TO_EIGHTYFOUR_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("L")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.GREATER_EIGHTYFOUR_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("M")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.GREATER_EIGHTYFOUR_HOURS,
             PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("N")));
     testList.add(
-        new NormalPreCentrifugation(
+        new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.LESS_TWO_HOURS,
             PreCentrifugationTemperature.THIRTYFIVE_TO_THIRTYEIGHT_DEGREES,
             new CodePart("O")));
@@ -143,19 +140,19 @@ public class PreCentrifugationListTest {
     int actualSpecialPreCentrifugations = 0;
 
     for (PreCentrifugation preCentrifugation : testList) {
-      if (preCentrifugation instanceof SpecialPreCentrifugation) {
+      if (preCentrifugation instanceof PreCentrifugation) {
         expectedSpecialPreCentrifugations++;
       }
-      if (preCentrifugation instanceof NormalPreCentrifugation) {
+      if (preCentrifugation instanceof ParameterizedPreCentrifugation) {
         expectedNormalPreCentrifugations++;
       }
     }
 
     for (PreCentrifugation preCentrifugation : PreCentrifugationList.PRE_CENTRIFUGATIONS) {
-      if (preCentrifugation instanceof SpecialPreCentrifugation) {
+      if (preCentrifugation instanceof PreCentrifugation) {
         actualSpecialPreCentrifugations++;
       }
-      if (preCentrifugation instanceof NormalPreCentrifugation) {
+      if (preCentrifugation instanceof ParameterizedPreCentrifugation) {
         actualNormalPreCentrifugations++;
       }
     }

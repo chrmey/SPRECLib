@@ -1,6 +1,5 @@
 package de.spreclib.model.enums.centrifugation;
 
-import de.spreclib.model.centrifugation.ICentrifugationSpeed;
 import de.spreclib.model.interfaces.IListProvideable;
 
 public enum FirstCentrifugationSpeed implements ICentrifugationSpeed, IListProvideable {

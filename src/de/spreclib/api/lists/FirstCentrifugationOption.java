@@ -1,7 +1,7 @@
 package de.spreclib.api.lists;
 
 import de.spreclib.model.centrifugation.Centrifugation;
-import de.spreclib.model.centrifugation.NormalCentrifugation;
+import de.spreclib.model.centrifugation.ParameterizedCentrifugation;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
@@ -32,9 +32,9 @@ public final class FirstCentrifugationOption extends AbstractListOption {
 
     name.append(NAMES_DEFAULT.getString(centrifugationType.name()));
 
-    if (this.firstCentrifugation.isNormalCentrifugation()) {
+    if (this.firstCentrifugation.isParameterizedCentrifugation()) {
 
-      NormalCentrifugation normalCentrifugation = (NormalCentrifugation) this.firstCentrifugation;
+      ParameterizedCentrifugation normalCentrifugation = (ParameterizedCentrifugation) this.firstCentrifugation;
 
       FirstCentrifugationTemperature centrifugationTemperature =
           (FirstCentrifugationTemperature) normalCentrifugation.getCentrifugationTemperature();
@@ -83,7 +83,7 @@ public final class FirstCentrifugationOption extends AbstractListOption {
       return false;
     }
 
-    if (this.firstCentrifugation.isNormalCentrifugation()) {
+    if (this.firstCentrifugation.isParameterizedCentrifugation()) {
 
       FirstCentrifugationTemperature firstCentrifugationTemperature =
           firstCentrifugationTemperatureOption.getContainedObject();
@@ -94,8 +94,8 @@ public final class FirstCentrifugationOption extends AbstractListOption {
       CentrifugationBraking firstCentrifugationBraking =
           firstCentrifugationBrakingOption.getContainedObject();
 
-      NormalCentrifugation normalFirstCentrifugation =
-          (NormalCentrifugation) this.firstCentrifugation;
+      ParameterizedCentrifugation normalFirstCentrifugation =
+          (ParameterizedCentrifugation) this.firstCentrifugation;
 
       if (normalFirstCentrifugation.contains(
           firstCentrifugationTemperature,

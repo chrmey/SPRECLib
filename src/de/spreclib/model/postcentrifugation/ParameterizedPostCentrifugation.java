@@ -5,20 +5,20 @@ import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 
-public final class NormalPostCentrifugation extends PostCentrifugation {
+public final class ParameterizedPostCentrifugation extends PostCentrifugation {
 
   private final PostCentrifugationDelay postCentrifugationDelay;
   private final PostCentrifugationTemperature postCentrifugationTemperature;
 
   /**
-   * Constructor for NormalPostCentrifugation.
+   * Constructor for DefaultPostCentrifugation.
    *
    * @param postCentrifugationType enum PostCentrifugationType
    * @param postCentrifugationDelay enum PostCentrifugationDelay
    * @param postCentrifugationTemperature enum PostCentrifugationTemperature
    * @param codePart object CodePart
    */
-  NormalPostCentrifugation(
+  ParameterizedPostCentrifugation(
       PostCentrifugationType postCentrifugationType,
       PostCentrifugationDelay postCentrifugationDelay,
       PostCentrifugationTemperature postCentrifugationTemperature,
@@ -29,13 +29,8 @@ public final class NormalPostCentrifugation extends PostCentrifugation {
   }
 
   @Override
-  public boolean isNormalPostCentrifugation() {
+  public boolean isDefaultPostCentrifugation() {
     return true;
-  }
-
-  @Override
-  public boolean isSpecialPostCentrifugation() {
-    return false;
   }
 
   public PostCentrifugationDelay getPostCentrifugationDelay() {
@@ -83,7 +78,7 @@ public final class NormalPostCentrifugation extends PostCentrifugation {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    NormalPostCentrifugation other = (NormalPostCentrifugation) obj;
+    ParameterizedPostCentrifugation other = (ParameterizedPostCentrifugation) obj;
     if (postCentrifugationDelay != other.postCentrifugationDelay) {
       return false;
     }

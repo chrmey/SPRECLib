@@ -4,7 +4,7 @@ import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.model.longtermstorage.LongTermStorage;
-import de.spreclib.model.longtermstorage.NormalLongTermStorage;
+import de.spreclib.model.longtermstorage.ParameterizedLongTermStorage;
 
 /**
  * LongTermStorageOption
@@ -30,9 +30,9 @@ public final class LongTermStorageOption extends AbstractListOption {
 
     name.append(NAMES_DEFAULT.getString(longTermStorageType.name()));
 
-    if (this.longTermStorage.isNormalLongTermStorage()) {
+    if (this.longTermStorage.isParameterizedLongTermStorage()) {
 
-      NormalLongTermStorage normalLongTermStorage = (NormalLongTermStorage) this.longTermStorage;
+      ParameterizedLongTermStorage normalLongTermStorage = (ParameterizedLongTermStorage) this.longTermStorage;
 
       LongTermStorageContainer longTermStorageContainer =
           normalLongTermStorage.getLongTermStorageContainer();
@@ -63,14 +63,14 @@ public final class LongTermStorageOption extends AbstractListOption {
       return false;
     }
 
-    if (this.longTermStorage.isNormalLongTermStorage()) {
+    if (this.longTermStorage.isParameterizedLongTermStorage()) {
 
       LongTermStorageTemperature longTermStorageTemperature =
           longTermStorageTemperatureOption.getContainedObject();
       LongTermStorageContainer longTermStorageContainer =
           longTermStorageContainerOption.getContainedObject();
 
-      NormalLongTermStorage normalLongTermStorage = (NormalLongTermStorage) this.longTermStorage;
+      ParameterizedLongTermStorage normalLongTermStorage = (ParameterizedLongTermStorage) this.longTermStorage;
 
       if (normalLongTermStorage.contains(longTermStorageTemperature, longTermStorageContainer)) {
         return true;

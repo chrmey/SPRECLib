@@ -5,7 +5,7 @@ import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 
-public abstract class LongTermStorage implements ISprecPart, IListProvideable {
+public class LongTermStorage implements ISprecPart, IListProvideable {
 
   private final LongTermStorageType longTermStorageType;
   private final ICodePart codePart;
@@ -15,9 +15,9 @@ public abstract class LongTermStorage implements ISprecPart, IListProvideable {
     this.codePart = codePart;
   }
 
-  public abstract boolean isNormalLongTermStorage();
-
-  public abstract boolean isSpecialLongTermStorage();
+  public boolean isParameterizedLongTermStorage() {
+    return false;
+  }
 
   @Override
   public ICodePart getCodeFromSprecPart() {

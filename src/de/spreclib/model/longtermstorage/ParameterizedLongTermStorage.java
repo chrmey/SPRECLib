@@ -5,20 +5,20 @@ import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.model.interfaces.ICodePart;
 
-public final class NormalLongTermStorage extends LongTermStorage {
+public final class ParameterizedLongTermStorage extends LongTermStorage {
 
   private final LongTermStorageContainer longTermStorageContainer;
   private final LongTermStorageTemperature longTermStorageTemperature;
 
   /**
-   * Constructor for LongTermStorage.
+   * Constructor for ParameterizedLongTermStorage.
    *
    * @param longTermStorageType enum LongTermStorageType
    * @param longTermStorageContainer enum LongTermStorageContainer
    * @param longTermStorageTemperature enum LongTermStorageTemperature
    * @param codePart Object CodePart
    */
-  NormalLongTermStorage(
+  ParameterizedLongTermStorage(
       LongTermStorageType longTermStorageType,
       LongTermStorageContainer longTermStorageContainer,
       LongTermStorageTemperature longTermStorageTemperature,
@@ -29,14 +29,10 @@ public final class NormalLongTermStorage extends LongTermStorage {
   }
 
   @Override
-  public boolean isNormalLongTermStorage() {
+  public boolean isParameterizedLongTermStorage() {
     return true;
   }
 
-  @Override
-  public boolean isSpecialLongTermStorage() {
-    return false;
-  }
 
   public LongTermStorageContainer getLongTermStorageContainer() {
     return this.longTermStorageContainer;
@@ -81,7 +77,7 @@ public final class NormalLongTermStorage extends LongTermStorage {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    NormalLongTermStorage other = (NormalLongTermStorage) obj;
+    ParameterizedLongTermStorage other = (ParameterizedLongTermStorage) obj;
     if (longTermStorageContainer != other.longTermStorageContainer) {
       return false;
     }

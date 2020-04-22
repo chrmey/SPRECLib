@@ -3,9 +3,7 @@ package de.spreclib.model.centrifugation;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
-import de.spreclib.model.centrifugation.SpecialCentrifugation;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.sprec.CodePart;
@@ -13,14 +11,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class SpecialCentrifugationTest {
+public class CentrifugationTest {
 
-  SpecialCentrifugation centrifugation;
+  Centrifugation centrifugation;
 
   @Before
   public void setUp() {
     centrifugation =
-        new SpecialCentrifugation(
+        new Centrifugation(
             CentrifugationType.NO, new CodePart("N"));
   }
 
@@ -40,12 +38,8 @@ public class SpecialCentrifugationTest {
   }
 
   @Test
-  public void testIsNormalCentrifugation() {
-    assertFalse(centrifugation.isNormalCentrifugation());
+  public void testIsDefaultCentrifugation() {
+    assertFalse(centrifugation.isParameterizedCentrifugation());
   }
 
-  @Test
-  public void testIsSpecialCentrifugation() {
-    assertTrue(centrifugation.isSpecialCentrifugation());
-  }
 }

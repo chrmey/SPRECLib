@@ -1,3 +1,3 @@
-package de.spreclib.model.centrifugation;
+package de.spreclib.model.enums.centrifugation;
 
 public interface ICentrifugationTemperature {}

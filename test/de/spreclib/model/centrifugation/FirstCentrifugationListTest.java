@@ -22,86 +22,86 @@ public class FirstCentrifugationListTest {
   public void setUp() {
     testList = new HashSet<>();
     testList.add(
-        new SpecialCentrifugation(
+        new Centrifugation(
             CentrifugationType.NO, new CodePart("N")));
     testList.add(
-        new SpecialCentrifugation(
+        new Centrifugation(
             CentrifugationType.UNKNOWN, new CodePart("X")));
     testList.add(
-        new SpecialCentrifugation(
+        new Centrifugation(
             CentrifugationType.OTHER, new CodePart("Z")));
     testList.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
             FirstCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("A")));
     testList.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
             FirstCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("B")));
     testList.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
             FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("C")));
     testList.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
             FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("D")));
     testList.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             FirstCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
             FirstCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("E")));
     testList.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             FirstCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
             FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("F")));
     testList.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             FirstCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
             FirstCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("G")));
     testList.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             FirstCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
             FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("F")));
     testList.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             FirstCentrifugationSpeed.GREATER_TENTHOUSAND_G,
             FirstCentrifugationTemperature.ROOM_TEMPERATURE,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("I")));
     testList.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
             FirstCentrifugationSpeed.GREATER_TENTHOUSAND_G,
             FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("J")));
     testList.add(
-        new NormalCentrifugation(
+        new ParameterizedCentrifugation(
             FirstCentrifugationDuration.THIRTY_MINUTES,
             FirstCentrifugationSpeed.LESS_THOUSAND_G,
             FirstCentrifugationTemperature.ROOM_TEMPERATURE,
@@ -149,19 +149,19 @@ public class FirstCentrifugationListTest {
     int actualSpecialCentrifugations = 0;
 
     for (Centrifugation centrifugation : testList) {
-      if (centrifugation instanceof SpecialCentrifugation) {
+      if (centrifugation instanceof Centrifugation) {
         expectedSpecialCentrifugations++;
       }
-      if (centrifugation instanceof NormalCentrifugation) {
+      if (centrifugation instanceof ParameterizedCentrifugation) {
         expectedNormalCentrifugations++;
       }
     }
 
     for (Centrifugation centrifugation : FirstCentrifugationList.CENTRIFUGATIONS) {
-      if (centrifugation instanceof SpecialCentrifugation) {
+      if (centrifugation instanceof Centrifugation) {
         actualSpecialCentrifugations++;
       }
-      if (centrifugation instanceof NormalCentrifugation) {
+      if (centrifugation instanceof ParameterizedCentrifugation) {
         actualNormalCentrifugations++;
       }
     }

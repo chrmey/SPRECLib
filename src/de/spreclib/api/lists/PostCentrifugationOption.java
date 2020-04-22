@@ -3,7 +3,7 @@ package de.spreclib.api.lists;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
-import de.spreclib.model.postcentrifugation.NormalPostCentrifugation;
+import de.spreclib.model.postcentrifugation.ParameterizedPostCentrifugation;
 import de.spreclib.model.postcentrifugation.PostCentrifugation;
 
 /**
@@ -31,10 +31,10 @@ public final class PostCentrifugationOption extends AbstractListOption {
 
     name.append(NAMES_DEFAULT.getString(postCentrifugationType.name()));
 
-    if (this.postCentrifugation.isNormalPostCentrifugation()) {
+    if (this.postCentrifugation.isDefaultPostCentrifugation()) {
 
-      NormalPostCentrifugation normalPostCentrifugation =
-          (NormalPostCentrifugation) this.postCentrifugation;
+      ParameterizedPostCentrifugation normalPostCentrifugation =
+          (ParameterizedPostCentrifugation) this.postCentrifugation;
 
       PostCentrifugationTemperature postCentrifugationTemperature =
           normalPostCentrifugation.getPostCentrifugationTemperature();
@@ -65,15 +65,15 @@ public final class PostCentrifugationOption extends AbstractListOption {
       return false;
     }
 
-    if (this.postCentrifugation.isNormalPostCentrifugation()) {
+    if (this.postCentrifugation.isDefaultPostCentrifugation()) {
 
       PostCentrifugationTemperature postCentrifugationTemperature =
           postCentrifugationTemperatureOption.getContainedObject();
       PostCentrifugationDelay postCentrifugationDelay =
           postCentrifugationDelayOption.getContainedObject();
 
-      NormalPostCentrifugation normalPostCentrifugation =
-          (NormalPostCentrifugation) this.postCentrifugation;
+      ParameterizedPostCentrifugation normalPostCentrifugation =
+          (ParameterizedPostCentrifugation) this.postCentrifugation;
 
       if (normalPostCentrifugation.contains(
           postCentrifugationTemperature, postCentrifugationDelay)) {

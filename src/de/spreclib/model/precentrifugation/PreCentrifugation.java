@@ -5,7 +5,7 @@ import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 
-public abstract class PreCentrifugation implements ISprecPart, IListProvideable {
+public class PreCentrifugation implements ISprecPart, IListProvideable {
 
   private final PreCentrifugationType preCentrifugationType;
   private final ICodePart codePart;
@@ -15,9 +15,9 @@ public abstract class PreCentrifugation implements ISprecPart, IListProvideable 
     this.codePart = codePart;
   }
 
-  public abstract boolean isNormalPreCentrifugation();
-
-  public abstract boolean isSpecialPreCentrifugation();
+  public boolean isParameterizedPreCentrifugation() {
+    return false;
+  }
 
   @Override
   public ICodePart getCodeFromSprecPart() {

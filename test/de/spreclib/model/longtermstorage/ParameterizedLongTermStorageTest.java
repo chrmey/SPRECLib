@@ -7,20 +7,20 @@ import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.longtermstorage.NormalLongTermStorage;
+import de.spreclib.model.longtermstorage.ParameterizedLongTermStorage;
 import de.spreclib.model.sprec.CodePart;
 import org.junit.Before;
 import org.junit.Test;
 
 
-public class NormalLongTermStorageTest {
+public class ParameterizedLongTermStorageTest {
 
-  NormalLongTermStorage normalLongTermStorage;
+  ParameterizedLongTermStorage parameterizedLongTermStorage;
 
   @Before
   public void setUp() {
-    normalLongTermStorage =
-        new NormalLongTermStorage(
+    parameterizedLongTermStorage =
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
@@ -30,13 +30,13 @@ public class NormalLongTermStorageTest {
   @Test
   public void testGetLongTermStorageType() {
     LongTermStorageType expected = LongTermStorageType.DEFAULT;
-    assertEquals(expected, normalLongTermStorage.getLongTermStorageType());
+    assertEquals(expected, parameterizedLongTermStorage.getLongTermStorageType());
   }
 
   @Test
   public void testGetCodeFromSprecPart() {
     ICodePart expected = new CodePart("A");
-    ICodePart actual = normalLongTermStorage.getCodeFromSprecPart();
+    ICodePart actual = parameterizedLongTermStorage.getCodeFromSprecPart();
     assertNotNull(actual);
     assertEquals(expected.getStringRepresentation(), actual.getStringRepresentation());
     assertEquals(expected, actual);
@@ -45,7 +45,7 @@ public class NormalLongTermStorageTest {
   @Test
   public void testGetLongTermStorageContainer() {
     LongTermStorageContainer expected = LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML;
-    LongTermStorageContainer actual = normalLongTermStorage.getLongTermStorageContainer();
+    LongTermStorageContainer actual = parameterizedLongTermStorage.getLongTermStorageContainer();
     assertEquals(expected, actual);
   }
 
@@ -53,7 +53,7 @@ public class NormalLongTermStorageTest {
   public void testGetLongTermStorageTemperature() {
     LongTermStorageTemperature expected =
         LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES;
-    LongTermStorageTemperature actual = normalLongTermStorage.getLongTermStorageTemperature();
+    LongTermStorageTemperature actual = parameterizedLongTermStorage.getLongTermStorageTemperature();
     assertEquals(expected, actual);
   }
 }

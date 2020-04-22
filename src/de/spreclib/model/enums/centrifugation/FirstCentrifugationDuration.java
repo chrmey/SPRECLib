@@ -1,6 +1,5 @@
 package de.spreclib.model.enums.centrifugation;
 
-import de.spreclib.model.centrifugation.ICentrifugationDuration;
 import de.spreclib.model.interfaces.IListProvideable;
 
 public enum FirstCentrifugationDuration implements ICentrifugationDuration, IListProvideable {

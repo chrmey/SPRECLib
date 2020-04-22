@@ -2,9 +2,12 @@ package de.spreclib.model.centrifugation;
 
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import de.spreclib.model.enums.centrifugation.CentrifugationType;
+import de.spreclib.model.enums.centrifugation.ICentrifugationDuration;
+import de.spreclib.model.enums.centrifugation.ICentrifugationSpeed;
+import de.spreclib.model.enums.centrifugation.ICentrifugationTemperature;
 import de.spreclib.model.interfaces.ICodePart;
 
-public final class NormalCentrifugation extends Centrifugation {
+public final class ParameterizedCentrifugation extends Centrifugation {
 
   private static final CentrifugationType CENTRIFUGATION_TYPE = CentrifugationType.DEFAULT;
   private final ICentrifugationDuration centrifugationDuration;
@@ -13,7 +16,7 @@ public final class NormalCentrifugation extends Centrifugation {
   private final CentrifugationBraking centrifugationBraking;
 
   /**
-   * Constructor for NormalCentrifugation.
+   * Constructor for ParameterizedCentrifugation.
    *
    * @param centrifugationDuration enum CentrifugationDuration
    * @param centrifugationSpeed enum CentrifugationSpeed
@@ -23,7 +26,7 @@ public final class NormalCentrifugation extends Centrifugation {
    * @param sprecPartType enum SprecPartType -> needed for differention between first and second
    *     centrifugation
    */
-  NormalCentrifugation(
+  ParameterizedCentrifugation(
       ICentrifugationDuration centrifugationDuration,
       ICentrifugationSpeed centrifugationSpeed,
       ICentrifugationTemperature centrifugationTemperature,
@@ -37,13 +40,8 @@ public final class NormalCentrifugation extends Centrifugation {
   }
 
   @Override
-  public boolean isNormalCentrifugation() {
+  public boolean isParameterizedCentrifugation() {
     return true;
-  }
-
-  @Override
-  public boolean isSpecialCentrifugation() {
-    return false;
   }
 
   public ICentrifugationDuration getCentrifugationDuration() {
@@ -104,7 +102,7 @@ public final class NormalCentrifugation extends Centrifugation {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    NormalCentrifugation other = (NormalCentrifugation) obj;
+    ParameterizedCentrifugation other = (ParameterizedCentrifugation) obj;
     if (centrifugationBraking != other.centrifugationBraking) {
       return false;
     }

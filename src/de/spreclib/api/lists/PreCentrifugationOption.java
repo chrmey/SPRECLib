@@ -3,7 +3,7 @@ package de.spreclib.api.lists;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
-import de.spreclib.model.precentrifugation.NormalPreCentrifugation;
+import de.spreclib.model.precentrifugation.ParameterizedPreCentrifugation;
 import de.spreclib.model.precentrifugation.PreCentrifugation;
 
 /**
@@ -30,10 +30,10 @@ public final class PreCentrifugationOption extends AbstractListOption {
 
     name.append(NAMES_DEFAULT.getString(preCentrifugationType.name()));
 
-    if (this.preCentrifugation.isNormalPreCentrifugation()) {
+    if (this.preCentrifugation.isParameterizedPreCentrifugation()) {
 
-      NormalPreCentrifugation normalPreCentrifugation =
-          (NormalPreCentrifugation) this.preCentrifugation;
+      ParameterizedPreCentrifugation normalPreCentrifugation =
+          (ParameterizedPreCentrifugation) this.preCentrifugation;
 
       PreCentrifugationTemperature preCentrifugationTemperature =
           normalPreCentrifugation.getPreCentrifugationTemperature();
@@ -64,15 +64,15 @@ public final class PreCentrifugationOption extends AbstractListOption {
       return false;
     }
     
-    if (this.preCentrifugation.isNormalPreCentrifugation()) {
+    if (this.preCentrifugation.isParameterizedPreCentrifugation()) {
 
       PreCentrifugationTemperature preCentrifugationTemperature =
           preCentrifugationTemperatureOption.getContainedObject();
       PreCentrifugationDelay preCentrifugationDelay =
           preCentrifugationDelayOption.getContainedObject();
 
-      NormalPreCentrifugation normalPreCentrifugation =
-          (NormalPreCentrifugation) this.preCentrifugation;
+      ParameterizedPreCentrifugation normalPreCentrifugation =
+          (ParameterizedPreCentrifugation) this.preCentrifugation;
 
       if (normalPreCentrifugation.contains(preCentrifugationTemperature, preCentrifugationDelay)) {
         return true;
