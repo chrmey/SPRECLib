@@ -34,6 +34,12 @@ public class SolidSample implements ISample {
     this.validateParts();
   }
 
+  /**
+   * Validates if passed parts are in the sprec standard. Throws InvalidPartValueException if part
+   * is not in SPREC to prevent "selfmade" part values.
+   *
+   * @throws InvalidPartValueException if a passed part is not in SPREC.
+   */
   private void validateParts() {
 
     if (this.solidSampleType != null && !SolidSampleType.contains(this.solidSampleType)) {

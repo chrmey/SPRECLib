@@ -1,6 +1,6 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.exceptions.InvalidValueCombinationException;
+import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.model.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.postcentrifugation.PostCentrifugationList;
 import java.util.ArrayList;
@@ -35,17 +35,18 @@ public final class PostCentrifugationListProvider
 
   /**
    * Takes all parameters for PostCentrifugation and returns an option if a PostCentrifugation with
-   * that combination is found. Returns null otherwise.
+   * that combination is found.
    *
    * @param postCentrifugationTemperatureOption PostCentrifugationTemperatureOption
    * @param postCentrifugationDelayOption PostCentrifugationDelayOption
    * @return PostCentrifugationOption
-   * @throws InvalidValueCombinationException if parameter cannot be found in ListOptions
+   * @throws UndefinedValueCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
   public PostCentrifugationOption valueOf(
       PostCentrifugationTemperatureOption postCentrifugationTemperatureOption,
-      PostCentrifugationDelayOption postCentrifugationDelayOption) {
+      PostCentrifugationDelayOption postCentrifugationDelayOption)
+      throws UndefinedValueCombinationException {
 
     if (postCentrifugationTemperatureOption == null) {
       throw new IllegalArgumentException("PostCentrifugationTemperatureOption cannot not be null.");
@@ -64,7 +65,7 @@ public final class PostCentrifugationListProvider
       }
     }
 
-    throw new InvalidValueCombinationException(
-        "Parameter combination for PostCentrifugation is no valid combination.");
+    throw new UndefinedValueCombinationException(
+        "Parameter combination for PostCentrifugation is undefined in SPREC.");
   }
 }

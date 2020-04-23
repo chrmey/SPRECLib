@@ -1,6 +1,6 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.exceptions.InvalidValueCombinationException;
+import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import java.util.ArrayList;
@@ -35,21 +35,22 @@ public final class FirstCentrifugationListProvider
 
   /**
    * Takes all parameters for FirstCentrifugation and returns an option if a FirstCentrifugation
-   * with that combination is found. Returns null otherwise.
+   * with that combination is found.
    *
    * @param firstCentrifugationTemperatureOption FirstCentrifugationTemperatureOption
    * @param firstCentrifugationDurationOption FirstCentrifugationDurationOption
    * @param firstCentrifugationSpeedOption FirstCentrifugationSpeedOption
    * @param firstCentrifugationBrakingOption FirstCentrifugationBrakingOption
    * @return FirstCentrifugationOption
-   * @throws InvalidValueCombinationException if parameter cannot be found in ListOptions
+   * @throws UndefinedValueCombinationException if value combination cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
   public FirstCentrifugationOption valueOf(
       FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption,
       FirstCentrifugationDurationOption firstCentrifugationDurationOption,
       FirstCentrifugationSpeedOption firstCentrifugationSpeedOption,
-      FirstCentrifugationBrakingOption firstCentrifugationBrakingOption) {
+      FirstCentrifugationBrakingOption firstCentrifugationBrakingOption)
+      throws UndefinedValueCombinationException {
 
     if (firstCentrifugationTemperatureOption == null) {
       throw new IllegalArgumentException("FirstCentrifugationTemperatureOption cannot be null");
@@ -76,7 +77,7 @@ public final class FirstCentrifugationListProvider
         return firstCentrifugationOption;
       }
     }
-    throw new InvalidValueCombinationException(
-        "Parameter combination for FirstCentrifugation is no valid combination.");
+    throw new UndefinedValueCombinationException(
+        "Value combination for FirstCentrifugation is undefined in SPREC.");
   }
 }

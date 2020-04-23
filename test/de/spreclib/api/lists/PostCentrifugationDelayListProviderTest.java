@@ -3,8 +3,8 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import java.util.List;
@@ -35,7 +35,7 @@ public class PostCentrifugationDelayListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValue() {
+  public void testValueOfWithValidValue() throws UndefinedValueException {
 
     PostCentrifugationDelayOption delayOption =
         this.postCentrifugationDelayListProvider.valueOf(15);
@@ -43,17 +43,14 @@ public class PostCentrifugationDelayListProviderTest {
     assertNotNull(delayOption);
   }
 
-  @Test
-  public void testValueOfWithInvalidValue() {
+  @Test(expected = UndefinedValueException.class)
+  public void testValueOfWithInvalidValue() throws UndefinedValueException {
 
-    PostCentrifugationDelayOption delayOption =
-        this.postCentrifugationDelayListProvider.valueOf(-1);
-
-    assertNull(delayOption);
+    this.postCentrifugationDelayListProvider.valueOf(-1);
   }
 
   @Test
-  public void testValueOfWithTimestamps() {
+  public void testValueOfWithTimestamps() throws UndefinedValueException {
 
     long startTime = 1577836800000L;
     long fifteenMinutesLater = 1577837700000L;
@@ -65,7 +62,7 @@ public class PostCentrifugationDelayListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnOneToTwoHours() {
+  public void testValueOfShouldReturnOneToTwoHours() throws UndefinedValueException {
 
     PostCentrifugationDelayOption postCentrifugationDelayOption =
         this.postCentrifugationDelayListProvider.valueOf(119);
@@ -76,7 +73,7 @@ public class PostCentrifugationDelayListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnTwoToEightHours() {
+  public void testValueOfShouldReturnTwoToEightHours() throws UndefinedValueException {
 
     PostCentrifugationDelayOption postCentrifugationDelayOption =
         this.postCentrifugationDelayListProvider.valueOf(120);
@@ -87,7 +84,7 @@ public class PostCentrifugationDelayListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnGreater24Hours() {
+  public void testValueOfShouldReturnGreater24Hours() throws UndefinedValueException {
 
     PostCentrifugationDelayOption postCentrifugationDelayOption =
         this.postCentrifugationDelayListProvider.valueOf(1140);

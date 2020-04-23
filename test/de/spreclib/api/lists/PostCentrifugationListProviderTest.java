@@ -3,7 +3,8 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-
+import de.spreclib.api.exceptions.UndefinedValueCombinationException;
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.sprec.CodePart;
@@ -35,7 +36,8 @@ public class PostCentrifugationListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValues() {
+  public void testValueOfWithValidValues()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     PostCentrifugationTemperatureOption temperatureOption =
         new PostCentrifugationTemperatureListProvider().valueOf(new Temperature(10f));
@@ -50,7 +52,8 @@ public class PostCentrifugationListProviderTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testValueOfWithTemperatureOptionisNull() {
+  public void testValueOfWithTemperatureOptionisNull()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     PostCentrifugationDelayOption delayOption =
         new PostCentrifugationDelayListProvider().valueOf(15);
@@ -59,7 +62,8 @@ public class PostCentrifugationListProviderTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testValueOfWithDelayOptionisNull() {
+  public void testValueOfWithDelayOptionisNull()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     PostCentrifugationTemperatureOption temperatureOption =
         new PostCentrifugationTemperatureListProvider().valueOf(new Temperature(10f));
@@ -68,7 +72,8 @@ public class PostCentrifugationListProviderTest {
   }
 
   @Test
-  public void TestValueOfShouldReturnCodeA() {
+  public void TestValueOfShouldReturnCodeA()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     PostCentrifugationTemperatureOption temperatureOption =
         new PostCentrifugationTemperatureListProvider().valueOf(new Temperature(10f));
@@ -84,7 +89,8 @@ public class PostCentrifugationListProviderTest {
   }
 
   @Test
-  public void TestValueOfShouldReturnCodeJ() {
+  public void TestValueOfShouldReturnCodeJ()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     PostCentrifugationTemperatureOption temperatureOption =
         new PostCentrifugationTemperatureListProvider().valueOf(new Temperature(18f));

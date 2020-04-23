@@ -1,5 +1,6 @@
 package de.spreclib.api.lists;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationSpeed;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,18 +34,22 @@ public final class SecondCentrifugationSpeedListProvider
 
   /**
    * Takes a speed in G integer and returns a SecondCentrifugationSpeedOption if a
-   * SecondCentrifugationSpeedOption with that speed is found. Returns null otherwise.
+   * SecondCentrifugationSpeedOption with that speed is found.
    *
    * @param speed Centrifugation speed in g
    * @return SecondCentrifugationSpeedOption
+   * @throws UndefinedValueException if value for speed cannot be found in ListOptions
    */
-  public SecondCentrifugationSpeedOption valueOf(int speed) {
+  public SecondCentrifugationSpeedOption valueOf(int speed) throws UndefinedValueException {
     for (SecondCentrifugationSpeedOption secondCentrifugationSpeedOption : this.listOptions) {
 
       if (secondCentrifugationSpeedOption.hasSpeed(speed)) {
         return secondCentrifugationSpeedOption;
       }
     }
-    return null;
+    throw new UndefinedValueException(
+        speed,
+        "SecondCentrifugationSpeed",
+        "Value " + speed + "g undefined for SecondCentrifugationSpeed.");
   }
 }

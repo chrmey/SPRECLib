@@ -1,6 +1,6 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.exceptions.InvalidValueCombinationException;
+import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.model.precentrifugation.PreCentrifugation;
 import de.spreclib.model.precentrifugation.PreCentrifugationList;
 import java.util.ArrayList;
@@ -35,17 +35,18 @@ public final class PreCentrifugationListProvider
 
   /**
    * Takes all parameters for PreCentrifugation and returns an option if a PreCentrifugation with
-   * that combination is found. Returns null otherwise.
- * @param preCentrifugationDelayOption PreCentrifugationDelayOption
- * @param preCentrifugationTemperatureOption PreCentrifugationTemperatureOption
+   * that combination is found.
    *
+   * @param preCentrifugationDelayOption PreCentrifugationDelayOption
+   * @param preCentrifugationTemperatureOption PreCentrifugationTemperatureOption
    * @return PreCentrifugationOption
-   * @throws InvalidValueCombinationException if parameter cannot be found in ListOptions
+   * @throws UndefinedValueCombinationException if parameter cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
   public PreCentrifugationOption valueOf(
       PreCentrifugationDelayOption preCentrifugationDelayOption,
-      PreCentrifugationTemperatureOption preCentrifugationTemperatureOption) {
+      PreCentrifugationTemperatureOption preCentrifugationTemperatureOption)
+      throws UndefinedValueCombinationException {
 
     if (preCentrifugationTemperatureOption == null) {
       throw new IllegalArgumentException("PreCentrifugationTemperatureOption cannot not be null.");
@@ -64,7 +65,7 @@ public final class PreCentrifugationListProvider
       }
     }
 
-    throw new InvalidValueCombinationException(
-        "Parameter combination for PreCentrifugation is no valid combination.");
+    throw new UndefinedValueCombinationException(
+        "Parameter combination for PreCentrifugation is undefined in SPREC.");
   }
 }

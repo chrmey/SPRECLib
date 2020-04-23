@@ -1,6 +1,6 @@
 package de.spreclib.api.lists;
 
-import de.spreclib.api.exceptions.InvalidValueCombinationException;
+import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.longtermstorage.LongTermStorageList;
 import java.util.ArrayList;
@@ -31,17 +31,18 @@ public final class LongTermStorageListProvider extends AbstractListProvider<Long
 
   /**
    * Takes all parameters for LongTermStorage and returns an option if a LongTermStorage with that
-   * combination is found. Returns null otherwise.
+   * combination is found.
    *
    * @param longTermStorageTemperatureOption LongTermStorageTemperatureOption
    * @param longTermStorageContainerOption LongTermStorageContainerOption
    * @return LongTermStorageOption
-   * @throws InvalidValueCombinationException if parameter cannot be found in ListOptions
+   * @throws UndefinedValueCombinationException if value combination cannot be found in ListOptions
    * @throws IllegalArgumentException if parameter is null
    */
   public LongTermStorageOption valueOf(
       LongTermStorageTemperatureOption longTermStorageTemperatureOption,
-      LongTermStorageContainerOption longTermStorageContainerOption) {
+      LongTermStorageContainerOption longTermStorageContainerOption)
+      throws UndefinedValueCombinationException {
 
     if (longTermStorageTemperatureOption == null) {
       throw new IllegalArgumentException("LongTermStorageTemperatureOption cannot not be null.");
@@ -60,7 +61,7 @@ public final class LongTermStorageListProvider extends AbstractListProvider<Long
       }
     }
 
-    throw new InvalidValueCombinationException(
-        "Parameter combination for LongTermStorage is no valid combination.");
+    throw new UndefinedValueCombinationException(
+        "Value combination for LongTermStorage is undefined in SPREC.");
   }
 }

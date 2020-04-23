@@ -3,8 +3,8 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.model.enums.WarmIschemiaTime;
 import java.util.List;
@@ -35,23 +35,21 @@ public class WarmIschemiaTimeListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValue() {
+  public void testValueOfWithValidValue() throws UndefinedValueException {
 
     WarmIschemiaTimeOption warmIschemiaTimeOption = this.warmIschemiaTimeListProvider.valueOf(15);
 
     assertNotNull(warmIschemiaTimeOption);
   }
 
-  @Test
-  public void testValueOfWithinalidValue() {
+  @Test(expected = UndefinedValueException.class)
+  public void testValueOfWithinalidValue() throws UndefinedValueException {
 
-    WarmIschemiaTimeOption warmIschemiaTimeOption = this.warmIschemiaTimeListProvider.valueOf(-15);
-
-    assertNull(warmIschemiaTimeOption);
+    this.warmIschemiaTimeListProvider.valueOf(-15);
   }
 
   @Test
-  public void testValueOfWithTimestamps() {
+  public void testValueOfWithTimestamps() throws UndefinedValueException {
 
     long startTime = 1577836800000L;
     long fifteenMinutesLater = 1577837700000L;
@@ -63,7 +61,7 @@ public class WarmIschemiaTimeListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnLessTwoMinutes() {
+  public void testValueOfShouldReturnLessTwoMinutes() throws UndefinedValueException {
 
     WarmIschemiaTimeOption warmIschemiaTimeOption = this.warmIschemiaTimeListProvider.valueOf(1);
 
@@ -71,7 +69,7 @@ public class WarmIschemiaTimeListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnTwoToTenMinutes() {
+  public void testValueOfShouldReturnTwoToTenMinutes() throws UndefinedValueException {
 
     WarmIschemiaTimeOption warmIschemiaTimeOption = this.warmIschemiaTimeListProvider.valueOf(3);
 
@@ -79,7 +77,7 @@ public class WarmIschemiaTimeListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnGreaterSixtyMinutes() {
+  public void testValueOfShouldReturnGreaterSixtyMinutes() throws UndefinedValueException {
 
     WarmIschemiaTimeOption warmIschemiaTimeOption = this.warmIschemiaTimeListProvider.valueOf(60);
 

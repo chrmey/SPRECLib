@@ -4,7 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
-import de.spreclib.api.exceptions.InvalidValueCombinationException;
+import de.spreclib.api.exceptions.UndefinedValueCombinationException;
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.sprec.CodePart;
@@ -36,7 +37,8 @@ public class PreCentrifugationListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValues() {
+  public void testValueOfWithValidValues()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     PreCentrifugationTemperatureOption temperatureOption =
         new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(10f));
@@ -50,7 +52,8 @@ public class PreCentrifugationListProviderTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testValueOfWithTemperatureOptionisNull() {
+  public void testValueOfWithTemperatureOptionisNull()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     PreCentrifugationDelayOption delayOption = new PreCentrifugationDelayListProvider().valueOf(15);
 
@@ -58,7 +61,8 @@ public class PreCentrifugationListProviderTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testValueOfWithDelayOptionisNull() {
+  public void testValueOfWithDelayOptionisNull()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     PreCentrifugationTemperatureOption temperatureOption =
         new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(10f));
@@ -66,8 +70,9 @@ public class PreCentrifugationListProviderTest {
     this.preCentrifugationListProvider.valueOf(null, temperatureOption);
   }
 
-  @Test(expected = InvalidValueCombinationException.class)
-  public void testWithInvalidParameterCombination() {
+  @Test(expected = UndefinedValueCombinationException.class)
+  public void testWithInvalidParameterCombination()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     PreCentrifugationTemperatureOption temperatureOption =
         new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(35f));
@@ -79,7 +84,8 @@ public class PreCentrifugationListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnCodeA() {
+  public void testValueOfShouldReturnCodeA()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     PreCentrifugationTemperatureOption temperatureOption =
         new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(18f));
@@ -94,7 +100,8 @@ public class PreCentrifugationListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnCodeN() {
+  public void testValueOfShouldReturnCodeN()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     PreCentrifugationTemperatureOption temperatureOption =
         new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(10f));

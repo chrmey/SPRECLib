@@ -12,13 +12,6 @@ public final class ParameterizedPreCentrifugation extends PreCentrifugation {
   private final PreCentrifugationDelay preCentrifugationDelay;
   private final PreCentrifugationTemperature preCentrifugationTemperature;
 
-  /**
-   * Constructor for DefaultPreCentrifugation.
-   *
-   * @param preCentrifugationDelay enum PreCentrifugationDelay
-   * @param preCentrifugationTemperature enum PreCentrifugationTemperature
-   * @param codePart Object CodePart
-   */
   ParameterizedPreCentrifugation(
       PreCentrifugationDelay preCentrifugationDelay,
       PreCentrifugationTemperature preCentrifugationTemperature,

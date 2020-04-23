@@ -3,8 +3,8 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
@@ -36,7 +36,7 @@ public class PreCentrifugationTemperatureListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValues() {
+  public void testValueOfWithValidValues() throws UndefinedValueException {
 
     PreCentrifugationTemperatureOption temperatureOption =
         this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(10.9999f));
@@ -44,26 +44,20 @@ public class PreCentrifugationTemperatureListProviderTest {
     assertNotNull(temperatureOption);
   }
 
-  @Test
-  public void testValueOfWithInvalidValue() {
+  @Test(expected = UndefinedValueException.class)
+  public void testValueOfWithInvalidValue() throws UndefinedValueException {
 
-    PreCentrifugationTemperatureOption temperatureOption =
-        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(100f));
+    this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(100f));
+  }
 
-    assertNull(temperatureOption);
+  @Test(expected = IllegalArgumentException.class)
+  public void testValueOfWithNullValue() throws UndefinedValueException {
+
+    this.preCentrifugationTemperatureListProvider.valueOf(null);
   }
 
   @Test
-  public void testValueOfWithNullValue() {
-
-    PreCentrifugationTemperatureOption temperatureOption =
-        this.preCentrifugationTemperatureListProvider.valueOf(null);
-
-    assertNull(temperatureOption);
-  }
-
-  @Test
-  public void testValueOfShouldReturnRoomtemperature() {
+  public void testValueOfShouldReturnRoomtemperature() throws UndefinedValueException {
 
     PreCentrifugationTemperatureOption temperatureOption =
         this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(28.9999f));

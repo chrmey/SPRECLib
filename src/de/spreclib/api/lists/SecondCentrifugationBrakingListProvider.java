@@ -1,5 +1,6 @@
 package de.spreclib.api.lists;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,12 +34,13 @@ public final class SecondCentrifugationBrakingListProvider
 
   /**
    * Takes a boolean and returns a SecondCentrifugationBrakingOption if a
-   * SecondCentrifugationBrakingOption with that is found. Returns null otherwise.
+   * SecondCentrifugationBrakingOption with that is found.
    *
    * @param braking boolean
    * @return SecondCentrifugationBrakingOption
+   * @throws UndefinedValueException if value for braking cannot be found
    */
-  public SecondCentrifugationBrakingOption valueOf(boolean braking) {
+  public SecondCentrifugationBrakingOption valueOf(boolean braking) throws UndefinedValueException {
 
     for (SecondCentrifugationBrakingOption secondCentrifugationBrakingOption : this.listOptions) {
 
@@ -46,6 +48,9 @@ public final class SecondCentrifugationBrakingListProvider
         return secondCentrifugationBrakingOption;
       }
     }
-    return null;
+    throw new UndefinedValueException(
+        braking,
+        "SecondCentrifugationBraking",
+        "Value " + braking + " is undefined for SecondCentrifugationBraking.");
   }
 }

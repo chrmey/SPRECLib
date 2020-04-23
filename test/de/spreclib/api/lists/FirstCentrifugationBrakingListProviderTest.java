@@ -3,7 +3,7 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import java.util.List;
@@ -34,7 +34,7 @@ public class FirstCentrifugationBrakingListProviderTest {
   }
 
   @Test
-  public void testWithValidValue() {
+  public void testWithValidValue() throws UndefinedValueException {
 
     FirstCentrifugationBrakingOption brakingOption =
         this.firstCentrifugationBrakingListProvider.valueOf(true);
@@ -43,7 +43,7 @@ public class FirstCentrifugationBrakingListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnWithBraking() {
+  public void testValueOfShouldReturnWithBraking() throws UndefinedValueException {
 
     FirstCentrifugationBrakingOption brakingOption =
         this.firstCentrifugationBrakingListProvider.valueOf(true);
@@ -52,7 +52,7 @@ public class FirstCentrifugationBrakingListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnNoBraking() {
+  public void testValueOfShouldReturnNoBraking() throws UndefinedValueException {
 
     FirstCentrifugationBrakingOption brakingOption =
         this.firstCentrifugationBrakingListProvider.valueOf(false);

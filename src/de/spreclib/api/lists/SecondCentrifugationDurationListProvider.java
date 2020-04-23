@@ -1,5 +1,6 @@
 package de.spreclib.api.lists;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationDuration;
 import java.util.ArrayList;
@@ -35,15 +36,18 @@ public final class SecondCentrifugationDurationListProvider
 
   /**
    * Takes two timestamps milliseconds EPOCH time and returns a SecondCentrifugationDurationOption
-   * if a SecondCentrifugationDurationOption with that timespan is found. Returns null otherwise.
+   * if a SecondCentrifugationDurationOption with that timespan is found.
    *
    * @param secondCentrifugationStartTimeMillis timestamp milliseconds EPOCH time
    * @param secondCentrifugationEndTimeMillis timestamp milliseconds EPOCH time
    * @return SecondCentrifugationDurationOption
+   * @throws UndefinedValueException if value for the duration cannot be found in ListOptions
    * @see #valueOf(int)
+   * @see de.spreclib.api.parameters.timespan
    */
   public SecondCentrifugationDurationOption valueOf(
-      long secondCentrifugationStartTimeMillis, long secondCentrifugationEndTimeMillis) {
+      long secondCentrifugationStartTimeMillis, long secondCentrifugationEndTimeMillis)
+      throws UndefinedValueException {
 
     int durationMinutes =
         new Timespan(secondCentrifugationStartTimeMillis, secondCentrifugationEndTimeMillis)
@@ -54,18 +58,23 @@ public final class SecondCentrifugationDurationListProvider
 
   /**
    * Takes a duration in minutes and returns a SecondCentrifugationDurationOption if a
-   * SecondCentrifugationDurationOption with that duration is found. Returns null otherwise
+   * SecondCentrifugationDurationOption with that duration is found.
    *
    * @param durationMinutes duration in Minutes
    * @return SecondCentrifugationDurationOption
+   * @throws UndefinedValueException if value for the duration cannot be found in ListOptions
    */
-  public SecondCentrifugationDurationOption valueOf(int durationMinutes) {
+  public SecondCentrifugationDurationOption valueOf(int durationMinutes)
+      throws UndefinedValueException {
     for (SecondCentrifugationDurationOption secondCentrifugationDurationOption : this.listOptions) {
 
       if (secondCentrifugationDurationOption.hasDuration(durationMinutes)) {
         return secondCentrifugationDurationOption;
       }
     }
-    return null;
+    throw new UndefinedValueException(
+        durationMinutes,
+        "SecondCentrifugationDuration",
+        "Value " + durationMinutes + "minutes is undefined for SecondCentrifugationDuration.");
   }
 }

@@ -3,8 +3,8 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
 import java.util.List;
@@ -35,23 +35,21 @@ public class PreCentrifugationDelayListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValue() {
+  public void testValueOfWithValidValue() throws UndefinedValueException {
 
     PreCentrifugationDelayOption delayOption = this.preCentrifugationDelayListProvider.valueOf(15);
 
     assertNotNull(delayOption);
   }
 
-  @Test
-  public void testValueOfWithInvalidValue() {
+  @Test(expected = UndefinedValueException.class)
+  public void testValueOfWithInvalidValue() throws UndefinedValueException {
 
-    PreCentrifugationDelayOption delayOption = this.preCentrifugationDelayListProvider.valueOf(-1);
-
-    assertNull(delayOption);
+    this.preCentrifugationDelayListProvider.valueOf(-1);
   }
 
   @Test
-  public void testValueOfWithTimestamps() {
+  public void testValueOfWithTimestamps() throws UndefinedValueException {
 
     long startTime = 1577836800000L;
     long fifteenMinutesLater = 1577837700000L;
@@ -63,7 +61,7 @@ public class PreCentrifugationDelayListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnLessTwoHours() {
+  public void testValueOfShouldReturnLessTwoHours() throws UndefinedValueException {
 
     PreCentrifugationDelayOption delayOption = this.preCentrifugationDelayListProvider.valueOf(59);
 
@@ -71,7 +69,7 @@ public class PreCentrifugationDelayListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnGreaterEightyfourHours() {
+  public void testValueOfShouldReturnGreaterEightyfourHours() throws UndefinedValueException {
 
     PreCentrifugationDelayOption delayOption =
         this.preCentrifugationDelayListProvider.valueOf(2880);

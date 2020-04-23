@@ -3,8 +3,8 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
 import java.util.List;
@@ -35,7 +35,7 @@ public class FirstCentrifugationDurationListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValue() {
+  public void testValueOfWithValidValue() throws UndefinedValueException {
 
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
         this.firstCentrifugationDurationListProvider.valueOf(15);
@@ -43,17 +43,14 @@ public class FirstCentrifugationDurationListProviderTest {
     assertNotNull(firstCentrifugationDurationOption);
   }
 
-  @Test
-  public void testValueOfWithInvalidValue() {
+  @Test(expected = UndefinedValueException.class)
+  public void testValueOfWithInvalidValue() throws UndefinedValueException {
 
-    FirstCentrifugationDurationOption firstCentrifugationDurationOption =
-        this.firstCentrifugationDurationListProvider.valueOf(100);
-
-    assertNull(firstCentrifugationDurationOption);
+    this.firstCentrifugationDurationListProvider.valueOf(100);
   }
 
   @Test
-  public void testValueOfWithTimestamps() {
+  public void testValueOfWithTimestamps() throws UndefinedValueException {
 
     long startTime = 1577836800000L;
     long fifteenMinutesLater = 1577837700000L;
@@ -65,7 +62,7 @@ public class FirstCentrifugationDurationListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturn10To15Minutes() {
+  public void testValueOfShouldReturn10To15Minutes() throws UndefinedValueException {
 
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
         this.firstCentrifugationDurationListProvider.valueOf(10);
@@ -76,7 +73,7 @@ public class FirstCentrifugationDurationListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturn30Minutes() {
+  public void testValueOfShouldReturn30Minutes() throws UndefinedValueException {
 
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
         this.firstCentrifugationDurationListProvider.valueOf(30);

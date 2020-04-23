@@ -15,16 +15,6 @@ public final class ParameterizedCentrifugation extends Centrifugation {
   private final ICentrifugationSpeed centrifugationSpeed;
   private final CentrifugationBraking centrifugationBraking;
 
-  /**
-   * Constructor for ParameterizedCentrifugation.
-   *
-   * @param centrifugationTemperature enum CentrifugationTemperature
-   * @param centrifugationDuration enum CentrifugationDuration
-   * @param centrifugationSpeed enum CentrifugationSpeed
-   * @param centrifugationBraking enum CentrifugationBraking
-   * @param codePart object CodePart
-   *     centrifugation
-   */
   ParameterizedCentrifugation(
       ICentrifugationTemperature centrifugationTemperature,
       ICentrifugationDuration centrifugationDuration,

@@ -10,14 +10,6 @@ public final class ParameterizedLongTermStorage extends LongTermStorage {
   private final LongTermStorageContainer longTermStorageContainer;
   private final LongTermStorageTemperature longTermStorageTemperature;
 
-  /**
-   * Constructor for ParameterizedLongTermStorage.
-   *
-   * @param longTermStorageType enum LongTermStorageType
-   * @param longTermStorageContainer enum LongTermStorageContainer
-   * @param longTermStorageTemperature enum LongTermStorageTemperature
-   * @param codePart Object CodePart
-   */
   ParameterizedLongTermStorage(
       LongTermStorageType longTermStorageType,
       LongTermStorageContainer longTermStorageContainer,
@@ -32,7 +24,6 @@ public final class ParameterizedLongTermStorage extends LongTermStorage {
   public boolean isParameterizedLongTermStorage() {
     return true;
   }
-
 
   public LongTermStorageContainer getLongTermStorageContainer() {
     return this.longTermStorageContainer;

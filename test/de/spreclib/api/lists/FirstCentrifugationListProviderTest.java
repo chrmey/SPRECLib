@@ -4,7 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
-import de.spreclib.api.exceptions.InvalidValueCombinationException;
+import de.spreclib.api.exceptions.UndefinedValueCombinationException;
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.sprec.CodePart;
@@ -36,7 +37,8 @@ public class FirstCentrifugationListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValues() {
+  public void testValueOfWithValidValues()
+      throws UndefinedValueException, UndefinedValueCombinationException {
 
     Temperature temperature = new Temperature(20f);
 
@@ -59,8 +61,9 @@ public class FirstCentrifugationListProviderTest {
     assertNotNull(firstCentrifugationOption);
   }
 
-  @Test(expected = InvalidValueCombinationException.class)
-  public void testValueOfWithInvalidParameterCombination() {
+  @Test(expected = UndefinedValueCombinationException.class)
+  public void testValueOfWithInvalidParameterCombination()
+      throws UndefinedValueException, UndefinedValueCombinationException {
 
     Temperature temperature = new Temperature(20f);
 
@@ -82,7 +85,8 @@ public class FirstCentrifugationListProviderTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testWithTemperatureOptionIsNull() {
+  public void testWithTemperatureOptionIsNull()
+      throws UndefinedValueException, UndefinedValueCombinationException {
 
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
         new FirstCentrifugationDurationListProvider().valueOf(15);
@@ -99,7 +103,8 @@ public class FirstCentrifugationListProviderTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testWithDurationOptionIsNull() {
+  public void testWithDurationOptionIsNull()
+      throws UndefinedValueException, UndefinedValueCombinationException {
 
     Temperature temperature = new Temperature(20f);
 
@@ -118,7 +123,8 @@ public class FirstCentrifugationListProviderTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testWithSpeedOptionIsNull() {
+  public void testWithSpeedOptionIsNull()
+      throws UndefinedValueException, UndefinedValueCombinationException {
 
     Temperature temperature = new Temperature(20f);
 
@@ -137,7 +143,8 @@ public class FirstCentrifugationListProviderTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testWithBrakingOptionIsNull() {
+  public void testWithBrakingOptionIsNull()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     Temperature temperature = new Temperature(20f);
 
@@ -155,10 +162,9 @@ public class FirstCentrifugationListProviderTest {
         null);
   }
 
-  
-  
   @Test
-  public void testValueOfShouldReturnCodeB() {
+  public void testValueOfShouldReturnCodeB()
+      throws UndefinedValueException, UndefinedValueCombinationException {
 
     Temperature temperature = new Temperature(28.9999f);
 
@@ -183,7 +189,8 @@ public class FirstCentrifugationListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnCodeM() {
+  public void testValueOfShouldReturnCodeM()
+      throws UndefinedValueException, UndefinedValueCombinationException {
 
     Temperature temperature = new Temperature(28.999f);
 
@@ -195,7 +202,6 @@ public class FirstCentrifugationListProviderTest {
         new FirstCentrifugationSpeedListProvider().valueOf(999);
     FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =
         new FirstCentrifugationBrakingListProvider().valueOf(false);
-
 
     FirstCentrifugationOption firstCentrifugationOption =
         this.firstCentrifugationListProvider.valueOf(

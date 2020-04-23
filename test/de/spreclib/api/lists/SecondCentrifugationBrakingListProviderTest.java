@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
 import java.util.List;
@@ -34,7 +35,7 @@ public class SecondCentrifugationBrakingListProviderTest {
   }
 
   @Test
-  public void testWithValidValue() {
+  public void testWithValidValue() throws UndefinedValueException {
 
     SecondCentrifugationBrakingOption brakingOption =
         this.secondCentrifugationBrakingListProvider.valueOf(true);
@@ -43,7 +44,7 @@ public class SecondCentrifugationBrakingListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnWithBraking() {
+  public void testValueOfShouldReturnWithBraking() throws UndefinedValueException {
 
     SecondCentrifugationBrakingOption brakingOption =
         secondCentrifugationBrakingListProvider.valueOf(true);
@@ -52,7 +53,7 @@ public class SecondCentrifugationBrakingListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnNoBraking() {
+  public void testValueOfShouldReturnNoBraking() throws UndefinedValueException {
 
     SecondCentrifugationBrakingOption brakingOption =
         secondCentrifugationBrakingListProvider.valueOf(false);

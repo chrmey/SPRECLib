@@ -3,8 +3,8 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.model.enums.FixationTime;
 import de.spreclib.model.sprec.CodePart;
@@ -36,23 +36,22 @@ public class FixationTimeListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValue() {
+  public void testValueOfWithValidValue() throws UndefinedValueException {
 
-    FixationTimeOption fixationTimeOption = this.fixationTimeListProvider.valueOf(15);
+    FixationTimeOption valueOf = this.fixationTimeListProvider.valueOf(15);
+    FixationTimeOption fixationTimeOption = valueOf;
 
     assertNotNull(fixationTimeOption);
   }
 
-  @Test
-  public void testValueOfWithinalidValue() {
+  @Test(expected = UndefinedValueException.class)
+  public void testValueOfWithInvalidValue() throws UndefinedValueException {
 
-    FixationTimeOption fixationTimeOption = this.fixationTimeListProvider.valueOf(-15);
-
-    assertNull(fixationTimeOption);
+    this.fixationTimeListProvider.valueOf(-15);
   }
 
   @Test
-  public void testValueOfWithTimestamps() {
+  public void testValueOfWithTimestamps() throws UndefinedValueException {
 
     long startTime = 1577836800000L;
     long fifteenMinutesLater = 1577837700000L;
@@ -64,7 +63,7 @@ public class FixationTimeListProviderTest {
   }
 
   @Test
-  public void testShouldReturnLess15Minutes() {
+  public void testShouldReturnLess15Minutes() throws UndefinedValueException {
 
     FixationTimeOption fixationTimeOption = this.fixationTimeListProvider.valueOf(14);
 
@@ -72,7 +71,7 @@ public class FixationTimeListProviderTest {
   }
 
   @Test
-  public void testShouldReturnCodeB() {
+  public void testShouldReturnCodeB() throws UndefinedValueException {
 
     FixationTimeOption fixationTimeOption = this.fixationTimeListProvider.valueOf(15);
 

@@ -3,8 +3,8 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
 import java.util.List;
@@ -35,23 +35,22 @@ public class FirstCentrifugationSpeedListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValue() {
+  public void testValueOfWithValidValue() throws UndefinedValueException {
 
-    FirstCentrifugationSpeedOption speedOption = this.firstCentrifugationSpeedListProvider.valueOf(3000);
+    FirstCentrifugationSpeedOption speedOption =
+        this.firstCentrifugationSpeedListProvider.valueOf(3000);
 
     assertNotNull(speedOption);
   }
 
-  @Test
-  public void testValueOfWithInvalidValue() {
+  @Test(expected = UndefinedValueException.class)
+  public void testValueOfWithInvalidValue() throws UndefinedValueException {
 
-    FirstCentrifugationSpeedOption speedOption = this.firstCentrifugationSpeedListProvider.valueOf(-1);
-
-    assertNull(speedOption);
+    this.firstCentrifugationSpeedListProvider.valueOf(-1);
   }
 
   @Test
-  public void testValueOfShouldReturnLessThousandG() {
+  public void testValueOfShouldReturnLessThousandG() throws UndefinedValueException {
 
     FirstCentrifugationSpeedOption speedOption =
         this.firstCentrifugationSpeedListProvider.valueOf(999);
@@ -60,7 +59,7 @@ public class FirstCentrifugationSpeedListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnLessThreeThousandG() {
+  public void testValueOfShouldReturnLessThreeThousandG() throws UndefinedValueException {
 
     FirstCentrifugationSpeedOption speedOption =
         this.firstCentrifugationSpeedListProvider.valueOf(1000);

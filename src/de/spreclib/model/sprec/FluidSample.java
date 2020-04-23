@@ -6,9 +6,6 @@ import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import de.spreclib.model.centrifugation.SecondCentrifugationList;
 import de.spreclib.model.enums.FluidSampleType;
 import de.spreclib.model.enums.PrimaryContainer;
-import de.spreclib.model.enums.centrifugation.CentrifugationType;
-import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
-import de.spreclib.model.exceptions.InvalidPartRelationException;
 import de.spreclib.model.exceptions.InvalidPartValueException;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.longtermstorage.LongTermStorageList;
@@ -17,7 +14,6 @@ import de.spreclib.model.postcentrifugation.PostCentrifugationList;
 import de.spreclib.model.precentrifugation.PreCentrifugation;
 import de.spreclib.model.precentrifugation.PreCentrifugationList;
 import de.spreclib.model.sprec.interfaces.ISample;
-
 
 public final class FluidSample implements ISample {
 
@@ -39,9 +35,14 @@ public final class FluidSample implements ISample {
     this.longTermStorage = fluidSampleBuilder.longTermStorage;
 
     this.validateParts();
-    this.validateParameterRelations();
   }
 
+  /**
+   * Validates if passed parts are in the sprec standard. Throws InvalidPartValueException if part
+   * is not in SPREC to prevent "selfmade" part values.
+   *
+   * @throws InvalidPartValueException if a passed part is not in SPREC.
+   */
   private void validateParts() {
 
     if (this.fluidSampleType != null && !FluidSampleType.contains(this.fluidSampleType)) {
@@ -82,31 +83,6 @@ public final class FluidSample implements ISample {
         && !LongTermStorageList.LONG_TERM_STORAGES.contains(this.longTermStorage)) {
       throw new InvalidPartValueException(
           this.longTermStorage, "Selected LongTermStorage cannot be found in SPREC.");
-    }
-  }
-
-  private void validateParameterRelations() {
-
-    if (this.firstCentrifugation != null && this.secondCentrifugation != null) {
-
-      if (this.firstCentrifugation.getCentrifugationType() == CentrifugationType.NO
-          && this.secondCentrifugation.getCentrifugationType() != CentrifugationType.NO) {
-
-        throw new InvalidPartRelationException(
-            "Cannot set SecondCentrifugation to other than NO when there is no FirstCentrifugation");
-      }
-
-      if (this.firstCentrifugation.getCentrifugationType() == CentrifugationType.NO
-          && this.secondCentrifugation.getCentrifugationType() == CentrifugationType.NO
-          && this.postCentrifugation != null) {
-
-        if (this.postCentrifugation.getPostCentrifugationType()
-            != PostCentrifugationType.NOT_APPLICABLE) {
-
-          throw new InvalidPartRelationException(
-              "Cannot set PostCentrifugationType to other than NOT_APPLICABLE when there is no Centrifugation");
-        }
-      }
     }
   }
 

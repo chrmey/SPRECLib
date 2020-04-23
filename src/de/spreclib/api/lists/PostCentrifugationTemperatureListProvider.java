@@ -1,5 +1,6 @@
 package de.spreclib.api.lists;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
 import java.util.ArrayList;
@@ -40,11 +41,14 @@ public final class PostCentrifugationTemperatureListProvider
    *
    * @param temperature Temperature object
    * @return PostCentrifugationTemperatureOption
+   * @throws UndefinedValueException if value for the temperature cannot be found in ListOptions
+   * @throws IllegalArgumentException if temperature is null
    */
-  public PostCentrifugationTemperatureOption valueOf(Temperature temperature) {
+  public PostCentrifugationTemperatureOption valueOf(Temperature temperature)
+      throws UndefinedValueException {
 
     if (temperature == null) {
-      return null;
+      throw new IllegalArgumentException("Temperature cannot be null.");
     }
 
     float temperatureCelsius = temperature.getTemperatureCelsius();
@@ -55,6 +59,11 @@ public final class PostCentrifugationTemperatureListProvider
         return postCentrifugationTemperatureOption;
       }
     }
-    return null;
+    throw new UndefinedValueException(
+        temperature,
+        "Post Centrifugation Temperature",
+        "Value "
+            + temperatureCelsius
+            + " degrees celsius undefined for PostCentrifugationTemperature.");
   }
 }

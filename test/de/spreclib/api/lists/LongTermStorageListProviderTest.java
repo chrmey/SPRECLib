@@ -4,7 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
-import de.spreclib.api.exceptions.InvalidValueCombinationException;
+import de.spreclib.api.exceptions.UndefinedValueCombinationException;
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
@@ -37,7 +38,8 @@ public class LongTermStorageListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValues() {
+  public void testValueOfWithValidValues()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     LongTermStorageTemperatureOption temperatureOption =
         new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-70f));
@@ -52,7 +54,7 @@ public class LongTermStorageListProviderTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testWithTemperatureOptionIsNull() {
+  public void testWithTemperatureOptionIsNull() throws UndefinedValueCombinationException {
 
     LongTermStorageContainerOption containerOption =
         new LongTermStorageContainerOption(LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML);
@@ -61,7 +63,8 @@ public class LongTermStorageListProviderTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testWithContainerOptionIsNull() {
+  public void testWithContainerOptionIsNull()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     LongTermStorageTemperatureOption temperatureOption =
         new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-70f));
@@ -69,8 +72,9 @@ public class LongTermStorageListProviderTest {
     this.longTermStorageListProvider.valueOf(temperatureOption, null);
   }
 
-  @Test(expected = InvalidValueCombinationException.class)
-  public void testValueOfWithInvalidParameterCombination() {
+  @Test(expected = UndefinedValueCombinationException.class)
+  public void testValueOfWithInvalidParameterCombination()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     LongTermStorageTemperatureOption temperatureOption =
         new LongTermStorageTemperatureListProvider().valueOf(new Temperature(10f));
@@ -82,7 +86,8 @@ public class LongTermStorageListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnCodeA() {
+  public void testValueOfShouldReturnCodeA()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     LongTermStorageTemperatureOption temperatureOption =
         new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-60.99999f));
@@ -98,7 +103,8 @@ public class LongTermStorageListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnCodeB() {
+  public void testValueOfShouldReturnCodeB()
+      throws UndefinedValueCombinationException, UndefinedValueException {
 
     LongTermStorageTemperatureOption temperatureOption =
         new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-35.001f));

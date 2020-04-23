@@ -1,5 +1,6 @@
 package de.spreclib.api.lists;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
 import java.util.ArrayList;
@@ -34,15 +35,18 @@ public final class PostCentrifugationDelayListProvider
 
   /**
    * Takes two timestamps milliseconds EPOCH time and returns a PostCentrifugationDelayOption if a
-   * PostCentrifugationDelayOption with that timespan is found. Returns null otherwise.
+   * PostCentrifugationDelayOption with that timespan is found.
    *
    * @param lastCentrifugationEndTimeMillis timestamp milliseconds EPOCH time
    * @param longTermStorageStartTimeMillis timestamp milliseconds EPOCH time
    * @return PostCentrifugationDelayOption
+   * @throws UndefinedValueException if value for the timespan cannot be found in ListOptions
    * @see #valueOf(int)
+   * @see de.spreclib.api.parameters.timespan
    */
   public PostCentrifugationDelayOption valueOf(
-      long lastCentrifugationEndTimeMillis, long longTermStorageStartTimeMillis) {
+      long lastCentrifugationEndTimeMillis, long longTermStorageStartTimeMillis)
+      throws UndefinedValueException {
 
     int delayMinutes =
         new Timespan(lastCentrifugationEndTimeMillis, longTermStorageStartTimeMillis)
@@ -53,12 +57,13 @@ public final class PostCentrifugationDelayListProvider
 
   /**
    * Takes a duration in minutes and returns a PostCentrifugationDelayOption if a
-   * PostCentrifugationDelayOption with that duration is found. Returns null otherwise
+   * PostCentrifugationDelayOption with that duration is found.
    *
    * @param delayMinutes delay in Minutes
    * @return PostCentrifugationDelayOption
+   * @throws UndefinedValueException if value for the duration cannot be found in ListOptions
    */
-  public PostCentrifugationDelayOption valueOf(int delayMinutes) {
+  public PostCentrifugationDelayOption valueOf(int delayMinutes) throws UndefinedValueException {
 
     for (PostCentrifugationDelayOption postCentrifugationDelayOption : this.listOptions) {
 
@@ -66,6 +71,9 @@ public final class PostCentrifugationDelayListProvider
         return postCentrifugationDelayOption;
       }
     }
-    return null;
+    throw new UndefinedValueException(
+        delayMinutes,
+        "Post Centrifugation Delay",
+        "Value " + delayMinutes + "minutes undefined for PostCentrifugationDelay.");
   }
 }

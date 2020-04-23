@@ -1,6 +1,6 @@
 package de.spreclib.api.exceptions;
 
-public class InvalidValueCombinationException extends RuntimeException {
+public class UndefinedValueCombinationException extends Exception {
 
   /**
    * Exception that is thrown when the combination of values is no valid combination for a SPREC
@@ -15,7 +15,7 @@ public class InvalidValueCombinationException extends RuntimeException {
    */
   private static final long serialVersionUID = 1938663728233464641L;
 
-  public InvalidValueCombinationException(String errorMessage) {
+  public UndefinedValueCombinationException(String errorMessage) {
     super(errorMessage);
   }
 }

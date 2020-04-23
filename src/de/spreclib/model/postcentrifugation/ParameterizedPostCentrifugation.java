@@ -10,14 +10,6 @@ public final class ParameterizedPostCentrifugation extends PostCentrifugation {
   private final PostCentrifugationDelay postCentrifugationDelay;
   private final PostCentrifugationTemperature postCentrifugationTemperature;
 
-  /**
-   * Constructor for DefaultPostCentrifugation.
-   *
-   * @param postCentrifugationType enum PostCentrifugationType
-   * @param postCentrifugationDelay enum PostCentrifugationDelay
-   * @param postCentrifugationTemperature enum PostCentrifugationTemperature
-   * @param codePart object CodePart
-   */
   ParameterizedPostCentrifugation(
       PostCentrifugationType postCentrifugationType,
       PostCentrifugationDelay postCentrifugationDelay,

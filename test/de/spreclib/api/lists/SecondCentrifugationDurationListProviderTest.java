@@ -3,8 +3,8 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.model.enums.centrifugation.SecondCentrifugationDuration;
 import java.util.List;
@@ -35,7 +35,7 @@ public class SecondCentrifugationDurationListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValue() {
+  public void testValueOfWithValidValue() throws UndefinedValueException {
 
     SecondCentrifugationDurationOption secondCentrifugationDurationOption =
         this.secondCentrifugationDurationListProvider.valueOf(15);
@@ -43,17 +43,14 @@ public class SecondCentrifugationDurationListProviderTest {
     assertNotNull(secondCentrifugationDurationOption);
   }
 
-  @Test
-  public void testValueOfWithInvalidValue() {
+  @Test(expected = UndefinedValueException.class)
+  public void testValueOfWithInvalidValue() throws UndefinedValueException {
 
-    SecondCentrifugationDurationOption secondCentrifugationDurationOption =
-        this.secondCentrifugationDurationListProvider.valueOf(100);
-
-    assertNull(secondCentrifugationDurationOption);
+    this.secondCentrifugationDurationListProvider.valueOf(100);
   }
 
   @Test
-  public void testValueOfWithTimestamps() {
+  public void testValueOfWithTimestamps() throws UndefinedValueException {
 
     long startTime = 1577836800000L;
     long fifteenMinutesLater = 1577837700000L;
@@ -65,7 +62,7 @@ public class SecondCentrifugationDurationListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturn10To15Minutes() {
+  public void testValueOfShouldReturn10To15Minutes() throws UndefinedValueException {
 
     SecondCentrifugationDurationOption secondCentrifugationDurationOption =
         this.secondCentrifugationDurationListProvider.valueOf(10);

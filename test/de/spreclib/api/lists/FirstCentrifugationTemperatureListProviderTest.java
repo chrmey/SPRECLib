@@ -3,8 +3,8 @@ package de.spreclib.api.lists;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.lists.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.enums.centrifugation.FirstCentrifugationTemperature;
@@ -37,7 +37,7 @@ public class FirstCentrifugationTemperatureListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValue() {
+  public void testValueOfWithValidValue() throws UndefinedValueException {
 
     Temperature temperature = new Temperature(20.9999f);
 
@@ -47,28 +47,22 @@ public class FirstCentrifugationTemperatureListProviderTest {
     assertNotNull(firstCentrifugationTemperatureOption);
   }
 
-  @Test
-  public void testValueOfWithInvalidValue() {
+  @Test(expected = UndefinedValueException.class)
+  public void testValueOfWithInvalidValue() throws UndefinedValueException {
 
     Temperature temperature = new Temperature(-20f);
 
-    FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
-        this.firstCentrifugationTemperatureListProvider.valueOf(temperature);
+    this.firstCentrifugationTemperatureListProvider.valueOf(temperature);
+  }
 
-    assertNull(firstCentrifugationTemperatureOption);
+  @Test(expected = IllegalArgumentException.class)
+  public void testValueOfWithNullValue() throws UndefinedValueException {
+
+    this.firstCentrifugationTemperatureListProvider.valueOf(null);
   }
 
   @Test
-  public void testValueOfWithNullValue() {
-
-    FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
-        this.firstCentrifugationTemperatureListProvider.valueOf(null);
-
-    assertNull(firstCentrifugationTemperatureOption);
-  }
-
-  @Test
-  public void testValueOfShouldReturnRoomTemperature() {
+  public void testValueOfShouldReturnRoomTemperature() throws UndefinedValueException {
 
     Temperature temperature = new Temperature(28.9999f);
 
@@ -81,7 +75,7 @@ public class FirstCentrifugationTemperatureListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnTwoToTenDegrees() {
+  public void testValueOfShouldReturnTwoToTenDegrees() throws UndefinedValueException {
 
     Temperature temperature = new Temperature(10.9999f);
 

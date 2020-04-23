@@ -1,5 +1,6 @@
 package de.spreclib.api.lists;
 
+import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.enums.FixationTime;
 import java.util.ArrayList;
@@ -32,14 +33,17 @@ public final class FixationTimeListProvider extends AbstractListProvider<Fixatio
 
   /**
    * Takes two timestamps milliseconds EPOCH time and returns a FixationTimeOption if a
-   * FixationTimeOption with that timespan is found. Returns null otherwise.
+   * FixationTimeOption with that timespan is found.
    *
    * @param startOfFixationTimeMillis timestamp milliseconds EPOCH time
    * @param endOfFixationTimeMillis timestamp milliseconds EPOCH time
    * @return FixationTimeOption
+   * @throws UndefinedValueException if value for the duration cannot be found in ListOptions
    * @see #valueOf(int)
+   * @see de.spreclib.api.parameters.timespan
    */
-  public FixationTimeOption valueOf(long startOfFixationTimeMillis, long endOfFixationTimeMillis) {
+  public FixationTimeOption valueOf(long startOfFixationTimeMillis, long endOfFixationTimeMillis)
+      throws UndefinedValueException {
 
     int durationMinutes =
         new Timespan(startOfFixationTimeMillis, endOfFixationTimeMillis).getTimespanMinutes();
@@ -49,12 +53,13 @@ public final class FixationTimeListProvider extends AbstractListProvider<Fixatio
 
   /**
    * Takes a duration in minutes and returns a FixationTimeOption if a FixationTimeOption with that
-   * duration is found. Returns null otherwise
+   * duration is found.
    *
    * @param durationMinutes durationMinutes
    * @return FixationTimeOption
+   * @throws UndefinedValueException if value for the duration cannot be found in ListOptions
    */
-  public FixationTimeOption valueOf(int durationMinutes) {
+  public FixationTimeOption valueOf(int durationMinutes) throws UndefinedValueException {
 
     for (FixationTimeOption fixationTimeOption : listOptions) {
 
@@ -62,6 +67,9 @@ public final class FixationTimeListProvider extends AbstractListProvider<Fixatio
         return fixationTimeOption;
       }
     }
-    return null;
+    throw new UndefinedValueException(
+        durationMinutes,
+        "FixationTime",
+        "Value " + durationMinutes + "minutes undefined for FixationTime.");
   }
 }
