@@ -1,6 +1,6 @@
 package de.spreclib.model.sprec;
 
-import de.spreclib.api.sprec.FluidSampleSprec;
+import de.spreclib.api.sprec.FluidSampleBuilder;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import de.spreclib.model.centrifugation.SecondCentrifugationList;
@@ -24,17 +24,34 @@ public final class FluidSample implements ISample {
   private final Centrifugation secondCentrifugation;
   private final PostCentrifugation postCentrifugation;
   private final LongTermStorage longTermStorage;
+  private final FluidSprecCode fluidSprecCode;
 
-  private FluidSample(FluidSampleBuilder fluidSampleBuilder) {
-    this.fluidSampleType = fluidSampleBuilder.fluidSampleType;
-    this.primaryContainer = fluidSampleBuilder.primaryContainer;
-    this.preCentrifugation = fluidSampleBuilder.preCentrifugation;
-    this.firstCentrifugation = fluidSampleBuilder.firstCentrifugation;
-    this.secondCentrifugation = fluidSampleBuilder.secondCentrifugation;
-    this.postCentrifugation = fluidSampleBuilder.postCentrifugation;
-    this.longTermStorage = fluidSampleBuilder.longTermStorage;
+  public FluidSample(FluidSampleBuilder fluidSampleBuilder) {
+
+    if (fluidSampleBuilder == null) {
+      throw new IllegalArgumentException("FluidSampleBuilde cannot be null.");
+    }
+
+    this.fluidSampleType = fluidSampleBuilder.getFluidSampleType();
+    this.primaryContainer = fluidSampleBuilder.getPrimaryContainer();
+    this.preCentrifugation = fluidSampleBuilder.getPreCentrifugation();
+    this.firstCentrifugation = fluidSampleBuilder.getFirstCentrifugation();
+    this.secondCentrifugation = fluidSampleBuilder.getSecondCentrifugation();
+    this.postCentrifugation = fluidSampleBuilder.getPostCentrifugation();
+    this.longTermStorage = fluidSampleBuilder.getLongTermStorage();
 
     this.validateParts();
+
+    this.fluidSprecCode =
+        new FluidSprecCode.FluidSprecCodeBuilder()
+            .withFluidSampleType(this.fluidSampleType)
+            .withPrimaryContainer(this.primaryContainer)
+            .withPreCentrifugation(this.preCentrifugation)
+            .withFirstCentrifugation(this.firstCentrifugation)
+            .withSecondCentrifugation(this.secondCentrifugation)
+            .withPostCentrifugation(this.postCentrifugation)
+            .withLongTermStorage(this.longTermStorage)
+            .build();
   }
 
   /**
@@ -88,45 +105,6 @@ public final class FluidSample implements ISample {
 
   @Override
   public FluidSprecCode getSprecCode() {
-
-    return new FluidSprecCode.FluidSprecCodeBuilder()
-        .withFluidSampleType(this.fluidSampleType)
-        .withPrimaryContainer(this.primaryContainer)
-        .withPreCentrifugation(this.preCentrifugation)
-        .withFirstCentrifugation(this.firstCentrifugation)
-        .withSecondCentrifugation(this.secondCentrifugation)
-        .withPostCentrifugation(this.postCentrifugation)
-        .withLongTermStorage(this.longTermStorage)
-        .build();
-  }
-
-  public static final class FluidSampleBuilder {
-
-    private final FluidSampleType fluidSampleType;
-    private final PrimaryContainer primaryContainer;
-    private final PreCentrifugation preCentrifugation;
-    private final Centrifugation firstCentrifugation;
-    private final Centrifugation secondCentrifugation;
-    private final PostCentrifugation postCentrifugation;
-    private final LongTermStorage longTermStorage;
-
-    public FluidSampleBuilder(FluidSampleSprec fluidSampleSprec) {
-
-      if (fluidSampleSprec == null) {
-        throw new IllegalArgumentException("FluidSampleSprec cannot be null");
-      }
-
-      this.fluidSampleType = fluidSampleSprec.getFluidSampleType();
-      this.primaryContainer = fluidSampleSprec.getPrimaryContainer();
-      this.preCentrifugation = fluidSampleSprec.getPreCentrifugation();
-      this.firstCentrifugation = fluidSampleSprec.getFirstCentrifugation();
-      this.secondCentrifugation = fluidSampleSprec.getSecondCentrifugation();
-      this.postCentrifugation = fluidSampleSprec.getPostCentrifugation();
-      this.longTermStorage = fluidSampleSprec.getLongTermStorage();
-    }
-
-    public FluidSample build() {
-      return new FluidSample(this);
-    }
+    return this.fluidSprecCode;
   }
 }

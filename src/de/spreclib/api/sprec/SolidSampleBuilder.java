@@ -50,7 +50,7 @@ import de.spreclib.model.sprec.SolidSprecCode;
  * @author Christopher Meyer
  * @version 1.0
  */
-public class SolidSampleSprec {
+public class SolidSampleBuilder {
 
   private SolidSampleType solidSampleType;
   private TypeOfCollection typeOfCollection;
@@ -67,7 +67,7 @@ public class SolidSampleSprec {
    * @see de.spreclib.api.lists.SolidSampleTypeListProvider
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withSolidSampleType(SolidSampleTypeOption solidSampleTypeOption) {
+  public SolidSampleBuilder withSolidSampleType(SolidSampleTypeOption solidSampleTypeOption) {
     if (solidSampleTypeOption != null) {
       this.solidSampleType = solidSampleTypeOption.getContainedObject();
     }
@@ -81,7 +81,7 @@ public class SolidSampleSprec {
    * @see de.spreclib.api.lists.TypeOfCollectionListProvider
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withTypeOfCollection(TypeOfCollectionOption typeOfCollectionOption) {
+  public SolidSampleBuilder withTypeOfCollection(TypeOfCollectionOption typeOfCollectionOption) {
     if (typeOfCollectionOption != null) {
       this.typeOfCollection = typeOfCollectionOption.getContainedObject();
     }
@@ -95,7 +95,7 @@ public class SolidSampleSprec {
    * @see de.spreclib.api.lists.WarmIschemiaTimeListProvider
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withWarmIschemiaTime(WarmIschemiaTimeOption warmIschemiaTimeOption) {
+  public SolidSampleBuilder withWarmIschemiaTime(WarmIschemiaTimeOption warmIschemiaTimeOption) {
     if (warmIschemiaTimeOption != null) {
       this.warmIschemiaTime = warmIschemiaTimeOption.getContainedObject();
     }
@@ -107,7 +107,7 @@ public class SolidSampleSprec {
    *
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withUnknownWarmIschemiaTime() {
+  public SolidSampleBuilder withUnknownWarmIschemiaTime() {
     this.warmIschemiaTime = WarmIschemiaTime.UNKNOWN;
     return this;
   }
@@ -117,7 +117,7 @@ public class SolidSampleSprec {
    *
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withOtherWarmIschemiaTime() {
+  public SolidSampleBuilder withOtherWarmIschemiaTime() {
     this.warmIschemiaTime = WarmIschemiaTime.OTHER;
     return this;
   }
@@ -127,7 +127,7 @@ public class SolidSampleSprec {
    *
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withNoApplicableWarmIschemiaTime() {
+  public SolidSampleBuilder withNoApplicableWarmIschemiaTime() {
     this.warmIschemiaTime = WarmIschemiaTime.NOT_APPLICABLE;
     return this;
   }
@@ -139,7 +139,7 @@ public class SolidSampleSprec {
    * @see de.spreclib.api.lists.ColdIschemiaTimeListProvider
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withColdIschemiaTime(ColdIschemiaTimeOption coldIschemiaTimeOption) {
+  public SolidSampleBuilder withColdIschemiaTime(ColdIschemiaTimeOption coldIschemiaTimeOption) {
     if (coldIschemiaTimeOption != null) {
       this.coldIschemiaTime = coldIschemiaTimeOption.getContainedObject();
     }
@@ -151,7 +151,7 @@ public class SolidSampleSprec {
    *
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withUnknownColdIschemiaTime() {
+  public SolidSampleBuilder withUnknownColdIschemiaTime() {
     this.coldIschemiaTime = ColdIschemiaTime.UNKNOWN;
     return this;
   }
@@ -161,7 +161,7 @@ public class SolidSampleSprec {
    *
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withOtherColdIschemiaTime() {
+  public SolidSampleBuilder withOtherColdIschemiaTime() {
     this.coldIschemiaTime = ColdIschemiaTime.OTHER;
     return this;
   }
@@ -171,7 +171,7 @@ public class SolidSampleSprec {
    *
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withNoApplicableColdIschemiaTime() {
+  public SolidSampleBuilder withNoApplicableColdIschemiaTime() {
     this.coldIschemiaTime = ColdIschemiaTime.NOT_APPLICABLE;
     return this;
   }
@@ -183,7 +183,7 @@ public class SolidSampleSprec {
    * @see de.spreclib.api.lists.FixationListProvider
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withFixation(FixationOption fixationOption) {
+  public SolidSampleBuilder withFixation(FixationOption fixationOption) {
     if (fixationOption != null) {
       this.fixation = fixationOption.getContainedObject();
     }
@@ -197,7 +197,7 @@ public class SolidSampleSprec {
    * @see de.spreclib.api.lists.FixationTimeListProvider
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withFixationTime(FixationTimeOption fixationTimeOption) {
+  public SolidSampleBuilder withFixationTime(FixationTimeOption fixationTimeOption) {
     if (fixationTimeOption != null) {
       this.fixationTime = fixationTimeOption.getContainedObject();
     }
@@ -209,7 +209,7 @@ public class SolidSampleSprec {
    *
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withUnknownFixationTime() {
+  public SolidSampleBuilder withUnknownFixationTime() {
     this.fixationTime = FixationTime.UNKNOWN;
     return this;
   }
@@ -219,7 +219,7 @@ public class SolidSampleSprec {
    *
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withOtherFixationTime() {
+  public SolidSampleBuilder withOtherFixationTime() {
     this.fixationTime = FixationTime.OTHER;
     return this;
   }
@@ -229,7 +229,7 @@ public class SolidSampleSprec {
    *
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withNoApplicableFixationTime() {
+  public SolidSampleBuilder withNoApplicableFixationTime() {
     this.fixationTime = FixationTime.NOT_APPLICABLE;
     return this;
   }
@@ -241,7 +241,7 @@ public class SolidSampleSprec {
    * @see de.spreclib.api.lists.LongTermStorageListProvider
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withLongTermStorage(LongTermStorageOption longTermStorageOption) {
+  public SolidSampleBuilder withLongTermStorage(LongTermStorageOption longTermStorageOption) {
     if (longTermStorageOption != null) {
       this.longTermStorage = longTermStorageOption.getContainedObject();
     }
@@ -253,7 +253,7 @@ public class SolidSampleSprec {
    *
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withUnknownLongTermStorage() {
+  public SolidSampleBuilder withUnknownLongTermStorage() {
     this.longTermStorage = LongTermStorageList.getUnknownLongTermStorage();
     return this;
   }
@@ -263,7 +263,7 @@ public class SolidSampleSprec {
    *
    * @return SolidSampleSprec Returns itself
    */
-  public SolidSampleSprec withOtherLongTermStorage() {
+  public SolidSampleBuilder withOtherLongTermStorage() {
     this.longTermStorage = LongTermStorageList.getOtherLongTermStorage();
     return this;
   }
@@ -274,7 +274,7 @@ public class SolidSampleSprec {
    * @return SolidSprecCode Returns new instance of SolidSprecCode
    */
   public SolidSprecCode getSprecCode() {
-    return new SolidSample.SolidSampleBuilder(this).build().getSprecCode();
+    return new SolidSample(this).getSprecCode();
   }
 
   public SolidSampleType getSolidSampleType() {

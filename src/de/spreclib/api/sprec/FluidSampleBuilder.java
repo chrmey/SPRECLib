@@ -55,7 +55,7 @@ import de.spreclib.model.sprec.FluidSprecCode;
  * @author Christopher Meyer
  * @version 1.0
  */
-public final class FluidSampleSprec {
+public final class FluidSampleBuilder {
 
   private FluidSampleType fluidSampleType;
   private PrimaryContainer primaryContainer;
@@ -72,7 +72,7 @@ public final class FluidSampleSprec {
    * @see de.spreclib.api.lists.FluidSampleTypeListProvider
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withFluidSampleType(FluidSampleTypeOption fluidSampleTypeOption) {
+  public FluidSampleBuilder withFluidSampleType(FluidSampleTypeOption fluidSampleTypeOption) {
     if (fluidSampleTypeOption != null) {
       this.fluidSampleType = fluidSampleTypeOption.getContainedObject();
     }
@@ -86,7 +86,7 @@ public final class FluidSampleSprec {
    * @see de.spreclib.api.lists.PrimaryContainerListProvider
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withPrimaryContainer(PrimaryContainerOption primaryContainerOption) {
+  public FluidSampleBuilder withPrimaryContainer(PrimaryContainerOption primaryContainerOption) {
     if (primaryContainerOption != null) {
       this.primaryContainer = primaryContainerOption.getContainedObject();
     }
@@ -100,7 +100,7 @@ public final class FluidSampleSprec {
    * @see de.spreclib.api.lists.PreCentrifugationListProvider
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withPreCentrifugation(PreCentrifugationOption preCentrifugationOption) {
+  public FluidSampleBuilder withPreCentrifugation(PreCentrifugationOption preCentrifugationOption) {
 
     if (preCentrifugationOption != null) {
       this.preCentrifugation = preCentrifugationOption.getContainedObject();
@@ -113,7 +113,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withOtherPreCentrifugation() {
+  public FluidSampleBuilder withOtherPreCentrifugation() {
     this.preCentrifugation = PreCentrifugationList.getOtherPreCentrifugation();
     return this;
   }
@@ -123,7 +123,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withUnknownPreCentrifugation() {
+  public FluidSampleBuilder withUnknownPreCentrifugation() {
     this.preCentrifugation = PreCentrifugationList.getUnknownPreCentrifugation();
     return this;
   }
@@ -135,7 +135,7 @@ public final class FluidSampleSprec {
    * @see de.spreclib.api.lists.FirstCentrifugationListProvider
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withFirstCentrifugation(
+  public FluidSampleBuilder withFirstCentrifugation(
       FirstCentrifugationOption firstCentrifugationOption) {
     if (firstCentrifugationOption != null) {
       this.firstCentrifugation = firstCentrifugationOption.getContainedObject();
@@ -148,7 +148,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withUnknownFirstCentrifugation() {
+  public FluidSampleBuilder withUnknownFirstCentrifugation() {
     this.firstCentrifugation = FirstCentrifugationList.getUnknownFirstCentrifugation();
     return this;
   }
@@ -158,7 +158,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withOtherFirstCentrifugation() {
+  public FluidSampleBuilder withOtherFirstCentrifugation() {
     this.firstCentrifugation = FirstCentrifugationList.getOtherFirstCentrifugation();
     return this;
   }
@@ -168,7 +168,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withNoFirstCentrifugation() {
+  public FluidSampleBuilder withNoFirstCentrifugation() {
     this.firstCentrifugation = FirstCentrifugationList.getNoFirstCentrifugation();
     return this;
   }
@@ -180,7 +180,7 @@ public final class FluidSampleSprec {
    * @see de.spreclib.api.lists.SecondCentrifugationListProvider
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withSecondCentrifugation(
+  public FluidSampleBuilder withSecondCentrifugation(
       SecondCentrifugationOption secondCentrifugationOption) {
     if (secondCentrifugationOption != null) {
       this.secondCentrifugation = secondCentrifugationOption.getContainedObject();
@@ -193,7 +193,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withUnknownSecondCentrifugation() {
+  public FluidSampleBuilder withUnknownSecondCentrifugation() {
     this.secondCentrifugation = SecondCentrifugationList.getUnknownSecondCentrifugation();
     return this;
   }
@@ -203,7 +203,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withOtherSecondCentrifugation() {
+  public FluidSampleBuilder withOtherSecondCentrifugation() {
     this.secondCentrifugation = SecondCentrifugationList.getOtherSecondCentrifugation();
     return this;
   }
@@ -213,7 +213,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withNoSecondCentrifugation() {
+  public FluidSampleBuilder withNoSecondCentrifugation() {
     this.secondCentrifugation = SecondCentrifugationList.getNoSecondCentrifugation();
     return this;
   }
@@ -225,7 +225,7 @@ public final class FluidSampleSprec {
    * @see de.spreclib.api.lists.PostCentrifugationListProvider
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withPostCentrifugation(
+  public FluidSampleBuilder withPostCentrifugation(
       PostCentrifugationOption postCentrifugationOption) {
     if (postCentrifugationOption != null) {
       this.postCentrifugation = postCentrifugationOption.getContainedObject();
@@ -238,7 +238,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withNoApplicablePostCentrifugation() {
+  public FluidSampleBuilder withNoApplicablePostCentrifugation() {
     this.postCentrifugation = PostCentrifugationList.getNoApplicablePostCentrifugation();
     return this;
   }
@@ -248,7 +248,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withUnknownPostCentrifugation() {
+  public FluidSampleBuilder withUnknownPostCentrifugation() {
     this.postCentrifugation = PostCentrifugationList.getUnknownPostCentrifugation();
     return this;
   }
@@ -258,7 +258,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withOtherPostCentrifugation() {
+  public FluidSampleBuilder withOtherPostCentrifugation() {
     this.postCentrifugation = PostCentrifugationList.getOtherPostCentrifugation();
     return this;
   }
@@ -270,7 +270,7 @@ public final class FluidSampleSprec {
    * @see de.spreclib.api.lists.LongTermStorageListProvider
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withLongTermStorage(LongTermStorageOption longTermStorageOption) {
+  public FluidSampleBuilder withLongTermStorage(LongTermStorageOption longTermStorageOption) {
     if (longTermStorageOption != null) {
       this.longTermStorage = longTermStorageOption.getContainedObject();
     }
@@ -282,7 +282,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withUnknownLongTermStorage() {
+  public FluidSampleBuilder withUnknownLongTermStorage() {
     this.longTermStorage = LongTermStorageList.getUnknownLongTermStorage();
     return this;
   }
@@ -292,7 +292,7 @@ public final class FluidSampleSprec {
    *
    * @return FluidSampleSprec Returns itself
    */
-  public FluidSampleSprec withOtherLongTermStorage() {
+  public FluidSampleBuilder withOtherLongTermStorage() {
     this.longTermStorage = LongTermStorageList.getOtherLongTermStorage();
     return this;
   }
@@ -303,7 +303,7 @@ public final class FluidSampleSprec {
    * @return FluidSprecCode Returns new instance of FluidSprecCode
    */
   public FluidSprecCode getSprecCode() {
-    return new FluidSample.FluidSampleBuilder(this).build().getSprecCode();
+    return new FluidSample(this).getSprecCode();
   }
 
   public FluidSampleType getFluidSampleType() {
