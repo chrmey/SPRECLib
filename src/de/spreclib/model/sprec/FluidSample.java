@@ -1,6 +1,7 @@
 package de.spreclib.model.sprec;
 
-import de.spreclib.api.sprec.FluidSampleSprec;
+import de.spreclib.api.main.FluidSampleSprec;
+import de.spreclib.meta.spreccode.FluidSprecCode;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import de.spreclib.model.centrifugation.SecondCentrifugationList;

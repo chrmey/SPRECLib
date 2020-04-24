@@ -1,6 +1,7 @@
 package de.spreclib.model.sprec;
 
-import de.spreclib.api.sprec.SolidSampleSprec;
+import de.spreclib.api.main.SolidSampleSprec;
+import de.spreclib.meta.spreccode.SolidSprecCode;
 import de.spreclib.model.enums.ColdIschemiaTime;
 import de.spreclib.model.enums.Fixation;
 import de.spreclib.model.enums.FixationTime;
