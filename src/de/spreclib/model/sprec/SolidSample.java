@@ -1,6 +1,6 @@
 package de.spreclib.model.sprec;
 
-import de.spreclib.api.sprec.SolidSampleBuilder;
+import de.spreclib.api.sprec.SolidSampleSprec;
 import de.spreclib.model.enums.ColdIschemiaTime;
 import de.spreclib.model.enums.Fixation;
 import de.spreclib.model.enums.FixationTime;
@@ -24,7 +24,7 @@ public class SolidSample implements ISample {
 
   private final SolidSprecCode solidSprecCode;
 
-  public SolidSample(SolidSampleBuilder solidSampleBuilder) {
+  public SolidSample(SolidSampleSprec solidSampleBuilder) {
 
     if (solidSampleBuilder == null) {
       throw new IllegalArgumentException("SolidSampleBuilder cannot be null.");

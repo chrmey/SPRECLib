@@ -1,6 +1,6 @@
 package de.spreclib.model.sprec;
 
-import de.spreclib.api.sprec.FluidSampleBuilder;
+import de.spreclib.api.sprec.FluidSampleSprec;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import de.spreclib.model.centrifugation.SecondCentrifugationList;
@@ -26,7 +26,7 @@ public final class FluidSample implements ISample {
   private final LongTermStorage longTermStorage;
   private final FluidSprecCode fluidSprecCode;
 
-  public FluidSample(FluidSampleBuilder fluidSampleBuilder) {
+  public FluidSample(FluidSampleSprec fluidSampleBuilder) {
 
     if (fluidSampleBuilder == null) {
       throw new IllegalArgumentException("FluidSampleBuilde cannot be null.");
