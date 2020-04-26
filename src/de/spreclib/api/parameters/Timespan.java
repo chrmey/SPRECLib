@@ -8,7 +8,7 @@ import de.spreclib.api.exceptions.InvalidTimestampRelationException;
  * @author Christopher Meyer
  * @version 1.0
  */
-public class Timespan {
+public final class Timespan {
 
   private final int timespanMinutes;
 
