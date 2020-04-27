@@ -81,7 +81,7 @@ Example for a solid Sample:
     .getSprecCode();
 ```
 
-You can pass null values instead of an option. This will lead to the code for that part to be replaced by "?" in the full code of that sample. 
+You can pass null values instead of an option. This will lead to the code for that part to be replaced by "?" in the full code of that sample."?" is the default replacement. You can configure the replacement by changing it in the config.properties.
 
 
 Calling ```.getSprecCode()``` will return a FluidSprecCode / SolidSprecCode object. To get the full SPREC code use:
