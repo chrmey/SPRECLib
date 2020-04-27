@@ -5,7 +5,7 @@ import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;
 
-public abstract class Centrifugation implements ISprecPart, IListProvideable {
+public class Centrifugation implements ISprecPart, IListProvideable {
 
   private final CentrifugationType centrifugationType;
   private final ICodePart codePart;
@@ -15,16 +15,15 @@ public abstract class Centrifugation implements ISprecPart, IListProvideable {
    *
    * @param centrifugationType enum CentrifugationType
    * @param codePart CodePart Object
-   * @param sprecPartType enum SprecPartType
    */
   Centrifugation(CentrifugationType centrifugationType, ICodePart codePart) {
     this.centrifugationType = centrifugationType;
     this.codePart = codePart;
   }
 
-  public abstract boolean isNormalCentrifugation();
-
-  public abstract boolean isSpecialCentrifugation();
+  public boolean isParameterizedCentrifugation() {
+    return false;
+  }
 
   public CentrifugationType getCentrifugationType() {
     return this.centrifugationType;
@@ -34,8 +33,6 @@ public abstract class Centrifugation implements ISprecPart, IListProvideable {
   public ICodePart getCodeFromSprecPart() {
     return this.codePart;
   }
-
-  
 
   @Override
   public int hashCode() {

@@ -18,65 +18,65 @@ public final class PreCentrifugationList {
         Collections.unmodifiableSet(
             new HashSet<>(
                 Arrays.asList(
-                    new SpecialPreCentrifugation(PreCentrifugationType.UNKNOWN, new CodePart("X")),
-                    new SpecialPreCentrifugation(PreCentrifugationType.OTHER, new CodePart("Z")),
-                    new NormalPreCentrifugation(
+                    new PreCentrifugation(PreCentrifugationType.UNKNOWN, new CodePart("X")),
+                    new PreCentrifugation(PreCentrifugationType.OTHER, new CodePart("Z")),
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.LESS_TWO_HOURS,
                         PreCentrifugationTemperature.ROOM_TEMPERATURE,
                         new CodePart("A")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.LESS_TWO_HOURS,
                         PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         new CodePart("B")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.TWO_TO_FOUR_HOURS,
                         PreCentrifugationTemperature.ROOM_TEMPERATURE,
                         new CodePart("C")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.TWO_TO_FOUR_HOURS,
                         PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         new CodePart("D")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.FOUR_TO_EIGHT_HOURS,
                         PreCentrifugationTemperature.ROOM_TEMPERATURE,
                         new CodePart("E")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.FOUR_TO_EIGHT_HOURS,
                         PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         new CodePart("F")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.EIGHT_TO_TWELVE_HOURS,
                         PreCentrifugationTemperature.ROOM_TEMPERATURE,
                         new CodePart("G")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.EIGHT_TO_TWELVE_HOURS,
                         PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         new CodePart("H")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.TWELVE_TO_TWENTYFOUR_HOURS,
                         PreCentrifugationTemperature.ROOM_TEMPERATURE,
                         new CodePart("I")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.TWELVE_TO_TWENTYFOUR_HOURS,
                         PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         new CodePart("J")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.TWENTYFOUR_TO_EIGHTYFOUR_HOURS,
                         PreCentrifugationTemperature.ROOM_TEMPERATURE,
                         new CodePart("K")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.TWENTYFOUR_TO_EIGHTYFOUR_HOURS,
                         PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         new CodePart("L")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.GREATER_EIGHTYFOUR_HOURS,
                         PreCentrifugationTemperature.ROOM_TEMPERATURE,
                         new CodePart("M")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.GREATER_EIGHTYFOUR_HOURS,
                         PreCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         new CodePart("N")),
-                    new NormalPreCentrifugation(
+                    new ParameterizedPreCentrifugation(
                         PreCentrifugationDelay.LESS_TWO_HOURS,
                         PreCentrifugationTemperature.THIRTYFIVE_TO_THIRTYEIGHT_DEGREES,
                         new CodePart("O")))));

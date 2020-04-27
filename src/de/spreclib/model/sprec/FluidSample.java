@@ -1,14 +1,12 @@
 package de.spreclib.model.sprec;
 
-import de.spreclib.api.sprec.FluidSampleSprec;
+import de.spreclib.api.main.FluidSampleSprec;
+import de.spreclib.meta.spreccode.FluidSprecCode;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import de.spreclib.model.centrifugation.SecondCentrifugationList;
 import de.spreclib.model.enums.FluidSampleType;
 import de.spreclib.model.enums.PrimaryContainer;
-import de.spreclib.model.enums.centrifugation.CentrifugationType;
-import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
-import de.spreclib.model.exceptions.InvalidPartRelationException;
 import de.spreclib.model.exceptions.InvalidPartValueException;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.longtermstorage.LongTermStorageList;
@@ -16,8 +14,9 @@ import de.spreclib.model.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.postcentrifugation.PostCentrifugationList;
 import de.spreclib.model.precentrifugation.PreCentrifugation;
 import de.spreclib.model.precentrifugation.PreCentrifugationList;
+import de.spreclib.model.sprec.interfaces.ISample;
 
-public final class FluidSample {
+public final class FluidSample implements ISample {
 
   private final FluidSampleType fluidSampleType;
   private final PrimaryContainer primaryContainer;
@@ -26,20 +25,42 @@ public final class FluidSample {
   private final Centrifugation secondCentrifugation;
   private final PostCentrifugation postCentrifugation;
   private final LongTermStorage longTermStorage;
+  private final FluidSprecCode fluidSprecCode;
 
-  private FluidSample(FluidSampleBuilder fluidSampleBuilder) {
-    this.fluidSampleType = fluidSampleBuilder.fluidSampleType;
-    this.primaryContainer = fluidSampleBuilder.primaryContainer;
-    this.preCentrifugation = fluidSampleBuilder.preCentrifugation;
-    this.firstCentrifugation = fluidSampleBuilder.firstCentrifugation;
-    this.secondCentrifugation = fluidSampleBuilder.secondCentrifugation;
-    this.postCentrifugation = fluidSampleBuilder.postCentrifugation;
-    this.longTermStorage = fluidSampleBuilder.longTermStorage;
+  public FluidSample(FluidSampleSprec fluidSampleBuilder) {
+
+    if (fluidSampleBuilder == null) {
+      throw new IllegalArgumentException("FluidSampleBuilde cannot be null.");
+    }
+
+    this.fluidSampleType = fluidSampleBuilder.getFluidSampleType();
+    this.primaryContainer = fluidSampleBuilder.getPrimaryContainer();
+    this.preCentrifugation = fluidSampleBuilder.getPreCentrifugation();
+    this.firstCentrifugation = fluidSampleBuilder.getFirstCentrifugation();
+    this.secondCentrifugation = fluidSampleBuilder.getSecondCentrifugation();
+    this.postCentrifugation = fluidSampleBuilder.getPostCentrifugation();
+    this.longTermStorage = fluidSampleBuilder.getLongTermStorage();
 
     this.validateParts();
-    this.validateParameterRelations();
+
+    this.fluidSprecCode =
+        new FluidSprecCode.FluidSprecCodeBuilder()
+            .withFluidSampleType(this.fluidSampleType)
+            .withPrimaryContainer(this.primaryContainer)
+            .withPreCentrifugation(this.preCentrifugation)
+            .withFirstCentrifugation(this.firstCentrifugation)
+            .withSecondCentrifugation(this.secondCentrifugation)
+            .withPostCentrifugation(this.postCentrifugation)
+            .withLongTermStorage(this.longTermStorage)
+            .build();
   }
 
+  /**
+   * Validates if passed parts are in the sprec standard. Throws InvalidPartValueException if part
+   * is not in SPREC to prevent "selfmade" part values.
+   *
+   * @throws InvalidPartValueException if a passed part is not in SPREC.
+   */
   private void validateParts() {
 
     if (this.fluidSampleType != null && !FluidSampleType.contains(this.fluidSampleType)) {
@@ -83,71 +104,8 @@ public final class FluidSample {
     }
   }
 
-  private void validateParameterRelations() {
-
-    if (this.firstCentrifugation != null && this.secondCentrifugation != null) {
-
-      if (this.firstCentrifugation.getCentrifugationType() == CentrifugationType.NO
-          && this.secondCentrifugation.getCentrifugationType() != CentrifugationType.NO) {
-
-        throw new InvalidPartRelationException(
-            "Cannot set SecondCentrifugation to other than NO when there is no FirstCentrifugation");
-      }
-
-      if (this.firstCentrifugation.getCentrifugationType() == CentrifugationType.NO
-          && this.secondCentrifugation.getCentrifugationType() == CentrifugationType.NO
-          && this.postCentrifugation != null) {
-
-        if (this.postCentrifugation.getPostCentrifugationType()
-            != PostCentrifugationType.NOT_APPLICABLE) {
-
-          throw new InvalidPartRelationException(
-              "Cannot set PostCentrifugationType to other than NOT_APPLICABLE when there is no Centrifugation");
-        }
-      }
-    }
-  }
-
+  @Override
   public FluidSprecCode getSprecCode() {
-
-    return new FluidSprecCode.FluidSprecCodeBuilder()
-        .withFluidSampleType(this.fluidSampleType)
-        .withPrimaryContainer(this.primaryContainer)
-        .withPreCentrifugation(this.preCentrifugation)
-        .withFirstCentrifugation(this.firstCentrifugation)
-        .withSecondCentrifugation(this.secondCentrifugation)
-        .withPostCentrifugation(this.postCentrifugation)
-        .withLongTermStorage(this.longTermStorage)
-        .build();
-  }
-
-  public static final class FluidSampleBuilder {
-
-    private final FluidSampleType fluidSampleType;
-    private final PrimaryContainer primaryContainer;
-    private final PreCentrifugation preCentrifugation;
-    private final Centrifugation firstCentrifugation;
-    private final Centrifugation secondCentrifugation;
-    private final PostCentrifugation postCentrifugation;
-    private final LongTermStorage longTermStorage;
-
-    public FluidSampleBuilder(FluidSampleSprec fluidSampleSprec) {
-
-      if (fluidSampleSprec == null) {
-        throw new IllegalArgumentException("FluidSampleSprec cannot be null");
-      }
-
-      this.fluidSampleType = fluidSampleSprec.getFluidSampleType();
-      this.primaryContainer = fluidSampleSprec.getPrimaryContainer();
-      this.preCentrifugation = fluidSampleSprec.getPreCentrifugation();
-      this.firstCentrifugation = fluidSampleSprec.getFirstCentrifugation();
-      this.secondCentrifugation = fluidSampleSprec.getSecondCentrifugation();
-      this.postCentrifugation = fluidSampleSprec.getPostCentrifugation();
-      this.longTermStorage = fluidSampleSprec.getLongTermStorage();
-    }
-
-    public FluidSample build() {
-      return new FluidSample(this);
-    }
+    return this.fluidSprecCode;
   }
 }

@@ -1,6 +1,7 @@
 package de.spreclib.model.sprec;
 
-import de.spreclib.api.sprec.SolidSampleSprec;
+import de.spreclib.api.main.SolidSampleSprec;
+import de.spreclib.meta.spreccode.SolidSprecCode;
 import de.spreclib.model.enums.ColdIschemiaTime;
 import de.spreclib.model.enums.Fixation;
 import de.spreclib.model.enums.FixationTime;
@@ -10,8 +11,9 @@ import de.spreclib.model.enums.WarmIschemiaTime;
 import de.spreclib.model.exceptions.InvalidPartValueException;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.longtermstorage.LongTermStorageList;
+import de.spreclib.model.sprec.interfaces.ISample;
 
-public class SolidSample {
+public class SolidSample implements ISample {
 
   private final SolidSampleType solidSampleType;
   private final TypeOfCollection typeOfCollection;
@@ -21,18 +23,42 @@ public class SolidSample {
   private final FixationTime fixationTime;
   private final LongTermStorage longTermStorage;
 
-  private SolidSample(SolidSampleBuilder solidSampleBuilder) {
-    this.solidSampleType = solidSampleBuilder.solidSampleType;
-    this.typeOfCollection = solidSampleBuilder.typeOfCollection;
-    this.warmIschemiaTime = solidSampleBuilder.warmIschemiaTime;
-    this.coldIschemiaTime = solidSampleBuilder.coldIschemiaTime;
-    this.fixation = solidSampleBuilder.fixation;
-    this.fixationTime = solidSampleBuilder.fixationTime;
-    this.longTermStorage = solidSampleBuilder.longTermStorage;
+  private final SolidSprecCode solidSprecCode;
+
+  public SolidSample(SolidSampleSprec solidSampleBuilder) {
+
+    if (solidSampleBuilder == null) {
+      throw new IllegalArgumentException("SolidSampleBuilder cannot be null.");
+    }
+
+    this.solidSampleType = solidSampleBuilder.getSolidSampleType();
+    this.typeOfCollection = solidSampleBuilder.getTypeOfCollection();
+    this.warmIschemiaTime = solidSampleBuilder.getWarmIschemiaTime();
+    this.coldIschemiaTime = solidSampleBuilder.getColdIschemiaTime();
+    this.fixation = solidSampleBuilder.getFixation();
+    this.fixationTime = solidSampleBuilder.getFixationTime();
+    this.longTermStorage = solidSampleBuilder.getLongTermStorage();
 
     this.validateParts();
+
+    this.solidSprecCode =
+        new SolidSprecCode.SolidSprecCodeBuilder()
+            .withSolidSampleType(this.solidSampleType)
+            .withTypeOfCollection(this.typeOfCollection)
+            .withWarmIschemiaTime(this.warmIschemiaTime)
+            .withColdIschemiaTime(this.coldIschemiaTime)
+            .withFixation(this.fixation)
+            .withFixationTime(this.fixationTime)
+            .withLongTermStorage(this.longTermStorage)
+            .build();
   }
 
+  /**
+   * Validates if passed parts are in the sprec standard. Throws InvalidPartValueException if part
+   * is not in SPREC to prevent "selfmade" part values.
+   *
+   * @throws InvalidPartValueException if a passed part is not in SPREC.
+   */
   private void validateParts() {
 
     if (this.solidSampleType != null && !SolidSampleType.contains(this.solidSampleType)) {
@@ -72,45 +98,8 @@ public class SolidSample {
     }
   }
 
+  @Override
   public SolidSprecCode getSprecCode() {
-
-    return new SolidSprecCode.SolidSprecCodeBuilder()
-        .withSolidSampleType(this.solidSampleType)
-        .withTypeOfCollection(this.typeOfCollection)
-        .withWarmIschemiaTime(this.warmIschemiaTime)
-        .withColdIschemiaTime(this.coldIschemiaTime)
-        .withFixation(this.fixation)
-        .withFixationTime(this.fixationTime)
-        .withLongTermStorage(this.longTermStorage)
-        .build();
-  }
-
-  public static final class SolidSampleBuilder {
-    private final SolidSampleType solidSampleType;
-    private final TypeOfCollection typeOfCollection;
-    private final WarmIschemiaTime warmIschemiaTime;
-    private final ColdIschemiaTime coldIschemiaTime;
-    private final Fixation fixation;
-    private final FixationTime fixationTime;
-    private final LongTermStorage longTermStorage;
-
-    public SolidSampleBuilder(SolidSampleSprec solidSampleSprec) {
-
-      if (solidSampleSprec == null) {
-        throw new IllegalArgumentException("SolidSampleSprec cannot be null");
-      }
-
-      this.solidSampleType = solidSampleSprec.getSolidSampleType();
-      this.typeOfCollection = solidSampleSprec.getTypeOfCollection();
-      this.warmIschemiaTime = solidSampleSprec.getWarmIschemiaTime();
-      this.coldIschemiaTime = solidSampleSprec.getColdIschemiaTime();
-      this.fixation = solidSampleSprec.getFixation();
-      this.fixationTime = solidSampleSprec.getFixationTime();
-      this.longTermStorage = solidSampleSprec.getLongTermStorage();
-    }
-
-    public SolidSample build() {
-      return new SolidSample(this);
-    }
+    return this.solidSprecCode;
   }
 }

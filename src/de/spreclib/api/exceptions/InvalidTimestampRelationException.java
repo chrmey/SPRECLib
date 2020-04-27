@@ -3,7 +3,7 @@ package de.spreclib.api.exceptions;
 public class InvalidTimestampRelationException extends RuntimeException {
 
   /**
-   * Exception that is thrown when the second timestamp is before the first timestamp.
+   * Exception that is thrown when the second timestamp is before the first timestamp. S
    *
    * @author Christopher Meyer
    */

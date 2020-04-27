@@ -1,7 +1,6 @@
 package de.spreclib.api.parameters;
 
 import de.spreclib.api.exceptions.InvalidTimestampRelationException;
-import de.spreclib.api.exceptions.NegativeTimestampException;
 
 /**
  * Takes two timestamps milliseconds epoch time and calculates the timespan between them in minutes.
@@ -19,22 +18,24 @@ public final class Timespan {
    *
    * @param firstTimestampMilliSeconds milliseconds EPOCH time
    * @param secondTimestampMilliSeconds milliseconds EPOCH time
-   * @throws NegativeTimestampException if one timestamp is a negative numeric
-   * @throws InvalidTimestampRelationExceptio if the second timestamp is before the first timestamp
+   * @throws IllegalArgumentException if one timestamp is a negative numeric
+   * @throws InvalidTimestampRelationException if the second timestamp is before the first timestamp
    */
   public Timespan(long firstTimestampMilliSeconds, long secondTimestampMilliSeconds) {
 
     if (firstTimestampMilliSeconds < 0) {
-      throw new NegativeTimestampException(firstTimestampMilliSeconds, "Timestamp cannot be negative");
+      throw new IllegalArgumentException("Timestamp cannot be negative");
     }
 
     if (secondTimestampMilliSeconds < 0) {
-      throw new NegativeTimestampException(secondTimestampMilliSeconds, "Timestamp cannot be negative");
+      throw new IllegalArgumentException("Timestamp cannot be negative");
     }
 
     if (firstTimestampMilliSeconds >= secondTimestampMilliSeconds) {
       throw new InvalidTimestampRelationException(
-          firstTimestampMilliSeconds, secondTimestampMilliSeconds, "Timestamp1 must be before Timestamp2");
+          firstTimestampMilliSeconds,
+          secondTimestampMilliSeconds,
+          "Timestamp1 must be before Timestamp2");
     }
 
     this.timespanMinutes =

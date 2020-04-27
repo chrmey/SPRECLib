@@ -20,79 +20,79 @@ public final class FirstCentrifugationList {
         Collections.unmodifiableSet(
             new HashSet<>(
                 Arrays.asList(
-                    new SpecialCentrifugation(
+                    new Centrifugation(
                         CentrifugationType.NO,
                         new CodePart("N")),
-                    new SpecialCentrifugation(
+                    new Centrifugation(
                         CentrifugationType.UNKNOWN,
                         new CodePart("X")),
-                    new SpecialCentrifugation(
+                    new Centrifugation(
                         CentrifugationType.OTHER,
                         new CodePart("Z")),
-                    new NormalCentrifugation(
+                    new ParameterizedCentrifugation(
+                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
-                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.NO_BRAKING,
                         new CodePart("A")),
-                    new NormalCentrifugation(
+                    new ParameterizedCentrifugation(
+                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
-                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.WITH_BRAKING,
                         new CodePart("B")),
-                    new NormalCentrifugation(
+                    new ParameterizedCentrifugation(
+                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
-                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         CentrifugationBraking.NO_BRAKING,
                         new CodePart("C")),
-                    new NormalCentrifugation(
+                    new ParameterizedCentrifugation(
+                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
-                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         CentrifugationBraking.WITH_BRAKING,
                         new CodePart("D")),
-                    new NormalCentrifugation(
+                    new ParameterizedCentrifugation(
+                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
-                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.WITH_BRAKING,
                         new CodePart("E")),
-                    new NormalCentrifugation(
+                    new ParameterizedCentrifugation(
+                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
-                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         CentrifugationBraking.WITH_BRAKING,
                         new CodePart("F")),
-                    new NormalCentrifugation(
+                    new ParameterizedCentrifugation(
+                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
-                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.WITH_BRAKING,
                         new CodePart("G")),
-                    new NormalCentrifugation(
+                    new ParameterizedCentrifugation(
+                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
-                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         CentrifugationBraking.WITH_BRAKING,
                         new CodePart("F")),
-                    new NormalCentrifugation(
+                    new ParameterizedCentrifugation(
+                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.GREATER_TENTHOUSAND_G,
-                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.WITH_BRAKING,
                         new CodePart("I")),
-                    new NormalCentrifugation(
+                    new ParameterizedCentrifugation(
+                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
                         FirstCentrifugationSpeed.GREATER_TENTHOUSAND_G,
-                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
                         CentrifugationBraking.WITH_BRAKING,
                         new CodePart("J")),
-                    new NormalCentrifugation(
+                    new ParameterizedCentrifugation(
+                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         FirstCentrifugationDuration.THIRTY_MINUTES,
                         FirstCentrifugationSpeed.LESS_THOUSAND_G,
-                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
                         CentrifugationBraking.NO_BRAKING,
                         new CodePart("M")))));
   }

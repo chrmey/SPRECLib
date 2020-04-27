@@ -1,9 +1,8 @@
 package de.spreclib.api.parameters;
 
 import static org.junit.Assert.assertEquals;
+
 import de.spreclib.api.exceptions.InvalidTimestampRelationException;
-import de.spreclib.api.exceptions.NegativeTimestampException;
-import de.spreclib.api.parameters.Timespan;
 import org.junit.Test;
 
 public class TimespanTest {
@@ -39,7 +38,7 @@ public class TimespanTest {
     new Timespan(timestamp1, beforeTimestamp1);
   }
 
-  @Test(expected = NegativeTimestampException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testWithNegativeTimestamp1Timestamps() {
 
     long negativeTimestamp = -1577837800000L;
@@ -48,7 +47,7 @@ public class TimespanTest {
     new Timespan(negativeTimestamp, timestamp2);
   }
 
-  @Test(expected = NegativeTimestampException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testWithNegativeTimestamp2Timestamps() {
 
     long timestamp1 = 1577837800000L;

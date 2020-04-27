@@ -2,13 +2,10 @@ package de.spreclib.model.longtermstorage;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
 import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
-import de.spreclib.model.longtermstorage.LongTermStorage;
-import de.spreclib.model.longtermstorage.LongTermStorageList;
-import de.spreclib.model.longtermstorage.NormalLongTermStorage;
-import de.spreclib.model.longtermstorage.SpecialLongTermStorage;
 import de.spreclib.model.sprec.CodePart;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,156 +20,156 @@ public class LongTermStorageListTest {
   @Before
   public void setUp() {
     testList = new HashSet<>();
-    testList.add(new SpecialLongTermStorage(LongTermStorageType.UNKNOWN, new CodePart("X")));
-    testList.add(new SpecialLongTermStorage(LongTermStorageType.OTHER, new CodePart("Z")));
+    testList.add(new LongTermStorage(LongTermStorageType.UNKNOWN, new CodePart("X")));
+    testList.add(new LongTermStorage(LongTermStorageType.OTHER, new CodePart("Z")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("A")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML,
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
             new CodePart("B")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML,
             LongTermStorageTemperature.LESS_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
             new CodePart("V")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.CRYOTUBE_ONE_TO_TWO_ML,
             LongTermStorageTemperature.LIQUID_NITROGEN,
             new CodePart("C")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.CRYOTUBE_ONE_TO_TWO_ML,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("D")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.CRYOTUBE_ONE_TO_TWO_ML,
             LongTermStorageTemperature.PROGRAMMABLE_FREEZING_TO_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
             new CodePart("E")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PLASTIC_CRYOSTRAW,
             LongTermStorageTemperature.LIQUID_NITROGEN,
             new CodePart("F")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.STRAW,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("G")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.STRAW,
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
             new CodePart("H")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.STRAW,
             LongTermStorageTemperature.PROGRAMMABLE_FREEZING_TO_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
             new CodePart("G")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_GREATER_FIVE_ML,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("J")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_GREATER_FIVE_ML,
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
             new CodePart("K")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.MICROPLATE,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("L")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.MICROPLATE,
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
             new CodePart("M")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.CRYOTUBE_ONE_TO_TWO_ML,
             LongTermStorageTemperature
                 .LIQUID_NITROGEN_AFTER_MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("N")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.STRAW,
             LongTermStorageTemperature
                 .LIQUID_NITROGEN_AFTER_MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("O")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PARAFFIN_BLOCK,
             LongTermStorageTemperature.ROOM_TEMPERATURE,
             new CodePart("P")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PARAFFIN_BLOCK,
             LongTermStorageTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("P")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.BAG,
             LongTermStorageTemperature.LIQUID_NITROGEN,
             new CodePart("Q")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.DRY_TECHNOLOGY_MEDIUM,
             LongTermStorageTemperature.ROOM_TEMPERATURE,
             new CodePart("R")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_FOURTY_TO_FIFEHUNDRED_MICROL,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("S")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_FOURTY_TO_FIFEHUNDRED_MICROL,
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
             new CodePart("T")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_FOURTY_TO_FIFEHUNDRED_MICROL,
             LongTermStorageTemperature.LESS_MINUS_HUNDREDTHIRTYFIVE_DEGREES,
             new CodePart("W")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.ORIGINAL_PRIMARY_CONTAINER,
             LongTermStorageTemperature.MINUS_EIGHTYFIVE_TO_MINUS_SIXTY_DEGREES,
             new CodePart("Y")));
     testList.add(
-        new NormalLongTermStorage(
+        new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.ORIGINAL_PRIMARY_CONTAINER,
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
@@ -215,19 +212,19 @@ public class LongTermStorageListTest {
     int actualSpecialLongTermStorages = 0;
 
     for (LongTermStorage longTermStorage : testList) {
-      if (longTermStorage instanceof SpecialLongTermStorage) {
+      if (longTermStorage instanceof LongTermStorage) {
         expectedSpecialLongTermStorages++;
       }
-      if (longTermStorage instanceof NormalLongTermStorage) {
+      if (longTermStorage instanceof ParameterizedLongTermStorage) {
         expectedNormalLongTermStorages++;
       }
     }
 
     for (LongTermStorage longTermStorage : LongTermStorageList.LONG_TERM_STORAGES) {
-      if (longTermStorage instanceof SpecialLongTermStorage) {
+      if (longTermStorage instanceof LongTermStorage) {
         actualSpecialLongTermStorages++;
       }
-      if (longTermStorage instanceof NormalLongTermStorage) {
+      if (longTermStorage instanceof ParameterizedLongTermStorage) {
         actualNormalLongTermStorages++;
       }
     }

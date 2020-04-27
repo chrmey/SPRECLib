@@ -1,6 +1,5 @@
 package de.spreclib.model.enums.centrifugation;
 
-import de.spreclib.model.centrifugation.ICentrifugationTemperature;
 import de.spreclib.model.interfaces.IListProvideable;
 
 public enum FirstCentrifugationTemperature implements ICentrifugationTemperature, IListProvideable {

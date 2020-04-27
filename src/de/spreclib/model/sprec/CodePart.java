@@ -7,12 +7,22 @@ public final class CodePart implements ICodePart {
   private final String code;
 
   public CodePart(String codePart) {
+
+    validate(codePart);
+
     this.code = codePart;
   }
 
   @Override
   public String getStringRepresentation() {
     return this.code;
+  }
+
+  private void validate(String codePart) {
+
+    if (codePart.length() != 1 && codePart.length() != 3) {
+      throw new IllegalArgumentException("CodePart can only be 1 or 3 characters long");
+    }
   }
 
   @Override
