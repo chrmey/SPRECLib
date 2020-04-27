@@ -5,14 +5,6 @@
 A Java library for the SamplePREanalyticalCode Version 2 from the [ISBER](https://www.isber.org/page/SPREC?&hhsearchterms=%22sprec%22)
 
 
-## Getting SPRECLib
-
-SPRECLib uses Java8
-
-Download the latest release jar and include it to your build. 
-
-(Using Maven Central is planned)
-
 ## Getting started
 
 ### Terminology in SPRECLib
