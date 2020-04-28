@@ -2,7 +2,7 @@ package de.spreclib.model.enums.longtermstorage;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
+import de.spreclib.model.longtermstorage.enums.LongTermStorageTemperature;
 import org.junit.Test;
 
 public class LongTermStorageTemperatureTest {

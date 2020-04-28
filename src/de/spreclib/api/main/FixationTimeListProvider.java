@@ -2,7 +2,7 @@ package de.spreclib.api.main;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.parameters.Timespan;
-import de.spreclib.model.enums.FixationTime;
+import de.spreclib.model.fixationtime.FixationTime;
 import java.util.ArrayList;
 import java.util.List;
 

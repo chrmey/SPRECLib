@@ -8,7 +8,7 @@ import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.main.FixationTimeListProvider;
 import de.spreclib.api.main.FixationTimeOption;
 import de.spreclib.api.main.interfaces.IListOption;
-import de.spreclib.model.enums.FixationTime;
+import de.spreclib.model.fixationtime.FixationTime;
 import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;

@@ -2,10 +2,9 @@ package de.spreclib.model.longtermstorage;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
-import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
-import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
+import de.spreclib.model.longtermstorage.enums.LongTermStorageContainer;
+import de.spreclib.model.longtermstorage.enums.LongTermStorageTemperature;
+import de.spreclib.model.longtermstorage.enums.LongTermStorageType;
 import de.spreclib.model.sprec.CodePart;
 import java.util.HashSet;
 import java.util.Set;

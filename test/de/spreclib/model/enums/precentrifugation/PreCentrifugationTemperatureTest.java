@@ -2,7 +2,7 @@ package de.spreclib.model.enums.precentrifugation;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationTemperature;
 import org.junit.Test;
 
 public class PreCentrifugationTemperatureTest {

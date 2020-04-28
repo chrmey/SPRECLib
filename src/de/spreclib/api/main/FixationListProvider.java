@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.Fixation;
+import de.spreclib.model.fixation.Fixation;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,10 +1,10 @@
 package de.spreclib.model.centrifugation;
 
-import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
-import de.spreclib.model.enums.centrifugation.CentrifugationType;
-import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
-import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
-import de.spreclib.model.enums.centrifugation.FirstCentrifugationTemperature;
+import de.spreclib.model.centrifugation.enums.CentrifugationBraking;
+import de.spreclib.model.centrifugation.enums.CentrifugationType;
+import de.spreclib.model.centrifugation.enums.FirstCentrifugationDuration;
+import de.spreclib.model.centrifugation.enums.FirstCentrifugationSpeed;
+import de.spreclib.model.centrifugation.enums.FirstCentrifugationTemperature;
 import de.spreclib.model.sprec.CodePart;
 import java.util.Arrays;
 import java.util.Collections;

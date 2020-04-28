@@ -9,7 +9,7 @@ import de.spreclib.api.main.PreCentrifugationTemperatureListProvider;
 import de.spreclib.api.main.PreCentrifugationTemperatureOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationTemperature;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;

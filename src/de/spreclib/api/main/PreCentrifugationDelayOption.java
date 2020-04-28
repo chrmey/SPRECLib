@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationDelay;
 
 /**
  * PreCentrifugationDelayOption

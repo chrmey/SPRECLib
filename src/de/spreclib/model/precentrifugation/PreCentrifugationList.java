@@ -1,8 +1,8 @@
 package de.spreclib.model.precentrifugation;
 
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationDelay;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationTemperature;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationType;
 import de.spreclib.model.sprec.CodePart;
 import java.util.Arrays;
 import java.util.Collections;

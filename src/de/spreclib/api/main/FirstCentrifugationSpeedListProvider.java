@@ -1,7 +1,7 @@
 package de.spreclib.api.main;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
+import de.spreclib.model.centrifugation.enums.FirstCentrifugationSpeed;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.PrimaryContainer;
+import de.spreclib.model.primarycontainer.PrimaryContainer;
 
 /**
  * PrimaryContainerOption

@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
+import de.spreclib.model.centrifugation.enums.CentrifugationBraking;
 
 /**
  * SecondCentrifugationBrakingOption

@@ -8,7 +8,7 @@ import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.main.SecondCentrifugationSpeedListProvider;
 import de.spreclib.api.main.SecondCentrifugationSpeedOption;
 import de.spreclib.api.main.interfaces.IListOption;
-import de.spreclib.model.enums.centrifugation.SecondCentrifugationSpeed;
+import de.spreclib.model.centrifugation.enums.SecondCentrifugationSpeed;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;

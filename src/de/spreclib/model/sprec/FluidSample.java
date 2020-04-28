@@ -5,15 +5,15 @@ import de.spreclib.meta.spreccode.FluidSprecCode;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import de.spreclib.model.centrifugation.SecondCentrifugationList;
-import de.spreclib.model.enums.FluidSampleType;
-import de.spreclib.model.enums.PrimaryContainer;
 import de.spreclib.model.exceptions.InvalidPartValueException;
+import de.spreclib.model.fluidsampletype.FluidSampleType;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.longtermstorage.LongTermStorageList;
 import de.spreclib.model.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.postcentrifugation.PostCentrifugationList;
 import de.spreclib.model.precentrifugation.PreCentrifugation;
 import de.spreclib.model.precentrifugation.PreCentrifugationList;
+import de.spreclib.model.primarycontainer.PrimaryContainer;
 import de.spreclib.model.sprec.interfaces.ISample;
 
 public final class FluidSample implements ISample {

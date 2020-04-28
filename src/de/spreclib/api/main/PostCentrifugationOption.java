@@ -1,10 +1,10 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
-import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
-import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.model.postcentrifugation.ParameterizedPostCentrifugation;
 import de.spreclib.model.postcentrifugation.PostCentrifugation;
+import de.spreclib.model.postcentrifugation.enums.PostCentrifugationDelay;
+import de.spreclib.model.postcentrifugation.enums.PostCentrifugationTemperature;
+import de.spreclib.model.postcentrifugation.enums.PostCentrifugationType;
 
 /**
  * PostCentrifugationOption

@@ -1,10 +1,10 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.precentrifugation.ParameterizedPreCentrifugation;
 import de.spreclib.model.precentrifugation.PreCentrifugation;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationDelay;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationTemperature;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationType;
 
 /**
  * PreCentrifugationOption

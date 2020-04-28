@@ -1,6 +1,6 @@
 package de.spreclib.model.centrifugation;
 
-import de.spreclib.model.enums.centrifugation.CentrifugationType;
+import de.spreclib.model.centrifugation.enums.CentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListProvideable;
 import de.spreclib.model.interfaces.ISprecPart;

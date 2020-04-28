@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.FluidSampleType;
+import de.spreclib.model.fluidsampletype.FluidSampleType;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.lists.Fixation
+ * @see de.spreclib.model.fixation.lists.Fixation
  */
 public final class FluidSampleTypeListProvider extends AbstractListProvider<FluidSampleTypeOption> {
 

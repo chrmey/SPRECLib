@@ -8,7 +8,7 @@ import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.main.FirstCentrifugationDurationListProvider;
 import de.spreclib.api.main.FirstCentrifugationDurationOption;
 import de.spreclib.api.main.interfaces.IListOption;
-import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
+import de.spreclib.model.centrifugation.enums.FirstCentrifugationDuration;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;

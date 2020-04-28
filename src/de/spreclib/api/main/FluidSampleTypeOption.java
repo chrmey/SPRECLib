@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.FluidSampleType;
+import de.spreclib.model.fluidsampletype.FluidSampleType;
 
 /**
  * FluidSampleTypeOption

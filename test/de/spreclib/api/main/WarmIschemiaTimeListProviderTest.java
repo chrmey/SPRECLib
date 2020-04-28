@@ -8,7 +8,7 @@ import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.main.WarmIschemiaTimeListProvider;
 import de.spreclib.api.main.WarmIschemiaTimeOption;
 import de.spreclib.api.main.interfaces.IListOption;
-import de.spreclib.model.enums.WarmIschemiaTime;
+import de.spreclib.model.warmischemiatime.WarmIschemiaTime;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;

@@ -2,7 +2,7 @@ package de.spreclib.model.enums;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-
+import de.spreclib.model.fluidsampletype.FluidSampleType;
 import org.junit.Test;
 
 public class FluidSampleTypeTest {

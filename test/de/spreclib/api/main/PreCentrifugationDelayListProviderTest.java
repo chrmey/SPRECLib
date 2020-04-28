@@ -8,7 +8,7 @@ import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.main.PreCentrifugationDelayListProvider;
 import de.spreclib.api.main.PreCentrifugationDelayOption;
 import de.spreclib.api.main.interfaces.IListOption;
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationDelay;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.TypeOfCollection;
+import de.spreclib.model.typeofcollection.TypeOfCollection;
 import java.util.ArrayList;
 import java.util.List;
 

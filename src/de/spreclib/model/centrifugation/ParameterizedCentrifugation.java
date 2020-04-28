@@ -1,10 +1,10 @@
 package de.spreclib.model.centrifugation;
 
-import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
-import de.spreclib.model.enums.centrifugation.CentrifugationType;
-import de.spreclib.model.enums.centrifugation.ICentrifugationDuration;
-import de.spreclib.model.enums.centrifugation.ICentrifugationSpeed;
-import de.spreclib.model.enums.centrifugation.ICentrifugationTemperature;
+import de.spreclib.model.centrifugation.enums.CentrifugationBraking;
+import de.spreclib.model.centrifugation.enums.CentrifugationType;
+import de.spreclib.model.centrifugation.enums.ICentrifugationDuration;
+import de.spreclib.model.centrifugation.enums.ICentrifugationSpeed;
+import de.spreclib.model.centrifugation.enums.ICentrifugationTemperature;
 import de.spreclib.model.interfaces.ICodePart;
 
 public final class ParameterizedCentrifugation extends Centrifugation {

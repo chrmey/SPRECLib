@@ -2,7 +2,7 @@ package de.spreclib.api.main;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.parameters.Timespan;
-import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
+import de.spreclib.model.centrifugation.enums.FirstCentrifugationDuration;
 import java.util.ArrayList;
 import java.util.List;
 

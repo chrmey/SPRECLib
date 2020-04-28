@@ -1,9 +1,9 @@
 package de.spreclib.model.longtermstorage;
 
-import de.spreclib.model.enums.longtermstorage.LongTermStorageContainer;
-import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
-import de.spreclib.model.enums.longtermstorage.LongTermStorageType;
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.longtermstorage.enums.LongTermStorageContainer;
+import de.spreclib.model.longtermstorage.enums.LongTermStorageTemperature;
+import de.spreclib.model.longtermstorage.enums.LongTermStorageType;
 
 public final class ParameterizedLongTermStorage extends LongTermStorage {
 

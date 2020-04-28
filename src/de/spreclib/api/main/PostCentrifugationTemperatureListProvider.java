@@ -2,7 +2,7 @@ package de.spreclib.api.main;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.parameters.Temperature;
-import de.spreclib.model.enums.postcentrifugation.PostCentrifugationTemperature;
+import de.spreclib.model.postcentrifugation.enums.PostCentrifugationTemperature;
 import java.util.ArrayList;
 import java.util.List;
 

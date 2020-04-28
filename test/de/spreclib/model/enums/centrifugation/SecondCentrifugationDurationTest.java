@@ -1,6 +1,7 @@
 package de.spreclib.model.enums.centrifugation;
 
 import static org.junit.Assert.*;
+import de.spreclib.model.centrifugation.enums.SecondCentrifugationDuration;
 import org.junit.Test;
 
 public class SecondCentrifugationDurationTest {

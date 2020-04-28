@@ -2,7 +2,7 @@ package de.spreclib.model.enums.postcentrifugation;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
+import de.spreclib.model.postcentrifugation.enums.PostCentrifugationDelay;
 import org.junit.Test;
 
 public class PostCentrifugationDelayTest {

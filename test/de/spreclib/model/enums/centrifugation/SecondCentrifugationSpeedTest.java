@@ -1,9 +1,8 @@
 package de.spreclib.model.enums.centrifugation;
 
 import static org.junit.Assert.assertTrue;
+import de.spreclib.model.centrifugation.enums.SecondCentrifugationSpeed;
 import static org.junit.Assert.assertFalse;
-
-import de.spreclib.model.enums.centrifugation.SecondCentrifugationSpeed;
 import org.junit.Test;
 
 public class SecondCentrifugationSpeedTest {

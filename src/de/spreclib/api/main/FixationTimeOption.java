@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.FixationTime;
+import de.spreclib.model.fixationtime.FixationTime;
 
 /**
  * FixationTimeOption

@@ -2,7 +2,7 @@ package de.spreclib.api.main;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.parameters.Temperature;
-import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
+import de.spreclib.model.longtermstorage.enums.LongTermStorageTemperature;
 import java.util.ArrayList;
 import java.util.List;
 

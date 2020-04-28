@@ -7,7 +7,7 @@ import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.main.FirstCentrifugationBrakingListProvider;
 import de.spreclib.api.main.FirstCentrifugationBrakingOption;
 import de.spreclib.api.main.interfaces.IListOption;
-import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
+import de.spreclib.model.centrifugation.enums.CentrifugationBraking;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;

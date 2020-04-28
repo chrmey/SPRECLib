@@ -3,12 +3,11 @@ package de.spreclib.model.precentrifugation;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.precentrifugation.ParameterizedPreCentrifugation;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationDelay;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationTemperature;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationType;
 import de.spreclib.model.sprec.CodePart;
 import org.junit.Before;
 import org.junit.Test;

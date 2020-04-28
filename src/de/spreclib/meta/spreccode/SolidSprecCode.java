@@ -1,13 +1,13 @@
 package de.spreclib.meta.spreccode;
 
-import de.spreclib.model.enums.ColdIschemiaTime;
-import de.spreclib.model.enums.Fixation;
-import de.spreclib.model.enums.FixationTime;
-import de.spreclib.model.enums.SolidSampleType;
-import de.spreclib.model.enums.TypeOfCollection;
-import de.spreclib.model.enums.WarmIschemiaTime;
+import de.spreclib.model.coldischemiatime.ColdIschemiaTime;
+import de.spreclib.model.fixation.Fixation;
+import de.spreclib.model.fixationtime.FixationTime;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.longtermstorage.LongTermStorage;
+import de.spreclib.model.solidsampletype.SolidSampleType;
+import de.spreclib.model.typeofcollection.TypeOfCollection;
+import de.spreclib.model.warmischemiatime.WarmIschemiaTime;
 
 public final class SolidSprecCode extends AbstractSprecCode {
 

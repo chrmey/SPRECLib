@@ -1,12 +1,12 @@
 package de.spreclib.meta.spreccode;
 
 import de.spreclib.model.centrifugation.Centrifugation;
-import de.spreclib.model.enums.FluidSampleType;
-import de.spreclib.model.enums.PrimaryContainer;
+import de.spreclib.model.fluidsampletype.FluidSampleType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.precentrifugation.PreCentrifugation;
+import de.spreclib.model.primarycontainer.PrimaryContainer;
 
 public final class FluidSprecCode extends AbstractSprecCode {
 

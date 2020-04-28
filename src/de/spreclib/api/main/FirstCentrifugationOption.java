@@ -2,11 +2,11 @@ package de.spreclib.api.main;
 
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.ParameterizedCentrifugation;
-import de.spreclib.model.enums.centrifugation.CentrifugationBraking;
-import de.spreclib.model.enums.centrifugation.CentrifugationType;
-import de.spreclib.model.enums.centrifugation.FirstCentrifugationDuration;
-import de.spreclib.model.enums.centrifugation.FirstCentrifugationSpeed;
-import de.spreclib.model.enums.centrifugation.FirstCentrifugationTemperature;
+import de.spreclib.model.centrifugation.enums.CentrifugationBraking;
+import de.spreclib.model.centrifugation.enums.CentrifugationType;
+import de.spreclib.model.centrifugation.enums.FirstCentrifugationDuration;
+import de.spreclib.model.centrifugation.enums.FirstCentrifugationSpeed;
+import de.spreclib.model.centrifugation.enums.FirstCentrifugationTemperature;
 
 /**
  * FirstCentrifugationOption

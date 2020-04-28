@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.SolidSampleType;
+import de.spreclib.model.solidsampletype.SolidSampleType;
 
 /**
  * SolidSampleTypeOption

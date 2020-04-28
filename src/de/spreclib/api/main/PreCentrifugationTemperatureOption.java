@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationTemperature;
 
 /**
  * PreCentrifugationTemperatureOption

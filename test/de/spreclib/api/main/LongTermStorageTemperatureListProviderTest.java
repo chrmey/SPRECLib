@@ -9,7 +9,7 @@ import de.spreclib.api.main.LongTermStorageTemperatureListProvider;
 import de.spreclib.api.main.LongTermStorageTemperatureOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
-import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
+import de.spreclib.model.longtermstorage.enums.LongTermStorageTemperature;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;

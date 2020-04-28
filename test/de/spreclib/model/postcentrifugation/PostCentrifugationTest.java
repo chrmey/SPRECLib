@@ -1,9 +1,8 @@
 package de.spreclib.model.postcentrifugation;
 
 import static org.junit.Assert.assertEquals;
-
-import de.spreclib.model.enums.postcentrifugation.PostCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.postcentrifugation.enums.PostCentrifugationType;
 import de.spreclib.model.sprec.CodePart;
 import org.junit.Before;
 import org.junit.Test;

@@ -2,10 +2,9 @@ package de.spreclib.model.precentrifugation;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationDelay;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationTemperature;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationType;
 import de.spreclib.model.sprec.CodePart;
 import java.util.HashSet;
 import java.util.Set;

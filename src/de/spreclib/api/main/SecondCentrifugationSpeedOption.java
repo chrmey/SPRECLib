@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.centrifugation.SecondCentrifugationSpeed;
+import de.spreclib.model.centrifugation.enums.SecondCentrifugationSpeed;
 
 /**
  * SecondCentrifugationSpeedOption

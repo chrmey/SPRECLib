@@ -2,6 +2,7 @@ package de.spreclib.model.enums.centrifugation;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import de.spreclib.model.centrifugation.enums.CentrifugationBraking;
 import org.junit.Test;
 
 public class CentrifugationBrakingTest {

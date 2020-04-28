@@ -1,9 +1,9 @@
 package de.spreclib.model.precentrifugation;
 
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationDelay;
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationTemperature;
-import de.spreclib.model.enums.precentrifugation.PreCentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationDelay;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationTemperature;
+import de.spreclib.model.precentrifugation.enums.PreCentrifugationType;
 
 public final class ParameterizedPreCentrifugation extends PreCentrifugation {
 

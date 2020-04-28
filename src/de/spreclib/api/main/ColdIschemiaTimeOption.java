@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.ColdIschemiaTime;
+import de.spreclib.model.coldischemiatime.ColdIschemiaTime;
 
 /**
  * ColdIschemiaTimeListOption

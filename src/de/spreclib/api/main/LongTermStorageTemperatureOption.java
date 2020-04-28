@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.longtermstorage.LongTermStorageTemperature;
+import de.spreclib.model.longtermstorage.enums.LongTermStorageTemperature;
 
 /**
  * LongTermStorageTemperatureOption

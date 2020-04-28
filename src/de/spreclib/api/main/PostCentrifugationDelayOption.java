@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.model.enums.postcentrifugation.PostCentrifugationDelay;
+import de.spreclib.model.postcentrifugation.enums.PostCentrifugationDelay;
 
 /**
  * PostCentrifugationDelayOption
