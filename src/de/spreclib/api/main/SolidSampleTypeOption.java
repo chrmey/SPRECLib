@@ -24,7 +24,7 @@ public final class SolidSampleTypeOption extends AbstractListOption {
   }
 
   @Override
-  protected SolidSampleType getContainedObject() {
+  SolidSampleType getContainedObject() {
     return this.solidSampleType;
   }
 }

@@ -24,7 +24,7 @@ public final class TypeOfCollectionOption extends AbstractListOption {
   }
 
   @Override
-  protected TypeOfCollection getContainedObject() {
+  TypeOfCollection getContainedObject() {
     return this.typeOfCollection;
   }
 }

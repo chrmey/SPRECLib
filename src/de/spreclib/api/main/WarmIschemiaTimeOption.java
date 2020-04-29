@@ -24,11 +24,11 @@ public final class WarmIschemiaTimeOption extends AbstractListOption {
   }
 
   @Override
-  protected WarmIschemiaTime getContainedObject() {
+  WarmIschemiaTime getContainedObject() {
     return this.warmIschemiaTime;
   }
 
-  protected boolean hasDuration(int durationMinutes) {
+  boolean hasDuration(int durationMinutes) {
     if (this.warmIschemiaTime.hasValue(durationMinutes)) {
       return true;
     } else {

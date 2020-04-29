@@ -24,11 +24,11 @@ public final class SecondCentrifugationBrakingOption extends AbstractListOption 
   }
 
   @Override
-  protected CentrifugationBraking getContainedObject() {
+  CentrifugationBraking getContainedObject() {
     return this.secondCentrifugationBraking;
   }
 
-  protected boolean hasBraking(boolean braking) {
+  boolean hasBraking(boolean braking) {
     if (this.secondCentrifugationBraking.hasValue(braking)) {
       return true;
     } else {

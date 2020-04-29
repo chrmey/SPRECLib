@@ -24,7 +24,7 @@ public final class PrimaryContainerOption extends AbstractListOption {
   }
 
   @Override
-  protected PrimaryContainer getContainedObject() {
+  PrimaryContainer getContainedObject() {
     return this.primaryContainer;
   }
 }

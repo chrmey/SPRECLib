@@ -24,11 +24,11 @@ public final class PostCentrifugationDelayOption extends AbstractListOption {
   }
 
   @Override
-  protected PostCentrifugationDelay getContainedObject() {
+  PostCentrifugationDelay getContainedObject() {
     return this.postCentrifugationDelay;
   }
 
-  protected boolean hasDelay(int delayMinutes) {
+  boolean hasDelay(int delayMinutes) {
     if (this.postCentrifugationDelay.hasValue(delayMinutes)) {
       return true;
     } else {

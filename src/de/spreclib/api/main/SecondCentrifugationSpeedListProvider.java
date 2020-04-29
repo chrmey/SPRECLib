@@ -22,7 +22,7 @@ public final class SecondCentrifugationSpeedListProvider
   }
 
   @Override
-  protected List<SecondCentrifugationSpeedOption> generateList() {
+  List<SecondCentrifugationSpeedOption> generateList() {
     List<SecondCentrifugationSpeedOption> secondCentrifugationSpeedOptions = new ArrayList<>();
     for (SecondCentrifugationSpeed secondCentrifugationSpeed : SecondCentrifugationSpeed.values()) {
       SecondCentrifugationSpeedOption secondCentrifugationSpeedOption =

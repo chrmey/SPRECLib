@@ -20,7 +20,7 @@ public final class LongTermStorageListProvider extends AbstractListProvider<Long
   }
 
   @Override
-  protected List<LongTermStorageOption> generateList() {
+  List<LongTermStorageOption> generateList() {
     List<LongTermStorageOption> longTermStorageOptions = new ArrayList<>();
     for (LongTermStorage longTermStorage : LongTermStorageList.LONG_TERM_STORAGES) {
       LongTermStorageOption longTermStorageOption = new LongTermStorageOption(longTermStorage);

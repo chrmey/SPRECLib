@@ -58,11 +58,11 @@ public final class SecondCentrifugationOption extends AbstractListOption {
   }
 
   @Override
-  protected Centrifugation getContainedObject() {
+  Centrifugation getContainedObject() {
     return this.secondCentrifugation;
   }
 
-  protected boolean hasSecondCentrifugation(
+  boolean hasSecondCentrifugation(
       SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption,
       SecondCentrifugationDurationOption secondCentrifugationDurationOption,
       SecondCentrifugationSpeedOption secondCentrifugationSpeedOption,

@@ -24,11 +24,11 @@ public final class PreCentrifugationTemperatureOption extends AbstractListOption
   }
 
   @Override
-  protected PreCentrifugationTemperature getContainedObject() {
+  PreCentrifugationTemperature getContainedObject() {
     return this.preCentrifugationTemperature;
   }
 
-  protected boolean hasTemperature(float temperatureCelsius) {
+  boolean hasTemperature(float temperatureCelsius) {
     if (this.preCentrifugationTemperature.hasValue(temperatureCelsius)) {
       return true;
     } else {

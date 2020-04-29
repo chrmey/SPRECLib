@@ -23,7 +23,7 @@ public final class PostCentrifugationListProvider
   }
 
   @Override
-  protected List<PostCentrifugationOption> generateList() {
+  List<PostCentrifugationOption> generateList() {
     List<PostCentrifugationOption> postCentrifugationOptions = new ArrayList<>();
     for (PostCentrifugation postCentrifugation : PostCentrifugationList.POST_CENTRIFUGATIONS) {
       PostCentrifugationOption postCentrifugationOption =

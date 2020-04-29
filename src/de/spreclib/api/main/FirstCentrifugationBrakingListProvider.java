@@ -22,7 +22,7 @@ public final class FirstCentrifugationBrakingListProvider
   }
 
   @Override
-  protected List<FirstCentrifugationBrakingOption> generateList() {
+  List<FirstCentrifugationBrakingOption> generateList() {
     List<FirstCentrifugationBrakingOption> firstCentrifugationBrakingOptions = new ArrayList<>();
     for (CentrifugationBraking centrifugationBraking : CentrifugationBraking.values()) {
       FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =

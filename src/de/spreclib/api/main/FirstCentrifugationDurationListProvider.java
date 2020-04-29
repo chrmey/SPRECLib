@@ -23,7 +23,7 @@ public final class FirstCentrifugationDurationListProvider
   }
 
   @Override
-  protected List<FirstCentrifugationDurationOption> generateList() {
+  List<FirstCentrifugationDurationOption> generateList() {
     List<FirstCentrifugationDurationOption> firstCentrifugationDurationOptions = new ArrayList<>();
     for (FirstCentrifugationDuration firstCentrifugationDuration :
         FirstCentrifugationDuration.values()) {

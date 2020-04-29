@@ -18,7 +18,7 @@ public final class FixationListProvider extends AbstractListProvider<FixationOpt
   }
 
   @Override
-  protected List<FixationOption> generateList() {
+  List<FixationOption> generateList() {
     List<FixationOption> fixationOptions = new ArrayList<>();
     for (Fixation fixation : Fixation.values()) {
       FixationOption fixationOption = new FixationOption(fixation);

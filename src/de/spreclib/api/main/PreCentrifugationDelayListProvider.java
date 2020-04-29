@@ -23,7 +23,7 @@ public final class PreCentrifugationDelayListProvider
   }
 
   @Override
-  public List<PreCentrifugationDelayOption> generateList() {
+  List<PreCentrifugationDelayOption> generateList() {
     List<PreCentrifugationDelayOption> preCentrifugationDelayOptions = new ArrayList<>();
     for (PreCentrifugationDelay preCentrifugationDelay : PreCentrifugationDelay.values()) {
       PreCentrifugationDelayOption preCentrifugationDelayOption =

@@ -19,7 +19,7 @@ public final class TypeOfCollectionListProvider
   }
 
   @Override
-  protected List<TypeOfCollectionOption> generateList() {
+  List<TypeOfCollectionOption> generateList() {
     List<TypeOfCollectionOption> typeOfCollectionOptions = new ArrayList<>();
     for (TypeOfCollection typeOfCollection : TypeOfCollection.values()) {
       TypeOfCollectionOption typeOfCollectionoption = new TypeOfCollectionOption(typeOfCollection);

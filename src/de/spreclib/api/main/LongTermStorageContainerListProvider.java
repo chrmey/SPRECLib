@@ -19,7 +19,7 @@ public final class LongTermStorageContainerListProvider
   }
 
   @Override
-  protected List<LongTermStorageContainerOption> generateList() {
+  List<LongTermStorageContainerOption> generateList() {
     List<LongTermStorageContainerOption> longTermStorageContainerOptions = new ArrayList<>();
     for (LongTermStorageContainer longTermStorageContainer : LongTermStorageContainer.values()) {
       LongTermStorageContainerOption longTermStorageContainerOption =

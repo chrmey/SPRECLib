@@ -22,7 +22,7 @@ public final class FixationTimeListProvider extends AbstractListProvider<Fixatio
   }
 
   @Override
-  protected List<FixationTimeOption> generateList() {
+  List<FixationTimeOption> generateList() {
     List<FixationTimeOption> fixationTimeOptions = new ArrayList<>();
     for (FixationTime fixationTime : FixationTime.values()) {
       FixationTimeOption fixationOption = new FixationTimeOption(fixationTime);

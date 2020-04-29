@@ -25,7 +25,7 @@ public final class SecondCentrifugationTemperatureOption extends AbstractListOpt
   }
 
   @Override
-  protected SecondCentrifugationTemperature getContainedObject() {
+  SecondCentrifugationTemperature getContainedObject() {
     return this.secondCentrifugationTemperature;
   }
 

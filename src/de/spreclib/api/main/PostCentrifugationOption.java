@@ -50,11 +50,11 @@ public final class PostCentrifugationOption extends AbstractListOption {
   }
 
   @Override
-  protected PostCentrifugation getContainedObject() {
+  PostCentrifugation getContainedObject() {
     return this.postCentrifugation;
   }
 
-  protected boolean hasPostCentrifugation(
+  boolean hasPostCentrifugation(
       PostCentrifugationDelayOption postCentrifugationDelayOption,
       PostCentrifugationTemperatureOption postCentrifugationTemperatureOption) {
 

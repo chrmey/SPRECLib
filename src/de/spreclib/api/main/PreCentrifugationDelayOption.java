@@ -24,11 +24,11 @@ public final class PreCentrifugationDelayOption extends AbstractListOption {
   }
 
   @Override
-  protected PreCentrifugationDelay getContainedObject() {
+  PreCentrifugationDelay getContainedObject() {
     return this.preCentrifugationDelay;
   }
 
-  protected boolean hasDelay(int delayMinutes) {
+  boolean hasDelay(int delayMinutes) {
     if (this.preCentrifugationDelay.hasValue(delayMinutes)) {
       return true;
     } else {

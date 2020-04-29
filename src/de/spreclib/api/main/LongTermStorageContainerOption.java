@@ -24,7 +24,7 @@ public final class LongTermStorageContainerOption extends AbstractListOption {
   }
 
   @Override
-  protected LongTermStorageContainer getContainedObject() {
+  LongTermStorageContainer getContainedObject() {
     return this.longTermStorageContainer;
   }
 }

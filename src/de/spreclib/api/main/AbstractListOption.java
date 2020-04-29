@@ -11,5 +11,5 @@ public abstract class AbstractListOption implements IListOption {
   protected static final ResourceBundle NAMES_DEFAULT =
       ResourceBundle.getBundle("names", ENGLISH_US);
 
-  protected abstract IListProvideable getContainedObject();
+  abstract IListProvideable getContainedObject();
 }

@@ -23,7 +23,7 @@ public final class PreCentrifugationListProvider
   }
 
   @Override
-  protected List<PreCentrifugationOption> generateList() {
+  List<PreCentrifugationOption> generateList() {
     List<PreCentrifugationOption> preCentrifguationOptions = new ArrayList<>();
     for (PreCentrifugation preCentrifugation : PreCentrifugationList.PRE_CENTRIFUGATIONS) {
       PreCentrifugationOption preCentrifugationOption =

@@ -58,7 +58,7 @@ public final class FirstCentrifugationOption extends AbstractListOption {
   }
 
   @Override
-  protected Centrifugation getContainedObject() {
+  Centrifugation getContainedObject() {
     return this.firstCentrifugation;
   }
 

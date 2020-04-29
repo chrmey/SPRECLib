@@ -25,11 +25,11 @@ public final class FirstCentrifugationTemperatureOption extends AbstractListOpti
   }
 
   @Override
-  protected FirstCentrifugationTemperature getContainedObject() {
+  FirstCentrifugationTemperature getContainedObject() {
     return this.firstCentrifugationTemperature;
   }
 
-  protected boolean hasTemperature(float temperatureCelsius) {
+  boolean hasTemperature(float temperatureCelsius) {
     if (this.firstCentrifugationTemperature.hasValue(temperatureCelsius)) {
       return true;
     } else {

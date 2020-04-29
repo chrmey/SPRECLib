@@ -24,7 +24,7 @@ public final class FixationOption extends AbstractListOption {
   }
 
   @Override
-  protected Fixation getContainedObject() {
+  Fixation getContainedObject() {
     return this.fixation;
   }
 }

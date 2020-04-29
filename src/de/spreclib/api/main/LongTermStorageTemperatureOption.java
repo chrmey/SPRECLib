@@ -24,11 +24,11 @@ public final class LongTermStorageTemperatureOption extends AbstractListOption {
   }
 
   @Override
-  protected LongTermStorageTemperature getContainedObject() {
+  LongTermStorageTemperature getContainedObject() {
     return this.longTermStorageTemperature;
   }
 
-  protected boolean hasTemperature(float temperatureCelsius) {
+  boolean hasTemperature(float temperatureCelsius) {
     if (this.longTermStorageTemperature.hasValue(temperatureCelsius)) {
       return true;
     } else {

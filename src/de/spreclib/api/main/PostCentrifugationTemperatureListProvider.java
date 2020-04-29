@@ -23,7 +23,7 @@ public final class PostCentrifugationTemperatureListProvider
   }
 
   @Override
-  protected List<PostCentrifugationTemperatureOption> generateList() {
+  List<PostCentrifugationTemperatureOption> generateList() {
     List<PostCentrifugationTemperatureOption> postCentrifugationTemperatureOptions =
         new ArrayList<>();
     for (PostCentrifugationTemperature postCentrifugationTemperature :

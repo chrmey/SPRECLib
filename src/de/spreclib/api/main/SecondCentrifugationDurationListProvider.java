@@ -23,7 +23,7 @@ public final class SecondCentrifugationDurationListProvider
   }
 
   @Override
-  protected List<SecondCentrifugationDurationOption> generateList() {
+  List<SecondCentrifugationDurationOption> generateList() {
     List<SecondCentrifugationDurationOption> secondCentrifugationOptions = new ArrayList<>();
     for (SecondCentrifugationDuration secondCentrifugationDuration :
         SecondCentrifugationDuration.values()) {

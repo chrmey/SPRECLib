@@ -19,7 +19,7 @@ public final class PrimaryContainerListProvider
   }
 
   @Override
-  protected List<PrimaryContainerOption> generateList() {
+  List<PrimaryContainerOption> generateList() {
     List<PrimaryContainerOption> primaryContainerOptions = new ArrayList<>();
     for (PrimaryContainer primaryContainer : PrimaryContainer.values()) {
       PrimaryContainerOption primaryContainerOption = new PrimaryContainerOption(primaryContainer);

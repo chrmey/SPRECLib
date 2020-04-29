@@ -23,7 +23,7 @@ public final class PostCentrifugationDelayListProvider
   }
 
   @Override
-  protected List<PostCentrifugationDelayOption> generateList() {
+  List<PostCentrifugationDelayOption> generateList() {
     List<PostCentrifugationDelayOption> postCentrifugationDelayOptions = new ArrayList<>();
     for (PostCentrifugationDelay postCentrifugationDelay : PostCentrifugationDelay.values()) {
       PostCentrifugationDelayOption postCentrifugationDelayOption =

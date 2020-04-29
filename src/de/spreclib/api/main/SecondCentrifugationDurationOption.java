@@ -24,11 +24,11 @@ public final class SecondCentrifugationDurationOption extends AbstractListOption
   }
 
   @Override
-  protected SecondCentrifugationDuration getContainedObject() {
+  SecondCentrifugationDuration getContainedObject() {
     return this.secondCentrifugationDuration;
   }
 
-  protected boolean hasDuration(int durationMinutes) {
+  boolean hasDuration(int durationMinutes) {
     if (this.secondCentrifugationDuration.hasValue(durationMinutes)) {
       return true;
     } else {

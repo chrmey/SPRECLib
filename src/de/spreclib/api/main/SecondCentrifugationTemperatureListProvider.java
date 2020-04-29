@@ -23,7 +23,7 @@ public final class SecondCentrifugationTemperatureListProvider
   }
 
   @Override
-  protected List<SecondCentrifugationTemperatureOption> generateList() {
+  List<SecondCentrifugationTemperatureOption> generateList() {
     List<SecondCentrifugationTemperatureOption> secondCentrifugationTemperatureOptions =
         new ArrayList<>();
     for (SecondCentrifugationTemperature secondCentrifugationTemperature :

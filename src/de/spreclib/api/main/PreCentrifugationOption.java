@@ -49,11 +49,11 @@ public final class PreCentrifugationOption extends AbstractListOption {
   }
 
   @Override
-  protected PreCentrifugation getContainedObject() {
+  PreCentrifugation getContainedObject() {
     return this.preCentrifugation;
   }
 
-  protected boolean hasPreCentrifugation(
+  boolean hasPreCentrifugation(
       PreCentrifugationDelayOption preCentrifugationDelayOption,
       PreCentrifugationTemperatureOption preCentrifugationTemperatureOption) {
 

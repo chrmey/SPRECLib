@@ -3,6 +3,7 @@ package de.spreclib.api.main;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.api.exceptions.UndefinedValueException;
@@ -18,6 +19,7 @@ import de.spreclib.api.main.FirstCentrifugationTemperatureListProvider;
 import de.spreclib.api.main.FirstCentrifugationTemperatureOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
+import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;
@@ -40,9 +42,24 @@ public class FirstCentrifugationListProviderTest {
   }
 
   @Test
+  public void testListContentCount() {
+    int expected = FirstCentrifugationList.CENTRIFUGATIONS.size();
+    int actual = firstCentrifugationList.size();
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
   public void testOptionStringRepresentation() {
     for (IListOption option : firstCentrifugationList) {
       assertNotNull(option.getStringRepresentation());
+    }
+  }
+
+  @Test
+  public void testOptionContainsCentrifugation() {
+    for (IListOption option : firstCentrifugationList) {
+      assertTrue(option.getClass().equals(FirstCentrifugationOption.class));
     }
   }
 

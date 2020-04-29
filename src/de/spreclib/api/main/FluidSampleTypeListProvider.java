@@ -18,7 +18,7 @@ public final class FluidSampleTypeListProvider extends AbstractListProvider<Flui
   }
 
   @Override
-  protected List<FluidSampleTypeOption> generateList() {
+  List<FluidSampleTypeOption> generateList() {
     List<FluidSampleTypeOption> FLUID_SAMPLE_TYPE_OPTIONS = new ArrayList<>();
     for (FluidSampleType fluidSampleType : FluidSampleType.values()) {
       FluidSampleTypeOption fluidSampleTypeOption = new FluidSampleTypeOption(fluidSampleType);

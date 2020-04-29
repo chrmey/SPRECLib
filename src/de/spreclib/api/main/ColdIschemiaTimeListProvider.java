@@ -23,7 +23,7 @@ public final class ColdIschemiaTimeListProvider
   }
 
   @Override
-  protected List<ColdIschemiaTimeOption> generateList() {
+  List<ColdIschemiaTimeOption> generateList() {
     List<ColdIschemiaTimeOption> coldIschemiaTimeOptions = new ArrayList<>();
     for (ColdIschemiaTime coldIschemiaTime : ColdIschemiaTime.values()) {
       ColdIschemiaTimeOption coldIschemiaTimeOption = new ColdIschemiaTimeOption(coldIschemiaTime);

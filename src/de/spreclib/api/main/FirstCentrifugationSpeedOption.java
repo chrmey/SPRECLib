@@ -24,11 +24,11 @@ public final class FirstCentrifugationSpeedOption extends AbstractListOption {
   }
 
   @Override
-  protected FirstCentrifugationSpeed getContainedObject() {
+  FirstCentrifugationSpeed getContainedObject() {
     return this.firstCentrifugationSpeed;
   }
 
-  protected boolean hasSpeed(int speed) {
+  boolean hasSpeed(int speed) {
     if (this.firstCentrifugationSpeed.hasValue(speed)) {
       return true;
     } else {

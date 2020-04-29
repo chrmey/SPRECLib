@@ -24,7 +24,7 @@ public final class FluidSampleTypeOption extends AbstractListOption {
   }
 
   @Override
-  protected FluidSampleType getContainedObject() {
+  FluidSampleType getContainedObject() {
     return this.fluidSampleType;
   }
 }

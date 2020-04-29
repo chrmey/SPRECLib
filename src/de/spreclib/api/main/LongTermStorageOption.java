@@ -49,7 +49,7 @@ public final class LongTermStorageOption extends AbstractListOption {
   }
 
   @Override
-  protected LongTermStorage getContainedObject() {
+  LongTermStorage getContainedObject() {
     return this.longTermStorage;
   }
 

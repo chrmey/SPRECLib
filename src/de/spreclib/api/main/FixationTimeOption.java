@@ -24,11 +24,11 @@ public final class FixationTimeOption extends AbstractListOption {
   }
 
   @Override
-  protected FixationTime getContainedObject() {
+  FixationTime getContainedObject() {
     return this.fixationTime;
   }
 
-  protected boolean hasDuration(int durationMinutes) {
+  boolean hasDuration(int durationMinutes) {
     if (this.fixationTime.hasValue(durationMinutes)) {
       return true;
     } else {

@@ -12,7 +12,7 @@ import java.util.List;
  */
 public abstract class AbstractListProvider<T extends IListOption> implements IListProvider<T> {
 
-  protected final List<T> listOptions;
+  final List<T> listOptions;
 
   public AbstractListProvider() {
     this.listOptions = generateList();
@@ -23,5 +23,5 @@ public abstract class AbstractListProvider<T extends IListOption> implements ILi
     return this.listOptions;
   }
 
-  protected abstract List<T> generateList();
+  abstract List<T> generateList();
 }

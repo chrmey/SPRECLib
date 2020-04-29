@@ -21,7 +21,7 @@ public final class LongTermStorageTemperatureListProvider
   }
 
   @Override
-  protected List<LongTermStorageTemperatureOption> generateList() {
+  List<LongTermStorageTemperatureOption> generateList() {
     List<LongTermStorageTemperatureOption> longTermSTorageTemperatureOptions = new ArrayList<>();
     for (LongTermStorageTemperature longTermStorageTemperature :
         LongTermStorageTemperature.values()) {

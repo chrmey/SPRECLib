@@ -18,7 +18,7 @@ public final class SolidSampleTypeListProvider extends AbstractListProvider<Soli
   }
 
   @Override
-  protected List<SolidSampleTypeOption> generateList() {
+  List<SolidSampleTypeOption> generateList() {
     List<SolidSampleTypeOption> solidSampleTypeOptions = new ArrayList<>();
     for (SolidSampleType solidSampleType : SolidSampleType.values()) {
       SolidSampleTypeOption solidSampleTypeOption = new SolidSampleTypeOption(solidSampleType);
