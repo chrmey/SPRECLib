@@ -107,7 +107,7 @@ public class FirstCentrifugationListTest {
   public void testFirstCentrifugationListContents() {
     for (Centrifugation centrifugation : referenceList) {
 
-      assertTrue(FirstCentrifugationList.CENTRIFUGATIONS.contains(centrifugation));
+      assertTrue(FirstCentrifugationList.FIRST_CENTRIFUGATIONS.contains(centrifugation));
     }
   }
 

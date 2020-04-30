@@ -42,13 +42,13 @@ public class FirstCentrifugationListProviderTest {
   }
 
   @Test
-  public void testListContentCount() {
-    int expected = FirstCentrifugationList.CENTRIFUGATIONS.size();
+  public void testFullListSize() {
+    int expected = FirstCentrifugationList.FIRST_CENTRIFUGATIONS.size();
     int actual = firstCentrifugationList.size();
 
     assertEquals(expected, actual);
   }
-
+  
   @Test
   public void testOptionStringRepresentation() {
     for (IListOption option : firstCentrifugationList) {

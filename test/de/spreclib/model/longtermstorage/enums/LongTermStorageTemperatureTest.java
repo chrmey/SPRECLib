@@ -1,4 +1,4 @@
-package de.spreclib.model.enums.longtermstorage;
+package de.spreclib.model.longtermstorage.enums;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

@@ -1,4 +1,4 @@
-package de.spreclib.model.enums;
+package de.spreclib.model.primarycontainer;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;

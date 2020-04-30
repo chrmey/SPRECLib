@@ -1,4 +1,4 @@
-package de.spreclib.model.enums;
+package de.spreclib.model.warmischemiatime;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;

@@ -25,7 +25,7 @@ public final class FirstCentrifugationListProvider
   @Override
   List<FirstCentrifugationOption> generateList() {
     List<FirstCentrifugationOption> firstCentrifugationOptions = new ArrayList<>();
-    for (Centrifugation firstCentrifugation : FirstCentrifugationList.CENTRIFUGATIONS) {
+    for (Centrifugation firstCentrifugation : FirstCentrifugationList.FIRST_CENTRIFUGATIONS) {
       FirstCentrifugationOption firstCentrifugationOption =
           new FirstCentrifugationOption(firstCentrifugation);
       firstCentrifugationOptions.add(firstCentrifugationOption);

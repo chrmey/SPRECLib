@@ -1,4 +1,4 @@
-package de.spreclib.model.enums.centrifugation;
+package de.spreclib.model.centrifugation.enums;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

@@ -4,81 +4,84 @@ import de.spreclib.model.postcentrifugation.enums.PostCentrifugationDelay;
 import de.spreclib.model.postcentrifugation.enums.PostCentrifugationTemperature;
 import de.spreclib.model.postcentrifugation.enums.PostCentrifugationType;
 import de.spreclib.model.sprec.CodePart;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public final class PostCentrifugationList {
 
-  public static final Set<PostCentrifugation> POST_CENTRIFUGATIONS;
+  public static final List<PostCentrifugation> POST_CENTRIFUGATIONS;
 
   static {
-    POST_CENTRIFUGATIONS = new HashSet<>();
-    POST_CENTRIFUGATIONS.add(
+    List<PostCentrifugation> modifiablePostCentrifugationList = new ArrayList<>();
+    modifiablePostCentrifugationList.add(
         new PostCentrifugation(PostCentrifugationType.NOT_APPLICABLE, new CodePart("N")));
-    POST_CENTRIFUGATIONS.add(
+    modifiablePostCentrifugationList.add(
         new PostCentrifugation(PostCentrifugationType.UNKNOWN, new CodePart("X")));
-    POST_CENTRIFUGATIONS.add(
+    modifiablePostCentrifugationList.add(
         new PostCentrifugation(PostCentrifugationType.OTHER, new CodePart("Z")));
-    POST_CENTRIFUGATIONS.add(
+    modifiablePostCentrifugationList.add(
         new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.LESS_ONE_HOUR,
             PostCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("A")));
-    POST_CENTRIFUGATIONS.add(
+    modifiablePostCentrifugationList.add(
         new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.LESS_ONE_HOUR,
             PostCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("B")));
-    POST_CENTRIFUGATIONS.add(
+    modifiablePostCentrifugationList.add(
         new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.ONE_TO_TWO_HOURS,
             PostCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("C")));
-    POST_CENTRIFUGATIONS.add(
+    modifiablePostCentrifugationList.add(
         new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.ONE_TO_TWO_HOURS,
             PostCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("D")));
-    POST_CENTRIFUGATIONS.add(
+    modifiablePostCentrifugationList.add(
         new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.TWO_TO_EIGHT_HOURS,
             PostCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("E")));
-    POST_CENTRIFUGATIONS.add(
+    modifiablePostCentrifugationList.add(
         new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.TWO_TO_EIGHT_HOURS,
             PostCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("F")));
-    POST_CENTRIFUGATIONS.add(
+    modifiablePostCentrifugationList.add(
         new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.EIGHT_TO_TWENTYFOUR_HOURS,
             PostCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("G")));
-    POST_CENTRIFUGATIONS.add(
+    modifiablePostCentrifugationList.add(
         new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.EIGHT_TO_TWENTYFOUR_HOURS,
             PostCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("H")));
-    POST_CENTRIFUGATIONS.add(
+    modifiablePostCentrifugationList.add(
         new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.GREATER_TWENTYFOUR_HOURS,
             PostCentrifugationTemperature.TWO_TO_TEN_DEGREES,
             new CodePart("I")));
-    POST_CENTRIFUGATIONS.add(
+    modifiablePostCentrifugationList.add(
         new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.GREATER_TWENTYFOUR_HOURS,
             PostCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("J")));
+
+    POST_CENTRIFUGATIONS = Collections.unmodifiableList(modifiablePostCentrifugationList);
   }
 
   public static PostCentrifugation getNoApplicablePostCentrifugation() {

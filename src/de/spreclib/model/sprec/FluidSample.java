@@ -80,13 +80,13 @@ public final class FluidSample implements ISample {
     }
 
     if (this.firstCentrifugation != null
-        && !FirstCentrifugationList.CENTRIFUGATIONS.contains(this.firstCentrifugation)) {
+        && !FirstCentrifugationList.FIRST_CENTRIFUGATIONS.contains(this.firstCentrifugation)) {
       throw new InvalidPartValueException(
           this.firstCentrifugation, "Selected FirstCentrifugation cannot be found in SPREC.");
     }
 
     if (this.secondCentrifugation != null
-        && !SecondCentrifugationList.CENTRIFUGATIONS.contains(this.secondCentrifugation)) {
+        && !SecondCentrifugationList.SECOND_CENTRIFUGATIONS.contains(this.secondCentrifugation)) {
       throw new InvalidPartValueException(
           this.secondCentrifugation, "Selected SecondCentrifugation cannot be found in SPREC.");
     }

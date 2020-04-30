@@ -2,6 +2,7 @@ package de.spreclib.api.main;
 
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.api.main.interfaces.IListProvider;
+import java.util.Collections;
 import java.util.List;
 /**
  * AbstractListProvider is extended by the ListProviders.
@@ -20,7 +21,7 @@ public abstract class AbstractListProvider<T extends IListOption> implements ILi
 
   @Override
   public List<T> getList() {
-    return this.listOptions;
+    return Collections.unmodifiableList(this.listOptions);
   }
 
   abstract List<T> generateList();

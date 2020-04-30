@@ -107,7 +107,7 @@ public class SecondCentrifugationListTest {
   @Test
   public void testSecondCentrifugationListContent() {
     for (Centrifugation centrifugation : testList) {
-      assertTrue(SecondCentrifugationList.CENTRIFUGATIONS.contains(centrifugation));
+      assertTrue(SecondCentrifugationList.SECOND_CENTRIFUGATIONS.contains(centrifugation));
     }
   }
 

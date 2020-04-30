@@ -1,4 +1,4 @@
-package de.spreclib.model.enums;
+package de.spreclib.model.fixationtime;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;

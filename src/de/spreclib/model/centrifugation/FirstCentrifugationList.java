@@ -6,100 +6,105 @@ import de.spreclib.model.centrifugation.enums.FirstCentrifugationDuration;
 import de.spreclib.model.centrifugation.enums.FirstCentrifugationSpeed;
 import de.spreclib.model.centrifugation.enums.FirstCentrifugationTemperature;
 import de.spreclib.model.sprec.CodePart;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 public final class FirstCentrifugationList {
 
-  public static final Set<Centrifugation> CENTRIFUGATIONS;
+  public static final List<Centrifugation> FIRST_CENTRIFUGATIONS;
 
   static {
-    CENTRIFUGATIONS =
-        Collections.unmodifiableSet(
-            new HashSet<>(
-                Arrays.asList(
-                    new Centrifugation(
-                        CentrifugationType.NO,
-                        new CodePart("N")),
-                    new Centrifugation(
-                        CentrifugationType.UNKNOWN,
-                        new CodePart("X")),
-                    new Centrifugation(
-                        CentrifugationType.OTHER,
-                        new CodePart("Z")),
-                    new ParameterizedCentrifugation(
-                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
-                        FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-                        FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
-                        CentrifugationBraking.NO_BRAKING,
-                        new CodePart("A")),
-                    new ParameterizedCentrifugation(
-                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
-                        FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-                        FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
-                        CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("B")),
-                    new ParameterizedCentrifugation(
-                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
-                        FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-                        FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
-                        CentrifugationBraking.NO_BRAKING,
-                        new CodePart("C")),
-                    new ParameterizedCentrifugation(
-                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
-                        FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-                        FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
-                        CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("D")),
-                    new ParameterizedCentrifugation(
-                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
-                        FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-                        FirstCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
-                        CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("E")),
-                    new ParameterizedCentrifugation(
-                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
-                        FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-                        FirstCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
-                        CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("F")),
-                    new ParameterizedCentrifugation(
-                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
-                        FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-                        FirstCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
-                        CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("G")),
-                    new ParameterizedCentrifugation(
-                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
-                        FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-                        FirstCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
-                        CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("F")),
-                    new ParameterizedCentrifugation(
-                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
-                        FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-                        FirstCentrifugationSpeed.GREATER_TENTHOUSAND_G,
-                        CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("I")),
-                    new ParameterizedCentrifugation(
-                        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
-                        FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
-                        FirstCentrifugationSpeed.GREATER_TENTHOUSAND_G,
-                        CentrifugationBraking.WITH_BRAKING,
-                        new CodePart("J")),
-                    new ParameterizedCentrifugation(
-                        FirstCentrifugationTemperature.ROOM_TEMPERATURE,
-                        FirstCentrifugationDuration.THIRTY_MINUTES,
-                        FirstCentrifugationSpeed.LESS_THOUSAND_G,
-                        CentrifugationBraking.NO_BRAKING,
-                        new CodePart("M")))));
+    List<Centrifugation> modifiableFirstCentrifugations = new ArrayList<>();
+    modifiableFirstCentrifugations.add(
+        new Centrifugation(CentrifugationType.NO, new CodePart("N")));
+    modifiableFirstCentrifugations.add(
+        new Centrifugation(CentrifugationType.UNKNOWN, new CodePart("X")));
+    modifiableFirstCentrifugations.add(
+        new Centrifugation(CentrifugationType.OTHER, new CodePart("Z")));
+    modifiableFirstCentrifugations.add(
+        new ParameterizedCentrifugation(
+            FirstCentrifugationTemperature.ROOM_TEMPERATURE,
+            FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
+            CentrifugationBraking.NO_BRAKING,
+            new CodePart("A")));
+    modifiableFirstCentrifugations.add(
+        new ParameterizedCentrifugation(
+            FirstCentrifugationTemperature.ROOM_TEMPERATURE,
+            FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
+            CentrifugationBraking.WITH_BRAKING,
+            new CodePart("B")));
+    modifiableFirstCentrifugations.add(
+        new ParameterizedCentrifugation(
+            FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
+            FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
+            CentrifugationBraking.NO_BRAKING,
+            new CodePart("C")));
+    modifiableFirstCentrifugations.add(
+        new ParameterizedCentrifugation(
+            FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
+            FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            FirstCentrifugationSpeed.LESS_THREETHOUSAND_G,
+            CentrifugationBraking.WITH_BRAKING,
+            new CodePart("D")));
+    modifiableFirstCentrifugations.add(
+        new ParameterizedCentrifugation(
+            FirstCentrifugationTemperature.ROOM_TEMPERATURE,
+            FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            FirstCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
+            CentrifugationBraking.WITH_BRAKING,
+            new CodePart("E")));
+    modifiableFirstCentrifugations.add(
+        new ParameterizedCentrifugation(
+            FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
+            FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            FirstCentrifugationSpeed.THREETHOUSAND_TO_SIXTHOUSAND_G,
+            CentrifugationBraking.WITH_BRAKING,
+            new CodePart("F")));
+    modifiableFirstCentrifugations.add(
+        new ParameterizedCentrifugation(
+            FirstCentrifugationTemperature.ROOM_TEMPERATURE,
+            FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            FirstCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
+            CentrifugationBraking.WITH_BRAKING,
+            new CodePart("G")));
+    modifiableFirstCentrifugations.add(
+        new ParameterizedCentrifugation(
+            FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
+            FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            FirstCentrifugationSpeed.SIXTHOUSAND_TO_TENTHOUSAND_G,
+            CentrifugationBraking.WITH_BRAKING,
+            new CodePart("F")));
+    modifiableFirstCentrifugations.add(
+        new ParameterizedCentrifugation(
+            FirstCentrifugationTemperature.ROOM_TEMPERATURE,
+            FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            FirstCentrifugationSpeed.GREATER_TENTHOUSAND_G,
+            CentrifugationBraking.WITH_BRAKING,
+            new CodePart("I")));
+    modifiableFirstCentrifugations.add(
+        new ParameterizedCentrifugation(
+            FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
+            FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
+            FirstCentrifugationSpeed.GREATER_TENTHOUSAND_G,
+            CentrifugationBraking.WITH_BRAKING,
+            new CodePart("J")));
+    modifiableFirstCentrifugations.add(
+        new ParameterizedCentrifugation(
+            FirstCentrifugationTemperature.ROOM_TEMPERATURE,
+            FirstCentrifugationDuration.THIRTY_MINUTES,
+            FirstCentrifugationSpeed.LESS_THOUSAND_G,
+            CentrifugationBraking.NO_BRAKING,
+            new CodePart("M")));
+
+    FIRST_CENTRIFUGATIONS = Collections.unmodifiableList(modifiableFirstCentrifugations);
   }
 
-
   public static Centrifugation getUnknownFirstCentrifugation() {
-    for (Centrifugation centrifugation : CENTRIFUGATIONS) {
+    for (Centrifugation centrifugation : FIRST_CENTRIFUGATIONS) {
       if (centrifugation.getCentrifugationType() == CentrifugationType.UNKNOWN) {
         return centrifugation;
       }
@@ -108,7 +113,7 @@ public final class FirstCentrifugationList {
   }
 
   public static Centrifugation getOtherFirstCentrifugation() {
-    for (Centrifugation centrifugation : CENTRIFUGATIONS) {
+    for (Centrifugation centrifugation : FIRST_CENTRIFUGATIONS) {
       if (centrifugation.getCentrifugationType() == CentrifugationType.OTHER) {
         return centrifugation;
       }
@@ -117,7 +122,7 @@ public final class FirstCentrifugationList {
   }
 
   public static Centrifugation getNoFirstCentrifugation() {
-    for (Centrifugation centrifugation : CENTRIFUGATIONS) {
+    for (Centrifugation centrifugation : FIRST_CENTRIFUGATIONS) {
       if (centrifugation.getCentrifugationType() == CentrifugationType.NO) {
         return centrifugation;
       }
