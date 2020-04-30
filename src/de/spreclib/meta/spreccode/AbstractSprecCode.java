@@ -9,8 +9,8 @@ import java.util.Properties;
 public abstract class AbstractSprecCode implements ISprecCode {
 
   private Properties properties = new Properties();
-  protected final String placeholderOneCharacter;
-  protected final String placeholderThreeCharacters;
+  final String placeholderOneCharacter;
+  final String placeholderThreeCharacters;
 
   protected AbstractSprecCode() {
 
