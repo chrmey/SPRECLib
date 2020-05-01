@@ -3,6 +3,7 @@ package de.spreclib.api.main;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
 import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.main.FirstCentrifugationBrakingListProvider;
 import de.spreclib.api.main.FirstCentrifugationBrakingOption;
@@ -15,24 +16,32 @@ import org.junit.Test;
 public class FirstCentrifugationBrakingListProviderTest {
 
   private FirstCentrifugationBrakingListProvider firstCentrifugationBrakingListProvider;
-  private List<FirstCentrifugationBrakingOption> firstCentrifugationBraking;
+  private List<FirstCentrifugationBrakingOption> firstCentrifugationBrakingList;
 
   @Before
   public void setUp() {
     this.firstCentrifugationBrakingListProvider = new FirstCentrifugationBrakingListProvider();
-    this.firstCentrifugationBraking = firstCentrifugationBrakingListProvider.getList();
+    this.firstCentrifugationBrakingList = firstCentrifugationBrakingListProvider.getList();
   }
 
   @Test
   public void testListNotEmpty() {
-    assertFalse(firstCentrifugationBraking.isEmpty());
+    assertFalse(firstCentrifugationBrakingList.isEmpty());
   }
 
   @Test
   public void testOptionStringRepresentation() {
-    for (IListOption option : this.firstCentrifugationBraking) {
+    for (IListOption option : this.firstCentrifugationBrakingList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = CentrifugationBraking.values().length;
+    int actual = firstCentrifugationBrakingList.size();
+
+    assertEquals(expected, actual);
   }
 
   @Test

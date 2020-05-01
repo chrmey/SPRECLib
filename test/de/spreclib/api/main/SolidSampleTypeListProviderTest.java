@@ -1,10 +1,11 @@
 package de.spreclib.api.main;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import de.spreclib.api.main.SolidSampleTypeListProvider;
-import de.spreclib.api.main.SolidSampleTypeOption;
+
 import de.spreclib.api.main.interfaces.IListOption;
+import de.spreclib.model.solidsampletype.SolidSampleType;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,5 +31,13 @@ public class SolidSampleTypeListProviderTest {
     for (IListOption option : this.solidSampleTypeList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = SolidSampleType.values().length;
+    int actual = solidSampleTypeList.size();
+
+    assertEquals(expected, actual);
   }
 }

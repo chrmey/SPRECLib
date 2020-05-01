@@ -5,8 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.PostCentrifugationDelayListProvider;
-import de.spreclib.api.main.PostCentrifugationDelayOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.model.postcentrifugation.enums.PostCentrifugationDelay;
 import java.util.List;
@@ -34,6 +32,14 @@ public class PostCentrifugationDelayListProviderTest {
     for (IListOption option : postCentrifugationDelayList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = PostCentrifugationDelay.values().length;
+    int actual = postCentrifugationDelayList.size();
+
+    assertEquals(expected, actual);
   }
 
   @Test

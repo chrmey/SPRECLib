@@ -1,10 +1,11 @@
 package de.spreclib.api.main;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import de.spreclib.api.main.FixationListProvider;
-import de.spreclib.api.main.FixationOption;
+
 import de.spreclib.api.main.interfaces.IListOption;
+import de.spreclib.model.fixation.Fixation;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,6 +24,14 @@ public class FixationListProviderTest {
   @Test
   public void testListNotEmpty() {
     assertFalse(this.fixationList.isEmpty());
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = Fixation.values().length;
+    int actual = fixationList.size();
+
+    assertEquals(expected, actual);
   }
 
   @Test

@@ -12,7 +12,7 @@ import java.util.List;
 public interface IListProvider<T extends IListOption> {
 
   /**
-   * Returns a List of ListOptions of the desired type.
+   * Returns a List of ListOptions of the specified type.
    *
    * @return List of ListOptions
    */

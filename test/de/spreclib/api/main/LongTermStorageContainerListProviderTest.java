@@ -1,10 +1,11 @@
 package de.spreclib.api.main;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import de.spreclib.api.main.LongTermStorageContainerListProvider;
-import de.spreclib.api.main.LongTermStorageContainerOption;
+
 import de.spreclib.api.main.interfaces.IListOption;
+import de.spreclib.model.longtermstorage.enums.LongTermStorageContainer;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,5 +31,13 @@ public class LongTermStorageContainerListProviderTest {
     for (IListOption option : this.longTermStorageContainerList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = LongTermStorageContainer.values().length;
+    int actual = longTermStorageContainerList.size();
+
+    assertEquals(expected, actual);
   }
 }

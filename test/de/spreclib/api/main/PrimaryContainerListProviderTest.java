@@ -1,10 +1,11 @@
 package de.spreclib.api.main;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import de.spreclib.api.main.PrimaryContainerListProvider;
-import de.spreclib.api.main.PrimaryContainerOption;
+
 import de.spreclib.api.main.interfaces.IListOption;
+import de.spreclib.model.primarycontainer.PrimaryContainer;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,5 +31,13 @@ public class PrimaryContainerListProviderTest {
     for (IListOption option : this.primaryContainerList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = PrimaryContainer.values().length;
+    int actual = primaryContainerList.size();
+
+    assertEquals(expected, actual);
   }
 }

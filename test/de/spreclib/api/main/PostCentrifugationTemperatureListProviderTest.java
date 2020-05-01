@@ -5,8 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.PostCentrifugationTemperatureListProvider;
-import de.spreclib.api.main.PostCentrifugationTemperatureOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.postcentrifugation.enums.PostCentrifugationTemperature;
@@ -36,6 +34,14 @@ public class PostCentrifugationTemperatureListProviderTest {
     for (IListOption option : postCentrifugationTemperatureList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = PostCentrifugationTemperature.values().length;
+    int actual = postCentrifugationTemperatureList.size();
+
+    assertEquals(expected, actual);
   }
 
   @Test

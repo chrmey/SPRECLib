@@ -3,7 +3,6 @@ package de.spreclib.api.main;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.api.exceptions.UndefinedValueException;
@@ -56,12 +55,6 @@ public class FirstCentrifugationListProviderTest {
     }
   }
 
-  @Test
-  public void testOptionContainsCentrifugation() {
-    for (IListOption option : firstCentrifugationList) {
-      assertTrue(option.getClass().equals(FirstCentrifugationOption.class));
-    }
-  }
 
   @Test
   public void testValueOfWithValidValues()

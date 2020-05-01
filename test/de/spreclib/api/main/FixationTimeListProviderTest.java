@@ -5,8 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.FixationTimeListProvider;
-import de.spreclib.api.main.FixationTimeOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.model.fixationtime.FixationTime;
 import de.spreclib.model.sprec.CodePart;
@@ -36,6 +34,15 @@ public class FixationTimeListProviderTest {
       assertNotNull(option.getStringRepresentation());
     }
   }
+
+  @Test
+  public void testFullListSize() {
+    int expected = FixationTime.values().length;
+    int actual = fixationTimeList.size();
+
+    assertEquals(expected, actual);
+  }
+ 
 
   @Test
   public void testValueOfWithValidValue() throws UndefinedValueException {

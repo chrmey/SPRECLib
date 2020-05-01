@@ -1,22 +1,7 @@
 package de.spreclib.api.main;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import de.spreclib.api.main.ColdIschemiaTimeListProvider;
-import de.spreclib.api.main.ColdIschemiaTimeOption;
-import de.spreclib.api.main.FixationListProvider;
-import de.spreclib.api.main.FixationOption;
-import de.spreclib.api.main.FixationTimeListProvider;
-import de.spreclib.api.main.FixationTimeOption;
-import de.spreclib.api.main.LongTermStorageListProvider;
-import de.spreclib.api.main.LongTermStorageOption;
-import de.spreclib.api.main.SolidSampleSprec;
-import de.spreclib.api.main.SolidSampleTypeListProvider;
-import de.spreclib.api.main.SolidSampleTypeOption;
-import de.spreclib.api.main.TypeOfCollectionListProvider;
-import de.spreclib.api.main.TypeOfCollectionOption;
-import de.spreclib.api.main.WarmIschemiaTimeListProvider;
-import de.spreclib.api.main.WarmIschemiaTimeOption;
+import static org.junit.Assert.assertEquals;
+
 import de.spreclib.meta.spreccode.SolidSprecCode;
 import de.spreclib.model.interfaces.ICodePart;
 import java.util.List;
@@ -52,13 +37,13 @@ public class SolidSampleSprecTest {
     this.fixationTimeOptionList = new FixationTimeListProvider().getList();
     this.longTermStorageOptionList = new LongTermStorageListProvider().getList();
 
-    this.solidSampleTypeOption = this.solidSampleTypeList.get(0);
-    this.typeOfColletionOption = this.typeOfCollectionList.get(0);
-    this.warmIschemiaTimeOption = this.warmIschemiaTimeOptionList.get(0);
-    this.coldIschemiaTimeOption = this.coldIschmemiaTimeOptionList.get(0);
-    this.fixationOption = this.fixationOptionList.get(0);
-    this.fixationTimeOption = this.fixationTimeOptionList.get(0);
-    this.longTermStorageOption = this.longTermStorageOptionList.get(0);
+    this.solidSampleTypeOption = this.solidSampleTypeList.get(2);
+    this.typeOfColletionOption = this.typeOfCollectionList.get(3);
+    this.warmIschemiaTimeOption = this.warmIschemiaTimeOptionList.get(4);
+    this.coldIschemiaTimeOption = this.coldIschmemiaTimeOptionList.get(5);
+    this.fixationOption = this.fixationOptionList.get(3);
+    this.fixationTimeOption = this.fixationTimeOptionList.get(2);
+    this.longTermStorageOption = this.longTermStorageOptionList.get(4);
   }
 
   @Test
@@ -70,7 +55,7 @@ public class SolidSampleSprecTest {
 
     ICodePart solidSampleTypeCode = solidSprecCode.getSolidSampleTypeCode();
 
-    assertFalse(solidSampleTypeCode.getStringRepresentation().isEmpty());
+    assertEquals("FNA", solidSampleTypeCode.getStringRepresentation());
   }
 
   @Test
@@ -82,7 +67,7 @@ public class SolidSampleSprecTest {
 
     ICodePart typeOfCollectionCode = solidSprecCode.getTypeOfCollectionCode();
 
-    assertFalse(typeOfCollectionCode.getStringRepresentation().isEmpty());
+    assertEquals("A48", typeOfCollectionCode.getStringRepresentation());
   }
 
   @Test
@@ -94,7 +79,7 @@ public class SolidSampleSprecTest {
 
     ICodePart warmIschemiaTimeCode = solidSprecCode.getWarmIschemiaTimeCode();
 
-    assertFalse(warmIschemiaTimeCode.getStringRepresentation().isEmpty());
+    assertEquals("E", warmIschemiaTimeCode.getStringRepresentation());
   }
 
   @Test
@@ -106,7 +91,7 @@ public class SolidSampleSprecTest {
 
     ICodePart warmIschemiaTimeCode = solidSprecCode.getWarmIschemiaTimeCode();
 
-    assertFalse(warmIschemiaTimeCode.getStringRepresentation().isEmpty());
+    assertEquals("X", warmIschemiaTimeCode.getStringRepresentation());
   }
 
   @Test
@@ -118,7 +103,7 @@ public class SolidSampleSprecTest {
 
     ICodePart warmIschemiaTimeCode = solidSprecCode.getWarmIschemiaTimeCode();
 
-    assertFalse(warmIschemiaTimeCode.getStringRepresentation().isEmpty());
+    assertEquals("Z", warmIschemiaTimeCode.getStringRepresentation());
   }
 
   @Test
@@ -131,7 +116,7 @@ public class SolidSampleSprecTest {
 
     ICodePart warmIschemiaTimeCode = solidSprecCode.getWarmIschemiaTimeCode();
 
-    assertFalse(warmIschemiaTimeCode.getStringRepresentation().isEmpty());
+    assertEquals("N", warmIschemiaTimeCode.getStringRepresentation());
   }
 
   @Test
@@ -143,7 +128,7 @@ public class SolidSampleSprecTest {
 
     ICodePart coldIschemiaTimeCode = solidSprecCode.getColdIschemiaTimeCode();
 
-    assertFalse(coldIschemiaTimeCode.getStringRepresentation().isEmpty());
+    assertEquals("F", coldIschemiaTimeCode.getStringRepresentation());
   }
 
   @Test
@@ -155,7 +140,7 @@ public class SolidSampleSprecTest {
 
     ICodePart coldIschemiaTimeCode = solidSprecCode.getColdIschemiaTimeCode();
 
-    assertFalse(coldIschemiaTimeCode.getStringRepresentation().isEmpty());
+    assertEquals("X", coldIschemiaTimeCode.getStringRepresentation());
   }
 
   @Test
@@ -167,7 +152,7 @@ public class SolidSampleSprecTest {
 
     ICodePart coldIschemiaTimeCode = solidSprecCode.getColdIschemiaTimeCode();
 
-    assertFalse(coldIschemiaTimeCode.getStringRepresentation().isEmpty());
+    assertEquals("Z", coldIschemiaTimeCode.getStringRepresentation());
   }
 
   @Test
@@ -180,7 +165,7 @@ public class SolidSampleSprecTest {
 
     ICodePart coldIschemiaTimeCode = solidSprecCode.getColdIschemiaTimeCode();
 
-    assertFalse(coldIschemiaTimeCode.getStringRepresentation().isEmpty());
+    assertEquals("N", coldIschemiaTimeCode.getStringRepresentation());
   }
 
   @Test
@@ -192,7 +177,7 @@ public class SolidSampleSprecTest {
 
     ICodePart fixationCode = solidSprecCode.getFixationCode();
 
-    assertFalse(fixationCode.getStringRepresentation().isEmpty());
+    assertEquals("ETH", fixationCode.getStringRepresentation());
   }
 
   @Test
@@ -204,7 +189,7 @@ public class SolidSampleSprecTest {
 
     ICodePart fixationTimeCode = solidSprecCode.getFixationTimeCode();
 
-    assertFalse(fixationTimeCode.getStringRepresentation().isEmpty());
+    assertEquals("C", fixationTimeCode.getStringRepresentation());
   }
 
   @Test
@@ -216,7 +201,7 @@ public class SolidSampleSprecTest {
 
     ICodePart fixationTimeCode = solidSprecCode.getFixationTimeCode();
 
-    assertFalse(fixationTimeCode.getStringRepresentation().isEmpty());
+    assertEquals("X", fixationTimeCode.getStringRepresentation());
   }
 
   @Test
@@ -228,7 +213,7 @@ public class SolidSampleSprecTest {
 
     ICodePart fixationTimeCode = solidSprecCode.getFixationTimeCode();
 
-    assertFalse(fixationTimeCode.getStringRepresentation().isEmpty());
+    assertEquals("Z", fixationTimeCode.getStringRepresentation());
   }
 
   @Test
@@ -240,7 +225,7 @@ public class SolidSampleSprecTest {
 
     ICodePart fixationTimeCode = solidSprecCode.getFixationTimeCode();
 
-    assertFalse(fixationTimeCode.getStringRepresentation().isEmpty());
+    assertEquals("N", fixationTimeCode.getStringRepresentation());
   }
 
   @Test
@@ -251,7 +236,7 @@ public class SolidSampleSprecTest {
 
     ICodePart longTermStorageCode = solidSampleCode.getLongTermStorageCode();
 
-    assertFalse(longTermStorageCode.getStringRepresentation().isEmpty());
+    assertEquals("V", longTermStorageCode.getStringRepresentation());
   }
 
   @Test
@@ -261,7 +246,7 @@ public class SolidSampleSprecTest {
 
     ICodePart longTermStorageCode = solidSampleCode.getLongTermStorageCode();
 
-    assertFalse(longTermStorageCode.getStringRepresentation().isEmpty());
+    assertEquals("X", longTermStorageCode.getStringRepresentation());
   }
 
   @Test
@@ -271,7 +256,7 @@ public class SolidSampleSprecTest {
 
     ICodePart longTermStorageCode = solidSampleCode.getLongTermStorageCode();
 
-    assertFalse(longTermStorageCode.getStringRepresentation().isEmpty());
+    assertEquals("Z", longTermStorageCode.getStringRepresentation());
   }
 
   @Test
@@ -292,7 +277,7 @@ public class SolidSampleSprecTest {
 
     String codeString = solidSampleCode.getStringRepresentation();
 
-    assertFalse(codeString.isEmpty());
+    assertEquals("FNAA48EFETHCV", codeString);
   }
 
   @Test
@@ -313,6 +298,6 @@ public class SolidSampleSprecTest {
 
     String codeString = solidSampleCode.getStringRepresentation();
 
-    assertTrue(codeString.equals("???????????"));
+    assertEquals("???????????", codeString);
   }
 }

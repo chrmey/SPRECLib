@@ -3,16 +3,12 @@ package de.spreclib.api.main;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
 import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.PostCentrifugationDelayListProvider;
-import de.spreclib.api.main.PostCentrifugationDelayOption;
-import de.spreclib.api.main.PostCentrifugationListProvider;
-import de.spreclib.api.main.PostCentrifugationOption;
-import de.spreclib.api.main.PostCentrifugationTemperatureListProvider;
-import de.spreclib.api.main.PostCentrifugationTemperatureOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
+import de.spreclib.model.postcentrifugation.PostCentrifugationList;
 import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;
@@ -39,6 +35,14 @@ public class PostCentrifugationListProviderTest {
     for (IListOption option : postCentrifugationList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = PostCentrifugationList.POST_CENTRIFUGATIONS.size();
+    int actual = postCentrifugationList.size();
+
+    assertEquals(expected, actual);
   }
 
   @Test

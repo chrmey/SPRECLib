@@ -1,7 +1,8 @@
 package de.spreclib.api.main;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 import de.spreclib.api.main.FirstCentrifugationListProvider;
 import de.spreclib.api.main.FirstCentrifugationOption;
 import de.spreclib.api.main.FluidSampleSprec;
@@ -52,13 +53,13 @@ public class FluidSampleSprecTest {
     this.postCentrifugationList = new PostCentrifugationListProvider().getList();
     this.longTermStorageList = new LongTermStorageListProvider().getList();
 
-    this.fluidSampleTypeOption = this.fluidSampleTypeList.get(0);
-    this.primaryContainerOption = this.primaryContainerList.get(0);
-    this.preCentrifugationOption = this.preCentrifugationList.get(0);
-    this.firstCentrifugationOption = this.firstCentrifugationList.get(0);
-    this.secondCentrifugationOption = this.secondCentrifugationList.get(0);
-    this.postCentrifugationOption = this.postCentrifugationList.get(0);
-    this.longTermStorageOption = this.longTermStorageList.get(0);
+    this.fluidSampleTypeOption = this.fluidSampleTypeList.get(2);
+    this.primaryContainerOption = this.primaryContainerList.get(2);
+    this.preCentrifugationOption = this.preCentrifugationList.get(2);
+    this.firstCentrifugationOption = this.firstCentrifugationList.get(6);
+    this.secondCentrifugationOption = this.secondCentrifugationList.get(5);
+    this.postCentrifugationOption = this.postCentrifugationList.get(4);
+    this.longTermStorageOption = this.longTermStorageList.get(2);
   }
 
   @Test
@@ -69,7 +70,7 @@ public class FluidSampleSprecTest {
 
     ICodePart fluidSampleTypeCode = fluidSampleCode.getFluidSampleTypeCode();
 
-    assertFalse(fluidSampleTypeCode.getStringRepresentation().isEmpty());
+    assertEquals("BAL", fluidSampleTypeCode.getStringRepresentation());
   }
 
   @Test
@@ -80,7 +81,7 @@ public class FluidSampleSprecTest {
 
     ICodePart primaryContainerCode = fluidSampleCode.getPrimaryContainerCode();
 
-    assertFalse(primaryContainerCode.getStringRepresentation().isEmpty());
+    assertEquals("CAT", primaryContainerCode.getStringRepresentation());
   }
 
   @Test
@@ -91,7 +92,7 @@ public class FluidSampleSprecTest {
 
     ICodePart preCentrifugationCode = fluidSampleCode.getPreCentrifugationCode();
 
-    assertFalse(preCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("A", preCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -101,7 +102,7 @@ public class FluidSampleSprecTest {
 
     ICodePart preCentrifugationCode = fluidSampleCode.getPreCentrifugationCode();
 
-    assertFalse(preCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("Z", preCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -111,7 +112,7 @@ public class FluidSampleSprecTest {
 
     ICodePart preCentrifugationCode = fluidSampleCode.getPreCentrifugationCode();
 
-    assertFalse(preCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("X", preCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -122,7 +123,7 @@ public class FluidSampleSprecTest {
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
-    assertFalse(firstCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("D", firstCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -133,7 +134,7 @@ public class FluidSampleSprecTest {
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
-    assertFalse(firstCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("X", firstCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -143,7 +144,7 @@ public class FluidSampleSprecTest {
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
-    assertFalse(firstCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("Z", firstCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -153,7 +154,7 @@ public class FluidSampleSprecTest {
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
-    assertFalse(firstCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("N", firstCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -164,7 +165,7 @@ public class FluidSampleSprecTest {
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
-    assertFalse(secondCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("C", secondCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -175,7 +176,7 @@ public class FluidSampleSprecTest {
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
-    assertFalse(secondCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("X", secondCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -186,7 +187,7 @@ public class FluidSampleSprecTest {
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
-    assertFalse(secondCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("Z", secondCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -196,9 +197,8 @@ public class FluidSampleSprecTest {
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
-    assertFalse(secondCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("N", secondCentrifugationCode.getStringRepresentation());
   }
-
 
   @Test
   public void testWithPostCentrifugation() {
@@ -212,7 +212,7 @@ public class FluidSampleSprecTest {
 
     ICodePart postCentrifugationCode = fluidSampleCode.getPostCentrifugationCode();
 
-    assertFalse(postCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("B", postCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -223,9 +223,8 @@ public class FluidSampleSprecTest {
 
     ICodePart postCentrifugationCode = fluidSampleCode.getPostCentrifugationCode();
 
-    assertFalse(postCentrifugationCode.getStringRepresentation().isEmpty());
+    assertEquals("N", postCentrifugationCode.getStringRepresentation());
   }
-
 
   @Test
   public void testWithLongTermStorage() {
@@ -235,7 +234,7 @@ public class FluidSampleSprecTest {
 
     ICodePart longTermStorageCode = fluidSampleCode.getLongTermStorageCode();
 
-    assertFalse(longTermStorageCode.getStringRepresentation().isEmpty());
+    assertEquals("A", longTermStorageCode.getStringRepresentation());
   }
 
   @Test
@@ -245,7 +244,7 @@ public class FluidSampleSprecTest {
 
     ICodePart longTermStorageCode = fluidSampleCode.getLongTermStorageCode();
 
-    assertFalse(longTermStorageCode.getStringRepresentation().isEmpty());
+    assertEquals("X", longTermStorageCode.getStringRepresentation());
   }
 
   @Test
@@ -255,7 +254,7 @@ public class FluidSampleSprecTest {
 
     ICodePart longTermStorageCode = fluidSampleCode.getLongTermStorageCode();
 
-    assertFalse(longTermStorageCode.getStringRepresentation().isEmpty());
+    assertEquals("Z", longTermStorageCode.getStringRepresentation());
   }
 
   @Test
@@ -268,19 +267,19 @@ public class FluidSampleSprecTest {
             .withFluidSampleType(this.fluidSampleTypeOption)
             .withPrimaryContainer(this.primaryContainerOption)
             .withPreCentrifugation(this.preCentrifugationOption)
-            .withOtherFirstCentrifugation()
-            .withOtherSecondCentrifugation()
+            .withFirstCentrifugation(this.firstCentrifugationOption)
+            .withSecondCentrifugation(this.secondCentrifugationOption)
             .withPostCentrifugation(this.postCentrifugationOption)
             .withLongTermStorage(this.longTermStorageOption)
             .getSprecCode();
 
-    String code = fluidSampleCode.getStringRepresentation();
+    String codeString = fluidSampleCode.getStringRepresentation();
 
-    assertFalse(code.isEmpty());
+    assertEquals("BALCATADCBA", codeString);
   }
 
   @Test
-  public void withNullOptions() {
+  public void withNullOptionsAndDefaultPlaceholder() {
 
     FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
 

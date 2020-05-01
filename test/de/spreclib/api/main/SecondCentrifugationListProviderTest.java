@@ -6,18 +6,9 @@ import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.SecondCentrifugationBrakingListProvider;
-import de.spreclib.api.main.SecondCentrifugationBrakingOption;
-import de.spreclib.api.main.SecondCentrifugationDurationListProvider;
-import de.spreclib.api.main.SecondCentrifugationDurationOption;
-import de.spreclib.api.main.SecondCentrifugationListProvider;
-import de.spreclib.api.main.SecondCentrifugationOption;
-import de.spreclib.api.main.SecondCentrifugationSpeedListProvider;
-import de.spreclib.api.main.SecondCentrifugationSpeedOption;
-import de.spreclib.api.main.SecondCentrifugationTemperatureListProvider;
-import de.spreclib.api.main.SecondCentrifugationTemperatureOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
+import de.spreclib.model.centrifugation.SecondCentrifugationList;
 import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;
@@ -44,6 +35,14 @@ public class SecondCentrifugationListProviderTest {
     for (IListOption option : this.secondCentrifugationList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = SecondCentrifugationList.SECOND_CENTRIFUGATIONS.size();
+    int actual = secondCentrifugationList.size();
+
+    assertEquals(expected, actual);
   }
 
   @Test

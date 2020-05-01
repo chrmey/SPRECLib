@@ -1,10 +1,11 @@
 package de.spreclib.api.main;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import de.spreclib.api.main.FluidSampleTypeListProvider;
-import de.spreclib.api.main.FluidSampleTypeOption;
+
 import de.spreclib.api.main.interfaces.IListOption;
+import de.spreclib.model.fluidsampletype.FluidSampleType;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,5 +31,13 @@ public class FluidSampleTypeListProviderTest {
     for (IListOption option : this.fluidSampleTypeList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = FluidSampleType.values().length;
+    int actual = fluidSampleTypeList.size();
+
+    assertEquals(expected, actual);
   }
 }

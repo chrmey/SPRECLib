@@ -5,8 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.WarmIschemiaTimeListProvider;
-import de.spreclib.api.main.WarmIschemiaTimeOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.model.warmischemiatime.WarmIschemiaTime;
 import java.util.List;
@@ -34,6 +32,14 @@ public class WarmIschemiaTimeListProviderTest {
     for (IListOption option : this.warmIschemiaTimeList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = WarmIschemiaTime.values().length;
+    int actual = warmIschemiaTimeList.size();
+
+    assertEquals(expected, actual);
   }
 
   @Test

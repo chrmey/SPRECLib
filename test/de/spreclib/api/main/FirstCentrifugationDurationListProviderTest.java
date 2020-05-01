@@ -37,6 +37,14 @@ public class FirstCentrifugationDurationListProviderTest {
   }
 
   @Test
+  public void testFullListSize() {
+    int expected = FirstCentrifugationDuration.values().length;
+    int actual = firstCentrifugationDurationList.size();
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
   public void testValueOfWithValidValue() throws UndefinedValueException {
 
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =

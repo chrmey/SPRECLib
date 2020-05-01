@@ -5,8 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.SecondCentrifugationDurationListProvider;
-import de.spreclib.api.main.SecondCentrifugationDurationOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.model.centrifugation.enums.SecondCentrifugationDuration;
 import java.util.List;
@@ -34,6 +32,14 @@ public class SecondCentrifugationDurationListProviderTest {
     for (IListOption option : this.secondCentrifugationDurationList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = SecondCentrifugationDuration.values().length;
+    int actual = secondCentrifugationDurationList.size();
+
+    assertEquals(expected, actual);
   }
 
   @Test

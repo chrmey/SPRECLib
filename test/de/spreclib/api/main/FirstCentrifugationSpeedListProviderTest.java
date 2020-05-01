@@ -5,8 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.FirstCentrifugationSpeedListProvider;
-import de.spreclib.api.main.FirstCentrifugationSpeedOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.model.centrifugation.enums.FirstCentrifugationSpeed;
 import java.util.List;
@@ -34,6 +32,14 @@ public class FirstCentrifugationSpeedListProviderTest {
     for (IListOption option : firstCentrifugationSpeedList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = FirstCentrifugationSpeed.values().length;
+    int actual = firstCentrifugationSpeedList.size();
+
+    assertEquals(expected, actual);
   }
 
   @Test

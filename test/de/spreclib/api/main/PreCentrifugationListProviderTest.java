@@ -6,14 +6,9 @@ import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.PreCentrifugationDelayListProvider;
-import de.spreclib.api.main.PreCentrifugationDelayOption;
-import de.spreclib.api.main.PreCentrifugationListProvider;
-import de.spreclib.api.main.PreCentrifugationOption;
-import de.spreclib.api.main.PreCentrifugationTemperatureListProvider;
-import de.spreclib.api.main.PreCentrifugationTemperatureOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
+import de.spreclib.model.precentrifugation.PreCentrifugationList;
 import de.spreclib.model.sprec.CodePart;
 import java.util.List;
 import org.junit.Before;
@@ -40,6 +35,14 @@ public class PreCentrifugationListProviderTest {
     for (IListOption option : this.preCentrifugationList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = PreCentrifugationList.PRE_CENTRIFUGATIONS.size();
+    int actual = preCentrifugationList.size();
+
+    assertEquals(expected, actual);
   }
 
   @Test

@@ -6,13 +6,9 @@ import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.LongTermStorageContainerOption;
-import de.spreclib.api.main.LongTermStorageListProvider;
-import de.spreclib.api.main.LongTermStorageOption;
-import de.spreclib.api.main.LongTermStorageTemperatureListProvider;
-import de.spreclib.api.main.LongTermStorageTemperatureOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
+import de.spreclib.model.longtermstorage.LongTermStorageList;
 import de.spreclib.model.longtermstorage.enums.LongTermStorageContainer;
 import de.spreclib.model.sprec.CodePart;
 import java.util.List;
@@ -40,6 +36,14 @@ public class LongTermStorageListProviderTest {
     for (IListOption option : longTermStorageList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testFullListSize() {
+    int expected = LongTermStorageList.LONG_TERM_STORAGES.size();
+    int actual = longTermStorageList.size();
+
+    assertEquals(expected, actual);
   }
 
   @Test

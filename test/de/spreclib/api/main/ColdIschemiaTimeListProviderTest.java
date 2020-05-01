@@ -37,6 +37,14 @@ public class ColdIschemiaTimeListProviderTest {
   }
 
   @Test
+  public void testFullListSize() {
+    int expected = ColdIschemiaTime.values().length;
+    int actual = coldIschemiaTimeList.size();
+
+    assertEquals(expected, actual);
+  }
+
+  @Test
   public void testValueOfWithValidValue() throws UndefinedValueException {
 
     ColdIschemiaTimeOption coldIschemiaTimeOption = this.coldIschemiaTimeListProvider.valueOf(15);
