@@ -229,7 +229,7 @@ public class SolidSampleSprecTest {
   }
 
   @Test
-  public void testWithLongTerm() {
+  public void testWithLongTermStorage() {
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
     SolidSprecCode solidSampleCode =
         solidSampleSprec.withLongTermStorage(this.longTermStorageOption).getSprecCode();
@@ -281,7 +281,7 @@ public class SolidSampleSprecTest {
   }
 
   @Test
-  public void testWithNullOptions() {
+  public void testWithNullOptionsAndDefaultPlaceholder() {
 
     SolidSampleSprec solidSampleSprec = new SolidSampleSprec();
 

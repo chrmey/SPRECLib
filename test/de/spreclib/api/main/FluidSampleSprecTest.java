@@ -3,21 +3,6 @@ package de.spreclib.api.main;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import de.spreclib.api.main.FirstCentrifugationListProvider;
-import de.spreclib.api.main.FirstCentrifugationOption;
-import de.spreclib.api.main.FluidSampleSprec;
-import de.spreclib.api.main.FluidSampleTypeListProvider;
-import de.spreclib.api.main.FluidSampleTypeOption;
-import de.spreclib.api.main.LongTermStorageListProvider;
-import de.spreclib.api.main.LongTermStorageOption;
-import de.spreclib.api.main.PostCentrifugationListProvider;
-import de.spreclib.api.main.PostCentrifugationOption;
-import de.spreclib.api.main.PreCentrifugationListProvider;
-import de.spreclib.api.main.PreCentrifugationOption;
-import de.spreclib.api.main.PrimaryContainerListProvider;
-import de.spreclib.api.main.PrimaryContainerOption;
-import de.spreclib.api.main.SecondCentrifugationListProvider;
-import de.spreclib.api.main.SecondCentrifugationOption;
 import de.spreclib.meta.spreccode.FluidSprecCode;
 import de.spreclib.model.interfaces.ICodePart;
 import java.util.List;
@@ -213,6 +198,27 @@ public class FluidSampleSprecTest {
     ICodePart postCentrifugationCode = fluidSampleCode.getPostCentrifugationCode();
 
     assertEquals("B", postCentrifugationCode.getStringRepresentation());
+  }
+
+  @Test
+  public void testWithUnknownPostCentrifugation() {
+    FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode =
+        fluidSampleSprec.withUnknownPostCentrifugation().getSprecCode();
+
+    ICodePart postCentrifugationCode = fluidSampleCode.getPostCentrifugationCode();
+
+    assertEquals("X", postCentrifugationCode.getStringRepresentation());
+  }
+
+  @Test
+  public void testWithOtherPostCentrifugation() {
+    FluidSampleSprec fluidSampleSprec = new FluidSampleSprec();
+    FluidSprecCode fluidSampleCode = fluidSampleSprec.withOtherPostCentrifugation().getSprecCode();
+
+    ICodePart postCentrifugationCode = fluidSampleCode.getPostCentrifugationCode();
+
+    assertEquals("Z", postCentrifugationCode.getStringRepresentation());
   }
 
   @Test
