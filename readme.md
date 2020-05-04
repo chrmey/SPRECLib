@@ -29,7 +29,7 @@ To get a list of FluidSampleTypeOptions:
 
 ```
 FluidSampleTypeListProvider fluidSampleTypeListProvider = new FluidSampleTypeListProvider();
-ArrayList<FluidSampleTypeOption> fluidSampleTypeOptions = fluidSampleTypeListProvider.getList();
+List<FluidSampleTypeOption> fluidSampleTypeOptions = fluidSampleTypeListProvider.getList();
 ```
 
 To get the english name of a ListOption, e.g. to use it in a GUI, call ```.getStringRepresentation();``` on the ```ListOption```
@@ -98,6 +98,11 @@ String fluidSampleTypeCodeString = fluidSampleTypeCode.getStringRepresentation()
 ```
 
 ### Passing values to SPRECLib
+
+You can pass values to the ListProviders to obtain a ListOption if the passed value is valid in SPREC. If you pass an invalid value a checked exception is thrown.
+
+The ListProviders for values that contain a temperature, time, speed or braking provide a valueOf() method.
+
 
 
 ## Authors
