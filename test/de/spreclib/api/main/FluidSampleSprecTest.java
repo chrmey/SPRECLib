@@ -77,7 +77,7 @@ public class FluidSampleSprecTest {
 
     ICodePart preCentrifugationCode = fluidSampleCode.getPreCentrifugationCode();
 
-    assertEquals("A", preCentrifugationCode.getStringRepresentation());
+    assertEquals("C", preCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -108,7 +108,7 @@ public class FluidSampleSprecTest {
 
     ICodePart firstCentrifugationCode = fluidSampleCode.getFirstCentrifugationCode();
 
-    assertEquals("D", firstCentrifugationCode.getStringRepresentation());
+    assertEquals("G", firstCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -150,7 +150,7 @@ public class FluidSampleSprecTest {
 
     ICodePart secondCentrifugationCode = fluidSampleCode.getSecondCentrifugationCode();
 
-    assertEquals("C", secondCentrifugationCode.getStringRepresentation());
+    assertEquals("F", secondCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -197,7 +197,7 @@ public class FluidSampleSprecTest {
 
     ICodePart postCentrifugationCode = fluidSampleCode.getPostCentrifugationCode();
 
-    assertEquals("B", postCentrifugationCode.getStringRepresentation());
+    assertEquals("E", postCentrifugationCode.getStringRepresentation());
   }
 
   @Test
@@ -240,7 +240,7 @@ public class FluidSampleSprecTest {
 
     ICodePart longTermStorageCode = fluidSampleCode.getLongTermStorageCode();
 
-    assertEquals("A", longTermStorageCode.getStringRepresentation());
+    assertEquals("V", longTermStorageCode.getStringRepresentation());
   }
 
   @Test
@@ -281,7 +281,7 @@ public class FluidSampleSprecTest {
 
     String codeString = fluidSampleCode.getStringRepresentation();
 
-    assertEquals("BALCATADCBA", codeString);
+    assertEquals("BALCATCGFEV", codeString);
   }
 
   @Test

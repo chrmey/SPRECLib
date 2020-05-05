@@ -44,12 +44,23 @@ public class PreCentrifugationTemperatureListProviderTest {
   }
 
   @Test
-  public void testValueOfWithValidValues() throws UndefinedValueException {
+  public void testValueOfShouldReturnTwoToTenDegrees() throws UndefinedValueException {
 
     PreCentrifugationTemperatureOption temperatureOption =
         this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(10.9999f));
 
-    assertNotNull(temperatureOption);
+    assertEquals(
+        PreCentrifugationTemperature.TWO_TO_TEN_DEGREES, temperatureOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnRoomtemperature() throws UndefinedValueException {
+
+    PreCentrifugationTemperatureOption temperatureOption =
+        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(18f));
+
+    assertEquals(
+        PreCentrifugationTemperature.ROOM_TEMPERATURE, temperatureOption.getContainedObject());
   }
 
   @Test(expected = UndefinedValueException.class)
@@ -62,15 +73,5 @@ public class PreCentrifugationTemperatureListProviderTest {
   public void testValueOfWithNullValue() throws UndefinedValueException {
 
     this.preCentrifugationTemperatureListProvider.valueOf(null);
-  }
-
-  @Test
-  public void testValueOfShouldReturnRoomtemperature() throws UndefinedValueException {
-
-    PreCentrifugationTemperatureOption temperatureOption =
-        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(28.9999f));
-
-    assertEquals(
-        PreCentrifugationTemperature.ROOM_TEMPERATURE, temperatureOption.getContainedObject());
   }
 }

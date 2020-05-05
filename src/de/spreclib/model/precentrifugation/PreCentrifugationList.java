@@ -15,10 +15,6 @@ public final class PreCentrifugationList {
   static {
     List<PreCentrifugation> modifiablePreCentrifugationList = new ArrayList<>();
     modifiablePreCentrifugationList.add(
-        new PreCentrifugation(PreCentrifugationType.UNKNOWN, new CodePart("X")));
-    modifiablePreCentrifugationList.add(
-        new PreCentrifugation(PreCentrifugationType.OTHER, new CodePart("Z")));
-    modifiablePreCentrifugationList.add(
         new ParameterizedPreCentrifugation(
             PreCentrifugationDelay.LESS_TWO_HOURS,
             PreCentrifugationTemperature.ROOM_TEMPERATURE,
@@ -93,6 +89,10 @@ public final class PreCentrifugationList {
             PreCentrifugationDelay.LESS_TWO_HOURS,
             PreCentrifugationTemperature.THIRTYFIVE_TO_THIRTYEIGHT_DEGREES,
             new CodePart("O")));
+    modifiablePreCentrifugationList.add(
+        new PreCentrifugation(PreCentrifugationType.UNKNOWN, new CodePart("X")));
+    modifiablePreCentrifugationList.add(
+        new PreCentrifugation(PreCentrifugationType.OTHER, new CodePart("Z")));
 
     PRE_CENTRIFUGATIONS = Collections.unmodifiableList(modifiablePreCentrifugationList);
   }

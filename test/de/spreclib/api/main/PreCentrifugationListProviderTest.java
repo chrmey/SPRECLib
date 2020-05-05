@@ -99,7 +99,9 @@ public class PreCentrifugationListProviderTest {
     PreCentrifugationTemperatureOption temperatureOption =
         new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(18f));
 
-    PreCentrifugationDelayOption delayOption = new PreCentrifugationDelayListProvider().valueOf(59);
+    // Timespan is 15 minutes
+    PreCentrifugationDelayOption delayOption =
+        new PreCentrifugationDelayListProvider().valueOf(1577836800000L, 1577837700000L);
 
     PreCentrifugationOption preCentrifugationOption =
         this.preCentrifugationListProvider.valueOf(delayOption, temperatureOption);

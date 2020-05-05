@@ -57,7 +57,7 @@ public class PreCentrifugationDelayListProviderTest {
   }
 
   @Test
-  public void testValueOfWithTimestamps() throws UndefinedValueException {
+  public void testValueOfWithValidTimestamps() throws UndefinedValueException {
 
     long startTime = 1577836800000L;
     long fifteenMinutesLater = 1577837700000L;

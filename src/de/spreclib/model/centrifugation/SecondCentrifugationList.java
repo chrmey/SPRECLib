@@ -17,12 +17,6 @@ public final class SecondCentrifugationList {
   static {
     List<Centrifugation> modifiableSecondCentrifugations = new ArrayList<>();
     modifiableSecondCentrifugations.add(
-        new Centrifugation(CentrifugationType.NO, new CodePart("N")));
-    modifiableSecondCentrifugations.add(
-        new Centrifugation(CentrifugationType.UNKNOWN, new CodePart("X")));
-    modifiableSecondCentrifugations.add(
-        new Centrifugation(CentrifugationType.OTHER, new CodePart("Z")));
-    modifiableSecondCentrifugations.add(
         new ParameterizedCentrifugation(
             SecondCentrifugationTemperature.ROOM_TEMPERATURE,
             SecondCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
@@ -92,6 +86,12 @@ public final class SecondCentrifugationList {
             SecondCentrifugationSpeed.GREATER_TENTHOUSAND_G,
             CentrifugationBraking.WITH_BRAKING,
             new CodePart("J")));
+    modifiableSecondCentrifugations.add(
+        new Centrifugation(CentrifugationType.NO, new CodePart("N")));
+    modifiableSecondCentrifugations.add(
+        new Centrifugation(CentrifugationType.UNKNOWN, new CodePart("X")));
+    modifiableSecondCentrifugations.add(
+        new Centrifugation(CentrifugationType.OTHER, new CodePart("Z")));
 
     SECOND_CENTRIFUGATIONS = Collections.unmodifiableList(modifiableSecondCentrifugations);
   }

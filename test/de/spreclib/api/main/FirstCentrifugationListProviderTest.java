@@ -6,16 +6,6 @@ import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.FirstCentrifugationBrakingListProvider;
-import de.spreclib.api.main.FirstCentrifugationBrakingOption;
-import de.spreclib.api.main.FirstCentrifugationDurationListProvider;
-import de.spreclib.api.main.FirstCentrifugationDurationOption;
-import de.spreclib.api.main.FirstCentrifugationListProvider;
-import de.spreclib.api.main.FirstCentrifugationOption;
-import de.spreclib.api.main.FirstCentrifugationSpeedListProvider;
-import de.spreclib.api.main.FirstCentrifugationSpeedOption;
-import de.spreclib.api.main.FirstCentrifugationTemperatureListProvider;
-import de.spreclib.api.main.FirstCentrifugationTemperatureOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.centrifugation.FirstCentrifugationList;
@@ -52,6 +42,8 @@ public class FirstCentrifugationListProviderTest {
   public void testOptionStringRepresentation() {
     for (IListOption option : firstCentrifugationList) {
       assertNotNull(option.getStringRepresentation());
+
+      System.out.println(option.getStringRepresentation());
     }
   }
 

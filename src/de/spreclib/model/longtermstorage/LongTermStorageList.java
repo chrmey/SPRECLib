@@ -15,10 +15,6 @@ public final class LongTermStorageList {
   static {
     List<LongTermStorage> modifiableLongTermStorages = new ArrayList<>();
     modifiableLongTermStorages.add(
-        new LongTermStorage(LongTermStorageType.UNKNOWN, new CodePart("X")));
-    modifiableLongTermStorages.add(
-        new LongTermStorage(LongTermStorageType.OTHER, new CodePart("Z")));
-    modifiableLongTermStorages.add(
         new ParameterizedLongTermStorage(
             LongTermStorageType.DEFAULT,
             LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML,
@@ -170,6 +166,10 @@ public final class LongTermStorageList {
             LongTermStorageContainer.ORIGINAL_PRIMARY_CONTAINER,
             LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
             new CodePart("Y")));
+    modifiableLongTermStorages.add(
+        new LongTermStorage(LongTermStorageType.UNKNOWN, new CodePart("X")));
+    modifiableLongTermStorages.add(
+        new LongTermStorage(LongTermStorageType.OTHER, new CodePart("Z")));
 
     LONG_TERM_STORAGES = Collections.unmodifiableList(modifiableLongTermStorages);
   }

@@ -17,12 +17,6 @@ public final class FirstCentrifugationList {
   static {
     List<Centrifugation> modifiableFirstCentrifugations = new ArrayList<>();
     modifiableFirstCentrifugations.add(
-        new Centrifugation(CentrifugationType.NO, new CodePart("N")));
-    modifiableFirstCentrifugations.add(
-        new Centrifugation(CentrifugationType.UNKNOWN, new CodePart("X")));
-    modifiableFirstCentrifugations.add(
-        new Centrifugation(CentrifugationType.OTHER, new CodePart("Z")));
-    modifiableFirstCentrifugations.add(
         new ParameterizedCentrifugation(
             FirstCentrifugationTemperature.ROOM_TEMPERATURE,
             FirstCentrifugationDuration.TEN_TO_FIFTEEN_MINUTES,
@@ -99,6 +93,12 @@ public final class FirstCentrifugationList {
             FirstCentrifugationSpeed.LESS_THOUSAND_G,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("M")));
+        modifiableFirstCentrifugations.add(
+                new Centrifugation(CentrifugationType.NO, new CodePart("N")));
+            modifiableFirstCentrifugations.add(
+                new Centrifugation(CentrifugationType.UNKNOWN, new CodePart("X")));
+            modifiableFirstCentrifugations.add(
+                new Centrifugation(CentrifugationType.OTHER, new CodePart("Z")));
 
     FIRST_CENTRIFUGATIONS = Collections.unmodifiableList(modifiableFirstCentrifugations);
   }

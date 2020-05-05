@@ -15,12 +15,6 @@ public final class PostCentrifugationList {
   static {
     List<PostCentrifugation> modifiablePostCentrifugationList = new ArrayList<>();
     modifiablePostCentrifugationList.add(
-        new PostCentrifugation(PostCentrifugationType.NOT_APPLICABLE, new CodePart("N")));
-    modifiablePostCentrifugationList.add(
-        new PostCentrifugation(PostCentrifugationType.UNKNOWN, new CodePart("X")));
-    modifiablePostCentrifugationList.add(
-        new PostCentrifugation(PostCentrifugationType.OTHER, new CodePart("Z")));
-    modifiablePostCentrifugationList.add(
         new ParameterizedPostCentrifugation(
             PostCentrifugationType.DEFAULT,
             PostCentrifugationDelay.LESS_ONE_HOUR,
@@ -80,6 +74,12 @@ public final class PostCentrifugationList {
             PostCentrifugationDelay.GREATER_TWENTYFOUR_HOURS,
             PostCentrifugationTemperature.ROOM_TEMPERATURE,
             new CodePart("J")));
+    modifiablePostCentrifugationList.add(
+        new PostCentrifugation(PostCentrifugationType.NOT_APPLICABLE, new CodePart("N")));
+    modifiablePostCentrifugationList.add(
+        new PostCentrifugation(PostCentrifugationType.UNKNOWN, new CodePart("X")));
+    modifiablePostCentrifugationList.add(
+        new PostCentrifugation(PostCentrifugationType.OTHER, new CodePart("Z")));
 
     POST_CENTRIFUGATIONS = Collections.unmodifiableList(modifiablePostCentrifugationList);
   }

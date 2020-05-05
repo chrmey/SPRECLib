@@ -236,7 +236,7 @@ public class SolidSampleSprecTest {
 
     ICodePart longTermStorageCode = solidSampleCode.getLongTermStorageCode();
 
-    assertEquals("V", longTermStorageCode.getStringRepresentation());
+    assertEquals("D", longTermStorageCode.getStringRepresentation());
   }
 
   @Test
@@ -277,7 +277,7 @@ public class SolidSampleSprecTest {
 
     String codeString = solidSampleCode.getStringRepresentation();
 
-    assertEquals("FNAA48EFETHCV", codeString);
+    assertEquals("FNAA48EFETHCD", codeString);
   }
 
   @Test
