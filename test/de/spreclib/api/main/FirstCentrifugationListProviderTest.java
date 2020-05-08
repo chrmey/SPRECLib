@@ -41,9 +41,8 @@ public class FirstCentrifugationListProviderTest {
   @Test
   public void testOptionStringRepresentation() {
     for (IListOption option : firstCentrifugationList) {
+	
       assertNotNull(option.getStringRepresentation());
-
-      System.out.println(option.getStringRepresentation());
     }
   }
 
