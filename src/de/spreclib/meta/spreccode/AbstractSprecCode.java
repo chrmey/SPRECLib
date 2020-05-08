@@ -1,9 +1,8 @@
 package de.spreclib.meta.spreccode;
 
 import de.spreclib.meta.spreccode.interfaces.ISprecCode;
-import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 public abstract class AbstractSprecCode implements ISprecCode {
@@ -22,9 +21,9 @@ public abstract class AbstractSprecCode implements ISprecCode {
 
   private void loadProperties() {
 
-    try (InputStream inputStream = new FileInputStream("./config/config.properties")) {
+    try (FileReader fileReader = new FileReader("./config/config.properties")) {
 
-      properties.load(inputStream);
+      properties.load(fileReader);
     } catch (IOException e) {
       e.printStackTrace();
     }
