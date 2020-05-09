@@ -5,7 +5,7 @@
 	<groupId>de.spreclib</groupId>
 	<artifactId>spreclib</artifactId>
 	<packaging>jar</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>SPRECLib</name>
 	<description>A library that implements the SamplePREanalyticalCode version 2 from ISBER.</description>
 	<properties>
@@ -26,18 +26,37 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-       			<artifactId>maven-resources-plugin</artifactId>
-        		<version>3.1.0</version>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>copy-resources-1</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/config</outputDirectory>
+							<resources>
+								<resource>
+									<directory>./config</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+							<encoding>UTF-8</encoding>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 		<resources>
-     		<resource>
-       			<directory>src/resources</directory>
-     		</resource>
-     		<resource>
-       			<directory>./config</directory>
-     		</resource>
-     	</resources>
+			<resource>
+				<directory>src/resources</directory>
+			</resource>
+			<resource>
+				<directory>./config</directory>
+			</resource>
+		</resources>
 	</build>
 	<dependencies>
 		<dependency>
