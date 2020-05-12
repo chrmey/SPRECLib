@@ -13,7 +13,7 @@ public enum SecondCentrifugationDuration implements ICentrifugationDuration, ILi
     this.upperBoundMinutes = upperBound;
   }
 
-  public boolean hasValue(int durationMinutes) {
+  public boolean hasValue(long durationMinutes) {
     if (durationMinutes >= this.lowerBoundMinutes && durationMinutes <= this.upperBoundMinutes) {
       return true;
     } else {

@@ -1,57 +1,37 @@
 package de.spreclib.api.parameters;
 
-import de.spreclib.api.exceptions.InvalidTimestampRelationException;
+import de.spreclib.api.exceptions.InvalidTimeRelationException;
+import java.time.Duration;
+import java.time.Instant;
 
 /**
- * Takes two timestamps milliseconds epoch time and calculates the timespan between them in minutes.
+ * Takes two instants and provides the timespan between them in minutes.
  *
  * @author Christopher Meyer
  * @version 1.0
  */
 public final class Timespan {
 
-  private final int timespanMinutes;
+  private final long timespanMinutes;
 
   /**
-   * Takes two timestamps (milliseconds since 01.01.1970) and calculates the timespan between them
-   * in minutes.
+   * Takes two instants and provides the timespan between them in minutes.
    *
-   * @param firstTimestampMilliSeconds milliseconds EPOCH time
-   * @param secondTimestampMilliSeconds milliseconds EPOCH time
-   * @throws IllegalArgumentException if one timestamp is a negative numeric
-   * @throws InvalidTimestampRelationException if the second timestamp is before the first timestamp
+   * @param timeStart Instant that represents the start of a timespan
+   * @param timeEnd Instant that represents the end of a timespan
+   * @throws InvalidTimeRelationException if the second instant is before the first instant
    */
-  public Timespan(long firstTimestampMilliSeconds, long secondTimestampMilliSeconds) {
+  public Timespan(Instant timeStart, Instant timeEnd) {
 
-    if (firstTimestampMilliSeconds < 0) {
-      throw new IllegalArgumentException("Timestamp cannot be negative");
+    if (timeEnd.isBefore(timeStart)) {
+      throw new InvalidTimeRelationException(
+          timeStart, timeEnd, "Instant1 must be before Instant2");
     }
 
-    if (secondTimestampMilliSeconds < 0) {
-      throw new IllegalArgumentException("Timestamp cannot be negative");
-    }
-
-    if (firstTimestampMilliSeconds >= secondTimestampMilliSeconds) {
-      throw new InvalidTimestampRelationException(
-          firstTimestampMilliSeconds,
-          secondTimestampMilliSeconds,
-          "Timestamp1 must be before Timestamp2");
-    }
-
-    this.timespanMinutes =
-        calculateTimespanMinutes(firstTimestampMilliSeconds, secondTimestampMilliSeconds);
+    this.timespanMinutes = Duration.between(timeStart, timeEnd).toMinutes();
   }
 
-  private int calculateTimespanMinutes(long firstTimestamp, long secondTimestamp) {
-
-    long timespanMilliseconds = secondTimestamp - firstTimestamp;
-    long timespanSeconds = timespanMilliseconds / 1000;
-    int timespanMinutes = (int) (timespanSeconds / 60);
-
-    return timespanMinutes;
-  }
-
-  public int getTimespanMinutes() {
+  public long getTimespanMinutes() {
     return this.timespanMinutes;
   }
 }

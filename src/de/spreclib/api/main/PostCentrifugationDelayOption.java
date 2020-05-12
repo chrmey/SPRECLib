@@ -28,7 +28,7 @@ public final class PostCentrifugationDelayOption extends AbstractListOption {
     return this.postCentrifugationDelay;
   }
 
-  boolean hasDelay(int delayMinutes) {
+  boolean hasDelay(long delayMinutes) {
     if (this.postCentrifugationDelay.hasValue(delayMinutes)) {
       return true;
     } else {

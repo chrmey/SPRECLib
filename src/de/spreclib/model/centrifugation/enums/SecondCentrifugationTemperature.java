@@ -2,7 +2,8 @@ package de.spreclib.model.centrifugation.enums;
 
 import de.spreclib.model.interfaces.IListProvideable;
 
-public enum SecondCentrifugationTemperature implements ICentrifugationTemperature, IListProvideable {
+public enum SecondCentrifugationTemperature
+    implements ICentrifugationTemperature, IListProvideable {
   ROOM_TEMPERATURE(18, 28),
   TWO_TO_TEN_DEGREES(2, 10);
 

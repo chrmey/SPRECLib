@@ -7,6 +7,7 @@ import static org.junit.Assert.assertNotNull;
 import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.model.warmischemiatime.WarmIschemiaTime;
+import java.time.Instant;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -59,8 +60,8 @@ public class WarmIschemiaTimeListProviderTest {
   @Test
   public void testValueOfWithTimestamps() throws UndefinedValueException {
 
-    long startTime = 1577836800000L;
-    long fifteenMinutesLater = 1577837700000L;
+    Instant startTime = Instant.ofEpochMilli(1577836800000L);
+    Instant fifteenMinutesLater = Instant.ofEpochMilli(1577837700000L);
 
     WarmIschemiaTimeOption warmIschemiaTimeOption =
         this.warmIschemiaTimeListProvider.valueOf(startTime, fifteenMinutesLater);

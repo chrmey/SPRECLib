@@ -3,6 +3,7 @@ package de.spreclib.api.main;
 import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.warmischemiatime.WarmIschemiaTime;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,21 +34,20 @@ public final class WarmIschemiaTimeListProvider
   }
 
   /**
-   * Takes two timestamps milliseconds EPOCH time and returns a WarmIschemiaTimeOption if a
-   * WarmIschemiaTimeOption with that timespan is found.
+   * Takes two instants time and returns a WarmIschemiaTimeOption if a WarmIschemiaTimeOption with
+   * that timespan is found.
    *
-   * @param vascularClampTimeMillis timestamp milliseconds EPOCH time
-   * @param collectionTimeMillis timestamp milliseconds EPOCH time
+   * @param vascularClampTime Instant
+   * @param collectionTime Instant
    * @return WarmIschemiaTimeOption
    * @throws UndefinedValueException if value for the timespan cannot be found in ListOptions
    * @see #valueOf(int)
    * @see de.spreclib.api.parameters.timespan
    */
-  public WarmIschemiaTimeOption valueOf(long vascularClampTimeMillis, long collectionTimeMillis)
+  public WarmIschemiaTimeOption valueOf(Instant vascularClampTime, Instant collectionTime)
       throws UndefinedValueException {
 
-    int durationMinutes =
-        new Timespan(vascularClampTimeMillis, collectionTimeMillis).getTimespanMinutes();
+    long durationMinutes = new Timespan(vascularClampTime, collectionTime).getTimespanMinutes();
 
     return this.valueOf(durationMinutes);
   }
@@ -60,7 +60,7 @@ public final class WarmIschemiaTimeListProvider
    * @return WarmIschemiaTimeOption
    * @throws UndefinedValueException if value for the duration cannot be found in ListOptions
    */
-  public WarmIschemiaTimeOption valueOf(int durationMinutes) throws UndefinedValueException {
+  public WarmIschemiaTimeOption valueOf(long durationMinutes) throws UndefinedValueException {
 
     for (WarmIschemiaTimeOption warmIschemiaTimeOption : this.listOptions) {
 

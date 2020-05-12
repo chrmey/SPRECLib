@@ -10,6 +10,7 @@ import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.precentrifugation.PreCentrifugationList;
 import de.spreclib.model.sprec.CodePart;
+import java.time.Instant;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -96,12 +97,16 @@ public class PreCentrifugationListProviderTest {
   public void testValueOfShouldReturnCodeA()
       throws UndefinedValueCombinationException, UndefinedValueException {
 
-    PreCentrifugationTemperatureOption temperatureOption =
-        new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(18f));
+    Instant collectionTime = Instant.ofEpochMilli(1577836800000L);
+    Instant firstCentrifugationStartTime = Instant.ofEpochMilli(1577837700000L);
 
     // Timespan is 15 minutes
     PreCentrifugationDelayOption delayOption =
-        new PreCentrifugationDelayListProvider().valueOf(1577836800000L, 1577837700000L);
+        new PreCentrifugationDelayListProvider()
+            .valueOf(collectionTime, firstCentrifugationStartTime);
+
+    PreCentrifugationTemperatureOption temperatureOption =
+        new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(18f));
 
     PreCentrifugationOption preCentrifugationOption =
         this.preCentrifugationListProvider.valueOf(delayOption, temperatureOption);

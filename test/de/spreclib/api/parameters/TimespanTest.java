@@ -2,7 +2,8 @@ package de.spreclib.api.parameters;
 
 import static org.junit.Assert.assertEquals;
 
-import de.spreclib.api.exceptions.InvalidTimestampRelationException;
+import de.spreclib.api.exceptions.InvalidTimeRelationException;
+import java.time.Instant;
 import org.junit.Test;
 
 public class TimespanTest {
@@ -10,61 +11,34 @@ public class TimespanTest {
   @Test
   public void testWithValidTimestamps() {
 
-    long startTime = 1577836800000L;
-    long fifteenMinutesLater = 1577837700000L;
+    Instant startTime = Instant.ofEpochMilli(1577836800000L);
+    Instant fifteenMinutesLater = Instant.ofEpochMilli(1577837700000L);
 
-    Timespan timestampCalculator = new Timespan(startTime, fifteenMinutesLater);
+    Timespan timespan = new Timespan(startTime, fifteenMinutesLater);
 
-    int delayMinutes = timestampCalculator.getTimespanMinutes();
+    long delayMinutes = timespan.getTimespanMinutes();
 
     assertEquals(15, delayMinutes);
   }
 
-  @Test(expected = InvalidTimestampRelationException.class)
-  public void testWithNoValidTimestamps() {
+  @Test(expected = InvalidTimeRelationException.class)
+  public void testWithTimestamp1AfterTimestamp2() {
 
-    long timestamp1 = 1577837700000L;
-    long timestampEqualTimestamp1 = 1577837700000L;
+    Instant startTime = Instant.ofEpochMilli(1577837800000L);
+    Instant endTimeBeforeStartTime = Instant.ofEpochMilli(1577837700000L);
 
-    new Timespan(timestamp1, timestampEqualTimestamp1);
-  }
-
-  @Test(expected = InvalidTimestampRelationException.class)
-  public void testWithTimestamp1AfterTimestamp2ValidTimestamps() {
-
-    long timestamp1 = 1577837800000L;
-    long beforeTimestamp1 = 1577837700000L;
-
-    new Timespan(timestamp1, beforeTimestamp1);
-  }
-
-  @Test(expected = IllegalArgumentException.class)
-  public void testWithNegativeTimestamp1Timestamps() {
-
-    long negativeTimestamp = -1577837800000L;
-    long timestamp2 = 1577837700000L;
-
-    new Timespan(negativeTimestamp, timestamp2);
-  }
-
-  @Test(expected = IllegalArgumentException.class)
-  public void testWithNegativeTimestamp2Timestamps() {
-
-    long timestamp1 = 1577837800000L;
-    long negativeTimestamp = -1577837700000L;
-
-    new Timespan(timestamp1, negativeTimestamp);
+    new Timespan(startTime, endTimeBeforeStartTime);
   }
 
   @Test
   public void testWithHalfMinute() {
 
-    long startTime = 1577836800000L;
-    long fifteenAndHalfMinutesLater = 1577837730000L;
+    Instant startTime = Instant.ofEpochMilli(1577836800000L);
+    Instant fifteenAndHalfMinutesLater = Instant.ofEpochMilli(1577837730000L);
 
-    Timespan timestampCalculator = new Timespan(startTime, fifteenAndHalfMinutesLater);
+    Timespan timespan = new Timespan(startTime, fifteenAndHalfMinutesLater);
 
-    int delayMinutes = timestampCalculator.getTimespanMinutes();
+    long delayMinutes = timespan.getTimespanMinutes();
 
     assertEquals(15, delayMinutes);
   }

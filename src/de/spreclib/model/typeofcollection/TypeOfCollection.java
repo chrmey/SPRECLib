@@ -25,7 +25,7 @@ public enum TypeOfCollection implements ISprecPart, IListProvideable {
   SWAB(new CodePart("SWB")),
   OTHER(new CodePart("ZZZ")),
   ;
-	
+
   private ICodePart codePart;
 
   private TypeOfCollection(ICodePart code) {

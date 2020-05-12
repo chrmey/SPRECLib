@@ -3,6 +3,7 @@ package de.spreclib.api.main;
 import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.coldischemiatime.ColdIschemiaTime;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,11 +44,10 @@ public final class ColdIschemiaTimeListProvider
    * @see #valueOf(int)
    * @see de.spreclib.api.parameters.timespan
    */
-  public ColdIschemiaTimeOption valueOf(long colletionTimeMillis, long startOfFixationMillis)
+  public ColdIschemiaTimeOption valueOf(Instant colletionTime, Instant startOfFixation)
       throws UndefinedValueException {
 
-    int durationMinutes =
-        new Timespan(colletionTimeMillis, startOfFixationMillis).getTimespanMinutes();
+    long durationMinutes = new Timespan(colletionTime, startOfFixation).getTimespanMinutes();
 
     return this.valueOf(durationMinutes);
   }
@@ -60,7 +60,7 @@ public final class ColdIschemiaTimeListProvider
    * @return ColdIschemiaTimeOption if a value for the specified timespan can be found
    * @throws UndefinedValueException if value for the duration cannot be found in ListOptions
    */
-  public ColdIschemiaTimeOption valueOf(int durationMinutes) throws UndefinedValueException {
+  public ColdIschemiaTimeOption valueOf(long durationMinutes) throws UndefinedValueException {
 
     for (ColdIschemiaTimeOption coldIschemiaTimeOption : this.listOptions) {
 
