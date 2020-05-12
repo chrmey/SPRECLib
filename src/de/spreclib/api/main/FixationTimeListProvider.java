@@ -36,18 +36,18 @@ public final class FixationTimeListProvider extends AbstractListProvider<Fixatio
    * Takes two instants time and returns a FixationTimeOption if a FixationTimeOption with that
    * timespan is found.
    *
-   * @param startOfFixationTime Instant
-   * @param endOfFixationTime Instant
+   * @param fixationStartTime Instant
+   * @param fixationEndTime Instant
    * @return FixationTimeOption
    * @throws UndefinedValueException if value for the duration cannot be found in ListOptions
    * @see #valueOf(int)
    * @see de.spreclib.api.parameters.timespan
    */
-  public FixationTimeOption valueOf(Instant startOfFixationTime, Instant endOfFixationTime)
+  public FixationTimeOption valueOf(Instant fixationStartTime, Instant fixationEndTime)
       throws UndefinedValueException {
 
     long durationMinutes =
-        new Timespan(startOfFixationTime, endOfFixationTime).getTimespanMinutes();
+        new Timespan(fixationStartTime, fixationEndTime).getTimespanMinutes();
 
     return this.valueOf(durationMinutes);
   }

@@ -34,20 +34,20 @@ public final class ColdIschemiaTimeListProvider
   }
 
   /**
-   * Takes two timestamps milliseconds EPOCH time and returns a ColdIschemiaTimeOption if a
-   * ColdIschemiaTimeOption with that timespan is found.
+   * Takes two instants and returns a ColdIschemiaTimeOption if a ColdIschemiaTimeOption with that
+   * timespan is found.
    *
-   * @param colletionTimeMillis timestamp milliseconds EPOCH time
-   * @param startOfFixationMillis timestamp milliseconds EPOCH time
+   * @param colletionTimeMillis Instant
+   * @param fixationStartTime Instant
    * @return ColdIschemiaTimeOption
    * @throws UndefinedValueException if value for the timespan cannot be found in ListOptions
    * @see #valueOf(int)
    * @see de.spreclib.api.parameters.timespan
    */
-  public ColdIschemiaTimeOption valueOf(Instant colletionTime, Instant startOfFixation)
+  public ColdIschemiaTimeOption valueOf(Instant collectionTime, Instant fixationStartTime)
       throws UndefinedValueException {
 
-    long durationMinutes = new Timespan(colletionTime, startOfFixation).getTimespanMinutes();
+    long durationMinutes = new Timespan(collectionTime, fixationStartTime).getTimespanMinutes();
 
     return this.valueOf(durationMinutes);
   }
