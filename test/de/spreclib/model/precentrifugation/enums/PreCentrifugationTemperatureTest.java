@@ -20,7 +20,7 @@ public class PreCentrifugationTemperatureTest {
   }
 
   @Test
-  public void testHasValueShouldReturnFalseBelowAbove() {
+  public void testHasValueShouldReturnFalseAbove() {
 
     assertFalse(PreCentrifugationTemperature.ROOM_TEMPERATURE.hasValue(30));
   }
