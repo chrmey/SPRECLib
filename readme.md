@@ -5,13 +5,10 @@
 A Java library for the SamplePREanalyticalCode Version 2 from the [ISBER](https://www.isber.org/page/SPREC?&hhsearchterms=%22sprec%22)
 
 
-## Getting started
-
 ### Terminology in SPRECLib
+A SPREC is made up of seven factors, that define the most important pre-analytical factors of a sample. For example FluidSampleType, PrimaryContainer and PreCentrifugation are such factors. Each factor has a defined set of values, each containing a one or three character code. 
 
-The elements of a SPREC code in SPRECLib are called parts. For example FluidSampleType, PrimaryContainer and PreCentrifugation are such parts. Each part has a defined set of values, each one of them with an one or three character code called CodePart. Seven parts with their CodeParts make up the full code of a sample. 
-
-SPRECLib also allows to "build up" a part from its values, that means you can use a temperature (degrees celsius) and a time value (minutes or two timestamps in milliseconds) and combine them to a PreCentrifugation. 
+SPRECLib offers to obtain lists of the SPREC-Factors for the use in e.g. dropdown selects. Also SPRECLib offers a way to pass data such as temperature (degrees celsius), times (Java Instant), speed (grams) to obtain a factor.
 
 You see an overview of the structure of SPRECLib in the picture below.
 
@@ -19,7 +16,7 @@ You see an overview of the structure of SPRECLib in the picture below.
 
 ### Getting SPREC parts or values as Lists
 
-To obtain lists of the SPREC values for each part or values you need to instantiate the ListProvider for that part. There is a ListProvider for every part of SPREC and also for each part of a part if the part is made up of multiple values. The contents of the ListProviders are called ListOptions, with a prefix depending on the ListProvider that they come from.
+To obtain lists of the SPREC values for each factor or parameter you need to instantiate the ListProvider for that part. There is a ListProvider for every factor and each parameter of a factor, if the factor is made up of multiple parameters. The contents of the ListProviders are called ListOptions, their name depends on the ListProvider that they come from.
 
 ```
 FluidSampleTypeProvider provides a List of FluidSampleTypeOptions, PrimaryContainerListProvider provides a List of PrimaryContainerOptions...
