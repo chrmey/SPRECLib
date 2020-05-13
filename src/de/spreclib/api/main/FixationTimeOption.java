@@ -28,7 +28,7 @@ public final class FixationTimeOption extends AbstractListOption {
     return this.fixationTime;
   }
 
-  boolean hasDuration(int durationMinutes) {
+  boolean hasDuration(long durationMinutes) {
     if (this.fixationTime.hasValue(durationMinutes)) {
       return true;
     } else {

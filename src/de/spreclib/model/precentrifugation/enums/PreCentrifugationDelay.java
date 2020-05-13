@@ -19,7 +19,7 @@ public enum PreCentrifugationDelay implements IListProvideable {
     this.upperBoundMinutes = upperBoundMinutes;
   }
 
-  public boolean hasValue(int delayMinutes) {
+  public boolean hasValue(long delayMinutes) {
 
     if (delayMinutes >= this.lowerBoundMinutes
         && (this.upperBoundMinutes == null || delayMinutes < this.upperBoundMinutes)) {

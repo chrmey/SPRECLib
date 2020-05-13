@@ -3,6 +3,7 @@ package de.spreclib.api.main;
 import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.coldischemiatime.ColdIschemiaTime;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,21 +34,20 @@ public final class ColdIschemiaTimeListProvider
   }
 
   /**
-   * Takes two timestamps milliseconds EPOCH time and returns a ColdIschemiaTimeOption if a
-   * ColdIschemiaTimeOption with that timespan is found.
+   * Takes two instants and returns a ColdIschemiaTimeOption if a ColdIschemiaTimeOption with that
+   * timespan is found.
    *
-   * @param colletionTimeMillis timestamp milliseconds EPOCH time
-   * @param startOfFixationMillis timestamp milliseconds EPOCH time
+   * @param colletionTimeMillis Instant
+   * @param fixationStartTime Instant
    * @return ColdIschemiaTimeOption
    * @throws UndefinedValueException if value for the timespan cannot be found in ListOptions
    * @see #valueOf(int)
    * @see de.spreclib.api.parameters.timespan
    */
-  public ColdIschemiaTimeOption valueOf(long colletionTimeMillis, long startOfFixationMillis)
+  public ColdIschemiaTimeOption valueOf(Instant collectionTime, Instant fixationStartTime)
       throws UndefinedValueException {
 
-    int durationMinutes =
-        new Timespan(colletionTimeMillis, startOfFixationMillis).getTimespanMinutes();
+    long durationMinutes = new Timespan(collectionTime, fixationStartTime).getTimespanMinutes();
 
     return this.valueOf(durationMinutes);
   }
@@ -60,7 +60,7 @@ public final class ColdIschemiaTimeListProvider
    * @return ColdIschemiaTimeOption if a value for the specified timespan can be found
    * @throws UndefinedValueException if value for the duration cannot be found in ListOptions
    */
-  public ColdIschemiaTimeOption valueOf(int durationMinutes) throws UndefinedValueException {
+  public ColdIschemiaTimeOption valueOf(long durationMinutes) throws UndefinedValueException {
 
     for (ColdIschemiaTimeOption coldIschemiaTimeOption : this.listOptions) {
 

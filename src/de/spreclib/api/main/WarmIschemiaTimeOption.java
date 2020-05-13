@@ -28,7 +28,7 @@ public final class WarmIschemiaTimeOption extends AbstractListOption {
     return this.warmIschemiaTime;
   }
 
-  boolean hasDuration(int durationMinutes) {
+  boolean hasDuration(long durationMinutes) {
     if (this.warmIschemiaTime.hasValue(durationMinutes)) {
       return true;
     } else {

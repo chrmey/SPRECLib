@@ -3,6 +3,7 @@ package de.spreclib.api.main;
 import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.fixationtime.FixationTime;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,21 +33,21 @@ public final class FixationTimeListProvider extends AbstractListProvider<Fixatio
   }
 
   /**
-   * Takes two timestamps milliseconds EPOCH time and returns a FixationTimeOption if a
-   * FixationTimeOption with that timespan is found.
+   * Takes two instants time and returns a FixationTimeOption if a FixationTimeOption with that
+   * timespan is found.
    *
-   * @param startOfFixationTimeMillis timestamp milliseconds EPOCH time
-   * @param endOfFixationTimeMillis timestamp milliseconds EPOCH time
+   * @param fixationStartTime Instant
+   * @param fixationEndTime Instant
    * @return FixationTimeOption
    * @throws UndefinedValueException if value for the duration cannot be found in ListOptions
    * @see #valueOf(int)
    * @see de.spreclib.api.parameters.timespan
    */
-  public FixationTimeOption valueOf(long startOfFixationTimeMillis, long endOfFixationTimeMillis)
+  public FixationTimeOption valueOf(Instant fixationStartTime, Instant fixationEndTime)
       throws UndefinedValueException {
 
-    int durationMinutes =
-        new Timespan(startOfFixationTimeMillis, endOfFixationTimeMillis).getTimespanMinutes();
+    long durationMinutes =
+        new Timespan(fixationStartTime, fixationEndTime).getTimespanMinutes();
 
     return this.valueOf(durationMinutes);
   }
@@ -59,7 +60,7 @@ public final class FixationTimeListProvider extends AbstractListProvider<Fixatio
    * @return FixationTimeOption
    * @throws UndefinedValueException if value for the duration cannot be found in ListOptions
    */
-  public FixationTimeOption valueOf(int durationMinutes) throws UndefinedValueException {
+  public FixationTimeOption valueOf(long durationMinutes) throws UndefinedValueException {
 
     for (FixationTimeOption fixationTimeOption : listOptions) {
 

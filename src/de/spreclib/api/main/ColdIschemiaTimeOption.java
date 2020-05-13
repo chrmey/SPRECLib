@@ -28,7 +28,7 @@ public final class ColdIschemiaTimeOption extends AbstractListOption {
     return this.coldIschemiaTime;
   }
 
-  boolean hasDuration(int durationMinutes) {
+  boolean hasDuration(long durationMinutes) {
     if (this.coldIschemiaTime.hasValue(durationMinutes)) {
       return true;
     } else {

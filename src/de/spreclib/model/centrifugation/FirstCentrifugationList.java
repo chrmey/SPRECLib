@@ -93,12 +93,12 @@ public final class FirstCentrifugationList {
             FirstCentrifugationSpeed.LESS_THOUSAND_G,
             CentrifugationBraking.NO_BRAKING,
             new CodePart("M")));
-        modifiableFirstCentrifugations.add(
-                new Centrifugation(CentrifugationType.NO, new CodePart("N")));
-            modifiableFirstCentrifugations.add(
-                new Centrifugation(CentrifugationType.UNKNOWN, new CodePart("X")));
-            modifiableFirstCentrifugations.add(
-                new Centrifugation(CentrifugationType.OTHER, new CodePart("Z")));
+    modifiableFirstCentrifugations.add(
+        new Centrifugation(CentrifugationType.NO, new CodePart("N")));
+    modifiableFirstCentrifugations.add(
+        new Centrifugation(CentrifugationType.UNKNOWN, new CodePart("X")));
+    modifiableFirstCentrifugations.add(
+        new Centrifugation(CentrifugationType.OTHER, new CodePart("Z")));
 
     FIRST_CENTRIFUGATIONS = Collections.unmodifiableList(modifiableFirstCentrifugations);
   }

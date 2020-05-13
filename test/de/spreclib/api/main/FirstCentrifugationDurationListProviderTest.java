@@ -5,10 +5,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.FirstCentrifugationDurationListProvider;
-import de.spreclib.api.main.FirstCentrifugationDurationOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.model.centrifugation.enums.FirstCentrifugationDuration;
+import java.time.Instant;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -62,8 +61,8 @@ public class FirstCentrifugationDurationListProviderTest {
   @Test
   public void testValueOfWithTimestamps() throws UndefinedValueException {
 
-    long startTime = 1577836800000L;
-    long fifteenMinutesLater = 1577837700000L;
+    Instant startTime = Instant.ofEpochMilli(1577836800000L);
+    Instant fifteenMinutesLater = Instant.ofEpochMilli(1577837700000L);
 
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
         this.firstCentrifugationDurationListProvider.valueOf(startTime, fifteenMinutesLater);
