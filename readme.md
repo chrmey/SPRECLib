@@ -99,9 +99,31 @@ String fluidSampleTypeCodeString = fluidSampleTypeCode.getStringRepresentation()
 
 You can pass values to the ListProviders to obtain a ListOption if the passed value is valid in SPREC. If you pass an invalid value a checked exception is thrown.
 
-The ListProviders for values that contain a temperature, time, speed or braking provide a valueOf() method.
+The ListProviders for parameters that contain a temperature, time, speed or braking provide a valueOf() method.
 
+To pass Time values use the Java class ```Instant``` that can be instantiated in many ways, such as EPOCH time in millis or seconds, dates, .... . 
 
+To pass a Temperature, you need to instantiate a Temperature Object that takes a temperature in degrees celsius.  
+
+To obtain a PreCentrifugationOption to pass it to the Builder you should proceed like the following.
+
+```
+  Instant collectionTime = Instant.ofEpochMilli(1577836800000L);
+  Instant firstCentrifugationStartTime = Instant.ofEpochMilli(1577837700000L);
+
+  PreCentrifugationDelayOption delayOption =
+      new PreCentrifugationDelayListProvider()
+        .valueOf(collectionTime, firstCentrifugationStartTime);
+
+  PreCentrifugationTemperatureOption temperatureOption =
+    new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(18f));
+
+  PreCentrifugationOption preCentrifugationOption =
+    this.preCentrifugationListProvider.valueOf(delayOption, temperatureOption);
+
+```
+The valueOf-Methods that take a temperature, instants, speed or braking will throw a checked Exception if the passed value is invalid in SPREC, means no corresponding value can be found in SPREC.
+The valueOf-Method of the PreCentrifugationListProvider will throw a checked Exception if the passed combination is invalid in SPREC.
 
 ## Authors
 
