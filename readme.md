@@ -91,39 +91,69 @@ To get the code for a specific part:
     .withFluidSampleType(FluidSampleTypeOption)
     .getSprecCode();
 
-ICodePart fluidSampleTypeCode = sprecCode.getFluidSampleTypeCode();
-String fluidSampleTypeCodeString = fluidSampleTypeCode.getStringRepresentation();
+  ICodePart fluidSampleTypeCode = sprecCode.getFluidSampleTypeCode();
+  String fluidSampleTypeCodeString = fluidSampleTypeCode.getStringRepresentation();
 ```
 
 ### Passing values to SPRECLib
 
 You can pass values to the ListProviders to obtain a ListOption if the passed value is valid in SPREC. If you pass an invalid value a checked exception is thrown.
 
-The ListProviders for parameters that contain a temperature, time, speed or braking provide a valueOf() method.
+The ListProviders for parameters that contain a temperature, time, speed or braking provide a valueOf-method.
 
 To pass Time values use the Java class ```Instant``` that can be instantiated in many ways, such as EPOCH time in millis or seconds, dates, .... . 
 
 To pass a Temperature, you need to instantiate a Temperature Object that takes a temperature in degrees celsius.  
 
-To obtain a PreCentrifugationOption to pass it to the Builder you should proceed like the following.
+To obtain a FirstCentrifugationOption to pass it to the Builder you should proceed like the following.
 
 ```
-  Instant collectionTime = Instant.ofEpochMilli(1577836800000L);
-  Instant firstCentrifugationStartTime = Instant.ofEpochMilli(1577837700000L);
+  Temperature temperature = new Temperature(20f);
 
-  PreCentrifugationDelayOption delayOption =
-      new PreCentrifugationDelayListProvider()
-        .valueOf(collectionTime, firstCentrifugationStartTime);
+  Instant startTime = Instant.ofEpochMilli(1577836800000L);
+  Instant EndTime = Instant.ofEpochMilli(1577837700000L);
 
-  PreCentrifugationTemperatureOption temperatureOption =
-    new PreCentrifugationTemperatureListProvider().valueOf(new Temperature(18f));
+  FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
+    new FirstCentrifugationTemperatureListProvider().valueOf(temperature);
 
-  PreCentrifugationOption preCentrifugationOption =
-    this.preCentrifugationListProvider.valueOf(delayOption, temperatureOption);
+  FirstCentrifugationDurationOption firstCentrifugationDurationOption =
+    new FirstCentrifugationDurationListProvider().valueOf(startTime, EndTime);
 
+  FirstCentrifugationSpeedOption firstCentrifugationSpeedOption =
+    new FirstCentrifugationSpeedListProvider().valueOf(3000);
+    
+  FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =
+    new FirstCentrifugationBrakingListProvider().valueOf(true);
+
+  FirstCentrifugationOption firstCentrifugationOption =
+    this.firstCentrifugationListProvider.valueOf(
+      firstCentrifugationTemperatureOption,
+      firstCentrifugationDurationOption,
+      firstCentrifugationSpeedOption,
+      firstCentrifugationBrakingOption);
 ```
-The valueOf-Methods that take a temperature, instants, speed or braking will throw a checked Exception if the passed value is invalid in SPREC, means no corresponding value can be found in SPREC.
-The valueOf-Method of the PreCentrifugationListProvider will throw a checked Exception if the passed combination is invalid in SPREC.
+The valueOf-methods that take a temperature, instants, speed or braking will throw a checked Exception if the passed value is invalid in SPREC, means no corresponding value can be found in SPREC.
+The valueOf-method of the FirstCentrifugationListProvider will throw a checked Exception if the passed combination is invalid in SPREC.
+
+#### Temperatures can be passed to: 
+- PreCentrifugationListProvider
+- FirstCentrifugationListProvider
+- SecondCentrifugationListProvider
+- PostCentrifugationListProvider
+- LongTermStorageListProvider
+
+#### Instants can be passed to:
+- WarmIschemiaTimeListProvider
+- ColdIschemiaTimeListProvider
+- FixationTimeListProvider
+- PreCentrifugationDelayListProvider
+- FirstCentrifugationDurationListProvder
+- SecondCentrifugationDurationListProvider
+- PostCentrifugationListProvider
+
+Braking and Speed values can be passed to the CentrifugationListProviders.
+
+
 
 ## Authors
 
