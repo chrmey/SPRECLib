@@ -2,10 +2,10 @@ package de.spreclib.model.precentrifugation;
 
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListProvideable;
-import de.spreclib.model.interfaces.ISprecPart;
+import de.spreclib.model.interfaces.ISprecFactor;
 import de.spreclib.model.precentrifugation.enums.PreCentrifugationType;
 
-public class PreCentrifugation implements ISprecPart, IListProvideable {
+public class PreCentrifugation implements ISprecFactor, IListProvideable {
 
   private final PreCentrifugationType preCentrifugationType;
   private final ICodePart codePart;
@@ -20,7 +20,7 @@ public class PreCentrifugation implements ISprecPart, IListProvideable {
   }
 
   @Override
-  public ICodePart getCodeFromSprecPart() {
+  public ICodePart getCodeFromSprecFactor() {
     return this.codePart;
   }
 

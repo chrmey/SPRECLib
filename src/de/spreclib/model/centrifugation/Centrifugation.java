@@ -3,9 +3,9 @@ package de.spreclib.model.centrifugation;
 import de.spreclib.model.centrifugation.enums.CentrifugationType;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListProvideable;
-import de.spreclib.model.interfaces.ISprecPart;
+import de.spreclib.model.interfaces.ISprecFactor;
 
-public class Centrifugation implements ISprecPart, IListProvideable {
+public class Centrifugation implements ISprecFactor, IListProvideable {
 
   private final CentrifugationType centrifugationType;
   private final ICodePart codePart;
@@ -30,7 +30,7 @@ public class Centrifugation implements ISprecPart, IListProvideable {
   }
 
   @Override
-  public ICodePart getCodeFromSprecPart() {
+  public ICodePart getCodeFromSprecFactor() {
     return this.codePart;
   }
 

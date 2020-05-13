@@ -2,10 +2,10 @@ package de.spreclib.model.fixationtime;
 
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListProvideable;
-import de.spreclib.model.interfaces.ISprecPart;
+import de.spreclib.model.interfaces.ISprecFactor;
 import de.spreclib.model.sprec.CodePart;
 
-public enum FixationTime implements ISprecPart, IListProvideable {
+public enum FixationTime implements ISprecFactor, IListProvideable {
   LESS_FIFTEEN_MINUTES(0, 15, new CodePart("A")),
   FIFTEEN_MINUTES_TO_ONE_HOUR(15, 60, new CodePart("B")),
   ONE_TO_FOUR_HOURS(60, 240, new CodePart("C")),
@@ -29,7 +29,7 @@ public enum FixationTime implements ISprecPart, IListProvideable {
   }
 
   @Override
-  public ICodePart getCodeFromSprecPart() {
+  public ICodePart getCodeFromSprecFactor() {
     return this.codePart;
   }
 

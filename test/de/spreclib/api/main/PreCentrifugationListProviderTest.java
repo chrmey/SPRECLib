@@ -112,7 +112,7 @@ public class PreCentrifugationListProviderTest {
         this.preCentrifugationListProvider.valueOf(delayOption, temperatureOption);
 
     assertEquals(
-        new CodePart("A"), preCentrifugationOption.getContainedObject().getCodeFromSprecPart());
+        new CodePart("A"), preCentrifugationOption.getContainedObject().getCodeFromSprecFactor());
   }
 
   @Test
@@ -129,6 +129,6 @@ public class PreCentrifugationListProviderTest {
         this.preCentrifugationListProvider.valueOf(delayOption, temperatureOption);
 
     assertEquals(
-        new CodePart("N"), preCentrifugationOption.getContainedObject().getCodeFromSprecPart());
+        new CodePart("N"), preCentrifugationOption.getContainedObject().getCodeFromSprecFactor());
   }
 }

@@ -108,7 +108,7 @@ public class LongTermStorageListProviderTest {
         this.longTermStorageListProvider.valueOf(temperatureOption, containerOption);
 
     assertEquals(
-        new CodePart("A"), longTermStorageOption.getContainedObject().getCodeFromSprecPart());
+        new CodePart("A"), longTermStorageOption.getContainedObject().getCodeFromSprecFactor());
   }
 
   @Test
@@ -124,6 +124,6 @@ public class LongTermStorageListProviderTest {
     LongTermStorageOption longTermStorageOption =
         this.longTermStorageListProvider.valueOf(temperatureOption, containerOption);
     assertEquals(
-        new CodePart("B"), longTermStorageOption.getContainedObject().getCodeFromSprecPart());
+        new CodePart("B"), longTermStorageOption.getContainedObject().getCodeFromSprecFactor());
   }
 }

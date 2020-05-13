@@ -1,20 +1,20 @@
 package de.spreclib.model.exceptions;
 
-import de.spreclib.model.interfaces.ISprecPart;
+import de.spreclib.model.interfaces.ISprecFactor;
 
 public class InvalidPartValueException extends RuntimeException {
 
   /** */
   private static final long serialVersionUID = 6629731958053317468L;
 
-  private final ISprecPart sprecPart;
+  private final ISprecFactor sprecPart;
 
-  public InvalidPartValueException(ISprecPart sprecPart, String message) {
+  public InvalidPartValueException(ISprecFactor sprecPart, String message) {
     super(message);
     this.sprecPart = sprecPart;
   }
 
-  public ISprecPart getSprecPart() {
+  public ISprecFactor getSprecPart() {
     return this.sprecPart;
   }
 }

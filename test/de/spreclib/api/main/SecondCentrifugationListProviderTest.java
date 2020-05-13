@@ -171,7 +171,7 @@ public class SecondCentrifugationListProviderTest {
             secondCentrifugationBrakingOption);
 
     assertEquals(
-        new CodePart("A"), secondCentrifugationOption.getContainedObject().getCodeFromSprecPart());
+        new CodePart("A"), secondCentrifugationOption.getContainedObject().getCodeFromSprecFactor());
   }
 
   @Test
@@ -197,6 +197,6 @@ public class SecondCentrifugationListProviderTest {
             secondCentrifugationBrakingOption);
 
     assertEquals(
-        new CodePart("J"), secondCentrifugationOption.getContainedObject().getCodeFromSprecPart());
+        new CodePart("J"), secondCentrifugationOption.getContainedObject().getCodeFromSprecFactor());
   }
 }

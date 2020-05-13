@@ -10,7 +10,7 @@ public class FluidSampleTypeTest {
   @Test
   public void testGetCodeFromSprecPart() {
     for (FluidSampleType fluidSampleType : FluidSampleType.values()) {
-      assertNotNull(fluidSampleType.getCodeFromSprecPart());
+      assertNotNull(fluidSampleType.getCodeFromSprecFactor());
     }
   }
 

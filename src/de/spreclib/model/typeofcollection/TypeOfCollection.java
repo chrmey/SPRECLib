@@ -2,10 +2,10 @@ package de.spreclib.model.typeofcollection;
 
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListProvideable;
-import de.spreclib.model.interfaces.ISprecPart;
+import de.spreclib.model.interfaces.ISprecFactor;
 import de.spreclib.model.sprec.CodePart;
 
-public enum TypeOfCollection implements ISprecPart, IListProvideable {
+public enum TypeOfCollection implements ISprecFactor, IListProvideable {
   AUTOPSY_LESS_6_HOURS_POSTMORTEM(new CodePart("A06")),
   AUTOPSY_6_TO_12_HOURS_POSTMORTEM(new CodePart("A12")),
   AUTOPSY_12_TO_24_HOURS_POSTMORTEM(new CodePart("A24")),
@@ -33,7 +33,7 @@ public enum TypeOfCollection implements ISprecPart, IListProvideable {
   }
 
   @Override
-  public ICodePart getCodeFromSprecPart() {
+  public ICodePart getCodeFromSprecFactor() {
     return this.codePart;
   }
 

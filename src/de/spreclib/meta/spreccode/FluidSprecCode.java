@@ -104,49 +104,49 @@ public final class FluidSprecCode extends AbstractSprecCode {
 
     public FluidSprecCodeBuilder withFluidSampleType(FluidSampleType fluidSampleType) {
       if (fluidSampleType != null) {
-        this.fluidSampleTypeCode = fluidSampleType.getCodeFromSprecPart();
+        this.fluidSampleTypeCode = fluidSampleType.getCodeFromSprecFactor();
       }
       return this;
     }
 
     public FluidSprecCodeBuilder withPrimaryContainer(PrimaryContainer primaryContainer) {
       if (primaryContainer != null) {
-        this.primaryContainerCode = primaryContainer.getCodeFromSprecPart();
+        this.primaryContainerCode = primaryContainer.getCodeFromSprecFactor();
       }
       return this;
     }
 
     public FluidSprecCodeBuilder withPreCentrifugation(PreCentrifugation preCentrifugation) {
       if (preCentrifugation != null) {
-        this.preCentrifugationCode = preCentrifugation.getCodeFromSprecPart();
+        this.preCentrifugationCode = preCentrifugation.getCodeFromSprecFactor();
       }
       return this;
     }
 
     public FluidSprecCodeBuilder withFirstCentrifugation(Centrifugation firstCentrifugation) {
       if (firstCentrifugation != null) {
-        this.firstCentrifugationCode = firstCentrifugation.getCodeFromSprecPart();
+        this.firstCentrifugationCode = firstCentrifugation.getCodeFromSprecFactor();
       }
       return this;
     }
 
     public FluidSprecCodeBuilder withSecondCentrifugation(Centrifugation secondCentrifugation) {
       if (secondCentrifugation != null) {
-        this.secondCentrifugationCode = secondCentrifugation.getCodeFromSprecPart();
+        this.secondCentrifugationCode = secondCentrifugation.getCodeFromSprecFactor();
       }
       return this;
     }
 
     public FluidSprecCodeBuilder withPostCentrifugation(PostCentrifugation postCentrifugation) {
       if (postCentrifugation != null) {
-        this.postCentrifugationCode = postCentrifugation.getCodeFromSprecPart();
+        this.postCentrifugationCode = postCentrifugation.getCodeFromSprecFactor();
       }
       return this;
     }
 
     public FluidSprecCodeBuilder withLongTermStorage(LongTermStorage longTermStorage) {
       if (longTermStorage != null) {
-        this.longTermStorageCode = longTermStorage.getCodeFromSprecPart();
+        this.longTermStorageCode = longTermStorage.getCodeFromSprecFactor();
       }
       return this;
     }

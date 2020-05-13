@@ -36,7 +36,7 @@ public class ParameterizedLongTermStorageTest {
   @Test
   public void testGetCodeFromSprecPart() {
     ICodePart expected = new CodePart("A");
-    ICodePart actual = parameterizedLongTermStorage.getCodeFromSprecPart();
+    ICodePart actual = parameterizedLongTermStorage.getCodeFromSprecFactor();
 
     assertEquals(expected, actual);
   }

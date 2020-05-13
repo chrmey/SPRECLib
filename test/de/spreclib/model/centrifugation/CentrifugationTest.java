@@ -30,7 +30,7 @@ public class CentrifugationTest {
   @Test
   public void testGetCodeFromSprecPart() {
     ICodePart expected = new CodePart("N");
-    ICodePart actual = centrifugation.getCodeFromSprecPart();
+    ICodePart actual = centrifugation.getCodeFromSprecFactor();
     
     assertEquals(expected, actual);
   }

@@ -10,7 +10,7 @@ public class FixationTest {
   @Test
   public void testGetCodeFromSprecPart() {
     for (Fixation fixation : Fixation.values()) {
-      assertNotNull(fixation.getCodeFromSprecPart());
+      assertNotNull(fixation.getCodeFromSprecFactor());
     }
   }
 

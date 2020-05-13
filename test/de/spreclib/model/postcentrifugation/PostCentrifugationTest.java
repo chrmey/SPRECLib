@@ -28,7 +28,7 @@ public class PostCentrifugationTest {
   @Test
   public void testGetCodeFromSprecPart() {
     ICodePart expected = new CodePart("N");
-    ICodePart actual = postCentrifugation.getCodeFromSprecPart();
+    ICodePart actual = postCentrifugation.getCodeFromSprecFactor();
 
     assertEquals(expected, actual);
   }

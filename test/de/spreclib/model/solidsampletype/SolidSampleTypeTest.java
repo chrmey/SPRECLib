@@ -10,7 +10,7 @@ public class SolidSampleTypeTest {
   @Test
   public void testGetCodeFromSprecPart() {
     for (SolidSampleType solidSampleType : SolidSampleType.values()) {
-      assertNotNull(solidSampleType.getCodeFromSprecPart());
+      assertNotNull(solidSampleType.getCodeFromSprecFactor());
     }
   }
 

@@ -105,49 +105,49 @@ public final class SolidSprecCode extends AbstractSprecCode {
 
     public SolidSprecCodeBuilder withSolidSampleType(SolidSampleType solidSampleType) {
       if (solidSampleType != null) {
-        this.solidSampleTypeCode = solidSampleType.getCodeFromSprecPart();
+        this.solidSampleTypeCode = solidSampleType.getCodeFromSprecFactor();
       }
       return this;
     }
 
     public SolidSprecCodeBuilder withTypeOfCollection(TypeOfCollection typeOfCollection) {
       if (typeOfCollection != null) {
-        this.typeOfCollectionCode = typeOfCollection.getCodeFromSprecPart();
+        this.typeOfCollectionCode = typeOfCollection.getCodeFromSprecFactor();
       }
       return this;
     }
 
     public SolidSprecCodeBuilder withWarmIschemiaTime(WarmIschemiaTime warmIschemiaTime) {
       if (warmIschemiaTime != null) {
-        this.warmIschemiaTimeCode = warmIschemiaTime.getCodeFromSprecPart();
+        this.warmIschemiaTimeCode = warmIschemiaTime.getCodeFromSprecFactor();
       }
       return this;
     }
 
     public SolidSprecCodeBuilder withColdIschemiaTime(ColdIschemiaTime coldIschemiaTime) {
       if (coldIschemiaTime != null) {
-        this.coldIschemiaTimeCode = coldIschemiaTime.getCodeFromSprecPart();
+        this.coldIschemiaTimeCode = coldIschemiaTime.getCodeFromSprecFactor();
       }
       return this;
     }
 
     public SolidSprecCodeBuilder withFixation(Fixation fixation) {
       if (fixation != null) {
-        this.fixationCode = fixation.getCodeFromSprecPart();
+        this.fixationCode = fixation.getCodeFromSprecFactor();
       }
       return this;
     }
 
     public SolidSprecCodeBuilder withFixationTime(FixationTime fixationTime) {
       if (fixationTime != null) {
-        this.fixationTimeCode = fixationTime.getCodeFromSprecPart();
+        this.fixationTimeCode = fixationTime.getCodeFromSprecFactor();
       }
       return this;
     }
 
     public SolidSprecCodeBuilder withLongTermStorage(LongTermStorage longTermStorage) {
       if (longTermStorage != null) {
-        this.longTermStorageCode = longTermStorage.getCodeFromSprecPart();
+        this.longTermStorageCode = longTermStorage.getCodeFromSprecFactor();
       }
       return this;
     }

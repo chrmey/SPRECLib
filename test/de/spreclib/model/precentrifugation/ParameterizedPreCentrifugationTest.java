@@ -35,7 +35,7 @@ public class ParameterizedPreCentrifugationTest {
   @Test
   public void testGetCodeFromSprecPart() {
     ICodePart expected = new CodePart("A");
-    ICodePart actual = parameterizedPreCentrifugation.getCodeFromSprecPart();
+    ICodePart actual = parameterizedPreCentrifugation.getCodeFromSprecFactor();
 
     assertEquals(expected, actual);
   }

@@ -2,10 +2,10 @@ package de.spreclib.model.longtermstorage;
 
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListProvideable;
-import de.spreclib.model.interfaces.ISprecPart;
+import de.spreclib.model.interfaces.ISprecFactor;
 import de.spreclib.model.longtermstorage.enums.LongTermStorageType;
 
-public class LongTermStorage implements ISprecPart, IListProvideable {
+public class LongTermStorage implements ISprecFactor, IListProvideable {
 
   private final LongTermStorageType longTermStorageType;
   private final ICodePart codePart;
@@ -20,7 +20,7 @@ public class LongTermStorage implements ISprecPart, IListProvideable {
   }
 
   @Override
-  public ICodePart getCodeFromSprecPart() {
+  public ICodePart getCodeFromSprecFactor() {
     return this.codePart;
   }
 

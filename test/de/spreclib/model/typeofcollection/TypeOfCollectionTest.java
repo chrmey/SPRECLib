@@ -10,7 +10,7 @@ public class TypeOfCollectionTest {
   @Test
   public void testGetCodeFromSprecPart() {
     for (TypeOfCollection typeOfCollection : TypeOfCollection.values()) {
-      assertNotNull(typeOfCollection.getCodeFromSprecPart());
+      assertNotNull(typeOfCollection.getCodeFromSprecFactor());
     }
   }
 

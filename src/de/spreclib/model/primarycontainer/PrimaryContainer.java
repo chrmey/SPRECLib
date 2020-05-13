@@ -2,10 +2,10 @@ package de.spreclib.model.primarycontainer;
 
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListProvideable;
-import de.spreclib.model.interfaces.ISprecPart;
+import de.spreclib.model.interfaces.ISprecFactor;
 import de.spreclib.model.sprec.CodePart;
 
-public enum PrimaryContainer implements ISprecPart, IListProvideable {
+public enum PrimaryContainer implements ISprecFactor, IListProvideable {
   ACID_CITRATE_DEXTROSE(new CodePart("ACD")),
   ADDITIVES(new CodePart("ADD")),
   SERUM_TUBE_WITHOUT_CLOT_ACTIVATOR(new CodePart("CAT")),
@@ -42,7 +42,7 @@ public enum PrimaryContainer implements ISprecPart, IListProvideable {
   }
 
   @Override
-  public ICodePart getCodeFromSprecPart() {
+  public ICodePart getCodeFromSprecFactor() {
     return this.codePart;
   }
 

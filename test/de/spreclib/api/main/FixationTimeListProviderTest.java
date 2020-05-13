@@ -85,6 +85,6 @@ public class FixationTimeListProviderTest {
 
     FixationTimeOption fixationTimeOption = this.fixationTimeListProvider.valueOf(15);
 
-    assertEquals(new CodePart("B"), fixationTimeOption.getContainedObject().getCodeFromSprecPart());
+    assertEquals(new CodePart("B"), fixationTimeOption.getContainedObject().getCodeFromSprecFactor());
   }
 }

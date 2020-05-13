@@ -12,7 +12,7 @@ public class FixationTimeTest {
   public void testGetCodeFromSprecPart() {
     for (FixationTime fixationTime : FixationTime.values()) {
 
-      assertNotNull(fixationTime.getCodeFromSprecPart());
+      assertNotNull(fixationTime.getCodeFromSprecFactor());
     }
   }
 

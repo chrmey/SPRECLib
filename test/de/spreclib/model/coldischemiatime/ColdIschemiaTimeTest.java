@@ -11,7 +11,7 @@ public class ColdIschemiaTimeTest {
   @Test
   public void testGetCodeFromSprecPart() {
     for (ColdIschemiaTime coldIschemiaTime : ColdIschemiaTime.values()) {
-      assertNotNull(coldIschemiaTime.getCodeFromSprecPart());
+      assertNotNull(coldIschemiaTime.getCodeFromSprecFactor());
     }
   }
 

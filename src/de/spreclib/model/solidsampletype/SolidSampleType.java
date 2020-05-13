@@ -2,10 +2,10 @@ package de.spreclib.model.solidsampletype;
 
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.interfaces.IListProvideable;
-import de.spreclib.model.interfaces.ISprecPart;
+import de.spreclib.model.interfaces.ISprecFactor;
 import de.spreclib.model.sprec.CodePart;
 
-public enum SolidSampleType implements ISprecPart, IListProvideable {
+public enum SolidSampleType implements ISprecFactor, IListProvideable {
   FRESH_CELLS_FROM_NON_BLOOD_SPECIMEN(new CodePart("CEN")),
   CELLS_FROM_NON_BLOOD_SPECIMEN_VIABLE(new CodePart("CLN")),
   CELLS_FROM_FINE_NEEDLE_ASPIRATE(new CodePart("FNA")),
@@ -25,7 +25,7 @@ public enum SolidSampleType implements ISprecPart, IListProvideable {
   }
 
   @Override
-  public ICodePart getCodeFromSprecPart() {
+  public ICodePart getCodeFromSprecFactor() {
     return this.codePart;
   }
 

@@ -27,7 +27,7 @@ public class LongTermStorageTest {
   @Test
   public void testGetCodeFromSprecPart() {
     ICodePart expected = new CodePart("X");
-    ICodePart actual = longTermStorage.getCodeFromSprecPart();
+    ICodePart actual = longTermStorage.getCodeFromSprecFactor();
 
     assertEquals(expected, actual);
   }

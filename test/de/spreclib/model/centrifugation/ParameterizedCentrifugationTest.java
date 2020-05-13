@@ -91,7 +91,7 @@ public class ParameterizedCentrifugationTest {
   @Test
   public void testGetCodeFromSprecPart() {
     ICodePart expected = new CodePart("A");
-    ICodePart actual = parameterizedCentrifugation.getCodeFromSprecPart();
+    ICodePart actual = parameterizedCentrifugation.getCodeFromSprecFactor();
 
     assertEquals(expected, actual);
   }
