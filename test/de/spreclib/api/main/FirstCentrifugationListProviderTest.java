@@ -10,6 +10,7 @@ import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.api.parameters.Temperature;
 import de.spreclib.model.centrifugation.FirstCentrifugationList;
 import de.spreclib.model.sprec.CodePart;
+import java.time.Instant;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -53,12 +54,18 @@ public class FirstCentrifugationListProviderTest {
 
     Temperature temperature = new Temperature(20f);
 
+    Instant startTime = Instant.ofEpochMilli(1577836800000L);
+    Instant EndTime = Instant.ofEpochMilli(1577837700000L);
+
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
         new FirstCentrifugationTemperatureListProvider().valueOf(temperature);
+
     FirstCentrifugationDurationOption firstCentrifugationDurationOption =
-        new FirstCentrifugationDurationListProvider().valueOf(15);
+        new FirstCentrifugationDurationListProvider().valueOf(startTime, EndTime);
+
     FirstCentrifugationSpeedOption firstCentrifugationSpeedOption =
         new FirstCentrifugationSpeedListProvider().valueOf(3000);
+    
     FirstCentrifugationBrakingOption firstCentrifugationBrakingOption =
         new FirstCentrifugationBrakingListProvider().valueOf(true);
 
