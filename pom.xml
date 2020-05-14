@@ -36,7 +36,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/config</outputDirectory>
+							<outputDirectory>${basedir}/target/spreclib_config</outputDirectory>
 							<resources>
 								<resource>
 									<directory>./config</directory>
