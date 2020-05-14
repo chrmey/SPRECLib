@@ -21,7 +21,7 @@ public abstract class AbstractSprecCode implements ISprecCode {
 
   private void loadProperties() {
 
-    try (FileReader fileReader = new FileReader("./config/config.properties")) {
+    try (FileReader fileReader = new FileReader("./spreclib_config/config.properties")) {
 
       properties.load(fileReader);
     } catch (IOException e) {
