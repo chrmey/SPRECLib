@@ -48,7 +48,7 @@ public class PostCentrifugationTemperatureListProviderTest {
   public void testValueOfWithValidValues() throws UndefinedValueException {
 
     PostCentrifugationTemperatureOption temperatureOption =
-        this.postCentrifugationTemperatureListProvider.valueOf(new Temperature(10.9999f));
+        this.postCentrifugationTemperatureListProvider.valueOf(new Temperature(10.49f));
 
     assertNotNull(temperatureOption);
   }
@@ -69,7 +69,7 @@ public class PostCentrifugationTemperatureListProviderTest {
   public void testValueOfShouldReturnRoomtemperature() throws UndefinedValueException {
 
     PostCentrifugationTemperatureOption temperatureOption =
-        this.postCentrifugationTemperatureListProvider.valueOf(new Temperature(28.9999f));
+        this.postCentrifugationTemperatureListProvider.valueOf(new Temperature(28.49f));
 
     assertEquals(
         PostCentrifugationTemperature.ROOM_TEMPERATURE, temperatureOption.getContainedObject());
@@ -79,7 +79,7 @@ public class PostCentrifugationTemperatureListProviderTest {
   public void testValueOfShouldReturnTwoToTenDegrees() throws UndefinedValueException {
 
     PostCentrifugationTemperatureOption temperatureOption =
-        this.postCentrifugationTemperatureListProvider.valueOf(new Temperature(10.9999f));
+        this.postCentrifugationTemperatureListProvider.valueOf(new Temperature(10.49f));
 
     assertEquals(
         PostCentrifugationTemperature.TWO_TO_TEN_DEGREES, temperatureOption.getContainedObject());

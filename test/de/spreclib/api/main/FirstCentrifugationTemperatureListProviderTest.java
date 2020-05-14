@@ -72,7 +72,7 @@ public class FirstCentrifugationTemperatureListProviderTest {
   @Test
   public void testValueOfShouldReturnRoomTemperature() throws UndefinedValueException {
 
-    Temperature temperature = new Temperature(28.9999f);
+    Temperature temperature = new Temperature(28.49f);
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
         this.firstCentrifugationTemperatureListProvider.valueOf(temperature);
@@ -85,7 +85,7 @@ public class FirstCentrifugationTemperatureListProviderTest {
   @Test
   public void testValueOfShouldReturnTwoToTenDegrees() throws UndefinedValueException {
 
-    Temperature temperature = new Temperature(10.9999f);
+    Temperature temperature = new Temperature(10.49f);
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
         this.firstCentrifugationTemperatureListProvider.valueOf(temperature);
