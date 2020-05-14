@@ -47,7 +47,7 @@ public class PreCentrifugationTemperatureListProviderTest {
   public void testValueOfShouldReturnTwoToTenDegrees() throws UndefinedValueException {
 
     PreCentrifugationTemperatureOption temperatureOption =
-        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(10.9999f));
+        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(10.49f));
 
     assertEquals(
         PreCentrifugationTemperature.TWO_TO_TEN_DEGREES, temperatureOption.getContainedObject());

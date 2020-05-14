@@ -13,6 +13,9 @@ public class Temperature {
   private final float temperatureCelsius;
 
   public Temperature(float temperatureCelsius) {
+
+    temperatureCelsius = Math.round(temperatureCelsius);
+
     this.temperatureCelsius = temperatureCelsius;
   }
 

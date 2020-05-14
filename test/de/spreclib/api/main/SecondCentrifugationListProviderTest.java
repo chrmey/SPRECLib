@@ -152,7 +152,7 @@ public class SecondCentrifugationListProviderTest {
   public void testValueOfShouldReturnCodeA()
       throws UndefinedValueCombinationException, UndefinedValueException {
 
-    Temperature temperature = new Temperature(28.9999f);
+    Temperature temperature = new Temperature(28.49f);
 
     SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption =
         new SecondCentrifugationTemperatureListProvider().valueOf(temperature);
@@ -178,7 +178,7 @@ public class SecondCentrifugationListProviderTest {
   public void testValueOfShouldReturnCodeJ()
       throws UndefinedValueCombinationException, UndefinedValueException {
 
-    Temperature temperature = new Temperature(10.9999f);
+    Temperature temperature = new Temperature(10.49f);
 
     SecondCentrifugationTemperatureOption secondCentrifugationTemperatureOption =
         new SecondCentrifugationTemperatureListProvider().valueOf(temperature);
