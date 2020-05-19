@@ -35,4 +35,41 @@ public final class SecondCentrifugationDurationOption extends AbstractListOption
       return false;
     }
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result =
+        prime * result
+            + ((secondCentrifugationDuration == null)
+                ? 0
+                : secondCentrifugationDuration.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    SecondCentrifugationDurationOption other = (SecondCentrifugationDurationOption) obj;
+    if (secondCentrifugationDuration != other.secondCentrifugationDuration) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public String toString() {
+    return "SecondCentrifugationDurationOption [secondCentrifugationDuration="
+        + secondCentrifugationDuration
+        + "]";
+  }
 }

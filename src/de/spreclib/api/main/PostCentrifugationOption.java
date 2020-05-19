@@ -82,4 +82,39 @@ public final class PostCentrifugationOption extends AbstractListOption {
     }
     return false;
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((postCentrifugation == null) ? 0 : postCentrifugation.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    PostCentrifugationOption other = (PostCentrifugationOption) obj;
+    if (postCentrifugation == null) {
+      if (other.postCentrifugation != null) {
+        return false;
+      }
+    } else if (!postCentrifugation.equals(other.postCentrifugation)) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public String toString() {
+    return "PostCentrifugationOption [postCentrifugation=" + postCentrifugation + "]";
+  }
 }

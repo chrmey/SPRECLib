@@ -27,4 +27,35 @@ public final class SolidSampleTypeOption extends AbstractListOption {
   SolidSampleType getContainedObject() {
     return this.solidSampleType;
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((solidSampleType == null) ? 0 : solidSampleType.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    SolidSampleTypeOption other = (SolidSampleTypeOption) obj;
+    if (solidSampleType != other.solidSampleType) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public String toString() {
+    return "SolidSampleTypeOption [solidSampleType=" + solidSampleType + "]";
+  }
 }

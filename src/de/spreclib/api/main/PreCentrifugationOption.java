@@ -80,4 +80,39 @@ public final class PreCentrifugationOption extends AbstractListOption {
     }
     return false;
   }
+
+  @Override
+  public String toString() {
+    return "PreCentrifugationOption [preCentrifugation=" + preCentrifugation + "]";
+  }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((preCentrifugation == null) ? 0 : preCentrifugation.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    PreCentrifugationOption other = (PreCentrifugationOption) obj;
+    if (preCentrifugation == null) {
+      if (other.preCentrifugation != null) {
+        return false;
+      }
+    } else if (!preCentrifugation.equals(other.preCentrifugation)) {
+      return false;
+    }
+    return true;
+  }
 }

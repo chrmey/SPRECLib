@@ -35,4 +35,41 @@ public final class PreCentrifugationTemperatureOption extends AbstractListOption
       return false;
     }
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result =
+        prime * result
+            + ((preCentrifugationTemperature == null)
+                ? 0
+                : preCentrifugationTemperature.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    PreCentrifugationTemperatureOption other = (PreCentrifugationTemperatureOption) obj;
+    if (preCentrifugationTemperature != other.preCentrifugationTemperature) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public String toString() {
+    return "PreCentrifugationTemperatureOption [preCentrifugationTemperature="
+        + preCentrifugationTemperature
+        + "]";
+  }
 }

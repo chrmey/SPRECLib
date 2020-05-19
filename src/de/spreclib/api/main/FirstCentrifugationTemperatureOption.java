@@ -36,4 +36,41 @@ public final class FirstCentrifugationTemperatureOption extends AbstractListOpti
       return false;
     }
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result =
+        prime * result
+            + ((firstCentrifugationTemperature == null)
+                ? 0
+                : firstCentrifugationTemperature.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    FirstCentrifugationTemperatureOption other = (FirstCentrifugationTemperatureOption) obj;
+    if (firstCentrifugationTemperature != other.firstCentrifugationTemperature) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public String toString() {
+    return "FirstCentrifugationTemperatureOption [firstCentrifugationTemperature="
+        + firstCentrifugationTemperature
+        + "]";
+  }
 }

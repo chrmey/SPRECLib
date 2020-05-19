@@ -35,4 +35,39 @@ public final class FirstCentrifugationSpeedOption extends AbstractListOption {
       return false;
     }
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result =
+        prime * result
+            + ((firstCentrifugationSpeed == null) ? 0 : firstCentrifugationSpeed.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    FirstCentrifugationSpeedOption other = (FirstCentrifugationSpeedOption) obj;
+    if (firstCentrifugationSpeed != other.firstCentrifugationSpeed) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public String toString() {
+    return "FirstCentrifugationSpeedOption [firstCentrifugationSpeed="
+        + firstCentrifugationSpeed
+        + "]";
+  }
 }

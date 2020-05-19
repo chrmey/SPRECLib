@@ -35,4 +35,36 @@ public final class PreCentrifugationDelayOption extends AbstractListOption {
       return false;
     }
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result =
+        prime * result + ((preCentrifugationDelay == null) ? 0 : preCentrifugationDelay.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    PreCentrifugationDelayOption other = (PreCentrifugationDelayOption) obj;
+    if (preCentrifugationDelay != other.preCentrifugationDelay) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public String toString() {
+    return "PreCentrifugationDelayOption [preCentrifugationDelay=" + preCentrifugationDelay + "]";
+  }
 }

@@ -108,4 +108,40 @@ public final class SecondCentrifugationOption extends AbstractListOption {
     }
     return false;
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result =
+        prime * result + ((secondCentrifugation == null) ? 0 : secondCentrifugation.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    SecondCentrifugationOption other = (SecondCentrifugationOption) obj;
+    if (secondCentrifugation == null) {
+      if (other.secondCentrifugation != null) {
+        return false;
+      }
+    } else if (!secondCentrifugation.equals(other.secondCentrifugation)) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public String toString() {
+    return "SecondCentrifugationOption [secondCentrifugation=" + secondCentrifugation + "]";
+  }
 }

@@ -35,4 +35,39 @@ public final class FirstCentrifugationBrakingOption extends AbstractListOption {
       return false;
     }
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result =
+        prime * result
+            + ((firstCentrifugationBraking == null) ? 0 : firstCentrifugationBraking.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    FirstCentrifugationBrakingOption other = (FirstCentrifugationBrakingOption) obj;
+    if (firstCentrifugationBraking != other.firstCentrifugationBraking) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public String toString() {
+    return "FirstCentrifugationBrakingOption [firstCentrifugationBraking="
+        + firstCentrifugationBraking
+        + "]";
+  }
 }

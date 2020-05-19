@@ -95,15 +95,40 @@ public final class ParameterizedCentrifugation extends Centrifugation {
     if (centrifugationBraking != other.centrifugationBraking) {
       return false;
     }
-    if (centrifugationDuration != other.centrifugationDuration) {
+    if (centrifugationDuration == null) {
+      if (other.centrifugationDuration != null) {
+        return false;
+      }
+    } else if (!centrifugationDuration.equals(other.centrifugationDuration)) {
       return false;
     }
-    if (centrifugationSpeed != other.centrifugationSpeed) {
+    if (centrifugationSpeed == null) {
+      if (other.centrifugationSpeed != null) {
+        return false;
+      }
+    } else if (!centrifugationSpeed.equals(other.centrifugationSpeed)) {
       return false;
     }
-    if (centrifugationTemperature != other.centrifugationTemperature) {
+    if (centrifugationTemperature == null) {
+      if (other.centrifugationTemperature != null) {
+        return false;
+      }
+    } else if (!centrifugationTemperature.equals(other.centrifugationTemperature)) {
       return false;
     }
     return true;
+  }
+
+  @Override
+  public String toString() {
+    return "ParameterizedCentrifugation [centrifugationTemperature="
+        + centrifugationTemperature
+        + ", centrifugationDuration="
+        + centrifugationDuration
+        + ", centrifugationSpeed="
+        + centrifugationSpeed
+        + ", centrifugationBraking="
+        + centrifugationBraking
+        + "]";
   }
 }

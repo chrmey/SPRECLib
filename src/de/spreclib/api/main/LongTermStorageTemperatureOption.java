@@ -35,4 +35,39 @@ public final class LongTermStorageTemperatureOption extends AbstractListOption {
       return false;
     }
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result =
+        prime * result
+            + ((longTermStorageTemperature == null) ? 0 : longTermStorageTemperature.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    LongTermStorageTemperatureOption other = (LongTermStorageTemperatureOption) obj;
+    if (longTermStorageTemperature != other.longTermStorageTemperature) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public String toString() {
+    return "LongTermStorageTemperatureOption [longTermStorageTemperature="
+        + longTermStorageTemperature
+        + "]";
+  }
 }
