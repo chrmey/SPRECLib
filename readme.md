@@ -4,6 +4,10 @@
 
 A Java library for the SamplePREanalyticalCode Version 2 from the [ISBER](https://www.isber.org/page/SPREC?&hhsearchterms=%22sprec%22)
 
+### Getting started
+
+Download the latest release and include the .jar file to your project. In the same folder where the .jar is in create a folder called '''spreclib_config''' and put the config.properties file inside it. 
+
 
 ### Terminology in SPRECLib
 A SPREC is made up of seven factors, that define the most important pre-analytical factors of a sample. For example FluidSampleType, PrimaryContainer and PreCentrifugation are such factors. Each factor has a defined set of values, each containing a one or three character code. 
