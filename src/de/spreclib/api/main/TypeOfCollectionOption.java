@@ -28,6 +28,17 @@ public final class TypeOfCollectionOption extends AbstractListOption {
     return this.typeOfCollection;
   }
 
+  boolean hasCodeString(String codeString) {
+    if (this.typeOfCollection
+        .getCodeFromSprecFactor()
+        .getStringRepresentation()
+        .equals(codeString)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;

@@ -3,6 +3,7 @@ package de.spreclib.api.main;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.model.fixation.Fixation;
@@ -39,5 +40,17 @@ public class FixationListProviderTest {
     for (IListOption option : this.fixationList) {
       assertNotNull(option.getStringRepresentation());
     }
+  }
+
+  @Test
+  public void testGetOptionFromCodeString() {
+
+    assertNotNull(this.fixationListProvider.getOptionFromCodeString("ACA"));
+  }
+
+  @Test
+  public void testGetOptionFromCodeStringReturnNull() {
+
+    assertNull(this.fixationListProvider.getOptionFromCodeString("AA"));
   }
 }

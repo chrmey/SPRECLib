@@ -1,6 +1,7 @@
 package de.spreclib.api.main;
 
 import de.spreclib.api.exceptions.UndefinedValueCombinationException;
+import de.spreclib.api.main.interfaces.IFactorListProvider;
 import de.spreclib.model.precentrifugation.PreCentrifugation;
 import de.spreclib.model.precentrifugation.PreCentrifugationList;
 import java.util.ArrayList;
@@ -16,7 +17,8 @@ import java.util.List;
  * @see de.spreclib.api.main.PreCentrifugationOption
  */
 public final class PreCentrifugationListProvider
-    extends AbstractListProvider<PreCentrifugationOption> {
+    extends AbstractListProvider<PreCentrifugationOption>
+    implements IFactorListProvider<PreCentrifugationOption> {
 
   public PreCentrifugationListProvider() {
     super();
@@ -67,5 +69,15 @@ public final class PreCentrifugationListProvider
 
     throw new UndefinedValueCombinationException(
         "Parameter combination for PreCentrifugation is undefined in SPREC.");
+  }
+
+  @Override
+public PreCentrifugationOption getOptionFromCodeString(String codeString) {
+    for (PreCentrifugationOption preCentrifugationOption : this.listOptions) {
+      if (preCentrifugationOption.hasCodeString(codeString)) {
+        return preCentrifugationOption;
+      }
+    }
+    return null;
   }
 }

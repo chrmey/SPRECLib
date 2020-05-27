@@ -1,6 +1,7 @@
 package de.spreclib.api.main;
 
 import de.spreclib.api.exceptions.UndefinedValueCombinationException;
+import de.spreclib.api.main.interfaces.IFactorListProvider;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.longtermstorage.LongTermStorageList;
 import java.util.ArrayList;
@@ -13,7 +14,8 @@ import java.util.List;
  *
  * @author Christopher Meyer
  */
-public final class LongTermStorageListProvider extends AbstractListProvider<LongTermStorageOption> {
+public final class LongTermStorageListProvider extends AbstractListProvider<LongTermStorageOption>
+    implements IFactorListProvider<LongTermStorageOption> {
 
   public LongTermStorageListProvider() {
     super();
@@ -63,5 +65,15 @@ public final class LongTermStorageListProvider extends AbstractListProvider<Long
 
     throw new UndefinedValueCombinationException(
         "Value combination for LongTermStorage is undefined in SPREC.");
+  }
+
+  @Override
+public LongTermStorageOption getOptionFromCodeString(String codeString) {
+    for (LongTermStorageOption longTermStorageOption : this.listOptions) {
+      if (longTermStorageOption.hasCodeString(codeString)) {
+        return longTermStorageOption;
+      }
+    }
+    return null;
   }
 }

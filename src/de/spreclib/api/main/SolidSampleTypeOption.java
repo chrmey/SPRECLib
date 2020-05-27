@@ -28,6 +28,17 @@ public final class SolidSampleTypeOption extends AbstractListOption {
     return this.solidSampleType;
   }
 
+  boolean hasCodeString(String codeString) {
+    if (this.solidSampleType
+        .getCodeFromSprecFactor()
+        .getStringRepresentation()
+        .equals(codeString)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;

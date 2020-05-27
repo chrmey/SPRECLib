@@ -1,5 +1,6 @@
 package de.spreclib.api.main;
 
+import de.spreclib.api.main.interfaces.IFactorListProvider;
 import de.spreclib.model.fixation.Fixation;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,8 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.main.FixationOption
  */
-public final class FixationListProvider extends AbstractListProvider<FixationOption> {
+public final class FixationListProvider extends AbstractListProvider<FixationOption>
+    implements IFactorListProvider<FixationOption> {
 
   public FixationListProvider() {
     super();
@@ -25,5 +27,15 @@ public final class FixationListProvider extends AbstractListProvider<FixationOpt
       fixationOptions.add(fixationOption);
     }
     return fixationOptions;
+  }
+
+  @Override
+public FixationOption getOptionFromCodeString(String codeString) {
+    for (FixationOption fixationOption : this.listOptions) {
+      if (fixationOption.hasCodeString(codeString)) {
+        return fixationOption;
+      }
+    }
+    return null;
   }
 }

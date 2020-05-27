@@ -26,10 +26,6 @@ public abstract class AbstractSprecCode implements ISprecCode {
       InputStream inputStream =
           getClass().getClassLoader().getResourceAsStream("config.properties");
 
-      if (inputStream == null) {
-        System.out.println("null");
-      }
-
       properties.load(inputStream);
     } catch (IOException e) {
       e.printStackTrace();

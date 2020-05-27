@@ -1,6 +1,7 @@
 package de.spreclib.api.main;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
+import de.spreclib.api.main.interfaces.IFactorListProvider;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.coldischemiatime.ColdIschemiaTime;
 import java.time.Instant;
@@ -16,8 +17,8 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.main.ColdIschemiaTimeOption
  */
-public final class ColdIschemiaTimeListProvider
-    extends AbstractListProvider<ColdIschemiaTimeOption> {
+public final class ColdIschemiaTimeListProvider extends AbstractListProvider<ColdIschemiaTimeOption>
+    implements IFactorListProvider<ColdIschemiaTimeOption> {
 
   public ColdIschemiaTimeListProvider() {
     super();
@@ -72,5 +73,14 @@ public final class ColdIschemiaTimeListProvider
         durationMinutes,
         "ColdIschemiaTime",
         "Value " + durationMinutes + "minutes undefined for ColdIschemiaTime.");
+  }
+
+  public ColdIschemiaTimeOption getOptionFromCodeString(String codeString) {
+    for (ColdIschemiaTimeOption coldIschemiaTimeOption : this.listOptions) {
+      if (coldIschemiaTimeOption.hasCodeString(codeString)) {
+        return coldIschemiaTimeOption;
+      }
+    }
+    return null;
   }
 }

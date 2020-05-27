@@ -5,8 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
-import de.spreclib.api.main.FirstCentrifugationBrakingListProvider;
-import de.spreclib.api.main.FirstCentrifugationBrakingOption;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.model.centrifugation.enums.CentrifugationBraking;
 import java.util.List;

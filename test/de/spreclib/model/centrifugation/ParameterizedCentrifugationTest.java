@@ -3,6 +3,7 @@ package de.spreclib.model.centrifugation;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
 import de.spreclib.model.centrifugation.enums.CentrifugationBraking;
 import de.spreclib.model.centrifugation.enums.CentrifugationType;
 import de.spreclib.model.centrifugation.enums.FirstCentrifugationDuration;
@@ -13,6 +14,7 @@ import de.spreclib.model.centrifugation.enums.ICentrifugationSpeed;
 import de.spreclib.model.centrifugation.enums.ICentrifugationTemperature;
 import de.spreclib.model.interfaces.ICodePart;
 import de.spreclib.model.sprec.CodePart;
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -100,5 +102,10 @@ public class ParameterizedCentrifugationTest {
   public void testIsDefaultCentrifugation() {
 
     assertTrue(parameterizedCentrifugation.isParameterizedCentrifugation());
+  }
+
+  @Test
+  public void testEquals() {
+    EqualsVerifier.forClass(ParameterizedCentrifugation.class).withRedefinedSuperclass().verify();
   }
 }

@@ -3,6 +3,7 @@ package de.spreclib.api.main;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.api.exceptions.UndefinedValueException;
@@ -125,5 +126,17 @@ public class LongTermStorageListProviderTest {
         this.longTermStorageListProvider.valueOf(temperatureOption, containerOption);
     assertEquals(
         new CodePart("B"), longTermStorageOption.getContainedObject().getCodeFromSprecFactor());
+  }
+
+  @Test
+  public void testGetOptionFromCodeString() {
+
+    assertNotNull(this.longTermStorageListProvider.getOptionFromCodeString("A"));
+  }
+
+  @Test
+  public void testGetOptionFromCodeStringReturnNull() {
+
+    assertNull(this.longTermStorageListProvider.getOptionFromCodeString("AA"));
   }
 }

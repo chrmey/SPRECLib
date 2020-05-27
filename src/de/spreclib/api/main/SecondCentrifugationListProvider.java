@@ -1,6 +1,7 @@
 package de.spreclib.api.main;
 
 import de.spreclib.api.exceptions.UndefinedValueCombinationException;
+import de.spreclib.api.main.interfaces.IFactorListProvider;
 import de.spreclib.model.centrifugation.Centrifugation;
 import de.spreclib.model.centrifugation.SecondCentrifugationList;
 import java.util.ArrayList;
@@ -16,7 +17,8 @@ import java.util.List;
  * @see de.spreclib.api.main.SecondCentrifugationOption
  */
 public final class SecondCentrifugationListProvider
-    extends AbstractListProvider<SecondCentrifugationOption> {
+    extends AbstractListProvider<SecondCentrifugationOption>
+    implements IFactorListProvider<SecondCentrifugationOption> {
 
   public SecondCentrifugationListProvider() {
     super();
@@ -79,5 +81,15 @@ public final class SecondCentrifugationListProvider
     }
     throw new UndefinedValueCombinationException(
         "Parameter combination for SecondCentrifugation is undefined in SPREC.");
+  }
+
+  @Override
+public SecondCentrifugationOption getOptionFromCodeString(String codeString) {
+    for (SecondCentrifugationOption secondCentrifugationOption : this.listOptions) {
+      if (secondCentrifugationOption.hasCodeString(codeString)) {
+        return secondCentrifugationOption;
+      }
+    }
+    return null;
   }
 }

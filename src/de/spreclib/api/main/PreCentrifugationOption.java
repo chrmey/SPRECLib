@@ -81,9 +81,15 @@ public final class PreCentrifugationOption extends AbstractListOption {
     return false;
   }
 
-  @Override
-  public String toString() {
-    return "PreCentrifugationOption [preCentrifugation=" + preCentrifugation + "]";
+  boolean hasCodeString(String codeString) {
+    if (this.preCentrifugation
+        .getCodeFromSprecFactor()
+        .getStringRepresentation()
+        .equals(codeString)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   @Override
@@ -114,5 +120,10 @@ public final class PreCentrifugationOption extends AbstractListOption {
       return false;
     }
     return true;
+  }
+
+  @Override
+  public String toString() {
+    return "PreCentrifugationOption [preCentrifugation=" + preCentrifugation + "]";
   }
 }

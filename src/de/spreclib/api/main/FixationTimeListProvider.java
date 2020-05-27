@@ -1,6 +1,7 @@
 package de.spreclib.api.main;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
+import de.spreclib.api.main.interfaces.IFactorListProvider;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.fixationtime.FixationTime;
 import java.time.Instant;
@@ -16,7 +17,8 @@ import java.util.List;
  * @version 1.0
  * @see de.spreclib.api.main.FixationOption
  */
-public final class FixationTimeListProvider extends AbstractListProvider<FixationTimeOption> {
+public final class FixationTimeListProvider extends AbstractListProvider<FixationTimeOption>
+    implements IFactorListProvider<FixationTimeOption> {
 
   public FixationTimeListProvider() {
     super();
@@ -72,5 +74,15 @@ public final class FixationTimeListProvider extends AbstractListProvider<Fixatio
         durationMinutes,
         "FixationTime",
         "Value " + durationMinutes + "minutes undefined for FixationTime.");
+  }
+
+  @Override
+public FixationTimeOption getOptionFromCodeString(String codeString) {
+    for (FixationTimeOption fixationTimeOption : this.listOptions) {
+      if (fixationTimeOption.hasCodeString(codeString)) {
+        return fixationTimeOption;
+      }
+    }
+    return null;
   }
 }

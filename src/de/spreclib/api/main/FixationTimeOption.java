@@ -12,7 +12,7 @@ import de.spreclib.model.fixationtime.FixationTime;
  */
 public final class FixationTimeOption extends AbstractListOption {
 
-  private FixationTime fixationTime;
+  private final FixationTime fixationTime;
 
   FixationTimeOption(FixationTime fixationTime) {
     this.fixationTime = fixationTime;
@@ -30,6 +30,14 @@ public final class FixationTimeOption extends AbstractListOption {
 
   boolean hasDuration(long durationMinutes) {
     if (this.fixationTime.hasValue(durationMinutes)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  boolean hasCodeString(String codeString) {
+    if (this.fixationTime.getCodeFromSprecFactor().getStringRepresentation().equals(codeString)) {
       return true;
     } else {
       return false;

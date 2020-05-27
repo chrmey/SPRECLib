@@ -3,6 +3,7 @@ package de.spreclib.api.main;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.exceptions.UndefinedValueCombinationException;
 import de.spreclib.api.exceptions.UndefinedValueException;
@@ -230,5 +231,17 @@ public class FirstCentrifugationListProviderTest {
 
     assertEquals(
         new CodePart("M"), firstCentrifugationOption.getContainedObject().getCodeFromSprecFactor());
+  }
+
+  @Test
+  public void testGetOptionFromCodeString() {
+
+    assertNotNull(this.firstCentrifugationListProvider.getOptionFromCodeString("A"));
+  }
+
+  @Test
+  public void testGetOptionFromCodeStringReturnNull() {
+
+    assertNull(this.firstCentrifugationListProvider.getOptionFromCodeString("AA"));
   }
 }

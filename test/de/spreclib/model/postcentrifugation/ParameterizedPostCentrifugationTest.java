@@ -3,12 +3,13 @@ package de.spreclib.model.postcentrifugation;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.postcentrifugation.ParameterizedPostCentrifugation;
 import de.spreclib.model.postcentrifugation.enums.PostCentrifugationDelay;
 import de.spreclib.model.postcentrifugation.enums.PostCentrifugationTemperature;
 import de.spreclib.model.postcentrifugation.enums.PostCentrifugationType;
 import de.spreclib.model.sprec.CodePart;
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -73,5 +74,12 @@ public class ParameterizedPostCentrifugationTest {
         parameterizedPostCentrifugation.contains(
             PostCentrifugationDelay.LESS_ONE_HOUR,
             PostCentrifugationTemperature.ROOM_TEMPERATURE));
+  }
+
+  @Test
+  public void testEquals() {
+    EqualsVerifier.forClass(ParameterizedPostCentrifugation.class)
+        .withRedefinedSuperclass()
+        .verify();
   }
 }

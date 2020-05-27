@@ -14,9 +14,9 @@ public class Temperature {
 
   public Temperature(float temperatureCelsius) {
 
-    temperatureCelsius = Math.round(temperatureCelsius);
+    int roundedtemperatureCelsius = Math.round(temperatureCelsius);
 
-    this.temperatureCelsius = temperatureCelsius;
+    this.temperatureCelsius = roundedtemperatureCelsius;
   }
 
   public float getTemperatureCelsius() {

@@ -36,6 +36,17 @@ public final class ColdIschemiaTimeOption extends AbstractListOption {
     }
   }
 
+  boolean hasCodeString(String codeString) {
+    if (this.coldIschemiaTime
+        .getCodeFromSprecFactor()
+        .getStringRepresentation()
+        .equals(codeString)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;

@@ -28,6 +28,14 @@ public final class FixationOption extends AbstractListOption {
     return this.fixation;
   }
 
+  boolean hasCodeString(String codeString) {
+    if (this.fixation.getCodeFromSprecFactor().getStringRepresentation().equals(codeString)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;

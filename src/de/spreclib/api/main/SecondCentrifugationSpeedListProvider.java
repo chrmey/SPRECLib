@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author Christopher Meyer
  * @version 1.0
- * @see de.spreclib.api.main.SecondCentrifugationSpeedOption
+ * @see de.spreclib.api.main.SecondCentrifugationSpeedOptionTest
  */
 public final class SecondCentrifugationSpeedListProvider
     extends AbstractListProvider<SecondCentrifugationSpeedOption> {

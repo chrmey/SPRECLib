@@ -17,4 +17,7 @@ public interface IListProvider<T extends IListOption> {
    * @return List of ListOptions
    */
   public List<T> getList();
+
+  // Not yet implemented for all classes
+  // public T getOptionFromCodeString(String codeString);
 }

@@ -109,6 +109,17 @@ public final class FirstCentrifugationOption extends AbstractListOption {
     return false;
   }
 
+  boolean hasCodeString(String codeString) {
+    if (this.firstCentrifugation
+        .getCodeFromSprecFactor()
+        .getStringRepresentation()
+        .equals(codeString)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;

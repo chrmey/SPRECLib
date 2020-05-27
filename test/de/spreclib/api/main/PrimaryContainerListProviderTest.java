@@ -3,6 +3,7 @@ package de.spreclib.api.main;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.model.primarycontainer.PrimaryContainer;
@@ -39,5 +40,17 @@ public class PrimaryContainerListProviderTest {
     int actual = primaryContainerList.size();
 
     assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testGetOptionFromCodeString() {
+
+    assertNotNull(this.primaryContainerListProvider.getOptionFromCodeString("ACD"));
+  }
+
+  @Test
+  public void testGetOptionFromCodeStringReturnNull() {
+
+    assertNull(this.primaryContainerListProvider.getOptionFromCodeString("AA"));
   }
 }

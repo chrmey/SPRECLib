@@ -28,6 +28,17 @@ public final class FluidSampleTypeOption extends AbstractListOption {
     return this.fluidSampleType;
   }
 
+  boolean hasCodeString(String codeString) {
+    if (this.fluidSampleType
+        .getCodeFromSprecFactor()
+        .getStringRepresentation()
+        .equals(codeString)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   @Override
   public int hashCode() {
     final int prime = 31;

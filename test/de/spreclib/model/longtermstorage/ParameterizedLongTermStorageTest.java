@@ -3,12 +3,13 @@ package de.spreclib.model.longtermstorage;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
 import de.spreclib.model.interfaces.ICodePart;
-import de.spreclib.model.longtermstorage.ParameterizedLongTermStorage;
 import de.spreclib.model.longtermstorage.enums.LongTermStorageContainer;
 import de.spreclib.model.longtermstorage.enums.LongTermStorageTemperature;
 import de.spreclib.model.longtermstorage.enums.LongTermStorageType;
 import de.spreclib.model.sprec.CodePart;
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -75,5 +76,10 @@ public class ParameterizedLongTermStorageTest {
         parameterizedLongTermStorage.contains(
             LongTermStorageContainer.PP_TUBE_ZEROFIVE_TO_TWO_ML,
             LongTermStorageTemperature.ROOM_TEMPERATURE));
+  }
+
+  @Test
+  public void testEquals() {
+    EqualsVerifier.forClass(ParameterizedLongTermStorage.class).withRedefinedSuperclass().verify();
   }
 }

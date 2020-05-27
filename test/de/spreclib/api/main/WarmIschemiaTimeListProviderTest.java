@@ -3,6 +3,7 @@ package de.spreclib.api.main;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import de.spreclib.api.exceptions.UndefinedValueException;
 import de.spreclib.api.main.interfaces.IListOption;
@@ -92,5 +93,17 @@ public class WarmIschemiaTimeListProviderTest {
 
     assertEquals(
         WarmIschemiaTime.GREATER_SIXTY_MINUTES, warmIschemiaTimeOption.getContainedObject());
+  }
+
+  @Test
+  public void testGetOptionFromCodeString() {
+
+    assertNotNull(this.warmIschemiaTimeListProvider.getOptionFromCodeString("A"));
+  }
+
+  @Test
+  public void testGetOptionFromCodeStringReturnNull() {
+
+    assertNull(this.warmIschemiaTimeListProvider.getOptionFromCodeString("AA"));
   }
 }
