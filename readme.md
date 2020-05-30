@@ -1,6 +1,6 @@
 # SPRECLib
 
-![Build Java](https://github.com/Chris2996/SPRECLib/workflows/Build%20Java/badge.svg)
+![Build Java](https://github.com/Chris2996/SPRECLib/workflows/Build%20Java/badge.svg) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 A Java library for the SamplePREanalyticalCode Version 2 from the [ISBER](https://www.isber.org/page/SPREC?&hhsearchterms=%22sprec%22)
 
@@ -157,8 +157,17 @@ The valueOf-method of the FirstCentrifugationListProvider will throw a checked E
 
 Braking and Speed values can be passed to the CentrifugationListProviders.
 
+## Acknowledgements
 
+- [equalsverifier] (https://github.com/jqno/equalsverifier) by jqno
 
 ## Authors
 
 * *Christopher Meyer* - [Chris2996](https://github.com/chris2996)
+
+## License
+
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**
+- Copyright 2020 © <a href="http://fvcproductions.com" target="_blank">Christopher Meyer</a>.
