@@ -159,7 +159,7 @@ Braking and Speed values can be passed to the CentrifugationListProviders.
 
 ## Acknowledgements
 
-- [equalsverifier] (https://github.com/jqno/equalsverifier) by jqno
+- [equalsverifier](https://github.com/jqno/equalsverifier) by jqno
 
 ## Authors
 
