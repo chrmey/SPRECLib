@@ -38,7 +38,7 @@ public final class ColdIschemiaTimeListProvider extends AbstractListProvider<Col
    * Takes two instants and returns a ColdIschemiaTimeOption if a ColdIschemiaTimeOption with that
    * timespan is found.
    *
-   * @param colletionTimeMillis Instant
+   * @param collectionTime Instant
    * @param fixationStartTime Instant
    * @return ColdIschemiaTimeOption
    * @throws UndefinedValueException if value for the timespan cannot be found in ListOptions
@@ -75,7 +75,8 @@ public final class ColdIschemiaTimeListProvider extends AbstractListProvider<Col
         "Value " + durationMinutes + "minutes undefined for ColdIschemiaTime.");
   }
 
-  public ColdIschemiaTimeOption getOptionFromCodeString(String codeString) {
+  @Override
+public ColdIschemiaTimeOption getOptionFromCodeString(String codeString) {
     for (ColdIschemiaTimeOption coldIschemiaTimeOption : this.listOptions) {
       if (coldIschemiaTimeOption.hasCodeString(codeString)) {
         return coldIschemiaTimeOption;
