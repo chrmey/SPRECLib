@@ -2,7 +2,7 @@ package de.spreclib.api.parameters;
 
 import static org.junit.Assert.assertEquals;
 
-import de.spreclib.api.exceptions.InvalidTimeRelationException;
+import de.spreclib.api.parameters.exceptions.InvalidTimeRelationException;
 import java.time.Instant;
 import org.junit.Test;
 

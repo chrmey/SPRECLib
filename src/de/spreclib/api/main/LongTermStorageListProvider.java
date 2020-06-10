@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.api.exceptions.UndefinedValueCombinationException;
+import de.spreclib.api.main.exceptions.UndefinedValueCombinationException;
 import de.spreclib.api.main.interfaces.IFactorListProvider;
 import de.spreclib.model.longtermstorage.LongTermStorage;
 import de.spreclib.model.longtermstorage.LongTermStorageList;

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
-import de.spreclib.api.exceptions.UndefinedValueException;
+import de.spreclib.api.main.exceptions.UndefinedValueException;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.model.centrifugation.enums.FirstCentrifugationSpeed;
 import java.util.List;

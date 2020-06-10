@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.api.exceptions.UndefinedValueCombinationException;
+import de.spreclib.api.main.exceptions.UndefinedValueCombinationException;
 import de.spreclib.api.main.interfaces.IFactorListProvider;
 import de.spreclib.model.postcentrifugation.PostCentrifugation;
 import de.spreclib.model.postcentrifugation.PostCentrifugationList;

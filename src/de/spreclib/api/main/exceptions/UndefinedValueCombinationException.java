@@ -1,4 +1,4 @@
-package de.spreclib.api.exceptions;
+package de.spreclib.api.main.exceptions;
 
 public class UndefinedValueCombinationException extends Exception {
 

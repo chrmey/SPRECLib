@@ -1,4 +1,4 @@
-package de.spreclib.api.exceptions;
+package de.spreclib.api.main.exceptions;
 
 /**
  * Is thrown when a value that is passed to a valueOf() method cannot be found in the SPREC

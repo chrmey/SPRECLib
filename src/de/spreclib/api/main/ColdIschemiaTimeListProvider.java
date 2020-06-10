@@ -1,6 +1,6 @@
 package de.spreclib.api.main;
 
-import de.spreclib.api.exceptions.UndefinedValueException;
+import de.spreclib.api.main.exceptions.UndefinedValueException;
 import de.spreclib.api.main.interfaces.IFactorListProvider;
 import de.spreclib.api.parameters.Timespan;
 import de.spreclib.model.coldischemiatime.ColdIschemiaTime;

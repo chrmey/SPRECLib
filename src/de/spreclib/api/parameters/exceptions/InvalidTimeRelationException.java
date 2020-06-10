@@ -1,4 +1,4 @@
-package de.spreclib.api.exceptions;
+package de.spreclib.api.parameters.exceptions;
 
 import java.time.Instant;
 

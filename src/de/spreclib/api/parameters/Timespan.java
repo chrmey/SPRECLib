@@ -1,6 +1,6 @@
 package de.spreclib.api.parameters;
 
-import de.spreclib.api.exceptions.InvalidTimeRelationException;
+import de.spreclib.api.parameters.exceptions.InvalidTimeRelationException;
 import java.time.Duration;
 import java.time.Instant;
 

@@ -5,7 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import de.spreclib.api.exceptions.UndefinedValueException;
+import de.spreclib.api.main.exceptions.UndefinedValueException;
 import de.spreclib.api.main.interfaces.IListOption;
 import de.spreclib.model.coldischemiatime.ColdIschemiaTime;
 import java.time.Instant;
