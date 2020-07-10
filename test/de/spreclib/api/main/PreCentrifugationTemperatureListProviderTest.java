@@ -54,10 +54,20 @@ public class PreCentrifugationTemperatureListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnRoomtemperature() throws UndefinedValueException {
+  public void testValueOfShouldReturnRoomtemperatureUpperBound() throws UndefinedValueException {
 
     PreCentrifugationTemperatureOption temperatureOption =
-        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(18f));
+        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(28.49f));
+
+    assertEquals(
+        PreCentrifugationTemperature.ROOM_TEMPERATURE, temperatureOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnRoomtemperatureLowerBound() throws UndefinedValueException {
+
+    PreCentrifugationTemperatureOption temperatureOption =
+        this.preCentrifugationTemperatureListProvider.valueOf(new Temperature(17.5f));
 
     assertEquals(
         PreCentrifugationTemperature.ROOM_TEMPERATURE, temperatureOption.getContainedObject());

@@ -65,10 +65,21 @@ public class LongTermStorageTemperatureListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnMinus35ToMinus18() throws UndefinedValueException {
+  public void testValueOfShouldReturnMinus35ToMinus18UpperBound() throws UndefinedValueException {
 
     LongTermStorageTemperatureOption temperatureOption =
-        new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-35.49f));
+        new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-18.49f));
+
+    assertEquals(
+        LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,
+        temperatureOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnMinus35ToMinus18LowerBound() throws UndefinedValueException {
+
+    LongTermStorageTemperatureOption temperatureOption =
+        new LongTermStorageTemperatureListProvider().valueOf(new Temperature(-34.5f));
 
     assertEquals(
         LongTermStorageTemperature.MINUS_THIRTYFIVE_TO_MINUS_EIGHTEEN_DEGREES,

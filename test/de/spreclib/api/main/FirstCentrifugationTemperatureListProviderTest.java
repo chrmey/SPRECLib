@@ -83,9 +83,22 @@ public class FirstCentrifugationTemperatureListProviderTest {
   }
 
   @Test
-  public void testValueOfShouldReturnTwoToTenDegrees() throws UndefinedValueException {
+  public void testValueOfShouldReturnTwoToTenDegreesUpperBound() throws UndefinedValueException {
 
     Temperature temperature = new Temperature(10.49f);
+
+    FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
+        this.firstCentrifugationTemperatureListProvider.valueOf(temperature);
+
+    assertEquals(
+        FirstCentrifugationTemperature.TWO_TO_TEN_DEGREES,
+        firstCentrifugationTemperatureOption.getContainedObject());
+  }
+
+  @Test
+  public void testValueOfShouldReturnTwoToTenDegreesLowerBound() throws UndefinedValueException {
+
+    Temperature temperature = new Temperature(1.5f);
 
     FirstCentrifugationTemperatureOption firstCentrifugationTemperatureOption =
         this.firstCentrifugationTemperatureListProvider.valueOf(temperature);
