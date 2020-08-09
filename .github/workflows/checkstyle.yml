@@ -1,8 +1,8 @@
-name: Reviewdog - Checkstyle 
+name: Reviewdog 
 on: [push, pull_request]
 jobs:
   checkstyle:
-    name: runner / checkstyle
+    name: Checkstyle
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
