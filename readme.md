@@ -1,6 +1,7 @@
 # SPRECLib
 
-![Build Java](https://github.com/Chris2996/SPRECLib/workflows/Build%20Java/badge.svg) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+![Build Java](https://github.com/Chris2996/SPRECLib/workflows/Build%20Java/badge.svg) ![Reviewdog - Checkstyle](https://github.com/Chris2996/SPRECLib/workflows/Reviewdog%20-%20Checkstyle/badge.svg) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
 
 A Java library for the SamplePREanalyticalCode Version 2 from the [ISBER](https://www.isber.org/page/SPREC?&hhsearchterms=%22sprec%22)
 
