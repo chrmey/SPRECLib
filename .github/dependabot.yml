@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
+    assignees:
+      - "chris2996"
+    labels:
+      - "dependencies"
+    reviewers: 
+      - "chris2996"
