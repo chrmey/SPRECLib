@@ -1,4 +1,4 @@
-version: 2
+version: 1
 updates:
   - package_manager: "java:maven"
     directory: "/" 
