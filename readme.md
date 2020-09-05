@@ -8,7 +8,11 @@ A Java library for the SamplePREanalyticalCode Version 2 from the [ISBER](https:
 #
 ### Getting started
 
-Download the latest release and include the .jar file to your project. In the same folder where the .jar is in create a folder called ```spreclib_config``` and put the config.properties file inside it. 
+Download the latest release and include the .jar file to your project. 
+
+#### IMPORTANT
+In the same folder where the .jar is in create a folder called ```spreclib_config``` and put the config.properties file inside it.
+If you use the library as dependency, go to releases, download the config.properties and continue as said above.
 
 #
 ### Terminology in SPRECLib
