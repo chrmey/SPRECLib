@@ -1,5 +1,6 @@
 package de.spreclib.meta.spreccode;
 
+import de.spreclib.meta.exceptions.SprecLibConfigFileNotFoundException;
 import de.spreclib.meta.spreccode.interfaces.ISprecCode;
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,7 +29,14 @@ public abstract class AbstractSprecCode implements ISprecCode {
       InputStream inputStream =
           getClass().getClassLoader().getResourceAsStream("config.properties");
 
-      properties.load(inputStream);
+      if (inputStream == null) {
+
+        throw new SprecLibConfigFileNotFoundException();
+
+      } else {
+
+        properties.load(inputStream);
+      }
     } catch (IOException e) {
       e.printStackTrace();
     }
