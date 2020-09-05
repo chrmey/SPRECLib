@@ -7,9 +7,11 @@ import java.util.Properties;
 
 public abstract class AbstractSprecCode implements ISprecCode {
 
-  private Properties properties = new Properties();
+  static final String CODESYSTEM = "SPREC";
+  static final String CODESYSTEM_VERSION = "2.0";
   final String placeholderOneCharacter;
   final String placeholderThreeCharacters;
+  private Properties properties = new Properties();
 
   protected AbstractSprecCode() {
 
@@ -38,5 +40,13 @@ public abstract class AbstractSprecCode implements ISprecCode {
 
   private String readPlaceHolderThreeCharacters() {
     return properties.getProperty("placeholder.threecharacters");
+  }
+
+  public static String getCodesystemVersion() {
+    return CODESYSTEM_VERSION;
+  }
+
+  public static String getCodesystem() {
+    return CODESYSTEM;
   }
 }
