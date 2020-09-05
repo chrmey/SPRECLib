@@ -7,7 +7,7 @@
 	<packaging>jar</packaging>
 	<version>1.0</version>
 	<name>SPRECLib</name>
-	<description>A library that implements the SamplePREanalyticalCode version 2 from ISBER.</description>
+	<description>A library that implements the SamplePREanalyticalCode version 2 from ISBER. Make sure to download the config.properties. PLEASE READ THE INSTRUCTION IN readme.md!!</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -75,6 +75,13 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Chris2996 Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/Chris2996/SPRECLib</url>
+		</repository>
+	</distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
